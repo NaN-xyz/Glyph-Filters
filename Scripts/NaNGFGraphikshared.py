@@ -1,0 +1,998 @@
+from GlyphsApp import *
+
+from math import *
+import random
+import copy
+import numpy as np
+import matplotlib.path as mpltPath
+
+from NaNGFConfig import *
+from NaNGFAngularizzle import *
+from NaNGFFitpath import *
+
+
+
+# --------------------------------------------
+
+# REMOVES PATHS *ONLY* AND LEAVES COMPONENTS, ANCHORS ETC IN PLACE
+def ClearPaths(thislayer):
+
+	count=0
+	for i in range( len( thislayer.paths ))[::-1]:
+		del thislayer.paths[i]
+		count += 1
+
+def ShiftPath(path, variance, type):
+
+	shiftx = random.uniform(variance * -0.5, variance)
+	shifty = random.uniform(variance * -0.5, variance)
+	x = path.bounds.origin.x
+	y = path.bounds.origin.y
+
+	if type=="x":
+		path.applyTransform((
+								1, # x scale factor
+								0, # x skew factor
+								0, # y skew factor
+								1, # y scale factor
+								shiftx, # x position
+								0  # y position
+								))
+
+	if type=="y":
+		path.applyTransform((
+								1, # x scale factor
+								0, # x skew factor
+								0, # y skew factor
+								1, # y scale factor
+								0, # x position
+								shifty  # y position
+								))
+
+	if type=="xy":
+		path.applyTransform((
+								1, # x scale factor
+								0, # x skew factor
+								0, # y skew factor
+								1, # y scale factor
+								shiftx, # x position
+								shifty  # y position
+								))
+
+
+def ChangeNodeStart(nodes):
+
+	newnodes = []
+	nodelen = len(nodes)
+	cutpt = random.randrange(0, nodelen)
+
+	part1 = nodes[0:cutpt]
+	part2 = nodes[cutpt:nodelen]
+	
+	for n in part2: newnodes.append(n)
+	for n in part1: newnodes.append(n)
+	return newnodes
+
+
+def setGlyphCoords(pathlist):
+
+	newshape = []
+
+	for path in pathlist:
+
+		direction = path.direction
+		if direction == -1:
+			direction="True"
+		else:
+			direction="False"
+
+		thispath = []
+		for node in path.nodes:
+			thispath.append([node.x,node.y])
+
+		newshape.append([direction,thispath])
+
+	# print "NEWSHAPE:"
+	# print newshape
+	# print "---"
+
+	return newshape
+
+
+def withinGlyphBlack(x, y, glyph):
+
+	#if len(glyph)==0 : print "EMPTY GLYPH"
+
+	paths_pos, paths_neg = [], []
+	for p in glyph:
+		direction = p[0]
+		if direction == "True": paths_pos.append(p)
+		else: paths_neg.append(p)
+
+	inside_pos, inside_neg = False, False
+
+	for pospath in paths_pos:
+		if (point_inside_polygon(x,y,pospath[1])): 
+			inside_pos=True
+			break
+
+	if inside_pos==True:
+		for negpath in paths_neg:
+			if (point_inside_polygon(x,y,negpath[1])): 
+				inside_neg=True
+				break
+
+	if inside_pos==True and inside_neg==False:
+		return True # within glyph black
+	else:
+		return False # not
+
+
+def point_inside_polygon_faster(x,y,poly):
+
+	inside = False
+
+	path = mpltPath.Path(poly)
+	numparray = np.array([[x,y]])
+	#print numparray
+	inside2 = path.contains_points(numparray)
+
+	if inside2.all()==True: inside=True
+	return inside
+
+
+def point_inside_polygon(x,y,poly):
+
+	n = len(poly)
+	inside = False
+
+	try:
+
+		p1x,p1y = poly[0]
+		for i in range(n+1):
+			p2x,p2y = poly[i % n]
+			if y > min(p1y,p2y):
+				if y <= max(p1y,p2y):
+					if x <= max(p1x,p2x):
+						if p1y != p2y:
+							xinters = (y-p1y)*(p2x-p1x)/(p2y-p1y)+p1x
+						if p1x == p2x or x <= xinters:
+							inside = not inside
+			p1x,p1y = p2x,p2y
+
+		return inside
+
+	except:
+
+		return inside
+
+
+def AllPathBoundsFromPathList(paths):
+
+	templayer = GSLayer()
+	AddAllPathsToLayer(paths, templayer)
+	bounds = AllPathBounds(templayer)
+	del templayer
+	return bounds
+
+
+def AllPathBounds(thislayer):
+
+	x = int( thislayer.bounds.origin.x )
+	y = int( thislayer.bounds.origin.y )
+	w = int( thislayer.bounds.size.width )
+	h = int( thislayer.bounds.size.height )
+
+	if x==0 and y==0 and w==0 and h==0:
+		return None
+	else: 
+		return [x,y,w,h]
+
+
+#
+#   SHAPES
+#
+
+
+def RoundPath(path, returntype):
+
+	paths = [path]
+	np = doAngularizzle(paths, 2)
+	outlinedata = setGlyphCoords(np)
+	outline = outlinedata[0][1]
+	new_outline = outline
+	nl = []
+
+	switch = False
+
+	for loop in range(0,12): # must be even number to maintain original shape
+
+		nlen = len(new_outline)
+		nl = []
+		n = 0
+
+		while n < nlen:
+
+			if n==nlen-1:
+				next = 0
+			else:
+				next = n+1
+
+			node_next = new_outline[next]
+			nl.append([node_next[0], node_next[1]])
+
+			if switch==True:
+				n+=4
+			else:
+				n+=8
+
+		if switch==True:
+			segmentsize=20
+			switch = not switch
+		else:
+			segmentsize=3
+
+		path = drawSimplePath(nl)
+		paths = [path]
+		np = doAngularizzle(paths, segmentsize)
+		outlinedata = setGlyphCoords(np)
+
+		try:
+			new_outline = outlinedata[0][1]
+		except:
+			break
+
+	if returntype=="nodes":
+		return new_outline
+	else:
+		return path
+
+
+def returnRoundedPaths(paths):
+
+	roundedpathlist = []
+	for p in paths:
+		roundedpath = RoundPath(p, "nodes")
+		roundedpath = convertToFitpath(roundedpath, True)
+		roundedpathlist.append(roundedpath)
+	return roundedpathlist
+
+
+def convertToFitpath(nodelist, closed):
+
+	addon = GSPath()
+
+	# seems to be instances where empty nodelists are sent. 
+	# workaround below with try/except sending empty path
+
+	try:
+
+		nodelist.append(nodelist[-1])
+		pathlist = fitpath(nodelist, True)
+
+		for s in range(0, len(pathlist)):
+
+			segment = pathlist[s]
+			pt = segment.getPoint()
+			hin = segment.getHandleIn()
+			hout = segment.getHandleOut()
+			ptx, pty = pt.x, pt.y
+			hinx, hiny = hin.x, hin.y
+			houtx, houty = hout.x, hout.y
+
+			# try and limit handle within max range (re fitpath bug)
+			if hinx>50: hinx = 50
+			if hiny>50: hiny = 50
+			if houtx>50: houtx = 50
+			if houty>50: houty = 50
+
+			if s==0:
+				addon.nodes.append(GSNode([ptx, pty], type = GSLINE))
+				addon.nodes.append(GSNode([ptx+houtx, pty+houty], type = GSOFFCURVE))
+			elif s>0 and s<len(pathlist)-1:
+				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
+				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
+				addon.nodes.append(GSNode([ptx+houtx, pty+houty], type = GSOFFCURVE))
+			else:
+				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
+				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
+		
+	except:
+		pass
+
+	addon.closed = closed
+	return addon
+
+
+def drawBlob(nx, ny, maxrad, maxpoints, rounded):
+
+	#print nx, ny, maxrad, maxpoints
+	addon = GSPath()
+	sides = 360 / maxpoints
+	points = []
+
+	rotation = random.randrange(0,90)
+
+	for n in range(0, maxpoints):
+
+		a = sides * n + rotation
+		rad = math.radians(a)
+		pushpointlen = random.randrange( int(maxrad*0.5), maxrad) / 2
+		cx = nx + pushpointlen * math.cos(rad)
+		cy = ny + pushpointlen * math.sin(rad)
+		points.append([cx, cy])
+
+
+	for n in range(0, len(points)):
+
+		if n==len(points)-1:
+			next = 0
+		else:
+			next = n+1
+
+		cx1 = points[n][0]
+		cy1 = points[n][1]
+
+		cx2 = points[next][0]
+		cy2 = points[next][1]
+
+		pushdist = distance([cx1, cy1], [cx2, cy2])
+		pushdist/=2
+
+		a1 = math.atan2(ny-cy2, nx-cx2)
+		a1 += math.radians(90)
+		linex1 = pushdist * math.cos(a1)
+		liney1 = pushdist * math.sin(a1)
+
+		a2 = math.atan2(ny-cy1, nx-cx1)
+		a2 += math.radians(90)
+		linex2 = pushdist * math.cos(a2)
+		liney2 = pushdist * math.sin(a2)
+
+		if rounded==True:
+			addon.nodes.append(GSNode([cx1-linex2, cy1-liney2], type = GSOFFCURVE))
+			addon.nodes.append(GSNode([cx2+linex1, cy2+liney1], type = GSOFFCURVE))
+			addon.nodes.append(GSNode([cx2, cy2], type = GSCURVE))
+		else:
+			addon.nodes.append(GSNode([cx2, cy2], type = GSLINE))
+
+	addon.closed = True
+	#thislayer.paths.append(addon)
+	return addon
+
+
+def drawSidedPolygon(nx, ny, maxrad, maxpoints):
+
+	#print nx, ny, maxrad, maxpoints
+	addon = GSPath()
+
+	sides = 360 / maxpoints
+
+	for n in range(0, maxpoints):
+
+		a = sides * n + 90
+		rad = math.radians(a)
+		cx = nx + (maxrad/2) * cos(rad)
+		cy = ny + (maxrad/2) * sin(rad)
+
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = ( cx, cy)
+		addon.nodes.append( newnode )
+
+	addon.closed = True
+	#thislayer.paths.append(addon)
+	return addon
+
+
+def drawSpeck(nx, ny, maxrad, maxpoints):
+
+	#print nx, ny, maxrad, maxpoints
+	addon = GSPath()
+
+	sides = 360 / maxpoints
+	rotation = random.randrange(0,360)
+
+	mr = random.randrange(0, maxrad)
+
+	points = random.randrange(3, maxpoints)
+
+	for n in range(0, points):
+
+		a = sides * n + rotation
+		rad = math.radians(a)
+		cx = nx + (maxrad/2) * cos(rad)
+		cy = ny + (maxrad/2) * sin(rad)
+
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = ( cx, cy)
+		addon.nodes.append( newnode )
+
+	addon.closed = True
+	#thislayer.paths.append(addon)
+	return addon
+
+
+def drawCircle(nx, ny, w, h):
+
+	#thislayer = f.selectedLayers[0]
+	#coord = [ [nx-(w/2),ny], [nx,ny+(h/2)], [nx+(w/2),ny], [nx,ny-(w/2)] ]
+	addon = GSPath()
+
+	addon.nodes.append(GSNode([nx-(w/2),ny], type = GSCURVE))
+	addon.nodes.append(GSNode([nx-(w/2),ny+(h/4)], type = GSOFFCURVE))
+
+	addon.nodes.append(GSNode([nx-(w/4),ny+(h/2)], type = GSOFFCURVE))
+	addon.nodes.append(GSNode([nx,ny+(h/2)], type = GSCURVE))
+	addon.nodes.append(GSNode([nx+(w/4),ny+(h/2)], type = GSOFFCURVE))
+
+
+	addon.nodes.append(GSNode([nx+(w/2),ny+(h/4)], type = GSOFFCURVE))
+	addon.nodes.append(GSNode([nx+(w/2),ny], type = GSCURVE))
+	addon.nodes.append(GSNode([nx+(w/2),ny-(h/4)], type = GSOFFCURVE))
+
+	addon.nodes.append(GSNode([nx+(w/4),ny-(h/2)], type = GSOFFCURVE))
+	addon.nodes.append(GSNode([nx,ny-(h/2)], type = GSCURVE))
+	addon.nodes.append(GSNode([nx-(w/4),ny-(h/2)], type = GSOFFCURVE))
+
+	addon.nodes.append(GSNode([nx-(w/2),ny-(h/4)], type = GSOFFCURVE))
+	#addon.nodes.append(GSNode([nx-(w/2),ny], type = GSCURVE))
+
+	addon.closed = True
+	if addon.direction==1: addon.reverse()
+
+	return addon
+
+
+def drawDiamond(nx, ny, w, h):
+
+	#thislayer = f.selectedLayers[0]
+	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
+	coord = [ [nx-(w/2),ny], [nx,ny+(h/2)], [nx+(w/2),ny], [nx,ny-(w/2)] ]
+	addon = GSPath()
+	for xy in coord:
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = (xy[0], xy[1])
+		addon.nodes.append( newnode )
+	addon.closed = True
+	if addon.direction==1: addon.reverse()
+	return addon
+
+def drawRectangle(nx, ny, w, h):
+
+	#thislayer = f.selectedLayers[0]
+	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
+	coord = [ [nx-(w/2),ny-(h/2)], [nx-(w/2),ny+(h/2)], [nx+(w/2),ny+(h/2)], [nx+(w/2),ny-(h/2)] ]
+	addon = GSPath()
+	for xy in coord:
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = (xy[0], xy[1])
+		addon.nodes.append( newnode )
+	addon.closed = True
+	if addon.direction==1: addon.reverse()
+	return addon
+
+
+def drawTriangle(nx, ny, w, h):
+
+	#thislayer = f.selectedLayers[0]
+	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
+	coord = [ [nx-(w/2),ny-(h/2)], [nx+(w/2),ny-(h/2)], [nx,ny+(h/2)] ]
+	addon = GSPath()
+	for xy in coord:
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = (xy[0], xy[1])
+		addon.nodes.append( newnode )
+	addon.closed = True
+	if addon.direction==1: addon.reverse()
+	addon.reverse()
+	return addon
+
+def drawSimplePath(nodes):
+
+	addon = GSPath()
+	for xy in nodes:
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = (xy[0], xy[1])
+		addon.nodes.append( newnode )
+	addon.closed = True
+	#thislayer.paths.append(addon)
+	return addon
+
+def drawOpenPath(nodes):
+
+	addon = GSPath()
+	for xy in nodes:
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = (xy[0], xy[1])
+		addon.nodes.append( newnode )
+	addon.closed = False
+	#thislayer.paths.append(addon)
+	return addon
+
+
+
+
+def Fill_Halftone(thislayer, maskshape, shapetype):
+
+	allshapes = []
+
+	t = shape
+	shapelist = PathToNodeList(t)
+
+	x = int (t.bounds.origin.x)
+	y = int (t.bounds.origin.y)
+	w = int (t.bounds.size.width)
+	h = int (t.bounds.size.height)
+
+	grid = 13
+	#size = random.randrange(12, 24)
+	size = 8
+
+	for row in range(y, y+h, grid):
+
+		for col in range(x, x+w, grid):
+
+			if point_inside_polygon(col, row, shapelist):
+
+				nx = math.floor(col/grid) * grid
+				ny = math.floor(row/grid) * grid
+
+				if row%2==0:
+					adjust = grid/2
+				else:
+					adjust = 0
+
+				c = drawCircle(nx+adjust, ny, size, size)
+				#thislayer.paths.append(c)
+				allshapes.append(c)
+
+		size+=0.1
+
+	return allshapes
+
+
+def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
+
+	#print "fill lines", thislayer, path, bounds, direction
+
+	bounds = path.bounds
+	line_vertical_comp, line_horizontal_comp = linecomponents[0], linecomponents[1]
+
+	x = int( bounds.origin.x )
+	y = int( bounds.origin.y )
+	w = int( bounds.size.width )
+	h = int( bounds.size.height )
+
+	pathlist = doAngularizzle([path], 10)
+	outlinedata = setGlyphCoords(pathlist)
+	outlinedata = outlinedata[0][1]
+	
+	tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
+	lines = []
+
+	checkgap = 2
+
+	xstart, ystart = None, None
+	xend, yend = None, None
+
+	if direction=="horizontal":
+		for y2 in range(y, y+h+gap, gap):
+			newline = []
+			for x2 in range(x, x+w, checkgap):
+				if point_inside_polygon(x2, y2, outlinedata):
+					if xstart==None and ystart==None:
+						xstart = x2
+						ystart = y2
+					else:
+						xend = x2
+						yend = y2
+				else:
+					if xstart!=None and xend!=None:
+						newline = [[xstart, ystart],[xend, yend]]
+						lines.append( newline )
+						xstart, ystart = None, None
+						xend, yend = None, None
+			y2 = 0
+
+	if direction=="vertical":
+		for x2 in range(x, x+w+gap, gap):
+			newline = []
+			for y2 in range(y, y+h, checkgap):
+				if point_inside_polygon(x2, y2, outlinedata):
+					if xstart==None and ystart==None:
+						xstart = x2
+						ystart = y2
+					else:
+						xend = x2
+						yend = y2
+				else:
+					if xstart!=None and xend!=None:
+						newline = [[xstart, ystart],[xend, yend]]
+						lines.append( newline )
+						xstart, ystart = None, None
+						xend, yend = None, None
+			x2 = 0
+
+	linecomponents = []
+
+	for l in lines:
+		sx, sy = l[0][0], l[0][1]
+		ex, ey = l[-1][0], l[-1][1]
+		comp = returnLineComponent([sx,sy], [ex,ey], direction, [line_vertical_comp,line_horizontal_comp], 100)
+		linecomponents.append(comp)
+
+	return linecomponents
+
+
+def FillHalftoneShape(thislayer, maskshape, shapetype):
+
+	allshapes = []
+
+	t = maskshape
+	shapelist = PathToNodeList(t)
+	x = int (t.bounds.origin.x)
+	y = int (t.bounds.origin.y)
+	w = int (t.bounds.size.width)
+	h = int (t.bounds.size.height)
+
+	grid = 13
+	size = random.randrange(12, 24)
+
+	for col in range(x, x+w, grid):
+
+		for row in range(y, y+h, grid):
+
+			if point_inside_polygon(col, row, shapelist):
+
+				nx = math.floor(col/grid) * grid
+				ny = math.floor(row/grid) * grid
+
+				if shapetype=="triangle":
+					c = drawTriangle(nx, ny, size, size)
+				if shapetype=="circle":
+					c = drawCircle(nx, ny, size, size)
+
+				#thislayer.paths.append(c)
+				allshapes.append(c)
+
+		size+=0.3
+
+	return allshapes
+
+
+
+
+
+# MUST CHANGE NAME
+
+
+def Split(rectangle, axis):
+
+	splitrectangles = []
+	rect = rectangle
+	rectx = rect[0]
+	recty = rect[1]
+	rectw = rect[2]
+	recth = rect[3]
+	percentage = 0.5
+
+	if (axis=="x"):
+		minh = int(recth*percentage)
+		rh1 = random.randrange(minh, recth+1) # was previous randrange
+		splitrectangles.append( [ rectx, recty, rectw, rh1 ] )
+		splitrectangles.append( [ rectx, recty+rh1, rectw, recth-rh1 ] )
+	if (axis=="y"):
+		minw = int(rectw*percentage)
+		rw1 = random.randrange(minw, rectw+1)
+		splitrectangles.append( [ rectx, recty, rw1, recth ] )
+		splitrectangles.append( [ rectx+rw1, recty, rectw-rw1, recth ] )
+
+	return splitrectangles
+
+
+def MakeRectangles(startrect, it):
+
+	collections = []
+
+	if it>0:
+
+		rectangles = startrect
+		counter=0
+		switch=True
+
+		while counter<it:
+
+			collection = []
+
+			for n in range(0, len(rectangles)):
+
+				switch = not switch
+				if switch==True: axis = "x"
+				else: axis = "y"
+				splitrects = Split( rectangles[n], axis )
+				for n in range (0, len(splitrects)): collection.append(splitrects[n])
+
+			del rectangles
+			rectangles = []
+			rectangles = collection
+			collections.append(collection)
+			counter+=1
+
+	else:
+		collections.append(startrect)
+
+	return collections[-1]
+
+
+# def drawAllRectangles(allrectangles, thislayer):
+
+# 	#print "number of allrectangles", len(allrectangles) 
+
+# 	for n in range(0, len(allrectangles)):
+
+# 		rect = allrectangles[n]
+# 		rectx = rect[0]
+# 		recty = rect[1]
+# 		rectw = rect[2]
+# 		recth = rect[3]
+
+# 		drawRectangle( rectx, recty, rectw, recth, thislayer )
+
+
+def returnRandomNodeinPaths(outlinedata):
+
+	glyph = outlinedata
+
+	allnodes = []
+
+	for p in range(0, len(glyph)):
+		path = glyph[p][1]
+		for n in range(0, len(path)):
+			allnodes.append(path[n])
+
+	node = allnodes [ random.randrange(0, len(allnodes)) ]
+
+	return node
+
+
+def defineStartXY(rect, glyph):
+
+	#node = returnRandomNodeinPaths(glyph)
+
+	inside = False
+
+	#thislayer = f.selectedLayers[0]
+	#width = thislayer.width
+	#height = thislayer.height
+
+	originx = rect[0]
+	originy = rect[1]
+	ow = rect[2]
+	oh = rect[3]
+	newrect = [ [originx, originy], [originx, originy+oh], [originx+ow, originy+oh], [originx+ow, originy]  ]
+	
+	#print "define start xy"
+	#print path_origin_x, path_origin_x, path_size_width
+
+	counter=0
+	while inside==False:
+
+		rx = random.randrange(int(originx), int(originx + ow))
+		ry = random.randrange(int(originy), int(originy + oh))
+
+		# rx = node[0]
+		# ry = node[1]
+
+		#inside1 = point_inside_polygon(rx, ry, glyph)
+		inside1 = withinGlyphBlack(rx, ry, glyph)					#checks not in glyph negative counters
+		inside2 = point_inside_polygon(rx, ry, newrect)		#basic point in path check
+
+		if inside1 and inside2:
+			inside=True
+		
+		if counter==20:
+			#print "----"
+			#print "could not find startXY"
+			#print "----"
+			return
+			break
+
+		counter+=1
+
+	return[rx, ry]
+
+
+def ShapeWithinOutlines(shape, glyph):
+	within = True
+	for node in shape:
+		nx = node[0]
+		ny = node[1]
+		if withinGlyphBlack(nx, ny, glyph)==False:
+			within=False
+			break
+	return within
+
+
+def DistanceToNextBlack(thislayer, p1, p2, outlinedata, searchlimit):
+
+	x1, x2 = p1[0], p2[0]
+	y1, y2 = p1[1], p2[1]
+
+	midx = x1 + ((x2-x1)/2)
+	midy = y1 + ((y2-y1)/2)
+
+	a = atan2(y1-y2, x1-x2)
+	a += radians(90)
+
+	pushdist = 10
+
+	stepx = pushdist * cos(a)
+	stepy = pushdist * sin(a)
+
+	newx = midx
+	newy = midy
+
+	for step in range(0, int(searchlimit/pushdist)):
+		newx += stepx
+		newy += stepy
+		if withinGlyphBlack(newx, newy, outlinedata):
+			#return distance([midx, midy], [newx, newy])
+			return distance([midx, midy], [newx, newy])
+			break
+
+	return None
+
+
+def isPathSizeBelowThreshold(path, maxw, maxh):
+	bounds = path.bounds
+	if bounds.size.width<maxw and bounds.size.height<maxh:
+		return True
+	else:
+		return False
+
+
+def isLayerSizeBelowThreshold(thislayer, maxw, maxh):
+	bounds = thislayer.bounds
+	if bounds.size.width<maxw and bounds.size.height<maxh:
+		return True
+	else:
+		return False
+
+
+def AddAllComponentsToLayer(components, thislayer):
+	try:
+		for c in components:
+			thislayer.components.append(c)
+	except:
+		print "Couldn't add components to layer", thislayer
+
+
+def AddAllPathsToLayer(paths, thislayer):
+	try:
+		for path in paths:
+			thislayer.paths.append(path)
+	except:
+		print "Couldn't add all paths to layer", thislayer
+
+
+def ConvertPathlistDirection(paths, direction):
+	try:
+		newpaths = []
+		for p in paths:
+			if p.direction != direction:
+				p.reverse()
+			newpaths.append(p)
+		return newpaths
+	except:
+		print "Couldn't change direction of all paths"
+
+
+def ContainsPaths(thislayer):
+	if len(thislayer.paths)>0:
+		return True
+	else:
+		return False
+
+
+def pathCenterPoint(path):
+	bounds = path.bounds
+	x = bounds.origin.x
+	y = bounds.origin.y
+	w = bounds.size.width
+	h = bounds.size.height
+	return [x+(w/2),y+(h/2)]
+
+
+def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
+
+	if font.glyphs[shapename]: del font.glyphs[shapename]
+	ng = GSGlyph()
+	ng.name = shapename
+	ng.category = "Mark"
+	ng.export = True
+	font.glyphs.append(ng)
+	layer = font.glyphs[ng.name].layers[0]
+	layer.width = 0
+
+	# add speck, blob, perhaps even a line?
+	if shapetype=="circle":
+		shape = drawCircle(0, 0, sizex, sizey)
+	elif shapetype=="diamond":
+		shape = drawDiamond(0, 0, sizex, sizey)
+	elif shapetype=="rectangle":
+		shape = drawRectangle(0, 0, sizex, sizey)
+	elif shapetype=="triangle":
+		shape = drawTriangle(0, 0, sizex, sizey)
+	else: 
+		shape = drawDiamond(0, 0, sizex, sizey)
+
+	layer.paths.append(shape)
+	return ng
+
+
+def CreateAllShapeComponents(font, sizex, sizey):
+
+	allshapes = []
+
+	circle = CreateShapeComponent(font, sizex, sizey, "circle", "CircleShape")
+	diamond = CreateShapeComponent(font, sizex, sizey, "diamond", "DiamondShape")
+	rectangle = CreateShapeComponent(font, sizex, sizey, "rectangle", "RectangleShape")
+	triangle = CreateShapeComponent(font, sizex, sizey, "triangle", "TriangleShape")
+
+	allshapes.append(circle)
+	allshapes.append(diamond)
+	allshapes.append(rectangle)
+	allshapes.append(triangle)
+
+	return allshapes
+
+
+def CreateLineComponent(font, direction, size, shapename):
+
+	if font.glyphs[shapename]: del font.glyphs[shapename]
+	ng = GSGlyph()
+	ng.name = shapename
+	ng.category = "Mark"
+	ng.export = True
+	font.glyphs.append(ng)
+	layer = font.glyphs[ng.name].layers[0]
+	layer.width = 0
+
+	#line = GSPath()
+	if direction=="vertical": line = drawRectangle(0,50,size,100)
+	if direction=="horizontal": line = drawRectangle(50,0,100,size)
+
+	layer.paths.append(line)
+
+	return ng
+
+
+def returnLineComponent(p1, p2, direction, component_glyphs_vh, source_component_len):
+
+	sx, sy = p1[0], p1[1]
+	ex, ey = p2[0], p2[1]
+	dist = distance([sx,sy],[ex,ey])
+
+	linev = component_glyphs_vh[0]
+	lineh = component_glyphs_vh[1]
+
+	if direction=="vertical": 
+		comp = GSComponent(linev)
+		scaley = (float(1)/source_component_len)*dist
+		scalex = 1
+	else: 
+		comp = GSComponent(lineh)
+		scaley = 1
+		scalex = (float(1)/source_component_len)*dist
+
+	comp.transform = ((scalex, 0.0, 0.0, scaley, sx, sy))
+	return comp
+
+
