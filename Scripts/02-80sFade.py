@@ -7,35 +7,7 @@ __doc__="""
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
+from NaNFilter import NaNFilter
 
 
 # THE MAIN CIRCLE FUNCTION ACTION
@@ -70,42 +42,22 @@ def do80sFade(thislayer, outlinedata, tilecoords, shape_components):
 		return fadecomps
 
 
-def Output80sFade():
+class EightiesFade(NaNFilter):
+	params = {
+		"S": {"offset": -5, "iterations": 50},
+		"M": {"offset": -15, "iterations": 400},
+		"L": {"offset": -20, "iterations": 420},
+	}
 
-	for glyph in selectedGlyphs:
 
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		#thislayer.removeOverlap()
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = -5
-			iterations = 50
-		if glyphsize=="M": 
-			offset = -15 
-			iterations = 400
-		if glyphsize=="L": 
-			offset = -20
-			iterations = 420
-
-		# ----
-
+	def processLayer(self, thislayer, params):
 		pathlist = doAngularizzle(thislayer.paths, 20)
 		outlinedata = setGlyphCoords(pathlist)
 
 		try:
 			startrect = AllPathBounds(thislayer)
 			allrectangles = MakeRectangles([startrect], 5)
-			shape_components = CreateAllShapeComponents(font, 100, 100)
+			shape_components = CreateAllShapeComponents(self.font, 100, 100)
 
 			fadecomps = []
 
@@ -121,33 +73,7 @@ def Output80sFade():
 			ClearPaths(thislayer)
 			AddAllComponentsToLayer(fadecomps, thislayer)
 
-		except:
-			print "Glyph (", glyph.name, ") failed to execute."
+		except Exception as e:
+			print("Layer (", thislayer.name, ") failed to execute.", e)
 
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-Output80sFade()
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
-
-
-
-
-
+EightiesFade()
