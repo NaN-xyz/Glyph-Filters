@@ -88,7 +88,7 @@ class Maze(NaNFilter):
 		walkerpaths = []
 
 		while len(self.available_slots)>0:
-			start = self.random.choice(self.available_slots)
+			start = random.choice(self.available_slots)
 			self.updateChecker(start[0], start[1])
 			walks = self.walker(thislayer, start)
 			walkerpaths.extend(walks)
