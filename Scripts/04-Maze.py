@@ -85,13 +85,7 @@ class Maze(NaNFilter):
 			self.available_slots.remove(item)
 
 	def isSlotFree(self, xpos, ypos):
-		free = True
-		item = [xpos, ypos]
-
-		if not item in self.available_slots:
-			free = False
-
-		return free
+		return [xpos, ypos] in self.available_slots:
 
 	def WalkerLoop(self, thislayer):
 		walkerpaths = []
