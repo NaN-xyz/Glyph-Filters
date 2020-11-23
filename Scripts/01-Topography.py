@@ -32,48 +32,45 @@ def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
 def ApplyCollageGraphixxx(thislayer, groups, drawtype, linecomponents):
 
 	for g in groups:
+		if len(g)<2:
+			continue
 
-		if len(g)>2:
+		templayer = GSLayer()
+		for path in g:
+			tp = path
+			templayer.paths.append(tp)
+		templayer.removeOverlap()
 
-			templayer = GSLayer()
-			for path in g:
-				tp = path
-				templayer.paths.append(tp)
-			templayer.removeOverlap()
+		for p in templayer.paths:
+			nodelen = len(p.nodes)
+			if nodelen<4:
+				continue
 
-			for p in templayer.paths: 
-				
-				nodelen = len(p.nodes)
+			try:
+				roundedpath = RoundPath(p, "nodes")
+				roundedpath = convertToFitpath(roundedpath, True)
+				pathlist = doAngularizzle([roundedpath],80)
+				outlinedata = setGlyphCoords(pathlist)
 
-				if nodelen>4:
+				try:
+					if drawtype=="vertical" or drawtype=="horizontal":
+						all_lines = Fill_Drawlines(layer, roundedpath, drawtype, 15, linecomponents)
+						AddAllComponentsToLayer(all_lines, layer)
 
-					try:
-						roundedpath = RoundPath(p, "nodes")
-						roundedpath = convertToFitpath(roundedpath, True)
-						pathlist = doAngularizzle([roundedpath],80)
-						outlinedata = setGlyphCoords(pathlist)
+					if drawtype=="blob":
+						# disallow small blobs
+						rw = roundedpath.bounds.size.width
+						rh = roundedpath.bounds.size.height
+						if (rw>30 and rh>30) and (rw<200 or rh<200): layer.paths.append(roundedpath)
 
-						try:
-							if drawtype=="vertical" or drawtype=="horizontal":
-								all_lines = Fill_Drawlines(thislayer, roundedpath, drawtype, 15, linecomponents)
-								AddAllComponentsToLayer(all_lines, thislayer)
-
-							if drawtype=="blob":
-								# disallow small blobs
-								rw = roundedpath.bounds.size.width
-								rh = roundedpath.bounds.size.height
-								if (rw>30 and rh>30) and (rw<200 or rh<200): thislayer.paths.append(roundedpath)
-
-						except:
-							pass
-
-					except:
-						pass
-				else:
+				except:
 					pass
 
+			except:
+				pass
 
-			del templayer
+
+		del templayer
 
 
 class Topography(NaNFilter):
