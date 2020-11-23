@@ -55,17 +55,10 @@ def ShiftPath(path, variance, type):
 
 
 def ChangeNodeStart(nodes):
+	"""Cycles a node list so it starts at a random position."""
 
-	newnodes = []
-	nodelen = len(nodes)
-	cutpt = random.randrange(0, nodelen)
-
-	part1 = nodes[0:cutpt]
-	part2 = nodes[cutpt:nodelen]
-	
-	for n in part2: newnodes.append(n)
-	for n in part1: newnodes.append(n)
-	return newnodes
+	cutpt = random.randrange(0, len(nodes))
+	return [ *nodes[0:cutpt], *nodes[cutpt:] ]
 
 
 def setGlyphCoords(pathlist):
