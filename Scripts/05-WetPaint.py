@@ -83,8 +83,7 @@ class Drip(NaNFilter):
 						searchblack = DistanceToNextBlack(thislayer, [x, y], [x2, y2], outlinedata, searchlimit=200)
 						#print searchblack
 
-						if searchblack is not None:
-							if searchblack < 200:
+						if searchblack is not None and searchblack < 200:
 								adjust = 0.2
 
 					# insert distance to next black checker here
