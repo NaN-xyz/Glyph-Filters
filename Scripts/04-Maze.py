@@ -127,8 +127,6 @@ class Maze(NaNFilter):
 		walkpath.nodes.append( startnode )
 
 		breakcounter=0
-		lastdirection = ""
-		nd, sd, ed, wd = False, False, False, False
 		walkcontinue = True
 		walkerpaths = []
 
