@@ -14,13 +14,9 @@ from NaNGFFitpath import *
 
 # --------------------------------------------
 
-# REMOVES PATHS *ONLY* AND LEAVES COMPONENTS, ANCHORS ETC IN PLACE
 def ClearPaths(thislayer):
-
-	count=0
-	for i in range( len( thislayer.paths ))[::-1]:
-		del thislayer.paths[i]
-		count += 1
+	"""Removes all paths in a layer, leaving anchors and components in place"""
+	thislayer.paths = []
 
 def ShiftPath(path, variance, type):
 
