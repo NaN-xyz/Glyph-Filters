@@ -106,7 +106,7 @@ def filterGSGlyphList(selectedG):
 			continue
 		newlist.append(g)
 		seen[g.name] = True
-  return newlist
+	return newlist
 
 def ContainsPaths(thislayer):
 	return len(thislayer.paths)>0
