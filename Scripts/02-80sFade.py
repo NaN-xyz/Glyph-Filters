@@ -45,13 +45,11 @@ class EightiesFade(NaNFilter):
 		ox, oy, w, h = b[0], b[1], b[2], b[3]
 
 		for y in range(oy, oy+h, 20):
-
 			for x in range(ox, ox+w, 20):
 				if withinGlyphBlack(x, y, outlinedata) and point_inside_polygon(x, y, tilecoords) and size>2:
 					fadecomp = GSComponent(r)
 					scale = size / 100.0
 					fadecomp.transform = ((scale, 0.0, 0.0, scale, x, y))
-					#thislayer.components.append(fadecomp)
 					fadecomps.append(fadecomp)
 				size+=0.01
 
