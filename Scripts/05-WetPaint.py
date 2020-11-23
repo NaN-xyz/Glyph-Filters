@@ -57,7 +57,6 @@ class Drip(NaNFilter):
 				index_start, index_end = seg
 
 				seedx = random.randrange(0,100000)
-				seedy = random.randrange(0,100000)
 				noisescale = 0.01
 
 				steps = float(index_end - index_start)
