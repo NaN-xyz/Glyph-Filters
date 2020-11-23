@@ -19,11 +19,9 @@ def ClearPaths(thislayer):
 	thislayer.paths = []
 
 def ShiftPath(path, variance, type):
-
+	"""Shifts a path by a random amount in x, y or both directions."""
 	shiftx = random.uniform(variance * -0.5, variance)
 	shifty = random.uniform(variance * -0.5, variance)
-	x = path.bounds.origin.x
-	y = path.bounds.origin.y
 
 	if type=="x":
 		path.applyTransform((
