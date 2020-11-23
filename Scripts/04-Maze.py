@@ -62,8 +62,7 @@ class Maze(NaNFilter):
 
 				x = self.ox + (stepx*self.unit)
 				shapepath = []
-				nx = x+self.unit/2
-				ny = y+self.unit/2
+				nx, ny = x+self.unit/2, y+self.unit/2
 				shape = drawTriangle(nx, ny, 6, 6)
 				shapepath.append(shape)
 
@@ -108,14 +107,12 @@ class Maze(NaNFilter):
 
 		while True:
 			dx, dy = random.choice(movements.values())
-			lookx = sx + dx
-			looky = sy + dy
+			lookx, looky = sx + dx, sy + dy
 			if [lookx, looky] in self.available_slots:
 				self.updateChecker(lookx, looky)
 				drawx, drawy = self.ox+(lookx*self.unit), self.oy+(looky*self.unit) 
 				walkpath.nodes.append( GSNode([drawx, drawy], type = GSLINE) )
-				sx = lookx
-				sy = looky
+				sx, sy = lookx, looky
 
 			breakcounter+=1
 			if breakcounter==1000:
