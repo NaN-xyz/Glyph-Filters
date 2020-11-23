@@ -20,7 +20,6 @@ class Drip(NaNFilter):
 	def doDrip(self, thislayer, outlinedata, maxdrip):
 		# find drippable segments within path and store indices
 		indices = []
-		pathcount = 0
 		degvariance = 40
 
 		for direction, nodes in outlinedata:
@@ -44,14 +43,13 @@ class Drip(NaNFilter):
 						index.append( [ index_start, index_end ] )
 					index_start = -999
 
-			indices.append([ pathcount, index ])
-			pathcount+=1
+			indices.append(index)
 
 		# run through each drippable segment and do something
 		for p in range(0, len(outlinedata)):
 			direction, structure = outlinedata[p]
 			nodelen = len(structure)
-			segs = indices[p][1]
+			segs = indices[p]
 
 			for seg in segs:
 				index_start, index_end = seg
