@@ -25,9 +25,7 @@ class Drip(NaNFilter):
 
 		for direction, nodes in outlinedata:
 			index = []
-			index_start = -999
-			index_end = -999
-
+			index_start, index_end = -999, -999
 			# collect all possible drippable segments within certain angle
 
 			for n in range(0,len(nodes)-1):
