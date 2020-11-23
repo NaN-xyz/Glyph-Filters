@@ -131,8 +131,6 @@ class Maze(NaNFilter):
 		walkerpaths = []
 
 		while walkcontinue==True:
-
-			found = 0
 			go = True
 
 			direction = random.choice(looklist)
@@ -141,7 +139,6 @@ class Maze(NaNFilter):
 			looky = sy + movements[direction][1]
 			if self.isSlotFree(lookx, looky):
 				self.updateChecker(lookx, looky)
-				found=1
 			else:
 				go = False
 
