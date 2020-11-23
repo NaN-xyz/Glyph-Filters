@@ -51,7 +51,6 @@ class Drip(NaNFilter):
 		for p in range(0, len(outlinedata)):
 			direction, structure = outlinedata[p]
 			nodelen = len(structure)
-			n=0
 			segs = indices[p][1]
 
 			for seg in segs:
@@ -65,7 +64,6 @@ class Drip(NaNFilter):
 				steppos = 0
 
 				for n in range(index_start, index_end):
-
 					angle = 180/steps * steppos
 					t = math.sin(math.radians(angle))
 					adjust = 1
