@@ -819,16 +819,14 @@ def isLayerSizeBelowThreshold(thislayer, maxw, maxh):
 
 def AddAllComponentsToLayer(components, thislayer):
 	try:
-		for c in components:
-			thislayer.components.append(c)
+			thislayer.components.extend(components)
 	except:
 		print "Couldn't add components to layer", thislayer
 
 
 def AddAllPathsToLayer(paths, thislayer):
 	try:
-		for path in paths:
-			thislayer.paths.append(path)
+			thislayer.paths.extend(paths)
 	except:
 		print "Couldn't add all paths to layer", thislayer
 
