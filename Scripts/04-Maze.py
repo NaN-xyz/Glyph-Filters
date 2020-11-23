@@ -107,7 +107,7 @@ class Maze(NaNFilter):
 		walkcontinue = True
 		walkerpaths = []
 
-		while walkcontinue==True:
+		while walkcontinue:
 			dx, dy = random.choice(movements.values())
 			lookx = sx + dx
 			looky = sy + dy
