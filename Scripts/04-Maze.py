@@ -138,11 +138,6 @@ class Maze(NaNFilter):
 			go = True
 
 			direction = random.choice(looklist)
-			if direction=="N": lastdirection="S"
-			if direction=="S": lastdirection="N"
-			if direction=="W": lastdirection="E"
-			if direction=="E": lastdirection="W"
-
 			if direction=="N":
 				lookx = sx
 				looky = sy+1
