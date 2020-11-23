@@ -7,40 +7,10 @@ __doc__="""
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
+from NaNFilter import NaNFilter
 
 
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
-
-
-# THE MAIN BUBBLE ACTION
-
-def Bubble(thislayer, outlinedata, minpush, maxpush):
+def doBubble(thislayer, outlinedata, minpush, maxpush):
 
 	for path in outlinedata:
 
@@ -96,68 +66,19 @@ def Bubble(thislayer, outlinedata, minpush, maxpush):
 		thislayer.paths.append(bubble)
 
 
-def OutputBubble():
+class Bubble(NaNFilter):
+	params = {
+		"S":  { "offset": -5, "minfur": 20, "maxfur": 50 },
+		"M":  { "offset": -10, "minfur": 40, "maxfur": 100 },
+		"L":  { "offset": -20, "minfur": 60, "maxfur": 120 }
+	}
 
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = -5
-			minfur, maxfur = 20, 50
-		if glyphsize=="M": 
-			offset = -10
-			minfur, maxfur = 40, 100
-		if glyphsize=="L": 
-			offset = -20
-			minfur, maxfur = 60, 120
-
-		if glyphsize=="S": offset = -5
-		if glyphsize=="M": offset = -10
-		if glyphsize=="L": offset = -20
-
-		offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=False)
+	def processLayer(self, thislayer, params):
+		offset = params["offset"]
+		offsetpaths = self.saveOffsetPaths(thislayer, offset, offset, removeOverlap=False)
 		pathlist = doAngularizzle(offsetpaths, 4)
 		outlinedata = setGlyphCoords(pathlist)
-
 		ClearPaths(thislayer)
+		doBubble(thislayer, outlinedata, 60, 80)
 
-		Bubble(thislayer, outlinedata, 60, 80)
-
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-OutputBubble()
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
-
-
-
-
-
+Bubble()
