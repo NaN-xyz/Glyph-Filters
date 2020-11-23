@@ -105,7 +105,7 @@ class Maze(NaNFilter):
 		breakcounter=0
 		walkerpaths = []
 
-		while True:
+		while breakcounter < 1000:
 			dx, dy = random.choice(movements.values())
 			lookx, looky = sx + dx, sy + dy
 			if [lookx, looky] in self.available_slots:
@@ -115,8 +115,6 @@ class Maze(NaNFilter):
 				sx, sy = lookx, looky
 
 			breakcounter+=1
-			if breakcounter==1000:
-				break
 
 		if (len(walkpath.nodes))==1: walkpath.nodes.append(startnode)
 
