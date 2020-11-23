@@ -114,8 +114,6 @@ class Maze(NaNFilter):
 		return self.available_slots[ random.randrange(0, len(self.available_slots)) ]
 
 	def Walker(self, thislayer, start):
-
-		go = True
 		looklist = ["N","S","E","W"]
 		startx, starty = start[0], start[1]
 		walkpath = GSPath()
@@ -131,18 +129,12 @@ class Maze(NaNFilter):
 		walkerpaths = []
 
 		while walkcontinue==True:
-			go = True
-
 			direction = random.choice(looklist)
 			movements = { "N": (0,1), "S": (0,-1), "E": (1,0), "W": (-1,0) }
 			lookx = sx + movements[direction][0]
 			looky = sy + movements[direction][1]
 			if self.isSlotFree(lookx, looky):
 				self.updateChecker(lookx, looky)
-			else:
-				go = False
-
-			if go==True:
 				drawx, drawy = self.ox+(lookx*self.unit), self.oy+(looky*self.unit) 
 				walkpath.nodes.append( GSNode([drawx, drawy], type = GSLINE) )
 				sx = lookx
