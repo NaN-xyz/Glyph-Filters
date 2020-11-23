@@ -14,34 +14,19 @@ from NaNFilter import NaNFilter
 
 def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
 
-	final_in_triangles = []
-	in_triangles = []
-	out_triangles = []
-	edge_triangles = []
-
 	isogrid = makeIsometricGrid(bounds, gridsize)
 	alltriangles = IsoGridToTriangles(isogrid)
 
 	# Return triangles within and without
-	in_out_triangles = returnTriangleTypes(alltriangles, outlinedata)
-	in_triangles = in_out_triangles[0]
-	out_triangles = in_out_triangles[1]
+	in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
 
 	edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
 	#edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)	
 
-	final_in_triangles.extend(in_triangles)
+	final_in_triangles = in_triangles
 	final_in_triangles.extend(edge_triangles)
 
-	# for triangle in edge_triangles:
-	# 	tricoords = SimplifyTriangleList(triangle)
-	# 	if ShapeWithinOutlines(tricoords, outlinedata2): final_in_triangles.append(triangle)
-
 	return TrianglesListToPaths(final_in_triangles)
-
-	
-
-# ---------
 
 
 def ApplyCollageGraphixxx(thislayer, groups, drawtype, linecomponents):
