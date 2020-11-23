@@ -27,11 +27,8 @@ class Drip(NaNFilter):
 		pathcount = 0
 		degvariance = 40
 
-		for path in outlinedata:
-
-			direction = path[0]
-			structure = path[1]
-			nodelen = len(structure)
+		for direction, nodes in outlinedata:
+			nodelen = len(nodes)
 			index = []
 			n=0
 			index_start = -999
@@ -40,11 +37,8 @@ class Drip(NaNFilter):
 			# collect all possible drippable segments within certain angle
 
 			while n < nodelen-1:
-
-				x1 = structure[n][0]
-				y1 = structure[n][1]
-				x2 = structure[n+1][0]
-				y2 = structure[n+1][1]
+				x1,y1 = nodes[n]
+				x2,y2 = nodes[n+1]
 				a = atan2(y1-y2, x1-x2)
 				deg = degrees(a)
 
@@ -68,17 +62,13 @@ class Drip(NaNFilter):
 
 
 		for p in range(0, len(outlinedata)):
-
-			direction = outlinedata[p][0]
-			structure = outlinedata[p][1]
+			direction, structure = outlinedata[p]
 			nodelen = len(structure)
 			n=0
 			segs = indices[p][1]
 
 			for seg in segs:
-
-				index_start = seg[0]
-				index_end = seg[1]
+				index_start, index_end = seg
 
 				seedx = random.randrange(0,100000)
 				seedy = random.randrange(0,100000)
@@ -93,13 +83,10 @@ class Drip(NaNFilter):
 					t = math.sin(math.radians(angle))
 					adjust = 1
 
-					x = structure[n][0]
-					y = structure[n][1]
+					x,y = structure[n]
 
 					if n < index_end:
-
-						x2 = structure[n+1][0]
-						y2 = structure[n+1][1]
+						x2, y2 = structure[n+1]
 
 						searchblack = DistanceToNextBlack(thislayer, [x, y], [x2, y2], outlinedata, searchlimit=200)
 						#print searchblack
