@@ -33,7 +33,7 @@ class Maze(NaNFilter):
 
 			ClearPaths(thislayer)
 
-			walkpaths = self.WalkerLoop(thislayer)
+			walkpaths = self.walkerLoop(thislayer)
 			AddAllPathsToLayer(walkpaths, thislayer)
 			
 			self.expandMonoline(thislayer, 6)
@@ -84,18 +84,18 @@ class Maze(NaNFilter):
 		if item in self.available_slots:
 			self.available_slots.remove(item)
 
-	def WalkerLoop(self, thislayer):
+	def walkerLoop(self, thislayer):
 		walkerpaths = []
 
 		while len(self.available_slots)>0:
 			start = self.random.choice(self.available_slots)
 			self.updateChecker(start[0], start[1])
-			walks = self.Walker(thislayer, start)
+			walks = self.walker(thislayer, start)
 			walkerpaths.extend(walks)
 
 		return walkerpaths
 
-	def Walker(self, thislayer, start):
+	def walker(self, thislayer, start):
 		looklist = ["N","S","E","W"]
 		startx, starty = start[0], start[1]
 		walkpath = GSPath()
