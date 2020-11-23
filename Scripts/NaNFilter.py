@@ -10,7 +10,7 @@ class NaNFilter:
             self.processGlyph(glyph)
         endFilterNaN(self.font)
 
-    def setup():
+    def setup(self):
         pass
 
     def processGlyph(self, glyph):
