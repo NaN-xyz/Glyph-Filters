@@ -46,24 +46,20 @@ def ApplyCollageGraphixxx(thislayer, groups, drawtype, linecomponents):
 			if nodelen<4:
 				continue
 
-			try:
-				roundedpath = RoundPath(p, "nodes")
-				roundedpath = convertToFitpath(roundedpath, True)
-				pathlist = doAngularizzle([roundedpath],80)
-				outlinedata = setGlyphCoords(pathlist)
+			roundedpath = RoundPath(p, "nodes")
+			roundedpath = convertToFitpath(roundedpath, True)
+			pathlist = doAngularizzle([roundedpath],80)
+			outlinedata = setGlyphCoords(pathlist)
 
-				if drawtype=="vertical" or drawtype=="horizontal":
-					all_lines = Fill_Drawlines(layer, roundedpath, drawtype, 15, linecomponents)
-					AddAllComponentsToLayer(all_lines, layer)
+			if drawtype=="vertical" or drawtype=="horizontal":
+				all_lines = Fill_Drawlines(layer, roundedpath, drawtype, 15, linecomponents)
+				AddAllComponentsToLayer(all_lines, layer)
 
-				if drawtype=="blob":
-					# disallow small blobs
-					rw = roundedpath.bounds.size.width
-					rh = roundedpath.bounds.size.height
-					if (rw>30 and rh>30) and (rw<200 or rh<200): layer.paths.append(roundedpath)
-
-			except:
-				pass
+			if drawtype=="blob":
+				# disallow small blobs
+				rw = roundedpath.bounds.size.width
+				rh = roundedpath.bounds.size.height
+				if (rw>30 and rh>30) and (rw<200 or rh<200): layer.paths.append(roundedpath)
 
 
 		del templayer
