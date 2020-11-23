@@ -138,41 +138,14 @@ class Maze(NaNFilter):
 			go = True
 
 			direction = random.choice(looklist)
-			if direction=="N":
-				lookx = sx
-				looky = sy+1
-				if self.isSlotFree(lookx, looky):
-					self.updateChecker(lookx, looky)
-					found=1
-				else:
-					go = False
-
-			if direction=="S":
-				lookx = sx
-				looky = sy-1
-				if self.isSlotFree(lookx, looky):
-					self.updateChecker(lookx, looky)
-					found=1
-				else:
-					go = False
-
-			if direction=="E":
-				lookx = sx+1
-				looky = sy
-				if self.isSlotFree(lookx, looky):
-					self.updateChecker(lookx, looky)
-					found=1
-				else:
-					go = False
-
-			if direction=="W":
-				lookx = sx-1
-				looky = sy
-				if self.isSlotFree(lookx, looky):
-					self.updateChecker(lookx, looky)
-					found=1
-				else:
-					go = False
+			movements = { "N": (0,1), "S": (0,-1), "E": (1,0), "W": (-1,0) }
+			lookx = sx + movements[direction][0]
+			looky = sy + movements[direction][1]
+			if self.isSlotFree(lookx, looky):
+				self.updateChecker(lookx, looky)
+				found=1
+			else:
+				go = False
 
 			if go==True:
 				drawx, drawy = self.ox+(lookx*self.unit), self.oy+(looky*self.unit) 
