@@ -12,59 +12,6 @@ from NaNGFSpacePartition import *
 from NaNFilter import NaNFilter
 
 
-def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
-
-	isogrid = makeIsometricGrid(bounds, gridsize)
-	alltriangles = IsoGridToTriangles(isogrid)
-
-	# Return triangles within and without
-	in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
-
-	edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
-	#edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)	
-
-	final_in_triangles = in_triangles
-	final_in_triangles.extend(edge_triangles)
-
-	return TrianglesListToPaths(final_in_triangles)
-
-
-def ApplyCollageGraphixxx(layer, groups, drawtype, linecomponents):
-
-	for g in groups:
-		if len(g)<2:
-			continue
-
-		templayer = GSLayer()
-		for path in g:
-			tp = path
-			templayer.paths.append(tp)
-		templayer.removeOverlap()
-
-		for p in templayer.paths:
-			nodelen = len(p.nodes)
-			if nodelen<4:
-				continue
-
-			roundedpath = RoundPath(p, "nodes")
-			roundedpath = convertToFitpath(roundedpath, True)
-			pathlist = doAngularizzle([roundedpath],80)
-			outlinedata = setGlyphCoords(pathlist)
-
-			if drawtype=="vertical" or drawtype=="horizontal":
-				all_lines = Fill_Drawlines(layer, roundedpath, drawtype, 15, linecomponents)
-				AddAllComponentsToLayer(all_lines, layer)
-
-			if drawtype=="blob":
-				# disallow small blobs
-				rw = roundedpath.bounds.size.width
-				rh = roundedpath.bounds.size.height
-				if (rw>30 and rh>30) and (rw<200 or rh<200): layer.paths.append(roundedpath)
-
-
-		del templayer
-
-
 class Topography(NaNFilter):
 
 	params = {
@@ -105,14 +52,65 @@ class Topography(NaNFilter):
 		]
 
 		for maxchain, shape in iterations:
-			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
+			newtris = self.SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
 			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, shape, self.linecomponents)
+			self.ApplyCollageGraphixxx(thislayer, groups, shape, self.linecomponents)
 
 	def processLayerSmall(self, thislayer):
 		thislayer.removeOverlap()
 		roundedpathlist = returnRoundedPaths(thislayer.paths)
 		ClearPaths(thislayer)
 		AddAllPathsToLayer(roundedpathlist, thislayer)
+
+	def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds):
+
+		isogrid = makeIsometricGrid(bounds, gridsize)
+		alltriangles = IsoGridToTriangles(isogrid)
+
+		# Return triangles within and without
+		in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
+
+		edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
+		#edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)	
+
+		final_in_triangles = in_triangles
+		final_in_triangles.extend(edge_triangles)
+
+		return TrianglesListToPaths(final_in_triangles)
+
+	def ApplyCollageGraphixxx(self, layer, groups, drawtype, linecomponents):
+
+		for g in groups:
+			if len(g)<2:
+				continue
+
+			templayer = GSLayer()
+			for path in g:
+				tp = path
+				templayer.paths.append(tp)
+			templayer.removeOverlap()
+
+			for p in templayer.paths:
+				nodelen = len(p.nodes)
+				if nodelen<4:
+					continue
+
+				roundedpath = RoundPath(p, "nodes")
+				roundedpath = convertToFitpath(roundedpath, True)
+				pathlist = doAngularizzle([roundedpath],80)
+				outlinedata = setGlyphCoords(pathlist)
+
+				if drawtype=="vertical" or drawtype=="horizontal":
+					all_lines = Fill_Drawlines(layer, roundedpath, drawtype, 15, linecomponents)
+					AddAllComponentsToLayer(all_lines, layer)
+
+				if drawtype=="blob":
+					# disallow small blobs
+					rw = roundedpath.bounds.size.width
+					rh = roundedpath.bounds.size.height
+					if (rw>30 and rh>30) and (rw<200 or rh<200): layer.paths.append(roundedpath)
+
+
+			del templayer
 
 Topography()
