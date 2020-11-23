@@ -47,8 +47,7 @@ class Drip(NaNFilter):
 
 		return indices
 
-	def doDrip(self, thislayer, outlinedata, maxdrip):
-		indices = self.getDrippableSegments(outlinedata)
+	def doDrip(self, thislayer, indices, outlinedata, maxdrip):
 		# run through each drippable segment and do something
 		for p in range(0, len(outlinedata)):
 			direction, structure = outlinedata[p]
@@ -92,17 +91,19 @@ class Drip(NaNFilter):
 					steppos+=1
 
 
-		# draw updated outline
-		for path in outlinedata:
-			p = convertToFitpath(path[1], True)
-			thislayer.paths.append(p)
-
-
 	def processLayer(self, thislayer, params):
 		for n in range(0, params["iterations"]):
 			pathlist = doAngularizzle(thislayer.paths, 4) # small seg size = quicker
 			outlinedata = setGlyphCoords(pathlist)
-			self.doDrip(thislayer, outlinedata, params["maxdrip"])
+			indices = self.getDrippableSegments(outlinedata)
+
+			# Modifies outlinedata
+			self.doDrip(thislayer, indices, outlinedata, params["maxdrip"])
+
+			# draw updated outline
+			for path in outlinedata:
+				p = convertToFitpath(path[1], True)
+				thislayer.paths.append(p)
 
 Drip()
 Font.enableUpdateInterface()
