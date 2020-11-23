@@ -25,20 +25,14 @@ class Bubble(NaNFilter):
 		ClearPaths(thislayer)
 		minpush = 60
 		maxpush = 80
-		for path in outlinedata:
-
-			direction = path[0]
-			structure = path[1]
+		for direction, structure in outlinedata:
 			nodelen = len(structure)
 			bubble = GSPath()
 			n = 0
 
 			while n < nodelen:
-
-				x1 = structure[n][0]
-				y1 = structure[n][1]
-				minstep = 10
-				maxstep = 40
+				x1, y1 = structure[n]
+				minstep, maxstep = 10, 40
 
 				if direction=="False": maxstep=int(maxstep*0.5)
 				step = random.randrange(minstep, maxstep)
@@ -50,12 +44,10 @@ class Bubble(NaNFilter):
 				# --- set node pos for main or end
 
 				if n<nodelen-1:
-					x2 = structure[n+step][0]
-					y2 = structure[n+step][1]
+					x2,y2 = structure[n+step]
 					n+=step
 				else:
-					x2 = structure[0][0]
-					y2 = structure[0][1]
+					x2,y2 = structure[0][0]
 
 				#if distance([x1, y1], [x2, y2]) < 1:
 				#	continue
@@ -63,8 +55,7 @@ class Bubble(NaNFilter):
 				a = atan2(y1-y2, x1-x2)
 				a += radians(90)
 				pushdist = random.randrange(minpush, maxpush) 
-				linex = pushdist * cos(a)
-				liney = pushdist * sin(a)
+				linex, liney = pushdist * cos(a), pushdist * sin(a)
 
 				if direction=="False":
 					linex*=0.5
