@@ -29,7 +29,7 @@ def do80sFade(thislayer, outlinedata, tilecoords, shape_components):
 		for x in range(ox, ox+w, 20):
 			if withinGlyphBlack(x, y, outlinedata) and point_inside_polygon(x, y, tilecoords) and size>2:
 				fadecomp = GSComponent(r)
-				scale = (float(1)/100)*size
+				scale = size / 100.0
 				fadecomp.transform = ((scale, 0.0, 0.0, scale, x, y))
 				#thislayer.components.append(fadecomp)
 				fadecomps.append(fadecomp)
