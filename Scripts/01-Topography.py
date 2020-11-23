@@ -91,41 +91,43 @@ class Topography(NaNFilter):
 		self.linecomponents.extend([line_vertical_comp, line_horizontal_comp])
 
 	def processLayer(self, thislayer, params):
-		offset, gridsize = params["offset"], params["gridsize"]
-
-		if glyphsize!="S":
-
-			pathlist = doAngularizzle(thislayer.paths, 20)
-			outlinedata = setGlyphCoords(pathlist)
-			bounds = AllPathBounds(thislayer)
-			
-			offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
-			pathlist2 = doAngularizzle(offsetpaths, 4)
-			outlinedata2 = setGlyphCoords(pathlist2)
-			bounds2 = AllPathBoundsFromPathList(pathlist2)
-
-			ClearPaths(thislayer)
-
-			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-			maxchain = random.randrange(200,400)
-			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "vertical", self.linecomponents)
-
-			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-			maxchain = random.randrange(200,400)
-			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "horizontal", self.linecomponents)
-
-			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-			maxchain = random.randrange(70,100)
-			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "blob", self.linecomponents)
-
+		if glyphSize(thislayer.parent)=="S":
+			self.processLayerSmall(thislayer)
 		else:
+			self.processLayerLarge(thislayer, params)
 
-			thislayer.removeOverlap()
-			roundedpathlist = returnRoundedPaths(thislayer.paths)
-			ClearPaths(thislayer)
-			AddAllPathsToLayer(roundedpathlist, thislayer)
+	def processLayerLarge(self, thislayer, params):
+		offset, gridsize = params["offset"], params["gridsize"]
+		pathlist = doAngularizzle(thislayer.paths, 20)
+		outlinedata = setGlyphCoords(pathlist)
+		bounds = AllPathBounds(thislayer)
+		
+		offsetpaths = self.saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
+		pathlist2 = doAngularizzle(offsetpaths, 4)
+		outlinedata2 = setGlyphCoords(pathlist2)
+		bounds2 = AllPathBoundsFromPathList(pathlist2)
+
+		ClearPaths(thislayer)
+
+		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
+		maxchain = random.randrange(200,400)
+		groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
+		ApplyCollageGraphixxx(thislayer, groups, "vertical", self.linecomponents)
+
+		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
+		maxchain = random.randrange(200,400)
+		groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
+		ApplyCollageGraphixxx(thislayer, groups, "horizontal", self.linecomponents)
+
+		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
+		maxchain = random.randrange(70,100)
+		groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
+		ApplyCollageGraphixxx(thislayer, groups, "blob", self.linecomponents)
+
+	def processLayerSmall(self, thislayer):
+		thislayer.removeOverlap()
+		roundedpathlist = returnRoundedPaths(thislayer.paths)
+		ClearPaths(thislayer)
+		AddAllPathsToLayer(roundedpathlist, thislayer)
 
 Topography()
