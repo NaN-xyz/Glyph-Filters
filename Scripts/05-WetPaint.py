@@ -24,15 +24,13 @@ class Drip(NaNFilter):
 		degvariance = 40
 
 		for direction, nodes in outlinedata:
-			nodelen = len(nodes)
 			index = []
-			n=0
 			index_start = -999
 			index_end = -999
 
 			# collect all possible drippable segments within certain angle
 
-			while n < nodelen-1:
+			for n in range(0,len(nodes)-1):
 				x1,y1 = nodes[n]
 				x2,y2 = nodes[n+1]
 				a = atan2(y1-y2, x1-x2)
@@ -47,7 +45,6 @@ class Drip(NaNFilter):
 					if index_start != -999:
 						index.append( [ index_start, index_end ] )
 					index_start = -999
-				n+=1
 
 			indices.append([ pathcount, index ])
 			pathcount+=1
