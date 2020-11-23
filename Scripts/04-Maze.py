@@ -88,15 +88,12 @@ class Maze(NaNFilter):
 		walkerpaths = []
 
 		while len(self.available_slots)>0:
-			start = self.RandomStartPt()
+			start = self.random.choice(self.available_slots)
 			self.updateChecker(start[0], start[1])
 			walks = self.Walker(thislayer, start)
 			walkerpaths.extend(walks)
 
 		return walkerpaths
-
-	def RandomStartPt(self):
-		return random.choice(self.available_slots)
 
 	def Walker(self, thislayer, start):
 		looklist = ["N","S","E","W"]
