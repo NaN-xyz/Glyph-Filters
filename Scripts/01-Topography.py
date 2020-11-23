@@ -29,7 +29,7 @@ def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
 	return TrianglesListToPaths(final_in_triangles)
 
 
-def ApplyCollageGraphixxx(thislayer, groups, drawtype, linecomponents):
+def ApplyCollageGraphixxx(layer, groups, drawtype, linecomponents):
 
 	for g in groups:
 		if len(g)<2:
