@@ -52,7 +52,6 @@ class EightiesFade(NaNFilter):
 
 			for n in range(0, len(allrectangles)):
 				x,y,w,h = allrectangles[n]
-				tile = [x,y,w,h]
 				tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
 				fadecomps.extend(do80sFade(thislayer, outlinedata, tilecoords, shape_components) )
 
