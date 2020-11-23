@@ -16,25 +16,26 @@ def do80sFade(thislayer, outlinedata, tilecoords, shape_components):
 
 	b = AllPathBounds(thislayer)
 
-	if b is not None:
+	if b is None:
+		return []
 
-		fadecomps = []
-		size=random.randrange(4,15)
-		r = random.choice(shape_components)
-		ox, oy, w, h = b[0], b[1], b[2], b[3]
+	fadecomps = []
+	size=random.randrange(4,15)
+	r = random.choice(shape_components)
+	ox, oy, w, h = b[0], b[1], b[2], b[3]
 
-		for y in range(oy, oy+h, 20):
+	for y in range(oy, oy+h, 20):
 
-			for x in range(ox, ox+w, 20):
-				if withinGlyphBlack(x, y, outlinedata) and point_inside_polygon(x, y, tilecoords) and size>2:
-					fadecomp = GSComponent(r)
-					scale = (float(1)/100)*size
-					fadecomp.transform = ((scale, 0.0, 0.0, scale, x, y))
-					#thislayer.components.append(fadecomp)
-					fadecomps.append(fadecomp)
-				size+=0.01
+		for x in range(ox, ox+w, 20):
+			if withinGlyphBlack(x, y, outlinedata) and point_inside_polygon(x, y, tilecoords) and size>2:
+				fadecomp = GSComponent(r)
+				scale = (float(1)/100)*size
+				fadecomp.transform = ((scale, 0.0, 0.0, scale, x, y))
+				#thislayer.components.append(fadecomp)
+				fadecomps.append(fadecomp)
+			size+=0.01
 
-		return fadecomps
+	return fadecomps
 
 
 class EightiesFade(NaNFilter):
