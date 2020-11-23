@@ -41,13 +41,9 @@ class Maze(NaNFilter):
 
 	def setupChecker(self, bounds):
 		self.available_slots = []
-		self.ox = int(bounds[0])
-		self.oy = int(bounds[1])
-		self.ow = int(bounds[2])
-		self.oh = int(bounds[3])
-
-		self.ysteps = int ( math.floor ( self.oh / self.unit ) )
-		self.xsteps = int ( math.floor ( self.ow / self.unit ) )
+		self.ox, self.oy, self.ow, self.oh = bounds
+		self.ysteps = self.oh // self.unit
+		self.xsteps = self.ow // self.unit
 		self.checker = []
 
 		for stepy in range(0, self.ysteps+3):
