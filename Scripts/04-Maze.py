@@ -4,202 +4,10 @@ __doc__="""
 04. Maze
 """
 
-
-
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
-
-# Main Walker Function
-
-
-def WalkerLoop(thislayer):
-
-	walkerpaths = []
-
-	while len(available_slots)>0:
-		start = RandomStartPt()
-		updateChecker(start[0], start[1])
-		walks = Walker(thislayer, start)
-		walkerpaths.extend(walks)
-
-	return walkerpaths
-
-
-def Walker(thislayer, start):
-
-	go = True
-	looklist = ["N","S","E","W"]
-	startx, starty = start[0], start[1]
-	walkpath = GSPath()
-	
-	sx, sy = startx, starty
-	nx, ny = startx, starty
-
-	startnode = GSNode([ox+(sx*unit), oy+(sy*unit)], type = GSLINE)
-	walkpath.nodes.append( startnode )
-
-	breakcounter=0
-	lastdirection = ""
-	nd, sd, ed, wd = False, False, False, False
-	walkcontinue = True
-	walkerpaths = []
-
-	while walkcontinue==True:
-
-		found = 0
-		go = True
-
-		direction = random.choice(looklist)
-		if direction=="N": lastdirection="S"
-		if direction=="S": lastdirection="N"
-		if direction=="W": lastdirection="E"
-		if direction=="E": lastdirection="W"
-
-		if direction=="N" and direction!=lastdirection:
-			lookx = sx
-			looky = sy+1
-			if isSlotFree(lookx, looky):
-				updateChecker(lookx, looky)
-				found=1
-			else:
-				go = False
-
-		if direction=="S" and direction!=lastdirection:
-			lookx = sx
-			looky = sy-1
-			if isSlotFree(lookx, looky):
-				updateChecker(lookx, looky)
-				found=1
-			else:
-				go = False
-
-		if direction=="E" and direction!=lastdirection:
-			lookx = sx+1
-			looky = sy
-			if isSlotFree(lookx, looky):
-				updateChecker(lookx, looky)
-				found=1
-			else:
-				go = False
-
-		if direction=="W" and direction!=lastdirection:
-			lookx = sx-1
-			looky = sy
-			if isSlotFree(lookx, looky):
-				updateChecker(lookx, looky)
-				found=1
-			else:
-				go = False
-
-		if go==True:
-			drawx, drawy = ox+(lookx*unit), oy+(looky*unit) 
-			walkpath.nodes.append( GSNode([drawx, drawy], type = GSLINE) )
-			sx = lookx
-			sy = looky
-
-		breakcounter+=1
-		if breakcounter==1000:
-			break
-
-	if (len(walkpath.nodes))==1: walkpath.nodes.append(startnode)
-
-	walkerpaths.append(walkpath)
-	return walkerpaths
-
-
-
-def SetAvailableSlots(thislayer, outlinedata):
-
-	global available_slots
-	global oy, ox
-
-	for stepy in range(0, ysteps+3, 1):
-
-		y = oy + (stepy*unit)
-
-		for stepx in range(0, xsteps+3, 1):
-
-			x = ox + (stepx*unit)
-			shapepath = []
-			nx = x+unit/2
-			ny = y+unit/2
-			shape = drawTriangle(nx, ny, 6, 6)
-			shapepath.append(shape)
-
-			nshape = doAngularizzle(shapepath, 10)
-			nshape = setGlyphCoords(nshape)
-			finalshape = nshape[0][1]
-			
-			if ShapeWithinOutlines(finalshape, outlinedata):
-				setChecker(stepx, stepy, True)
-				available_slots.append([stepx, stepy])
-			else:
-				setChecker(stepx, stepy, False)
-
-
-def setChecker(xpos, ypos, checktype):
-
-	global checker
-	try:
-		checker[ypos][xpos] = checktype
-	except:
-		pass
-
-def updateChecker(xpos, ypos):
-
-	global checker
-	global available_slots
-
-	try:
-		checker[ypos][xpos] = False
-	except:
-		pass
-
-	item = [xpos, ypos]
-	if item in available_slots: 
-		available_slots.remove(item)
-
-
-def isSlotFree(xpos, ypos):
-
-	global available_slots, checker
-
-	free = True
-	item = [xpos, ypos]
-
-	if not item in available_slots: 
-		free = False
-
-	return free
-
-
-def SetChecker(bounds):
-
-	global xsteps, ysteps, checker, sizes, unit
-	global ox, oy, ow, oh
-	global available_slots
-
-	available_slots = []
-	ox = int(bounds[0])
-	oy = int(bounds[1])
-	ow = int(bounds[2])
-	oh = int(bounds[3])
-
-	ysteps = int ( math.floor ( oh / unit ) )
-	xsteps = int ( math.floor ( ow / unit ) )
-	checker = []
-
-	for stepy in range(0, ysteps):
-		xlist = []
-		for stepx in range(0, xsteps):
-			xlist.append(True)
-		checker.append(xlist)
-
-
-def RandomStartPt():
-	return available_slots[ random.randrange(0, len(available_slots)) ]
 
 
 class Maze(NaNFilter):
@@ -210,8 +18,7 @@ class Maze(NaNFilter):
 	}
 
 	def setup(self):
-		global unit # For now.
-		unit = stepsize = 30
+		self.unit = 30
 
 	def processLayer(self, thislayer, params):
 		offset = params["offset"]
@@ -221,17 +28,171 @@ class Maze(NaNFilter):
 			outlinedata = setGlyphCoords(pathlist)
 
 			bounds = AllPathBounds(thislayer)
-			SetChecker(bounds)
-			SetAvailableSlots(thislayer, outlinedata)
+			self.setupChecker(bounds)
+			self.setAvailableSlots(thislayer, outlinedata)
 
 			ClearPaths(thislayer)
 
-			walkpaths = WalkerLoop(thislayer)
+			walkpaths = self.WalkerLoop(thislayer)
 			AddAllPathsToLayer(walkpaths, thislayer)
 			
 			self.expandMonoline(thislayer, 6)
 			thislayer.removeOverlap()
 
+	def setupChecker(self, bounds):
+		self.available_slots = []
+		self.ox = int(bounds[0])
+		self.oy = int(bounds[1])
+		self.ow = int(bounds[2])
+		self.oh = int(bounds[3])
+
+		self.ysteps = int ( math.floor ( self.oh / self.unit ) )
+		self.xsteps = int ( math.floor ( self.ow / self.unit ) )
+		self.checker = []
+
+		for stepy in range(0, self.ysteps+3):
+			xlist = []
+			for stepx in range(0, self.xsteps+3):
+				xlist.append(True)
+			self.checker.append(xlist)
+
+	def setChecker(self, xpos, ypos, checktype):
+		self.checker[ypos][xpos] = checktype
+
+	def setAvailableSlots(self, thislayer, outlinedata):
+		for stepy in range(0, self.ysteps+3, 1):
+
+			y = self.oy + (stepy*self.unit)
+
+			for stepx in range(0, self.xsteps+3, 1):
+
+				x = self.ox + (stepx*self.unit)
+				shapepath = []
+				nx = x+self.unit/2
+				ny = y+self.unit/2
+				shape = drawTriangle(nx, ny, 6, 6)
+				shapepath.append(shape)
+
+				nshape = doAngularizzle(shapepath, 10)
+				nshape = setGlyphCoords(nshape)
+				finalshape = nshape[0][1]
+				
+				if ShapeWithinOutlines(finalshape, outlinedata):
+					self.setChecker(stepx, stepy, True)
+					self.available_slots.append([stepx, stepy])
+				else:
+					self.setChecker(stepx, stepy, False)
+
+	def updateChecker(self, xpos, ypos):
+		self.checker[ypos][xpos] = False
+
+		item = [xpos, ypos]
+		if item in self.available_slots:
+			self.available_slots.remove(item)
+
+	def isSlotFree(self, xpos, ypos):
+		free = True
+		item = [xpos, ypos]
+
+		if not item in self.available_slots:
+			free = False
+
+		return free
+
+	def WalkerLoop(self, thislayer):
+		walkerpaths = []
+
+		while len(self.available_slots)>0:
+			start = self.RandomStartPt()
+			self.updateChecker(start[0], start[1])
+			walks = self.Walker(thislayer, start)
+			walkerpaths.extend(walks)
+
+		return walkerpaths
+
+	def RandomStartPt(self):
+		return self.available_slots[ random.randrange(0, len(self.available_slots)) ]
+
+	def Walker(self, thislayer, start):
+
+		go = True
+		looklist = ["N","S","E","W"]
+		startx, starty = start[0], start[1]
+		walkpath = GSPath()
+		
+		sx, sy = startx, starty
+		nx, ny = startx, starty
+
+		startnode = GSNode([self.ox+(sx*self.unit), self.oy+(sy*self.unit)], type = GSLINE)
+		walkpath.nodes.append( startnode )
+
+		breakcounter=0
+		lastdirection = ""
+		nd, sd, ed, wd = False, False, False, False
+		walkcontinue = True
+		walkerpaths = []
+
+		while walkcontinue==True:
+
+			found = 0
+			go = True
+
+			direction = random.choice(looklist)
+			if direction=="N": lastdirection="S"
+			if direction=="S": lastdirection="N"
+			if direction=="W": lastdirection="E"
+			if direction=="E": lastdirection="W"
+
+			if direction=="N" and direction!=lastdirection:
+				lookx = sx
+				looky = sy+1
+				if self.isSlotFree(lookx, looky):
+					self.updateChecker(lookx, looky)
+					found=1
+				else:
+					go = False
+
+			if direction=="S" and direction!=lastdirection:
+				lookx = sx
+				looky = sy-1
+				if self.isSlotFree(lookx, looky):
+					self.updateChecker(lookx, looky)
+					found=1
+				else:
+					go = False
+
+			if direction=="E" and direction!=lastdirection:
+				lookx = sx+1
+				looky = sy
+				if self.isSlotFree(lookx, looky):
+					self.updateChecker(lookx, looky)
+					found=1
+				else:
+					go = False
+
+			if direction=="W" and direction!=lastdirection:
+				lookx = sx-1
+				looky = sy
+				if self.isSlotFree(lookx, looky):
+					self.updateChecker(lookx, looky)
+					found=1
+				else:
+					go = False
+
+			if go==True:
+				drawx, drawy = self.ox+(lookx*self.unit), self.oy+(looky*self.unit) 
+				walkpath.nodes.append( GSNode([drawx, drawy], type = GSLINE) )
+				sx = lookx
+				sy = looky
+
+			breakcounter+=1
+			if breakcounter==1000:
+				break
+
+		if (len(walkpath.nodes))==1: walkpath.nodes.append(startnode)
+
+		walkerpaths.append(walkpath)
+		return walkerpaths
 
 Maze()
 
