@@ -52,8 +52,6 @@ class Maze(NaNFilter):
 				xlist.append(True)
 			self.checker.append(xlist)
 
-	def setChecker(self, xpos, ypos, checktype):
-		self.checker[ypos][xpos] = checktype
 
 	def setAvailableSlots(self, thislayer, outlinedata):
 		for stepy in range(0, self.ysteps+3, 1):
@@ -74,10 +72,10 @@ class Maze(NaNFilter):
 				finalshape = nshape[0][1]
 				
 				if ShapeWithinOutlines(finalshape, outlinedata):
-					self.setChecker(stepx, stepy, True)
+					self.checker[stepy][stepx] = True
 					self.available_slots.append([stepx, stepy])
 				else:
-					self.setChecker(stepx, stepy, False)
+					self.checker[stepy][stepx] = False
 
 	def updateChecker(self, xpos, ypos):
 		self.checker[ypos][xpos] = False
