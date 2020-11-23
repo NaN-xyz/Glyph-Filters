@@ -49,11 +49,7 @@ class Bubble(NaNFilter):
 				else:
 					x2,y2 = structure[0][0]
 
-				#if distance([x1, y1], [x2, y2]) < 1:
-				#	continue
-
-				a = atan2(y1-y2, x1-x2)
-				a += radians(90)
+				a = atan2(y1-y2, x1-x2) + radians(90)
 				pushdist = random.randrange(minpush, maxpush) 
 				linex, liney = pushdist * cos(a), pushdist * sin(a)
 
