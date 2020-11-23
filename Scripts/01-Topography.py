@@ -9,33 +9,7 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
+from NaNFilter import NaNFilter
 
 
 def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
@@ -70,7 +44,7 @@ def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
 # ---------
 
 
-def ApplyCollageGraphixxx(thislayer, groups, drawtype):
+def ApplyCollageGraphixxx(thislayer, groups, drawtype, linecomponents):
 
 	for g in groups:
 
@@ -117,42 +91,22 @@ def ApplyCollageGraphixxx(thislayer, groups, drawtype):
 			del templayer
 
 
-def OutputTopography():
+class Topography(NaNFilter):
 
-	global line_vertical_comp, line_horizontal_comp, linecomponents
-	
-	linecomponents = []
-	line_vertical_comp = CreateLineComponent(font, "vertical", 6, "LineVerticalComponent")
-	line_horizontal_comp = CreateLineComponent(font, "horizontal", 6, "LineHorizontalComponent")
-	linecomponents.extend([line_vertical_comp, line_horizontal_comp])
-	print linecomponents
+	params = {
+		"S": {"offset": 0, "gridsize": 10},
+		"M": {"offset": 4, "gridsize": 30},
+		"L": {"offset": 4, "gridsize": 40}
+	}
 
-	for glyph in selectedGlyphs:
+	def setup(self):
+		self.linecomponents = []
+		line_vertical_comp = CreateLineComponent(self.font, "vertical", 6, "LineVerticalComponent")
+		line_horizontal_comp = CreateLineComponent(self.font, "horizontal", 6, "LineHorizontalComponent")
+		self.linecomponents.extend([line_vertical_comp, line_horizontal_comp])
 
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = 0
-			gridsize = 10
-		if glyphsize=="M": 
-			offset = 4
-			gridsize = 30
-		if glyphsize=="L": 
-			offset = 4
-			gridsize = 40
-
-		# ----
-
+	def processLayer(self, thislayer, params):
+		offset, gridsize = params["offset"], params["gridsize"]
 
 		if glyphsize!="S":
 
@@ -170,17 +124,17 @@ def OutputTopography():
 			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
 			maxchain = random.randrange(200,400)
 			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "vertical")
+			ApplyCollageGraphixxx(thislayer, groups, "vertical", self.linecomponents)
 
 			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
 			maxchain = random.randrange(200,400)
 			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "horizontal")
+			ApplyCollageGraphixxx(thislayer, groups, "horizontal", self.linecomponents)
 
 			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
 			maxchain = random.randrange(70,100)
 			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "blob")
+			ApplyCollageGraphixxx(thislayer, groups, "blob", self.linecomponents)
 
 		else:
 
@@ -189,25 +143,4 @@ def OutputTopography():
 			ClearPaths(thislayer)
 			AddAllPathsToLayer(roundedpathlist, thislayer)
 
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-OutputTopography()
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
+Topography()
