@@ -887,20 +887,9 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 
 
 def CreateAllShapeComponents(font, sizex, sizey):
-
-	allshapes = []
-
-	circle = CreateShapeComponent(font, sizex, sizey, "circle", "CircleShape")
-	diamond = CreateShapeComponent(font, sizex, sizey, "diamond", "DiamondShape")
-	rectangle = CreateShapeComponent(font, sizex, sizey, "rectangle", "RectangleShape")
-	triangle = CreateShapeComponent(font, sizex, sizey, "triangle", "TriangleShape")
-
-	allshapes.append(circle)
-	allshapes.append(diamond)
-	allshapes.append(rectangle)
-	allshapes.append(triangle)
-
-	return allshapes
+	return [
+		CreateShapeComponent(font, sizex, sizey, shape) for shape in ["circle", "diamond", "rectangle", "triangle"]
+	]
 
 
 def CreateLineComponent(font, direction, size, shapename):
