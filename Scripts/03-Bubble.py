@@ -68,9 +68,9 @@ def doBubble(thislayer, outlinedata, minpush, maxpush):
 
 class Bubble(NaNFilter):
 	params = {
-		"S":  { "offset": -5, "minfur": 20, "maxfur": 50 },
-		"M":  { "offset": -10, "minfur": 40, "maxfur": 100 },
-		"L":  { "offset": -20, "minfur": 60, "maxfur": 120 }
+		"S": { "offset": -5 },
+		"M": { "offset": -10 },
+		"L": { "offset": -20 }
 	}
 
 	def processLayer(self, thislayer, params):
