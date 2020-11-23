@@ -101,7 +101,6 @@ class Maze(NaNFilter):
 		walkpath = GSPath()
 		
 		sx, sy = startx, starty
-		nx, ny = startx, starty
 
 		startnode = GSNode([self.ox+(sx*self.unit), self.oy+(sy*self.unit)], type = GSLINE)
 		walkpath.nodes.append( startnode )
