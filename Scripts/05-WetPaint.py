@@ -18,7 +18,6 @@ class Drip(NaNFilter):
 	}
 
 	def doDrip(self, thislayer, outlinedata, maxdrip):
-
 		# find drippable segments within path and store indices
 
 		minsize = 0
@@ -108,12 +107,8 @@ class Drip(NaNFilter):
 
 
 		# draw updated outline
-
 		for path in outlinedata:
-
-			#p = drawSimplePath(path[1])
 			p = convertToFitpath(path[1], True)
-
 			thislayer.paths.append(p)
 
 
