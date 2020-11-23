@@ -23,7 +23,7 @@ def beginFilterNaN(font):
 
 	global start_time
 	selectedGlyphs = [ l.parent for l in font.selectedLayers ] 
-	selectedGlyphs = processSelectedGlyphs(selectedGlyphs)
+	selectedGlyphs = filterGSGlyphList(selectedGlyphs)
 	#print selectedGlyphs
 
 	font.disableUpdateInterface()
@@ -93,7 +93,7 @@ def glyphSize(glyph):
 	return nc
 
 
-def processSelectedGlyphs(selectedG):
+def filterGSGlyphList(selectedG):
 	"""Return a list of unique GSGlyph objects, skipping those which cannot
 	be processed."""
 	newlist = []
