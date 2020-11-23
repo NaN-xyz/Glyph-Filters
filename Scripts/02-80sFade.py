@@ -10,9 +10,6 @@ from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
 
 
-# THE MAIN CIRCLE FUNCTION ACTION
-
-
 class EightiesFade(NaNFilter):
 	def processLayer(self, thislayer, params):
 		pathlist = doAngularizzle(thislayer.paths, 20)
