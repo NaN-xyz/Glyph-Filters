@@ -1,5 +1,7 @@
 from NaNGFGraphikshared import *
-
+import traceback
+import GlyphsApp
+from Foundation import NSClassFromString
 
 class NaNFilter:
     def __init__(self):
@@ -53,3 +55,10 @@ class NaNFilter:
         offsetpaths = templayer.paths
         del currentglyph.layers[tmplayer_id]
         return offsetpaths
+
+    def expandMonoline(self, Layer, noodleRadius):
+        try:
+            offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
+            offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, noodleRadius, noodleRadius, True, False, 0.5, None,None)
+        except Exception as e:
+            print( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) )
