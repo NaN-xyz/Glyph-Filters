@@ -19,9 +19,6 @@ class Drip(NaNFilter):
 
 	def doDrip(self, thislayer, outlinedata, maxdrip):
 		# find drippable segments within path and store indices
-
-		minsize = 0
-		maxsize = maxdrip
 		indices = []
 		pathcount = 0
 		degvariance = 40
@@ -55,11 +52,7 @@ class Drip(NaNFilter):
 			indices.append([ pathcount, index ])
 			pathcount+=1
 
-		
-
 		# run through each drippable segment and do something
-
-
 		for p in range(0, len(outlinedata)):
 			direction, structure = outlinedata[p]
 			nodelen = len(structure)
@@ -97,7 +90,7 @@ class Drip(NaNFilter):
 					# insert distance to next black checker here
 
 					noiz = pnoise1( (n+seedx)*noisescale, 4) 
-					size = noiseMap( noiz, minsize, maxsize )
+					size = noiseMap( noiz, 0, maxdrip )
 					if direction=="False": size*=0.2
 					size = t * abs(size) * adjust
 
