@@ -43,13 +43,6 @@ def do80sFade(thislayer, outlinedata, tilecoords, shape_components):
 
 
 class EightiesFade(NaNFilter):
-	params = {
-		"S": {"offset": -5, "iterations": 50},
-		"M": {"offset": -15, "iterations": 400},
-		"L": {"offset": -20, "iterations": 420},
-	}
-
-
 	def processLayer(self, thislayer, params):
 		pathlist = doAngularizzle(thislayer.paths, 20)
 		outlinedata = setGlyphCoords(pathlist)
