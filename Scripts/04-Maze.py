@@ -143,7 +143,7 @@ class Maze(NaNFilter):
 			if direction=="W": lastdirection="E"
 			if direction=="E": lastdirection="W"
 
-			if direction=="N" and direction!=lastdirection:
+			if direction=="N":
 				lookx = sx
 				looky = sy+1
 				if self.isSlotFree(lookx, looky):
@@ -152,7 +152,7 @@ class Maze(NaNFilter):
 				else:
 					go = False
 
-			if direction=="S" and direction!=lastdirection:
+			if direction=="S":
 				lookx = sx
 				looky = sy-1
 				if self.isSlotFree(lookx, looky):
@@ -161,7 +161,7 @@ class Maze(NaNFilter):
 				else:
 					go = False
 
-			if direction=="E" and direction!=lastdirection:
+			if direction=="E":
 				lookx = sx+1
 				looky = sy
 				if self.isSlotFree(lookx, looky):
@@ -170,7 +170,7 @@ class Maze(NaNFilter):
 				else:
 					go = False
 
-			if direction=="W" and direction!=lastdirection:
+			if direction=="W":
 				lookx = sx-1
 				looky = sy
 				if self.isSlotFree(lookx, looky):
