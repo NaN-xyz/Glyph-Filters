@@ -98,20 +98,16 @@ class Topography(NaNFilter):
 
 		ClearPaths(thislayer)
 
-		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-		maxchain = random.randrange(200,400)
-		groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-		ApplyCollageGraphixxx(thislayer, groups, "vertical", self.linecomponents)
+		iterations = [
+			(random.randrange(200,400), "vertical"),
+			(random.randrange(200,400), "horizontal"),
+			(random.randrange(70, 100), "blob")
+		]
 
-		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-		maxchain = random.randrange(200,400)
-		groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-		ApplyCollageGraphixxx(thislayer, groups, "horizontal", self.linecomponents)
-
-		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-		maxchain = random.randrange(70,100)
-		groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-		ApplyCollageGraphixxx(thislayer, groups, "blob", self.linecomponents)
+		for maxchain, shape in iterations:
+			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
+			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
+			ApplyCollageGraphixxx(thislayer, groups, shape, self.linecomponents)
 
 	def processLayerSmall(self, thislayer):
 		thislayer.removeOverlap()
