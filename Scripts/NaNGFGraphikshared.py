@@ -432,53 +432,29 @@ def drawCircle(nx, ny, w, h):
 
 
 def drawDiamond(nx, ny, w, h):
-
-	#thislayer = f.selectedLayers[0]
-	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
-	coord = [ [nx-(w/2),ny], [nx,ny+(h/2)], [nx+(w/2),ny], [nx,ny-(w/2)] ]
-	addon = GSPath()
-	for xy in coord:
-		newnode = GSNode()
-		newnode.type = GSLINE
-		newnode.position = (xy[0], xy[1])
-		addon.nodes.append( newnode )
-	addon.closed = True
-	if addon.direction==1: addon.reverse()
-	return addon
+	return drawSimplePath([
+		(nx-(w/2),ny),
+		(nx,ny+(h/2)),
+		(nx+(w/2),ny),
+		(nx,ny-(w/2))
+	], correctDirection=True)
 
 def drawRectangle(nx, ny, w, h):
-
-	#thislayer = f.selectedLayers[0]
-	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
-	coord = [ [nx-(w/2),ny-(h/2)], [nx-(w/2),ny+(h/2)], [nx+(w/2),ny+(h/2)], [nx+(w/2),ny-(h/2)] ]
-	addon = GSPath()
-	for xy in coord:
-		newnode = GSNode()
-		newnode.type = GSLINE
-		newnode.position = (xy[0], xy[1])
-		addon.nodes.append( newnode )
-	addon.closed = True
-	if addon.direction==1: addon.reverse()
-	return addon
-
+	return drawSimplePath([
+		(nx-(w/2),ny-(h/2)),
+		(nx-(w/2),ny+(h/2)),
+		(nx+(w/2),ny+(h/2)),
+		(nx+(w/2),ny-(h/2))
+	], correctDirection=True)
 
 def drawTriangle(nx, ny, w, h):
+	return drawSimplePath([
+		[nx-(w/2),ny-(h/2)],
+		[nx+(w/2),ny-(h/2)],
+		[nx,ny+(h/2)]
+	], correctDirection=True)
 
-	#thislayer = f.selectedLayers[0]
-	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
-	coord = [ [nx-(w/2),ny-(h/2)], [nx+(w/2),ny-(h/2)], [nx,ny+(h/2)] ]
-	addon = GSPath()
-	for xy in coord:
-		newnode = GSNode()
-		newnode.type = GSLINE
-		newnode.position = (xy[0], xy[1])
-		addon.nodes.append( newnode )
-	addon.closed = True
-	if addon.direction==1: addon.reverse()
-	addon.reverse()
-	return addon
-
-def drawSimplePath(nodes):
+def drawSimplePath(nodes, correctDirection=False, closed=True):
 
 	addon = GSPath()
 	for xy in nodes:
@@ -486,22 +462,11 @@ def drawSimplePath(nodes):
 		newnode.type = GSLINE
 		newnode.position = (xy[0], xy[1])
 		addon.nodes.append( newnode )
-	addon.closed = True
+	addon.closed = closed
 	#thislayer.paths.append(addon)
+	if correctDirection and addon.direction==1: addon.reverse()
+
 	return addon
-
-def drawOpenPath(nodes):
-
-	addon = GSPath()
-	for xy in nodes:
-		newnode = GSNode()
-		newnode.type = GSLINE
-		newnode.position = (xy[0], xy[1])
-		addon.nodes.append( newnode )
-	addon.closed = False
-	#thislayer.paths.append(addon)
-	return addon
-
 
 
 
