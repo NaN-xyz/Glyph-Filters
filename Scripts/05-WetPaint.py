@@ -8,191 +8,103 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFNoise import *
+from NaNFilter import NaNFilter
 
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
+class Drip(NaNFilter):
+	params = {
+		"S": { "maxdrip": 150, "iterations": 1 },
+		"M": { "maxdrip": 350, "iterations": 2 },
+		"L": { "maxdrip": 400, "iterations": 2 }
+	}
 
+	def getDrippableSegments(self, outlinedata):
+		# find drippable segments within path and store indices
+		indices = []
+		degvariance = 40
 
-# ====== OFFSET LAYER CONTROLS ================== 
+		for direction, nodes in outlinedata:
+			index = []
+			index_start, index_end = -999, -999
+			# collect all possible drippable segments within certain angle
 
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
+			for n in range(0,len(nodes)-1):
+				x1,y1 = nodes[n]
+				x2,y2 = nodes[n+1]
+				a = atan2(y1-y2, x1-x2)
+				deg = degrees(a)
 
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
-
-def Drip(thislayer, outlinedata, maxdrip):
-
-	# find drippable segments within path and store indices
-
-	minsize = 0
-	maxsize = maxdrip
-	indices = []
-	pathcount = 0
-	degvariance = 40
-
-	for path in outlinedata:
-
-		direction = path[0]
-		structure = path[1]
-		nodelen = len(structure)
-		index = []
-		n=0
-		index_start = -999
-		index_end = -999
-
-		# collect all possible drippable segments within certain angle
-
-		while n < nodelen-1:
-
-			x1 = structure[n][0]
-			y1 = structure[n][1]
-			x2 = structure[n+1][0]
-			y2 = structure[n+1][1]
-			a = atan2(y1-y2, x1-x2)
-			deg = degrees(a)
-
-			if abs(deg)>(180-degvariance) and abs(deg)<(180+degvariance):
-				if index_start == -999:
-					index_start = n
+				if abs(deg)>(180-degvariance) and abs(deg)<(180+degvariance):
+					if index_start == -999:
+						index_start = n
+					else:
+						index_end = n
 				else:
-					index_end = n
-			else:
-				if index_start != -999:
-					index.append( [ index_start, index_end ] )
-				index_start = -999
-			n+=1
+					if index_start != -999:
+						index.append( [ index_start, index_end ] )
+					index_start = -999
 
-		indices.append([ pathcount, index ])
-		pathcount+=1
+			indices.append(index)
 
-	
+		return indices
 
-	# run through each drippable segment and do something
+	def doDrip(self, thislayer, indices, outlinedata, maxdrip):
+		# run through each drippable segment and do something
+		for p in range(0, len(outlinedata)):
+			direction, structure = outlinedata[p]
+			nodelen = len(structure)
+			segs = indices[p]
 
+			for seg in segs:
+				index_start, index_end = seg
 
-	for p in range(0, len(outlinedata)):
+				seedx = random.randrange(0,100000)
+				noisescale = 0.01
 
-		direction = outlinedata[p][0]
-		structure = outlinedata[p][1]
-		nodelen = len(structure)
-		n=0
-		segs = indices[p][1]
+				steps = float(index_end - index_start)
+				steppos = 0
 
-		for seg in segs:
+				for n in range(index_start, index_end):
+					angle = 180/steps * steppos
+					t = math.sin(math.radians(angle))
+					adjust = 1
 
-			index_start = seg[0]
-			index_end = seg[1]
+					x,y = structure[n]
 
-			seedx = random.randrange(0,100000)
-			seedy = random.randrange(0,100000)
-			noisescale = 0.01
+					if n < index_end:
+						x2, y2 = structure[n+1]
 
-			steps = float(index_end - index_start)
-			steppos = 0
+						searchblack = DistanceToNextBlack(thislayer, [x, y], [x2, y2], outlinedata, searchlimit=200)
+						#print searchblack
 
-			for n in range(index_start, index_end):
+						if searchblack is not None and searchblack < 200:
+								adjust = 0.2
 
-				angle = 180/steps * steppos
-				t = math.sin(math.radians(angle))
-				adjust = 1
+					# insert distance to next black checker here
 
-				x = structure[n][0]
-				y = structure[n][1]
+					noiz = pnoise1( (n+seedx)*noisescale, 4) 
+					size = noiseMap( noiz, 0, maxdrip )
+					if direction=="False": size*=0.2
+					size = t * abs(size) * adjust
 
-				if n < index_end:
+					structure[n][1] = y - size
 
-					x2 = structure[n+1][0]
-					y2 = structure[n+1][1]
-
-					searchblack = DistanceToNextBlack(thislayer, [x, y], [x2, y2], outlinedata, searchlimit=200)
-					#print searchblack
-
-					if searchblack is not None:
-						if searchblack < 200:
-							adjust = 0.2
-
-				# insert distance to next black checker here
-
-				noiz = pnoise1( (n+seedx)*noisescale, 4) 
-				size = noiseMap( noiz, minsize, maxsize )
-				if direction=="False": size*=0.2
-				size = t * abs(size) * adjust
-
-				structure[n][1] = y - size
-
-				steppos+=1
+					steppos+=1
 
 
-	# draw updated outline
-
-	for path in outlinedata:
-
-		#p = drawSimplePath(path[1])
-		p = convertToFitpath(path[1], True)
-
-		thislayer.paths.append(p)
-
-# ----------------------------------------------------
-# output controllers
-
-
-def OutputDrip():
-
-	for glyph in selectedGlyphs:
-		
-		beginGlyphNaN(glyph)
-		glyph.beginUndo()
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-
-		glyphsize = glyphSize(glyph)
-		if glyphsize=="S": maxdrip, it = 150, 1
-		if glyphsize=="M": maxdrip, it = 350, 2
-		if glyphsize=="L": maxdrip, it = 400, 2
-
-		for n in range(0, it):
+	def processLayer(self, thislayer, params):
+		for n in range(0, params["iterations"]):
 			pathlist = doAngularizzle(thislayer.paths, 4) # small seg size = quicker
 			outlinedata = setGlyphCoords(pathlist)
-			Drip(thislayer, outlinedata, maxdrip)
+			indices = self.getDrippableSegments(outlinedata)
 
-		thislayer.removeOverlap()
+			# Modifies outlinedata
+			self.doDrip(thislayer, indices, outlinedata, params["maxdrip"])
 
-		# ---
+			# draw updated outline
+			for path in outlinedata:
+				p = convertToFitpath(path[1], True)
+				thislayer.paths.append(p)
 
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-OutputDrip()
-
-
-
+Drip()
 Font.enableUpdateInterface()
 
