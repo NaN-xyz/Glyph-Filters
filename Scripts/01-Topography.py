@@ -1,6 +1,6 @@
-#MenuTitle: 01. Topography
+# MenuTitle: 01. Topography
 # -*- coding: utf-8 -*-
-__doc__="""
+__doc__ = """
 01. Topography
 """
 
@@ -9,205 +9,119 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
+from NaNFilter import NaNFilter
 
 
-# ====== OFFSET LAYER CONTROLS ================== 
+class Topography(NaNFilter):
 
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
+    params = {
+        "S": {"offset": 0, "gridsize": 10},
+        "M": {"offset": 4, "gridsize": 30},
+        "L": {"offset": 4, "gridsize": 40},
+    }
 
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
+    def setup(self):
+        self.linecomponents = []
+        line_vertical_comp = CreateLineComponent(
+            self.font, "vertical", 6, "LineVerticalComponent"
+        )
+        line_horizontal_comp = CreateLineComponent(
+            self.font, "horizontal", 6, "LineHorizontalComponent"
+        )
+        self.linecomponents.extend([line_vertical_comp, line_horizontal_comp])
 
-# ================================================
+    def processLayer(self, thislayer, params):
+        if glyphSize(thislayer.parent) == "S":
+            self.processLayerSmall(thislayer)
+        else:
+            self.processLayerLarge(thislayer, params)
 
+    def processLayerLarge(self, thislayer, params):
+        offset, gridsize = params["offset"], params["gridsize"]
+        pathlist = doAngularizzle(thislayer.paths, 20)
+        outlinedata = setGlyphCoords(pathlist)
+        bounds = AllPathBounds(thislayer)
 
-def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
+        offsetpaths = self.saveOffsetPaths(
+            thislayer, offset, offset, removeOverlap=True
+        )
+        pathlist2 = doAngularizzle(offsetpaths, 4)
+        outlinedata2 = setGlyphCoords(pathlist2)
+        bounds2 = AllPathBoundsFromPathList(pathlist2)
 
-	final_in_triangles = []
-	in_triangles = []
-	out_triangles = []
-	edge_triangles = []
+        ClearPaths(thislayer)
 
-	isogrid = makeIsometricGrid(bounds, gridsize)
-	alltriangles = IsoGridToTriangles(isogrid)
+        iterations = [
+            (random.randrange(200, 400), "vertical"),
+            (random.randrange(200, 400), "horizontal"),
+            (random.randrange(70, 100), "blob"),
+        ]
 
-	# Return triangles within and without
-	in_out_triangles = returnTriangleTypes(alltriangles, outlinedata)
-	in_triangles = in_out_triangles[0]
-	out_triangles = in_out_triangles[1]
+        for maxchain, shape in iterations:
+            newtris = self.SortCollageSpace(
+                thislayer, outlinedata, outlinedata2, gridsize, bounds
+            )
+            groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
+            self.ApplyCollageGraphixxx(thislayer, groups, shape, self.linecomponents)
 
-	edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
-	#edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)	
+    def processLayerSmall(self, thislayer):
+        thislayer.removeOverlap()
+        roundedpathlist = returnRoundedPaths(thislayer.paths)
+        ClearPaths(thislayer)
+        AddAllPathsToLayer(roundedpathlist, thislayer)
 
-	final_in_triangles.extend(in_triangles)
-	final_in_triangles.extend(edge_triangles)
+    def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds):
 
-	# for triangle in edge_triangles:
-	# 	tricoords = SimplifyTriangleList(triangle)
-	# 	if ShapeWithinOutlines(tricoords, outlinedata2): final_in_triangles.append(triangle)
+        isogrid = makeIsometricGrid(bounds, gridsize)
+        alltriangles = IsoGridToTriangles(isogrid)
 
-	return TrianglesListToPaths(final_in_triangles)
+        # Return triangles within and without
+        in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
 
-	
+        edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
+        # edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)
 
-# ---------
+        final_in_triangles = in_triangles
+        final_in_triangles.extend(edge_triangles)
 
+        return TrianglesListToPaths(final_in_triangles)
 
-def ApplyCollageGraphixxx(thislayer, groups, drawtype):
+    def ApplyCollageGraphixxx(self, layer, groups, drawtype, linecomponents):
 
-	for g in groups:
+        for g in groups:
+            if len(g) < 2:
+                continue
 
-		if len(g)>2:
+            templayer = GSLayer()
+            for path in g:
+                tp = path
+                templayer.paths.append(tp)
+            templayer.removeOverlap()
 
-			templayer = GSLayer()
-			for path in g:
-				tp = path
-				templayer.paths.append(tp)
-			templayer.removeOverlap()
+            for p in templayer.paths:
+                nodelen = len(p.nodes)
+                if nodelen < 4:
+                    continue
 
-			for p in templayer.paths: 
-				
-				nodelen = len(p.nodes)
+                roundedpath = RoundPath(p, "nodes")
+                roundedpath = convertToFitpath(roundedpath, True)
+                pathlist = doAngularizzle([roundedpath], 80)
+                outlinedata = setGlyphCoords(pathlist)
 
-				if nodelen>4:
+                if drawtype == "vertical" or drawtype == "horizontal":
+                    all_lines = Fill_Drawlines(
+                        layer, roundedpath, drawtype, 15, linecomponents
+                    )
+                    AddAllComponentsToLayer(all_lines, layer)
 
-					try:
-						roundedpath = RoundPath(p, "nodes")
-						roundedpath = convertToFitpath(roundedpath, True)
-						pathlist = doAngularizzle([roundedpath],80)
-						outlinedata = setGlyphCoords(pathlist)
+                if drawtype == "blob":
+                    # disallow small blobs
+                    rw = roundedpath.bounds.size.width
+                    rh = roundedpath.bounds.size.height
+                    if (rw > 30 and rh > 30) and (rw < 200 or rh < 200):
+                        layer.paths.append(roundedpath)
 
-						try:
-							if drawtype=="vertical" or drawtype=="horizontal":
-								all_lines = Fill_Drawlines(thislayer, roundedpath, drawtype, 15, linecomponents)
-								AddAllComponentsToLayer(all_lines, thislayer)
-
-							if drawtype=="blob":
-								# disallow small blobs
-								rw = roundedpath.bounds.size.width
-								rh = roundedpath.bounds.size.height
-								if (rw>30 and rh>30) and (rw<200 or rh<200): thislayer.paths.append(roundedpath)
-
-						except:
-							pass
-
-					except:
-						pass
-				else:
-					pass
-
-
-			del templayer
-
-
-def OutputTopography():
-
-	global line_vertical_comp, line_horizontal_comp, linecomponents
-	
-	linecomponents = []
-	line_vertical_comp = CreateLineComponent(font, "vertical", 6, "LineVerticalComponent")
-	line_horizontal_comp = CreateLineComponent(font, "horizontal", 6, "LineHorizontalComponent")
-	linecomponents.extend([line_vertical_comp, line_horizontal_comp])
-	print linecomponents
-
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = 0
-			gridsize = 10
-		if glyphsize=="M": 
-			offset = 4
-			gridsize = 30
-		if glyphsize=="L": 
-			offset = 4
-			gridsize = 40
-
-		# ----
+            del templayer
 
 
-		if glyphsize!="S":
-
-			pathlist = doAngularizzle(thislayer.paths, 20)
-			outlinedata = setGlyphCoords(pathlist)
-			bounds = AllPathBounds(thislayer)
-			
-			offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
-			pathlist2 = doAngularizzle(offsetpaths, 4)
-			outlinedata2 = setGlyphCoords(pathlist2)
-			bounds2 = AllPathBoundsFromPathList(pathlist2)
-
-			ClearPaths(thislayer)
-
-			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-			maxchain = random.randrange(200,400)
-			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "vertical")
-
-			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-			maxchain = random.randrange(200,400)
-			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "horizontal")
-
-			newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-			maxchain = random.randrange(70,100)
-			groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-			ApplyCollageGraphixxx(thislayer, groups, "blob")
-
-		else:
-
-			thislayer.removeOverlap()
-			roundedpathlist = returnRoundedPaths(thislayer.paths)
-			ClearPaths(thislayer)
-			AddAllPathsToLayer(roundedpathlist, thislayer)
-
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-OutputTopography()
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
+Topography()
