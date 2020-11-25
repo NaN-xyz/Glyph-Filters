@@ -55,31 +55,24 @@ class Lines(NaNFilter):
 		gap = 20
 		checkgap = 2
 
+		self.newline = []
+		def add_line(x2, y2):
+			if withinGlyphBlack(x2, y2, outlinedata) and point_inside_polygon_faster(x2, y2, tilecoords):
+					self.newline.append([x2, y2])
+			else:
+				if len(self.newline)>1:
+					lines.append(self.newline)
+					self.newline = []
+
 		if direction=="horizontal":
 			for y2 in range(y, y+h+gap, gap):
-				newline = []
 				for x2 in range(x, x+w, checkgap):
-					if withinGlyphBlack(x2, y2, outlinedata) and point_inside_polygon_faster(x2, y2, tilecoords):
-							newline.append([x2, y2])
-					else:
-						if len(newline)>1:
-							lines.append(newline)
-							newline = []
-				y2 = 0
-				if len(newline)>1: lines.append(newline)
+					add_line(x2,y2)
 
 		if direction=="vertical":
 			for x2 in range(x, x+w+gap, gap):
-				newline = []
 				for y2 in range(y, y+h, checkgap):
-					if withinGlyphBlack(x2, y2, outlinedata) and point_inside_polygon_faster(x2, y2, tilecoords):
-							newline.append([x2, y2])
-					else:
-						if len(newline)>1:
-							lines.append(newline)
-							newline = []
-				x2 = 0
-				if len(newline)>1: lines.append(newline)
+					add_line(x2,y2)
 
 		for l in lines:
 			sx, sy = l[0][0], l[0][1]
