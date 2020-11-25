@@ -64,8 +64,7 @@ class MoonRocks(NaNFilter):
 
 		rocks = []
 		for c in range(0, len(list_dots)):
-			x, y = list_dots[c][0], list_dots[c][1]
-			size = list_dots[c][2]
+			x, y, size = list_dots[c]
 			if self.shapetype=="blob": 
 				circle = drawBlob(x, y, size*2, 5, True)
 			else: 
