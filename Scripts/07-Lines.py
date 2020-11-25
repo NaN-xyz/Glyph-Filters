@@ -48,11 +48,7 @@ class Lines(NaNFilter):
 
 	def DrawlinesTile(self, thislayer, outlinedata, tile, direction):
 
-		x = int(tile[0])
-		y = int(tile[1])
-		w = int(tile[2])
-		h = int(tile[3])
-
+		x, y, w, h = [int(el) for el in tile]
 		tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
 		lines = []
 		linecomponents = []
