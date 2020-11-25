@@ -22,12 +22,10 @@ class Lines(NaNFilter):
 
 	def processLayer(self, thislayer, params):
 
-		pathlist = doAngularizzle(thislayer.paths, 40)
-		outlinedata = setGlyphCoords(pathlist)
+		outlinedata = setGlyphCoords(doAngularizzle(thislayer.paths, 40))
 
 		try:
-			startrect = AllPathBounds(thislayer)
-			allrectangles = MakeRectangles([startrect], 5)
+			allrectangles = MakeRectangles([AllPathBounds(thislayer)], 5)
 			direction = "horizontal"
 			linecomps = []
 
