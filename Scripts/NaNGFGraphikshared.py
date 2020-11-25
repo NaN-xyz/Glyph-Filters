@@ -14,20 +14,14 @@ from NaNGFFitpath import *
 
 # --------------------------------------------
 
-# REMOVES PATHS *ONLY* AND LEAVES COMPONENTS, ANCHORS ETC IN PLACE
 def ClearPaths(thislayer):
-
-	count=0
-	for i in range( len( thislayer.paths ))[::-1]:
-		del thislayer.paths[i]
-		count += 1
+	"""Removes all paths in a layer, leaving anchors and components in place"""
+	thislayer.paths = []
 
 def ShiftPath(path, variance, type):
-
+	"""Shifts a path by a random amount in x, y or both directions."""
 	shiftx = random.uniform(variance * -0.5, variance)
 	shifty = random.uniform(variance * -0.5, variance)
-	x = path.bounds.origin.x
-	y = path.bounds.origin.y
 
 	if type=="x":
 		path.applyTransform((
@@ -61,17 +55,9 @@ def ShiftPath(path, variance, type):
 
 
 def ChangeNodeStart(nodes):
-
-	newnodes = []
-	nodelen = len(nodes)
-	cutpt = random.randrange(0, nodelen)
-
-	part1 = nodes[0:cutpt]
-	part2 = nodes[cutpt:nodelen]
-	
-	for n in part2: newnodes.append(n)
-	for n in part1: newnodes.append(n)
-	return newnodes
+	"""Cycles a node list so it starts at a random position."""
+	cutpt = random.randrange(0, len(nodes))
+	return nodes[cutpt:].extend(nodes[0:cutpt])
 
 
 def setGlyphCoords(pathlist):
@@ -446,53 +432,29 @@ def drawCircle(nx, ny, w, h):
 
 
 def drawDiamond(nx, ny, w, h):
-
-	#thislayer = f.selectedLayers[0]
-	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
-	coord = [ [nx-(w/2),ny], [nx,ny+(h/2)], [nx+(w/2),ny], [nx,ny-(w/2)] ]
-	addon = GSPath()
-	for xy in coord:
-		newnode = GSNode()
-		newnode.type = GSLINE
-		newnode.position = (xy[0], xy[1])
-		addon.nodes.append( newnode )
-	addon.closed = True
-	if addon.direction==1: addon.reverse()
-	return addon
+	return drawSimplePath([
+		(nx-(w/2),ny),
+		(nx,ny+(h/2)),
+		(nx+(w/2),ny),
+		(nx,ny-(w/2))
+	], correctDirection=True)
 
 def drawRectangle(nx, ny, w, h):
-
-	#thislayer = f.selectedLayers[0]
-	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
-	coord = [ [nx-(w/2),ny-(h/2)], [nx-(w/2),ny+(h/2)], [nx+(w/2),ny+(h/2)], [nx+(w/2),ny-(h/2)] ]
-	addon = GSPath()
-	for xy in coord:
-		newnode = GSNode()
-		newnode.type = GSLINE
-		newnode.position = (xy[0], xy[1])
-		addon.nodes.append( newnode )
-	addon.closed = True
-	if addon.direction==1: addon.reverse()
-	return addon
-
+	return drawSimplePath([
+		(nx-(w/2),ny-(h/2)),
+		(nx-(w/2),ny+(h/2)),
+		(nx+(w/2),ny+(h/2)),
+		(nx+(w/2),ny-(h/2))
+	], correctDirection=True)
 
 def drawTriangle(nx, ny, w, h):
+	return drawSimplePath([
+		[nx-(w/2),ny-(h/2)],
+		[nx+(w/2),ny-(h/2)],
+		[nx,ny+(h/2)]
+	], correctDirection=True)
 
-	#thislayer = f.selectedLayers[0]
-	#coord = [ [nx-w,ny], [nx,ny-h], [nx+w,ny], [nx,ny+h] ]
-	coord = [ [nx-(w/2),ny-(h/2)], [nx+(w/2),ny-(h/2)], [nx,ny+(h/2)] ]
-	addon = GSPath()
-	for xy in coord:
-		newnode = GSNode()
-		newnode.type = GSLINE
-		newnode.position = (xy[0], xy[1])
-		addon.nodes.append( newnode )
-	addon.closed = True
-	if addon.direction==1: addon.reverse()
-	addon.reverse()
-	return addon
-
-def drawSimplePath(nodes):
+def drawSimplePath(nodes, correctDirection=False, closed=True):
 
 	addon = GSPath()
 	for xy in nodes:
@@ -500,22 +462,11 @@ def drawSimplePath(nodes):
 		newnode.type = GSLINE
 		newnode.position = (xy[0], xy[1])
 		addon.nodes.append( newnode )
-	addon.closed = True
+	addon.closed = closed
 	#thislayer.paths.append(addon)
+	if correctDirection and addon.direction==1: addon.reverse()
+
 	return addon
-
-def drawOpenPath(nodes):
-
-	addon = GSPath()
-	for xy in nodes:
-		newnode = GSNode()
-		newnode.type = GSLINE
-		newnode.position = (xy[0], xy[1])
-		addon.nodes.append( newnode )
-	addon.closed = False
-	#thislayer.paths.append(addon)
-	return addon
-
 
 
 
@@ -868,16 +819,14 @@ def isLayerSizeBelowThreshold(thislayer, maxw, maxh):
 
 def AddAllComponentsToLayer(components, thislayer):
 	try:
-		for c in components:
-			thislayer.components.append(c)
+			thislayer.components.extend(components)
 	except:
 		print "Couldn't add components to layer", thislayer
 
 
 def AddAllPathsToLayer(paths, thislayer):
 	try:
-		for path in paths:
-			thislayer.paths.append(path)
+			thislayer.paths.extend(paths)
 	except:
 		print "Couldn't add all paths to layer", thislayer
 
@@ -938,20 +887,9 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 
 
 def CreateAllShapeComponents(font, sizex, sizey):
-
-	allshapes = []
-
-	circle = CreateShapeComponent(font, sizex, sizey, "circle", "CircleShape")
-	diamond = CreateShapeComponent(font, sizex, sizey, "diamond", "DiamondShape")
-	rectangle = CreateShapeComponent(font, sizex, sizey, "rectangle", "RectangleShape")
-	triangle = CreateShapeComponent(font, sizex, sizey, "triangle", "TriangleShape")
-
-	allshapes.append(circle)
-	allshapes.append(diamond)
-	allshapes.append(rectangle)
-	allshapes.append(triangle)
-
-	return allshapes
+	return [
+		CreateShapeComponent(font, sizex, sizey, shape) for shape in ["circle", "diamond", "rectangle", "triangle"]
+	]
 
 
 def CreateLineComponent(font, direction, size, shapename):

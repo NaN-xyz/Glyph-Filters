@@ -23,7 +23,7 @@ def beginFilterNaN(font):
 
 	global start_time
 	selectedGlyphs = [ l.parent for l in font.selectedLayers ] 
-	selectedGlyphs = processSelectedGlyphs(selectedGlyphs)
+	selectedGlyphs = filterGSGlyphList(selectedGlyphs)
 	#print selectedGlyphs
 
 	font.disableUpdateInterface()
@@ -93,39 +93,20 @@ def glyphSize(glyph):
 	return nc
 
 
-def processSelectedGlyphs(selectedG):
-
+def filterGSGlyphList(selectedG):
+	"""Return a list of unique GSGlyph objects, skipping those which cannot
+	be processed."""
 	newlist = []
+	seen = {}
 	for g in selectedG:
-		if g.name is not None: 
-			if g.category != "Separator":
-				font = g.parent
-				if ContainsPaths(font.glyphs[g.name].layers[0]):
-					newlist.append(g)
-
-	return unique_list(newlist)
-
-
-def unique_list(lst):
-
-    # for order preserving
-    def func_ord_preserve(x):
-        return x
-
-    set_seen = {}
-    lst_result = []
-
-    for item in lst:
-        lst_marker_item = func_ord_preserve(item)
-
-        if lst_marker_item in set_seen:
-            continue
-
-        set_seen[lst_marker_item] = 1
-        lst_result.append(item)
-
-    return lst_result
+		if g.name is None or g.category == "Separator" or g.name in seen:
+			continue
+		font = g.parent
+		if not ContainsPaths(font.glyphs[g.name].layers[0]):
+			continue
+		newlist.append(g)
+		seen[g.name] = True
+	return newlist
 
 def ContainsPaths(thislayer):
-	if len(thislayer.paths)>0: return True
-	else: return False
+	return len(thislayer.paths)>0
