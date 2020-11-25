@@ -45,9 +45,7 @@ class MoonRocks(NaNFilter):
 
 				for n in range(0, len(list_dots)):
 
-					nx = list_dots[n][0]
-					ny = list_dots[n][1]
-					nr = list_dots[n][2]
+					nx, ny, nr = list_dots[n]
 					dist = math.hypot(nx - x, ny - y) #alt method
 
 					if dist<(nr+rad+bufferdistcircle):
