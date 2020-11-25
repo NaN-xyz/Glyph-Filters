@@ -20,8 +20,7 @@ class MoonRocks(NaNFilter):
 
 	def processLayer(self, thislayer, params):
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
-		pathlist = doAngularizzle(offsetpaths, 20)
-		outlinedata = setGlyphCoords(pathlist)
+		outlinedata = setGlyphCoords(doAngularizzle(offsetpaths, 20))
 
 		list_dots = []
 		b = AllPathBounds(thislayer)
