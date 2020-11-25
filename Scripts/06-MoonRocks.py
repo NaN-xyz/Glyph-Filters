@@ -20,7 +20,6 @@ class MoonRocks(NaNFilter):
 
 	def processLayer(self, thislayer, params):
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
-		iterations = params["iterations"]
 		pathlist = doAngularizzle(offsetpaths, 20)
 		outlinedata = setGlyphCoords(pathlist)
 
@@ -32,7 +31,7 @@ class MoonRocks(NaNFilter):
 
 		ox, oy, w, h = b[0], b[1], b[2], b[3]
 
-		for f in range(0, iterations):
+		for f in range(0, params["iterations"]):
 
 			x = random.randrange(ox, ox+w)
 			y = random.randrange(oy, oy+h)
@@ -41,14 +40,12 @@ class MoonRocks(NaNFilter):
 
 				rad = random.randrange(10,250)
 				inside = True
-				bufferdistcircle = self.maxgap
-
 				for n in range(0, len(list_dots)):
 
 					nx, ny, nr = list_dots[n]
 					dist = math.hypot(nx - x, ny - y) #alt method
 
-					if dist<(nr+rad+bufferdistcircle):
+					if dist<(nr+rad+self.maxgap):
 						inside=False
 						break
 
