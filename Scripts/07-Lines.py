@@ -39,7 +39,6 @@ class Lines(NaNFilter):
 
 				dlines = self.DrawlinesTile(thislayer, outlinedata, tile, direction)
 				linecomps.extend( dlines )
-				direct = not direct
 
 			ClearPaths(thislayer)
 			AddAllComponentsToLayer(linecomps, thislayer)
