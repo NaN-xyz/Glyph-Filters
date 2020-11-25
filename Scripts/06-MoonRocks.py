@@ -49,7 +49,7 @@ class MoonRocks(NaNFilter):
 						inside=False
 						break
 
-				if inside==True:
+				if inside:
 					circles = []
 					circle = drawCircle(x, y, rad*2, rad*2)
 					circles.append(circle)
