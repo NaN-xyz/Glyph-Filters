@@ -51,10 +51,8 @@ class MoonRocks(NaNFilter):
 
 			if not inside:
 				continue
-			circles = []
 			circle = drawCircle(x, y, rad*2, rad*2)
-			circles.append(circle)
-			circlea = doAngularizzle(circles, 10)
+			circlea = doAngularizzle([circle], 10)
 			circlea = setGlyphCoords(circlea)
 			circlecoords = circlea[0][1]
 
