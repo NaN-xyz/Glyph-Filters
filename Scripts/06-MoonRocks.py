@@ -36,29 +36,30 @@ class MoonRocks(NaNFilter):
 			x = random.randrange(ox, ox+w)
 			y = random.randrange(oy, oy+h)
 
-			if withinGlyphBlack(x, y, outlinedata):
+			if not withinGlyphBlack(x, y, outlinedata):
+				continue
 
-				rad = random.randrange(10,250)
-				inside = True
-				for n in range(0, len(list_dots)):
+			rad = random.randrange(10,250)
+			inside = True
+			for n in range(0, len(list_dots)):
+				nx, ny, nr = list_dots[n]
+				dist = math.hypot(nx - x, ny - y) #alt method
 
-					nx, ny, nr = list_dots[n]
-					dist = math.hypot(nx - x, ny - y) #alt method
+				if dist<(nr+rad+self.maxgap):
+					inside=False
+					break
 
-					if dist<(nr+rad+self.maxgap):
-						inside=False
-						break
+			if not inside:
+				continue
+			circles = []
+			circle = drawCircle(x, y, rad*2, rad*2)
+			circles.append(circle)
+			circlea = doAngularizzle(circles, 10)
+			circlea = setGlyphCoords(circlea)
+			circlecoords = circlea[0][1]
 
-				if inside:
-					circles = []
-					circle = drawCircle(x, y, rad*2, rad*2)
-					circles.append(circle)
-					circlea = doAngularizzle(circles, 10)
-					circlea = setGlyphCoords(circlea)
-					circlecoords = circlea[0][1]
-
-					if ShapeWithinOutlines(circlecoords, outlinedata):
-						list_dots.append([x, y, rad])
+			if ShapeWithinOutlines(circlecoords, outlinedata):
+				list_dots.append([x, y, rad])
 
 
 		print "Number of circles found:", len(list_dots)
