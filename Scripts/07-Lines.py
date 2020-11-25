@@ -75,9 +75,7 @@ class Lines(NaNFilter):
 					add_line(x2,y2)
 
 		for l in lines:
-			sx, sy = l[0][0], l[0][1]
-			ex, ey = l[-1][0], l[-1][1]
-			comp = returnLineComponent([sx,sy], [ex,ey], direction, [self.line_vertical_comp,self.line_horizontal_comp], 100)
+			comp = returnLineComponent(l[0], l[-1], direction, [self.line_vertical_comp,self.line_horizontal_comp], 100)
 			linecomponents.append(comp)
 
 		return linecomponents
