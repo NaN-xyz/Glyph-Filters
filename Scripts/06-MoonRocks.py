@@ -23,7 +23,7 @@ class MoonRocks(NaNFilter):
 		pathlist = doAngularizzle(offsetpaths, 20)
 		outlinedata = setGlyphCoords(pathlist)
 
-		list_dots, rocks = [], []
+		list_dots = []
 		b = AllPathBounds(thislayer)
 
 		if b is None:
@@ -62,6 +62,7 @@ class MoonRocks(NaNFilter):
 
 		print "Number of circles found:", len(list_dots)
 
+		rocks = []
 		for c in range(0, len(list_dots)):
 			x, y = list_dots[c][0], list_dots[c][1]
 			size = list_dots[c][2]
