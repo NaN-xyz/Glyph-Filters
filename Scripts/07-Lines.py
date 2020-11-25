@@ -28,7 +28,7 @@ class Lines(NaNFilter):
 		try:
 			startrect = AllPathBounds(thislayer)
 			allrectangles = MakeRectangles([startrect], 5)
-			direct = True
+			direction = "horizontal"
 			linecomps = []
 
 			for n in range(0, len(allrectangles)):
@@ -36,7 +36,7 @@ class Lines(NaNFilter):
 				tile = [x,y,w,h]
 				tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
 
-				if direct == True: direction="vertical"
+				if direction == "horizontal": direction="vertical"
 				else: direction="horizontal"
 
 				dlines = self.DrawlinesTile(thislayer, outlinedata, tile, direction)
