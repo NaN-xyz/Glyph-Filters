@@ -7,45 +7,28 @@ __doc__="""
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
+from NaNFilter import NaNFilter
 
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
+class MoonRocks(NaNFilter):
+	params = {
+		"S": {"offset": -5, "iterations": 50 },
+		"M": {"offset": -15, "iterations": 400 },
+		"L": {"offset": -20, "iterations": 420 },
+	}
+	maxgap = 8
+	shapetype = "blob"
 
+	def processLayer(self, thislayer, params):
+		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
+		iterations = params["iterations"]
+		pathlist = doAngularizzle(offsetpaths, 20)
+		outlinedata = setGlyphCoords(pathlist)
 
-# ====== OFFSET LAYER CONTROLS ================== 
+		list_dots, rocks = [], []
+		b = AllPathBounds(thislayer)
 
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
-
-
-# THE MAIN CIRCLE FUNCTION ACTION
-
-def MoonRocks(thislayer, outlinedata, iterations, maxgap, shapetype):
-
-	list_dots, rocks = [], []
-	b = AllPathBounds(thislayer)
-
-	if b is not None:
+		if b is None:
+			return
 
 		ox, oy, w, h = b[0], b[1], b[2], b[3]
 
@@ -58,7 +41,7 @@ def MoonRocks(thislayer, outlinedata, iterations, maxgap, shapetype):
 
 				rad = random.randrange(10,250)
 				inside = True
-				bufferdistcircle = maxgap
+				bufferdistcircle = self.maxgap
 
 				for n in range(0, len(list_dots)):
 
@@ -88,75 +71,13 @@ def MoonRocks(thislayer, outlinedata, iterations, maxgap, shapetype):
 		for c in range(0, len(list_dots)):
 			x, y = list_dots[c][0], list_dots[c][1]
 			size = list_dots[c][2]
-			if shapetype=="blob": 
+			if self.shapetype=="blob": 
 				circle = drawBlob(x, y, size*2, 5, True)
 			else: 
 				circle = drawCircle(x, y, size*2, size*2)
 			rocks.append(circle)
 
-		return rocks
-		
+		rocks = ConvertPathlistDirection(rocks, 1)
+		AddAllPathsToLayer(rocks, thislayer)
 
-def OutputMoonRocks(maxgap, shapetype):
-
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = -5
-			iterations = 50
-		if glyphsize=="M": 
-			offset = -15 
-			iterations = 400
-		if glyphsize=="L": 
-			offset = -20
-			iterations = 420
-
-		# ----
-
-		offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=False)
-		pathlist = doAngularizzle(offsetpaths, 20)
-		outlinedata = setGlyphCoords(pathlist)
-		
-		rockpaths = MoonRocks(thislayer, outlinedata, iterations, maxgap, shapetype)
-		rockpaths = ConvertPathlistDirection(rockpaths, 1)
-		AddAllPathsToLayer(rockpaths, thislayer)
-
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-OutputMoonRocks(maxgap=8, shapetype="blob")
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
-
-
-
-
-
+MoonRocks()
