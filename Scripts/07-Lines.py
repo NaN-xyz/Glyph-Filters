@@ -32,10 +32,7 @@ class Lines(NaNFilter):
 			linecomps = []
 
 			for n in range(0, len(allrectangles)):
-				x = allrectangles[n][0]
-				y = allrectangles[n][1]
-				w = allrectangles[n][2]
-				h = allrectangles[n][3]
+				x,y,w,h = allrectangles[n]
 				tile = [x,y,w,h]
 				tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
 
