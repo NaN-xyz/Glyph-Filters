@@ -29,16 +29,14 @@ class Lines(NaNFilter):
 			direction = "horizontal"
 			linecomps = []
 
-			for n in range(0, len(allrectangles)):
-				x,y,w,h = allrectangles[n]
+			for x,y,w,h in allrectangles:
 				tile = [x,y,w,h]
 				tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
 
 				if direction == "horizontal": direction="vertical"
 				else: direction="horizontal"
 
-				dlines = self.DrawlinesTile(thislayer, outlinedata, tile, direction)
-				linecomps.extend( dlines )
+				linecomps.extend(self.DrawlinesTile(thislayer, outlinedata, tile, direction))
 
 			ClearPaths(thislayer)
 			AddAllComponentsToLayer(linecomps, thislayer)
