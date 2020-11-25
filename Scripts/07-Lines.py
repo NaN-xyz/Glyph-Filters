@@ -34,10 +34,7 @@ class Lines(NaNFilter):
             direction = "horizontal"
             linecomps = []
 
-            for x, y, w, h in allrectangles:
-                tile = [x, y, w, h]
-                tilecoords = [[x, y], [x, y + h], [x + w, y + h], [x + w, y]]
-
+            for tile in allrectangles:
                 if direction == "horizontal":
                     direction = "vertical"
                 else:
