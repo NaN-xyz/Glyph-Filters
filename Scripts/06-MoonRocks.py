@@ -52,8 +52,7 @@ class MoonRocks(NaNFilter):
 			if not inside:
 				continue
 			circle = drawCircle(x, y, rad*2, rad*2)
-			circlea = doAngularizzle([circle], 10)
-			circlea = setGlyphCoords(circlea)
+			circlea = setGlyphCoords(doAngularizzle([circle], 10))
 			circlecoords = circlea[0][1]
 
 			if ShapeWithinOutlines(circlecoords, outlinedata):
