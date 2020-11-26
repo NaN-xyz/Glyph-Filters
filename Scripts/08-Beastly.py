@@ -91,31 +91,31 @@ class Fur(NaNFilter):
 					a = atan2(y-midy, x-midx) + (radians(20+variance) * direction)
 					return hairdist * cos(a), hairdist * sin(a)
 
-				midlinex1a, midliney1a = makeOffcurve(x1, y1)
-				midlinex1b, midliney1b = makeOffcurve(x1, y1, direction = -1)
-				midlinex2a, midliney2a = makeOffcurve(x2, y2)
-				midlinex2b, midliney2b = makeOffcurve(x2, y2, direction = -1)
+				midline1a = makeOffcurve(x1, y1)
+				midline1b = makeOffcurve(x1, y1, direction = -1)
+				midline2a = makeOffcurve(x2, y2)
+				midline2b = makeOffcurve(x2, y2, direction = -1)
 
 				# draw the fur
 
 				if random.choice([0,1]) == 0:
 					# 1a,1b,2b,2a
-					bubble.nodes.append(GSNode([x1-midlinex1a, y1-midliney1a], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([midx+midlinex1b, midy+midliney1b], type = GSOFFCURVE))
+					bubble.nodes.append(GSNode([x1-midline1a[0], y1-midline1a[1]], type = GSOFFCURVE))
+					bubble.nodes.append(GSNode([midx+midline1b[0], midy+midline1b[1]], type = GSOFFCURVE))
 					bubble.nodes.append(GSNode([midx, midy], type = GSCURVE))
 
-					bubble.nodes.append(GSNode([midx+midlinex2b, midy+midliney2b], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([x2-midlinex2a, y2-midliney2a], type = GSOFFCURVE))
+					bubble.nodes.append(GSNode([midx+midline2b[0], midy+midline2b[1]], type = GSOFFCURVE))
+					bubble.nodes.append(GSNode([x2-midline2a[0], y2-midline2a[1]], type = GSOFFCURVE))
 					bubble.nodes.append(GSNode([x2, y2], type = GSCURVE))
 
 				else:
 					# 1b,1a,2a,2b
-					bubble.nodes.append(GSNode([x1-midlinex1b, y1-midliney1b], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([midx+midlinex1a, midy+midliney1a], type = GSOFFCURVE))
+					bubble.nodes.append(GSNode([x1-midline1b[0], y1-midline1b[1]], type = GSOFFCURVE))
+					bubble.nodes.append(GSNode([midx+midline1a[0], midy+midline1a[1]], type = GSOFFCURVE))
 					bubble.nodes.append(GSNode([midx, midy], type = GSCURVE))
 
-					bubble.nodes.append(GSNode([midx+midlinex2a, midy+midliney2a], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([x2-midlinex2b, y2-midliney2b], type = GSOFFCURVE))
+					bubble.nodes.append(GSNode([midx+midline2a[0], midy+midline2a[1]], type = GSOFFCURVE))
+					bubble.nodes.append(GSNode([x2-midline2b[0], y2-midline2b[1]], type = GSOFFCURVE))
 					bubble.nodes.append(GSNode([x2, y2], type = GSCURVE))
 
 			bubble.closed = True
