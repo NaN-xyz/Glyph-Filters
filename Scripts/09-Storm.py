@@ -18,7 +18,6 @@ def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 
 	freq = 0.005
 	noiseseed = random.randrange(0,100000)
-	n=0
 
 	for y in range(oy, oy+h, step):
 		for x in range(ox, ox+h, step):
@@ -30,7 +29,6 @@ def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 					scale = (float(1)/maxsize)*size
 					stormcomp.transform = ((scale, 0.0, 0.0, scale, x, y))
 					thislayer.components.append(stormcomp)
-				n+=1
 
 	return stormpaths
 
