@@ -102,25 +102,17 @@ class Fur(NaNFilter):
 
 				# draw the fur
 
-				if random.choice([0,1]) == 0:
-					# 1_choices[0],1_choices[1],2b,2a
-					bubble.nodes.append(GSNode([x1-midline1_choices[0][0], y1-midline1_choices[0][1]], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([midx+midline1_choices[1][0], midy+midline1_choices[1][1]], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([midx, midy], type = GSCURVE))
+				if random.choice([0,1]) == 1:
+					midline1_choices = list(reversed(midline1_choices))
+					midline2_choices = list(reversed(midline2_choices))
 
-					bubble.nodes.append(GSNode([midx+midline2_choices[1][0], midy+midline2_choices[1][1]], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([x2-midline2_choices[0][0], y2-midline2_choices[0][1]], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([x2, y2], type = GSCURVE))
+				bubble.nodes.append(GSNode([x1-midline1_choices[0][0], y1-midline1_choices[0][1]], type = GSOFFCURVE))
+				bubble.nodes.append(GSNode([midx+midline1_choices[1][0], midy+midline1_choices[1][1]], type = GSOFFCURVE))
+				bubble.nodes.append(GSNode([midx, midy], type = GSCURVE))
 
-				else:
-					# 1_choices[1],1_choices[0],2a,2b
-					bubble.nodes.append(GSNode([x1-midline1_choices[1][0], y1-midline1_choices[1][1]], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([midx+midline1_choices[0][0], midy+midline1_choices[0][1]], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([midx, midy], type = GSCURVE))
-
-					bubble.nodes.append(GSNode([midx+midline2_choices[0][0], midy+midline2_choices[0][1]], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([x2-midline2_choices[1][0], y2-midline2_choices[1][1]], type = GSOFFCURVE))
-					bubble.nodes.append(GSNode([x2, y2], type = GSCURVE))
+				bubble.nodes.append(GSNode([midx+midline2_choices[1][0], midy+midline2_choices[1][1]], type = GSOFFCURVE))
+				bubble.nodes.append(GSNode([x2-midline2_choices[0][0], y2-midline2_choices[0][1]], type = GSOFFCURVE))
+				bubble.nodes.append(GSNode([x2, y2], type = GSCURVE))
 
 			bubble.closed = True
 
