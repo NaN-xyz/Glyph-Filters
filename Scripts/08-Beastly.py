@@ -85,44 +85,21 @@ class Fur(NaNFilter):
 
 				hairdist = pushdist * 0.3
 
-				variance = random.randrange(0,10)
 
-				# get push distance for xy1 to midxy
-				a = atan2(y1-midy, x1-midx)
-				a += radians(20+variance)
-				midlinex1a = hairdist * cos(a)
-				midliney1a = hairdist * sin(a)
+				def makeOffcurve(x, y, direction=1):
+					variance = random.randrange(0,10)
+					a = atan2(y-midy, x-midx) + (radians(20+variance) * direction)
+					return hairdist * cos(a), hairdist * sin(a)
 
-				variance = random.randrange(0,10)
-
-				a = atan2(y1-midy, x1-midx)
-				a -= radians(20+variance)
-				midlinex1b = hairdist * cos(a)
-				midliney1b = hairdist * sin(a)
-
-				#
-
-				variance = random.randrange(0,10)
-
-				a = atan2(y2-midy, x2-midx)
-				a += radians(20+variance)
-				midlinex2a = hairdist * cos(a)
-				midliney2a = hairdist * sin(a)
-
-				variance = random.randrange(0,10)
-
-				a = atan2(y2-midy, x2-midx)
-				a -= radians(20+variance)
-				midlinex2b = hairdist * cos(a)
-				midliney2b = hairdist * sin(a)
-
+				midlinex1a, midliney1a = makeOffcurve(x1, y1)
+				midlinex1b, midliney1b = makeOffcurve(x1, y1, direction = -1)
+				midlinex2a, midliney2a = makeOffcurve(x2, y2)
+				midlinex2b, midliney2b = makeOffcurve(x2, y2, direction = -1)
 
 				# draw the fur
 
-				r = random.choice([0,1])
-
-				if r == 0:
-
+				if random.choice([0,1]) == 0:
+					# 1a,1b,2b,2a
 					bubble.nodes.append(GSNode([x1-midlinex1a, y1-midliney1a], type = GSOFFCURVE))
 					bubble.nodes.append(GSNode([midx+midlinex1b, midy+midliney1b], type = GSOFFCURVE))
 					bubble.nodes.append(GSNode([midx, midy], type = GSCURVE))
@@ -132,7 +109,7 @@ class Fur(NaNFilter):
 					bubble.nodes.append(GSNode([x2, y2], type = GSCURVE))
 
 				else:
-
+					# 1b,1a,2a,2b
 					bubble.nodes.append(GSNode([x1-midlinex1b, y1-midliney1b], type = GSOFFCURVE))
 					bubble.nodes.append(GSNode([midx+midlinex1a, midy+midliney1a], type = GSOFFCURVE))
 					bubble.nodes.append(GSNode([midx, midy], type = GSCURVE))
