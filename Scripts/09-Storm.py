@@ -8,35 +8,7 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFNoise import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
+from NaNFilter import NaNFilter
 
 def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 
@@ -62,51 +34,18 @@ def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 
 	return stormpaths
 
-# ----------------------------------------------------
-# output controllers
 
-
-def OutputStorm():
-
-	global stormcomponent
-
+class Storm(NaNFilter):
 	gridsize, minsize, maxsize = 25, 20, 60
-	stormcomponent = CreateShapeComponent(font, maxsize, maxsize, "circle", "StormShape")
 
-	for glyph in selectedGlyphs:
-		
-		beginGlyphNaN(glyph)
-		glyph.beginUndo()
+	def setup(self):
+		self.stormcomponent = CreateShapeComponent(self.font, self.maxsize, self.maxsize, "circle", "StormShape")
 
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-
-		glyphsize = glyphSize(glyph)
+	def processLayer(self, thislayer, params):
 		pathlist = doAngularizzle(thislayer.paths, 4)
 		outlinedata = setGlyphCoords(pathlist)
-
-		stormpaths = drawStorm(thislayer, outlinedata, gridsize, minsize, maxsize, stormcomponent)
-
+		stormpaths = drawStorm(thislayer, outlinedata, self.gridsize, self.minsize, self.maxsize, self.stormcomponent)
 		ClearPaths(thislayer)
 		AddAllPathsToLayer(stormpaths, thislayer)
 
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-OutputStorm()
-
-
-
-Font.enableUpdateInterface()
-
+Storm()
