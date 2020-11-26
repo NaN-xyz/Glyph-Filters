@@ -18,21 +18,16 @@ class Fur(NaNFilter):
 
 	def doFur(self, thislayer, outlinedata, minpush, maxpush):
 
-		for path in outlinedata:
-
-			direction = path[0]
-			structure = path[1]
+		for direction, structure in outlinedata:
 			nodelen = len(structure)
 			bubble = GSPath()
 			n = 0
 
 			while n < nodelen:
+				x1,y1 = structure[n]
 
-				x1 = structure[n][0]
-				y1 = structure[n][1]
+				minstep, maxstep = 5, 20
 
-				minstep = 5
-				maxstep = 20
 				if direction=="False": maxstep=int(maxstep*0.5)
 				step = random.randrange(minstep, maxstep)
 				pushdist = random.randrange(minpush, maxpush)
@@ -49,21 +44,19 @@ class Fur(NaNFilter):
 					break
 
 				if n<nodelen-1:
-					x2 = structure[n+step][0]
-					y2 = structure[n+step][1]
+					x2,y2 = structure[n+step]
+					y2,y2 = structure[n+step]
 					n+=step
 				else:
-					x2 = structure[0][0]
-					y2 = structure[0][1]
+					x2,y2 = structure[0]
+					y2,y2 = structure[0]
 
 				# if distance([x1, y1], [x2, y2]) < 1:
 				# 	continue
 
-				a = atan2(y1-y2, x1-x2)
-				a += radians(90)
+				a = atan2(y1-y2, x1-x2) + radians(90)
 
-				midx = x1 + ((x2-x1)/2)
-				midy = y1 + ((y2-y1)/2)
+				midx, midy = x1 + ((x2-x1)/2), y1 + ((y2-y1)/2)
 
 				pushdist = random.randrange(minpush, maxpush)
 
@@ -81,11 +74,10 @@ class Fur(NaNFilter):
 					liney*=0.7
 					pushdist*=0.7
 
-				if searchblack is not None:
-					if searchblack < 200:
-						linex*=0.7
-						liney*=0.7
-						pushdist*=0.7
+				if searchblack is not None and searchblack < 200:
+					linex*=0.7
+					liney*=0.7
+					pushdist*=0.7
 
 				midx += linex
 				midy += liney
