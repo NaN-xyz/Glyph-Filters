@@ -88,18 +88,18 @@ class Fur(NaNFilter):
 					return hairdist * cos(a), hairdist * sin(a)
 
 				if random.choice([0,1]) == 0:
-					midline1_choices = [makeOffcurve(x1, y1), makeOffcurve(x1, y1, direction = -1) ]
-					midline2_choices = [makeOffcurve(x2, y2), makeOffcurve(x2, y2, direction = -1) ]
+					out_offcurves = [makeOffcurve(x1, y1), makeOffcurve(x1, y1, direction = -1) ]
+					in_offcurves = [makeOffcurve(x2, y2), makeOffcurve(x2, y2, direction = -1) ]
 				else:
-					midline1_choices = [makeOffcurve(x1, y1, direction = -1), makeOffcurve(x1, y1) ]
-					midline2_choices = [makeOffcurve(x2, y2, direction = -1), makeOffcurve(x2, y2) ]
+					out_offcurves = [makeOffcurve(x1, y1, direction = -1), makeOffcurve(x1, y1) ]
+					in_offcurves = [makeOffcurve(x2, y2, direction = -1), makeOffcurve(x2, y2) ]
 
-				bubble.nodes.append(GSNode([x1-midline1_choices[0][0], y1-midline1_choices[0][1]], type = GSOFFCURVE))
-				bubble.nodes.append(GSNode([midx+midline1_choices[1][0], midy+midline1_choices[1][1]], type = GSOFFCURVE))
+				bubble.nodes.append(GSNode([x1-out_offcurves[0][0], y1-out_offcurves[0][1]], type = GSOFFCURVE))
+				bubble.nodes.append(GSNode([midx+out_offcurves[1][0], midy+out_offcurves[1][1]], type = GSOFFCURVE))
 				bubble.nodes.append(GSNode([midx, midy], type = GSCURVE))
 
-				bubble.nodes.append(GSNode([midx+midline2_choices[1][0], midy+midline2_choices[1][1]], type = GSOFFCURVE))
-				bubble.nodes.append(GSNode([x2-midline2_choices[0][0], y2-midline2_choices[0][1]], type = GSOFFCURVE))
+				bubble.nodes.append(GSNode([midx+in_offcurves[1][0], midy+in_offcurves[1][1]], type = GSOFFCURVE))
+				bubble.nodes.append(GSNode([x2-in_offcurves[0][0], y2-in_offcurves[0][1]], type = GSOFFCURVE))
 				bubble.nodes.append(GSNode([x2, y2], type = GSCURVE))
 
 			bubble.closed = True
