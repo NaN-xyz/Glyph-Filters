@@ -17,8 +17,6 @@ def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 	stormpaths = []
 
 	freq = 0.005
-	noiseseed = random.randrange(0,100000)
-
 	for y in range(oy, oy+h, step):
 		for x in range(ox, ox+h, step):
 			if withinGlyphBlack(x, y, outlinedata):
