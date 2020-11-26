@@ -17,7 +17,15 @@ class Fur(NaNFilter):
 	}
 
 
-	def doFur(self, thislayer, outlinedata, minpush, maxpush):
+
+	def processLayer(self, thislayer, params):
+		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
+		pathlist = doAngularizzle(offsetpaths, 4)
+		outlinedata = setGlyphCoords(pathlist)
+
+		ClearPaths(thislayer)
+
+ 		minpush, maxpush = params["minfur"], params["maxfur"]
 
 		for direction, structure in outlinedata:
 			nodelen = len(structure)
@@ -104,14 +112,5 @@ class Fur(NaNFilter):
 
 			bubble.closed = True
 			thislayer.paths.append(bubble)
-
-	def processLayer(self, thislayer, params):
-		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
-		pathlist = doAngularizzle(offsetpaths, 4)
-		outlinedata = setGlyphCoords(pathlist)
-
-		ClearPaths(thislayer)
-
-		self.doFur(thislayer, outlinedata, params["minfur"], params["maxfur"])
 
 Fur()
