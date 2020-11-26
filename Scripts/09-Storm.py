@@ -18,7 +18,7 @@ def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 
 	freq = 0.005
 	for y in range(oy, oy+h, step):
-		for x in range(ox, ox+h, step):
+		for x in range(ox, ox+w, step):
 			if withinGlyphBlack(x, y, outlinedata):
 				noiz = snoise2(x*freq, y*freq, 3)
 				size = noiseMap( noiz, minsize, maxsize )
