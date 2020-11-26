@@ -16,6 +16,7 @@ class Fur(NaNFilter):
 		"L": { "offset": -20, "minfur": 60, "maxfur": 120 }
 	}
 
+
 	def doFur(self, thislayer, outlinedata, minpush, maxpush):
 
 		for direction, structure in outlinedata:
@@ -40,7 +41,6 @@ class Fur(NaNFilter):
 					step = minstep
 
 				if n+step>=nodelen-1:
-					n = nodelen
 					break
 
 				if n<nodelen-1:
@@ -50,9 +50,6 @@ class Fur(NaNFilter):
 				else:
 					x2,y2 = structure[0]
 					y2,y2 = structure[0]
-
-				# if distance([x1, y1], [x2, y2]) < 1:
-				# 	continue
 
 				a = atan2(y1-y2, x1-x2) + radians(90)
 
@@ -64,8 +61,7 @@ class Fur(NaNFilter):
 				if strayhair == 20:
 					pushdist = pushdist * 2
 
-				linex = pushdist * cos(a)
-				liney = pushdist * sin(a)
+				linex, liney = pushdist * cos(a), pushdist * sin(a)
 
 				searchblack = DistanceToNextBlack(thislayer, [x1, y1], [x2, y2], outlinedata, searchlimit=200)
 
@@ -115,11 +111,7 @@ class Fur(NaNFilter):
 				bubble.nodes.append(GSNode([x2, y2], type = GSCURVE))
 
 			bubble.closed = True
-
 			thislayer.paths.append(bubble)
-
-			# simple = drawSimplePath(structure)
-			# thislayer.paths.append(simple)
 
 	def processLayer(self, thislayer, params):
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
