@@ -14,7 +14,6 @@ def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 
 	b = AllPathBounds(thislayer)
 	ox, oy, w, h = int(b[0])+1, b[1]+1, b[2], b[3]
-	stormpaths = []
 
 	freq = 0.005
 	for y in range(oy, oy+h, step):
@@ -30,7 +29,6 @@ def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 			stormcomp.transform = ((scale, 0.0, 0.0, scale, x, y))
 			thislayer.components.append(stormcomp)
 
-	return stormpaths
 
 
 class Storm(NaNFilter):
@@ -42,8 +40,7 @@ class Storm(NaNFilter):
 	def processLayer(self, thislayer, params):
 		pathlist = doAngularizzle(thislayer.paths, 4)
 		outlinedata = setGlyphCoords(pathlist)
-		stormpaths = drawStorm(thislayer, outlinedata, self.gridsize, self.minsize, self.maxsize, self.stormcomponent)
+		drawStorm(thislayer, outlinedata, self.gridsize, self.minsize, self.maxsize, self.stormcomponent)
 		ClearPaths(thislayer)
-		AddAllPathsToLayer(stormpaths, thislayer)
 
 Storm()
