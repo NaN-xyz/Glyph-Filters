@@ -19,15 +19,16 @@ def drawStorm(thislayer, outlinedata, step, minsize, maxsize, stormcomponent):
 	freq = 0.005
 	for y in range(oy, oy+h, step):
 		for x in range(ox, ox+w, step):
-			if withinGlyphBlack(x, y, outlinedata):
-				noiz = snoise2(x*freq, y*freq, 3)
-				size = noiseMap( noiz, minsize, maxsize )
-				if size <= 4:
-					continue
-				stormcomp = GSComponent(stormcomponent)
-				scale = (float(1)/maxsize)*size
-				stormcomp.transform = ((scale, 0.0, 0.0, scale, x, y))
-				thislayer.components.append(stormcomp)
+			if not withinGlyphBlack(x, y, outlinedata):
+				continue
+			noiz = snoise2(x*freq, y*freq, 3)
+			size = noiseMap( noiz, minsize, maxsize )
+			if size <= 4:
+				continue
+			stormcomp = GSComponent(stormcomponent)
+			scale = (float(1)/maxsize)*size
+			stormcomp.transform = ((scale, 0.0, 0.0, scale, x, y))
+			thislayer.components.append(stormcomp)
 
 	return stormpaths
 
