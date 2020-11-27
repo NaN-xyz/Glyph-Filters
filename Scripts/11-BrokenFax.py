@@ -10,27 +10,19 @@ from NaNGFAngularizzle import *
 from NaNFilter import *
 
 def AngularSteps(thislayer, outlinedata, stepsize):
-
-	angularpaths = []
 	allpaths = []
 	size = stepsize
 	originx = thislayer.bounds.origin.x
 
-	for path in outlinedata:
-
-		direction = path[0]
-		structure = path[1]
+	for _,structure in outlinedata:
 		nodelen = len(structure)
 		bubble = GSPath()
 		n = 0
 		newpath = []
 
 		while n < nodelen:
-
-			x1 = structure[n][0]
-			y1 = structure[n][1]
-			x2 = int(x1/size) * size
-			y2 = int(y1/size) * size
+			x1, y1 = structure[n]
+			x2,y2 = int(x1/size) * size, int(y1/size) * size
 
 			if len(newpath)>0:
 				if x2!=newpath[-1][0] or y2!=newpath[-1][1]:
@@ -54,6 +46,7 @@ def AngularSteps(thislayer, outlinedata, stepsize):
 		for node in path:
 			node[0] = node[0] + (originx - lowestx)
 	# add all paths
+	angularpaths = []
 	for path in allpaths:
 		simple = drawSimplePath(path)
 		angularpaths.append(simple)
@@ -74,37 +67,38 @@ def Shapefit(thislayer, outlinedata):
 
 	b = AllPathBounds(thislayer)
 
-	if b is not None:
+	if b is None:
+		return
 
-		ox, oy, w, h = b[0], b[1], b[2], b[3]
-		sizes = returnSizes(random.randrange(3,5))
-		newshapes = []
-		allshapes = []
+	ox, oy, w, h = b[0], b[1], b[2], b[3]
+	sizes = returnSizes(random.randrange(3,5))
+	newshapes = []
+	allshapes = []
 
-		for shapesize in sizes:
+	for shapesize in sizes:
 
-			for x in range(ox, ox+w, shapesize):
+		for x in range(ox, ox+w, shapesize):
 
-				for y in range(oy, oy+h, shapesize):
+			for y in range(oy, oy+h, shapesize):
 
-					shapepath = []
-					shape = drawRectangle(x, y, shapesize, shapesize)
-					shapepath.append(shape)
-					nshape = doAngularizzle(shapepath, 10)
-					nshape = setGlyphCoords(nshape)
-					finalshape = nshape[0][1]
-					rect = returnSquareShape(x, y, shapesize, shapesize)
+				shapepath = []
+				shape = drawRectangle(x, y, shapesize, shapesize)
+				shapepath.append(shape)
+				nshape = doAngularizzle(shapepath, 10)
+				nshape = setGlyphCoords(nshape)
+				finalshape = nshape[0][1]
+				rect = returnSquareShape(x, y, shapesize, shapesize)
 
-					if ShapeWithinOutlines(finalshape, outlinedata):
-						safe = True
-						for n in range(0, len(allshapes)):
-							if point_inside_polygon(x, y, allshapes[n]):
-								safe = False
-								break
+				if ShapeWithinOutlines(finalshape, outlinedata):
+					safe = True
+					for n in range(0, len(allshapes)):
+						if point_inside_polygon(x, y, allshapes[n]):
+							safe = False
+							break
 
-						if safe==True:		
-							newshapes.append(shape)
-							allshapes.append(rect)	
+					if safe:
+						newshapes.append(shape)
+						allshapes.append(rect)	
 
 		return newshapes
 
