@@ -12,12 +12,6 @@ from NaNGFNoise import *
 from NaNFilter import NaNFilter
 
 
-def ApplyBurn(thislayer, groups):
-
-	for g in groups:
-		if len(g)>2:
-			thislayer.paths.extend(g)
-
 def returnRoundedPaths(paths):
 
 	roundedpathlist = []
@@ -50,8 +44,9 @@ class Burn(NaNFilter):
 		newtris = self.SortCollageSpace(thislayer, outlinedata, outlinedata2, params["gridsize"], bounds, action="overlap", randomize=True)
 		maxchain = random.randrange(200,400)
 		groups = BreakUpSpace(thislayer, outlinedata, newtris, params["gridsize"], maxchain)
-		ApplyBurn(thislayer, groups)
-		#AddAllPathsToLayer(edgetris, thislayer)
+		for g in groups:
+			if len(g)>2:
+				thislayer.paths.extend(g)
 
 		thislayer.removeOverlap()
 		roundedpathlist = returnRoundedPaths(thislayer.paths)
