@@ -34,7 +34,7 @@ def AngularSteps(thislayer, outlinedata, stepsize):
 	# find lowest x in all paths
 	lowestx = 99999
 	for path in allpaths:
-		xlow = findLowestX(path)
+		xlow = min([ node[0] for node in path])
 		if xlow<lowestx: 
 			lowestx = xlow
 	# adjust x in paths by lowestx
@@ -48,16 +48,6 @@ def AngularSteps(thislayer, outlinedata, stepsize):
 		angularpaths.append(simple)
 
 	return angularpaths
-
-
-def findLowestX(nodes):
-	lowestx = 99999
-	for node in nodes:
-		x = node[0]
-		if x<lowestx:
-			lowestx = x
-	return lowestx
-
 
 def Shapefit(thislayer, outlinedata):
 
