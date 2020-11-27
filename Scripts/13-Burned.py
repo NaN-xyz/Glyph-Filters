@@ -12,40 +12,6 @@ from NaNGFNoise import *
 from NaNFilter import NaNFilter
 
 
-def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
-
-	final_in_triangles = []
-	in_triangles = []
-	out_triangles = []
-	edge_triangles = []
-
-	isogrid = makeIsometricGrid(bounds, gridsize)
-	isogrid = RandomiseIsoPoints(isogrid, gridsize)
-	alltriangles = IsoGridToTriangles(isogrid)
-
-	# Return triangles within and without
-	in_out_triangles = returnTriangleTypes(alltriangles, outlinedata)
-	in_triangles = in_out_triangles[0]
-	out_triangles = in_out_triangles[1]
-
-	#edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
-	edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)	
-
-	final_in_triangles.extend(in_triangles)
-	final_in_triangles.extend(edge_triangles)
-
-	# for triangle in edge_triangles:
-	# 	tricoords = SimplifyTriangleList(triangle)
-	# 	if ShapeWithinOutlines(tricoords, outlinedata2): final_in_triangles.append(triangle)
-
-	return TrianglesListToPaths(edge_triangles)
-
-	
-
-# ---------
-
-
-
 def ApplyBurn(thislayer, groups):
 
 	for g in groups:
@@ -95,7 +61,7 @@ class Burn(NaNFilter):
 
 		ClearPaths(thislayer)
 
-		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, params["gridsize"], bounds)
+		newtris = self.SortCollageSpace(thislayer, outlinedata, outlinedata2, params["gridsize"], bounds, action="overlap", randomize=True)
 		maxchain = random.randrange(200,400)
 		groups = BreakUpSpace(thislayer, outlinedata, newtris, params["gridsize"], maxchain)
 		ApplyBurn(thislayer, groups)
