@@ -9,38 +9,6 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import *
 
-def AngularSteps(thislayer, outlinedata, stepsize):
-	allpaths = []
-	size = stepsize
-	originx = thislayer.bounds.origin.x
-
-	for _,structure in outlinedata:
-		newpath = []
-
-		for x1, y1 in structure:
-			x2,y2 = int(x1/size) * size, int(y1/size) * size
-
-			if len(newpath)>0:
-				if x2!=newpath[-1][0] or y2!=newpath[-1][1]:
-					newpath.append([x2,y2])
-			else:
-				newpath.append([x2,y2])
-
-		allpaths.append(newpath)
-
-	# shift
-	# find lowest x in all paths
-	lowestx = min([
-		min([ node[0] for node in path]) # Min x in path
-	for path in allpaths])
-
-	# adjust x in paths by lowestx
-	for path in allpaths:
-		for node in path:
-			node[0] = node[0] + (originx - lowestx)
-
-	return [ drawSimplePath(path) for path in allpaths]
-
 class BrokenFax(NaNFilter):
 	params = {
 		"S": {"offset": -20, "stepsize": 50 },
@@ -54,7 +22,36 @@ class BrokenFax(NaNFilter):
 		outlinedata = setGlyphCoords(pathlist)
 		ClearPaths(thislayer)
 
-		angularpaths = AngularSteps(thislayer, outlinedata, params["stepsize"])
+		allpaths = []
+		size = params["stepsize"]
+		originx = thislayer.bounds.origin.x
+
+		for _,structure in outlinedata:
+			newpath = []
+
+			for x1, y1 in structure:
+				x2,y2 = int(x1/size) * size, int(y1/size) * size
+
+				if len(newpath)>0:
+					if x2!=newpath[-1][0] or y2!=newpath[-1][1]:
+						newpath.append([x2,y2])
+				else:
+					newpath.append([x2,y2])
+
+			allpaths.append(newpath)
+
+		# shift
+		# find lowest x in all paths
+		lowestx = min([
+			min([ node[0] for node in path]) # Min x in path
+		for path in allpaths])
+
+		# adjust x in paths by lowestx
+		for path in allpaths:
+			for node in path:
+				node[0] = node[0] + (originx - lowestx)
+
+		angularpaths = [ drawSimplePath(path) for path in allpaths]
 		AddAllPathsToLayer(angularpaths, thislayer)
 		thislayer.removeOverlap()
 
