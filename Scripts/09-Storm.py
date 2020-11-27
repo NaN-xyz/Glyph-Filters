@@ -19,7 +19,7 @@ def withinGlyphBlack_faster(layer, x, y):
 	intersections = layer.calculateIntersectionsStartPoint_endPoint_decompose_(definitelyOutside, pt, True)
 	return (len(intersections) % 2) == 1
 
-def operateOnBlackAtInterval(layer, outlinedata, func, step_x, step_y=None):
+def operateOnBlackAtInterval(layer, func, step_x, step_y=None):
 	if step_y is None:
 		step_y = step_x
 	b = AllPathBounds(layer)
@@ -53,9 +53,7 @@ class Storm(NaNFilter):
 		layer.components.append(stormcomp)
 
 	def processLayer(self, thislayer, params):
-		pathlist = doAngularizzle(thislayer.paths, 4)
-		outlinedata = setGlyphCoords(pathlist)
-		operateOnBlackAtInterval(thislayer, outlinedata, self.drawStorm, self.gridsize)
+		operateOnBlackAtInterval(thislayer, self.drawStorm, self.gridsize)
 		ClearPaths(thislayer)
 
 Storm()
