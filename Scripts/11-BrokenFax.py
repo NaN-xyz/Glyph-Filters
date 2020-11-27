@@ -32,11 +32,10 @@ def AngularSteps(thislayer, outlinedata, stepsize):
 
 	# shift
 	# find lowest x in all paths
-	lowestx = 99999
-	for path in allpaths:
-		xlow = min([ node[0] for node in path])
-		if xlow<lowestx: 
-			lowestx = xlow
+	lowestx = min([
+		min([ node[0] for node in path]) # Min x in path
+	for path in allpaths])
+
 	# adjust x in paths by lowestx
 	for path in allpaths:
 		for node in path:
