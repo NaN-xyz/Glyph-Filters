@@ -9,6 +9,15 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
+from Foundation import NSMakePoint
+
+def withinGlyphBlack_faster(layer, x, y):
+	if not layer.bounds:
+		return
+	definitelyOutside = NSMakePoint(layer.bounds.origin.x-1,y)
+	pt = NSMakePoint(x,y)
+	intersections = layer.calculateIntersectionsStartPoint_endPoint_decompose_(definitelyOutside, pt, True)
+	return (len(intersections) % 2) == 1
 
 def operateOnBlackAtInterval(layer, outlinedata, func, step_x, step_y=None):
 	if step_y is None:
@@ -18,7 +27,7 @@ def operateOnBlackAtInterval(layer, outlinedata, func, step_x, step_y=None):
 	results = []
 	for y in range(oy, oy+h, step_y):
 		for x in range(ox, ox+w, step_x):
-			if not withinGlyphBlack(x, y, outlinedata):
+			if not withinGlyphBlack_faster(layer, x, y):
 				continue
 			result = func(x,y,layer)
 			if result is not None:
