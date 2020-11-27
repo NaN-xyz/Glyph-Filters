@@ -15,19 +15,8 @@ from NaNFilter import NaNFilter
 def ApplyBurn(thislayer, groups):
 
 	for g in groups:
-
 		if len(g)>2:
-
-			templayer = GSLayer()
-			for path in g:
-				tp = path
-				templayer.paths.append(tp)
-				thislayer.paths.append(tp)
-			templayer.removeOverlap()
-
-			for p in templayer.paths: 
-				
-				nodelen = len(p.nodes)
+			thislayer.paths.extend(g)
 
 def returnRoundedPaths(paths):
 
