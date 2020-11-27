@@ -105,6 +105,8 @@ class Topography(NaNFilter):
 
                 roundedpath = RoundPath(p, "nodes")
                 roundedpath = convertToFitpath(roundedpath, True)
+                if not roundedpath:
+                	continue
                 pathlist = doAngularizzle([roundedpath], 80)
                 outlinedata = setGlyphCoords(pathlist)
 
