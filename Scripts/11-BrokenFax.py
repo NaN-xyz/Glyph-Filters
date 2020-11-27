@@ -17,11 +17,9 @@ def AngularSteps(thislayer, outlinedata, stepsize):
 	for _,structure in outlinedata:
 		nodelen = len(structure)
 		bubble = GSPath()
-		n = 0
 		newpath = []
 
-		while n < nodelen:
-			x1, y1 = structure[n]
+		for x1, y1 in structure:
 			x2,y2 = int(x1/size) * size, int(y1/size) * size
 
 			if len(newpath)>0:
@@ -29,8 +27,6 @@ def AngularSteps(thislayer, outlinedata, stepsize):
 					newpath.append([x2,y2])
 			else:
 				newpath.append([x2,y2])
-
-			n+=1
 
 		allpaths.append(newpath)
 
