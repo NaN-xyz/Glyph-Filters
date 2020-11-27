@@ -13,13 +13,11 @@ from NaNFilter import NaNFilter
 
 
 def returnRoundedPaths(paths):
-
 	roundedpathlist = []
 	for p in paths:
 		roundedpath = RoundPath(p, "nodes")
 		try: 
-			roundedpath = convertToFitpath(roundedpath, True)
-			roundedpathlist.append(roundedpath)
+			roundedpathlist.append(convertToFitpath(roundedpath, True))
 		except Exception as e:
 			print("returnRoundedPaths failed:", e)
 	return roundedpathlist
