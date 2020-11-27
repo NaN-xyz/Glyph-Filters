@@ -15,8 +15,6 @@ def AngularSteps(thislayer, outlinedata, stepsize):
 	originx = thislayer.bounds.origin.x
 
 	for _,structure in outlinedata:
-		nodelen = len(structure)
-		bubble = GSPath()
 		newpath = []
 
 		for x1, y1 in structure:
