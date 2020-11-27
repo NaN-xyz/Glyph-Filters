@@ -40,13 +40,8 @@ def AngularSteps(thislayer, outlinedata, stepsize):
 	for path in allpaths:
 		for node in path:
 			node[0] = node[0] + (originx - lowestx)
-	# add all paths
-	angularpaths = []
-	for path in allpaths:
-		simple = drawSimplePath(path)
-		angularpaths.append(simple)
 
-	return angularpaths
+	return [ drawSimplePath(path) for path in allpaths]
 
 def Shapefit(thislayer, outlinedata):
 
