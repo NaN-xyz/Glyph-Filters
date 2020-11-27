@@ -59,7 +59,7 @@ class Topography(NaNFilter):
 
         for maxchain, shape in iterations:
             newtris = self.SortCollageSpace(
-                thislayer, outlinedata, outlinedata2, gridsize, bounds
+                thislayer, outlinedata, outlinedata2, gridsize, bounds, "stick"
             )
             groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
             self.ApplyCollageGraphixxx(thislayer, groups, shape, self.linecomponents)
@@ -70,22 +70,6 @@ class Topography(NaNFilter):
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)
 
-    def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds):
-
-        isogrid = makeIsometricGrid(bounds, gridsize)
-        alltriangles = IsoGridToTriangles(isogrid)
-
-        # Return triangles within and without
-        in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
-
-        edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
-        # edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)
-
-        final_in_triangles = in_triangles
-        final_in_triangles.extend(edge_triangles)
-
-        return TrianglesListToPaths(final_in_triangles)
-
     def ApplyCollageGraphixxx(self, layer, groups, drawtype, linecomponents):
 
         for g in groups:
@@ -93,9 +77,7 @@ class Topography(NaNFilter):
                 continue
 
             templayer = GSLayer()
-            for path in g:
-                tp = path
-                templayer.paths.append(tp)
+            templayer.paths = g
             templayer.removeOverlap()
 
             for p in templayer.paths:
@@ -105,8 +87,8 @@ class Topography(NaNFilter):
 
                 roundedpath = RoundPath(p, "nodes")
                 roundedpath = convertToFitpath(roundedpath, True)
-                pathlist = doAngularizzle([roundedpath], 80)
-                outlinedata = setGlyphCoords(pathlist)
+                if not roundedpath:
+                	continue
 
                 if drawtype == "vertical" or drawtype == "horizontal":
                     all_lines = Fill_Drawlines(
