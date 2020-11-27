@@ -7,35 +7,7 @@ __doc__="""
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
+from NaNFilter import *
 
 def AngularSteps(thislayer, outlinedata, stepsize):
 
@@ -152,71 +124,27 @@ def returnSquareShape(nx, ny, w, h):
 	return coord
 
 
-def OutputFax():
+class BrokenFax(NaNFilter):
+	params = {
+		"S": {"offset": -20, "stepsize": 50 },
+		"M": {"offset": -20, "stepsize": 50 },
+		"L": {"offset": -30, "stepsize": 50 },
+	}
 
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = -20
-		if glyphsize=="M": 
-			offset = -20
-		if glyphsize=="L": 
-			offset = -30
-
-		stepsize = 50
-
+	def processLayer(self, thislayer, params):
 		thislayer.removeOverlap()
-		pathlist = doAngularizzle(thislayer.paths, stepsize)
+		pathlist = doAngularizzle(thislayer.paths, params["stepsize"])
 		outlinedata = setGlyphCoords(pathlist)
 		ClearPaths(thislayer)
 
-		angularpaths = AngularSteps(thislayer, outlinedata, stepsize)
+		angularpaths = AngularSteps(thislayer, outlinedata, params["stepsize"])
 		AddAllPathsToLayer(angularpaths, thislayer)
 
-		offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
+		offsetpaths = saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=True)
 		pathlist = doAngularizzle(offsetpaths, 4)
 		outlinedata = setGlyphCoords(pathlist)
 		shapepaths = Shapefit(thislayer, outlinedata)
 		AddAllPathsToLayer(shapepaths, thislayer)
-
 		thislayer.removeOverlap()
 
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-OutputFax()
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
-
-
-
-
-
+BrokenFax()
