@@ -59,7 +59,7 @@ class Topography(NaNFilter):
 
         for maxchain, shape in iterations:
             newtris = self.SortCollageSpace(
-                thislayer, outlinedata, outlinedata2, gridsize, bounds
+                thislayer, outlinedata, outlinedata2, gridsize, bounds, "stick"
             )
             groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
             self.ApplyCollageGraphixxx(thislayer, groups, shape, self.linecomponents)
@@ -69,22 +69,6 @@ class Topography(NaNFilter):
         roundedpathlist = returnRoundedPaths(thislayer.paths)
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)
-
-    def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds):
-
-        isogrid = makeIsometricGrid(bounds, gridsize)
-        alltriangles = IsoGridToTriangles(isogrid)
-
-        # Return triangles within and without
-        in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
-
-        edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
-        # edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)
-
-        final_in_triangles = in_triangles
-        final_in_triangles.extend(edge_triangles)
-
-        return TrianglesListToPaths(final_in_triangles)
 
     def ApplyCollageGraphixxx(self, layer, groups, drawtype, linecomponents):
 
