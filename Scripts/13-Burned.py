@@ -26,8 +26,8 @@ def returnRoundedPaths(paths):
 		try: 
 			roundedpath = convertToFitpath(roundedpath, True)
 			roundedpathlist.append(roundedpath)
-		except:
-			pass
+		except Exception as e:
+			print("returnRoundedPaths failed:", e)
 	return roundedpathlist
 
 
