@@ -39,14 +39,11 @@ class Burn(NaNFilter):
 	}
 
 	def processLayer(self, thislayer, params):
-		pathlist = doAngularizzle(thislayer.paths, 20)
-		outlinedata = setGlyphCoords(pathlist)
+		outlinedata = setGlyphCoords(doAngularizzle(thislayer.paths, 20))
 		bounds = AllPathBounds(thislayer)
 		
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=True)
-		pathlist2 = doAngularizzle(offsetpaths, 4)
-		outlinedata2 = setGlyphCoords(pathlist2)
-		bounds2 = AllPathBoundsFromPathList(pathlist2)
+		outlinedata2 = setGlyphCoords(doAngularizzle(offsetpaths, 4))
 
 		ClearPaths(thislayer)
 
