@@ -93,9 +93,7 @@ class Topography(NaNFilter):
                 continue
 
             templayer = GSLayer()
-            for path in g:
-                tp = path
-                templayer.paths.append(tp)
+            templayer.paths = g
             templayer.removeOverlap()
 
             for p in templayer.paths:
