@@ -107,8 +107,6 @@ class Topography(NaNFilter):
                 roundedpath = convertToFitpath(roundedpath, True)
                 if not roundedpath:
                 	continue
-                pathlist = doAngularizzle([roundedpath], 80)
-                outlinedata = setGlyphCoords(pathlist)
 
                 if drawtype == "vertical" or drawtype == "horizontal":
                     all_lines = Fill_Drawlines(
