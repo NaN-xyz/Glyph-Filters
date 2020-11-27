@@ -9,34 +9,7 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 from NaNGFNoise import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
+from NaNFilter import NaNFilter
 
 
 def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
@@ -103,48 +76,28 @@ def returnRoundedPaths(paths):
 	return roundedpathlist
 
 
-def OutputTopography():
+class Burn(NaNFilter):
+	params = {
+		"S": { "offset": 0, "gridsize": 40 },
+		"M": { "offset": 4, "gridsize": 45 },
+		"L": { "offset": 4, "gridsize": 50 },
+	}
 
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = 0
-			gridsize = 40
-		if glyphsize=="M": 
-			offset = 4
-			gridsize = 45
-		if glyphsize=="L": 
-			offset = 4
-			gridsize = 50
-
-		# ----
-
+	def processLayer(self, thislayer, params):
 		pathlist = doAngularizzle(thislayer.paths, 20)
 		outlinedata = setGlyphCoords(pathlist)
 		bounds = AllPathBounds(thislayer)
 		
-		offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
+		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=True)
 		pathlist2 = doAngularizzle(offsetpaths, 4)
 		outlinedata2 = setGlyphCoords(pathlist2)
 		bounds2 = AllPathBoundsFromPathList(pathlist2)
 
 		ClearPaths(thislayer)
 
-		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
+		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, params["gridsize"], bounds)
 		maxchain = random.randrange(200,400)
-		groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
+		groups = BreakUpSpace(thislayer, outlinedata, newtris, params["gridsize"], maxchain)
 		ApplyBurn(thislayer, groups)
 		#AddAllPathsToLayer(edgetris, thislayer)
 
@@ -153,25 +106,4 @@ def OutputTopography():
 		ClearPaths(thislayer)
 		AddAllPathsToLayer(roundedpathlist, thislayer)
 
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-OutputTopography()
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
+Burn()
