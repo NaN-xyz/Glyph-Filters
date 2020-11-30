@@ -21,6 +21,7 @@ class NaNFilter:
 
         thislayer = self.font.glyphs[glyph.name].layers[0]
         thislayer.beginChanges()
+        thislayer.correctPathDirection()
         if hasattr(self, "params"):
             params = self.params[glyphSize(glyph)]
         else:
@@ -52,6 +53,7 @@ class NaNFilter:
         self.doOffset(templayer, hoffset, voffset)
         if removeOverlap:
             templayer.removeOverlap()
+        #templayer.correctPathDirection() # doesn't seem to work when placed here
         offsetpaths = templayer.paths
         del currentglyph.layers[tmplayer_id]
         return offsetpaths
@@ -60,5 +62,20 @@ class NaNFilter:
         try:
             offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
             offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, noodleRadius, noodleRadius, True, False, 0.5, None,None)
+            Layer.correctPathDirection()
         except Exception as e:
             print( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) )
+
+    def expandMonolineFromPathlist(self, Paths, noodleRadius):
+        Layer = GSLayer()
+        for p in Paths: Layer.paths.append(p)
+        try:
+            offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
+            offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, noodleRadius, noodleRadius, True, False, 0.5, None,None)
+            Layer.correctPathDirection()
+            monopaths = Layer.paths
+            del Layer
+            return monopaths
+        except Exception as e:
+            print( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) )
+
