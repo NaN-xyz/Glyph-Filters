@@ -44,7 +44,7 @@ class DoodleTriangles(NaNFilter):
         noisepaths = NoiseOutline(thislayer, outlinedata)
         noiseoutline = self.expandMonolineFromPathlist(noisepaths, self.glyph_stroke_width)
 
-        newtris = self.SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
+        newtris = self.SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds, "stick", True)
         blacktris = ConvertPathlistDirection ( random.sample(newtris, int(len(newtris)/10)), -1 )
 
         strokedtris = self.expandMonolineFromPathlist(newtris, self.tri_stroke_width)
@@ -55,22 +55,22 @@ class DoodleTriangles(NaNFilter):
         thislayer.removeOverlap()
 
 
-    def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds):
+    # def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds):
 
-        isogrid = makeIsometricGrid(bounds, gridsize)
-        isogrid = RandomiseIsoPoints(isogrid, gridsize)
-        alltriangles = IsoGridToTriangles(isogrid)
+    #     isogrid = makeIsometricGrid(bounds, gridsize)
+    #     isogrid = RandomiseIsoPoints(isogrid, gridsize)
+    #     alltriangles = IsoGridToTriangles(isogrid)
 
-        # Return triangles within and without
-        in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
+    #     # Return triangles within and without
+    #     in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
 
-        edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
-        # edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)
+    #     edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
+    #     # edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)
 
-        final_in_triangles = in_triangles
-        final_in_triangles.extend(edge_triangles)
+    #     final_in_triangles = in_triangles
+    #     final_in_triangles.extend(edge_triangles)
 
-        return TrianglesListToPaths(final_in_triangles)
+    #     return TrianglesListToPaths(final_in_triangles)
 
 
 
