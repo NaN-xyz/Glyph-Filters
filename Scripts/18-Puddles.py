@@ -11,8 +11,7 @@ from NaNFilter import NaNFilter
 
 
 def drawToenail(p1, p2, thickness):
-	dist =  distance(p1,p2)
-	curvedist = dist * 0.3
+	dist = distance(p1,p2)
 
 	mid = Midpoint(p1, p2)
 
@@ -21,12 +20,11 @@ def drawToenail(p1, p2, thickness):
 	a3 = a2 - radians(20)
 	a4 = a2 + radians(20)
 
+	curvedist = dist * 0.3
 	push1 = MakeVector(curvedist + (thickness/2), a2)
 	push2 = MakeVector(curvedist - (thickness/2), a2)
 
-	hlen = dist*0.15
-	mlen = (dist*0.21)
-
+	mlen = dist * 0.21
 	handle1  = MakeVector(mlen, a1)
 	handle2  = MakeVector(mlen, a3)
 	handle2b = MakeVector(mlen, a3 - radians(20))
