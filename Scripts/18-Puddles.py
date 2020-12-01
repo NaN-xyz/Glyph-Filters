@@ -90,7 +90,6 @@ def Toenail(thislayer, outlinedata, min_nail, max_nail, gap, thickness):
 
 class Puddles(NaNFilter):
 	def processLayer(self, thislayer, params):
-		print(thislayer)
 		pathlist = doAngularizzle(thislayer.paths, 4)
 		outlinedata2 = setGlyphCoords(pathlist)
 
