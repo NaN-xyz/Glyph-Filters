@@ -203,6 +203,11 @@ def AllPathBounds(thislayer):
 #   SHAPES
 #
 
+def RoundPaths(paths, returntype):
+	newpaths = []
+	for p in paths:
+		newpaths.append ( RoundPath( p, returntype ) )
+	return newpaths
 
 def RoundPath(path, returntype):
 
