@@ -17,37 +17,25 @@ def drawToenail(p1, p2, thickness):
 	p1x, p1y = p1
 	p2x, p2y = p2
 
-	midx = p1x + ( (p2x-p1x) / 2)
-	midy = p1y + ( (p2y-p1y) / 2)
+	midx, midy = Midpoint(p1, p2)
 
 	a1 = atan2(p1y-p2y, p1x-p2x)
 	a2 = a1 - radians(90)
 	a3 = a2 - radians(20)
 	a4 = a2 + radians(20)
 
-	pushx1 = (curvedist + (thickness/2)) * cos(a2)
-	pushy1 = (curvedist + (thickness/2)) * sin(a2)
-
-	pushx2 = (curvedist - (thickness/2)) * cos(a2)
-	pushy2 = (curvedist - (thickness/2)) * sin(a2)
+	pushx1, pushy1 = MakeVector(curvedist + (thickness/2), a2)
+	pushx2, pushy2 = MakeVector(curvedist - (thickness/2), a2)
 
 	hlen = dist*0.15
 	mlen = (dist*0.21)
-	handlex1 = mlen * cos(a1)
-	handley1 = mlen * sin(a1)
 
-	handlex2 = mlen * cos(a3)
-	handley2 = mlen * sin(a3)
-	handlex2b = mlen * cos(a3 - radians(20))
-	handley2b = mlen * sin(a3 - radians(20))
-
-	handlex3 = mlen * cos(a4)
-	handley3 = mlen * sin(a4)
-	handlex3b = mlen * cos(a4 + radians(20))
-	handley3b = mlen * sin(a4 + radians(20))
-
-	handlex4 = (mlen*0.8) * cos(a1)
-	handley4 = (mlen*0.8) * sin(a1)
+	handlex1, handley1 = MakeVector(mlen, a1)
+	handlex2, handley2 = MakeVector(mlen, a3)
+	handlex2b, handley2b = MakeVector(mlen, a3 - radians(20))
+	handlex3, handley3 = MakeVector(mlen, a4)
+	handlex3b, handley3b = MakeVector(mlen, a4 + radians(20))
+	handlex4, handley4 = MakeVector(mlen*0.8, a1)
 
 	# draw path
 
