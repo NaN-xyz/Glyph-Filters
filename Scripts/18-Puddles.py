@@ -39,17 +39,17 @@ def drawToenail(p1, p2, thickness):
 	nail = GSPath()
 	nail.nodes = [
 		GSNode( p1 , type=GSLINE),
-		GSNode( [p1[0]+handle2[0], p1[1]+handle2[1]] , type=GSOFFCURVE),
-		GSNode( [mid[0]+push1[0]+handle1[0], mid[1]+push1[1]+handle1[1]] , type=GSOFFCURVE),
-		GSNode( [mid[0]+push1[0], mid[1]+push1[1]] , type=GSCURVE),
-		GSNode( [mid[0]+push1[0]-handle1[0], mid[1]+push1[1]-handle1[1]] , type=GSOFFCURVE),
-		GSNode( [p2[0]+handle3[0], p2[1]+handle3[1]] , type=GSOFFCURVE),
+		GSNode( SumVectors(p1,handle2), type=GSOFFCURVE),
+		GSNode( SumVectors(mid, push1, handle1), type=GSOFFCURVE),
+		GSNode( SumVectors(mid, push1), type=GSCURVE),
+		GSNode( SumVectors(mid, push1, NegateVector(handle1)), type=GSOFFCURVE),
+		GSNode( SumVectors(p2, handle3), type=GSOFFCURVE),
 		GSNode( p2, type=GSCURVE),
-		GSNode( [p2[0]+handle3b[0], p2[1]+handle3b[1]] , type=GSOFFCURVE),
-		GSNode( [mid[0]+push2[0]-handle4[0], mid[1]+push2[1]-handle4[1]] , type=GSOFFCURVE),
-		GSNode( [mid[0]+push2[0], mid[1]+push2[1]] , type=GSCURVE),
-		GSNode( [mid[0]+push2[0]+handle4[0], mid[1]+push2[1]+handle4[1]] , type=GSOFFCURVE),
-		GSNode( [p1[0]+handle2b[0], p1[1]+handle2b[1]] , type=GSOFFCURVE),
+		GSNode( SumVectors(p2, handle3b), type=GSOFFCURVE),
+		GSNode( SumVectors(mid, push2, NegateVector(handle4)), type=GSOFFCURVE),
+		GSNode( SumVectors(mid, push2), type=GSCURVE),
+		GSNode( SumVectors(mid, push2, handle4), type=GSOFFCURVE),
+		GSNode( SumVectors(p1, handle2b), type=GSOFFCURVE),
 		GSNode( p1, type=GSCURVE),
 	]
 	nail.closed = True
