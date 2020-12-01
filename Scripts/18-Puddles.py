@@ -14,46 +14,43 @@ def drawToenail(p1, p2, thickness):
 	dist =  distance(p1,p2)
 	curvedist = dist * 0.3
 
-	p1x, p1y = p1
-	p2x, p2y = p2
+	mid = Midpoint(p1, p2)
 
-	midx, midy = Midpoint(p1, p2)
-
-	a1 = atan2(p1y-p2y, p1x-p2x)
+	a1 = atan2(p1[1]-p2[1], p1[0]-p2[0])
 	a2 = a1 - radians(90)
 	a3 = a2 - radians(20)
 	a4 = a2 + radians(20)
 
-	pushx1, pushy1 = MakeVector(curvedist + (thickness/2), a2)
-	pushx2, pushy2 = MakeVector(curvedist - (thickness/2), a2)
+	push1 = MakeVector(curvedist + (thickness/2), a2)
+	push2 = MakeVector(curvedist - (thickness/2), a2)
 
 	hlen = dist*0.15
 	mlen = (dist*0.21)
 
-	handlex1, handley1 = MakeVector(mlen, a1)
-	handlex2, handley2 = MakeVector(mlen, a3)
-	handlex2b, handley2b = MakeVector(mlen, a3 - radians(20))
-	handlex3, handley3 = MakeVector(mlen, a4)
-	handlex3b, handley3b = MakeVector(mlen, a4 + radians(20))
-	handlex4, handley4 = MakeVector(mlen*0.8, a1)
+	handle1  = MakeVector(mlen, a1)
+	handle2  = MakeVector(mlen, a3)
+	handle2b = MakeVector(mlen, a3 - radians(20))
+	handle3	 = MakeVector(mlen, a4)
+	handle3b = MakeVector(mlen, a4 + radians(20))
+	handle4  = MakeVector(mlen*0.8, a1)
 
 	# draw path
 
 	nail = GSPath()
 	nail.nodes = [
-		GSNode( [p1x, p1y] , type=GSLINE),
-		GSNode( [p1x+handlex2, p1y+handley2] , type=GSOFFCURVE),
-		GSNode( [midx+pushx1+handlex1, midy+pushy1+handley1] , type=GSOFFCURVE),
-		GSNode( [midx+pushx1, midy+pushy1] , type=GSCURVE),
-		GSNode( [midx+pushx1-handlex1, midy+pushy1-handley1] , type=GSOFFCURVE),
-		GSNode( [p2x+handlex3, p2y+handley3] , type=GSOFFCURVE),
-		GSNode( [p2x, p2y] , type=GSCURVE),
-		GSNode( [p2x+handlex3b, p2y+handley3b] , type=GSOFFCURVE),
-		GSNode( [midx+pushx2-handlex4, midy+pushy2-handley4] , type=GSOFFCURVE),
-		GSNode( [midx+pushx2, midy+pushy2] , type=GSCURVE),
-		GSNode( [midx+pushx2+handlex4, midy+pushy2+handley4] , type=GSOFFCURVE),
-		GSNode( [p1x+handlex2b, p1y+handley2b] , type=GSOFFCURVE),
-		GSNode( [p1x, p1y] , type=GSCURVE),
+		GSNode( p1 , type=GSLINE),
+		GSNode( [p1[0]+handle2[0], p1[1]+handle2[1]] , type=GSOFFCURVE),
+		GSNode( [mid[0]+push1[0]+handle1[0], mid[1]+push1[1]+handle1[1]] , type=GSOFFCURVE),
+		GSNode( [mid[0]+push1[0], mid[1]+push1[1]] , type=GSCURVE),
+		GSNode( [mid[0]+push1[0]-handle1[0], mid[1]+push1[1]-handle1[1]] , type=GSOFFCURVE),
+		GSNode( [p2[0]+handle3[0], p2[1]+handle3[1]] , type=GSOFFCURVE),
+		GSNode( p2, type=GSCURVE),
+		GSNode( [p2[0]+handle3b[0], p2[1]+handle3b[1]] , type=GSOFFCURVE),
+		GSNode( [mid[0]+push2[0]-handle4[0], mid[1]+push2[1]-handle4[1]] , type=GSOFFCURVE),
+		GSNode( [mid[0]+push2[0], mid[1]+push2[1]] , type=GSCURVE),
+		GSNode( [mid[0]+push2[0]+handle4[0], mid[1]+push2[1]+handle4[1]] , type=GSOFFCURVE),
+		GSNode( [p1[0]+handle2b[0], p1[1]+handle2b[1]] , type=GSOFFCURVE),
+		GSNode( p1, type=GSCURVE),
 	]
 	nail.closed = True
 
