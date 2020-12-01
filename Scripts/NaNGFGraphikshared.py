@@ -10,7 +10,7 @@ from Foundation import NSMakePoint
 from NaNGFConfig import *
 from NaNGFAngularizzle import *
 from NaNGFFitpath import *
-
+from NaNGFNoise import *
 
 
 # --------------------------------------------
@@ -958,3 +958,92 @@ def returnLineComponent(p1, p2, direction, component_glyphs_vh, source_component
 	return comp
 
 
+# shadow functions
+
+def DoShadow(thislayer, outlinedata, shadangle, depth, shadowtype):
+
+    shadowpaths = []
+
+    for direction, structure in outlinedata:
+
+        nodelen = len(structure)
+        stepnum = depth
+        n = 0
+        lines, line1, line2 = [], [], []
+
+        while n < nodelen+1:
+
+            if n==nodelen: thisnode=0
+            else: thisnode=n
+
+            x1 = structure[thisnode][0]
+            y1 = structure[thisnode][1]
+
+            rad = math.radians(shadangle)
+            x2 = x1 + depth * math.cos(rad)
+            y2 = y1 + depth * math.sin(rad)
+
+            xtest = x1 + 1 * math.cos(rad)
+            ytest = y1 + 1 * math.sin(rad)
+
+            if not withinGlyphBlack(xtest, ytest, outlinedata):
+                # search for length of line within max
+                stepsize_x = (x2-x1) / stepnum
+                stepsize_y = (y2-y1) / stepnum
+                newx, newy = x1, y1
+                step = 0
+                while step < stepnum+1:
+                    newx += stepsize_x
+                    newy += stepsize_y
+                    if withinGlyphBlack(newx, newy, outlinedata):
+                        break
+                    step+=1
+                line1.append([x1, y1])
+                line2.append([newx, newy])
+            else:
+                if len(line1)>2 and len(line2)>2:
+                    lines.append([line1, line2])
+                    line1, line2 = [], []
+            n+=1
+
+        if len(line1)>2 and len(line2)>2:
+            lines.append([line1, line2])
+            line1, line2 = [], []
+
+        if shadowtype=="paths":
+            shadowpaths.extend( CreateShadowPaths(thislayer, lines) )
+        if shadowtype=="lines":
+            shadowpaths.extend( CreateShadowLines(thislayer, lines, depth) )
+
+    return shadowpaths
+
+
+def CreateShadowLines(thislayer, lines, depth):
+
+    newlines = roughenLines(lines, depth)
+    newpaths = []
+    for line in newlines:
+        nl = []
+        for node in line:
+            x = node[0]
+            y = node[1]
+            nl.append([x,y])
+        p = drawSimplePath(nl, False, False)
+        newpaths.append(p)
+    return newpaths
+
+
+def CreateShadowPaths(thislayer, lines):
+
+    #print "Number of shadow sections: ", len(lines)
+    newpaths = []
+    for l in lines:
+        newline = []
+        l1 = l[0]
+        l2 = l[1]
+        l2.reverse()
+        for node in l1: newline.append(node)
+        for node in l2: newline.append(node)
+        p = drawSimplePath(newline)
+        newpaths.append(p)
+    return newpaths

@@ -1,7 +1,7 @@
-# MenuTitle: 15. DoodleTriangles
+# MenuTitle: 10. DoodleShadow
 # -*- coding: utf-8 -*-
 __doc__ = """
-15. DoodleTriangles
+10. DoodleShadow
 """
 
 import GlyphsApp
@@ -13,22 +13,25 @@ from NaNGFNoise import *
 from NaNFilter import NaNFilter
 
 
-class DoodleTriangles(NaNFilter):
+class DoodleShadow(NaNFilter):
 
     params = {
-        "S": {"offset": 0, "gridsize": 60},
-        "M": {"offset": 4, "gridsize": 60},
-        "L": {"offset": 4, "gridsize": 70},
+        "S": {"offset": 10, "depth": random.randrange(40, 70)},
+        "M": {"offset": 10, "depth": random.randrange(50, 100)},
+        "L": {"offset": 10, "depth": random.randrange(60, 100)}
     }
     glyph_stroke_width = 16
-    tri_stroke_width = 4
+    shadow_stroke_width = 6
+    angle = -160 #random.randrange(0, 360)
 
     def setup(self):
         pass
 
     def processLayer(self, thislayer, params):
 
-        offset, gridsize = params["offset"], params["gridsize"]
+        offset, depth = params["offset"], params["depth"]
+
+        thislayer.removeOverlap()
         pathlist = doAngularizzle(thislayer.paths, 20)
         outlinedata = setGlyphCoords(pathlist)
         bounds = AllPathBounds(thislayer)
@@ -43,16 +46,13 @@ class DoodleTriangles(NaNFilter):
 
         noisepaths = NoiseOutline(thislayer, outlinedata)
         noiseoutline = self.expandMonolineFromPathlist(noisepaths, self.glyph_stroke_width)
+        shadowpaths = DoShadow(thislayer, outlinedata, self.angle, depth, "lines")
+        shadowoutline = self.expandMonolineFromPathlist(shadowpaths, self.shadow_stroke_width)
 
-        newtris = self.SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds, "stick", True)
-        blacktris = ConvertPathlistDirection ( random.sample(newtris, int(len(newtris)/10)), -1 )
-
-        strokedtris = self.expandMonolineFromPathlist(newtris, self.tri_stroke_width)
-        AddAllPathsToLayer(strokedtris, thislayer)
         AddAllPathsToLayer(noiseoutline, thislayer)
-        AddAllPathsToLayer(blacktris, thislayer)
-
+        AddAllPathsToLayer(shadowoutline, thislayer)
+       
         thislayer.removeOverlap()
 
 
-DoodleTriangles()
+DoodleShadow()
