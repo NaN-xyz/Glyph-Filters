@@ -360,8 +360,8 @@ def convertToFitpath(nodelist, closed):
 				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
 				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
 		
-	except:
-		pass
+	except Exception as e:
+		print("Error!", e)
 
 	addon.closed = closed
 	return addon
