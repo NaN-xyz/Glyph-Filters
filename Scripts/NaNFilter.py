@@ -43,7 +43,7 @@ class NaNFilter:
                 Layer, hoffset, voffset, False, False, 0.5, None, None
             )
         except Exception as e:
-            print "offset failed"
+            print("offset failed")
 
     def saveOffsetPaths(self, Layer, hoffset, voffset, removeOverlap):
         templayer = Layer.copy()
@@ -65,7 +65,7 @@ class NaNFilter:
             offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, noodleRadius, noodleRadius, True, False, 0.5, None,None)
             Layer.correctPathDirection()
         except Exception as e:
-            print( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) )
+            print(( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) ))
 
     def expandMonolineFromPathlist(self, Paths, noodleRadius):
         Layer = GSLayer()
@@ -78,7 +78,7 @@ class NaNFilter:
             del Layer
             return monopaths
         except Exception as e:
-            print( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) )
+            print(( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) ))
 
     def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds, action, randomize = False):
         isogrid = makeIsometricGrid(bounds, gridsize)

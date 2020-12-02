@@ -33,7 +33,7 @@ class EightiesFade(NaNFilter):
             AddAllComponentsToLayer(fadecomps, thislayer)
 
         except Exception as e:
-            print("Layer (", thislayer.name, ") failed to execute.", e)
+            print(("Layer (", thislayer.name, ") failed to execute.", e))
 
     def do80sFade(self, thislayer, outlinedata, tilecoords, shape_components):
         b = AllPathBounds(thislayer)

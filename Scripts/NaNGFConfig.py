@@ -44,27 +44,27 @@ def beginGlyphNaN(glyph):
 
 	if NANGFSET["show_time"]==True: glyph_start_time = time.time()
 	if NANGFSET["debug"]==True: 
-		print "starting glyph: " + glyph.name
-		print "glyph size: " + glyphsize
+		print("starting glyph: " + glyph.name)
+		print("glyph size: " + glyphsize)
 
 def endGlyphNaN(glyph):
 
 	if NANGFSET["show_time"]==True: show_glyph_time(glyph_start_time, glyph.name)
 	if NANGFSET["highlight_glyph"]==True: glyph.color = NANGFSET["highlight_col"]
-	print "-\n"
+	print("-\n")
 
 	# print out approximate time for entire glyphset
 
 # SHOW INDIVIDUAL GLYPH PROCESSING TIME
 
 def show_glyph_time(start_time, glyph):
-	print "Processing time for glyph( " + glyph + " ): " + str(round(time.time()-start_time,4)) + " seconds"
+	print("Processing time for glyph( " + glyph + " ): " + str(round(time.time()-start_time,4)) + " seconds")
 
 # SHOW TOTAL PROCESSING TIME
 
 def show_total_time(start_time):
-	print "-\nTotal processing time: " + str(round(time.time()-start_time,4)) + " seconds, " + str(round((time.time()-start_time )/60,4)) + " minutes"
-	print "---\n"
+	print("-\nTotal processing time: " + str(round(time.time()-start_time,4)) + " seconds, " + str(round((time.time()-start_time )/60,4)) + " minutes")
+	print("---\n")
 
 
 # RETURN A SIZE (L, M, S) IN ORDER REFINE LEVEL OF REDRAW
