@@ -12,7 +12,10 @@ Modifications and optimisations of original algorithm by Juerg Lehni.
 Ported by Gumble, 2015.
 """
 
-from GlyphsApp import *
+try:
+	from GlyphsApp import *
+except Exception as e:
+	from glyphsLib import *
 import math
 
 TOLERANCE = 10e-6

@@ -1,4 +1,7 @@
-from GlyphsApp import *
+try:
+	from GlyphsApp import *
+except Exception as e:
+	from glyphsLib import *
 
 from math import *
 import random
