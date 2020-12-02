@@ -797,8 +797,10 @@ def defineStartXY(thislayer, outlinedata):
 			if withinGlyphBlack(rx, ry, outlinedata):
 				return [rx, ry]
 			breakcounter+=1
+		print "no startx found within bounds"
 		return None
 	else:
+		print "no bounds found"
 		return None
 
 	# #node = returnRandomNodeinPaths(glyph)

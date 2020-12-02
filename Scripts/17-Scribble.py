@@ -29,10 +29,11 @@ class Scribble(NaNFilter):
 
         noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.05, 0, 35])
         noiseoutline = self.expandMonolineFromPathlist(noisepaths, self.pen)
+        outlinedata2 = setGlyphCoords(doAngularizzle(noisepaths, 4))
 
         allscribbles = []
         for n in range(0, params["iterations"]):
-            scribble = self.ScribblePath(thislayer, outlinedata, params["walklen"])
+            scribble = self.ScribblePath(thislayer, outlinedata2, params["walklen"])
             if scribble is not None:
                 scribble = drawSimplePath(scribble, False, False)
                 scribblemono = self.expandMonolineFromPathlist([scribble], self.pen)

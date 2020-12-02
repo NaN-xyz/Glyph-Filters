@@ -22,7 +22,7 @@ class NaNFilter:
 
         thislayer = self.font.glyphs[glyph.name].layers[0]
         thislayer.beginChanges()
-        thislayer.correctPathDirection()
+        #thislayer.correctPathDirection()
         if hasattr(self, "params"):
             params = self.params[glyphSize(glyph)]
         else:
