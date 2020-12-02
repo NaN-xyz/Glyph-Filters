@@ -4,11 +4,14 @@ __doc__="""
 05. WetPaint
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFNoise import *
+from NaNGFGraphikshared import setGlyphCoords, DistanceToNextBlack, convertToFitpath
+from NaNGFAngularizzle import doAngularizzle
+from NaNGFNoise import pnoise1, noiseMap
 from NaNFilter import NaNFilter
+from math import atan2, degrees
+import random
+import math
+
 
 class Drip(NaNFilter):
 	params = {

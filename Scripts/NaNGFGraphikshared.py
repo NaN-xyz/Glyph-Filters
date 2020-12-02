@@ -12,10 +12,13 @@ from Foundation import NSMakePoint
 
 from NaNGFConfig import *
 from NaNGFAngularizzle import *
-from NaNGFFitpath import *
-from NaNGFNoise import *
+from NaNGFFitpath import fitpath
 
-
+try:
+	distance
+except NameError:
+	def distance(p1, p2):
+		return sqrt((p1[0]-p2[0])*(p1[0]-p2[0]) + (p1[1]-p2[1])*(p1[1]-p2[1]))
 # --------------------------------------------
 
 def ClearPaths(thislayer):

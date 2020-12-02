@@ -1,4 +1,5 @@
 from NaNGFGraphikshared import *
+from NaNGFConfig import beginFilterNaN, endFilterNaN, endGlyphNaN, beginGlyphNaN, glyphSize
 import traceback
 
 insideGlyphs = True
