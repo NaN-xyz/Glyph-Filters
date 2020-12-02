@@ -1,7 +1,7 @@
-# MenuTitle: 34. Blobby
+# MenuTitle: 34. Vinyl
 # -*- coding: utf-8 -*-
 __doc__ = """
-34. Blobby
+34. Vinyl
 """
 
 import GlyphsApp
