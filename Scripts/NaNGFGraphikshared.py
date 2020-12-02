@@ -10,7 +10,7 @@ from Foundation import NSMakePoint
 from NaNGFConfig import *
 from NaNGFAngularizzle import *
 from NaNGFFitpath import *
-from NaNGFNoise import *
+#from NaNGFNoise import *
 
 
 # --------------------------------------------

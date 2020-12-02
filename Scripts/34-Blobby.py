@@ -8,7 +8,6 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
-from NaNGFNoise import *
 
 from NaNFilter import NaNFilter
 
