@@ -58,7 +58,9 @@ def ShiftPath(path, variance, type):
 def ChangeNodeStart(nodes):
 	"""Cycles a node list so it starts at a random position."""
 	cutpt = random.randrange(0, len(nodes))
-	return nodes[cutpt:].extend(nodes[0:cutpt])
+	start = nodes[cutpt:]
+	start.extend(nodes[0:cutpt])
+	return start
 
 
 def setGlyphCoords(pathlist):
@@ -176,6 +178,27 @@ def point_inside_polygon(x,y,poly):
 
 		return inside
 
+
+def MakeVector(length, angle):
+	return length * cos(angle), length * sin(angle)
+
+def SumVectors(*args):
+	return [
+		sum([x[0] for x in args]),
+		sum([x[1] for x in args])
+	]
+
+def NegateVector(pt):
+	return [-pt[0], -pt[1]]
+
+def LerpPoints(v1, v2, t):
+	return [
+	 	v1[0] * (1-t) + v2[0] * t,
+	 	v1[1] * (1-t) + v2[1] * t
+	]
+
+def Midpoint(v1, v2):
+	return LerpPoints(v1,v2,0.5)
 
 def AllPathBoundsFromPathList(paths):
 

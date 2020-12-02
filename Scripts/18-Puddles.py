@@ -1,209 +1,109 @@
-#MenuTitle: 18. Puddles
+# MenuTitle: 18. Puddles
 # -*- coding: utf-8 -*-
-__doc__="""
+__doc__ = """
 18. Puddles
 """
 
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
-import copy
-
-# COMMON TO ALL SCRIPTS
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print "offset failed"
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
+from NaNFilter import NaNFilter
 
 
 def drawToenail(p1, p2, thickness):
+    dist = distance(p1, p2)
 
-	p1x, p1y = p1[0], p1[1]
-	p2x, p2y = p2[0], p2[1]
+    mid = Midpoint(p1, p2)
 
-	dist =  distance([p1x, p1y],[p2x, p2y])
-	curvedist = dist * 0.3
+    a1 = atan2(p1[1] - p2[1], p1[0] - p2[0])
+    a2 = a1 - radians(90)
+    a3 = a2 - radians(20)
+    a4 = a2 + radians(20)
 
-	midx = p1x + ( (p2x-p1x) / 2)
-	midy = p1y + ( (p2y-p1y) / 2)
+    curvedist = dist * 0.3
+    push1 = MakeVector(curvedist + (thickness / 2), a2)
+    push2 = MakeVector(curvedist - (thickness / 2), a2)
 
-	a1 = atan2(p1y-p2y, p1x-p2x)
-	a2 = a1 - radians(90)
-	a3 = a2 - radians(20)
-	a4 = a2 + radians(20)
+    mlen = dist * 0.21
+    handle1 = MakeVector(mlen, a1)
+    handle2 = MakeVector(mlen, a3)
+    handle2b = MakeVector(mlen, a3 - radians(20))
+    handle3 = MakeVector(mlen, a4)
+    handle3b = MakeVector(mlen, a4 + radians(20))
+    handle4 = MakeVector(mlen * 0.8, a1)
 
-	pushx1 = (curvedist + (thickness/2)) * cos(a2)
-	pushy1 = (curvedist + (thickness/2)) * sin(a2)
+    # draw path
 
-	pushx2 = (curvedist - (thickness/2)) * cos(a2)
-	pushy2 = (curvedist - (thickness/2)) * sin(a2)
+    nail = GSPath()
+    nail.nodes = [
+        GSNode(p1, type=GSLINE),
+        GSNode(SumVectors(p1, handle2), type=GSOFFCURVE),
+        GSNode(SumVectors(mid, push1, handle1), type=GSOFFCURVE),
+        GSNode(SumVectors(mid, push1), type=GSCURVE),
+        GSNode(SumVectors(mid, push1, NegateVector(handle1)), type=GSOFFCURVE),
+        GSNode(SumVectors(p2, handle3), type=GSOFFCURVE),
+        GSNode(p2, type=GSCURVE),
+        GSNode(SumVectors(p2, handle3b), type=GSOFFCURVE),
+        GSNode(SumVectors(mid, push2, NegateVector(handle4)), type=GSOFFCURVE),
+        GSNode(SumVectors(mid, push2), type=GSCURVE),
+        GSNode(SumVectors(mid, push2, handle4), type=GSOFFCURVE),
+        GSNode(SumVectors(p1, handle2b), type=GSOFFCURVE),
+        GSNode(p1, type=GSCURVE),
+    ]
+    nail.closed = True
 
-	hlen = dist*0.15
-	mlen = (dist*0.21)
-	handlex1 = mlen * cos(a1)
-	handley1 = mlen * sin(a1)
-
-	handlex2 = mlen * cos(a3)
-	handley2 = mlen * sin(a3)
-	handlex2b = mlen * cos(a3 - radians(20))
-	handley2b = mlen * sin(a3 - radians(20))
-
-	handlex3 = mlen * cos(a4)
-	handley3 = mlen * sin(a4)
-	handlex3b = mlen * cos(a4 + radians(20))
-	handley3b = mlen * sin(a4 + radians(20))
-
-	handlex4 = (mlen*0.8) * cos(a1)
-	handley4 = (mlen*0.8) * sin(a1)
-
-	# draw path
-
-	nail = GSPath()
-	nail.nodes.append( GSNode( [p1x, p1y] , type=GSLINE) )
-
-	nail.nodes.append( GSNode( [p1x+handlex2, p1y+handley2] , type=GSOFFCURVE) )
-	nail.nodes.append( GSNode( [midx+pushx1+handlex1, midy+pushy1+handley1] , type=GSOFFCURVE) )
-	node = GSNode( [midx+pushx1, midy+pushy1] , type=GSCURVE)
-	node.toggleConnection()
-	nail.nodes.append(node)
-
-	nail.nodes.append( GSNode( [midx+pushx1-handlex1, midy+pushy1-handley1] , type=GSOFFCURVE) )
-	nail.nodes.append( GSNode( [p2x+handlex3, p2y+handley3] , type=GSOFFCURVE) )
-	nail.nodes.append( GSNode( [p2x, p2y] , type=GSCURVE) )
-
-	nail.nodes.append( GSNode( [p2x+handlex3b, p2y+handley3b] , type=GSOFFCURVE) )
-	nail.nodes.append( GSNode( [midx+pushx2-handlex4, midy+pushy2-handley4] , type=GSOFFCURVE) )
-	node = GSNode( [midx+pushx2, midy+pushy2] , type=GSCURVE) 
-	node.toggleConnection()
-	nail.nodes.append(node)
-
-	nail.nodes.append( GSNode( [midx+pushx2+handlex4, midy+pushy2+handley4] , type=GSOFFCURVE) )
-	nail.nodes.append( GSNode( [p1x+handlex2b, p1y+handley2b] , type=GSOFFCURVE) )
-	nail.nodes.append( GSNode( [p1x, p1y] , type=GSCURVE) )
-
-	nail.closed = True
-
-	return nail
+    return nail
 
 
 def Toenail(thislayer, outlinedata, min_nail, max_nail, gap, thickness):
 
-	for path in outlinedata:
+    for _, structure in outlinedata:
+        if not structure:
+            continue
 
-		direction = path[0]
-		structure = path[1]
+        structure = ChangeNodeStart(copy.copy(structure))
+        nodelen = len(structure)
+        n = 0
 
-		if len(structure)!=0:
+        while n < nodelen:
+            pt1 = structure[n]
+            step = random.randrange(min_nail, max_nail)
 
-			structure = ChangeNodeStart(copy.copy(structure))
-			nodelen = len(structure)
-			n = 0
+            if n + step >= nodelen - 1:
+                pt2 = structure[0]
+                n = nodelen
+            else:
+                if n < nodelen - 1:
+                    pt2 = structure[n + step]
+                    n += step + gap  # <------------------------------------------- !!!
+                else:
+                    pt2 = structure[0]
 
-			while n < nodelen:
-
-				x1 = structure[n][0]
-				y1 = structure[n][1]
-
-				step = random.randrange(min_nail, max_nail)
-
-				if n+step >= nodelen-1:
-					x2 = structure[0][0]
-					y2 = structure[0][1]
-					n = nodelen
-				else:
-					if n<nodelen-1:
-						x2 = structure[n+step][0]
-						y2 = structure[n+step][1]
-						n += step + gap               # <------------------------------------------- !!!
-					else:
-						x2 = structure[0][0]
-						y2 = structure[0][1]
-
-				variance = random.randrange(0,10)
-				toenail = drawToenail([x2, y2], [x1, y1], thickness)
-				thislayer.paths.append(toenail)
+            variance = random.randrange(0, 10)
+            toenail = drawToenail(pt2, pt1, thickness)
+            thislayer.paths.append(toenail)
 
 
+class Puddles(NaNFilter):
+    def processLayer(self, thislayer, params):
+        offsetpaths = self.saveOffsetPaths(thislayer, -10, -10, removeOverlap=False)
+        pathlist = doAngularizzle(offsetpaths, 4)
+        outlinedata = setGlyphCoords(pathlist)
+
+        offsetpaths = self.saveOffsetPaths(thislayer, 20, 20, removeOverlap=True)
+        pathlist = doAngularizzle(offsetpaths, 4)
+        outlinedata3 = setGlyphCoords(pathlist)
+
+        offsetpaths = self.saveOffsetPaths(thislayer, 60, 60, removeOverlap=True)
+        pathlist = doAngularizzle(offsetpaths, 4)
+        outlinedata4 = setGlyphCoords(pathlist)
+
+        ClearPaths(thislayer)
+
+        Toenail(thislayer, outlinedata, 30, 50, gap=4, thickness=25)
+        Toenail(thislayer, outlinedata3, 40, 60, gap=100, thickness=20)
+        Toenail(thislayer, outlinedata4, 50, 70, gap=100, thickness=10)
+        thislayer.cleanUpPaths()
 
 
-def OutputToenail():
-
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-
-		glyphsize = glyphSize(glyph)
-
-		# add variations for glyph size here
-
-		pathlist = doAngularizzle(thislayer.paths, 4)
-		outlinedata2 = setGlyphCoords(pathlist)
-
-		offsetpaths = saveOffsetPaths(thislayer, -40, -40, removeOverlap=False)
-		pathlist = doAngularizzle(offsetpaths, 4)
-		outlinedata = setGlyphCoords(pathlist)
-
-		offsetpaths = saveOffsetPaths(thislayer, 20, 20, removeOverlap=True)
-		pathlist = doAngularizzle(offsetpaths, 4)
-		outlinedata3 = setGlyphCoords(pathlist)
-
-		offsetpaths = saveOffsetPaths(thislayer, 60, 60, removeOverlap=True)
-		pathlist = doAngularizzle(offsetpaths, 4)
-		outlinedata4 = setGlyphCoords(pathlist)
-
-		ClearPaths(thislayer) 
-
-
-		Toenail(thislayer, outlinedata, 30, 50, gap=4, thickness=25)
-		Toenail(thislayer, outlinedata3, 40, 60, gap=100, thickness=20)
-		Toenail(thislayer, outlinedata4, 50, 70, gap=100, thickness=10)
-
-		thislayer.removeOverlap()
-
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-# =======
-
-OutputToenail()
-
-# =======
-
-endFilterNaN(font)
-
+Puddles()
