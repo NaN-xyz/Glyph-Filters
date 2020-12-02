@@ -1,169 +1,77 @@
-#MenuTitle: 29. Speckled Dirt
+# MenuTitle: 29. SpeckledDirt b
 # -*- coding: utf-8 -*-
-__doc__="""
-29. Speckled Dirt
+__doc__ = """
+29. SpeckledDirt
 """
 
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
+from NaNGFSpacePartition import *
 from NaNGFNoise import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print("offset failed")
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
-
-def AddDirt(thislayer, outlinedata, bounds):
-
-	start = defineStartXY(bounds, outlinedata)
-
-	startx = start[0]
-	starty = start[1]
-	walklen = 10000
-
-	noisescale = 0.05
-	seedx = random.randrange(0,100000)
-	seedy = random.randrange(0,100000)
-	maxstep = 50
-	minsize = 0
-	maxsize = 6
-
-	sx = startx
-	sy = starty
-
-	dirt = []
-
-	for n in range(0, walklen):
-
-		x_noiz = pnoise1( (n+seedx)*noisescale, 3) 
-		rx = noiseMap( x_noiz, minsize, maxsize )
-
-		y_noiz = pnoise1( ((1000+n)+seedy)*noisescale, 3) 
-		ry = noiseMap( y_noiz, minsize, maxsize )
-
-		nx = sx + rx
-		ny = sy + ry
-
-		if withinGlyphBlack(nx, ny, outlinedata):
-
-			r = random.randrange(0,10)
-
-			if r==2:
-
-				size = random.randrange(6,18)
-				#speck = drawTriangle(nx, ny, size, size)
-				speck = drawSpeck(nx, ny, size, 6)
-				dirt.append(speck)
-				sx = nx
-				sy = ny
-
-	return dirt
+from NaNFilter import NaNFilter
 
 
 
+class SpeckledDirt(NaNFilter):
+    params = {
+        "S": {"offset": -13, "walklen": 400},
+        "M": {"offset": -15, "walklen": 2000},
+        "L": {"offset": -18, "walklen": 3000},
+    }
 
+    def processLayer(self, thislayer, params):
 
-# ----------------------------------------------------
-# output controllers
+        outlinedata = setGlyphCoords(doAngularizzle(thislayer.paths, 20))
 
+        ClearPaths(thislayer)
+        noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.2, 0, 15])
+        AddAllPathsToLayer(noisepaths, thislayer)
+        retractHandles(thislayer)
+        thislayer.removeOverlap()
 
+        offsetpaths = self.saveOffsetPaths(
+            thislayer, params["offset"], params["offset"], removeOverlap=True
+        )
+        outlinedata2 = setGlyphCoords(doAngularizzle(offsetpaths, 4))
 
-def OutputNoiseOutline():
+        dirt = self.AddDirt(thislayer, outlinedata2, params["walklen"])
+        if dirt is not None:
+            dirt = ConvertPathlistDirection( removeOverlapPathlist(dirt), 1 )
+            AddAllPathsToLayer(dirt, thislayer)
+            thislayer.removeOverlap()
 
-	for glyph in selectedGlyphs:
+    def AddDirt(self, thislayer, outlinedata, walklen):
 
-		beginGlyphNaN(glyph)
-		glyph.beginUndo()
+        start = defineStartXY(thislayer, outlinedata)
 
-		# --- °°°°°°°
+        if start is None:
+            return None
+        else:
+            sx, sy = start[0], start[1]
+            noisescale = 0.05
+            seedx, seedy = random.randrange(0,100000), random.randrange(0,100000)
+            minsize, maxsize = 0, 200
+            dirt = []
 
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
+            for n in range(0, walklen):
 
-		# --
+                x_noiz = pnoise1( (n+seedx)*noisescale, 3) 
+                rx = noiseMap( x_noiz, minsize, maxsize )
+                y_noiz = pnoise1( ((1000+n)+seedy)*noisescale, 3) 
+                ry = noiseMap( y_noiz, minsize, maxsize )
+                nx = sx + rx
+                ny = sy + ry
 
-		glyphsize = glyphSize(glyph)
+                if withinGlyphBlack(nx, ny, outlinedata):
+                    r = random.randrange(0,10)
+                    if r==2:
+                        size = random.randrange(6,22)
+                        speck = drawSpeck(nx, ny, size, 6)
+                        dirt.append(speck)
+                        sx = nx
+                        sy = ny
 
-		pathlist = doAngularizzle(thislayer.paths, 4)
-		outlinedata = setGlyphCoords(pathlist)
+            return dirt
 
-		ClearPaths(thislayer)
-
-		noisepaths = NoiseOutline(thislayer, outlinedata)
-
-		AddAllPathsToLayer(noisepaths, thislayer)
-
-		# add specks of dirt --
-
-		# thislayer = font.glyphs[glyph.name].layers[0]
-		# tmpid = saveOutlinePaths(thislayer, -15, -15)
-		# tmplayer = glyph.layers[tmpid]
-		# pathlist = doAngularizzle(tmplayer.paths, 20)
-		# outlinedata = setGlyphCoords(pathlist)
-
-		# bounds = AllPathBounds(tmplayer)
-		# del tmplayer
-		# dirt = AddDirt(thislayer, outlinedata, bounds)
-
-		# templayer = GSLayer()
-		# templayer.name = "dirt"
-		# currentglyph = thislayer.parent
-		# currentglyph.layers.append(templayer)
-		# tmplayer_id = templayer.layerId
-		# tmplayer = glyph.layers[tmplayer_id]
-
-		# for path in dirt: templayer.paths.append(path)
-
-		# templayer.removeOverlap()
-
-		# # convert below in to function that returns only positive paths
-
-		# for path in tmplayer.paths: 
-		# 	#print path
-		# 	if path.direction == -1:
-		# 		path.reverse()
-		# 	thislayer.paths.append(path)
-
-		# del glyph.layers[tmplayer_id]
-
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-OutputNoiseOutline()
-
-
-
-Font.enableUpdateInterface()
-
+SpeckledDirt()
