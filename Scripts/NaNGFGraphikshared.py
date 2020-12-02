@@ -201,7 +201,6 @@ def Midpoint(v1, v2):
 	return LerpPoints(v1,v2,0.5)
 
 def AllPathBoundsFromPathList(paths):
-
 	templayer = GSLayer()
 	AddAllPathsToLayer(paths, templayer)
 	bounds = AllPathBounds(templayer)
@@ -789,16 +788,18 @@ def defineStartXY(thislayer, outlinedata):
 	#ox, oy, ow, oh = p.bounds.origin.x, p.bounds.origin.y, p.bounds.size.width, p.bounds.size.height
 
 	b = AllPathBounds(thislayer)
-	ox, oy, w, h = b[0], b[1], b[2], b[3]
-
-	inside = False
-	breakcounter = 0
-	while breakcounter<200: 
-		rx = random.randrange(ox, ox+w)
-		ry = random.randrange(oy, oy+h)
-		if withinGlyphBlack(rx, ry, outlinedata):
-			return [rx, ry]
-		breakcounter+=1
+	if b:
+		ox, oy, w, h = b[0], b[1], b[2], b[3]
+		breakcounter = 0
+		while breakcounter<200: 
+			rx = random.randint(ox, ox+w)
+			ry = random.randint(oy, oy+h)
+			if withinGlyphBlack(rx, ry, outlinedata):
+				return [rx, ry]
+			breakcounter+=1
+		return None
+	else:
+		return None
 
 	# #node = returnRandomNodeinPaths(glyph)
 

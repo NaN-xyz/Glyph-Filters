@@ -11,7 +11,6 @@ from "Graphics Gems", Academic Press, 1990
 Modifications and optimisations of original algorithm by Juerg Lehni.
 Ported by Gumble, 2015.
 """
-
 from GlyphsApp import *
 import math
 

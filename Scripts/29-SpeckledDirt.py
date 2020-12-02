@@ -1,4 +1,4 @@
-# MenuTitle: 29. SpeckledDirt b
+# MenuTitle: 29. SpeckledDirt
 # -*- coding: utf-8 -*-
 __doc__ = """
 29. SpeckledDirt
