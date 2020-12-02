@@ -106,5 +106,4 @@ class Drip(NaNFilter):
 				thislayer.paths.append(p)
 
 Drip()
-Font.enableUpdateInterface()
 
