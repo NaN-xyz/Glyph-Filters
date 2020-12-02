@@ -112,25 +112,25 @@ def OutputTopography():
 
 		# --- °°°°°°°
 
-			thislayer = font.glyphs[glyph.name].layers[0]
-			thislayer.beginChanges()
+		thislayer = font.glyphs[glyph.name].layers[0]
+		thislayer.beginChanges()
 
-			# ---
-			
-			glyphsize = glyphSize(glyph)
+		# ---
+		
+		glyphsize = glyphSize(glyph)
 
-			if glyphsize=="S": 
-				offset = 0
-				gridsize = 40
-				it = 1
-			if glyphsize=="M": 
-				offset = 4
-				gridsize = 40
-				it = 2
-			if glyphsize=="L": 
-				offset = 4
-				gridsize = 40
-				it = 2
+		if glyphsize=="S": 
+			offset = 0
+			gridsize = 40
+			it = 1
+		if glyphsize=="M": 
+			offset = 4
+			gridsize = 40
+			it = 2
+		if glyphsize=="L": 
+			offset = 4
+			gridsize = 40
+			it = 2
 
 		for n in range(0, 2):
 
