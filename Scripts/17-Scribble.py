@@ -15,9 +15,9 @@ from NaNFilter import NaNFilter
 
 class Scribble(NaNFilter):
     params = {
-        "S": {"offset": -13, "iterations": 2, "walklen": 300},
-        "M": {"offset": -15, "iterations": 3, "walklen": 600},
-        "L": {"offset": -18, "iterations": 3, "walklen": 800},
+        "S": {"offset": -13, "iterations": 2, "walklen": 100},
+        "M": {"offset": -15, "iterations": 3, "walklen": 800},
+        "L": {"offset": -18, "iterations": 3, "walklen": 900},
     }
     pen = 8
 
