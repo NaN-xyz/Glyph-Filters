@@ -1,7 +1,14 @@
 from NaNGFGraphikshared import *
+from NaNGFConfig import beginFilterNaN, endFilterNaN, endGlyphNaN, beginGlyphNaN, glyphSize
 import traceback
-import GlyphsApp
-from Foundation import NSClassFromString
+
+insideGlyphs = True
+try:
+    import GlyphsApp
+    from Foundation import NSClassFromString
+except Exception as e:
+    insideGlyphs = False
+
 from NaNGFSpacePartition import *
 
 class NaNFilter:
@@ -17,26 +24,32 @@ class NaNFilter:
         pass
 
     def processGlyph(self, glyph):
-        glyph.beginUndo()
+        if insideGlyphs:
+            glyph.beginUndo()
         beginGlyphNaN(glyph)
 
         thislayer = self.font.glyphs[glyph.name].layers[0]
-        thislayer.beginChanges()
-        thislayer.correctPathDirection()
+        if insideGlyphs:
+            thislayer.beginChanges()
+            thislayer.correctPathDirection()
         if hasattr(self, "params"):
             params = self.params[glyphSize(glyph)]
         else:
             params = None
         self.processLayer(thislayer, params)
 
-        thislayer.endChanges()
+        if insideGlyphs:
+            thislayer.endChanges()
         endGlyphNaN(glyph)
-        glyph.endUndo()
+        if insideGlyphs:
+            glyph.endUndo()
 
     def processLayer(self, layer, params):
         raise NotImplementedError
 
     def doOffset(self, Layer, hoffset, voffset):
+        if not insideGlyphs:
+            raise Exception("This script must be run within Glyphs")
         try:
             offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
             offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_(
@@ -60,6 +73,8 @@ class NaNFilter:
         return offsetpaths
 
     def expandMonoline(self, Layer, noodleRadius):
+        if not insideGlyphs:
+            raise Exception("This script must be run within Glyphs")
         try:
             offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
             offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, noodleRadius, noodleRadius, True, False, 0.5, None,None)
@@ -68,6 +83,8 @@ class NaNFilter:
             print(( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) ))
 
     def expandMonolineFromPathlist(self, Paths, noodleRadius):
+        if not insideGlyphs:
+            raise Exception("This script must be run within Glyphs")
         Layer = GSLayer()
         for p in Paths: Layer.paths.append(p)
         try:

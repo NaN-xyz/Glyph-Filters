@@ -1,4 +1,8 @@
-from GlyphsApp import *
+insideGlyphs = True
+try:
+    from GlyphsApp import *
+except Exception as e:
+    insideGlyphs = False
 import random
 from NaNGFGraphikshared import *
 from math import *
@@ -11,7 +15,7 @@ NANGFSET = {
   "highlight_glyph": True,		# colour label the processed glyph
   "highlight_col": 1,			# colour label # for orange
   "show_time": True,			# show the time to process each glyph as well as total
-  "show_console": True,			# show macro and console window
+  "show_console": insideGlyphs,			# show macro and console window
   "debug": True					# LNP debug tool
 }
 
@@ -22,11 +26,15 @@ global start_time
 def beginFilterNaN(font):
 
 	global start_time
-	selectedGlyphs = [ l.parent for l in font.selectedLayers ] 
+	if insideGlyphs:
+		selectedGlyphs = [ l.parent for l in font.selectedLayers ]
+	else:
+		selectedGlyphs = font.glyphs
 	selectedGlyphs = filterGSGlyphList(selectedGlyphs)
 	#print selectedGlyphs
 
-	font.disableUpdateInterface()
+	if insideGlyphs:
+		font.disableUpdateInterface()
 	if NANGFSET["show_time"]==True: start_time = time.time()
 	if NANGFSET["show_console"]==True: 
 		Glyphs.showMacroWindow()
@@ -34,7 +42,8 @@ def beginFilterNaN(font):
 	return selectedGlyphs
 
 def endFilterNaN(font):
-	font.enableUpdateInterface()
+	if insideGlyphs:
+		font.enableUpdateInterface()
 	if NANGFSET["show_time"]==True: show_total_time(start_time)
 
 def beginGlyphNaN(glyph):

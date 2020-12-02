@@ -1,4 +1,7 @@
-from GlyphsApp import *
+try:
+	from GlyphsApp import *
+except Exception as e:
+	from glyphsLib import *
 
 from math import *
 import random
@@ -9,10 +12,13 @@ from Foundation import NSMakePoint
 
 from NaNGFConfig import *
 from NaNGFAngularizzle import *
-from NaNGFFitpath import *
-from NaNGFNoise import *
+from NaNGFFitpath import fitpath
 
-
+try:
+	distance
+except NameError:
+	def distance(p1, p2):
+		return sqrt((p1[0]-p2[0])*(p1[0]-p2[0]) + (p1[1]-p2[1])*(p1[1]-p2[1]))
 # --------------------------------------------
 
 def ClearPaths(thislayer):
@@ -77,7 +83,7 @@ def setGlyphCoords(pathlist):
 
 		thispath = []
 		for node in path.nodes:
-			thispath.append([node.x,node.y])
+			thispath.append([node.position.x,node.position.y])
 
 		newshape.append([direction,thispath])
 
@@ -354,8 +360,8 @@ def convertToFitpath(nodelist, closed):
 				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
 				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
 		
-	except:
-		pass
+	except Exception as e:
+		print("Error!", e)
 
 	addon.closed = closed
 	return addon

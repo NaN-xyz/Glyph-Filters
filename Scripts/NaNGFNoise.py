@@ -1,4 +1,7 @@
-import GlyphsApp
+try:
+	from GlyphsApp import *
+except Exception as e:
+	from glyphsLib import *
 from noise import *
 import math, random
 from NaNGFFitpath import *
