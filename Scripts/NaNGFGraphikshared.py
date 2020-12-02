@@ -83,7 +83,7 @@ def setGlyphCoords(pathlist):
 
 		thispath = []
 		for node in path.nodes:
-			thispath.append([node.x,node.y])
+			thispath.append([node.position.x,node.position.y])
 
 		newshape.append([direction,thispath])
 
