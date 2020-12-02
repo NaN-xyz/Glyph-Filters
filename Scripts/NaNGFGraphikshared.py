@@ -873,14 +873,14 @@ def AddAllComponentsToLayer(components, thislayer):
 	try:
 			thislayer.components.extend(components)
 	except:
-		print "Couldn't add components to layer", thislayer
+		print("Couldn't add components to layer", thislayer)
 
 
 def AddAllPathsToLayer(paths, thislayer):
 	try:
 			thislayer.paths.extend(paths)
 	except:
-		print "Couldn't add all paths to layer", thislayer
+		print("Couldn't add all paths to layer", thislayer)
 
 
 def ConvertPathlistDirection(paths, direction):
@@ -892,7 +892,7 @@ def ConvertPathlistDirection(paths, direction):
 			newpaths.append(p)
 		return newpaths
 	except:
-		print "Couldn't change direction of all paths"
+		print("Couldn't change direction of all paths")
 
 
 def ContainsPaths(thislayer):

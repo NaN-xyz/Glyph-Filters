@@ -22,7 +22,7 @@ def doOffset( Layer, hoffset, voffset ):
 		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
 		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
 	except Exception as e:
-		print "offset failed"
+		print("offset failed")
 
 def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
 	templayer = Layer.copy()
@@ -112,25 +112,25 @@ def OutputTopography():
 
 		# --- °°°°°°°
 
-			thislayer = font.glyphs[glyph.name].layers[0]
-			thislayer.beginChanges()
+		thislayer = font.glyphs[glyph.name].layers[0]
+		thislayer.beginChanges()
 
-			# ---
-			
-			glyphsize = glyphSize(glyph)
+		# ---
+		
+		glyphsize = glyphSize(glyph)
 
-			if glyphsize=="S": 
-				offset = 0
-				gridsize = 40
-				it = 1
-			if glyphsize=="M": 
-				offset = 4
-				gridsize = 40
-				it = 2
-			if glyphsize=="L": 
-				offset = 4
-				gridsize = 40
-				it = 2
+		if glyphsize=="S": 
+			offset = 0
+			gridsize = 40
+			it = 1
+		if glyphsize=="M": 
+			offset = 4
+			gridsize = 40
+			it = 2
+		if glyphsize=="L": 
+			offset = 4
+			gridsize = 40
+			it = 2
 
 		for n in range(0, 2):
 

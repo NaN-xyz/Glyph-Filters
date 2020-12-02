@@ -363,11 +363,11 @@ class PathFitter:
 
 
 def fitpath(pointlist, error):
-	return PathFitter(list(map(Segment, map(Point, pointlist))), error).fit()
+	return PathFitter(list(map(Segment, list(map(Point, pointlist)))), error).fit()
 
 
 def fitpathsvg(pointlist, error):
-	return pathtosvg(PathFitter(list(map(Segment, map(Point, pointlist))), error).fit())
+	return pathtosvg(PathFitter(list(map(Segment, list(map(Point, pointlist)))), error).fit())
 
 
 def pathtosvg(path):

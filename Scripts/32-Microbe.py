@@ -20,7 +20,7 @@ def doOffset( Layer, hoffset, voffset ):
 		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
 		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
 	except Exception as e:
-		print "offset failed"
+		print("offset failed")
 
 def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
 	templayer = Layer.copy()
@@ -83,7 +83,7 @@ def Microbe(thislayer, outlinedata, iterations, maxgap, maxsize, shapetype):
 						list_dots.append([x, y, rad])
 
 
-		print "Number of circles found:", len(list_dots)
+		print("Number of circles found:", len(list_dots))
 
 		for c in range(0, len(list_dots)):
 			x, y = list_dots[c][0], list_dots[c][1]

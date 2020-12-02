@@ -60,7 +60,7 @@ class MoonRocks(NaNFilter):
             if ShapeWithinOutlines(circlecoords, outlinedata):
                 list_dots.append([x, y, rad])
 
-        print "Number of circles found:", len(list_dots)
+        print("Number of circles found:", len(list_dots))
 
         rocks = []
         for c in range(0, len(list_dots)):

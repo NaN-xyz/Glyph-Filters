@@ -22,7 +22,7 @@ def doAngularizzle(pathlist, segs):
 
 		ang = ReturnNodesAlongPath(pathlist, angsize)
 
-		if ang==None: print "Returned no nodes along path"
+		if ang==None: print("Returned no nodes along path")
 
 		if detail==False:
 			ang = StripDetail(ang, segsize)

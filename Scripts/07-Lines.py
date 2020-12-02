@@ -48,7 +48,7 @@ class Lines(NaNFilter):
             AddAllComponentsToLayer(linecomps, thislayer)
 
         except Exception as e:
-            print "Glyph (", thislayer.name, ") failed to execute:", e
+            print("Glyph (", thislayer.name, ") failed to execute:", e)
 
     def DrawlinesTile(self, thislayer, outlinedata, tile, direction):
 

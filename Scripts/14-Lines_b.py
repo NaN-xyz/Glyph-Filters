@@ -20,7 +20,7 @@ def doOffset( Layer, hoffset, voffset ):
 		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
 		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
 	except Exception as e:
-		print "offset failed"
+		print("offset failed")
 
 def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
 	templayer = Layer.copy()
@@ -279,7 +279,7 @@ def OutputLines():
 			AddAllComponentsToLayer(linecomps, thislayer)
 
 		except:
-			print "Glyph (", glyph.name, ") failed to execute."
+			print("Glyph (", glyph.name, ") failed to execute.")
 
 		# ---
 
