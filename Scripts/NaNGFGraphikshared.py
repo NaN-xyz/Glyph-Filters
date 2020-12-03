@@ -976,7 +976,7 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 
 def CreateAllShapeComponents(font, sizex, sizey):
 	return [
-		CreateShapeComponent(font, sizex, sizey, shape) for shape in ["circle", "diamond", "rectangle", "triangle"]
+		CreateShapeComponent(font, sizex, sizey, shape, shape[0].upper()+shape[1:]+"Shape") for shape in ["circle", "diamond", "rectangle", "triangle"]
 	]
 
 
