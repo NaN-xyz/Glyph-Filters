@@ -4,10 +4,24 @@ __doc__ = """
 02. 80sFade
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+from NaNGFGraphikshared import (
+    setGlyphCoords,
+    AllPathBounds,
+    MakeRectangles,
+    CreateAllShapeComponents,
+    withinGlyphBlack,
+    point_inside_polygon,
+    ClearPaths,
+    AddAllComponentsToLayer,
+)
+from NaNGFAngularizzle import doAngularizzle
 from NaNFilter import NaNFilter
+import random
+
+try:
+    from GlyphsApp import *
+except Exception as e:
+    from glyphsLib import *
 
 
 class EightiesFade(NaNFilter):
@@ -15,25 +29,21 @@ class EightiesFade(NaNFilter):
         pathlist = doAngularizzle(thislayer.paths, 20)
         outlinedata = setGlyphCoords(pathlist)
 
-        try:
-            startrect = AllPathBounds(thislayer)
-            allrectangles = MakeRectangles([startrect], 5)
-            shape_components = CreateAllShapeComponents(self.font, 100, 100)
+        startrect = AllPathBounds(thislayer)
+        allrectangles = MakeRectangles([startrect], 5)
+        shape_components = CreateAllShapeComponents(self.font, 100, 100)
 
-            fadecomps = []
+        fadecomps = []
 
-            for n in range(0, len(allrectangles)):
-                x, y, w, h = allrectangles[n]
-                tilecoords = [[x, y], [x, y + h], [x + w, y + h], [x + w, y]]
-                fadecomps.extend(
-                    self.do80sFade(thislayer, outlinedata, tilecoords, shape_components)
-                )
+        for n in range(0, len(allrectangles)):
+            x, y, w, h = allrectangles[n]
+            tilecoords = [[x, y], [x, y + h], [x + w, y + h], [x + w, y]]
+            fadecomps.extend(
+                self.do80sFade(thislayer, outlinedata, tilecoords, shape_components)
+            )
 
-            ClearPaths(thislayer)
-            AddAllComponentsToLayer(fadecomps, thislayer)
-
-        except Exception as e:
-            print(("Layer (", thislayer.name, ") failed to execute.", e))
+        ClearPaths(thislayer)
+        AddAllComponentsToLayer(fadecomps, thislayer)
 
     def do80sFade(self, thislayer, outlinedata, tilecoords, shape_components):
         b = AllPathBounds(thislayer)
@@ -54,7 +64,7 @@ class EightiesFade(NaNFilter):
                     and size > 2
                 ):
                     fadecomp = GSComponent(r)
-                    scale = size / 100.0
+                    scale = size  # / 100.0
                     fadecomp.transform = (scale, 0.0, 0.0, scale, x, y)
                     fadecomps.append(fadecomp)
                 size += 0.01

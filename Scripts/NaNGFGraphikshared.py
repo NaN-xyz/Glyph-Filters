@@ -1,7 +1,9 @@
+inGlyphs = True
 try:
 	from GlyphsApp import *
 except Exception as e:
 	from glyphsLib import *
+	inGlyphs = False
 
 from math import *
 import random
@@ -11,7 +13,7 @@ import matplotlib.path as mpltPath
 from Foundation import NSMakePoint
 
 from NaNGFConfig import *
-from NaNGFAngularizzle import *
+from NaNGFAngularizzle import doAngularizzle
 from NaNGFFitpath import fitpath
 
 try:
@@ -136,10 +138,18 @@ def operateOnBlackAtInterval(layer, func, step_x, step_y=None):
 	b = AllPathBounds(layer)
 	ox, oy, w, h = int(b[0])+1, b[1]+1, b[2], b[3]
 	results = []
+	if not inGlyphs:
+		# have to do this the slow way
+		pathlist = doAngularizzle(layer.paths, 4)
+		outlinedata = setGlyphCoords(pathlist)
 	for y in range(oy, oy+h, step_y):
 		for x in range(ox, ox+w, step_x):
-			if not withinLayerBlack(layer, x, y):
-				continue
+			if inGlyphs:
+				if not withinLayerBlack(layer, x, y):
+					continue
+			else:
+				if not withinGlyphBlack(x, y, outlinedata):
+					continue
 			result = func(x,y,layer)
 			if result is not None:
 				results.extend(result)
@@ -954,6 +964,7 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 
 	if font.glyphs[shapename]: del font.glyphs[shapename]
 	ng = GSGlyph()
+	ng.parent = font
 	ng.name = shapename
 	ng.category = "Mark"
 	ng.export = True

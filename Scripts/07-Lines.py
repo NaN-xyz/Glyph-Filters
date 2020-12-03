@@ -4,18 +4,12 @@ __doc__ = """
 07. Lines
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+from NaNGFGraphikshared import CreateLineComponent, setGlyphCoords, MakeRectangles, AllPathBounds, ClearPaths, AddAllComponentsToLayer, withinGlyphBlack, point_inside_polygon_faster, returnLineComponent
+from NaNGFAngularizzle import doAngularizzle
 from NaNFilter import NaNFilter
 
 
 class Lines(NaNFilter):
-    params = {
-        "S": {"offset": -5, "iterations": 50},
-        "M": {"offset": -15, "iterations": 400},
-        "L": {"offset": -20, "iterations": 420},
-    }
 
     def setup(self):
         self.line_vertical_comp = CreateLineComponent(

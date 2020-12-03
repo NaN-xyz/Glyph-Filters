@@ -4,10 +4,15 @@ __doc__="""
 09. Storm
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFNoise import *
+from NaNGFGraphikshared import CreateShapeComponent, operateOnBlackAtInterval, ClearPaths
+from NaNGFNoise import snoise2, noiseMap
 from NaNFilter import NaNFilter
+
+try:
+    from GlyphsApp import *
+except Exception as e:
+    from glyphsLib import *
+
 
 class Storm(NaNFilter):
 	gridsize, minsize, maxsize = 25, 20, 60
