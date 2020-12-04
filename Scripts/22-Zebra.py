@@ -9,6 +9,13 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
 
+from itertools import izip
+# Note that this is *not* the same as the pairwise recipe in the itertools page
+def pairs(iterable):
+	 "s -> (s0, s1), (s2, s3), (s4, s5), ..."
+	a = iter(iterable)
+	return izip(a, a)
+
 # THE MAIN NOISE WAVE FUNCTION ACTION
 
 def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
@@ -45,11 +52,7 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 	wavepaths = []
 	# draw the wave data in to paths
 
-	for w in range(0, len(waves)-1, 2): #step 2
-
-		lines1 = waves[w]
-		lines2 = waves[w+1]
-
+	for lines1, lines2 in pairs(waves):
 		if len(lines1) != len(lines2):
 			continue
 
@@ -58,7 +61,6 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 			wavepaths.append(np)
 
 	return wavepaths
-		
 
 
 class Zebra(NaNFilter):
@@ -71,6 +73,7 @@ class Zebra(NaNFilter):
 		outlinedata = setGlyphCoords(pathlist)
 
 		wavepaths = NoiseWaves(thislayer, outlinedata, bounds, self.minsize, self.maxsize)
+
 		ClearPaths(thislayer)
 		wavepaths = ConvertPathlistDirection(wavepaths, -1)
 		AddAllPathsToLayer(wavepaths, thislayer)
