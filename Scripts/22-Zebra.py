@@ -53,10 +53,7 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 		if len(lines1) != len(lines2):
 			continue
 
-		for l in range(0, len(lines1)):
-
-			wav = lines1[l]
-			wav2 = lines2[l]
+		for wav, wav2 in zip(lines1, lines2):
 			wav2 = wav2[::-1]
 
 			p = []
