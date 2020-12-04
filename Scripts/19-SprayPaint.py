@@ -17,10 +17,6 @@ from NaNFilter import NaNFilter
 def doSpray(thislayer, paths):
 
 	for path in paths:
-
-		glyph = thislayer.parent
-		direction = path.direction
-
 		# only round shape if over certain size (for small forms)
 		if isPathSizeBelowThreshold(path,120,120):
 			structure = path
