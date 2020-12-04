@@ -54,10 +54,7 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 			continue
 
 		for wav, wav2 in zip(lines1, lines2):
-			p = []
-
-			p.extend(wav+list(reversed(wav2)))
-			np = convertToFitpath(p, True)
+			np = convertToFitpath(wav+list(reversed(wav2)), True)
 			wavepaths.append(np)
 
 	return wavepaths
