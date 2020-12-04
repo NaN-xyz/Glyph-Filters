@@ -57,12 +57,11 @@ def doSpray(thislayer, paths):
 				pushdist = pnoise1( (n+seed)*noisescale, 3) 
 				pushdist = noiseMap( pushdist, minshift, maxshift )
 				last_pushdist = pushdist
+				if n==0:
+					start_pushdist = pushdist
 
 			else:
 				pushdist = last_pushdist + ( ( start_pushdist-last_pushdist ) / segwaylen ) * (segwaylen-(nodelen-n)) 
-
-			if n==0:
-				start_pushdist = pushdist
 
 			linex1, liney1 = MakeVector(pushdist, a2)
 
