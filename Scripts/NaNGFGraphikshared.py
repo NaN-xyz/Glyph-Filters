@@ -10,7 +10,7 @@ from Foundation import NSMakePoint
 from NaNGFConfig import *
 from NaNGFAngularizzle import *
 from NaNGFFitpath import *
-from NaNGFNoise import *
+#from NaNGFNoise import *
 
 
 # --------------------------------------------
@@ -318,29 +318,10 @@ def convertToFitpath(nodelist, closed):
 			houtx, houty = hout.x, hout.y
 
 			# try and limit handle within max range (re fitpath bug)
-			maxh = 30
-			maxhn = maxh*-1
-
-			if hinx>maxh: 
-				hinx = maxh
-			elif hinx<maxhn: 
-				hinx = maxhn
-
-			if hiny>maxh: 
-				hiny = maxh
-			elif hiny<maxhn: 
-				hiny = maxhn
-
-			if houtx>maxh: 
-				houtx = maxh
-			elif houtx<maxhn: 
-				houtx = maxhn
-
-			if houty>maxh: 
-				houty = maxh
-			elif houty<maxhn: 
-				houty = maxhn
-
+			if hinx>50: hinx = 50
+			if hiny>50: hiny = 50
+			if houtx>50: houtx = 50
+			if houty>50: houty = 50
 
 			if s==0:
 				addon.nodes.append(GSNode([ptx, pty], type = GSLINE))
@@ -783,10 +764,7 @@ def returnRandomNodeinPaths(outlinedata):
 	return node
 
 
-def defineStartXY(thislayer, outlinedata):
-
-	#ox, oy, ow, oh = p.bounds.origin.x, p.bounds.origin.y, p.bounds.size.width, p.bounds.size.height
-
+def defineStartXY(rect, glyph):
 	b = AllPathBounds(thislayer)
 	if b:
 		ox, oy, w, h = b[0], b[1], b[2], b[3]
@@ -802,50 +780,49 @@ def defineStartXY(thislayer, outlinedata):
 	else:
 		print "no bounds found"
 		return None
+	#node = returnRandomNodeinPaths(glyph)
 
-	# #node = returnRandomNodeinPaths(glyph)
+	inside = False
 
-	# inside = False
+	#thislayer = f.selectedLayers[0]
+	#width = thislayer.width
+	#height = thislayer.height
 
-	# #thislayer = f.selectedLayers[0]
-	# #width = thislayer.width
-	# #height = thislayer.height
-
-	# originx = rect[0]
-	# originy = rect[1]
-	# ow = rect[2]
-	# oh = rect[3]
-	# newrect = [ [originx, originy], [originx, originy+oh], [originx+ow, originy+oh], [originx+ow, originy]  ]
+	originx = rect[0]
+	originy = rect[1]
+	ow = rect[2]
+	oh = rect[3]
+	newrect = [ [originx, originy], [originx, originy+oh], [originx+ow, originy+oh], [originx+ow, originy]  ]
 	
-	# #print "define start xy"
-	# #print path_origin_x, path_origin_x, path_size_width
+	#print "define start xy"
+	#print path_origin_x, path_origin_x, path_size_width
 
-	# counter=0
-	# while inside==False:
+	counter=0
+	while inside==False:
 
-	# 	rx = random.randrange(int(originx), int(originx + ow))
-	# 	ry = random.randrange(int(originy), int(originy + oh))
+		rx = random.randrange(int(originx), int(originx + ow))
+		ry = random.randrange(int(originy), int(originy + oh))
 
-	# 	# rx = node[0]
-	# 	# ry = node[1]
+		# rx = node[0]
+		# ry = node[1]
 
-	# 	#inside1 = point_inside_polygon(rx, ry, glyph)
-	# 	inside1 = withinGlyphBlack(rx, ry, glyph)					#checks not in glyph negative counters
-	# 	inside2 = point_inside_polygon(rx, ry, newrect)		#basic point in path check
+		#inside1 = point_inside_polygon(rx, ry, glyph)
+		inside1 = withinGlyphBlack(rx, ry, glyph)					#checks not in glyph negative counters
+		inside2 = point_inside_polygon(rx, ry, newrect)		#basic point in path check
 
-	# 	if inside1 and inside2:
-	# 		inside=True
+		if inside1 and inside2:
+			inside=True
 		
-	# 	if counter==20:
-	# 		#print "----"
-	# 		#print "could not find startXY"
-	# 		#print "----"
-	# 		return
-	# 		break
+		if counter==20:
+			#print "----"
+			#print "could not find startXY"
+			#print "----"
+			return
+			break
 
-	# 	counter+=1
+		counter+=1
 
-	# return[rx, ry]
+	return[rx, ry]
 
 
 def ShapeWithinOutlines(shape, glyph):
@@ -1111,23 +1088,3 @@ def CreateShadowPaths(thislayer, lines):
         p = drawSimplePath(newline)
         newpaths.append(p)
     return newpaths
-
-def removeOverlapPathlist(paths):
-	Layer = GSLayer()
-	for p in paths: Layer.paths.append(p)
-	Layer.removeOverlap()
-	newpaths = Layer.paths
-	del Layer
-	return newpaths
-
-# MekkaBlue
-def retractHandles(thisLayer):
-	for thisPath in thisLayer.paths:
-		for x in reversed( range( len( thisPath.nodes ))):
-			thisNode = thisPath.nodes[x]
-			if thisNode.type == GSOFFCURVE:
-				del thisPath.nodes[x]
-			else:
-				thisNode.type = GSLINE
-		
-		thisPath.checkConnections()
