@@ -16,47 +16,36 @@ def Spikes(thislayer, outlinedata, minpush, maxpush):
 
 	spikepaths = []
 
-	for path in outlinedata:
-
-		direction = path[0]
-		structure = path[1]
+	for direction, structure in outlinedata:
 		nodelen = len(structure)
 		spike = GSPath()
 		n = 0
 
 		while n < nodelen:
-
-			x1 = structure[n][0]
-			y1 = structure[n][1]
-			minstep = 10
+			x1, y1 = structure[n]
+			minstep, maxstep = 10, 22
 			maxstep = 22
 
 			if direction=="False": maxstep=int(maxstep*0.5)
 			step = random.randrange(minstep, maxstep)
 
 			if n+step>=nodelen-1:
-				n = nodelen
 				break
 
 			# --- set node pos for main or end
 			if n<nodelen-1:
-				x2 = structure[n+step][0]
-				y2 = structure[n+step][1]
+				x2, y2 = structure[n+step]
 				n+=step
 			else:
-				x2 = structure[0][0]
-				y2 = structure[0][1]
+				x2, y2 = structure[0]
 
-			a = atan2(y1-y2, x1-x2)
-			a += radians(90)
+			a = atan2(y1-y2, x1-x2) + radians(90)
 
-			midx = x1 + ((x2-x1)/2)
-			midy = y1 + ((y2-y1)/2)
+			midx, midy = x1 + ((x2-x1)/2), y1 + ((y2-y1)/2)
 
 			pushdist = random.randrange(minpush, maxpush)
 
-			linex = pushdist * cos(a)
-			liney = pushdist * sin(a)
+			linex, liney = MakeVector(pushdist, a)
 
 			searchblack = DistanceToNextBlack(thislayer, [x1, y1], [x2, y2], outlinedata, 200)
 
@@ -65,8 +54,7 @@ def Spikes(thislayer, outlinedata, minpush, maxpush):
 				liney*=0.7
 				pushdist*=0.7
 
-			if searchblack is not None:
-				if searchblack < 200:
+			if searchblack is not None and searchblack < 200:
 					linex*=0.7
 					liney*=0.7
 					pushdist*=0.7
