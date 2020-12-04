@@ -27,7 +27,7 @@ class Spray(NaNFilter):
 				structure = path
 			else:
 				structure = convertToFitpath(RoundPath(path,"nodes"), True)
-			
+
 			outlinedata = setGlyphCoords(doAngularizzle([structure], 7))
 
 			if not outlinedata:
@@ -37,8 +37,6 @@ class Spray(NaNFilter):
 
 	def makePathSpiky(self, structure):
 			nodelen = len(structure)
-
-			n = 0
 			newpath = []
 
 			noisescale = 0.01
@@ -49,7 +47,7 @@ class Spray(NaNFilter):
 			start_pushdist = 0
 			last_pushdist = 0
 
-			while n < nodelen:
+			for n in range(0,nodelen):
 				x_prev, y_prev = structure[n-1]
 				x_curr, y_curr = structure[n]
 				x_next, y_next = structure[(n+1) % nodelen]
@@ -75,7 +73,6 @@ class Spray(NaNFilter):
 								[x_curr+linex2, y_curr+liney2],
 								[x_curr+linex1, y_curr+liney1]]
 								)
-				n+=1
 
 			return drawSimplePath(newpath)
 
