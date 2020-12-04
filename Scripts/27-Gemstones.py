@@ -7,34 +7,7 @@ __doc__="""
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print("offset failed")
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
+from NaNFilter import NaNFilter
 
 
 def MoonRocks(thislayer, outlinedata, iterations, maxgap):
@@ -162,72 +135,25 @@ def Spikes(thislayer, outlinedata, minpush, maxpush):
 	return spikepaths
 
 
-def Outputspike():
+class Gemstones(NaNFilter):
+	params = {
+		"S": { "offset": -5, "minpush": 10, "maxpush": 20, "iterations": 50 },
+		"M": { "offset": -10, "minpush": 20, "maxpush": 40, "iterations": 400 },
+		"L": { "offset": -20, "minpush": 20, "maxpush": 40, "iterations": 420 },
+	}
 
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = -5
-			minpush, maxpush = 10, 20
-			iterations = 50
-		if glyphsize=="M": 
-			offset = -10
-			minpush, maxpush = 20, 40
-			iterations = 400
-		if glyphsize=="L": 
-			offset = -20
-			minpush, maxpush = 20, 40
-			iterations = 420
-
-		offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=False)
+	def processLayer(self, thislayer, params):
+		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
 		pathlist = doAngularizzle(offsetpaths, 4)
 		outlinedata = setGlyphCoords(pathlist)
 
 		ClearPaths(thislayer)
 
-		spikepaths = Spikes(thislayer, outlinedata, minpush, maxpush)
+		spikepaths = Spikes(thislayer, outlinedata, params["minpush"], params["maxpush"])
 		AddAllPathsToLayer(spikepaths, thislayer)
 
-		rockpaths = MoonRocks(thislayer, outlinedata, iterations, 8)
+		rockpaths = MoonRocks(thislayer, outlinedata, params["iterations"], 8)
 		rockpaths = ConvertPathlistDirection(rockpaths, 1)
 		AddAllPathsToLayer(rockpaths, thislayer)
 
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-Outputspike()
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
-
-
-
-
-
+Gemstones()
