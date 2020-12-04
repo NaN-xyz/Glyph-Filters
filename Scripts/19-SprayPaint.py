@@ -28,13 +28,11 @@ class Spray(NaNFilter):
 			else:
 				structure = convertToFitpath(RoundPath(path,"nodes"), True)
 			
-			pathlist = doAngularizzle([structure], 7)
-			outlinedata = setGlyphCoords(pathlist)
+			outlinedata = setGlyphCoords(doAngularizzle([structure], 7))
 
 			if not outlinedata:
 				continue
 
-			outlinedata = setGlyphCoords(pathlist)
 			structure = outlinedata[0][1]
 
 			nodelen = len(structure)
