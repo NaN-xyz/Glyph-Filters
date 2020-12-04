@@ -16,67 +16,56 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 	noisescale = 0.002
 	yshift = maxsize/4
 
-	if b is not None:
+	if b is None:
+		return []
 
-		tx = b[0]
-		ty = b[1]
-		tw = b[2]
-		th = b[3]
+	tx, ty, tw, th = b
+	seedx = random.randrange(0,100000)
+	seedy = random.randrange(0,100000)
 
-		seedx = random.randrange(0,100000)
-		seedy = random.randrange(0,100000)
+	waves = []
+	searchstep=2
 
-		waves = []
-		searchstep=2
+	for y in range(ty, ty+th, 20):
+		lines = []
+		wave = []
 
-		for y in range(ty, ty+th, 20):
+		for x in range(tx, tx+tw + 40, searchstep):
+			if withinGlyphBlack(x, y, outlinedata):
+				noiz = abs ( snoise2( (y+seedy)*noisescale,(x+seedx)*noisescale, 4) )
+				size = noiseMap( noiz, minsize, maxsize )
+				wave.append([x, y+size-yshift])
+			elif len(wave)>4:
+				lines.append(wave)
+				del wave
+				wave = []
 
-			lines = []
-			wave = []
+		if lines:
+			waves.append(lines)
 
-			for x in range(tx, tx+tw + 40, searchstep):
+	wavepaths = []
+	# draw the wave data in to paths
 
-				if withinGlyphBlack(x, y, outlinedata):
+	for w in range(0, len(waves)-1, 2): #step 2
 
-					noiz = abs ( snoise2( (y+seedy)*noisescale,(x+seedx)*noisescale, 4) )
-					size = noiseMap( noiz, minsize, maxsize )
-					wave.append([x, y+size-yshift])
-				
-				else:
+		lines1 = waves[w]
+		lines2 = waves[w+1]
 
-					if len(wave)>4:
+		if len(lines1) == len(lines2):
 
-						lines.append(wave)
-						del wave
-						wave = []
+			for l in range(0, len(waves[w])):
 
-			if len(lines)>0:
-				waves.append(lines)
+				wav = waves[w][l]
+				wav2 = waves[w+1][l]
+				wav2 = wav2[::-1]
 
+				p = []
 
-		wavepaths = []
-		# draw the wave data in to paths
+				p.extend(wav+wav2)
+				np = convertToFitpath(p, True)
+				wavepaths.append(np)
 
-		for w in range(0, len(waves)-1, 2): #step 2
-
-			lines1 = waves[w]
-			lines2 = waves[w+1]
-
-			if len(lines1) == len(lines2):
-
-				for l in range(0, len(waves[w])):
-
-					wav = waves[w][l]
-					wav2 = waves[w+1][l]
-					wav2 = wav2[::-1]
-
-					p = []
-
-					p.extend(wav+wav2)
-					np = convertToFitpath(p, True)
-					wavepaths.append(np)
-
-		return wavepaths
+	return wavepaths
 		
 
 
