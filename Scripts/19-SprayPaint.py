@@ -46,20 +46,9 @@ def doSpray(thislayer, paths):
 		segwaylen = 40
 
 		while n < nodelen:
-
-			if n>0:
-				prev=n-1
-			else:
-				prev=nodelen-1
-
-			if n==nodelen-1:
-				next=0
-			else:
-				next=n+1
-
-			x_prev, y_prev = structure[prev]
+			x_prev, y_prev = structure[n-1]
 			x_curr, y_curr = structure[n]
-			x_next, y_next = structure[next]
+			x_next, y_next = structure[(n+1) % nodelen]
 
 			a1 = atan2(y_prev-y_next, x_prev-x_next)
 			a2 = a1+radians(90)
