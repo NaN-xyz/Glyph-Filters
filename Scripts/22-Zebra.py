@@ -52,10 +52,10 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 
 		if len(lines1) == len(lines2):
 
-			for l in range(0, len(waves[w])):
+			for l in range(0, len(lines1)):
 
-				wav = waves[w][l]
-				wav2 = waves[w+1][l]
+				wav = lines1[l]
+				wav2 = lines2[l]
 				wav2 = wav2[::-1]
 
 				p = []
