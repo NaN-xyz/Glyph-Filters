@@ -37,7 +37,6 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 				wave.append([x, y+size-yshift])
 			elif len(wave)>4:
 				lines.append(wave)
-				del wave
 				wave = []
 
 		if lines:
