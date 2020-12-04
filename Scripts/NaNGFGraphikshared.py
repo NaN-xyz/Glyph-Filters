@@ -1091,14 +1091,8 @@ def CreateShadowPaths(thislayer, lines):
 
 
 def SnapToGrid(lines, gridsize):
-
-	for n in range(0, len(lines)):
-		line = lines[n]
-		for l in range(0, len(line)):
-			x = lines[n][l][0]
-			y = lines[n][l][1]
-			gridy = int(y/gridsize)*gridsize
-			lines[n][l][0] = x
-			lines[n][l][1] = gridy
+	for line in lines:
+		for pt in line:
+			pt[1] = int(pt[1]/gridsize)*gridsize
 
 	return lines
