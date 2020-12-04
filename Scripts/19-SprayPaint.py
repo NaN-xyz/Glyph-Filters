@@ -33,8 +33,9 @@ class Spray(NaNFilter):
 			if not outlinedata:
 				continue
 
-			structure = outlinedata[0][1]
+			thislayer.paths.append(self.makePathSpiky(outlinedata[0][1]))
 
+	def makePathSpiky(self, structure):
 			nodelen = len(structure)
 
 			n = 0
@@ -76,7 +77,7 @@ class Spray(NaNFilter):
 								)
 				n+=1
 
-			thislayer.paths.append(drawSimplePath(newpath))
+			return drawSimplePath(newpath)
 
 Spray()
 
