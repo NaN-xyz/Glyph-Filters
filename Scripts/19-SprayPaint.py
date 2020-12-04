@@ -38,12 +38,13 @@ def doSpray(thislayer, paths):
 		newpath = []
 
 		noisescale = 0.01
-		seed = random.randrange(0,100000)
+		segwaylen = 40
+		spikewidth = 4
 		minshift, maxshift = 30, 90
 
+		seed = random.randrange(0,100000)
 		start_pushdist = 0
 		last_pushdist = 0
-		segwaylen = 40
 
 		while n < nodelen:
 			x_prev, y_prev = structure[n-1]
@@ -64,9 +65,6 @@ def doSpray(thislayer, paths):
 				pushdist = last_pushdist + ( ( start_pushdist-last_pushdist ) / segwaylen ) * (segwaylen-(nodelen-n)) 
 
 			linex1, liney1 = MakeVector(pushdist, a2)
-
-			spikewidth = 4 
-
 			linex2, liney2 = MakeVector(pushdist, a1)
 
 			newpath.extend( [
