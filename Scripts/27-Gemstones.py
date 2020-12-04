@@ -8,58 +8,7 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
-
-
-def MoonRocks(thislayer, outlinedata, iterations, maxgap):
-
-	list_dots, rocks = [], []
-	b = AllPathBounds(thislayer)
-
-	if b is not None:
-
-		ox, oy, w, h = b[0], b[1], b[2], b[3]
-
-		for f in range(0, iterations):
-
-			x = random.randrange(ox, ox+w)
-			y = random.randrange(oy, oy+h)
-
-			if withinGlyphBlack(x, y, outlinedata):
-
-				rad = random.randrange(10,250)
-				inside = True
-				bufferdistcircle = maxgap
-
-				for n in range(0, len(list_dots)):
-
-					nx = list_dots[n][0]
-					ny = list_dots[n][1]
-					nr = list_dots[n][2]
-					dist = math.hypot(nx - x, ny - y) #alt method
-
-					if dist<(nr+rad+bufferdistcircle):
-						inside=False
-						break
-
-				if inside==True:
-					circles = []
-					circle = drawCircle(x, y, rad*2, rad*2)
-					circles.append(circle)
-					circlea = doAngularizzle(circles, 10)
-					circlea = setGlyphCoords(circlea)
-					circlecoords = circlea[0][1]
-
-					if ShapeWithinOutlines(circlecoords, outlinedata):
-						list_dots.append([x, y, rad])
-
-		for c in range(0, len(list_dots)):
-			x, y = list_dots[c][0], list_dots[c][1]
-			size = list_dots[c][2]
-			circle = drawBlob(x, y, size*2, 5, False)
-			rocks.append(circle)
-
-		return rocks
-
+from NaNCommonFilters import moonrocks
 
 # RETURN SPIKEY PATHS
 
@@ -152,7 +101,7 @@ class Gemstones(NaNFilter):
 		spikepaths = Spikes(thislayer, outlinedata, params["minpush"], params["maxpush"])
 		AddAllPathsToLayer(spikepaths, thislayer)
 
-		rockpaths = MoonRocks(thislayer, outlinedata, params["iterations"], 8)
+		rockpaths = moonrocks(thislayer, outlinedata, params["iterations"], maxgap = 8)
 		rockpaths = ConvertPathlistDirection(rockpaths, 1)
 		AddAllPathsToLayer(rockpaths, thislayer)
 
