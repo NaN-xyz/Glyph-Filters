@@ -1,4 +1,5 @@
 from NaNGFGraphikshared import *
+import random
 
 
 def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8):
@@ -50,3 +51,61 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
 
     rocks = ConvertPathlistDirection(rocks, 1)
     AddAllPathsToLayer(rocks, thislayer)
+
+def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunction):
+
+    spikepaths = []
+
+    for direction, structure in outlinedata:
+        nodelen = len(structure)
+        spike = GSPath()
+        n = 0
+
+        while n < nodelen:
+            x1, y1 = structure[n]
+
+            if direction=="True":
+                step = random.randrange(minstep, maxstep)
+            else:
+                step = random.randrange(minstep, maxstep/2)
+
+            if n+step>=nodelen-1:
+                break
+
+            # --- set node pos for main or end
+            if n<nodelen-1:
+                x2, y2 = structure[n+step]
+                n+=step
+            else:
+                x2, y2 = structure[0]
+
+            a = atan2(y1-y2, x1-x2) + radians(90)
+
+            midx, midy = x1 + ((x2-x1)/2), y1 + ((y2-y1)/2)
+
+            pushdist = random.randrange(minpush, maxpush)
+
+            linex, liney = MakeVector(pushdist, a)
+
+            searchblack = DistanceToNextBlack(thislayer, [x1, y1], [x2, y2], outlinedata, 200)
+
+            if direction=="False":
+                linex*=0.7
+                liney*=0.7
+                pushdist*=0.7
+
+            if searchblack is not None and searchblack < 200:
+                    linex*=0.7
+                    liney*=0.7
+                    pushdist*=0.7
+
+            midx += linex
+            midy += liney
+
+            drawFunction(spike, x1, y1, midx, midy, x2, y2, pushdist)
+
+        spike.closed = True
+        spikepaths.append(spike)
+    return spikepaths
+
+
