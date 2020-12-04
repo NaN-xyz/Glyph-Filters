@@ -15,6 +15,10 @@ from NaNFilter import NaNFilter
 class Spray(NaNFilter):
 	params = {"S": { "offset": -5}, "M": { "offset": -10}, "L": { "offset": -20} }
 
+	noisescale = 0.01
+	segwaylen = 40
+	minshift, maxshift = 30, 90
+
 	def processLayer(self, thislayer, params):
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
 		pathlist = doAngularizzle(offsetpaths, 4)
@@ -38,11 +42,6 @@ class Spray(NaNFilter):
 	def makePathSpiky(self, structure):
 			nodelen = len(structure)
 			newpath = []
-
-			noisescale = 0.01
-			segwaylen = 40
-			minshift, maxshift = 30, 90
-
 			seed = random.randrange(0,100000)
 			start_pushdist = 0
 			last_pushdist = 0
@@ -52,24 +51,23 @@ class Spray(NaNFilter):
 				x_curr, y_curr = structure[n]
 				x_next, y_next = structure[(n+1) % nodelen]
 
-				a1 = atan2(y_prev-y_next, x_prev-x_next)
-				a2 = a1+radians(90)
+				angle = atan2(y_prev-y_next, x_prev-x_next)
 
-				if n < nodelen-segwaylen:
-					pushdist = pnoise1( (n+seed)*noisescale, 3) 
-					pushdist = noiseMap( pushdist, minshift, maxshift )
+				if n < nodelen-self.segwaylen:
+					pushdist = pnoise1( (n+seed)*self.noisescale, 3)
+					pushdist = noiseMap( pushdist, self.minshift, self.maxshift )
 					last_pushdist = pushdist
 					if n==0:
 						start_pushdist = pushdist
 
 				else:
-					pushdist = last_pushdist + ( ( start_pushdist-last_pushdist ) / segwaylen ) * (segwaylen-(nodelen-n)) 
+					pushdist = last_pushdist + ( ( start_pushdist-last_pushdist ) / self.segwaylen ) * (self.segwaylen-(nodelen-n)) 
 
-				linex1, liney1 = MakeVector(pushdist, a2)
-				linex2, liney2 = MakeVector(pushdist, a1)
+				linex1, liney1 = MakeVector(pushdist, angle+radians(90))
+				linex2, liney2 = MakeVector(pushdist, angle)
 
 				newpath.extend( [
-								[x_curr-linex2, y_curr-liney2], 
+								[x_curr-linex2, y_curr-liney2],
 								[x_curr+linex2, y_curr+liney2],
 								[x_curr+linex1, y_curr+liney1]]
 								)
