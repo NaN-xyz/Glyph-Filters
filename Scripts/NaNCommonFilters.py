@@ -2,7 +2,7 @@ from NaNGFGraphikshared import *
 import random
 
 
-def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8):
+def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8, maxsize=250):
     list_dots = []
     b = AllPathBounds(thislayer)
 
@@ -19,7 +19,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
         if not withinGlyphBlack(x, y, outlinedata):
             continue
 
-        rad = random.randrange(10, 250)
+        rad = random.randrange(10, maxsize)
         inside = True
         for n in range(0, len(list_dots)):
             nx, ny, nr = list_dots[n]
@@ -44,7 +44,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
     for c in range(0, len(list_dots)):
         x, y, size = list_dots[c]
         if shapetype == "blob":
-            circle = drawBlob(x, y, size * 2, 5, True)
+            circle = drawBlob(x, y, size * 2, 5, size > 15)
         else:
             circle = drawCircle(x, y, size * 2, size * 2)
         rocks.append(circle)
