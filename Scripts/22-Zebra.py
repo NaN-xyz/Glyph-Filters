@@ -50,19 +50,20 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 		lines1 = waves[w]
 		lines2 = waves[w+1]
 
-		if len(lines1) == len(lines2):
+		if len(lines1) != len(lines2):
+			continue
 
-			for l in range(0, len(lines1)):
+		for l in range(0, len(lines1)):
 
-				wav = lines1[l]
-				wav2 = lines2[l]
-				wav2 = wav2[::-1]
+			wav = lines1[l]
+			wav2 = lines2[l]
+			wav2 = wav2[::-1]
 
-				p = []
+			p = []
 
-				p.extend(wav+wav2)
-				np = convertToFitpath(p, True)
-				wavepaths.append(np)
+			p.extend(wav+wav2)
+			np = convertToFitpath(p, True)
+			wavepaths.append(np)
 
 	return wavepaths
 		
