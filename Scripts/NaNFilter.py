@@ -80,10 +80,12 @@ class NaNFilter:
         except Exception as e:
             print(( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) ))
 
-    def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds, action, randomize = False):
+    def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds, action, randomize = False, snap=False):
         isogrid = makeIsometricGrid(bounds, gridsize)
         if randomize:
             isogrid = RandomiseIsoPoints(isogrid, gridsize)
+        if snap:
+            isogrid = SnapToGrid(isogrid, gridsize)
         alltriangles = IsoGridToTriangles(isogrid)
 
         # Return triangles within and without

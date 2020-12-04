@@ -1088,3 +1088,11 @@ def CreateShadowPaths(thislayer, lines):
         p = drawSimplePath(newline)
         newpaths.append(p)
     return newpaths
+
+
+def SnapToGrid(lines, gridsize):
+	for line in lines:
+		for pt in line:
+			pt[1] = int(pt[1]/gridsize)*gridsize
+
+	return lines
