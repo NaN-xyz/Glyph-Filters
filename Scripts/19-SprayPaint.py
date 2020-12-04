@@ -76,8 +76,7 @@ def doSpray(thislayer, paths):
 							)
 			n+=1
 
-		np = drawSimplePath(newpath)
-		thislayer.paths.append(np)
+		thislayer.paths.append(drawSimplePath(newpath))
 
 class Spray(NaNFilter):
 	params = {"S": { "offset": -5}, "M": { "offset": -10}, "L": { "offset": -20} }
