@@ -39,7 +39,6 @@ def doSpray(thislayer, paths):
 
 		noisescale = 0.01
 		segwaylen = 40
-		spikewidth = 4
 		minshift, maxshift = 30, 90
 
 		seed = random.randrange(0,100000)
