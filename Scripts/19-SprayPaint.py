@@ -9,40 +9,12 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFNoise import *
 from noise import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print("offset failed")
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	currentglyph = Layer.parent
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
+from NaNFilter import NaNFilter
 
 
 # THE MAIN SPRAY PAINT ACTION
 
-def Spray(thislayer, paths):
+def doSpray(thislayer, paths):
 
 	for path in paths:
 
@@ -132,62 +104,18 @@ def Spray(thislayer, paths):
 			np = drawSimplePath(newpath)
 			thislayer.paths.append(np)
 
+class Spray(NaNFilter):
+	params = {"S": { "offset": -5}, "M": { "offset": -10}, "L": { "offset": -20} }
 
-
-def OutputSpray():
-
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-
-		glyphsize = glyphSize(glyph)
-		
-		if glyphsize=="S": offset = -5
-		if glyphsize=="M": offset = -10
-		if glyphsize=="L": offset = -20
-
-		offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=False)
+	def processLayer(self, thislayer, params):
+		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
 		pathlist = doAngularizzle(offsetpaths, 4)
 		outlinedata = setGlyphCoords(pathlist)
 
 		ClearPaths(thislayer)
 
-		Spray(thislayer, pathlist)
+		doSpray(thislayer, pathlist)
 
-
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-#cProfile.run("OutputSpray()")
-OutputSpray()
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
-
-
-
+Spray()
 
 
