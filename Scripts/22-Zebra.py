@@ -7,36 +7,7 @@ __doc__="""
 import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
-
-# COMMON
-font = Glyphs.font
-selectedGlyphs = beginFilterNaN(font)
-
-
-# ====== OFFSET LAYER CONTROLS ================== 
-
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print("offset failed")
-
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
-	templayer.name = "tempoutline"
-	currentglyph = Layer.parent
-	currentglyph.layers.append(templayer)
-	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
-	offsetpaths = templayer.paths
-	del currentglyph.layers[tmplayer_id]
-	return offsetpaths
-
-# ================================================
-
-
+from NaNFilter import NaNFilter
 
 # THE MAIN NOISE WAVE FUNCTION ACTION
 
@@ -109,68 +80,21 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 		
 
 
-def OutputWaves(minsize, maxsize):
+class Zebra(NaNFilter):
+	minsize, maxsize = 40, 200
 
-	for glyph in selectedGlyphs:
-
-		glyph.beginUndo()
-		beginGlyphNaN(glyph)
-
-		# --- °°°°°°°
-
-		thislayer = font.glyphs[glyph.name].layers[0]
-		thislayer.beginChanges()
-
-		# ---
-		
-		glyphsize = glyphSize(glyph)
-
-		if glyphsize=="S": 
-			offset = -4 
-			iterations = 0
-		if glyphsize=="M": 
-			offset = -4
-			iterations = 0
-		if glyphsize=="L": 
-			offset = -4
-			iterations = 0
-
-		# ----
-
-		offsetpaths = saveOffsetPaths(thislayer, 0, 0, removeOverlap=True)
+	def processLayer(self, thislayer, params):
+		offsetpaths = self.saveOffsetPaths(thislayer, 0, 0, removeOverlap=True)
 		pathlist = doAngularizzle(offsetpaths, 20)
 		bounds = AllPathBoundsFromPathList(pathlist)
 		outlinedata = setGlyphCoords(pathlist)
 
-		wavepaths = NoiseWaves(thislayer, outlinedata, bounds, minsize, maxsize)
+		wavepaths = NoiseWaves(thislayer, outlinedata, bounds, self.minsize, self.maxsize)
 		ClearPaths(thislayer)
-		#rockpaths = MoonRocks(thislayer, outlinedata, iterations, maxgap, shapetype)
-		
 		wavepaths = ConvertPathlistDirection(wavepaths, -1)
 		AddAllPathsToLayer(wavepaths, thislayer)
 
-		# ---
-
-		thislayer.endChanges()
-
-		# --- °°°°°°°
-
-		endGlyphNaN(glyph)
-		glyph.endUndo()
-
-
-# =======
-
-OutputWaves(40, 200)
-
-# =======
-
-#OutputFur()
-#OutputSpikes()
-
-endFilterNaN(font)
-
-
+Zebra()
 
 
 
