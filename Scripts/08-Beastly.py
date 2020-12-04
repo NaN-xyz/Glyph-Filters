@@ -53,11 +53,9 @@ class Fur(NaNFilter):
 
 				if n<nodelen-1:
 					x2,y2 = structure[n+step]
-					y2,y2 = structure[n+step]
 					n+=step
 				else:
 					x2,y2 = structure[0]
-					y2,y2 = structure[0]
 
 				a = atan2(y1-y2, x1-x2) + radians(90)
 
