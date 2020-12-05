@@ -3,7 +3,7 @@ from noise import *
 import math, random
 from NaNGFFitpath import *
 from NaNGFGraphikshared import convertToFitpath
-
+import NaNGFGraphikshared
 
 def noiseMap(noise, min, max):
 	multiplier = 1
@@ -11,7 +11,7 @@ def noiseMap(noise, min, max):
 
 
 
-def NoiseOutline(thislayer, outlinedata):
+def NoiseOutline(thislayer, outlinedata, noisevars=[0.03, 0, 20]):
 
 	#
 	#
@@ -22,21 +22,15 @@ def NoiseOutline(thislayer, outlinedata):
 
 	noisepaths = []
 
-	for path in outlinedata:
-
-		direction = path[0]
-		structure = path[1]
+	for direction, structure in outlinedata:
 
 		nodelen = len(structure)
 
-		noisescale = 0.03
 		seedx = random.randrange(0,100000)
 		seedy = random.randrange(0,100000)
-		minsize = 0
-		maxsize = 20
+		noisescale, minsize, maxsize = noisevars[0], noisevars[1], noisevars[2] 
 
 		n = 0
-
 		newpath = []
 
 		while n < nodelen:

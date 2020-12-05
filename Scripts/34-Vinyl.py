@@ -12,7 +12,7 @@ from NaNGFSpacePartition import *
 from NaNFilter import NaNFilter
 
 
-class Blobby(NaNFilter):
+class Vinyl(NaNFilter):
 
     params = {
         "S": {"offset": 10, "it": 5, "depthmin": 20, "depthmax": 65},
@@ -63,4 +63,4 @@ class Blobby(NaNFilter):
         thislayer.removeOverlap()
 
 
-Blobby()
+Vinyl()
