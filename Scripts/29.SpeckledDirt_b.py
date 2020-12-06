@@ -1,4 +1,4 @@
-# MenuTitle: 29. SpeckledDirt
+# MenuTitle: 29. SpeckledDirt b
 # -*- coding: utf-8 -*-
 __doc__ = """
 29. SpeckledDirt
@@ -40,6 +40,8 @@ class SpeckledDirt(NaNFilter):
             dirt = ConvertPathlistDirection( removeOverlapPathlist(dirt), 1 )
             AddAllPathsToLayer(dirt, thislayer)
             thislayer.removeOverlap()
+
+            
 
     def AddDirt(self, thislayer, outlinedata, walklen):
 
