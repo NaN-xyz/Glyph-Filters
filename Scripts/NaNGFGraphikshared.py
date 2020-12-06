@@ -63,31 +63,6 @@ def ChangeNodeStart(nodes):
 	return start
 
 
-def setGlyphCoords(pathlist):
-
-	newshape = []
-
-	for path in pathlist:
-
-		direction = path.direction
-		if direction == -1:
-			direction="True"
-		else:
-			direction="False"
-
-		thispath = []
-		for node in path.nodes:
-			thispath.append([node.x,node.y])
-
-		newshape.append([direction,thispath])
-
-	# print "NEWSHAPE:"
-	# print newshape
-	# print "---"
-
-	return newshape
-
-
 def withinGlyphBlack(x, y, glyph):
 
 	#if len(glyph)==0 : print "EMPTY GLYPH"
@@ -463,7 +438,6 @@ def drawCircle(nx, ny, w, h):
 	addon.nodes.append(GSNode([nx-(w/4),ny+(h/2)], type = GSOFFCURVE))
 	addon.nodes.append(GSNode([nx,ny+(h/2)], type = GSCURVE))
 	addon.nodes.append(GSNode([nx+(w/4),ny+(h/2)], type = GSOFFCURVE))
-
 
 	addon.nodes.append(GSNode([nx+(w/2),ny+(h/4)], type = GSOFFCURVE))
 	addon.nodes.append(GSNode([nx+(w/2),ny], type = GSCURVE))

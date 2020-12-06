@@ -2,6 +2,27 @@ from GlyphsApp import *
 import math
 
 
+def setGlyphCoords(pathlist):
+
+	newshape = []
+
+	for path in pathlist:
+
+		direction = path.direction
+		if direction == -1:
+			direction="True"
+		else:
+			direction="False"
+
+		thispath = []
+		for node in path.nodes:
+			thispath.append([node.x,node.y])
+
+		newshape.append([direction,thispath])
+		
+	return newshape
+
+
 def doAngularizzle(pathlist, segs):
 
 	global segsize, detail

@@ -1,7 +1,7 @@
-# MenuTitle: 25. GlitchPop
+# MenuTitle: 25. Topography
 # -*- coding: utf-8 -*-
 __doc__ = """
-25. GlitchPop
+25. Topography
 """
 
 import GlyphsApp
@@ -91,10 +91,13 @@ class Topography(NaNFilter):
                 	continue
 
                 if drawtype == "vertical" or drawtype == "horizontal":
-                    all_lines = Fill_Drawlines(
-                        layer, roundedpath, drawtype, 15, linecomponents
-                    )
-                    AddAllComponentsToLayer(all_lines, layer)
+                    try:
+                        all_lines = Fill_Drawlines(
+                            layer, roundedpath, drawtype, 15, linecomponents
+                        )
+                        AddAllComponentsToLayer(all_lines, layer)
+                    except:
+                        pass
 
                 if drawtype == "blob":
                     # disallow small blobs

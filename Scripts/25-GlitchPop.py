@@ -12,7 +12,7 @@ from NaNGFSpacePartition import *
 from NaNFilter import NaNFilter
 
 
-class Topography(NaNFilter):
+class GlitchPop(NaNFilter):
 
     params = {
         "S": {"offset": 0, "gridsize": 10},
@@ -124,4 +124,4 @@ class Topography(NaNFilter):
             del templayer
 
 
-Topography()
+GlitchPop()

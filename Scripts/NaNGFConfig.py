@@ -12,7 +12,9 @@ NANGFSET = {
   "highlight_col": 1,			# colour label # for orange
   "show_time": True,			# show the time to process each glyph as well as total
   "show_console": True,			# show macro and console window
-  "debug": True					# LNP debug tool
+  "debug": True,				# LNP debug tool
+  "smallest_path": 7,			# Smallest permissable path width and height on clean-up
+  "smallest_seg": 5				# Smallest permissable segment length on clean-up
 }
 
 global start_time

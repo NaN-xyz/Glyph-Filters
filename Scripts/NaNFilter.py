@@ -28,6 +28,8 @@ class NaNFilter:
         else:
             params = None
         self.processLayer(thislayer, params)
+        self.removeSmallPaths(thislayer, NANGFSET["smallest_path"])
+        self.removeSmallSegments(thislayer, NANGFSET["smallest_seg"])
 
         thislayer.endChanges()
         endGlyphNaN(glyph)
@@ -101,3 +103,20 @@ class NaNFilter:
         else:
             raise NotImplementedError
 
+    def removeSmallPaths(self, layer, maxdim):
+        for p in reversed(layer.paths):
+            w, h = p.bounds.size.width, p.bounds.size.height
+            if w<maxdim and h<maxdim:
+                layer.paths.remove(p)
+
+    # https://github.com/mekkablue/Glyphs-Scripts/blob/master/Paths/Remove%20Short%20Segments.py         
+    def removeSmallSegments(self, thisLayer, maxseg):
+        for thisPath in thisLayer.paths:
+            for i in range(len(thisPath.nodes))[::-1]:
+                thisNode = thisPath.nodes[i]
+                prevNode = thisNode.prevNode
+                if prevNode.type != OFFCURVE and thisNode.type != OFFCURVE:
+                    xDistance = thisNode.x-prevNode.x
+                    yDistance = thisNode.y-prevNode.y
+                    if abs(xDistance) < maxseg and abs(yDistance) < maxseg:
+                        thisPath.removeNodeCheckKeepShape_( thisNode )

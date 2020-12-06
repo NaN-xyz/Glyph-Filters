@@ -64,5 +64,7 @@ class Bubble(NaNFilter):
             bubble.closed = True
             thislayer.paths.append(bubble)
 
+            thislayer.paths.append( drawCircle(100,100,20,20))
+
 
 Bubble()
