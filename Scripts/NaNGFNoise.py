@@ -2,7 +2,6 @@ import GlyphsApp
 from noise import *
 import math, random
 from NaNGFFitpath import *
-from NaNGFGraphikshared import convertToFitpath
 import NaNGFGraphikshared
 
 def noiseMap(noise, min, max):

@@ -270,69 +270,7 @@ def returnRoundedPaths(paths):
 	return roundedpathlist
 
 
-def convertToFitpath(nodelist, closed):
 
-	addon = GSPath()
-
-	# seems to be instances where empty nodelists are sent. 
-	# workaround below with try/except sending empty path
-
-	try:
-
-		nodelist.append(nodelist[-1])
-		pathlist = fitpath(nodelist, True)
-
-		for s in range(0, len(pathlist)):
-
-			segment = pathlist[s]
-			pt = segment.getPoint()
-			hin = segment.getHandleIn()
-			hout = segment.getHandleOut()
-			ptx, pty = pt.x, pt.y
-			hinx, hiny = hin.x, hin.y
-			houtx, houty = hout.x, hout.y
-
-			# try and limit handle within max range (re fitpath bug)
-			maxh = 30
-			maxhn = maxh*-1
-
-			if hinx>maxh: 
-				hinx = maxh
-			elif hinx<maxhn: 
-				hinx = maxhn
-
-			if hiny>maxh: 
-				hiny = maxh
-			elif hiny<maxhn: 
-				hiny = maxhn
-
-			if houtx>maxh: 
-				houtx = maxh
-			elif houtx<maxhn: 
-				houtx = maxhn
-
-			if houty>maxh: 
-				houty = maxh
-			elif houty<maxhn: 
-				houty = maxhn
-
-
-			if s==0:
-				addon.nodes.append(GSNode([ptx, pty], type = GSLINE))
-				addon.nodes.append(GSNode([ptx+houtx, pty+houty], type = GSOFFCURVE))
-			elif s>0 and s<len(pathlist)-1:
-				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
-				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
-				addon.nodes.append(GSNode([ptx+houtx, pty+houty], type = GSOFFCURVE))
-			else:
-				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
-				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
-		
-	except:
-		pass
-
-	addon.closed = closed
-	return addon
 
 
 def drawBlob(nx, ny, maxrad, maxpoints, rounded):
@@ -567,6 +505,10 @@ def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
 
 	pathlist = doAngularizzle([path], 10)
 	outlinedata = setGlyphCoords(pathlist)
+
+	if len(outlinedata)==0:
+		return None
+
 	outlinedata = outlinedata[0][1]
 	
 	tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
