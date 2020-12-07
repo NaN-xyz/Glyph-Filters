@@ -809,12 +809,10 @@ def AddAllPathsToLayer(paths, thislayer):
 
 def ConvertPathlistDirection(paths, direction):
 	try:
-		newpaths = []
 		for p in paths:
 			if p.direction != direction:
 				p.reverse()
-			newpaths.append(p)
-		return newpaths
+		return paths
 	except:
 		print("Couldn't change direction of all paths")
 
