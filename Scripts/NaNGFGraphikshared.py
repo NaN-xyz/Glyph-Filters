@@ -525,9 +525,6 @@ def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
 	h = int( bounds.size.height )
 
 	pathlist = ConvertPathsToSkeleton([path], 10)
-
-	outlinedata = setGlyphCoords(pathlist)
-
 	if len(outlinedata)==0:
 		return None
 
