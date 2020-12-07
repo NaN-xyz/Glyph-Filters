@@ -208,7 +208,7 @@ def RoundPaths(paths, returntype):
 def RoundPath(path, returntype):
 
 	outlinedata = getGlyphCoords(ConvertPathsToSkeleton([path], 2))[0][1]
-	new_outline = outline
+	new_outline = outlinedata
 	nl = []
 
 	switch = False
