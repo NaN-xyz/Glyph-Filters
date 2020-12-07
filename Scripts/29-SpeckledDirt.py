@@ -110,7 +110,7 @@ def OutputNoiseOutline():
 		glyphsize = glyphSize(glyph)
 
 		pathlist = doAngularizzle(thislayer.paths, 4)
-		outlinedata = setGlyphCoords(pathlist)
+		outlinedata = getGlyphCoords(pathlist)
 
 		ClearPaths(thislayer)
 
@@ -124,7 +124,7 @@ def OutputNoiseOutline():
 		# tmpid = saveOutlinePaths(thislayer, -15, -15)
 		# tmplayer = glyph.layers[tmpid]
 		# pathlist = doAngularizzle(tmplayer.paths, 20)
-		# outlinedata = setGlyphCoords(pathlist)
+		# outlinedata = getGlyphCoords(pathlist)
 
 		# bounds = AllPathBounds(tmplayer)
 		# del tmplayer

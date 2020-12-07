@@ -23,13 +23,13 @@ class Scribble(NaNFilter):
 
     def processLayer(self, thislayer, params):
 
-        outlinedata = setGlyphCoords(doAngularizzle(thislayer.paths, 20))
+        outlinedata = getGlyphCoords(doAngularizzle(thislayer.paths, 20))
 
         ClearPaths(thislayer)
 
         noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.05, 0, 35])
         noiseoutline = self.expandMonolineFromPathlist(noisepaths, self.pen)
-        outlinedata2 = setGlyphCoords(doAngularizzle(noisepaths, 4))
+        outlinedata2 = getGlyphCoords(doAngularizzle(noisepaths, 4))
 
         allscribbles = []
         for n in range(0, params["iterations"]):

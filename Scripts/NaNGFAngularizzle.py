@@ -8,7 +8,7 @@ class Direction(IntEnum):
 	CLOCKWISE = 1
 
 
-def setGlyphCoords(pathlist):
+def getGlyphCoords(pathlist):
 
 	newshape = []
 

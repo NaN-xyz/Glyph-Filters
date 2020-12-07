@@ -52,7 +52,7 @@ class Fur(NaNFilter):
 	def processLayer(self, thislayer, params):
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
 		pathlist = doAngularizzle(offsetpaths, 4)
-		outlinedata = setGlyphCoords(pathlist)
+		outlinedata = getGlyphCoords(pathlist)
 
 		ClearPaths(thislayer)
 

@@ -19,7 +19,7 @@ class Bubble(NaNFilter):
             thislayer, offset, offset, removeOverlap=False
         )
         pathlist = doAngularizzle(offsetpaths, 4)
-        outlinedata = setGlyphCoords(pathlist)
+        outlinedata = getGlyphCoords(pathlist)
         ClearPaths(thislayer)
         minpush = 60
         maxpush = 80

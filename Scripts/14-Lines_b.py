@@ -246,11 +246,11 @@ def OutputLines():
 		# ----
 
 		pathlist = doAngularizzle(thislayer.paths, 4)
-		outlinedata = setGlyphCoords(pathlist)
+		outlinedata = getGlyphCoords(pathlist)
 
 		loopmask = LoopLines(thislayer, outlinedata)
 		loopmasklist = doAngularizzle(loopmask, 40)
-		outlinedata = setGlyphCoords(loopmasklist)
+		outlinedata = getGlyphCoords(loopmasklist)
 
 		AddAllPathsToLayer(loopmask, thislayer)
 

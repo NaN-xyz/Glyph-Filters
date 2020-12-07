@@ -32,7 +32,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
         if not inside:
             continue
         circle = drawCircle(x, y, rad * 2, rad * 2)
-        circlea = setGlyphCoords(doAngularizzle([circle], 10))
+        circlea = getGlyphCoords(doAngularizzle([circle], 10))
         circlecoords = circlea[0][1]
 
         if ShapeWithinOutlines(circlecoords, outlinedata):

@@ -19,7 +19,7 @@ class BrokenFax(NaNFilter):
 	def processLayer(self, thislayer, params):
 		thislayer.removeOverlap()
 		pathlist = doAngularizzle(thislayer.paths, params["stepsize"])
-		outlinedata = setGlyphCoords(pathlist)
+		outlinedata = getGlyphCoords(pathlist)
 		ClearPaths(thislayer)
 
 		allpaths = []

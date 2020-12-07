@@ -225,7 +225,7 @@ def OutputWaves(minsize, maxsize):
 		offsetpaths = saveOffsetPaths(thislayer, 0, 0, removeOverlap=True)
 		pathlist = doAngularizzle(offsetpaths, 20)
 		bounds = AllPathBoundsFromPathList(pathlist)
-		outlinedata = setGlyphCoords(pathlist)
+		outlinedata = getGlyphCoords(pathlist)
 
 		wavepaths = NoiseWaves(thislayer, outlinedata, bounds, minsize, maxsize)
 		ClearPaths(thislayer)

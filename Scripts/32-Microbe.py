@@ -21,7 +21,7 @@ class Microbe(NaNFilter):
         offsetpaths = self.saveOffsetPaths(
             thislayer, params["offset"], params["offset"], removeOverlap=False
         )
-        outlinedata = setGlyphCoords(doAngularizzle(offsetpaths, 30))
+        outlinedata = getGlyphCoords(doAngularizzle(offsetpaths, 30))
         ClearPaths(thislayer)
         moonrocks(thislayer, outlinedata, params["iterations"], shapetype = "blob", maxgap = 1, maxsize=params["maxsize"])
 
