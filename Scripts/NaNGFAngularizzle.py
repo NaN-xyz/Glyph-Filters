@@ -112,7 +112,7 @@ def lerp(v, d):
 # each item represents cumulative distances from beginning of segments
 def CreateDistList(pointlist):
 
-	lookup = list()
+	lookup = [0]
 	totallength = 0
 
 	for tp in range (0,len(pointlist)-1):
@@ -123,8 +123,6 @@ def CreateDistList(pointlist):
 		dist = math.hypot(p2x - p1x, p2y - p1y)
 		totallength += dist
 		lookup.append(totallength)
-		
-	lookup.insert(0,0)
 
 	return lookup
 
