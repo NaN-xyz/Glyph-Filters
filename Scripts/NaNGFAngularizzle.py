@@ -39,22 +39,19 @@ def doAngularizzle(pathlist, segs):
 	return newpaths
 
 
-def StripDetail (nlist, segsize):
+def StripDetail (pathlist, segsize):
 
 	newList = list()
 
-	for s in nlist:
+	for path in pathlist:
 		newnodes = list()
-		length = s[0]
-		isclosed = s[1]
-		nlist = s[2]
-		p1x = nlist[0][0]
-		p1y = nlist[0][1]
+		length, isclosed, nodelist = path
+		p1x,p1y = nodelist[0]
 
-		for n in range(1, len(nlist)-1):
+		for n in range(1, len(nodelist)-1):
 
-			p2x = nlist[n][0]
-			p2y = nlist[n][1]
+			p2x = nodelist[n][0]
+			p2y = nodelist[n][1]
 			dist = math.hypot(p2x - p1x, p2y - p1y)
 
 			if dist > segsize:
