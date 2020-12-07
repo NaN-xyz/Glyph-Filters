@@ -278,7 +278,7 @@ def convertToFitpath(nodelist, closed):
 		nodelist.append(nodelist[-1])
 		pathlist = fitpath(nodelist, True)
 
-		for segment in pathlist:
+		for s,segment in enumerate(pathlist):
 			pt = segment.getPoint()
 			hin = segment.getHandleIn()
 			hout = segment.getHandleOut()
