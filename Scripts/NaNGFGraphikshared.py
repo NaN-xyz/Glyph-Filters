@@ -818,10 +818,7 @@ def ConvertPathlistDirection(paths, direction):
 
 
 def ContainsPaths(thislayer):
-	if len(thislayer.paths)>0:
-		return True
-	else:
-		return False
+	return len(thislayer.paths)>0:
 
 
 def pathCenterPoint(path):
