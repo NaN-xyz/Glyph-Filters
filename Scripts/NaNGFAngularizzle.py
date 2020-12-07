@@ -23,7 +23,6 @@ def getGlyphCoords(pathlist):
 
 
 def doAngularizzle(pathlist, segs):
-	font = Glyphs.font
 	newpaths = []
 
 	if len(pathlist)>0:
