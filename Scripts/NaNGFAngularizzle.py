@@ -197,9 +197,6 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 		allpointslist = []
 		scount=0
 		index = -1
-		
-		#if path.closed==False:
-		#	continue
 
 		for node in path.nodes:
 
@@ -209,9 +206,6 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 
 			# if straight segment 
 			if node.type == LINE: 
-
-				if scount<1: continue
-
 				prevNode = path.nodes[index - 1]
 
 				if not prevNode: continue
