@@ -205,8 +205,7 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 
 				dist = math.hypot(tp1[0] - tp0[0], tp1[1] - tp0[1])
 				pathTotalLength+=dist
-				straightlinepts = PointToPointSteps(tp0,tp1,spacebetween)
-				for sl in straightlinepts: allpointslist.append(sl)
+				allpointslist.extend(PointToPointSteps(tp0,tp1,spacebetween))
 			   
 			# if bezier curve segment
 			else:
@@ -241,8 +240,7 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 						allpointslist.append(calc)
 						dlen+=stepinc
 				else:
-					allpointslist.append([tp0[0],tp0[1]])
-					allpointslist.append([tp3[0],tp3[1]])
+					allpointslist.extend([tp0, tp3])
 
 		if allpointslist:
 			allpointslist = RemoveDuplicatePts(allpointslist)
