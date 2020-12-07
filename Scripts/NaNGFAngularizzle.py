@@ -165,7 +165,8 @@ def PointToPointSteps(tp0, tp1, spacebetween):
 		return []
 
 	tmplist = list()
-	n1x, n1y, n2x, n2y = tp0[0], tp0[1], tp1[0], tp1[1]
+	n1x, n1y = tp0
+	n2x, n2y = tp1
 
 	dist = math.hypot(n2x - n1x, n2y - n1y)
 
