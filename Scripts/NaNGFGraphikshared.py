@@ -652,35 +652,32 @@ def Split(rectangle, axis):
 
 
 def MakeRectangles(startrect, it):
+	if it==0:
+		return startrect
 
 	collections = []
 
-	if it>0:
+	rectangles = startrect
+	counter=0
+	switch=True
 
-		rectangles = startrect
-		counter=0
-		switch=True
+	while counter<it:
 
-		while counter<it:
+		collection = []
 
-			collection = []
+		for n in range(0, len(rectangles)):
 
-			for n in range(0, len(rectangles)):
+			switch = not switch
+			if switch==True: axis = "x"
+			else: axis = "y"
+			splitrects = Split( rectangles[n], axis )
+			for n in range (0, len(splitrects)): collection.append(splitrects[n])
 
-				switch = not switch
-				if switch==True: axis = "x"
-				else: axis = "y"
-				splitrects = Split( rectangles[n], axis )
-				for n in range (0, len(splitrects)): collection.append(splitrects[n])
-
-			del rectangles
-			rectangles = []
-			rectangles = collection
-			collections.append(collection)
-			counter+=1
-
-	else:
-		collections.append(startrect)
+		del rectangles
+		rectangles = []
+		rectangles = collection
+		collections.append(collection)
+		counter+=1
 
 	return collections[-1]
 
