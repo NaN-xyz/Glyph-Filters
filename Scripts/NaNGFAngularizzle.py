@@ -137,8 +137,8 @@ def FindPosInDistList(lookup, newlen): #newlen = length along curve
 			if b1==0:
 				newt=0
 			else:
-				percentb = ( 100 / (b2 - b1) ) * (newlen - b1)
-				newt = (s*STEPSIZE) + ( STEPSIZE * (percentb/100) )
+				proportion = (newlen - b1) / (b2 - b1)
+				newt = (s*STEPSIZE) + ( STEPSIZE * proportion )
 			return (newt)
 
 
