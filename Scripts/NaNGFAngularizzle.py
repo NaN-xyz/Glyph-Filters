@@ -8,6 +8,9 @@ class Direction(IntEnum):
 	CLOCKWISE = 1
 
 
+STEPNUM = 130
+STEPSIZE = 1.0/STEPNUM # !impt
+
 def getGlyphCoords(pathlist):
 
 	newshape = []
@@ -25,10 +28,7 @@ def doAngularizzle(pathlist, segs):
 
 	segsize = segs
 
-	global stepnum, tStepSize
 	segsize = int(segsize)
-	stepnum=130
-	tStepSize = 1.0/stepnum # !impt
 	font = Glyphs.font
 	angsize = int(segsize)
 
@@ -121,7 +121,7 @@ def CreatePointList(p0,p1,p2,p3):
 		t = tmp
 		calc = GetPoint(p0,p1,p2,p3,tmp)
 		pl.append(calc)
-		tmp = tmp + tStepSize
+		tmp = tmp + STEPSIZE
 	return pl
 
 
@@ -164,7 +164,7 @@ def FindPosInDistList(lookup, newlen): #newlen = length along curve
 				newt=0
 			else:
 				percentb = ( 100 / (b2 - b1) ) * (newlen - b1)
-				newt = (s*tStepSize) + ( tStepSize * (percentb/100) )
+				newt = (s*STEPSIZE) + ( STEPSIZE * (percentb/100) )
 			return (newt)
 
 
