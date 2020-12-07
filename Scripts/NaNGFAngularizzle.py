@@ -23,20 +23,12 @@ def getGlyphCoords(pathlist):
 
 
 def doAngularizzle(pathlist, segs):
-
-	global segsize
-
-	segsize = segs
-
-	segsize = int(segsize)
 	font = Glyphs.font
-	angsize = int(segsize)
-
 	newpaths = []
 
 	if len(pathlist)>0:
 
-		ang = ReturnNodesAlongPath(pathlist, angsize)
+		ang = ReturnNodesAlongPath(pathlist, segs)
 
 		if ang==None: print("Returned no nodes along path")
 
