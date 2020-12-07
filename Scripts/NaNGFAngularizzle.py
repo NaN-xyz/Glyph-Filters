@@ -99,12 +99,9 @@ def GetPoint(p0, p1, p2, p3, t):
 # Put all the xy coords of linear t GetPoint() increments in list 
 def CreatePointList(p0,p1,p2,p3):
 	pl = list() 
-	tmp=0
-	while tmp<1:
-		t = tmp
-		calc = GetPoint(p0,p1,p2,p3,tmp)
+	for i in range(0, STEPNUM):
+		calc = GetPoint(p0,p1,p2,p3,float(i)/STEPNUM)
 		pl.append(calc)
-		tmp = tmp + STEPSIZE
 	return pl
 
 
