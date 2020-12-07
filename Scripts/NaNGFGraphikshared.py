@@ -263,6 +263,9 @@ def returnRoundedPaths(paths):
 	return roundedpathlist
 
 
+def clip(val, minimum, maximum):
+	return min(max(val, minimum), maximum)
+
 def convertToFitpath(nodelist, closed):
 
 	addon = GSPath()
@@ -284,29 +287,10 @@ def convertToFitpath(nodelist, closed):
 			houtx, houty = hout.x, hout.y
 
 			# try and limit handle within max range (re fitpath bug)
-			maxh = 30
-			maxhn = maxh*-1
-
-			if hinx>maxh: 
-				hinx = maxh
-			elif hinx<maxhn: 
-				hinx = maxhn
-
-			if hiny>maxh: 
-				hiny = maxh
-			elif hiny<maxhn: 
-				hiny = maxhn
-
-			if houtx>maxh: 
-				houtx = maxh
-			elif houtx<maxhn: 
-				houtx = maxhn
-
-			if houty>maxh: 
-				houty = maxh
-			elif houty<maxhn: 
-				houty = maxhn
-
+			hinx = clip(hinx, -30, 30)
+			hiny = clip(hiny, -30, 30)
+			houtx = clip(houtx, -30, 30)
+			houty = clip(houty, -30, 30)
 
 			if s==0:
 				addon.nodes.append(GSNode([ptx, pty], type = GSLINE))
