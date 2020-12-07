@@ -21,10 +21,9 @@ def getGlyphCoords(pathlist):
 
 def doAngularizzle(pathlist, segs):
 
-	global segsize, detail
+	global segsize
 
 	segsize = segs
-	detail = True
 
 	global stepnum, tStepSize
 	segsize = int(segsize)
@@ -40,9 +39,6 @@ def doAngularizzle(pathlist, segs):
 		ang = ReturnNodesAlongPath(pathlist, angsize)
 
 		if ang==None: print("Returned no nodes along path")
-
-		if detail==False:
-			ang = StripDetail(ang, segsize)
 
 		if ang:
 			for n in ang:
