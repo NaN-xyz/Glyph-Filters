@@ -671,8 +671,6 @@ def MakeRectangles(startrect, it):
 			splitrects = Split( rectangles[n], axis )
 			for n in range (0, len(splitrects)): collection.append(splitrects[n])
 
-		del rectangles
-		rectangles = []
 		rectangles = collection
 		collections.append(collection)
 		counter+=1
