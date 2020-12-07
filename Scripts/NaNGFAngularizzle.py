@@ -34,11 +34,8 @@ def doAngularizzle(pathlist, segs):
 		print("Returned no nodes along path")
 		return []
 
-	for n in ang:
-		pts = n[2]
-		isclosed = n[1]
-		outline = ListToPath(pts, isclosed)
-		newpaths.append(outline)
+	for _, isclosed, pts in ang:
+		newpaths.append(ListToPath(pts, isclosed))
 
 	return newpaths
 
