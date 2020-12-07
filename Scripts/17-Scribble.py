@@ -46,7 +46,6 @@ class Scribble(NaNFilter):
     def ScribblePath(self, thislayer, outlinedata, walklen):
 
         start = defineStartXY(thislayer, outlinedata)
-        print start
 
         if start is None:
             return None

@@ -35,5 +35,6 @@ class Gemstones(NaNFilter):
 		rockpaths = moonrocks(thislayer, outlinedata, params["iterations"], maxgap = 8)
 		rockpaths = ConvertPathlistDirection(rockpaths, 1)
 		AddAllPathsToLayer(rockpaths, thislayer)
+		retractHandles(thislayer)
 
 Gemstones()

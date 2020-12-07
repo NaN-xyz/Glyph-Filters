@@ -28,8 +28,11 @@ class NaNFilter:
         else:
             params = None
         self.processLayer(thislayer, params)
+
         self.removeSmallPaths(thislayer, NANGFSET["smallest_path"])
-        self.removeSmallSegments(thislayer, NANGFSET["smallest_seg"])
+        self.removeSmallSegments(thislayer, NANGFSET["smallest_seg"], False)
+        self.removeOpenPaths(thislayer)
+        self.removeStrayPoints(thislayer) # see note for why this & above
 
         thislayer.endChanges()
         endGlyphNaN(glyph)
@@ -109,8 +112,9 @@ class NaNFilter:
             if w<maxdim and h<maxdim:
                 layer.paths.remove(p)
 
+    # based on
     # https://github.com/mekkablue/Glyphs-Scripts/blob/master/Paths/Remove%20Short%20Segments.py         
-    def removeSmallSegments(self, thisLayer, maxseg):
+    def removeSmallSegments(self, thisLayer, maxseg, keepshape):
         for thisPath in thisLayer.paths:
             for i in range(len(thisPath.nodes))[::-1]:
                 thisNode = thisPath.nodes[i]
@@ -119,4 +123,18 @@ class NaNFilter:
                     xDistance = thisNode.x-prevNode.x
                     yDistance = thisNode.y-prevNode.y
                     if abs(xDistance) < maxseg and abs(yDistance) < maxseg:
-                        thisPath.removeNodeCheckKeepShape_( thisNode )
+                        if keepshape:
+                            thisPath.removeNodeCheckKeepShape_( thisNode )
+                        else:
+                            thisPath.removeNodeCheck_( thisNode )
+
+    def removeStrayPoints(self, thislayer):
+        for p in reversed(thislayer.paths):
+            if len(p.nodes)<3: thislayer.paths.remove(p)
+
+    def removeOpenPaths(self, thislayer):
+        pass
+        # deleteing the segments seems to leave paths that are open but still have closed==True
+        # for p in reversed(thislayer.paths):
+        #     if p.closed==False: thislayer.paths.remove(p)
+

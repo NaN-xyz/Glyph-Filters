@@ -525,7 +525,15 @@ def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
 	h = int( bounds.size.height )
 
 	pathlist = doAngularizzle([path], 10)
+<<<<<<< HEAD
 	outlinedata = getGlyphCoords(pathlist)
+=======
+	outlinedata = setGlyphCoords(pathlist)
+
+	if len(outlinedata)==0:
+		return None
+
+>>>>>>> main
 	outlinedata = outlinedata[0][1]
 	
 	tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
@@ -807,12 +815,23 @@ def AddAllPathsToLayer(paths, thislayer):
 		print("Couldn't add all paths to layer", thislayer)
 
 
+def ConvertPathDirection(path, direction):
+	if path.direction!=direction:
+		path.reverse()
+
+
 def ConvertPathlistDirection(paths, direction):
 	try:
 		for p in paths:
+<<<<<<< HEAD
 			if p.direction != direction:
 				p.reverse()
 		return paths
+=======
+			ConvertPathDirection(p, direction)
+			newpaths.append(p)
+		return newpaths
+>>>>>>> main
 	except:
 		print("Couldn't change direction of all paths")
 

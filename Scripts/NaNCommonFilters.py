@@ -23,7 +23,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
         inside = True
         for n in range(0, len(list_dots)):
             nx, ny, nr = list_dots[n]
-            dist = math.hypot(nx - x, ny - y)  # alt method
+            dist = math.hypot(nx - x, ny - y) 
 
             if dist < (nr + rad + maxgap):
                 inside = False
@@ -38,7 +38,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
         if ShapeWithinOutlines(circlecoords, outlinedata):
             list_dots.append([x, y, rad])
 
-    print("Number of circles found:", len(list_dots))
+    #print("Number of circles found:", len(list_dots))
 
     rocks = []
     for c in range(0, len(list_dots)):
@@ -49,8 +49,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
             circle = drawCircle(x, y, size * 2, size * 2)
         rocks.append(circle)
 
-    rocks = ConvertPathlistDirection(rocks, 1)
-    AddAllPathsToLayer(rocks, thislayer)
+    return rocks
 
 def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunction):
 

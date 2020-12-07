@@ -91,19 +91,22 @@ class Topography(NaNFilter):
                 	continue
 
                 if drawtype == "vertical" or drawtype == "horizontal":
-                    try:
+
+                    rw = roundedpath.bounds.size.width
+                    rh = roundedpath.bounds.size.height
+                    if (rw > 130 or rh > 130):
                         all_lines = Fill_Drawlines(
-                            layer, roundedpath, drawtype, 15, linecomponents
+                            layer, roundedpath, drawtype, 20, linecomponents
                         )
                         AddAllComponentsToLayer(all_lines, layer)
-                    except:
-                        pass
+
 
                 if drawtype == "blob":
                     # disallow small blobs
                     rw = roundedpath.bounds.size.width
                     rh = roundedpath.bounds.size.height
-                    if (rw > 30 and rh > 30) and (rw < 200 or rh < 200):
+                    if (rw > 80 and rh > 80) and (rw < 180 or rh < 180):
+                        ConvertPathDirection(roundedpath, -1)
                         layer.paths.append(roundedpath)
 
             del templayer
