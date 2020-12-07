@@ -116,12 +116,9 @@ def CreateDistList(pointlist):
 	totallength = 0
 
 	for tp in range (0,len(pointlist)-1):
-		p1x = pointlist[tp][0]
-		p1y = pointlist[tp][1]
-		p2x = pointlist[tp+1][0]
-		p2y = pointlist[tp+1][1]
-		dist = math.hypot(p2x - p1x, p2y - p1y)
-		totallength += dist
+		p1x, p1y = pointlist[tp]
+		p2x, p2y = pointlist[tp+1]
+		totallength += math.hypot(p2x - p1x, p2y - p1y)
 		lookup.append(totallength)
 
 	return lookup
