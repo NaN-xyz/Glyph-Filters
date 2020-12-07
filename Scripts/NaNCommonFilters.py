@@ -32,7 +32,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
         if not inside:
             continue
         circle = drawCircle(x, y, rad * 2, rad * 2)
-        circlea = setGlyphCoords(doAngularizzle([circle], 10))
+        circlea = getGlyphCoords(ConvertPathsToSkeleton([circle], 10))
         circlecoords = circlea[0][1]
 
         if ShapeWithinOutlines(circlecoords, outlinedata):
@@ -63,7 +63,7 @@ def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunct
         while n < nodelen:
             x1, y1 = structure[n]
 
-            if direction=="True":
+            if direction==Direction.ANTICLOCKWISE:
                 step = random.randrange(minstep, maxstep)
             else:
                 step = random.randrange(minstep, maxstep/2)
@@ -88,7 +88,7 @@ def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunct
 
             searchblack = DistanceToNextBlack(thislayer, [x1, y1], [x2, y2], outlinedata, 200)
 
-            if direction=="False":
+            if direction==Direction.CLOCKWISE:
                 linex*=0.7
                 liney*=0.7
                 pushdist*=0.7

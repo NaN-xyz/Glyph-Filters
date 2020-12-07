@@ -27,7 +27,7 @@ class Lines(NaNFilter):
 
     def processLayer(self, thislayer, params):
 
-        outlinedata = setGlyphCoords(doAngularizzle(thislayer.paths, 40))
+        outlinedata = getGlyphCoords(ConvertPathsToSkeleton(thislayer.paths, 40))
 
         try:
             allrectangles = MakeRectangles([AllPathBounds(thislayer)], 5)

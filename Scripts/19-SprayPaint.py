@@ -21,18 +21,18 @@ class Spray(NaNFilter):
 
 	def processLayer(self, thislayer, params):
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
-		pathlist = doAngularizzle(offsetpaths, 4)
+		pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
 
 		ClearPaths(thislayer)
 
 		for path in pathlist:
 			# only round shape if over certain size (for small forms)
-			if isPathSizeBelowThreshold(path,120,120):
+			if isSizeBelowThreshold(path,120,120):
 				structure = path
 			else:
 				structure = convertToFitpath(RoundPath(path,"nodes"), True)
 
-			outlinedata = setGlyphCoords(doAngularizzle([structure], 7))
+			outlinedata = getGlyphCoords(ConvertPathsToSkeleton([structure], 7))
 
 			if not outlinedata:
 				continue

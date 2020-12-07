@@ -10,7 +10,6 @@ from Foundation import NSMakePoint
 from NaNGFConfig import *
 from NaNGFAngularizzle import *
 from NaNGFFitpath import *
-from NaNGFNoise import *
 
 
 # --------------------------------------------
@@ -70,7 +69,7 @@ def withinGlyphBlack(x, y, glyph):
 	paths_pos, paths_neg = [], []
 	for p in glyph:
 		direction = p[0]
-		if direction == "True": paths_pos.append(p)
+		if direction == Direction.ANTICLOCKWISE: paths_pos.append(p)
 		else: paths_neg.append(p)
 
 	inside_pos, inside_neg = False, False
@@ -208,10 +207,7 @@ def RoundPaths(paths, returntype):
 
 def RoundPath(path, returntype):
 
-	paths = [path]
-	np = doAngularizzle(paths, 2)
-	outlinedata = setGlyphCoords(np)
-	outline = outlinedata[0][1]
+	outlinedata = getGlyphCoords(ConvertPathsToSkeleton([path], 2))[0][1]
 	new_outline = outline
 	nl = []
 
@@ -244,10 +240,7 @@ def RoundPath(path, returntype):
 		else:
 			segmentsize=3
 
-		path = drawSimplePath(nl)
-		paths = [path]
-		np = doAngularizzle(paths, segmentsize)
-		outlinedata = setGlyphCoords(np)
+		outlinedata = getGlyphCoords(ConvertPathsToSkeleton([drawSimplePath(nl)], segmentsize))
 
 		try:
 			new_outline = outlinedata[0][1]
@@ -270,7 +263,51 @@ def returnRoundedPaths(paths):
 	return roundedpathlist
 
 
+def clip(val, minimum, maximum):
+	return min(max(val, minimum), maximum)
 
+def convertToFitpath(nodelist, closed):
+
+	addon = GSPath()
+
+	# seems to be instances where empty nodelists are sent. 
+	# workaround below with try/except sending empty path
+
+	try:
+
+		nodelist.append(nodelist[-1])
+		pathlist = fitpath(nodelist, True)
+
+		for segment in pathlist:
+			pt = segment.getPoint()
+			hin = segment.getHandleIn()
+			hout = segment.getHandleOut()
+			ptx, pty = pt.x, pt.y
+			hinx, hiny = hin.x, hin.y
+			houtx, houty = hout.x, hout.y
+
+			# try and limit handle within max range (re fitpath bug)
+			hinx = clip(hinx, -30, 30)
+			hiny = clip(hiny, -30, 30)
+			houtx = clip(houtx, -30, 30)
+			houty = clip(houty, -30, 30)
+
+			if s==0:
+				addon.nodes.append(GSNode([ptx, pty], type = GSLINE))
+				addon.nodes.append(GSNode([ptx+houtx, pty+houty], type = GSOFFCURVE))
+			elif s>0 and s<len(pathlist)-1:
+				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
+				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
+				addon.nodes.append(GSNode([ptx+houtx, pty+houty], type = GSOFFCURVE))
+			else:
+				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
+				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
+		
+	except Exception as e:
+		print("convertToFitpath failed", e)
+
+	addon.closed = closed
+	return addon
 
 
 def drawBlob(nx, ny, maxrad, maxpoints, rounded):
@@ -287,52 +324,38 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 		a = sides * n + rotation
 		rad = math.radians(a)
 		pushpointlen = random.randrange( int(maxrad*0.5), maxrad) / 2
-		cx = nx + pushpointlen * math.cos(rad)
-		cy = ny + pushpointlen * math.sin(rad)
-		points.append([cx, cy])
+		cx, cy = MakeVector(pushpointlen, rad)
+		points.append([nx+cx, ny+cy])
 
 
 	for n in range(0, len(points)):
+		thisPt = points[n]
+		nextPt = points[(n+1) % len(points)]
+		cx1, cy1 = thisPt
+		cx2, cy2 = nextPt
 
-		if n==len(points)-1:
-			next = 0
-		else:
-			next = n+1
+		pushdist = distance(thisPt, nextPt) / 2
 
-		cx1 = points[n][0]
-		cy1 = points[n][1]
-
-		cx2 = points[next][0]
-		cy2 = points[next][1]
-
-		pushdist = distance([cx1, cy1], [cx2, cy2])
-		pushdist/=2
-
-		a1 = math.atan2(ny-cy2, nx-cx2)
-		a1 += math.radians(90)
-		linex1 = pushdist * math.cos(a1)
-		liney1 = pushdist * math.sin(a1)
-
-		a2 = math.atan2(ny-cy1, nx-cx1)
-		a2 += math.radians(90)
-		linex2 = pushdist * math.cos(a2)
-		liney2 = pushdist * math.sin(a2)
+		a1 = math.atan2(ny-cy2, nx-cx2) + math.radians(90)
+		a2 = math.atan2(ny-cy1, nx-cx1) + math.radians(90)
+		linex1, liney1 = MakeVector(pushdist, a1)
+		linex2, liney2 = MakeVector(pushdist, a2)
 
 		if rounded==True:
 			addon.nodes.append(GSNode([cx1-linex2, cy1-liney2], type = GSOFFCURVE))
 			addon.nodes.append(GSNode([cx2+linex1, cy2+liney1], type = GSOFFCURVE))
-			addon.nodes.append(GSNode([cx2, cy2], type = GSCURVE))
+			addon.nodes.append(GSNode(nextPt, type = GSCURVE))
 		else:
-			addon.nodes.append(GSNode([cx2, cy2], type = GSLINE))
+			addon.nodes.append(GSNode(nextPt, type = GSLINE))
 
 	addon.closed = True
 	#thislayer.paths.append(addon)
 	return addon
 
 
-def drawSidedPolygon(nx, ny, maxrad, maxpoints):
+def drawSidedPolygon(nx, ny, maxlen, maxpoints):
 
-	#print nx, ny, maxrad, maxpoints
+	#print nx, ny, maxlen, maxpoints
 	addon = GSPath()
 
 	sides = 360 / maxpoints
@@ -340,13 +363,11 @@ def drawSidedPolygon(nx, ny, maxrad, maxpoints):
 	for n in range(0, maxpoints):
 
 		a = sides * n + 90
-		rad = math.radians(a)
-		cx = nx + (maxrad/2) * cos(rad)
-		cy = ny + (maxrad/2) * sin(rad)
+		cx, cy = MakeVector(maxlen/2, math.radians(a))
 
 		newnode = GSNode()
 		newnode.type = GSLINE
-		newnode.position = ( cx, cy)
+		newnode.position = ( nx + cx, ny + cy)
 		addon.nodes.append( newnode )
 
 	addon.closed = True
@@ -452,43 +473,43 @@ def drawSimplePath(nodes, correctDirection=False, closed=True):
 
 
 
-def Fill_Halftone(thislayer, maskshape, shapetype):
+# def Fill_Halftone(thislayer, maskshape, shapetype):
 
-	allshapes = []
+# 	allshapes = []
 
-	t = shape
-	shapelist = PathToNodeList(t)
+# 	t = shape
+# 	shapelist = PathToNodeList(t)
 
-	x = int (t.bounds.origin.x)
-	y = int (t.bounds.origin.y)
-	w = int (t.bounds.size.width)
-	h = int (t.bounds.size.height)
+# 	x = int (t.bounds.origin.x)
+# 	y = int (t.bounds.origin.y)
+# 	w = int (t.bounds.size.width)
+# 	h = int (t.bounds.size.height)
 
-	grid = 13
-	#size = random.randrange(12, 24)
-	size = 8
+# 	grid = 13
+# 	#size = random.randrange(12, 24)
+# 	size = 8
 
-	for row in range(y, y+h, grid):
+# 	for row in range(y, y+h, grid):
 
-		for col in range(x, x+w, grid):
+# 		for col in range(x, x+w, grid):
 
-			if point_inside_polygon(col, row, shapelist):
+# 			if point_inside_polygon(col, row, shapelist):
 
-				nx = math.floor(col/grid) * grid
-				ny = math.floor(row/grid) * grid
+# 				nx = math.floor(col/grid) * grid
+# 				ny = math.floor(row/grid) * grid
 
-				if row%2==0:
-					adjust = grid/2
-				else:
-					adjust = 0
+# 				if row%2==0:
+# 					adjust = grid/2
+# 				else:
+# 					adjust = 0
 
-				c = drawCircle(nx+adjust, ny, size, size)
-				#thislayer.paths.append(c)
-				allshapes.append(c)
+# 				c = drawCircle(nx+adjust, ny, size, size)
+# 				#thislayer.paths.append(c)
+# 				allshapes.append(c)
 
-		size+=0.1
+# 		size+=0.1
 
-	return allshapes
+# 	return allshapes
 
 
 def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
@@ -503,12 +524,16 @@ def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
 	w = int( bounds.size.width )
 	h = int( bounds.size.height )
 
-	pathlist = doAngularizzle([path], 10)
+	pathlist = ConvertPathsToSkeleton([path], 10)
+<<<<<<< HEAD
+	outlinedata = getGlyphCoords(pathlist)
+=======
 	outlinedata = setGlyphCoords(pathlist)
 
 	if len(outlinedata)==0:
 		return None
 
+>>>>>>> main
 	outlinedata = outlinedata[0][1]
 	
 	tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
@@ -635,35 +660,24 @@ def Split(rectangle, axis):
 
 
 def MakeRectangles(startrect, it):
+	if it==0:
+		return startrect
 
 	collections = []
 
-	if it>0:
+	rectangles = startrect
+	axis="y"
 
-		rectangles = startrect
-		counter=0
-		switch=True
+	for _ in range(it):
+		collection = []
 
-		while counter<it:
+		for n in range(0, len(rectangles)):
+			if axis=="y": axis = "x"
+			else: axis = "y"
+			collection.extend(Split( rectangles[n], axis ))
 
-			collection = []
-
-			for n in range(0, len(rectangles)):
-
-				switch = not switch
-				if switch==True: axis = "x"
-				else: axis = "y"
-				splitrects = Split( rectangles[n], axis )
-				for n in range (0, len(splitrects)): collection.append(splitrects[n])
-
-			del rectangles
-			rectangles = []
-			rectangles = collection
-			collections.append(collection)
-			counter+=1
-
-	else:
-		collections.append(startrect)
+		rectangles = collection
+		collections.append(collection)
 
 	return collections[-1]
 
@@ -684,19 +698,12 @@ def MakeRectangles(startrect, it):
 
 
 def returnRandomNodeinPaths(outlinedata):
-
-	glyph = outlinedata
-
 	allnodes = []
 
-	for p in range(0, len(glyph)):
-		path = glyph[p][1]
-		for n in range(0, len(path)):
-			allnodes.append(path[n])
+	for _, path in outlinedata:
+		allnodes.extend(path)
 
-	node = allnodes [ random.randrange(0, len(allnodes)) ]
-
-	return node
+	return random.choice(allnodes)
 
 
 def defineStartXY(thislayer, outlinedata):
@@ -760,60 +767,38 @@ def defineStartXY(thislayer, outlinedata):
  
 
 def ShapeWithinOutlines(shape, glyph):
-	within = True
-	for node in shape:
-		nx = node[0]
-		ny = node[1]
-		if withinGlyphBlack(nx, ny, glyph)==False:
-			within=False
-			break
-	return within
+	for nx, ny in shape:
+		if not withinGlyphBlack(nx, ny, glyph):
+			return False
+	return True
 
 
 def DistanceToNextBlack(thislayer, p1, p2, outlinedata, searchlimit):
+	x1, y1 = p1
+	x2, y2 = p2
+	mid = Midpoint(p1, p2)
 
-	x1, x2 = p1[0], p2[0]
-	y1, y2 = p1[1], p2[1]
-
-	midx = x1 + ((x2-x1)/2)
-	midy = y1 + ((y2-y1)/2)
-
-	a = atan2(y1-y2, x1-x2)
-	a += radians(90)
+	a = atan2(y1-y2, x1-x2) + radians(90)
 
 	pushdist = 10
+	stepx, stepy = MakeVector(pushdist, a)
 
-	stepx = pushdist * cos(a)
-	stepy = pushdist * sin(a)
-
-	newx = midx
-	newy = midy
+	newx, newy = mid
 
 	for step in range(0, int(searchlimit/pushdist)):
 		newx += stepx
 		newy += stepy
 		if withinGlyphBlack(newx, newy, outlinedata):
 			#return distance([midx, midy], [newx, newy])
-			return distance([midx, midy], [newx, newy])
+			return distance(mid, [newx, newy])
 			break
 
 	return None
 
 
-def isPathSizeBelowThreshold(path, maxw, maxh):
-	bounds = path.bounds
-	if bounds.size.width<maxw and bounds.size.height<maxh:
-		return True
-	else:
-		return False
-
-
-def isLayerSizeBelowThreshold(thislayer, maxw, maxh):
-	bounds = thislayer.bounds
-	if bounds.size.width<maxw and bounds.size.height<maxh:
-		return True
-	else:
-		return False
+def isSizeBelowThreshold(thing, maxw, maxh):
+	bounds = thing.bounds
+	return bounds.size.width<maxw and bounds.size.height<maxh:
 
 
 def AddAllComponentsToLayer(components, thislayer):
@@ -837,20 +822,22 @@ def ConvertPathDirection(path, direction):
 
 def ConvertPathlistDirection(paths, direction):
 	try:
-		newpaths = []
 		for p in paths:
+<<<<<<< HEAD
+			if p.direction != direction:
+				p.reverse()
+		return paths
+=======
 			ConvertPathDirection(p, direction)
 			newpaths.append(p)
 		return newpaths
+>>>>>>> main
 	except:
 		print("Couldn't change direction of all paths")
 
 
 def ContainsPaths(thislayer):
-	if len(thislayer.paths)>0:
-		return True
-	else:
-		return False
+	return len(thislayer.paths)>0:
 
 
 def pathCenterPoint(path):

@@ -1,87 +1,62 @@
 from GlyphsApp import *
 import math
+from enum import IntEnum
 
 
-def setGlyphCoords(pathlist):
+class Direction(IntEnum):
+	ANTICLOCKWISE = -1
+	CLOCKWISE = 1
+
+
+STEPNUM = 130
+STEPSIZE = 1.0/STEPNUM # !impt
+
+def getGlyphCoords(pathlist):
 
 	newshape = []
 
 	for path in pathlist:
+		thispath = [ [node.x,node.y] for node in path.nodes ]
+		newshape.append([path.direction,thispath])
 
-		direction = path.direction
-		if direction == -1:
-			direction="True"
-		else:
-			direction="False"
-
-		thispath = []
-		for node in path.nodes:
-			thispath.append([node.x,node.y])
-
-		newshape.append([direction,thispath])
-		
 	return newshape
 
 
-def doAngularizzle(pathlist, segs):
+def ConvertPathsToSkeleton(pathlist, segs):
+	if len(pathlist)==0:
+		return []
 
-	global segsize, detail
+	ang = ReturnNodesAlongPath(pathlist, segs)
 
-	segsize = segs
-	detail = True
-
-	global stepnum, tStepSize
-	segsize = int(segsize)
-	stepnum=130
-	tStepSize = 1.0/stepnum # !impt
-	font = Glyphs.font
-	angsize = int(segsize)
+	if ang is None:
+		print("Returned no nodes along path")
+		return []
 
 	newpaths = []
-
-	if len(pathlist)>0:
-
-		ang = ReturnNodesAlongPath(pathlist, angsize)
-
-		if ang==None: print("Returned no nodes along path")
-
-		if detail==False:
-			ang = StripDetail(ang, segsize)
-
-		if ang:
-			for n in ang:
-				pts = n[2]
-				isclosed = n[1]
-				outline = ListToPath(pts, isclosed)
-				newpaths.append(outline)
+	for _, isclosed, pts in ang:
+		newpaths.append(ListToPath(pts, isclosed))
 
 	return newpaths
 
 
-def StripDetail (nlist, segsize):
+def StripDetail (pathlist, segsize):
 
 	newList = list()
 
-	for s in nlist:
+	for path in pathlist:
 		newnodes = list()
-		length = s[0]
-		isclosed = s[1]
-		nlist = s[2]
-		p1x = nlist[0][0]
-		p1y = nlist[0][1]
+		length, isclosed, nodelist = path
+		prevX,prevY = nodelist[0]
 
-		for n in range(1, len(nlist)-1):
+		for thisX, thisY in nodelist[1:]:
+			dist = math.hypot(thisX - prevX, thisY - prevY)
 
-			p2x = nlist[n][0]
-			p2y = nlist[n][1]
-			dist = math.hypot(p2x - p1x, p2y - p1y)
-
-			if dist > segsize:
-				newnodes.append([p1x, p1y])
-				p1x = p2x
-				p1y = p2y
-			else: 
+			if dist < segsize:
 				continue
+
+			newnodes.append([prevX, prevY])
+			prevX = thisX
+			prevY = thisY
 
 		nl = [length, isclosed, newnodes]
 		newList.append(nl)
@@ -124,12 +99,8 @@ def GetPoint(p0, p1, p2, p3, t):
 # Put all the xy coords of linear t GetPoint() increments in list 
 def CreatePointList(p0,p1,p2,p3):
 	pl = list() 
-	tmp=0
-	while tmp<1:
-		t = tmp
-		calc = GetPoint(p0,p1,p2,p3,tmp)
-		pl.append(calc)
-		tmp = tmp + tStepSize
+	for i in range(0, STEPNUM):
+		pl.append(GetPoint(p0,p1,p2,p3,float(i)/STEPNUM))
 	return pl
 
 
@@ -141,19 +112,14 @@ def lerp(v, d):
 # each item represents cumulative distances from beginning of segments
 def CreateDistList(pointlist):
 
-	lookup = list()
+	lookup = [0]
 	totallength = 0
 
 	for tp in range (0,len(pointlist)-1):
-		p1x = pointlist[tp][0]
-		p1y = pointlist[tp][1]
-		p2x = pointlist[tp+1][0]
-		p2y = pointlist[tp+1][1]
-		dist = math.hypot(p2x - p1x, p2y - p1y)
-		totallength += dist
+		p1x, p1y = pointlist[tp]
+		p2x, p2y = pointlist[tp+1]
+		totallength += math.hypot(p2x - p1x, p2y - p1y)
 		lookup.append(totallength)
-		
-	lookup.insert(0,0)
 
 	return lookup
 
@@ -171,49 +137,51 @@ def FindPosInDistList(lookup, newlen): #newlen = length along curve
 			if b1==0:
 				newt=0
 			else:
-				percentb = ( 100 / (b2 - b1) ) * (newlen - b1)
-				newt = (s*tStepSize) + ( tStepSize * (percentb/100) )
+				proportion = (newlen - b1) / (b2 - b1)
+				newt = (s*STEPSIZE) + ( STEPSIZE * proportion )
 			return (newt)
 
 
 # Draw new angular path from list
 def ListToPath(ptlist, isopen):
 	np = GSPath()
-	if isopen == True and len(ptlist)>2: del ptlist[-1] 
-	if len(ptlist)>2: #so counters don't devolve completely
-		for pt in ptlist:
-			newnode = GSNode()
-			newnode.type = GSLINE
-			newnode.position = (pt[0], pt[1])
-			np.nodes.append( newnode )
-		np.closed = isopen
+
+	if len(ptlist)<=2:
+		return np
+
+	if isopen: del ptlist[-1]
+
+	for pt in ptlist:
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = (pt[0], pt[1])
+		np.nodes.append( newnode )
+	np.closed = isopen # XXX
 	return np
 
 
 def PointToPointSteps(tp0, tp1, spacebetween):
-
-	#print "test", tp0, tp1, spacebetween
+	if tp0 == tp1:
+		return []
 
 	tmplist = list()
+	n1x, n1y = tp0
+	n2x, n2y = tp1
 
-	if tp0 != tp1:
+	dist = math.hypot(n2x - n1x, n2y - n1y)
 
-		n1x, n1y, n2x, n2y = tp0[0], tp0[1], tp1[0], tp1[1]
+	currentx = n1x
+	currenty = n1y
 
-		dist = math.hypot(n2x - n1x, n2y - n1y)
+	psteps = int(math.ceil(dist/spacebetween))
 
-		currentx = n1x
-		currenty = n1y
+	stepx = (n2x-n1x) / psteps
+	stepy = (n2y-n1y) / psteps
 
-		psteps = int(math.ceil(dist/spacebetween))
-
-		stepx = (n2x-n1x) / psteps
-		stepy = (n2y-n1y) / psteps
-
-		for n in range(psteps):
-			tmplist.append([currentx, currenty])
-			currentx+=stepx
-			currenty+=stepy
+	for n in range(psteps):
+		tmplist.append([currentx, currenty])
+		currentx+=stepx
+		currenty+=stepy
 
 	return tmplist
 
@@ -227,44 +195,22 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 
 		pathTotalLength = 0
 		allpointslist = []
-		scount=0
-		index = -1
-		
-		#if path.closed==False:
-		#	continue
 
-		for node in path.nodes:
+		for segment in path.segments:
+			# if straight segment
+			if len(segment) == 2:
+				tp0 = (segment[0].x, segment[0].y)
+				tp1 = (segment[1].x, segment[1].y)
 
-			scount+=1
-			index+=1
-			node = path.nodes[index]
-
-			# if straight segment 
-			if node.type == LINE: 
-
-				if scount<1: continue
-
-				prevNode = path.nodes[index - 1]
-
-				if not prevNode: continue
-
-				tp0 = (prevNode.position.x, prevNode.position.y)
-				tp1 = (node.position.x, node.position.y)
-
-				dist = math.hypot(tp1[0] - tp0[0], tp1[1] - tp0[1])
-				pathTotalLength+=dist
-				straightlinepts = PointToPointSteps(tp0,tp1,spacebetween)
-				for sl in straightlinepts: allpointslist.append(sl)
+				pathTotalLength += math.hypot(tp1[0] - tp0[0], tp1[1] - tp0[1])
+				allpointslist.extend(PointToPointSteps(tp0,tp1,spacebetween))
 			   
 			# if bezier curve segment
-			elif node.type == CURVE:
-			  
-				prevNode = path.nodes[index - 3]
-
-				tp0 = (prevNode.position.x, prevNode.position.y)
-				tp1 = (path.nodes[index-2].position.x, path.nodes[index-2].position.y)
-				tp2 = (path.nodes[index-1].position.x, path.nodes[index-1].position.y)
-				tp3 = (node.position.x, node.position.y)
+			else:
+				tp0 = (segment[0].x, segment[0].y)
+				tp1 = (segment[1].x, segment[1].y)
+				tp2 = (segment[2].x, segment[2].y)
+				tp3 = (segment[3].x, segment[3].y)
 
 				pointlist = CreatePointList(tp0, tp1, tp2, tp3) 
 				lookup = CreateDistList(pointlist) 
@@ -273,8 +219,6 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 
 				# check that the distance of curve segment is at least as big as spacebetween jump
 				if totallength > spacebetween:
-					steps = 20
-					stepinc = totallength / steps
 					steps = int(math.floor(totallength/spacebetween))
 					stepinc = totallength / steps
 					dlen=0 # distance to check in list of distances
@@ -292,8 +236,7 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 						allpointslist.append(calc)
 						dlen+=stepinc
 				else:
-					allpointslist.append([tp0[0],tp0[1]])
-					allpointslist.append([tp3[0],tp3[1]])
+					allpointslist.extend([tp0, tp3])
 
 		if allpointslist:
 			allpointslist = RemoveDuplicatePts(allpointslist)

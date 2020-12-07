@@ -18,8 +18,8 @@ class Bubble(NaNFilter):
         offsetpaths = self.saveOffsetPaths(
             thislayer, offset, offset, removeOverlap=False
         )
-        pathlist = doAngularizzle(offsetpaths, 4)
-        outlinedata = setGlyphCoords(pathlist)
+        pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
+        outlinedata = getGlyphCoords(pathlist)
         ClearPaths(thislayer)
         minpush = 60
         maxpush = 80
@@ -32,7 +32,7 @@ class Bubble(NaNFilter):
                 x1, y1 = structure[n]
                 minstep, maxstep = 10, 40
 
-                if direction == "False":
+                if direction == Direction.CLOCKWISE:
                     maxstep = int(maxstep * 0.5)
                 step = random.randrange(minstep, maxstep)
 
@@ -52,7 +52,7 @@ class Bubble(NaNFilter):
                 pushdist = random.randrange(minpush, maxpush)
                 linex, liney = pushdist * cos(a), pushdist * sin(a)
 
-                if direction == "False":
+                if direction == Direction.CLOCKWISE:
                     linex *= 0.5
                     liney *= 0.5
 

@@ -83,7 +83,7 @@ class Drip(NaNFilter):
 
 					noiz = pnoise1( (n+seedx)*noisescale, 4) 
 					size = noiseMap( noiz, 0, maxdrip )
-					if direction=="False": size*=0.2
+					if direction==Direction.CLOCKWISE: size*=0.2
 					size = t * abs(size) * adjust
 
 					structure[n][1] = y - size
@@ -93,8 +93,8 @@ class Drip(NaNFilter):
 
 	def processLayer(self, thislayer, params):
 		for n in range(0, params["iterations"]):
-			pathlist = doAngularizzle(thislayer.paths, 4) # small seg size = quicker
-			outlinedata = setGlyphCoords(pathlist)
+			pathlist = ConvertPathsToSkeleton(thislayer.paths, 4) # small seg size = quicker
+			outlinedata = getGlyphCoords(pathlist)
 			indices = self.getDrippableSegments(outlinedata)
 
 			# Modifies outlinedata

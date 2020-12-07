@@ -150,7 +150,7 @@ def LoopLines(thislayer, outlinedata):
 			a = atan2(y1-y2, x1-x2)
 			a+=radians(90)
 
-			if direction=="True":
+			if direction== Direction.ANTICLOCKWISE:
 				pushdist = 1
 			else:
 				pushdist = -0.3
@@ -245,12 +245,12 @@ def OutputLines():
 
 		# ----
 
-		pathlist = doAngularizzle(thislayer.paths, 4)
-		outlinedata = setGlyphCoords(pathlist)
+		pathlist = ConvertPathsToSkeleton(thislayer.paths, 4)
+		outlinedata = getGlyphCoords(pathlist)
 
 		loopmask = LoopLines(thislayer, outlinedata)
-		loopmasklist = doAngularizzle(loopmask, 40)
-		outlinedata = setGlyphCoords(loopmasklist)
+		loopmasklist = ConvertPathsToSkeleton(loopmask, 40)
+		outlinedata = getGlyphCoords(loopmasklist)
 
 		AddAllPathsToLayer(loopmask, thislayer)
 
