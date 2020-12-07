@@ -27,7 +27,7 @@ class Spray(NaNFilter):
 
 		for path in pathlist:
 			# only round shape if over certain size (for small forms)
-			if isPathSizeBelowThreshold(path,120,120):
+			if isSizeBelowThreshold(path,120,120):
 				structure = path
 			else:
 				structure = convertToFitpath(RoundPath(path,"nodes"), True)

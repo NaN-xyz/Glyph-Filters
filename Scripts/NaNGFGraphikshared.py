@@ -788,13 +788,8 @@ def DistanceToNextBlack(thislayer, p1, p2, outlinedata, searchlimit):
 	return None
 
 
-def isPathSizeBelowThreshold(path, maxw, maxh):
-	bounds = path.bounds
-	return bounds.size.width<maxw and bounds.size.height<maxh:
-
-
-def isLayerSizeBelowThreshold(thislayer, maxw, maxh):
-	bounds = thislayer.bounds
+def isSizeBelowThreshold(thing, maxw, maxh):
+	bounds = thing.bounds
 	return bounds.size.width<maxw and bounds.size.height<maxh:
 
 
