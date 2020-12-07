@@ -759,41 +759,30 @@ def defineStartXY(thislayer, outlinedata):
  
 
 def ShapeWithinOutlines(shape, glyph):
-	within = True
-	for node in shape:
-		nx = node[0]
-		ny = node[1]
-		if withinGlyphBlack(nx, ny, glyph)==False:
-			within=False
-			break
-	return within
+	for nx, ny in shape:
+		if not withinGlyphBlack(nx, ny, glyph):
+			return False
+	return True
 
 
 def DistanceToNextBlack(thislayer, p1, p2, outlinedata, searchlimit):
+	x1, y1 = p1
+	x2, y2 = p2
+	mid = Midpoint(p1, p2)
 
-	x1, x2 = p1[0], p2[0]
-	y1, y2 = p1[1], p2[1]
-
-	midx = x1 + ((x2-x1)/2)
-	midy = y1 + ((y2-y1)/2)
-
-	a = atan2(y1-y2, x1-x2)
-	a += radians(90)
+	a = atan2(y1-y2, x1-x2) + radians(90)
 
 	pushdist = 10
+	stepx, stepy = MakeVector(pushdist, a)
 
-	stepx = pushdist * cos(a)
-	stepy = pushdist * sin(a)
-
-	newx = midx
-	newy = midy
+	newx, newy = mid
 
 	for step in range(0, int(searchlimit/pushdist)):
 		newx += stepx
 		newy += stepy
 		if withinGlyphBlack(newx, newy, outlinedata):
 			#return distance([midx, midy], [newx, newy])
-			return distance([midx, midy], [newx, newy])
+			return distance(mid, [newx, newy])
 			break
 
 	return None
