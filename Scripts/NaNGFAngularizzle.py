@@ -196,22 +196,12 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 		pathTotalLength = 0
 		allpointslist = []
 		scount=0
-		index = -1
 
-		for node in path.nodes:
-
-			scount+=1
-			index+=1
-			node = path.nodes[index]
-
+		for segment in path.segments:
 			# if straight segment 
-			if node.type == LINE: 
-				prevNode = path.nodes[index - 1]
-
-				if not prevNode: continue
-
-				tp0 = (prevNode.position.x, prevNode.position.y)
-				tp1 = (node.position.x, node.position.y)
+			if len(segment) == 2: 
+				tp0 = (segment[0].x, segment[0].y)
+				tp1 = (segment[1].x, segment[1].y)
 
 				dist = math.hypot(tp1[0] - tp0[0], tp1[1] - tp0[1])
 				pathTotalLength+=dist
@@ -219,14 +209,11 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 				for sl in straightlinepts: allpointslist.append(sl)
 			   
 			# if bezier curve segment
-			elif node.type == CURVE:
-			  
-				prevNode = path.nodes[index - 3]
-
-				tp0 = (prevNode.position.x, prevNode.position.y)
-				tp1 = (path.nodes[index-2].position.x, path.nodes[index-2].position.y)
-				tp2 = (path.nodes[index-1].position.x, path.nodes[index-1].position.y)
-				tp3 = (node.position.x, node.position.y)
+			else:
+				tp0 = (segment[0].x, segment[0].y)
+				tp1 = (segment[1].x, segment[1].y)
+				tp2 = (segment[2].x, segment[2].y)
+				tp3 = (segment[3].x, segment[3].y)
 
 				pointlist = CreatePointList(tp0, tp1, tp2, tp3) 
 				lookup = CreateDistList(pointlist) 
