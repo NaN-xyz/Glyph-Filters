@@ -10,7 +10,8 @@ from Foundation import NSMakePoint
 from NaNGFConfig import *
 from NaNGFAngularizzle import *
 from NaNGFFitpath import *
-
+from NaNGFNoise import roughenLines
+#from NaNGFNoise import * # needs to calls roughenlines()
 
 # --------------------------------------------
 
