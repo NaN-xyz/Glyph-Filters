@@ -207,10 +207,7 @@ def RoundPaths(paths, returntype):
 
 def RoundPath(path, returntype):
 
-	paths = [path]
-	np = doAngularizzle(paths, 2)
-	outlinedata = getGlyphCoords(np)
-	outline = outlinedata[0][1]
+	outlinedata = getGlyphCoords(doAngularizzle([path], 2))[0][1]
 	new_outline = outline
 	nl = []
 
