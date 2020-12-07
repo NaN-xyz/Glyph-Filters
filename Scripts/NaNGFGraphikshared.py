@@ -207,7 +207,7 @@ def RoundPaths(paths, returntype):
 
 def RoundPath(path, returntype):
 
-	outlinedata = getGlyphCoords(doAngularizzle([path], 2))[0][1]
+	outlinedata = getGlyphCoords(ConvertPathsToSkeleton([path], 2))[0][1]
 	new_outline = outline
 	nl = []
 
@@ -240,7 +240,7 @@ def RoundPath(path, returntype):
 		else:
 			segmentsize=3
 
-		outlinedata = getGlyphCoords(doAngularizzle([drawSimplePath(nl)], segmentsize))
+		outlinedata = getGlyphCoords(ConvertPathsToSkeleton([drawSimplePath(nl)], segmentsize))
 
 		try:
 			new_outline = outlinedata[0][1]
@@ -524,7 +524,7 @@ def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
 	w = int( bounds.size.width )
 	h = int( bounds.size.height )
 
-	pathlist = doAngularizzle([path], 10)
+	pathlist = ConvertPathsToSkeleton([path], 10)
 <<<<<<< HEAD
 	outlinedata = getGlyphCoords(pathlist)
 =======

@@ -31,14 +31,14 @@ class Vinyl(NaNFilter):
         offset, it, depthmin, depthmax = params["offset"], params["it"], params["depthmin"], params["depthmax"]
 
         thislayer.removeOverlap()
-        pathlist = doAngularizzle(thislayer.paths, 10)
+        pathlist = ConvertPathsToSkeleton(thislayer.paths, 10)
         outlinedata = getGlyphCoords(pathlist)
         bounds = AllPathBounds(thislayer)
 
         offsetpaths = self.saveOffsetPaths(
             thislayer, offset, offset, removeOverlap=True
         )
-        pathlist2 = doAngularizzle(offsetpaths, 4)
+        pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
         outlinedata2 = getGlyphCoords(pathlist2)
 
         ClearPaths(thislayer)

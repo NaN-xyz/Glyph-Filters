@@ -22,7 +22,7 @@ def getGlyphCoords(pathlist):
 	return newshape
 
 
-def doAngularizzle(pathlist, segs):
+def ConvertPathsToSkeleton(pathlist, segs):
 	if len(pathlist)==0:
 		return []
 

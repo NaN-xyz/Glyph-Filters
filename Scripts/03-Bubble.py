@@ -18,7 +18,7 @@ class Bubble(NaNFilter):
         offsetpaths = self.saveOffsetPaths(
             thislayer, offset, offset, removeOverlap=False
         )
-        pathlist = doAngularizzle(offsetpaths, 4)
+        pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
         outlinedata = getGlyphCoords(pathlist)
         ClearPaths(thislayer)
         minpush = 60

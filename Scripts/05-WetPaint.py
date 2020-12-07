@@ -93,7 +93,7 @@ class Drip(NaNFilter):
 
 	def processLayer(self, thislayer, params):
 		for n in range(0, params["iterations"]):
-			pathlist = doAngularizzle(thislayer.paths, 4) # small seg size = quicker
+			pathlist = ConvertPathsToSkeleton(thislayer.paths, 4) # small seg size = quicker
 			outlinedata = getGlyphCoords(pathlist)
 			indices = self.getDrippableSegments(outlinedata)
 

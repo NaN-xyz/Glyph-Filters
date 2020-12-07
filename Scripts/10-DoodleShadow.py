@@ -32,14 +32,14 @@ class DoodleShadow(NaNFilter):
         offset, depth = params["offset"], params["depth"]
 
         thislayer.removeOverlap()
-        pathlist = doAngularizzle(thislayer.paths, 20)
+        pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
         outlinedata = getGlyphCoords(pathlist)
         bounds = AllPathBounds(thislayer)
 
         offsetpaths = self.saveOffsetPaths(
             thislayer, offset, offset, removeOverlap=True
         )
-        pathlist2 = doAngularizzle(offsetpaths, 4)
+        pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
         outlinedata2 = getGlyphCoords(pathlist2)
 
         ClearPaths(thislayer)

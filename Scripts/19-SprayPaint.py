@@ -21,7 +21,7 @@ class Spray(NaNFilter):
 
 	def processLayer(self, thislayer, params):
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
-		pathlist = doAngularizzle(offsetpaths, 4)
+		pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
 
 		ClearPaths(thislayer)
 
@@ -32,7 +32,7 @@ class Spray(NaNFilter):
 			else:
 				structure = convertToFitpath(RoundPath(path,"nodes"), True)
 
-			outlinedata = getGlyphCoords(doAngularizzle([structure], 7))
+			outlinedata = getGlyphCoords(ConvertPathsToSkeleton([structure], 7))
 
 			if not outlinedata:
 				continue

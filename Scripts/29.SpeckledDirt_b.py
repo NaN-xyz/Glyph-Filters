@@ -22,7 +22,7 @@ class SpeckledDirt(NaNFilter):
 
     def processLayer(self, thislayer, params):
 
-        outlinedata = setGlyphCoords(doAngularizzle(thislayer.paths, 20))
+        outlinedata = setGlyphCoords(ConvertPathsToSkeleton(thislayer.paths, 20))
 
         ClearPaths(thislayer)
         noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.2, 0, 15])
@@ -33,7 +33,7 @@ class SpeckledDirt(NaNFilter):
         offsetpaths = self.saveOffsetPaths(
             thislayer, params["offset"], params["offset"], removeOverlap=True
         )
-        outlinedata2 = setGlyphCoords(doAngularizzle(offsetpaths, 4))
+        outlinedata2 = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 4))
 
         dirt = self.AddDirt(thislayer, outlinedata2, params["walklen"])
         if dirt is not None:

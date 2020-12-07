@@ -223,7 +223,7 @@ def OutputWaves(minsize, maxsize):
 		# ----
 
 		offsetpaths = saveOffsetPaths(thislayer, 0, 0, removeOverlap=True)
-		pathlist = doAngularizzle(offsetpaths, 20)
+		pathlist = ConvertPathsToSkeleton(offsetpaths, 20)
 		bounds = AllPathBoundsFromPathList(pathlist)
 		outlinedata = getGlyphCoords(pathlist)
 

@@ -26,7 +26,7 @@ class Maze(NaNFilter):
             offsetpaths = self.saveOffsetPaths(
                 thislayer, offset, offset, removeOverlap=False
             )
-            pathlist = doAngularizzle(offsetpaths, 4)
+            pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
             outlinedata = getGlyphCoords(pathlist)
 
             bounds = AllPathBounds(thislayer)
@@ -67,7 +67,7 @@ class Maze(NaNFilter):
                 shape = drawTriangle(nx, ny, 6, 6)
                 shapepath.append(shape)
 
-                nshape = doAngularizzle(shapepath, 10)
+                nshape = ConvertPathsToSkeleton(shapepath, 10)
                 nshape = getGlyphCoords(nshape)
                 finalshape = nshape[0][1]
 
