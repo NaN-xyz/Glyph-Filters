@@ -25,18 +25,20 @@ def getGlyphCoords(pathlist):
 def doAngularizzle(pathlist, segs):
 	newpaths = []
 
-	if len(pathlist)>0:
+	if len(pathlist)==0:
+		return []
 
-		ang = ReturnNodesAlongPath(pathlist, segs)
+	ang = ReturnNodesAlongPath(pathlist, segs)
 
-		if ang==None: print("Returned no nodes along path")
+	if ang is None:
+		print("Returned no nodes along path")
+		return []
 
-		if ang:
-			for n in ang:
-				pts = n[2]
-				isclosed = n[1]
-				outline = ListToPath(pts, isclosed)
-				newpaths.append(outline)
+	for n in ang:
+		pts = n[2]
+		isclosed = n[1]
+		outline = ListToPath(pts, isclosed)
+		newpaths.append(outline)
 
 	return newpaths
 
