@@ -51,12 +51,12 @@ def StripDetail (pathlist, segsize):
 		for p2x, p2y in nodelist[1:]:
 			dist = math.hypot(p2x - p1x, p2y - p1y)
 
-			if dist > segsize:
-				newnodes.append([p1x, p1y])
-				p1x = p2x
-				p1y = p2y
-			else: 
+			if dist < segsize:
 				continue
+
+			newnodes.append([p1x, p1y])
+			p1x = p2x
+			p1y = p2y
 
 		nl = [length, isclosed, newnodes]
 		newList.append(nl)
