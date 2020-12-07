@@ -146,13 +146,16 @@ def FindPosInDistList(lookup, newlen): #newlen = length along curve
 def ListToPath(ptlist, isopen):
 	np = GSPath()
 	if isopen == True and len(ptlist)>2: del ptlist[-1] 
-	if len(ptlist)>2: #so counters don't devolve completely
-		for pt in ptlist:
-			newnode = GSNode()
-			newnode.type = GSLINE
-			newnode.position = (pt[0], pt[1])
-			np.nodes.append( newnode )
-		np.closed = isopen
+
+	if len(ptlist)<=2:
+		return np
+
+	for pt in ptlist:
+		newnode = GSNode()
+		newnode.type = GSLINE
+		newnode.position = (pt[0], pt[1])
+		np.nodes.append( newnode )
+	np.closed = isopen
 	return np
 
 
