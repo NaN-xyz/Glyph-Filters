@@ -156,7 +156,7 @@ def ListToPath(ptlist, isopen):
 		newnode.type = GSLINE
 		newnode.position = (pt[0], pt[1])
 		np.nodes.append( newnode )
-	np.closed = isopen
+	np.closed = isopen # XXX
 	return np
 
 
