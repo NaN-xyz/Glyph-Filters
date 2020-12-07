@@ -48,10 +48,7 @@ def StripDetail (pathlist, segsize):
 		length, isclosed, nodelist = path
 		p1x,p1y = nodelist[0]
 
-		for n in range(1, len(nodelist)-1):
-
-			p2x = nodelist[n][0]
-			p2y = nodelist[n][1]
+		for p2x, p2y in nodelist[1:]:
 			dist = math.hypot(p2x - p1x, p2y - p1y)
 
 			if dist > segsize:
