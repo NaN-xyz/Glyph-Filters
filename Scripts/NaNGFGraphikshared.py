@@ -70,7 +70,7 @@ def withinGlyphBlack(x, y, glyph):
 	paths_pos, paths_neg = [], []
 	for p in glyph:
 		direction = p[0]
-		if direction == "True": paths_pos.append(p)
+		if direction == Direction.ANTICLOCKWISE: paths_pos.append(p)
 		else: paths_neg.append(p)
 
 	inside_pos, inside_neg = False, False

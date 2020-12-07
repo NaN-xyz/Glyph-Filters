@@ -150,7 +150,7 @@ def LoopLines(thislayer, outlinedata):
 			a = atan2(y1-y2, x1-x2)
 			a+=radians(90)
 
-			if direction=="True":
+			if direction== Direction.ANTICLOCKWISE:
 				pushdist = 1
 			else:
 				pushdist = -0.3

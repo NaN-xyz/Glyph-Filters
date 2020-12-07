@@ -64,7 +64,7 @@ def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunct
         while n < nodelen:
             x1, y1 = structure[n]
 
-            if direction=="True":
+            if direction==Direction.ANTICLOCKWISE:
                 step = random.randrange(minstep, maxstep)
             else:
                 step = random.randrange(minstep, maxstep/2)
@@ -89,7 +89,7 @@ def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunct
 
             searchblack = DistanceToNextBlack(thislayer, [x1, y1], [x2, y2], outlinedata, 200)
 
-            if direction=="False":
+            if direction==Direction.CLOCKWISE:
                 linex*=0.7
                 liney*=0.7
                 pushdist*=0.7

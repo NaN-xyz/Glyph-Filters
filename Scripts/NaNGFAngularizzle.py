@@ -1,5 +1,11 @@
 from GlyphsApp import *
 import math
+from enum import IntEnum
+
+
+class Direction(IntEnum):
+	ANTICLOCKWISE = -1
+	CLOCKWISE = 1
 
 
 def setGlyphCoords(pathlist):
@@ -7,16 +13,8 @@ def setGlyphCoords(pathlist):
 	newshape = []
 
 	for path in pathlist:
-
-		direction = path.direction
-		if direction == -1:
-			direction="True"
-		else:
-			direction="False"
-
 		thispath = [ [node.x,node.y] for node in path ]
-
-		newshape.append([direction,thispath])
+		newshape.append([path.direction,thispath])
 
 	return newshape
 
