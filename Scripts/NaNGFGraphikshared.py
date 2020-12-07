@@ -240,10 +240,7 @@ def RoundPath(path, returntype):
 		else:
 			segmentsize=3
 
-		path = drawSimplePath(nl)
-		paths = [path]
-		np = doAngularizzle(paths, segmentsize)
-		outlinedata = getGlyphCoords(np)
+		outlinedata = getGlyphCoords(doAngularizzle([drawSimplePath(nl)], segmentsize))
 
 		try:
 			new_outline = outlinedata[0][1]
