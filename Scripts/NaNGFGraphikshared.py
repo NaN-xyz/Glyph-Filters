@@ -473,43 +473,43 @@ def drawSimplePath(nodes, correctDirection=False, closed=True):
 
 
 
-def Fill_Halftone(thislayer, maskshape, shapetype):
+# def Fill_Halftone(thislayer, maskshape, shapetype):
 
-	allshapes = []
+# 	allshapes = []
 
-	t = shape
-	shapelist = PathToNodeList(t)
+# 	t = shape
+# 	shapelist = PathToNodeList(t)
 
-	x = int (t.bounds.origin.x)
-	y = int (t.bounds.origin.y)
-	w = int (t.bounds.size.width)
-	h = int (t.bounds.size.height)
+# 	x = int (t.bounds.origin.x)
+# 	y = int (t.bounds.origin.y)
+# 	w = int (t.bounds.size.width)
+# 	h = int (t.bounds.size.height)
 
-	grid = 13
-	#size = random.randrange(12, 24)
-	size = 8
+# 	grid = 13
+# 	#size = random.randrange(12, 24)
+# 	size = 8
 
-	for row in range(y, y+h, grid):
+# 	for row in range(y, y+h, grid):
 
-		for col in range(x, x+w, grid):
+# 		for col in range(x, x+w, grid):
 
-			if point_inside_polygon(col, row, shapelist):
+# 			if point_inside_polygon(col, row, shapelist):
 
-				nx = math.floor(col/grid) * grid
-				ny = math.floor(row/grid) * grid
+# 				nx = math.floor(col/grid) * grid
+# 				ny = math.floor(row/grid) * grid
 
-				if row%2==0:
-					adjust = grid/2
-				else:
-					adjust = 0
+# 				if row%2==0:
+# 					adjust = grid/2
+# 				else:
+# 					adjust = 0
 
-				c = drawCircle(nx+adjust, ny, size, size)
-				#thislayer.paths.append(c)
-				allshapes.append(c)
+# 				c = drawCircle(nx+adjust, ny, size, size)
+# 				#thislayer.paths.append(c)
+# 				allshapes.append(c)
 
-		size+=0.1
+# 		size+=0.1
 
-	return allshapes
+# 	return allshapes
 
 
 def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
