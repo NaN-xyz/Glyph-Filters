@@ -1,9 +1,8 @@
 from GlyphsApp import *
 import math
-from enum import IntEnum
 
 
-class Direction(IntEnum):
+class Direction():
 	ANTICLOCKWISE = -1
 	CLOCKWISE = 1
 
