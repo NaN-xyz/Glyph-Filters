@@ -329,20 +329,12 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 
 
 	for n in range(0, len(points)):
+		thisPt = points[n]
+		nextPt = points[(n+1) % len(points)]
+		cx1, cy1 = thisPt
+		cx2, cy2 = nextPt
 
-		if n==len(points)-1:
-			next = 0
-		else:
-			next = n+1
-
-		cx1 = points[n][0]
-		cy1 = points[n][1]
-
-		cx2 = points[next][0]
-		cy2 = points[next][1]
-
-		pushdist = distance([cx1, cy1], [cx2, cy2])
-		pushdist/=2
+		pushdist = distance(thisPt, nextPt) / 2
 
 		a1 = math.atan2(ny-cy2, nx-cx2) + math.radians(90)
 		a2 = math.atan2(ny-cy1, nx-cx1) + math.radians(90)
@@ -352,9 +344,9 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 		if rounded==True:
 			addon.nodes.append(GSNode([cx1-linex2, cy1-liney2], type = GSOFFCURVE))
 			addon.nodes.append(GSNode([cx2+linex1, cy2+liney1], type = GSOFFCURVE))
-			addon.nodes.append(GSNode([cx2, cy2], type = GSCURVE))
+			addon.nodes.append(GSNode(nextPt, type = GSCURVE))
 		else:
-			addon.nodes.append(GSNode([cx2, cy2], type = GSLINE))
+			addon.nodes.append(GSNode(nextPt, type = GSLINE))
 
 	addon.closed = True
 	#thislayer.paths.append(addon)
