@@ -361,9 +361,9 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 	return addon
 
 
-def drawSidedPolygon(nx, ny, maxrad, maxpoints):
+def drawSidedPolygon(nx, ny, maxlen, maxpoints):
 
-	#print nx, ny, maxrad, maxpoints
+	#print nx, ny, maxlen, maxpoints
 	addon = GSPath()
 
 	sides = 360 / maxpoints
@@ -371,13 +371,11 @@ def drawSidedPolygon(nx, ny, maxrad, maxpoints):
 	for n in range(0, maxpoints):
 
 		a = sides * n + 90
-		rad = math.radians(a)
-		cx = nx + (maxrad/2) * cos(rad)
-		cy = ny + (maxrad/2) * sin(rad)
+		cx, cy = MakeVector(maxlen/2, math.radians(a))
 
 		newnode = GSNode()
 		newnode.type = GSLINE
-		newnode.position = ( cx, cy)
+		newnode.position = ( nx + cx, ny + cy)
 		addon.nodes.append( newnode )
 
 	addon.closed = True
