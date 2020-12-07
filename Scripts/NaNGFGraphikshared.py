@@ -690,19 +690,12 @@ def MakeRectangles(startrect, it):
 
 
 def returnRandomNodeinPaths(outlinedata):
-
-	glyph = outlinedata
-
 	allnodes = []
 
-	for p in range(0, len(glyph)):
-		path = glyph[p][1]
-		for n in range(0, len(path)):
-			allnodes.append(path[n])
+	for _, path in outlinedata:
+		allnodes.extend(path)
 
-	node = allnodes [ random.randrange(0, len(allnodes)) ]
-
-	return node
+	return random.choice(allnodes)
 
 
 def defineStartXY(thislayer, outlinedata):
