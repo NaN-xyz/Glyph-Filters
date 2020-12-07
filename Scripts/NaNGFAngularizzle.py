@@ -14,12 +14,10 @@ def setGlyphCoords(pathlist):
 		else:
 			direction="False"
 
-		thispath = []
-		for node in path.nodes:
-			thispath.append([node.x,node.y])
+		thispath = [ [node.x,node.y] for node in path ]
 
 		newshape.append([direction,thispath])
-		
+
 	return newshape
 
 
