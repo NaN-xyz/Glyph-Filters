@@ -658,11 +658,9 @@ def MakeRectangles(startrect, it):
 	collections = []
 
 	rectangles = startrect
-	counter=0
 	axis="y"
 
-	while counter<it:
-
+	for _ in range(it):
 		collection = []
 
 		for n in range(0, len(rectangles)):
@@ -672,7 +670,6 @@ def MakeRectangles(startrect, it):
 
 		rectangles = collection
 		collections.append(collection)
-		counter+=1
 
 	return collections[-1]
 
