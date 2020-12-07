@@ -324,9 +324,8 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 		a = sides * n + rotation
 		rad = math.radians(a)
 		pushpointlen = random.randrange( int(maxrad*0.5), maxrad) / 2
-		cx = nx + pushpointlen * math.cos(rad)
-		cy = ny + pushpointlen * math.sin(rad)
-		points.append([cx, cy])
+		cx, cy = MakeVector(pushpointlen, rad)
+		points.append([nx+cx, ny+cy])
 
 
 	for n in range(0, len(points)):
@@ -345,15 +344,10 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 		pushdist = distance([cx1, cy1], [cx2, cy2])
 		pushdist/=2
 
-		a1 = math.atan2(ny-cy2, nx-cx2)
-		a1 += math.radians(90)
-		linex1 = pushdist * math.cos(a1)
-		liney1 = pushdist * math.sin(a1)
-
-		a2 = math.atan2(ny-cy1, nx-cx1)
-		a2 += math.radians(90)
-		linex2 = pushdist * math.cos(a2)
-		liney2 = pushdist * math.sin(a2)
+		a1 = math.atan2(ny-cy2, nx-cx2) + math.radians(90)
+		a2 = math.atan2(ny-cy1, nx-cx1) + math.radians(90)
+		linex1, liney1 = MakeVector(pushdist, a1)
+		linex2, liney2 = MakeVector(pushdist, a2)
 
 		if rounded==True:
 			addon.nodes.append(GSNode([cx1-linex2, cy1-liney2], type = GSOFFCURVE))
