@@ -794,7 +794,7 @@ def DistanceToNextBlack(thislayer, p1, p2, outlinedata, searchlimit):
 
 def isSizeBelowThreshold(thing, maxw, maxh):
 	bounds = thing.bounds
-	return bounds.size.width<maxw and bounds.size.height<maxh:
+	return bounds.size.width<maxw and bounds.size.height<maxh
 
 
 def AddAllComponentsToLayer(components, thislayer):
@@ -827,7 +827,7 @@ def ConvertPathlistDirection(paths, direction):
 
 
 def ContainsPaths(thislayer):
-	return len(thislayer.paths)>0:
+	return len(thislayer.paths)>0
 
 
 def pathCenterPoint(path):
