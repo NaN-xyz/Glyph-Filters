@@ -195,16 +195,14 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 
 		pathTotalLength = 0
 		allpointslist = []
-		scount=0
 
 		for segment in path.segments:
-			# if straight segment 
-			if len(segment) == 2: 
+			# if straight segment
+			if len(segment) == 2:
 				tp0 = (segment[0].x, segment[0].y)
 				tp1 = (segment[1].x, segment[1].y)
 
-				dist = math.hypot(tp1[0] - tp0[0], tp1[1] - tp0[1])
-				pathTotalLength+=dist
+				pathTotalLength += math.hypot(tp1[0] - tp0[0], tp1[1] - tp0[1])
 				allpointslist.extend(PointToPointSteps(tp0,tp1,spacebetween))
 			   
 			# if bezier curve segment
