@@ -161,29 +161,26 @@ def ListToPath(ptlist, isopen):
 
 
 def PointToPointSteps(tp0, tp1, spacebetween):
-
-	#print "test", tp0, tp1, spacebetween
+	if tp0 == tp1:
+		return []
 
 	tmplist = list()
+	n1x, n1y, n2x, n2y = tp0[0], tp0[1], tp1[0], tp1[1]
 
-	if tp0 != tp1:
+	dist = math.hypot(n2x - n1x, n2y - n1y)
 
-		n1x, n1y, n2x, n2y = tp0[0], tp0[1], tp1[0], tp1[1]
+	currentx = n1x
+	currenty = n1y
 
-		dist = math.hypot(n2x - n1x, n2y - n1y)
+	psteps = int(math.ceil(dist/spacebetween))
 
-		currentx = n1x
-		currenty = n1y
+	stepx = (n2x-n1x) / psteps
+	stepy = (n2y-n1y) / psteps
 
-		psteps = int(math.ceil(dist/spacebetween))
-
-		stepx = (n2x-n1x) / psteps
-		stepy = (n2y-n1y) / psteps
-
-		for n in range(psteps):
-			tmplist.append([currentx, currenty])
-			currentx+=stepx
-			currenty+=stepy
+	for n in range(psteps):
+		tmplist.append([currentx, currenty])
+		currentx+=stepx
+		currenty+=stepy
 
 	return tmplist
 
