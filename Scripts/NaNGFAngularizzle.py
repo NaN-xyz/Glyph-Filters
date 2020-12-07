@@ -219,8 +219,6 @@ def ReturnNodesAlongPath(GlyphStartPaths, spacebetween):
 
 				# check that the distance of curve segment is at least as big as spacebetween jump
 				if totallength > spacebetween:
-					steps = 20
-					stepinc = totallength / steps
 					steps = int(math.floor(totallength/spacebetween))
 					stepinc = totallength / steps
 					dlen=0 # distance to check in list of distances
