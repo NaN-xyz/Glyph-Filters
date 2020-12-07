@@ -525,15 +525,12 @@ def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
 	h = int( bounds.size.height )
 
 	pathlist = ConvertPathsToSkeleton([path], 10)
-<<<<<<< HEAD
-	outlinedata = getGlyphCoords(pathlist)
-=======
+
 	outlinedata = setGlyphCoords(pathlist)
 
 	if len(outlinedata)==0:
 		return None
 
->>>>>>> main
 	outlinedata = outlinedata[0][1]
 	
 	tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
@@ -798,7 +795,7 @@ def DistanceToNextBlack(thislayer, p1, p2, outlinedata, searchlimit):
 
 def isSizeBelowThreshold(thing, maxw, maxh):
 	bounds = thing.bounds
-	return bounds.size.width<maxw and bounds.size.height<maxh:
+	return bounds.size.width<maxw and bounds.size.height<maxh
 
 
 def AddAllComponentsToLayer(components, thislayer):
@@ -823,21 +820,15 @@ def ConvertPathDirection(path, direction):
 def ConvertPathlistDirection(paths, direction):
 	try:
 		for p in paths:
-<<<<<<< HEAD
 			if p.direction != direction:
 				p.reverse()
 		return paths
-=======
-			ConvertPathDirection(p, direction)
-			newpaths.append(p)
-		return newpaths
->>>>>>> main
 	except:
 		print("Couldn't change direction of all paths")
 
 
 def ContainsPaths(thislayer):
-	return len(thislayer.paths)>0:
+	return len(thislayer.paths)>0
 
 
 def pathCenterPoint(path):
