@@ -145,10 +145,11 @@ def FindPosInDistList(lookup, newlen): #newlen = length along curve
 # Draw new angular path from list
 def ListToPath(ptlist, isopen):
 	np = GSPath()
-	if isopen and len(ptlist)>2: del ptlist[-1]
 
 	if len(ptlist)<=2:
 		return np
+
+	if isopen: del ptlist[-1]
 
 	for pt in ptlist:
 		newnode = GSNode()
