@@ -668,8 +668,7 @@ def MakeRectangles(startrect, it):
 		for n in range(0, len(rectangles)):
 			if axis=="y": axis = "x"
 			else: axis = "y"
-			splitrects = Split( rectangles[n], axis )
-			for n in range (0, len(splitrects)): collection.append(splitrects[n])
+			collection.extend(Split( rectangles[n], axis ))
 
 		rectangles = collection
 		collections.append(collection)
