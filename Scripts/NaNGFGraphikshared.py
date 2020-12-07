@@ -659,16 +659,14 @@ def MakeRectangles(startrect, it):
 
 	rectangles = startrect
 	counter=0
-	switch=True
+	axis="y"
 
 	while counter<it:
 
 		collection = []
 
 		for n in range(0, len(rectangles)):
-
-			switch = not switch
-			if switch==True: axis = "x"
+			if axis=="y": axis = "x"
 			else: axis = "y"
 			splitrects = Split( rectangles[n], axis )
 			for n in range (0, len(splitrects)): collection.append(splitrects[n])
