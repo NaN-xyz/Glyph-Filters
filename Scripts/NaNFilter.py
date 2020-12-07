@@ -112,6 +112,7 @@ class NaNFilter:
             if w<maxdim and h<maxdim:
                 layer.paths.remove(p)
 
+    # based on
     # https://github.com/mekkablue/Glyphs-Scripts/blob/master/Paths/Remove%20Short%20Segments.py         
     def removeSmallSegments(self, thisLayer, maxseg, keepshape):
         for thisPath in thisLayer.paths:
