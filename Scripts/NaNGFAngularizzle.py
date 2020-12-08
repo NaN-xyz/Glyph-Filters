@@ -10,7 +10,7 @@ class Direction():
 STEPNUM = 130
 STEPSIZE = 1.0/STEPNUM # !impt
 
-def getGlyphCoords(pathlist):
+def setGlyphCoords(pathlist):
 
 	newshape = []
 

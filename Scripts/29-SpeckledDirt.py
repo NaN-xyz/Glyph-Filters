@@ -36,6 +36,7 @@ class SpeckledDirt(NaNFilter):
         outlinedata2 = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 4))
 
         dirt = self.AddDirt(thislayer, outlinedata2, params["walklen"])
+
         if dirt is not None:
             dirt = ConvertPathlistDirection( removeOverlapPathlist(dirt), 1 )
             AddAllPathsToLayer(dirt, thislayer)
@@ -71,6 +72,7 @@ class SpeckledDirt(NaNFilter):
                         dirt.append(speck)
                         sx = nx
                         sy = ny
+            return dirt
 
 
 SpeckledDirt()
