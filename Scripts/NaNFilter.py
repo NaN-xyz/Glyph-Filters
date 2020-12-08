@@ -29,11 +29,6 @@ class NaNFilter:
             params = None
         self.processLayer(thislayer, params)
 
-        self.removeSmallPaths(thislayer, NANGFSET["smallest_path"])
-        self.removeSmallSegments(thislayer, NANGFSET["smallest_seg"], False)
-        self.removeOpenPaths(thislayer)
-        self.removeStrayPoints(thislayer) # see note for why this & above
-
         thislayer.endChanges()
         endGlyphNaN(glyph)
         glyph.endUndo()
@@ -105,6 +100,17 @@ class NaNFilter:
             return TrianglesListToPaths(edge_triangles)
         else:
             raise NotImplementedError
+
+    def CleanOutlines(removeSmallPaths=True, removeSmallSegments=True, removeStrayPoints=True, removeOpenPaths=True, keepshape=False):
+        if removeSmallPaths==True:
+            self.removeSmallPaths(thislayer, NANGFSET["smallest_path"])
+        if removeSmallSegments==True:
+            self.removeSmallSegments(thislayer, NANGFSET["smallest_seg"], keepshape)
+        if removeStrayPoints==True:
+            self.removeOpenPaths(thislayer)
+        if removeOpenPaths==True:
+            self.removeStrayPoints(thislayer) # see note for why this & above
+
 
     def removeSmallPaths(self, layer, maxdim):
         for p in reversed(layer.paths):

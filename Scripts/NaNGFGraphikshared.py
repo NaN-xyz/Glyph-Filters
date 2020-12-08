@@ -805,7 +805,7 @@ def AddAllComponentsToLayer(components, thislayer):
 
 def AddAllPathsToLayer(paths, thislayer):
 	try:
-			thislayer.paths.extend(paths)
+		thislayer.paths.extend(paths)
 	except:
 		print("Couldn't add all paths to layer", thislayer)
 
