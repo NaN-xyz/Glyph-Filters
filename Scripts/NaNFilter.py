@@ -101,14 +101,14 @@ class NaNFilter:
         else:
             raise NotImplementedError
 
-    def CleanOutlines(removeSmallPaths=True, removeSmallSegments=True, removeStrayPoints=True, removeOpenPaths=True, keepshape=False):
-        if removeSmallPaths==True:
+    def CleanOutlines(self, thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False):
+        if remSmallPaths==True:
             self.removeSmallPaths(thislayer, NANGFSET["smallest_path"])
-        if removeSmallSegments==True:
+        if remSmallSegments==True:
             self.removeSmallSegments(thislayer, NANGFSET["smallest_seg"], keepshape)
-        if removeStrayPoints==True:
+        if remStrayPoints==True:
             self.removeOpenPaths(thislayer)
-        if removeOpenPaths==True:
+        if remOpenPaths==True:
             self.removeStrayPoints(thislayer) # see note for why this & above
 
 

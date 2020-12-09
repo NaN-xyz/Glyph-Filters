@@ -208,7 +208,7 @@ def RoundPaths(paths, returntype):
 
 def RoundPath(path, returntype):
 
-	outlinedata = getGlyphCoords(ConvertPathsToSkeleton([path], 2))[0][1]
+	outlinedata = setGlyphCoords(ConvertPathsToSkeleton([path], 2))[0][1]
 	new_outline = outlinedata
 	nl = []
 
@@ -241,7 +241,7 @@ def RoundPath(path, returntype):
 		else:
 			segmentsize=3
 
-		outlinedata = getGlyphCoords(ConvertPathsToSkeleton([drawSimplePath(nl)], segmentsize))
+		outlinedata = setGlyphCoords(ConvertPathsToSkeleton([drawSimplePath(nl)], segmentsize))
 
 		try:
 			new_outline = outlinedata[0][1]
