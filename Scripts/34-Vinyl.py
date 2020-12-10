@@ -32,14 +32,14 @@ class Vinyl(NaNFilter):
 
         thislayer.removeOverlap()
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 10)
-        outlinedata = getGlyphCoords(pathlist)
+        outlinedata = setGlyphCoords(pathlist)
         bounds = AllPathBounds(thislayer)
 
         offsetpaths = self.saveOffsetPaths(
             thislayer, offset, offset, removeOverlap=True
         )
         pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata2 = getGlyphCoords(pathlist2)
+        outlinedata2 = setGlyphCoords(pathlist2)
 
         ClearPaths(thislayer)
 

@@ -246,11 +246,11 @@ def OutputLines():
 		# ----
 
 		pathlist = ConvertPathsToSkeleton(thislayer.paths, 4)
-		outlinedata = getGlyphCoords(pathlist)
+		outlinedata = setGlyphCoords(pathlist)
 
 		loopmask = LoopLines(thislayer, outlinedata)
 		loopmasklist = ConvertPathsToSkeleton(loopmask, 40)
-		outlinedata = getGlyphCoords(loopmasklist)
+		outlinedata = setGlyphCoords(loopmasklist)
 
 		AddAllPathsToLayer(loopmask, thislayer)
 

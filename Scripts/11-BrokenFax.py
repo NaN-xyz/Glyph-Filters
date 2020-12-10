@@ -19,7 +19,7 @@ class BrokenFax(NaNFilter):
 	def processLayer(self, thislayer, params):
 		thislayer.removeOverlap()
 		pathlist = ConvertPathsToSkeleton(thislayer.paths, params["stepsize"])
-		outlinedata = getGlyphCoords(pathlist)
+		outlinedata = setGlyphCoords(pathlist)
 		ClearPaths(thislayer)
 
 		allpaths = []

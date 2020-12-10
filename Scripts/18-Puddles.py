@@ -88,15 +88,15 @@ class Puddles(NaNFilter):
     def processLayer(self, thislayer, params):
         offsetpaths = self.saveOffsetPaths(thislayer, -10, -10, removeOverlap=False)
         pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata = getGlyphCoords(pathlist)
+        outlinedata = setGlyphCoords(pathlist)
 
         offsetpaths = self.saveOffsetPaths(thislayer, 20, 20, removeOverlap=True)
         pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata3 = getGlyphCoords(pathlist)
+        outlinedata3 = setGlyphCoords(pathlist)
 
         offsetpaths = self.saveOffsetPaths(thislayer, 60, 60, removeOverlap=True)
         pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata4 = getGlyphCoords(pathlist)
+        outlinedata4 = setGlyphCoords(pathlist)
 
         ClearPaths(thislayer)
 

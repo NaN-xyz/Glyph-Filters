@@ -13,7 +13,7 @@ from NaNFilter import NaNFilter
 class EightiesFade(NaNFilter):
     def processLayer(self, thislayer, params):
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
-        outlinedata = getGlyphCoords(pathlist)
+        outlinedata = setGlyphCoords(pathlist)
 
         try:
             startrect = AllPathBounds(thislayer)

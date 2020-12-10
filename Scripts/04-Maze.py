@@ -27,7 +27,7 @@ class Maze(NaNFilter):
                 thislayer, offset, offset, removeOverlap=False
             )
             pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-            outlinedata = getGlyphCoords(pathlist)
+            outlinedata = setGlyphCoords(pathlist)
 
             bounds = AllPathBounds(thislayer)
             self.setupChecker(bounds)
@@ -68,7 +68,7 @@ class Maze(NaNFilter):
                 shapepath.append(shape)
 
                 nshape = ConvertPathsToSkeleton(shapepath, 10)
-                nshape = getGlyphCoords(nshape)
+                nshape = setGlyphCoords(nshape)
                 finalshape = nshape[0][1]
 
                 if ShapeWithinOutlines(finalshape, outlinedata):

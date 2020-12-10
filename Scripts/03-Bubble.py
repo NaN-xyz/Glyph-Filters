@@ -19,7 +19,7 @@ class Bubble(NaNFilter):
             thislayer, offset, offset, removeOverlap=False
         )
         pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata = getGlyphCoords(pathlist)
+        outlinedata = setGlyphCoords(pathlist)
         ClearPaths(thislayer)
         minpush = 60
         maxpush = 80

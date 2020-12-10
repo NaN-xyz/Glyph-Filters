@@ -25,7 +25,7 @@ class Gemstones(NaNFilter):
 	def processLayer(self, thislayer, params):
 		offsetpaths = self.saveOffsetPaths(thislayer, params["offset"], params["offset"], removeOverlap=False)
 		pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-		outlinedata = getGlyphCoords(pathlist)
+		outlinedata = setGlyphCoords(pathlist)
 
 		ClearPaths(thislayer)
 

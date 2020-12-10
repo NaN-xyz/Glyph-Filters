@@ -15,9 +15,9 @@ from NaNFilter import NaNFilter
 class Shatter(NaNFilter):
 
     params = {
-        "S": {"maxshift": 200},
-        "M": {"maxshift": 300},
-        "L": {"maxshift": 400}
+        "S": {"offset":20, "sliceheight": 5},
+        "M": {"offset":0, "sliceheight": 10},
+        "L": {"offset":0, "sliceheight": 10}
     }
     sliceheight = 10
     angle = 45
@@ -26,12 +26,29 @@ class Shatter(NaNFilter):
         pass
 
     def processLayer(self, thislayer, params):
+        if glyphSize(thislayer.parent) == "S":
+            self.processLayerSmall(thislayer, params)
+        else:
+            self.processLayerLarge(thislayer, params)
+
+    def processLayerSmall(self, thislayer, params):
+        paths = copy.copy(thislayer.paths)
+        rounded = returnRoundedPaths(paths)
+        ClearPaths(thislayer)
+        AddAllPathsToLayer(rounded, thislayer)
+        #retractHandles(thislayer)
+        self.doclean(thislayer)
+
+    def processLayerLarge(self, thislayer, params):
+
+        sliceheight = params["sliceheight"]
+        thislayer.removeOverlap()
 
         bounds = AllPathBounds(thislayer)
         thislayercopy = thislayer.copy()
         ClearPaths(thislayer)
        
-        spaths = self.returnSlicedPaths(thislayer, thislayercopy, self.sliceheight, bounds)
+        spaths = self.returnSlicedPaths(thislayer, thislayercopy, sliceheight, bounds)
 
         n=1
         maxshift = 20
@@ -45,7 +62,10 @@ class Shatter(NaNFilter):
 
             AddAllPathsToLayer(rounded, thislayer)
             retractHandles(thislayer)
+            self.doclean(thislayer)
+        
 
+    def doclean(self, thislayer):
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
     def shufflePaths(self, row, d):
@@ -69,6 +89,8 @@ class Shatter(NaNFilter):
         y = oy
         dist = 2000
         sh = 0
+
+        angle = self.angle + random.randrange(-5,5)
 
         while y < oy+h+dist:
 

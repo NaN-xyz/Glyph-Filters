@@ -75,7 +75,7 @@ class Zebra(NaNFilter):
         offsetpaths = self.saveOffsetPaths(thislayer, 0, 0, removeOverlap=True)
         pathlist = ConvertPathsToSkeleton(offsetpaths, 20)
         bounds = AllPathBoundsFromPathList(pathlist)
-        outlinedata = getGlyphCoords(pathlist)
+        outlinedata = setGlyphCoords(pathlist)
 
         wavepaths = NoiseWaves(
             thislayer, outlinedata, bounds, self.minsize, self.maxsize

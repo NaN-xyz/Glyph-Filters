@@ -32,7 +32,7 @@ class Spray(NaNFilter):
 			else:
 				structure = convertToFitpath(RoundPath(path,"nodes"), True)
 
-			outlinedata = getGlyphCoords(ConvertPathsToSkeleton([structure], 7))
+			outlinedata = setGlyphCoords(ConvertPathsToSkeleton([structure], 7))
 
 			if not outlinedata:
 				continue

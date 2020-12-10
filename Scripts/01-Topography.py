@@ -39,14 +39,14 @@ class Topography(NaNFilter):
     def processLayerLarge(self, thislayer, params):
         offset, gridsize = params["offset"], params["gridsize"]
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
-        outlinedata = getGlyphCoords(pathlist)
+        outlinedata = setGlyphCoords(pathlist)
         bounds = AllPathBounds(thislayer)
 
         offsetpaths = self.saveOffsetPaths(
             thislayer, offset, offset, removeOverlap=True
         )
         pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata2 = getGlyphCoords(pathlist2)
+        outlinedata2 = setGlyphCoords(pathlist2)
         bounds2 = AllPathBoundsFromPathList(pathlist2)
 
         ClearPaths(thislayer)

@@ -21,7 +21,7 @@ class MoonRocks(NaNFilter):
         offsetpaths = self.saveOffsetPaths(
             thislayer, params["offset"], params["offset"], removeOverlap=False
         )
-        outlinedata = getGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 20))
+        outlinedata = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 20))
         moonrocks(thislayer, outlinedata, params["iterations"], shapetype = "blob", maxgap = 8)
 
 
