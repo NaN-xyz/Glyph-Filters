@@ -39,6 +39,8 @@ class Spray(NaNFilter):
 
 			thislayer.paths.append(self.makePathSpiky(outlinedata[0][1]))
 
+		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
 	def makePathSpiky(self, structure):
 			nodelen = len(structure)
 			newpath = []

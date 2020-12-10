@@ -23,7 +23,7 @@ class MoonRocks(NaNFilter):
         )
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 20))
         moonrocks(thislayer, outlinedata, params["iterations"], shapetype = "blob", maxgap = 8)
-
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 if __name__ == "__main__":
     MoonRocks()

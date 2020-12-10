@@ -58,7 +58,7 @@ class Fur(NaNFilter):
 
 		spikepaths = spikes(thislayer, outlinedata, params["minfur"], params["maxfur"], 5, 20, drawHair)
 		AddAllPathsToLayer(spikepaths, thislayer)
-
+		
 
 
 Fur()

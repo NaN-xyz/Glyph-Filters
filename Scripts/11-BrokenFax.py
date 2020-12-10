@@ -54,5 +54,6 @@ class BrokenFax(NaNFilter):
 		angularpaths = [ drawSimplePath(path) for path in allpaths]
 		AddAllPathsToLayer(angularpaths, thislayer)
 		thislayer.removeOverlap()
+		self.CleanOutlines(thislayer, remSmallPaths=False, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 BrokenFax()

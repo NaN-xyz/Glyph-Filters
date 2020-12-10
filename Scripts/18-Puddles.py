@@ -104,6 +104,7 @@ class Puddles(NaNFilter):
         Toenail(thislayer, outlinedata3, 40, 60, gap=100, thickness=20)
         Toenail(thislayer, outlinedata4, 50, 70, gap=100, thickness=10)
         thislayer.cleanUpPaths()
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 
 Puddles()

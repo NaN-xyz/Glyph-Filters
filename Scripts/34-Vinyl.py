@@ -62,5 +62,7 @@ class Vinyl(NaNFilter):
        
         thislayer.removeOverlap()
 
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
 
 Vinyl()

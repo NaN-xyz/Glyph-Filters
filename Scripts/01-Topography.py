@@ -64,6 +64,8 @@ class Topography(NaNFilter):
             groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
             self.ApplyCollageGraphixxx(thislayer, groups, shape, self.linecomponents)
 
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
     def processLayerSmall(self, thislayer):
         thislayer.removeOverlap()
         roundedpathlist = returnRoundedPaths(thislayer.paths)

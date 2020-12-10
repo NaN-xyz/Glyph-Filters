@@ -42,6 +42,7 @@ class Scribble(NaNFilter):
         retractHandles(thislayer)
         AddAllPathsToLayer(noiseoutline, thislayer)
         thislayer.removeOverlap()
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
     def ScribblePath(self, thislayer, outlinedata, walklen):
 

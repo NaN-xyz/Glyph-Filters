@@ -62,6 +62,6 @@ class Burn(NaNFilter):
         roundedpathlist = returnRoundedPaths(thislayer.paths)
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)
-
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 Burn()

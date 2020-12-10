@@ -35,6 +35,8 @@ class Glitch(NaNFilter):
         AddAllPathsToLayer(slicedpaths, thislayer)
         thislayer.removeOverlap()
 
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=False, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
     def returnSlicedPaths(self, pathlist, sliceheight):
 
         slicedpaths = []

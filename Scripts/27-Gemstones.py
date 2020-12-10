@@ -37,4 +37,6 @@ class Gemstones(NaNFilter):
 		AddAllPathsToLayer(rockpaths, thislayer)
 		retractHandles(thislayer)
 
+		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
 Gemstones()

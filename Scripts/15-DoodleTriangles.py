@@ -53,6 +53,7 @@ class DoodleTriangles(NaNFilter):
         AddAllPathsToLayer(blacktris, thislayer)
 
         thislayer.removeOverlap()
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 
 DoodleTriangles()

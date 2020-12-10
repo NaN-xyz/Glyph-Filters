@@ -40,6 +40,7 @@ class Maze(NaNFilter):
 
             self.expandMonoline(thislayer, 6)
             thislayer.removeOverlap()
+            self.CleanOutlines(thislayer, remSmallPaths=False, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
     def setupChecker(self, bounds):
         self.available_slots = []

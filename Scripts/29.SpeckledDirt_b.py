@@ -41,6 +41,7 @@ class SpeckledDirt(NaNFilter):
             AddAllPathsToLayer(dirt, thislayer)
             thislayer.removeOverlap()
 
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
             
 
     def AddDirt(self, thislayer, outlinedata, walklen):

@@ -42,6 +42,8 @@ class SpeckledDirt(NaNFilter):
             AddAllPathsToLayer(dirt, thislayer)
             thislayer.removeOverlap()
 
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
     def AddDirt(self, thislayer, outlinedata, walklen):
 
         start = defineStartXY(thislayer, outlinedata)
@@ -67,7 +69,7 @@ class SpeckledDirt(NaNFilter):
                 if withinGlyphBlack(nx, ny, outlinedata):
                     r = random.randrange(0,10)
                     if r==2:
-                        size = random.randrange(6,22)
+                        size = random.randrange(7,22)
                         speck = drawSpeck(nx, ny, size, 6)
                         dirt.append(speck)
                         sx = nx

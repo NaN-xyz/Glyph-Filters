@@ -24,5 +24,6 @@ class Microbe(NaNFilter):
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 30))
         ClearPaths(thislayer)
         moonrocks(thislayer, outlinedata, params["iterations"], shapetype = "blob", maxgap = 1, maxsize=params["maxsize"])
-
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+        
 Microbe()

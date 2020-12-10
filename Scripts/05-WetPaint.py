@@ -104,7 +104,7 @@ class Drip(NaNFilter):
 			for path in outlinedata:
 				p = convertToFitpath(path[1], True)
 				thislayer.paths.append(p)
-
+		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=True)
 Drip()
-Font.enableUpdateInterface()
+
 

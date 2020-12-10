@@ -39,5 +39,6 @@ class Iso(NaNFilter):
 					thislayer.paths.append(path)
 
 		thislayer.correctPathDirection()
+		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 Iso()
