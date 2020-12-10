@@ -12,9 +12,9 @@ from NaNCommonFilters import moonrocks
 
 class MoonRocks(NaNFilter):
     params = {
-        "S": {"offset": -5, "iterations": 50},
-        "M": {"offset": -15, "iterations": 400},
-        "L": {"offset": -20, "iterations": 420},
+        "S": {"offset": -5, "iterations": 150},
+        "M": {"offset": -15, "iterations": 1200},
+        "L": {"offset": -20, "iterations": 1220},
     }
 
     def processLayer(self, thislayer, params):
@@ -22,7 +22,9 @@ class MoonRocks(NaNFilter):
             thislayer, params["offset"], params["offset"], removeOverlap=False
         )
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 20))
-        moonrocks(thislayer, outlinedata, params["iterations"], shapetype = "blob", maxgap = 8)
+        moonrockpaths = moonrocks(thislayer, outlinedata, params["iterations"], shapetype = "blob", maxgap = 8)
+        ConvertPathlistDirection(moonrockpaths, 1)
+        AddAllPathsToLayer(moonrockpaths, thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 if __name__ == "__main__":

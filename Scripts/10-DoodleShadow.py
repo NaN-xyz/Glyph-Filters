@@ -16,7 +16,7 @@ from NaNFilter import NaNFilter
 class DoodleShadow(NaNFilter):
 
     params = {
-        "S": {"offset": 10, "depth": random.randrange(40, 70)},
+        "S": {"offset": 10, "depth": random.randrange(40, 85)},
         "M": {"offset": 10, "depth": random.randrange(50, 100)},
         "L": {"offset": 10, "depth": random.randrange(60, 100)}
     }

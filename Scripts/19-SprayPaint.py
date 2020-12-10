@@ -16,7 +16,7 @@ class Spray(NaNFilter):
 	params = {"S": { "offset": -5}, "M": { "offset": -10}, "L": { "offset": -20} }
 
 	noisescale = 0.01
-	segwaylen = 40
+	segwaylen = 5
 	minshift, maxshift = 30, 90
 
 	def processLayer(self, thislayer, params):
@@ -39,7 +39,7 @@ class Spray(NaNFilter):
 
 			thislayer.paths.append(self.makePathSpiky(outlinedata[0][1]))
 
-		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
 
 	def makePathSpiky(self, structure):
 			nodelen = len(structure)
@@ -65,8 +65,10 @@ class Spray(NaNFilter):
 				else:
 					pushdist = last_pushdist + ( ( start_pushdist-last_pushdist ) / self.segwaylen ) * (self.segwaylen-(nodelen-n)) 
 
+				spikewidth = 5
+
 				linex1, liney1 = MakeVector(pushdist, angle+radians(90))
-				linex2, liney2 = MakeVector(pushdist, angle)
+				linex2, liney2 = MakeVector(spikewidth, angle)
 
 				newpath.extend( [
 								[x_curr-linex2, y_curr-liney2],

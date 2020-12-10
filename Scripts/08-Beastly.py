@@ -44,7 +44,7 @@ def drawHair(bubble, x1, y1, midx, midy, x2, y2, pushdist):
 
 class Fur(NaNFilter):
 	params = {
-		"S": { "offset": -5, "minfur": 20, "maxfur": 50 },
+		"S": { "offset": -5, "minfur": 35, "maxfur": 80 },
 		"M": { "offset": -10, "minfur": 40, "maxfur": 100 },
 		"L": { "offset": -20, "minfur": 60, "maxfur": 120 }
 	}
@@ -58,7 +58,7 @@ class Fur(NaNFilter):
 
 		spikepaths = spikes(thislayer, outlinedata, params["minfur"], params["maxfur"], 5, 20, drawHair)
 		AddAllPathsToLayer(spikepaths, thislayer)
-		
+
 
 
 Fur()
