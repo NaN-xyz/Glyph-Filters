@@ -7,6 +7,8 @@ Fonts are licensed under the SIL Open Font License v1.1, see [OFL.txt](OFL.txt) 
 
 ## About Author
 
-[NaN](http://www.nan.xyz) is a Berlin-based _undefined
+[NaN](http://www.nan.xyz) is a Berlin-based _undefined_
+
 Code review by [Simon Cozens](http://www.corvelsoftware.co.uk)
+
 Questions, comments, requests, suggestions: info@nan.xyz
