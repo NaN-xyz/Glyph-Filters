@@ -11,4 +11,6 @@ Fonts are licensed under the SIL Open Font License v1.1, see [OFL.txt](OFL.txt) 
 
 Code review by [Simon Cozens](http://www.corvelsoftware.co.uk)
 
+Website developed by [Underscore Type](https://underscoretype.com)
+
 Questions, comments, requests, suggestions: info@nan.xyz
