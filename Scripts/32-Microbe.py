@@ -18,12 +18,14 @@ class Microbe(NaNFilter):
     }
 
     def processLayer(self, thislayer, params):
+        thislayer.removeOverlap()
         offsetpaths = self.saveOffsetPaths(
             thislayer, params["offset"], params["offset"], removeOverlap=False
         )
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 30))
         ClearPaths(thislayer)
-        moonrocks(thislayer, outlinedata, params["iterations"], shapetype = "blob", maxgap = 1, maxsize=params["maxsize"])
+        microbepaths = moonrocks(thislayer, outlinedata, params["iterations"], shapetype="blob", maxgap = 1, maxsize=params["maxsize"])
+        AddAllPathsToLayer(microbepaths, thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
-        
+
 Microbe()

@@ -28,6 +28,8 @@ class DoodleTriangles(NaNFilter):
 
     def processLayer(self, thislayer, params):
 
+        thislayer.removeOverlap()
+
         offset, gridsize = params["offset"], params["gridsize"]
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
         outlinedata = setGlyphCoords(pathlist)

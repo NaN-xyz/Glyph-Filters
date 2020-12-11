@@ -10,10 +10,11 @@ from NaNGFNoise import *
 from NaNFilter import NaNFilter
 
 class Storm(NaNFilter):
-	gridsize, minsize, maxsize = 25, 20, 60
+	gridsize = 30
+	minsize, maxsize = 30, 80
 
 	def setup(self):
-		self.stormcomponent = CreateShapeComponent(self.font, self.maxsize, self.maxsize, "circle", "StormShape")
+		self.stormcomponent = CreateShapeComponent(self.font, self.maxsize, self.maxsize, "rectangle", "StormShape")
 
 	def drawStorm(self, x,y,layer):
 		freq = 0.005
@@ -25,6 +26,7 @@ class Storm(NaNFilter):
 		scale = (float(1)/self.maxsize)*size
 		stormcomp.transform = ((scale, 0.0, 0.0, scale, x, y))
 		layer.components.append(stormcomp)
+		
 
 	def processLayer(self, thislayer, params):
 		operateOnBlackAtInterval(thislayer, self.drawStorm, self.gridsize)
