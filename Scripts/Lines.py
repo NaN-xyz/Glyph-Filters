@@ -1,7 +1,7 @@
-# MenuTitle: 07. Lines
+# MenuTitle: Lines
 # -*- coding: utf-8 -*-
 __doc__ = """
-07. Lines
+Lines
 """
 
 import GlyphsApp

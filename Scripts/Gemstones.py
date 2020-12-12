@@ -1,7 +1,7 @@
-#MenuTitle: 27. Gemstones
+#MenuTitle: Gemstones
 # -*- coding: utf-8 -*-
 __doc__="""
-27. Gemstones
+Gemstones
 """
 
 import GlyphsApp

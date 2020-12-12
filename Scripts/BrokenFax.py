@@ -1,7 +1,7 @@
-#MenuTitle: 11. BrokenFax
+#MenuTitle: 11. Broken Fax
 # -*- coding: utf-8 -*-
 __doc__="""
-11. BrokenFax
+Broken Fax
 """
 
 import GlyphsApp

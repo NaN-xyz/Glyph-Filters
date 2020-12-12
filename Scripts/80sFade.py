@@ -1,7 +1,7 @@
-# MenuTitle: 02. 80sFade
+# MenuTitle: 80s Fade
 # -*- coding: utf-8 -*-
 __doc__ = """
-02. 80sFade
+80s Fade
 """
 
 import GlyphsApp

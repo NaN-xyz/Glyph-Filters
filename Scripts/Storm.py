@@ -1,7 +1,7 @@
-#MenuTitle: 09. Storm
+#MenuTitle: Storm
 # -*- coding: utf-8 -*-
 __doc__="""
-09. Storm
+Storm
 """
 
 import GlyphsApp

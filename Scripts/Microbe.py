@@ -1,7 +1,7 @@
-#MenuTitle: 32. Microbe
+#MenuTitle: Microbe
 # -*- coding: utf-8 -*-
 __doc__="""
-06. Microbe
+Microbe
 """
 
 import GlyphsApp

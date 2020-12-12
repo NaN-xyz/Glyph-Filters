@@ -1,7 +1,7 @@
-# MenuTitle: 18. Puddles
+# MenuTitle: Puddles
 # -*- coding: utf-8 -*-
 __doc__ = """
-18. Puddles
+Puddles
 """
 
 import GlyphsApp

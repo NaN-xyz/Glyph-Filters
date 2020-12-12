@@ -1,7 +1,7 @@
-# MenuTitle: 10. DoodleShadow
+# MenuTitle: Doodle Shadow
 # -*- coding: utf-8 -*-
 __doc__ = """
-10. DoodleShadow
+Doodle Shadow
 """
 
 import GlyphsApp

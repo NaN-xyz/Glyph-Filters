@@ -1,7 +1,7 @@
-# MenuTitle: 01. Topography
+# MenuTitle: Topography
 # -*- coding: utf-8 -*-
 __doc__ = """
-25. Topography
+Topography
 """
 
 import GlyphsApp

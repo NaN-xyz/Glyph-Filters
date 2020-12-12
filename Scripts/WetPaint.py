@@ -1,7 +1,7 @@
-#MenuTitle: 05. WetPaint
+#MenuTitle: Wet Paint
 # -*- coding: utf-8 -*-
 __doc__="""
-05. WetPaint
+Wet Paint
 """
 
 import GlyphsApp

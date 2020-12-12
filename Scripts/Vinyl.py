@@ -1,7 +1,7 @@
-# MenuTitle: 34. Vinyl
+# MenuTitle: Vinyl
 # -*- coding: utf-8 -*-
 __doc__ = """
-34. Vinyl
+Vinyl
 """
 
 import GlyphsApp

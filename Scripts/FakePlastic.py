@@ -1,7 +1,7 @@
-#MenuTitle: 23. FakePlastic
+#MenuTitle: Fake Plastic
 # -*- coding: utf-8 -*-
 __doc__="""
-23. FakePlastic
+Fake Plastic
 """
 
 import GlyphsApp

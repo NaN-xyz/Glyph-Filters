@@ -1,7 +1,7 @@
-# MenuTitle: 35. Glitch
+# MenuTitle: Glitch
 # -*- coding: utf-8 -*-
 __doc__ = """
-35. Glitch
+Glitch
 """
 
 import GlyphsApp

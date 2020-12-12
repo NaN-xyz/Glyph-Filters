@@ -1,7 +1,7 @@
-#MenuTitle: 31. Iso
+#MenuTitle: Iso
 # -*- coding: utf-8 -*-
 __doc__="""
-31. Iso
+Iso
 """
 
 import GlyphsApp

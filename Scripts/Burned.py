@@ -1,7 +1,7 @@
-# MenuTitle: 13 Burned
+# MenuTitle: Burned
 # -*- coding: utf-8 -*-
 __doc__ = """
-13. Burned
+Burned
 """
 
 import GlyphsApp

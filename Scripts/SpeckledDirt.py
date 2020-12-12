@@ -1,7 +1,7 @@
-# MenuTitle: 29. SpeckledDirt
+# MenuTitle: Speckled Dirt
 # -*- coding: utf-8 -*-
 __doc__ = """
-29. SpeckledDirt
+Speckled Dirt
 """
 
 import GlyphsApp

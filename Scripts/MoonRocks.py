@@ -1,7 +1,7 @@
-# MenuTitle: 06. MoonRocks
+# MenuTitle: Moon Rocks
 # -*- coding: utf-8 -*-
 __doc__ = """
-06. MoonRocks
+Moon Rocks
 """
 
 import GlyphsApp

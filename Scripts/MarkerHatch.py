@@ -1,7 +1,7 @@
-# MenuTitle: 36. Shatter
+# MenuTitle: Marker Hatch
 # -*- coding: utf-8 -*-
 __doc__ = """
-36. Shatter
+Marker Hatch
 """
 
 import GlyphsApp

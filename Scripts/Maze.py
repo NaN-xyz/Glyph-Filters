@@ -1,7 +1,7 @@
-# MenuTitle: 04. Maze
+# MenuTitle: Maze
 # -*- coding: utf-8 -*-
 __doc__ = """
-04. Maze
+Maze
 """
 
 import GlyphsApp

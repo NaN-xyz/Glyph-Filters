@@ -1,7 +1,7 @@
-#MenuTitle: 08. Beastly
+#MenuTitle: Beastly
 # -*- coding: utf-8 -*-
 __doc__="""
-08. Beastly
+Beastly
 """
 
 import GlyphsApp

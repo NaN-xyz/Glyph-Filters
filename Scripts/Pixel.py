@@ -1,7 +1,7 @@
-#MenuTitle: 37. Pixel
+#MenuTitle: Pixel
 # -*- coding: utf-8 -*-
 __doc__="""
-37. Pixel
+Pixel
 """
 
 import GlyphsApp

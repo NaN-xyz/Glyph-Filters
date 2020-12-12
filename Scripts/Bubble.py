@@ -1,7 +1,7 @@
-# MenuTitle: 03. Bubble
+# MenuTitle: Bubble
 # -*- coding: utf-8 -*-
 __doc__ = """
-03. Bubble
+Bubble
 """
 
 import GlyphsApp

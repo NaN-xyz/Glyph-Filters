@@ -1,7 +1,7 @@
-# MenuTitle: 22. Zebra
+# MenuTitle: Zebra
 # -*- coding: utf-8 -*-
 __doc__ = """
-22. Zebra
+Zebra
 """
 
 import GlyphsApp

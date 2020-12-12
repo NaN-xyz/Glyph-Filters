@@ -1,7 +1,7 @@
-# MenuTitle: 15. DoodleTriangles
+# MenuTitle: Doodle Triangles
 # -*- coding: utf-8 -*-
 __doc__ = """
-15. DoodleTriangles
+Doodle Triangles
 """
 
 import GlyphsApp

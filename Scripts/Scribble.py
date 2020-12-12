@@ -1,7 +1,7 @@
-# MenuTitle: 17. Scribble
+# MenuTitle: Scribble
 # -*- coding: utf-8 -*-
 __doc__ = """
-17. Scribble
+Scribble
 """
 
 import GlyphsApp

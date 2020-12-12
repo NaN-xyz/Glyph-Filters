@@ -1,7 +1,7 @@
-# MenuTitle: 25. GlitchPop
+# MenuTitle: Glitch Pop
 # -*- coding: utf-8 -*-
 __doc__ = """
-25. GlitchPop
+Glitch Pop
 """
 
 import GlyphsApp

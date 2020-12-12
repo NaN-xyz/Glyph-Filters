@@ -1,7 +1,7 @@
-#MenuTitle: 19. Spray Paint
+#MenuTitle: Spray Paint
 # -*- coding: utf-8 -*-
 __doc__="""
-19. Spray Paint
+Spray Paint
 """
 
 import GlyphsApp
