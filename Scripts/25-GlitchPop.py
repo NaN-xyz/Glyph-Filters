@@ -1,7 +1,7 @@
-# MenuTitle: 01. Topography
+# MenuTitle: 25. GlitchPop
 # -*- coding: utf-8 -*-
 __doc__ = """
-01. Topography
+25. GlitchPop
 """
 
 import GlyphsApp
@@ -51,19 +51,15 @@ class GlitchPop(NaNFilter):
 
         ClearPaths(thislayer)
 
-        iterations = [
-            (random.randrange(200, 400), "vertical"),
-            (random.randrange(200, 400), "horizontal"),
-            (random.randrange(70, 100), "blob"),
-        ]
+        maxchain = 150
 
-        for maxchain, shape in iterations:
-            newtris = self.SortCollageSpace(
-                thislayer, outlinedata, outlinedata2, gridsize, bounds
-            )
-            groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
-            self.ApplyCollageGraphixxx(thislayer, groups, shape, self.linecomponents)
+        newtris = self.SortCollageSpace(
+            thislayer, outlinedata, outlinedata2, gridsize, bounds, "stick"
+        )
+        groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
+        self.ApplyGlitchCollage(thislayer, groups, self.linecomponents)
 
+        thislayer.removeOverlap()
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
     def processLayerSmall(self, thislayer):
@@ -72,58 +68,162 @@ class GlitchPop(NaNFilter):
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)
 
-    def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds):
-
-        isogrid = makeIsometricGrid(bounds, gridsize)
-        alltriangles = IsoGridToTriangles(isogrid)
-
-        # Return triangles within and without
-        in_triangles, out_triangles = returnTriangleTypes(alltriangles, outlinedata)
-
-        edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
-        # edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)
-
-        final_in_triangles = in_triangles
-        final_in_triangles.extend(edge_triangles)
-
-        return TrianglesListToPaths(final_in_triangles)
-
-    def ApplyCollageGraphixxx(self, layer, groups, drawtype, linecomponents):
+    def ApplyGlitchCollage(self, layer, groups, linecomponents):
 
         for g in groups:
             if len(g) < 2:
                 continue
 
             templayer = GSLayer()
-            for path in g:
-                tp = path
-                templayer.paths.append(tp)
+            templayer.paths = g
             templayer.removeOverlap()
 
-            for p in templayer.paths:
+            linetype = False
+
+            for p in templayer.paths: 
+                
                 nodelen = len(p.nodes)
                 if nodelen < 4:
                     continue
 
                 roundedpath = RoundPath(p, "nodes")
                 roundedpath = convertToFitpath(roundedpath, True)
-                pathlist = ConvertPathsToSkeleton([roundedpath], 80)
-                outlinedata = setGlyphCoords(pathlist)
+                if not roundedpath:
+                    continue
 
-                if drawtype == "vertical" or drawtype == "horizontal":
-                    all_lines = Fill_Drawlines(
-                        layer, roundedpath, drawtype, 15, linecomponents
-                    )
-                    AddAllComponentsToLayer(all_lines, layer)
-
-                if drawtype == "blob":
-                    # disallow small blobs
-                    rw = roundedpath.bounds.size.width
-                    rh = roundedpath.bounds.size.height
-                    if (rw > 30 and rh > 30) and (rw < 200 or rh < 200):
+                if random.choice([0,1,2,3])==1:
+                    tr = random.choice([0,2])
+                    if tr==1:
+                        self.HalftoneShape(layer, p, "triangle")
+                    elif tr==0:
+                        self.HalftoneShape(layer, p, "square")
+                    else:
                         layer.paths.append(roundedpath)
+                else:
+                    if nodelen>9:
+                        
+                        if nodelen>20:
+                            noodlepaths = self.expandMonolineFromPathlist([roundedpath], 6)
+                            AddAllPathsToLayer(noodlepaths, layer)
+                        else:
+
+                            if random.choice([0,1])==0:
+
+                                if linetype==False:
+                                    direction="vertical"
+                                else:
+                                    direction="horizontal"
+
+                                linetype = not linetype
+                                linecomps = Fill_Drawlines(layer, roundedpath, direction, 15, linecomponents)
+                                AddAllComponentsToLayer(linecomps, layer)
+
+                            else:
+                                self.Fill_Halftone(layer, roundedpath, "circle")
+                    else:
+                        layer.paths.append(p)
 
             del templayer
+
+
+    def DrawlinesTile(self, outlinedata, tile, direction):
+
+        x, y, w, h = [int(el) for el in tile]
+        tilecoords = [[x, y], [x, y + h], [x + w, y + h], [x + w, y]]
+        lines = []
+        linecomponents = []
+        gap = 20
+        checkgap = 2
+
+        self.newline = []
+
+        def add_line(x2, y2):
+            if point_inside_polygon(x2, y2, outlinedata):
+                self.newline.append([x2, y2])
+            else:
+                if len(self.newline) > 1:
+                    lines.append(self.newline)
+                    self.newline = []
+
+        if direction == "horizontal":
+            for y2 in range(y, y + h + gap, gap):
+                for x2 in range(x, x + w, checkgap):
+                    print direction, x2, y2
+                    add_line(x2, y2)
+
+        if direction == "vertical":
+            for x2 in range(x, x + w + gap, gap):
+                for y2 in range(y, y + h, checkgap):
+                    print direction, x2, y2
+                    add_line(x2, y2)
+
+        for l in lines:
+            comp = returnLineComponent(
+                l[0],
+                l[-1],
+                direction,
+                [self.line_vertical_comp, self.line_horizontal_comp],
+                100,
+            )
+            linecomponents.append(comp)
+
+        return linecomponents
+
+
+    def HalftoneShape(self, thislayer, shape, shapetype):
+
+        t = shape
+        shapelist = PathToNodeList(t)
+
+        x = int (t.bounds.origin.x)
+        y = int (t.bounds.origin.y)
+        w = int (t.bounds.size.width)
+        h = int (t.bounds.size.height)
+
+        grid = 13
+        size = random.randrange(12, 24)
+
+        for col in range(x, x+w, grid):
+            for row in range(y, y+h, grid):
+                if point_inside_polygon(col, row, shapelist):
+                    nx = math.floor(col/grid) * grid
+                    ny = math.floor(row/grid) * grid
+                    if shapetype=="triangle":
+                        c = drawTriangle(nx, ny, size, size)
+                    elif shapetype=="circle":
+                        c = drawCircle(nx, ny, size, size)
+                    else:
+                        c = drawTriangle(nx, ny, size, size)
+                    thislayer.paths.append(c)
+            size+=0.3
+
+
+    def Fill_Halftone(self, thislayer, shape, shapetype):
+
+        t = shape
+        shapelist = PathToNodeList(t)
+
+        x = int (t.bounds.origin.x)
+        y = int (t.bounds.origin.y)
+        w = int (t.bounds.size.width)
+        h = int (t.bounds.size.height)
+
+        grid = 13
+        size = random.randrange(12, 24)
+        size = 8
+
+        for row in range(y, y+h, grid):
+            for col in range(x, x+w, grid):
+                if point_inside_polygon(col, row, shapelist):
+                    nx = math.floor(col/grid) * grid
+                    ny = math.floor(row/grid) * grid
+                    if row%2==0:
+                        adjust = grid/2
+                    else:
+                        adjust = 0
+                    c = drawCircle(nx+adjust, ny, size, size)
+                    thislayer.paths.append(c)
+            size+=0.1
 
 
 GlitchPop()

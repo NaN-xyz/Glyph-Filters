@@ -35,8 +35,9 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 
     waves = []
     searchstep = 2
+    step = 11
 
-    for y in range(ty, ty + th, 20):
+    for y in range(ty, ty + th, step):
         lines = []
         wave = []
 
@@ -53,6 +54,8 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 
         if lines:
             waves.append(lines)
+
+        step = random.randrange(5,20)
 
     wavepaths = []
     # draw the wave data in to paths
@@ -73,8 +76,8 @@ class Zebra(NaNFilter):
 
     def processLayer(self, thislayer, params):
         offsetpaths = self.saveOffsetPaths(thislayer, 0, 0, removeOverlap=True)
-        pathlist = ConvertPathsToSkeleton(offsetpaths, 20)
-        bounds = AllPathBoundsFromPathList(pathlist)
+        pathlist = ConvertPathsToSkeleton(offsetpaths, 40)
+        bounds = AllPathBoundsFromPathList(offsetpaths)
         outlinedata = setGlyphCoords(pathlist)
 
         wavepaths = NoiseWaves(
@@ -83,7 +86,12 @@ class Zebra(NaNFilter):
 
         ClearPaths(thislayer)
         wavepaths = ConvertPathlistDirection(wavepaths, -1)
+        
+        shifty = -20
+        for path in wavepaths: path.applyTransform((1, 0.0, 0.0, 1, 0, shifty))
+
         AddAllPathsToLayer(wavepaths, thislayer)
+
 
 
 Zebra()

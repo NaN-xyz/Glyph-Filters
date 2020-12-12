@@ -757,7 +757,7 @@ def isSizeBelowThreshold(thing, maxw, maxh):
 
 def AddAllComponentsToLayer(components, thislayer):
 	try:
-			thislayer.components.extend(components)
+		thislayer.components.extend(components)
 	except:
 		print("Couldn't add components to layer", thislayer)
 
@@ -844,6 +844,8 @@ def CreateLineComponent(font, direction, size, shapename):
 	#line = GSPath()
 	if direction=="vertical": line = drawRectangle(0,50,size,100)
 	if direction=="horizontal": line = drawRectangle(50,0,100,size)
+
+	path.correctDirection()
 
 	layer.paths.append(line)
 
@@ -986,6 +988,7 @@ def retractHandles(thisLayer):
 def SnapToGrid(lines, gridsize):
 	for line in lines:
 		for pt in line:
+			pt[0] = int(pt[0]/gridsize)*gridsize
 			pt[1] = int(pt[1]/gridsize)*gridsize
 
 	return lines

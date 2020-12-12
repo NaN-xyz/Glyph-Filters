@@ -10,6 +10,39 @@ from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
 
 
+
+class Puddles(NaNFilter):
+
+    params = {
+        "S": { "offset1": -15, "offset2": 20 , "offset3": 60 },
+        "M": { "offset1": -15, "offset2": 20 , "offset3": 60 },
+        "L": { "offset1": -15, "offset2": 20 , "offset3": 60 }
+    }
+
+    def processLayer(self, thislayer, params):
+
+        offset1, offset2, offset3 = params["offset1"], params["offset2"], params["offset3"]
+
+        offsetpaths = self.saveOffsetPaths(thislayer, offset1, offset1, removeOverlap=False)
+        pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
+        outlinedata = setGlyphCoords(pathlist)
+
+        offsetpaths = self.saveOffsetPaths(thislayer, offset2, offset2, removeOverlap=True)
+        pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
+        outlinedata3 = setGlyphCoords(pathlist)
+
+        offsetpaths = self.saveOffsetPaths(thislayer, offset3, offset3, removeOverlap=True)
+        pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
+        outlinedata4 = setGlyphCoords(pathlist)
+
+        ClearPaths(thislayer)
+
+        Toenail(thislayer, outlinedata, 30, 50, gap=4, thickness=25)
+        #Toenail(thislayer, outlinedata3, 40, 60, gap=100, thickness=20)
+        Toenail(thislayer, outlinedata4, 50, 70, gap=100, thickness=10)
+        thislayer.cleanUpPaths()
+        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
 def drawToenail(p1, p2, thickness):
     dist = distance(p1, p2)
 
@@ -81,30 +114,10 @@ def Toenail(thislayer, outlinedata, min_nail, max_nail, gap, thickness):
 
             variance = random.randrange(0, 10)
             toenail = drawToenail(pt2, pt1, thickness)
-            thislayer.paths.append(toenail)
 
-
-class Puddles(NaNFilter):
-    def processLayer(self, thislayer, params):
-        offsetpaths = self.saveOffsetPaths(thislayer, -10, -10, removeOverlap=False)
-        pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata = setGlyphCoords(pathlist)
-
-        offsetpaths = self.saveOffsetPaths(thislayer, 20, 20, removeOverlap=True)
-        pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata3 = setGlyphCoords(pathlist)
-
-        offsetpaths = self.saveOffsetPaths(thislayer, 60, 60, removeOverlap=True)
-        pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata4 = setGlyphCoords(pathlist)
-
-        ClearPaths(thislayer)
-
-        Toenail(thislayer, outlinedata, 30, 50, gap=4, thickness=25)
-        Toenail(thislayer, outlinedata3, 40, 60, gap=100, thickness=20)
-        Toenail(thislayer, outlinedata4, 50, 70, gap=100, thickness=10)
-        thislayer.cleanUpPaths()
-        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+            maxwh = 40
+            if toenail.bounds.size.width>maxwh and toenail.bounds.size.height>maxwh: 
+                thislayer.paths.append(toenail)
 
 
 Puddles()

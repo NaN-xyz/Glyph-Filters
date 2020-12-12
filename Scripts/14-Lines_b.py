@@ -57,8 +57,8 @@ def DrawlinesTile(thislayer, outlinedata, tile, direction):
 	tilecoords = [[x,y], [x,y+h], [x+w,y+h], [x+w,y]]
 	lines = []
 	linecomponents = []
-	gap = 20
-	checkgap = 2
+	gap = 18
+	checkgap = 3
 
 	if direction=="horizontal":
 		for y2 in range(y, y+h+gap, gap):
@@ -215,8 +215,8 @@ def LoopLines(thislayer, outlinedata):
 def OutputLines():
 
 	global line_vertical_comp, line_horizontal_comp
-	line_vertical_comp = CreateLineComponent(font, "vertical", 6, "LineVerticalComponent")
-	line_horizontal_comp = CreateLineComponent(font, "horizontal", 6, "LineHorizontalComponent")
+	line_vertical_comp = CreateLineComponent(font, "vertical", 8, "LineVerticalComponent")
+	line_horizontal_comp = CreateLineComponent(font, "horizontal", 8, "LineHorizontalComponent")
 
 	for glyph in selectedGlyphs:
 
@@ -249,7 +249,7 @@ def OutputLines():
 		outlinedata = setGlyphCoords(pathlist)
 
 		loopmask = LoopLines(thislayer, outlinedata)
-		loopmasklist = ConvertPathsToSkeleton(loopmask, 40)
+		loopmasklist = ConvertPathsToSkeleton(loopmask, 20)
 		outlinedata = setGlyphCoords(loopmasklist)
 
 		AddAllPathsToLayer(loopmask, thislayer)

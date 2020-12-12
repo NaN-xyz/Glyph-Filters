@@ -17,12 +17,14 @@ class Lines(NaNFilter):
         "L": {"offset": -20, "iterations": 420},
     }
 
+    strokesize = 8
+
     def setup(self):
         self.line_vertical_comp = CreateLineComponent(
-            self.font, "vertical", 2, "LineVerticalComponent"
+            self.font, "vertical", self.strokesize , "LineVerticalComponent"
         )
         self.line_horizontal_comp = CreateLineComponent(
-            self.font, "horizontal", 2, "LineHorizontalComponent"
+            self.font, "horizontal", self.strokesize , "LineHorizontalComponent"
         )
 
     def processLayer(self, thislayer, params):
@@ -56,8 +58,8 @@ class Lines(NaNFilter):
         tilecoords = [[x, y], [x, y + h], [x + w, y + h], [x + w, y]]
         lines = []
         linecomponents = []
-        gap = 20
-        checkgap = 2
+        gap = 18
+        checkgap = 3
 
         self.newline = []
 
@@ -80,6 +82,8 @@ class Lines(NaNFilter):
             for x2 in range(x, x + w + gap, gap):
                 for y2 in range(y, y + h, checkgap):
                     add_line(x2, y2)
+
+        lines = SnapToGrid(lines, self.strokesize )
 
         for l in lines:
             comp = returnLineComponent(
