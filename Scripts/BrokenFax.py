@@ -1,4 +1,4 @@
-#MenuTitle: 11. Broken Fax
+#MenuTitle: Broken Fax
 # -*- coding: utf-8 -*-
 __doc__="""
 Broken Fax

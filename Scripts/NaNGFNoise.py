@@ -34,34 +34,23 @@ def NoiseOutline(thislayer, outlinedata, noisevars=[0.03, 0, 20]):
 
 		while n < nodelen:
 
-			# x_noiz = abs ( snoise2( (n+seedy)*noisescale,(n+seedx)*noisescale, 4) )
 			x_noiz = pnoise1( (n+seedx)*noisescale, 3) 
 			x_size = noiseMap( x_noiz, minsize, maxsize )
 
 			y_noiz = pnoise1( ((1000+n)+seedy)*noisescale, 3) 
 			y_size = noiseMap( y_noiz, minsize, maxsize )
 
-			#print x_noiz #, x_size, y_size
-
 			xadjust = 0 + x_size
 			yadjust = 0 + y_size
 
-			# xadjust = 0 - (maxsize/2) + x_size
-			# yadjust = 0 - (maxsize/2) + y_size
-
 			x = structure[n][0] + xadjust
 			y = structure[n][1] + yadjust
-
-			#print x, y
 			newpath.append([x,y])
 
 			n+=1
 
-		#p = drawSimplePath(newpath)
-
 		p = convertToFitpath(newpath, True)
 		noisepaths.append(p) 
-		#thislayer.paths.append(p)
 
 	return noisepaths
 

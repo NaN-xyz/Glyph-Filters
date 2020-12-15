@@ -87,7 +87,7 @@ class Shatter(NaNFilter):
         ox, oy, w, h = bounds[0], bounds[1], bounds[2], bounds[3]
         starty = oy
         y = oy
-        dist = 2000
+        dist = thislayer.width*3
         sh = 0
 
         angle = self.angle + random.randrange(-5,5)

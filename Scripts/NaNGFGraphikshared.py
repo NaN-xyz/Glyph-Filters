@@ -19,6 +19,10 @@ def ClearPaths(thislayer):
 	"""Removes all paths in a layer, leaving anchors and components in place"""
 	thislayer.paths = []
 
+def ShiftAllPaths(paths, variance, type):
+	for path in paths:
+		ShiftPath(path, variance, type)
+
 def ShiftPath(path, variance, type):
 	"""Shifts a path by a random amount in x, y or both directions."""
 	shiftx = random.uniform(variance * -0.5, variance)
@@ -844,8 +848,6 @@ def CreateLineComponent(font, direction, size, shapename):
 	#line = GSPath()
 	if direction=="vertical": line = drawRectangle(0,50,size,100)
 	if direction=="horizontal": line = drawRectangle(50,0,100,size)
-
-	path.correctDirection()
 
 	layer.paths.append(line)
 

@@ -23,6 +23,7 @@ class Scribble(NaNFilter):
 
     def processLayer(self, thislayer, params):
 
+        thislayer.removeOverlap()
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(thislayer.paths, 20))
 
         ClearPaths(thislayer)

@@ -20,6 +20,7 @@ class Iso(NaNFilter):
 	}
 
 	def processLayer(self, thislayer, params):
+		thislayer.removeOverlap()
 		pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
 		outlinedata = setGlyphCoords(pathlist)
 		bounds = AllPathBounds(thislayer)

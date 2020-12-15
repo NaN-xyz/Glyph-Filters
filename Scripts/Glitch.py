@@ -6,8 +6,6 @@ Glitch
 
 import GlyphsApp
 from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
 
@@ -27,6 +25,7 @@ class Glitch(NaNFilter):
     def processLayer(self, thislayer, params):
 
         maxshift = params["maxshift"]
+        thislayer.removeOverlap()
         paths = copy.copy(thislayer.paths)
         ClearPaths(thislayer)
        

@@ -13,8 +13,8 @@ from NaNCommonFilters import moonrocks
 class Microbe(NaNFilter):
     params = {
         "S": {"offset": 15, "iterations": 25000,  "maxsize":  40},
-        "M": {"offset": 0,  "iterations": 70000,  "maxsize": 100},
-        "L": {"offset": 0,  "iterations": 100000, "maxsize": 140},
+        "M": {"offset": 0,  "iterations": 70000,  "maxsize": 75},
+        "L": {"offset": 0,  "iterations": 100000, "maxsize": 100},
     }
 
     def processLayer(self, thislayer, params):
