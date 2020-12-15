@@ -10,8 +10,8 @@ Scripts are provided under the Apache 2.0 Licence, see [Apache.txt](Apache.txt) 
 
 [NaN](http://www.nan.xyz) is a Berlin-based _undefined_
 
-Code review by [Simon Cozens](http://www.corvelsoftware.co.uk)
-Website developed by [Underscore Type](https://underscoretype.com)
+Code review by [Simon Cozens](http://www.corvelsoftware.co.uk)\
+Website developed by [Underscore Type](https://underscoretype.com)\
 Rubik source fonts by [Hubert and Fischer](https://hubertfischer.com/)
 
 Questions, comments, requests, suggestions: info@nan.xyz
