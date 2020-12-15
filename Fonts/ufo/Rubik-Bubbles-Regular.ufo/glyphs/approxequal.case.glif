@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="approxequal.case" format="2">
+	<advance width="559"/>
+	<outline>
+		<contour>
+			<point x="340.682" y="388.839" type="curve"/>
+			<point x="431.632" y="351.689"/>
+			<point x="516.632" y="450.689"/>
+			<point x="479" y="483" type="curve"/>
+			<point x="545.329" y="502.014"/>
+			<point x="527.884" y="562.867"/>
+			<point x="461.556" y="543.853" type="curve"/>
+			<point x="448.809" y="608.61"/>
+			<point x="354.096" y="589.967"/>
+			<point x="366.843" y="525.21" type="curve"/>
+			<point x="381.344" y="588.572"/>
+			<point x="290.501" y="609.362"/>
+			<point x="276" y="546" type="curve"/>
+			<point x="287.937" y="605.821"/>
+			<point x="189.121" y="625.54"/>
+			<point x="177.183" y="565.719" type="curve"/>
+			<point x="157.705" y="610.463"/>
+			<point x="61.574" y="568.614"/>
+			<point x="81.053" y="523.87" type="curve"/>
+			<point x="24.112" y="526.475"/>
+			<point x="22.06" y="481.605"/>
+			<point x="79" y="479" type="curve"/>
+			<point x="23" y="479"/>
+			<point x="23" y="398.523"/>
+			<point x="79" y="398.523" type="curve"/>
+			<point x="89.115" y="350.783"/>
+			<point x="209.286" y="376.243"/>
+			<point x="199.171" y="423.983" type="curve"/>
+			<point x="186.445" y="372.74"/>
+			<point x="327.955" y="337.595"/>
+		</contour>
+		<contour>
+			<point x="356.656" y="136.338" type="curve"/>
+			<point x="404.234" y="77.926"/>
+			<point x="452.607" y="86.755"/>
+			<point x="442.373" y="142.829" type="curve"/>
+			<point x="483.139" y="126.27"/>
+			<point x="519.765" y="216.442"/>
+			<point x="479" y="233" type="curve"/>
+			<point x="538" y="233"/>
+			<point x="538" y="273"/>
+			<point x="479" y="273" type="curve"/>
+			<point x="535.278" y="296.533"/>
+			<point x="524.679" y="321.878"/>
+			<point x="468.402" y="298.345" type="curve"/>
+			<point x="447.78" y="341.69"/>
+			<point x="407.284" y="322.424"/>
+			<point x="427.906" y="279.079" type="curve"/>
+			<point x="431.207" y="320.548"/>
+			<point x="299.233" y="331.053"/>
+			<point x="295.932" y="289.584" type="curve"/>
+			<point x="304.016" y="332.835"/>
+			<point x="163.839" y="359.037"/>
+			<point x="155.754" y="315.786" type="curve"/>
+			<point x="128.19" y="357.98"/>
+			<point x="51.715" y="308.023"/>
+			<point x="79.279" y="265.828" type="curve"/>
+			<point x="22.702" y="258.897"/>
+			<point x="36.406" y="147.029"/>
+			<point x="92.983" y="153.959" type="curve"/>
+			<point x="110.369" y="95.489"/>
+			<point x="184.414" y="117.506"/>
+			<point x="167.028" y="175.976" type="curve"/>
+			<point x="157.553" y="124.847"/>
+			<point x="267.94" y="104.391"/>
+			<point x="277.415" y="155.521" type="curve"/>
+			<point x="262.122" y="92.345"/>
+			<point x="341.363" y="73.163"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>299</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

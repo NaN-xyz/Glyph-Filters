@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="sindot-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05C2"/>
+	<anchor x="-70" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="141" y="604" type="line"/>
+			<point x="112" y="605" type="line"/>
+			<point x="97" y="602" type="line"/>
+			<point x="76" y="578" type="line"/>
+			<point x="79" y="563" type="line"/>
+			<point x="82" y="546" type="line"/>
+			<point x="79" y="531" type="line"/>
+			<point x="75" y="515" type="line"/>
+			<point x="98" y="493" type="line"/>
+			<point x="127" y="488" type="line"/>
+			<point x="147" y="493" type="line"/>
+			<point x="161" y="493" type="line"/>
+			<point x="183" y="529" type="line"/>
+			<point x="181" y="545" type="line"/>
+			<point x="185" y="576" type="line"/>
+		</contour>
+		<contour>
+			<point x="114" y="563" type="line"/>
+			<point x="114" y="569" type="line"/>
+			<point x="121" y="566" type="line"/>
+			<point x="116" y="566" type="line"/>
+		</contour>
+		<contour>
+			<point x="113" y="554" type="line"/>
+			<point x="104" y="553" type="line"/>
+			<point x="99" y="561" type="line"/>
+			<point x="117" y="562" type="line"/>
+		</contour>
+		<contour>
+			<point x="116" y="542" type="line"/>
+			<point x="116" y="534" type="line"/>
+			<point x="109" y="528" type="line"/>
+			<point x="100" y="531" type="line"/>
+			<point x="105" y="546" type="line"/>
+			<point x="113" y="548" type="line"/>
+			<point x="119" y="540" type="line"/>
+			<point x="123" y="532" type="line"/>
+			<point x="116" y="535" type="line"/>
+		</contour>
+		<contour>
+			<point x="105" y="515" type="line"/>
+			<point x="117" y="527" type="line"/>
+			<point x="114" y="517" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

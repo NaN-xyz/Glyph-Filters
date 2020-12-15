@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy.case" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="358" name="_center"/>
+	<outline>
+		<contour>
+			<point x="194.719" y="514" type="line"/>
+			<point x="165.719" y="519" type="line"/>
+			<point x="168.719" y="532" type="line"/>
+			<point x="141.719" y="505" type="line"/>
+			<point x="141.719" y="269" type="line"/>
+			<point x="149.719" y="251" type="line"/>
+			<point x="171.719" y="266" type="line"/>
+			<point x="177.719" y="237" type="line"/>
+			<point x="192.719" y="280" type="line"/>
+			<point x="194.719" y="302" type="line"/>
+			<point x="207.719" y="288.667" type="line"/>
+			<point x="204.719" y="335" type="line"/>
+			<point x="184.719" y="370" type="line"/>
+			<point x="207.719" y="367.333" type="line"/>
+			<point x="207.719" y="426.333" type="line"/>
+			<point x="192.719" y="397" type="line"/>
+			<point x="182.719" y="423" type="line"/>
+			<point x="207.719" y="426.333" type="line"/>
+			<point x="207.719" y="505" type="line"/>
+			<point x="199.966" y="524.002" type="line"/>
+		</contour>
+		<contour>
+			<point x="166.445" y="367.333" type="line"/>
+			<point x="163.445" y="335" type="line"/>
+			<point x="166.445" y="328" type="line"/>
+		</contour>
+		<contour>
+			<point x="165.699" y="288.667" type="line"/>
+			<point x="150.699" y="280" type="line"/>
+			<point x="165.699" y="269" type="line"/>
+		</contour>
+		<contour>
+			<point x="160.565" y="536.614" type="line"/>
+			<point x="148.565" y="536.614" type="line"/>
+			<point x="145.565" y="523.614" type="line"/>
+			<point x="174.565" y="518.614" type="line"/>
+			<point x="179.812" y="528.616" type="line"/>
+		</contour>
+		<contour>
+			<point x="167.367" y="441.493" type="line"/>
+			<point x="142.367" y="438.16" type="line"/>
+			<point x="152.367" y="412.16" type="line"/>
+		</contour>
+		<contour>
+			<point x="168.33" y="332.833" type="line"/>
+			<point x="171.33" y="365.166" type="line"/>
+			<point x="148.33" y="367.833" type="line"/>
+		</contour>
+		<contour>
+			<point x="143.368" y="325.181" type="line"/>
+			<point x="146.368" y="278.848" type="line"/>
+			<point x="146.368" y="318.181" type="line"/>
+		</contour>
+		<contour>
+			<point x="210.283" y="292.33" type="line"/>
+			<point x="197.283" y="305.663" type="line"/>
+			<point x="195.283" y="283.663" type="line"/>
+		</contour>
+		<contour>
+			<point x="120.869" y="232.002" type="line"/>
+			<point x="112.869" y="250.002" type="line"/>
+			<point x="112.869" y="191.002" type="line"/>
+			<point x="120.622" y="172" type="line"/>
+			<point x="151.869" y="164.002" type="line"/>
+			<point x="170.871" y="171.755" type="line"/>
+			<point x="178.869" y="210.669" type="line"/>
+			<point x="178.869" y="250.002" type="line"/>
+			<point x="163.869" y="261.002" type="line"/>
+			<point x="148.869" y="218.002" type="line"/>
+			<point x="142.869" y="247.002" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

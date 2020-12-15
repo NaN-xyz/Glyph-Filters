@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="sheva-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B0"/>
+	<anchor x="1" y="0" name="_bottom"/>
+	<outline>
+		<component base="CircleShape" xScale="0.0607" yScale="0.0607" xOffset="-38" yOffset="-286"/>
+		<component base="CircleShape" xScale="0.0613" yScale="0.0613" xOffset="-38" yOffset="-266"/>
+		<component base="CircleShape" xScale="0.0619" yScale="0.0619" xOffset="-38" yOffset="-246"/>
+		<component base="CircleShape" xScale="0.0625" yScale="0.0625" xOffset="-38" yOffset="-226"/>
+		<component base="CircleShape" xScale="0.0631" yScale="0.0631" xOffset="-38" yOffset="-206"/>
+		<component base="RectangleShape" xScale="0.0608" yScale="0.0608" xOffset="-18" yOffset="-286"/>
+		<component base="RectangleShape" xScale="0.0614" yScale="0.0614" xOffset="-18" yOffset="-266"/>
+		<component base="RectangleShape" xScale="0.062" yScale="0.062" xOffset="-18" yOffset="-246"/>
+		<component base="RectangleShape" xScale="0.0626" yScale="0.0626" xOffset="-18" yOffset="-226"/>
+		<component base="RectangleShape" xScale="0.0632" yScale="0.0632" xOffset="-18" yOffset="-206"/>
+		<component base="CircleShape" xScale="0.1009" yScale="0.1009" xOffset="2" yOffset="-286"/>
+		<component base="CircleShape" xScale="0.1015" yScale="0.1015" xOffset="2" yOffset="-266"/>
+		<component base="CircleShape" xScale="0.1021" yScale="0.1021" xOffset="2" yOffset="-246"/>
+		<component base="RectangleShape" xScale="0.1027" yScale="0.1027" xOffset="2" yOffset="-226"/>
+		<component base="RectangleShape" xScale="0.1033" yScale="0.1033" xOffset="2" yOffset="-206"/>
+		<component base="CircleShape" xScale="0.121" yScale="0.121" xOffset="22" yOffset="-286"/>
+		<component base="CircleShape" xScale="0.1216" yScale="0.1216" xOffset="22" yOffset="-266"/>
+		<component base="CircleShape" xScale="0.1222" yScale="0.1222" xOffset="22" yOffset="-246"/>
+		<component base="CircleShape" xScale="0.1228" yScale="0.1228" xOffset="22" yOffset="-226"/>
+		<component base="DiamondShape" xScale="0.1411" yScale="0.1411" xOffset="42" yOffset="-286"/>
+		<component base="DiamondShape" xScale="0.1417" yScale="0.1417" xOffset="42" yOffset="-266"/>
+		<component base="DiamondShape" xScale="0.1423" yScale="0.1423" xOffset="42" yOffset="-246"/>
+		<component base="DiamondShape" xScale="0.1429" yScale="0.1429" xOffset="42" yOffset="-226"/>
+		<component base="CircleShape" xScale="0.1034" yScale="0.1034" xOffset="22" yOffset="-206"/>
+		<component base="CircleShape" xScale="0.1035" yScale="0.1035" xOffset="42" yOffset="-206"/>
+		<component base="CircleShape" xScale="0.1043" yScale="0.1043" xOffset="-38" yOffset="-166"/>
+		<component base="CircleShape" xScale="0.1044" yScale="0.1044" xOffset="-18" yOffset="-166"/>
+		<component base="CircleShape" xScale="0.1049" yScale="0.1049" xOffset="-38" yOffset="-146"/>
+		<component base="CircleShape" xScale="0.105" yScale="0.105" xOffset="-18" yOffset="-146"/>
+		<component base="CircleShape" xScale="0.1055" yScale="0.1055" xOffset="-38" yOffset="-126"/>
+		<component base="CircleShape" xScale="0.1056" yScale="0.1056" xOffset="-18" yOffset="-126"/>
+		<component base="RectangleShape" xScale="0.0545" yScale="0.0545" xOffset="2" yOffset="-166"/>
+		<component base="RectangleShape" xScale="0.0551" yScale="0.0551" xOffset="2" yOffset="-146"/>
+		<component base="RectangleShape" xScale="0.0557" yScale="0.0557" xOffset="2" yOffset="-126"/>
+		<component base="TriangleShape" xScale="0.0446" yScale="0.0446" xOffset="22" yOffset="-166"/>
+		<component base="TriangleShape" xScale="0.0452" yScale="0.0452" xOffset="22" yOffset="-146"/>
+		<component base="DiamondShape" xScale="0.1458" yScale="0.1458" xOffset="22" yOffset="-126"/>
+		<component base="TriangleShape" xScale="0.0847" yScale="0.0847" xOffset="42" yOffset="-166"/>
+		<component base="TriangleShape" xScale="0.0853" yScale="0.0853" xOffset="42" yOffset="-146"/>
+		<component base="CircleShape" xScale="0.0459" yScale="0.0459" xOffset="42" yOffset="-126"/>
+		<component base="RectangleShape" xScale="0.1061" yScale="0.1061" xOffset="-38" yOffset="-106"/>
+		<component base="RectangleShape" xScale="0.1062" yScale="0.1062" xOffset="-18" yOffset="-106"/>
+		<component base="RectangleShape" xScale="0.1067" yScale="0.1067" xOffset="-38" yOffset="-86"/>
+		<component base="RectangleShape" xScale="0.1068" yScale="0.1068" xOffset="-18" yOffset="-86"/>
+		<component base="RectangleShape" xScale="0.1463" yScale="0.1463" xOffset="2" yOffset="-106"/>
+		<component base="RectangleShape" xScale="0.1469" yScale="0.1469" xOffset="2" yOffset="-86"/>
+		<component base="TriangleShape" xScale="0.0864" yScale="0.0864" xOffset="22" yOffset="-106"/>
+		<component base="TriangleShape" xScale="0.0865" yScale="0.0865" xOffset="42" yOffset="-106"/>
+		<component base="TriangleShape" xScale="0.087" yScale="0.087" xOffset="22" yOffset="-86"/>
+		<component base="TriangleShape" xScale="0.0871" yScale="0.0871" xOffset="42" yOffset="-86"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

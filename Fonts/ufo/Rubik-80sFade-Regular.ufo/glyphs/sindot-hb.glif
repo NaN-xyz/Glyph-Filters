@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="sindot-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05C2"/>
+	<anchor x="-70" y="415" name="_topleft"/>
+	<outline>
+		<component base="DiamondShape" xScale="0.1307" yScale="0.1307" xOffset="96" yOffset="513"/>
+		<component base="DiamondShape" xScale="0.1308" yScale="0.1308" xOffset="116" yOffset="513"/>
+		<component base="DiamondShape" xScale="0.1313" yScale="0.1313" xOffset="96" yOffset="533"/>
+		<component base="DiamondShape" xScale="0.1314" yScale="0.1314" xOffset="116" yOffset="533"/>
+		<component base="DiamondShape" xScale="0.1319" yScale="0.1319" xOffset="96" yOffset="553"/>
+		<component base="DiamondShape" xScale="0.132" yScale="0.132" xOffset="116" yOffset="553"/>
+		<component base="CircleShape" xScale="0.1109" yScale="0.1109" xOffset="136" yOffset="513"/>
+		<component base="RectangleShape" xScale="0.1315" yScale="0.1315" xOffset="136" yOffset="533"/>
+		<component base="CircleShape" xScale="0.1321" yScale="0.1321" xOffset="136" yOffset="553"/>
+		<component base="TriangleShape" xScale="0.041" yScale="0.041" xOffset="156" yOffset="513"/>
+		<component base="TriangleShape" xScale="0.0416" yScale="0.0416" xOffset="156" yOffset="533"/>
+		<component base="CircleShape" xScale="0.0911" yScale="0.0911" xOffset="176" yOffset="513"/>
+		<component base="CircleShape" xScale="0.0917" yScale="0.0917" xOffset="176" yOffset="533"/>
+		<component base="TriangleShape" xScale="0.0622" yScale="0.0622" xOffset="156" yOffset="553"/>
+		<component base="TriangleShape" xScale="0.0623" yScale="0.0623" xOffset="176" yOffset="553"/>
+		<component base="TriangleShape" xScale="0.0725" yScale="0.0725" xOffset="96" yOffset="573"/>
+		<component base="TriangleShape" xScale="0.0726" yScale="0.0726" xOffset="116" yOffset="573"/>
+		<component base="TriangleShape" xScale="0.0727" yScale="0.0727" xOffset="136" yOffset="573"/>
+		<component base="TriangleShape" xScale="0.0628" yScale="0.0628" xOffset="156" yOffset="573"/>
+		<component base="TriangleShape" xScale="0.0629" yScale="0.0629" xOffset="176" yOffset="573"/>
+		<component base="DiamondShape" xScale="0.0431" yScale="0.0431" xOffset="96" yOffset="593"/>
+		<component base="DiamondShape" xScale="0.1332" yScale="0.1332" xOffset="116" yOffset="593"/>
+		<component base="TriangleShape" xScale="0.1033" yScale="0.1033" xOffset="136" yOffset="593"/>
+		<component base="TriangleShape" xScale="0.1034" yScale="0.1034" xOffset="156" yOffset="593"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

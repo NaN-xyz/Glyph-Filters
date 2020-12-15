@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="asciicircum" format="2">
+	<advance width="492"/>
+	<unicode hex="005E"/>
+	<outline>
+		<contour>
+			<point x="51.882" y="620" type="curve"/>
+			<point x="133.505" y="566.441"/>
+			<point x="229.988" y="601.579"/>
+			<point x="210.483" y="655.138" type="curve"/>
+			<point x="217.029" y="596.502"/>
+			<point x="273.857" y="602.847"/>
+			<point x="267.31" y="661.483" type="curve"/>
+			<point x="245.553" y="603.426"/>
+			<point x="356.242" y="561.943"/>
+			<point x="378" y="620" type="curve"/>
+			<point x="378" y="563"/>
+			<point x="440.118" y="563"/>
+			<point x="440.118" y="620" type="curve"/>
+			<point x="475.993" y="666.84"/>
+			<point x="425.447" y="705.554"/>
+			<point x="389.571" y="658.714" type="curve"/>
+			<point x="427.128" y="693.218"/>
+			<point x="392.152" y="731.289"/>
+			<point x="354.595" y="696.786" type="curve"/>
+			<point x="374.173" y="742.359"/>
+			<point x="273.577" y="785.573"/>
+			<point x="254" y="740" type="curve"/>
+			<point x="241.507" y="793.768"/>
+			<point x="143.746" y="771.054"/>
+			<point x="156.238" y="717.286" type="curve"/>
+			<point x="109.108" y="760.584"/>
+			<point x="55.298" y="702.013"/>
+			<point x="102.429" y="658.714" type="curve"/>
+			<point x="64.121" y="708.73"/>
+			<point x="13.575" y="670.015"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>575</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>705</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

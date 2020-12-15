@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="macron" format="2">
+	<advance width="473"/>
+	<unicode hex="00AF"/>
+	<outline>
+		<component base="pixel0" xOffset="72" yOffset="617"/>
+		<component base="pixel0" xOffset="72" yOffset="657"/>
+		<component base="pixel1" xOffset="72" yOffset="697"/>
+		<component base="pixel1" xOffset="112" yOffset="617"/>
+		<component base="pixel0" xOffset="112" yOffset="657"/>
+		<component base="pixel0" xOffset="112" yOffset="697"/>
+		<component base="pixel0" xOffset="152" yOffset="617"/>
+		<component base="pixel1" xOffset="152" yOffset="657"/>
+		<component base="pixel0" xOffset="152" yOffset="697"/>
+		<component base="pixel0" xOffset="192" yOffset="617"/>
+		<component base="pixel1" xOffset="192" yOffset="657"/>
+		<component base="pixel1" xOffset="192" yOffset="697"/>
+		<component base="pixel1" xOffset="232" yOffset="617"/>
+		<component base="pixel1" xOffset="232" yOffset="657"/>
+		<component base="pixel1" xOffset="232" yOffset="697"/>
+		<component base="pixel0" xOffset="272" yOffset="617"/>
+		<component base="pixel1" xOffset="272" yOffset="657"/>
+		<component base="pixel0" xOffset="272" yOffset="697"/>
+		<component base="pixel1" xOffset="312" yOffset="617"/>
+		<component base="pixel1" xOffset="312" yOffset="657"/>
+		<component base="pixel1" xOffset="312" yOffset="697"/>
+		<component base="pixel0" xOffset="352" yOffset="617"/>
+		<component base="pixel0" xOffset="352" yOffset="657"/>
+		<component base="pixel1" xOffset="352" yOffset="697"/>
+		<component base="pixel1" xOffset="392" yOffset="617"/>
+		<component base="pixel1" xOffset="392" yOffset="657"/>
+		<component base="pixel1" xOffset="392" yOffset="697"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>595</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

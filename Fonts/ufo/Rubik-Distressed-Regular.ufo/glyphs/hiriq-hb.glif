@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hiriq-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B4"/>
+	<anchor x="1" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="32.968" y="-41.806" type="line"/>
+			<point x="-40.032" y="-41.806" type="line"/>
+			<point x="-62.032" y="-63.806" type="line"/>
+			<point x="-62.032" y="-126.806" type="line"/>
+			<point x="-56.032" y="-109.806" type="line"/>
+			<point x="-34.032" y="-122.806" type="line"/>
+			<point x="-21.782" y="-148.806" type="line"/>
+			<point x="32.968" y="-148.806" type="line"/>
+			<point x="54.968" y="-126.806" type="line"/>
+			<point x="53.968" y="-119.806" type="line"/>
+			<point x="37.968" y="-86.806" type="line"/>
+			<point x="54.968" y="-95.306" type="line"/>
+			<point x="54.968" y="-63.806" type="line"/>
+		</contour>
+		<contour>
+			<point x="-52" y="-152.182" type="line"/>
+			<point x="-58" y="-169.182" type="line"/>
+			<point x="-36" y="-191.182" type="line"/>
+			<point x="-17.75" y="-191.182" type="line"/>
+			<point x="-30" y="-165.182" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

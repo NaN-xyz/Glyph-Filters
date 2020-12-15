@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="eightinferior" format="2">
+	<advance width="368"/>
+	<unicode hex="2088"/>
+	<outline>
+		<contour>
+			<point x="136.69" y="-166.455" type="curve"/>
+			<point x="187.664" y="-199.635"/>
+			<point x="274.828" y="-185.918"/>
+			<point x="270.164" y="-156.282" type="curve"/>
+			<point x="291.239" y="-174.718"/>
+			<point x="359.212" y="-97.014"/>
+			<point x="338.138" y="-78.579" type="curve"/>
+			<point x="369.575" y="-68.544"/>
+			<point x="345.266" y="7.613"/>
+			<point x="313.828" y="-2.422" type="curve"/>
+			<point x="346.756" y="-4.61"/>
+			<point x="349.785" y="40.978"/>
+			<point x="316.858" y="43.166" type="curve"/>
+			<point x="345.27" y="47.877"/>
+			<point x="328.837" y="146.984"/>
+			<point x="300.425" y="142.273" type="curve"/>
+			<point x="314.176" y="171.168"/>
+			<point x="242.807" y="205.132"/>
+			<point x="229.056" y="176.238" type="curve"/>
+			<point x="227.441" y="210.199"/>
+			<point x="113.271" y="204.772"/>
+			<point x="114.886" y="170.81" type="curve"/>
+			<point x="91.431" y="199.426"/>
+			<point x="24.622" y="144.667"/>
+			<point x="48.077" y="116.051" type="curve"/>
+			<point x="20.448" y="111.507"/>
+			<point x="35.655" y="19.045"/>
+			<point x="63.283" y="23.589" type="curve"/>
+			<point x="28.511" y="38.914"/>
+			<point x="-5.304" y="-37.814"/>
+			<point x="29.469" y="-53.138" type="curve"/>
+			<point x="-2.071" y="-62.847"/>
+			<point x="20.041" y="-134.677"/>
+			<point x="51.58" y="-124.968" type="curve"/>
+			<point x="35.368" y="-158.227"/>
+			<point x="120.478" y="-199.714"/>
+		</contour>
+		<contour>
+			<point x="203.242" y="48.092" type="curve"/>
+			<point x="203.449" y="50.669"/>
+			<point x="183.677" y="103.39"/>
+			<point x="163.228" y="95.72" type="curve"/>
+			<point x="162.323" y="75.02"/>
+			<point x="205.407" y="73.136"/>
+			<point x="206.312" y="93.837" type="curve"/>
+			<point x="189.55" y="94.962"/>
+			<point x="186.479" y="49.217"/>
+		</contour>
+		<contour>
+			<point x="218.703" y="-58.455" type="curve"/>
+			<point x="195.456" y="-76.747"/>
+			<point x="158.783" y="-50.27"/>
+			<point x="146.327" y="-67.524" type="curve"/>
+			<point x="162.717" y="-81.959"/>
+			<point x="194.705" y="-45.638"/>
+			<point x="178.315" y="-31.204" type="curve"/>
+			<point x="166.725" y="-48.379"/>
+			<point x="207.114" y="-75.631"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>710</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>88</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-170</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>30</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>308</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

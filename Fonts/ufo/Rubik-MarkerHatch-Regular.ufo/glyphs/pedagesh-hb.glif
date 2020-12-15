@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="pedagesh-hb" format="2">
+	<advance width="597"/>
+	<unicode hex="FB44"/>
+	<anchor x="310" y="260" name="center"/>
+	<anchor x="280" y="520" name="top"/>
+	<anchor x="30" y="0" name="bottomleft"/>
+	<anchor x="30" y="520" name="topleft"/>
+	<anchor x="280" y="0" name="bottom"/>
+	<outline>
+		<contour>
+			<point x="335.881" y="270.234" type="line"/>
+			<point x="342.094" y="281.674" type="line"/>
+			<point x="329.701" y="284.585" type="line"/>
+			<point x="326.732" y="270.449" type="line"/>
+			<point x="326.535" y="264.562" type="line"/>
+		</contour>
+		<contour>
+			<point x="286.158" y="294.273" type="line"/>
+			<point x="282.019" y="271.788" type="line"/>
+			<point x="282.643" y="263.908" type="line"/>
+			<point x="290.222" y="260.066" type="line"/>
+			<point x="297.8" y="256.223" type="line"/>
+			<point x="304.765" y="265.992" type="line"/>
+			<point x="309.99" y="273.319" type="line"/>
+			<point x="311.333" y="286.596" type="line"/>
+			<point x="312.138" y="294.562" type="line"/>
+			<point x="305.186" y="300.108" type="line"/>
+			<point x="298.233" y="305.655" type="line"/>
+		</contour>
+		<component base="pe-hb"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>kaf-hb</string>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>70</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

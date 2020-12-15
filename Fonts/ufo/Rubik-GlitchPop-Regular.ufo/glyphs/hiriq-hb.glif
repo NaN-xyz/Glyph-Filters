@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hiriq-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B4"/>
+	<anchor x="1" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="-53.5" y="-113.966" type="curve"/>
+			<point x="-54.551" y="-116.663" type="line"/>
+			<point x="-54.727" y="-123.534"/>
+			<point x="-55.964" y="-131.288"/>
+			<point x="-55.102" y="-138.095" type="curve"/>
+			<point x="-54.567" y="-142.311"/>
+			<point x="-52.612" y="-146.788"/>
+			<point x="-51.44" y="-150.88" type="curve"/>
+			<point x="-50.809" y="-153.082"/>
+			<point x="-50.429" y="-156.603"/>
+			<point x="-49.243" y="-158.551" type="curve"/>
+			<point x="-47.128" y="-162.023"/>
+			<point x="-42.28" y="-165.225"/>
+			<point x="-39.329" y="-168.054" type="curve"/>
+			<point x="-37.561" y="-169.748"/>
+			<point x="-35.486" y="-172.519"/>
+			<point x="-33.381" y="-173.755" type="curve"/>
+			<point x="-25.742" y="-178.242"/>
+			<point x="-13.386" y="-179.949"/>
+			<point x="-4.773" y="-180.085" type="curve"/>
+			<point x="6.077" y="-180.257"/>
+			<point x="19.39" y="-180.129"/>
+			<point x="29.471" y="-175.285" type="curve"/>
+			<point x="42.096" y="-169.22"/>
+			<point x="52.615" y="-154.808"/>
+			<point x="55.575" y="-141.247" type="curve"/>
+			<point x="56.285" y="-137.995"/>
+			<point x="55.576" y="-133.706"/>
+			<point x="55.576" y="-130.366" type="curve"/>
+			<point x="55.578" y="-112.903"/>
+			<point x="49.089" y="-93.468"/>
+			<point x="33.088" y="-83.945" type="curve"/>
+			<point x="30.326" y="-82.302"/>
+			<point x="26.059" y="-81.694"/>
+			<point x="22.986" y="-80.71" type="curve"/>
+			<point x="9.043" y="-76.243"/>
+			<point x="-4.824" y="-75.973"/>
+			<point x="-19.051" y="-79.402" type="curve"/>
+			<point x="-22.207" y="-80.163"/>
+			<point x="-26.432" y="-80.468"/>
+			<point x="-29.343" y="-81.883" type="curve"/>
+			<point x="-33.929" y="-84.112"/>
+			<point x="-43.162" y="-90.976"/>
+			<point x="-46.145" y="-95.091" type="curve"/>
+			<point x="-49.685" y="-99.975"/>
+			<point x="-51.299" y="-108.317"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

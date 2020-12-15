@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="comma" format="2">
+	<advance width="303"/>
+	<unicode hex="002C"/>
+	<outline>
+		<contour>
+			<point x="163.54" y="63.73" type="line"/>
+			<point x="134.64" y="-7.705" type="line"/>
+			<point x="130.024" y="-29.737" type="line"/>
+			<point x="129.252" y="-38.673" type="line"/>
+			<point x="134.288" y="-44.734" type="line"/>
+			<point x="142.682" y="-54.836" type="line"/>
+			<point x="147.986" y="-54.715" type="line"/>
+			<point x="163.895" y="-54.351" type="line"/>
+			<point x="172.907" y="-48.862" type="line"/>
+			<point x="204.645" y="-7.918" type="line"/>
+			<point x="232.316" y="61.477" type="line"/>
+			<point x="273.847" y="168.335" type="line"/>
+			<point x="280.38" y="203.151" type="line"/>
+			<point x="280.325" y="212.054" type="line"/>
+			<point x="275.351" y="219.277" type="line"/>
+			<point x="268.72" y="228.907" type="line"/>
+			<point x="259.91" y="229.157" type="line"/>
+			<point x="248.163" y="229.491" type="line"/>
+			<point x="241.731" y="224.592" type="line"/>
+			<point x="231.011" y="216.427" type="line"/>
+			<point x="222.616" y="202.774" type="line"/>
+			<point x="200.102" y="151.875" type="line"/>
+		</contour>
+		<contour>
+			<point x="70.933" y="-5.609" type="line"/>
+			<point x="55.773" y="-48.47" type="line"/>
+			<point x="53.721" y="-61.918" type="line"/>
+			<point x="64.655" y="-71.614" type="line"/>
+			<point x="89.003" y="-64.637" type="line"/>
+			<point x="96.873" y="-53.897" type="line"/>
+			<point x="121.46" y="-3.769" type="line"/>
+			<point x="175.283" y="126.013" type="line"/>
+			<point x="190.363" y="176.812" type="line"/>
+			<point x="189.877" y="190.245" type="line"/>
+			<point x="182.5" y="194.109" type="line"/>
+			<point x="172.664" y="199.262" type="line"/>
+			<point x="163.768" y="192.868" type="line"/>
+			<point x="154.871" y="186.474" type="line"/>
+			<point x="143.716" y="167.993" type="line"/>
+			<point x="116.636" y="104.573" type="line"/>
+		</contour>
+		<contour>
+			<point x="71.58" y="89.017" type="line"/>
+			<point x="47.379" y="29.927" type="line"/>
+			<point x="35.41" y="-8.299" type="line"/>
+			<point x="33.285" y="-24.029" type="line"/>
+			<point x="39.752" y="-36.247" type="line"/>
+			<point x="43.632" y="-43.577" type="line"/>
+			<point x="56.172" y="-39.528" type="line"/>
+			<point x="63.697" y="-37.099" type="line"/>
+			<point x="69.828" y="-27.906" type="line"/>
+			<point x="84.645" y="0.636" type="line"/>
+			<point x="130.396" y="110.81" type="line"/>
+			<point x="157.31" y="177.088" type="line"/>
+			<point x="161.887" y="198.223" type="line"/>
+			<point x="157.955" y="209.025" type="line"/>
+			<point x="155.007" y="217.126" type="line"/>
+			<point x="147.164" y="217.341" type="line"/>
+			<point x="136.706" y="217.628" type="line"/>
+			<point x="121.797" y="203.449" type="line"/>
+			<point x="102.148" y="162.657" type="line"/>
+		</contour>
+		<contour>
+			<point x="60.425" y="157.146" type="line"/>
+			<point x="26.851" y="60.314" type="line"/>
+			<point x="25.614" y="34.866" type="line"/>
+			<point x="26.824" y="26.365" type="line"/>
+			<point x="37.514" y="33.232" type="line"/>
+			<point x="41.664" y="43.034" type="line"/>
+			<point x="50.904" y="65.109" type="line"/>
+			<point x="80.339" y="136.347" type="line"/>
+			<point x="89.126" y="161.396" type="line"/>
+			<point x="92.021" y="171.613" type="line"/>
+			<point x="88.976" y="176.622" type="line"/>
+			<point x="84.409" y="184.136" type="line"/>
+			<point x="76.792" y="181.072" type="line"/>
+			<point x="68.666" y="173.647" type="line"/>
+		</contour>
+		<contour>
+			<point x="87.605" y="197.528" type="line"/>
+			<point x="89.243" y="205.249" type="line"/>
+			<point x="77.133" y="199.149" type="line"/>
+			<point x="73.882" y="191.734" type="line"/>
+			<point x="66.644" y="168.46" type="line"/>
+			<point x="64.824" y="157.545" type="line"/>
+			<point x="74.71" y="162.607" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-75</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>93</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="emdash" format="2">
+	<advance width="751"/>
+	<unicode hex="2014"/>
+	<outline>
+		<contour>
+			<point x="106" y="302" type="line"/>
+			<point x="106" y="342" type="line"/>
+			<point x="66" y="342" type="line"/>
+			<point x="66" y="302" type="line"/>
+		</contour>
+		<contour>
+			<point x="146" y="342" type="line"/>
+			<point x="146" y="382" type="line"/>
+			<point x="106" y="382" type="line"/>
+			<point x="106" y="342" type="line"/>
+		</contour>
+		<contour>
+			<point x="186" y="302" type="line"/>
+			<point x="186" y="342" type="line"/>
+			<point x="146" y="342" type="line"/>
+			<point x="146" y="302" type="line"/>
+		</contour>
+		<contour>
+			<point x="186" y="342" type="line"/>
+			<point x="186" y="382" type="line"/>
+			<point x="146" y="382" type="line"/>
+			<point x="146" y="342" type="line"/>
+		</contour>
+		<contour>
+			<point x="226" y="342" type="line"/>
+			<point x="226" y="382" type="line"/>
+			<point x="186" y="382" type="line"/>
+			<point x="186" y="342" type="line"/>
+		</contour>
+		<contour>
+			<point x="266" y="222" type="line"/>
+			<point x="266" y="262" type="line"/>
+			<point x="226" y="262" type="line"/>
+			<point x="226" y="222" type="line"/>
+		</contour>
+		<contour>
+			<point x="306" y="262" type="line"/>
+			<point x="306" y="302" type="line"/>
+			<point x="266" y="302" type="line"/>
+			<point x="266" y="262" type="line"/>
+		</contour>
+		<contour>
+			<point x="346" y="262" type="line"/>
+			<point x="346" y="302" type="line"/>
+			<point x="306" y="302" type="line"/>
+			<point x="306" y="262" type="line"/>
+		</contour>
+		<contour>
+			<point x="426" y="262" type="line"/>
+			<point x="426" y="302" type="line"/>
+			<point x="386" y="302" type="line"/>
+			<point x="386" y="262" type="line"/>
+		</contour>
+		<contour>
+			<point x="506" y="302" type="line"/>
+			<point x="506" y="342" type="line"/>
+			<point x="466" y="342" type="line"/>
+			<point x="466" y="302" type="line"/>
+		</contour>
+		<contour>
+			<point x="546" y="222" type="line"/>
+			<point x="546" y="262" type="line"/>
+			<point x="506" y="262" type="line"/>
+			<point x="506" y="222" type="line"/>
+		</contour>
+		<contour>
+			<point x="626" y="302" type="line"/>
+			<point x="626" y="342" type="line"/>
+			<point x="586" y="342" type="line"/>
+			<point x="586" y="302" type="line"/>
+		</contour>
+		<contour>
+			<point x="626" y="342" type="line"/>
+			<point x="626" y="382" type="line"/>
+			<point x="586" y="382" type="line"/>
+			<point x="586" y="342" type="line"/>
+		</contour>
+		<contour>
+			<point x="666" y="342" type="line"/>
+			<point x="666" y="382" type="line"/>
+			<point x="626" y="382" type="line"/>
+			<point x="626" y="342" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="68" yOffset="224"/>
+		<component base="pixel2" xOffset="68" yOffset="264"/>
+		<component base="pixel3" xOffset="68" yOffset="344"/>
+		<component base="pixel1" xOffset="108" yOffset="224"/>
+		<component base="pixel1" xOffset="108" yOffset="264"/>
+		<component base="pixel2" xOffset="108" yOffset="304"/>
+		<component base="pixel1" xOffset="148" yOffset="224"/>
+		<component base="pixel1" xOffset="148" yOffset="264"/>
+		<component base="pixel2" xOffset="188" yOffset="224"/>
+		<component base="pixel1" xOffset="188" yOffset="264"/>
+		<component base="pixel3" xOffset="188" yOffset="304"/>
+		<component base="pixel3" xOffset="228" yOffset="264"/>
+		<component base="pixel3" xOffset="228" yOffset="304"/>
+		<component base="pixel1" xOffset="228" yOffset="344"/>
+		<component base="pixel3" xOffset="268" yOffset="224"/>
+		<component base="pixel3" xOffset="268" yOffset="304"/>
+		<component base="pixel1" xOffset="268" yOffset="344"/>
+		<component base="pixel2" xOffset="308" yOffset="224"/>
+		<component base="pixel0" xOffset="308" yOffset="304"/>
+		<component base="pixel0" xOffset="308" yOffset="344"/>
+		<component base="pixel0" xOffset="348" yOffset="224"/>
+		<component base="pixel2" xOffset="348" yOffset="264"/>
+		<component base="pixel1" xOffset="348" yOffset="304"/>
+		<component base="pixel3" xOffset="348" yOffset="344"/>
+		<component base="pixel2" xOffset="388" yOffset="224"/>
+		<component base="pixel1" xOffset="388" yOffset="304"/>
+		<component base="pixel0" xOffset="388" yOffset="344"/>
+		<component base="pixel3" xOffset="428" yOffset="224"/>
+		<component base="pixel3" xOffset="428" yOffset="264"/>
+		<component base="pixel0" xOffset="428" yOffset="304"/>
+		<component base="pixel1" xOffset="428" yOffset="344"/>
+		<component base="pixel3" xOffset="468" yOffset="224"/>
+		<component base="pixel3" xOffset="468" yOffset="264"/>
+		<component base="pixel2" xOffset="468" yOffset="344"/>
+		<component base="pixel3" xOffset="508" yOffset="264"/>
+		<component base="pixel0" xOffset="508" yOffset="304"/>
+		<component base="pixel2" xOffset="508" yOffset="344"/>
+		<component base="pixel1" xOffset="548" yOffset="224"/>
+		<component base="pixel0" xOffset="548" yOffset="264"/>
+		<component base="pixel0" xOffset="548" yOffset="304"/>
+		<component base="pixel2" xOffset="548" yOffset="344"/>
+		<component base="pixel1" xOffset="588" yOffset="224"/>
+		<component base="pixel1" xOffset="588" yOffset="264"/>
+		<component base="pixel1" xOffset="628" yOffset="224"/>
+		<component base="pixel1" xOffset="628" yOffset="264"/>
+		<component base="pixel2" xOffset="628" yOffset="304"/>
+		<component base="pixel1" xOffset="668" yOffset="224"/>
+		<component base="pixel0" xOffset="668" yOffset="264"/>
+		<component base="pixel1" xOffset="668" yOffset="304"/>
+		<component base="pixel1" xOffset="668" yOffset="344"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>300</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

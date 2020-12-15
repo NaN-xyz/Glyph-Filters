@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="caroncomb.case" format="2">
+	<advance width="548"/>
+	<anchor x="275" y="920" name="top"/>
+	<anchor x="275" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="106" y="750" type="line"/>
+			<point x="406" y="750" type="line"/>
+			<point x="406" y="800" type="line"/>
+			<point x="456" y="850" type="line"/>
+			<point x="456" y="900" type="line"/>
+			<point x="356" y="900" type="line"/>
+			<point x="306" y="850" type="line"/>
+			<point x="206" y="850" type="line"/>
+			<point x="156" y="900" type="line"/>
+			<point x="56" y="900" type="line"/>
+			<point x="56" y="850" type="line"/>
+			<point x="106" y="800" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="830" type="line"/>
+			<point x="104" y="830" type="line"/>
+			<point x="104" y="862" type="line"/>
+			<point x="136" y="862" type="line"/>
+		</contour>
+		<contour>
+			<point x="168" y="798" type="line"/>
+			<point x="136" y="798" type="line"/>
+			<point x="136" y="830" type="line"/>
+			<point x="168" y="830" type="line"/>
+		</contour>
+		<contour>
+			<point x="200" y="798" type="line"/>
+			<point x="168" y="798" type="line"/>
+			<point x="168" y="830" type="line"/>
+			<point x="200" y="830" type="line"/>
+		</contour>
+		<contour>
+			<point x="232" y="798" type="line"/>
+			<point x="200" y="798" type="line"/>
+			<point x="200" y="830" type="line"/>
+			<point x="232" y="830" type="line"/>
+		</contour>
+		<contour>
+			<point x="264" y="798" type="line"/>
+			<point x="232" y="798" type="line"/>
+			<point x="232" y="830" type="line"/>
+			<point x="264" y="830" type="line"/>
+		</contour>
+		<contour>
+			<point x="296" y="798" type="line"/>
+			<point x="264" y="798" type="line"/>
+			<point x="264" y="830" type="line"/>
+			<point x="296" y="830" type="line"/>
+		</contour>
+		<contour>
+			<point x="328" y="798" type="line"/>
+			<point x="296" y="798" type="line"/>
+			<point x="296" y="830" type="line"/>
+			<point x="328" y="830" type="line"/>
+		</contour>
+		<contour>
+			<point x="360" y="798" type="line"/>
+			<point x="328" y="798" type="line"/>
+			<point x="328" y="830" type="line"/>
+			<point x="360" y="830" type="line"/>
+		</contour>
+		<contour>
+			<point x="176" y="774" type="line"/>
+			<point x="128" y="774" type="line"/>
+			<point x="128" y="822" type="line"/>
+			<point x="176" y="822" type="line"/>
+		</contour>
+		<contour>
+			<point x="224" y="774" type="line"/>
+			<point x="176" y="774" type="line"/>
+			<point x="176" y="822" type="line"/>
+			<point x="224" y="822" type="line"/>
+		</contour>
+		<contour>
+			<point x="272" y="774" type="line"/>
+			<point x="224" y="774" type="line"/>
+			<point x="224" y="822" type="line"/>
+			<point x="272" y="822" type="line"/>
+		</contour>
+		<contour>
+			<point x="320" y="774" type="line"/>
+			<point x="272" y="774" type="line"/>
+			<point x="272" y="822" type="line"/>
+			<point x="320" y="822" type="line"/>
+		</contour>
+		<contour>
+			<point x="368" y="774" type="line"/>
+			<point x="320" y="774" type="line"/>
+			<point x="320" y="822" type="line"/>
+			<point x="368" y="822" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>750</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

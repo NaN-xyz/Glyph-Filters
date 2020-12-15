@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="tsere-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B5"/>
+	<anchor x="2" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="92" y="-122" type="line"/>
+			<point x="92" y="-82" type="line"/>
+			<point x="52" y="-82" type="line"/>
+			<point x="52" y="-122" type="line"/>
+		</contour>
+		<contour>
+			<point x="132" y="-162" type="line"/>
+			<point x="132" y="-122" type="line"/>
+			<point x="92" y="-122" type="line"/>
+			<point x="92" y="-162" type="line"/>
+		</contour>
+		<component base="pixel1" xOffset="-106" yOffset="-160"/>
+		<component base="pixel3" xOffset="-106" yOffset="-120"/>
+		<component base="pixel2" xOffset="-66" yOffset="-160"/>
+		<component base="pixel2" xOffset="-66" yOffset="-120"/>
+		<component base="pixel2" xOffset="14" yOffset="-160"/>
+		<component base="pixel0" xOffset="14" yOffset="-120"/>
+		<component base="pixel2" xOffset="54" yOffset="-160"/>
+		<component base="pixel3" xOffset="94" yOffset="-120"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="zeroinferior" format="2">
+	<advance width="382"/>
+	<unicode hex="2080"/>
+	<outline>
+		<component base="pixel2" xOffset="49" yOffset="-113"/>
+		<component base="pixel0" xOffset="49" yOffset="-73"/>
+		<component base="pixel0" xOffset="49" yOffset="-33"/>
+		<component base="pixel0" xOffset="49" yOffset="7"/>
+		<component base="pixel0" xOffset="49" yOffset="47"/>
+		<component base="pixel1" xOffset="49" yOffset="87"/>
+		<component base="pixel2" xOffset="89" yOffset="-153"/>
+		<component base="pixel2" xOffset="89" yOffset="-113"/>
+		<component base="pixel2" xOffset="89" yOffset="-73"/>
+		<component base="pixel2" xOffset="89" yOffset="-33"/>
+		<component base="pixel1" xOffset="89" yOffset="7"/>
+		<component base="pixel0" xOffset="89" yOffset="47"/>
+		<component base="pixel2" xOffset="89" yOffset="87"/>
+		<component base="pixel1" xOffset="89" yOffset="127"/>
+		<component base="pixel2" xOffset="129" yOffset="-153"/>
+		<component base="pixel0" xOffset="129" yOffset="-113"/>
+		<component base="pixel0" xOffset="129" yOffset="-73"/>
+		<component base="pixel2" xOffset="129" yOffset="-33"/>
+		<component base="pixel2" xOffset="129" yOffset="7"/>
+		<component base="pixel0" xOffset="129" yOffset="47"/>
+		<component base="pixel0" xOffset="129" yOffset="87"/>
+		<component base="pixel1" xOffset="129" yOffset="127"/>
+		<component base="pixel1" xOffset="169" yOffset="-153"/>
+		<component base="pixel2" xOffset="169" yOffset="-113"/>
+		<component base="pixel2" xOffset="169" yOffset="87"/>
+		<component base="pixel1" xOffset="169" yOffset="127"/>
+		<component base="pixel1" xOffset="209" yOffset="-153"/>
+		<component base="pixel2" xOffset="209" yOffset="-113"/>
+		<component base="pixel0" xOffset="209" yOffset="-73"/>
+		<component base="pixel0" xOffset="209" yOffset="47"/>
+		<component base="pixel2" xOffset="209" yOffset="87"/>
+		<component base="pixel2" xOffset="209" yOffset="127"/>
+		<component base="pixel0" xOffset="249" yOffset="-153"/>
+		<component base="pixel0" xOffset="249" yOffset="-113"/>
+		<component base="pixel1" xOffset="249" yOffset="-73"/>
+		<component base="pixel2" xOffset="249" yOffset="-33"/>
+		<component base="pixel0" xOffset="249" yOffset="7"/>
+		<component base="pixel0" xOffset="249" yOffset="47"/>
+		<component base="pixel0" xOffset="249" yOffset="87"/>
+		<component base="pixel2" xOffset="249" yOffset="127"/>
+		<component base="pixel0" xOffset="289" yOffset="-113"/>
+		<component base="pixel1" xOffset="289" yOffset="-73"/>
+		<component base="pixel2" xOffset="289" yOffset="-33"/>
+		<component base="pixel0" xOffset="289" yOffset="7"/>
+		<component base="pixel1" xOffset="289" yOffset="47"/>
+		<component base="pixel0" xOffset="289" yOffset="87"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-170</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>172</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<string>-342</string>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

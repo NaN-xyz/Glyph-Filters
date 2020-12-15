@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="tsere-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B5"/>
+	<anchor x="2" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="21" y="-136.375" type="line"/>
+			<point x="64.895" y="-195" type="line"/>
+			<point x="91.789" y="-177" type="line"/>
+			<point x="116.957" y="-160.457" type="line"/>
+			<point x="128" y="-132.438" type="line"/>
+			<point x="143.962" y="-109.638" type="line"/>
+			<point x="125.96" y="-88.413" type="line"/>
+			<point x="109.331" y="-73.466" type="line"/>
+			<point x="87.947" y="-80" type="line"/>
+			<point x="51.52" y="-76.869" type="line"/>
+			<point x="21" y="-97" type="line"/>
+			<point x="7.7" y="-116.688" type="line"/>
+		</contour>
+		<contour>
+			<point x="-123" y="-140.312" type="line"/>
+			<point x="-73.342" y="-188" type="line"/>
+			<point x="-40.684" y="-177" type="line"/>
+			<point x="-21.102" y="-145.527" type="line"/>
+			<point x="-16" y="-108.812" type="line"/>
+			<point x="-31.53" y="-88.156" type="line"/>
+			<point x="-56.053" y="-80" type="line"/>
+			<point x="-85.877" y="-65.03" type="line"/>
+			<point x="-114.587" y="-82.04" type="line"/>
+			<point x="-136.609" y="-108.604" type="line"/>
+		</contour>
+		<contour>
+			<point x="54.417" y="-158.003" type="line"/>
+			<point x="52.785" y="-167.894" type="line"/>
+			<point x="43.82" y="-166.088" type="line"/>
+			<point x="39.238" y="-159.065" type="line"/>
+			<point x="46.372" y="-152.022" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

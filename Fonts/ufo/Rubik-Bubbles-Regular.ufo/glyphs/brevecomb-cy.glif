@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="brevecomb-cy" format="2">
+	<advance width="594"/>
+	<anchor x="297" y="520" name="_top"/>
+	<outline>
+		<contour>
+			<point x="282.191" y="591.294" type="curve"/>
+			<point x="299.457" y="552.077"/>
+			<point x="343.522" y="554.859"/>
+			<point x="341.065" y="593.782" type="curve"/>
+			<point x="349.045" y="561.761"/>
+			<point x="403.479" y="575.327"/>
+			<point x="395.499" y="607.347" type="curve"/>
+			<point x="411.698" y="578.597"/>
+			<point x="453.537" y="602.171"/>
+			<point x="437.337" y="630.921" type="curve"/>
+			<point x="466.24" y="611.183"/>
+			<point x="510.842" y="676.493"/>
+			<point x="481.939" y="696.231" type="curve"/>
+			<point x="505.88" y="712.24"/>
+			<point x="463.241" y="776.008"/>
+			<point x="439.3" y="760" type="curve"/>
+			<point x="437.411" y="791.944"/>
+			<point x="342.75" y="786.348"/>
+			<point x="344.638" y="754.404" type="curve"/>
+			<point x="326.979" y="782.281"/>
+			<point x="249.212" y="733.018"/>
+			<point x="266.871" y="705.141" type="curve"/>
+			<point x="287.212" y="723.199"/>
+			<point x="238.507" y="778.058"/>
+			<point x="218.167" y="760" type="curve"/>
+			<point x="218.167" y="795"/>
+			<point x="134.867" y="795"/>
+			<point x="134.867" y="760" type="curve"/>
+			<point x="110.116" y="773.091"/>
+			<point x="83.749" y="723.242"/>
+			<point x="108.5" y="710.151" type="curve"/>
+			<point x="76.475" y="696.03"/>
+			<point x="100.54" y="641.453"/>
+			<point x="132.565" y="655.574" type="curve"/>
+			<point x="113.423" y="626.272"/>
+			<point x="195.873" y="572.411"/>
+			<point x="215.015" y="601.712" type="curve"/>
+			<point x="210.264" y="571.078"/>
+			<point x="277.44" y="560.66"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

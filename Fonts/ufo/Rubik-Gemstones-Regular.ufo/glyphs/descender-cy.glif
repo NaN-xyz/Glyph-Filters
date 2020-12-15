@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="descender-cy" format="2">
+	<advance width="349"/>
+	<anchor x="0" y="0" name="_bottomright"/>
+	<outline>
+		<contour>
+			<point x="80.678" y="-101.143" type="line"/>
+			<point x="122.833" y="-122" type="line"/>
+			<point x="152.667" y="-105" type="line"/>
+			<point x="188.467" y="-118" type="line"/>
+			<point x="224.267" y="-105" type="line"/>
+			<point x="261.145" y="-113.009" type="line"/>
+			<point x="292.213" y="-91.586" type="line"/>
+			<point x="309.096" y="-67.969" type="line"/>
+			<point x="294" y="-43.172" type="line"/>
+			<point x="305" y="-13.302" type="line"/>
+			<point x="294" y="16.569" type="line"/>
+			<point x="313" y="54.405" type="line"/>
+			<point x="294" y="92.241" type="line"/>
+			<point x="311.787" y="122.373" type="line"/>
+			<point x="293.576" y="152.249" type="line"/>
+			<point x="281.516" y="169.96" type="line"/>
+			<point x="260.09" y="170" type="line"/>
+			<point x="240.239" y="184" type="line"/>
+			<point x="220.388" y="170" type="line"/>
+			<point x="188.627" y="181" type="line"/>
+			<point x="156.866" y="170" type="line"/>
+			<point x="125.104" y="189" type="line"/>
+			<point x="93.343" y="170" type="line"/>
+			<point x="73.493" y="182" type="line"/>
+			<point x="53.642" y="170" type="line"/>
+			<point x="29.222" y="181.038" type="line"/>
+			<point x="6.93" y="166.163" type="line"/>
+			<point x="1.231" y="130.248" type="line"/>
+			<point x="22.744" y="100.93" type="line"/>
+			<point x="9.86" y="73.431" type="line"/>
+			<point x="33.907" y="54.884" type="line"/>
+			<point x="20.093" y="31.221" type="line"/>
+			<point x="43.209" y="16.512" type="line"/>
+			<point x="46.079" y="-9.872" type="line"/>
+			<point x="71" y="-19" type="line"/>
+			<point x="59.949" y="-61.944" type="line"/>
+		</contour>
+		<contour>
+			<point x="167.66" y="9.466" type="line"/>
+			<point x="174.817" y="-43.125" type="line"/>
+			<point x="122.977" y="-33.254" type="line"/>
+			<point x="108.456" y="0.209" type="line"/>
+			<point x="132.016" y="37.582" type="line"/>
+		</contour>
+		<contour>
+			<point x="235.133" y="165.951" type="line"/>
+			<point x="242.769" y="155.025" type="line"/>
+			<point x="238.635" y="145.285" type="line"/>
+			<point x="223.503" y="140.925" type="line"/>
+			<point x="222.033" y="158.08" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

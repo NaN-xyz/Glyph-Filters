@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dalet-hb" format="2">
+	<advance width="559"/>
+	<unicode hex="05D3"/>
+	<anchor x="133" y="260" name="center"/>
+	<anchor x="285" y="520" name="top"/>
+	<anchor x="31" y="0" name="bottomleft"/>
+	<anchor x="31" y="520" name="topleft"/>
+	<anchor x="285" y="0" name="bottom"/>
+	<outline>
+		<contour>
+			<point x="61.974" y="546" type="curve"/>
+			<point x="-16.963" y="548.212"/>
+			<point x="-18.963" y="487.664"/>
+			<point x="48" y="485.452" type="curve"/>
+			<point x="-20.973" y="487.389"/>
+			<point x="-22.942" y="417.264"/>
+			<point x="46.03" y="415.327" type="curve"/>
+			<point x="49.789" y="347.431"/>
+			<point x="152.259" y="353.104"/>
+			<point x="148.5" y="421" type="curve"/>
+			<point x="148.5" y="355"/>
+			<point x="187.9" y="355"/>
+			<point x="187.9" y="421" type="curve"/>
+			<point x="187.9" y="367"/>
+			<point x="247" y="367"/>
+			<point x="247" y="421" type="curve"/>
+			<point x="185.127" y="417.03"/>
+			<point x="193.191" y="291.374"/>
+			<point x="255.063" y="295.345" type="curve"/>
+			<point x="189.063" y="295.402"/>
+			<point x="189" y="222.057"/>
+			<point x="255" y="222" type="curve"/>
+			<point x="204" y="222"/>
+			<point x="204" y="126"/>
+			<point x="255" y="126" type="curve"/>
+			<point x="188" y="126"/>
+			<point x="188" y="46"/>
+			<point x="255" y="46" type="curve"/>
+			<point x="239.983" y="5.494"/>
+			<point x="296.626" y="-15.506"/>
+			<point x="311.643" y="25" type="curve"/>
+			<point x="315.835" y="-28.837"/>
+			<point x="430.192" y="-19.932"/>
+			<point x="426" y="33.905" type="curve"/>
+			<point x="477" y="33.905"/>
+			<point x="477" y="97.397"/>
+			<point x="426" y="97.397" type="curve"/>
+			<point x="486" y="97.397"/>
+			<point x="486" y="168.825"/>
+			<point x="426" y="168.825" type="curve"/>
+			<point x="480" y="168.825"/>
+			<point x="480" y="236.286"/>
+			<point x="426" y="236.286" type="curve"/>
+			<point x="487.955" y="233.937"/>
+			<point x="491.463" y="326.465"/>
+			<point x="429.508" y="328.814" type="curve"/>
+			<point x="485.73" y="314.563"/>
+			<point x="502.672" y="381.405"/>
+			<point x="446.45" y="395.656" type="curve"/>
+			<point x="458.695" y="338.963"/>
+			<point x="531.421" y="354.67"/>
+			<point x="519.176" y="411.363" type="curve"/>
+			<point x="569.525" y="419.487"/>
+			<point x="561.349" y="470.156"/>
+			<point x="511" y="462.032" type="curve"/>
+			<point x="558.471" y="481.215"/>
+			<point x="524.54" y="565.182"/>
+			<point x="477.07" y="546" type="curve"/>
+			<point x="477.07" y="615"/>
+			<point x="437.157" y="615"/>
+			<point x="437.157" y="546" type="curve"/>
+			<point x="437.157" y="611"/>
+			<point x="325.4" y="611"/>
+			<point x="325.4" y="546" type="curve"/>
+			<point x="325.4" y="604"/>
+			<point x="205.661" y="604"/>
+			<point x="205.661" y="546" type="curve"/>
+			<point x="205.661" y="606"/>
+			<point x="117.852" y="606"/>
+			<point x="117.852" y="546" type="curve"/>
+			<point x="117.852" y="608"/>
+			<point x="61.974" y="608"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>571</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>30</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>496</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

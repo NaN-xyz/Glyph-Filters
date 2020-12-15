@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="268" name="_center"/>
+	<outline>
+		<contour>
+			<point x="125" y="219.722" type="curve"/>
+			<point x="188.979" y="156.566"/>
+			<point x="190.979" y="226.251"/>
+			<point x="141" y="227.685" type="curve"/>
+			<point x="193" y="227.685"/>
+			<point x="193" y="315.278"/>
+			<point x="141" y="315.278" type="curve"/>
+			<point x="184.362" y="340.172"/>
+			<point x="168.362" y="368.042"/>
+			<point x="125" y="343.148" type="curve"/>
+			<point x="73" y="343.148"/>
+			<point x="73" y="295.37"/>
+			<point x="125" y="295.37" type="curve"/>
+			<point x="69" y="295.37"/>
+			<point x="69" y="219.722"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

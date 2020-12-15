@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="tenge" format="2">
+	<advance width="674"/>
+	<unicode hex="20B8"/>
+	<outline>
+		<contour>
+			<point x="514.395" y="607" type="curve"/>
+			<point x="690.886" y="610.728"/>
+			<point x="687.886" y="659.728"/>
+			<point x="627" y="656" type="curve"/>
+			<point x="634.043" y="725.645"/>
+			<point x="505.492" y="738.645"/>
+			<point x="498.449" y="669" type="curve"/>
+			<point x="498.449" y="748"/>
+			<point x="390.816" y="748"/>
+			<point x="390.816" y="669" type="curve"/>
+			<point x="390.816" y="743"/>
+			<point x="251.293" y="743"/>
+			<point x="251.293" y="669" type="curve"/>
+			<point x="251.293" y="743"/>
+			<point x="211.429" y="743"/>
+			<point x="211.429" y="669" type="curve"/>
+			<point x="211.429" y="745"/>
+			<point x="71.905" y="745"/>
+			<point x="71.905" y="669" type="curve"/>
+			<point x="20.06" y="659"/>
+			<point x="32.02" y="597"/>
+			<point x="83.864" y="607" type="curve"/>
+			<point x="83.864" y="549.4"/>
+			<point x="207.442" y="549.4"/>
+			<point x="207.442" y="607" type="curve"/>
+			<point x="207.442" y="545.4"/>
+			<point x="267.238" y="545.4"/>
+			<point x="267.238" y="607" type="curve"/>
+			<point x="267.238" y="548.6"/>
+			<point x="315.075" y="548.6"/>
+			<point x="315.075" y="607" type="curve"/>
+			<point x="315.075" y="553.4"/>
+			<point x="462.571" y="553.4"/>
+			<point x="462.571" y="607" type="curve"/>
+			<point x="462.571" y="551.8"/>
+			<point x="514.395" y="551.8"/>
+		</contour>
+		<contour>
+			<point x="365" y="30" type="curve"/>
+			<point x="510.981" y="31.674"/>
+			<point x="507.981" y="164.292"/>
+			<point x="434" y="162.618" type="curve"/>
+			<point x="509" y="162.618"/>
+			<point x="509" y="274.303"/>
+			<point x="434" y="274.303" type="curve"/>
+			<point x="502" y="274.303"/>
+			<point x="502" y="342.112"/>
+			<point x="434" y="342.112" type="curve"/>
+			<point x="497.022" y="297.872"/>
+			<point x="525.022" y="337.76"/>
+			<point x="462" y="382" type="curve"/>
+			<point x="462" y="304"/>
+			<point x="582" y="304"/>
+			<point x="582" y="382" type="curve"/>
+			<point x="621.906" y="332.992"/>
+			<point x="666.906" y="369.635"/>
+			<point x="627" y="418.643" type="curve"/>
+			<point x="689" y="418.643"/>
+			<point x="689" y="474.143"/>
+			<point x="627" y="474.143" type="curve"/>
+			<point x="633.488" y="524.93"/>
+			<point x="532.842" y="537.787"/>
+			<point x="526.354" y="487" type="curve"/>
+			<point x="526.354" y="546.2"/>
+			<point x="450.612" y="546.2"/>
+			<point x="450.612" y="487" type="curve"/>
+			<point x="450.612" y="548.6"/>
+			<point x="327.034" y="548.6"/>
+			<point x="327.034" y="487" type="curve"/>
+			<point x="327.034" y="547.8"/>
+			<point x="227.374" y="547.8"/>
+			<point x="227.374" y="487" type="curve"/>
+			<point x="227.374" y="537.4"/>
+			<point x="143.66" y="537.4"/>
+			<point x="143.66" y="487" type="curve"/>
+			<point x="143.66" y="550.2"/>
+			<point x="71.905" y="550.2"/>
+			<point x="71.905" y="487" type="curve"/>
+			<point x="13.346" y="506.117"/>
+			<point x="-11.558" y="429.832"/>
+			<point x="47" y="410.714" type="curve"/>
+			<point x="-9.793" y="377.091"/>
+			<point x="7.207" y="348.376"/>
+			<point x="64" y="382" type="curve"/>
+			<point x="64" y="310"/>
+			<point x="192" y="310"/>
+			<point x="192" y="382" type="curve"/>
+			<point x="140.723" y="325.904"/>
+			<point x="188.723" y="282.028"/>
+			<point x="240" y="338.124" type="curve"/>
+			<point x="164" y="338.124"/>
+			<point x="164" y="282.281"/>
+			<point x="240" y="282.281" type="curve"/>
+			<point x="174" y="282.281"/>
+			<point x="174" y="146.663"/>
+			<point x="240" y="146.663" type="curve"/>
+			<point x="174" y="146.663"/>
+			<point x="174" y="38.966"/>
+			<point x="240" y="38.966" type="curve"/>
+			<point x="235.135" y="-28.859"/>
+			<point x="360.135" y="-37.826"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>T</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>T</string>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

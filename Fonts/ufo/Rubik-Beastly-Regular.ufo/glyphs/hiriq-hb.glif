@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hiriq-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B4"/>
+	<anchor x="1" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="-53" y="-156.062" type="curve"/>
+			<point x="-33.901" y="-191.549"/>
+			<point x="-14.426" y="-219.146"/>
+			<point x="-1.421" y="-226" type="curve"/>
+			<point x="2.188" y="-211.75"/>
+			<point x="20.153" y="-183.854"/>
+			<point x="33.158" y="-177" type="curve"/>
+			<point x="43.08" y="-168.57"/>
+			<point x="71.206" y="-163.96"/>
+			<point x="83.91" y="-166.811" type="curve"/>
+			<point x="81.36" y="-154.044"/>
+			<point x="64.704" y="-131.975"/>
+			<point x="54" y="-124.562" type="curve"/>
+			<point x="54.576" y="-110.294"/>
+			<point x="68.999" y="-85.928"/>
+			<point x="79.826" y="-76.618" type="curve"/>
+			<point x="66.445" y="-71.631"/>
+			<point x="38.563" y="-74.292"/>
+			<point x="25.474" y="-80" type="curve"/>
+			<point x="16.063" y="-64.305"/>
+			<point x="12.048" y="-36.897"/>
+			<point x="15.868" y="-19" type="curve"/>
+			<point x="6.457" y="-34.695"/>
+			<point x="-0.011" y="-62.809"/>
+			<point x="6.263" y="-80" type="curve"/>
+			<point x="-4.848" y="-79.353"/>
+			<point x="-31.237" y="-67.271"/>
+			<point x="-37.727" y="-58.229" type="curve"/>
+			<point x="-44.751" y="-66.863"/>
+			<point x="-53.751" y="-93.77"/>
+			<point x="-53" y="-104.875" type="curve"/>
+			<point x="-63.732" y="-106.081"/>
+			<point x="-83.832" y="-120.986"/>
+			<point x="-89" y="-130.469" type="curve"/>
+			<point x="-78.316" y="-132.048"/>
+			<point x="-58.333" y="-146.671"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

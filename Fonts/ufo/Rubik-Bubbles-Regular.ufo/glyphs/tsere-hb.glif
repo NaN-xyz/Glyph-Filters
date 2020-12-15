@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="tsere-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B5"/>
+	<anchor x="2" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="-79.105" y="-177" type="curve"/>
+			<point x="-2.73" y="-179.805"/>
+			<point x="6.06" y="-84.955"/>
+			<point x="-24.211" y="-82.15" type="curve"/>
+			<point x="-29.562" y="-46.55"/>
+			<point x="-128.351" y="-61.4"/>
+			<point x="-123" y="-97" type="curve"/>
+			<point x="-146.145" y="-109.699"/>
+			<point x="-102.25" y="-189.699"/>
+		</contour>
+		<contour>
+			<point x="95.632" y="-177" type="curve"/>
+			<point x="134.898" y="-179.214"/>
+			<point x="143.687" y="-84.365"/>
+			<point x="119.789" y="-82.15" type="curve"/>
+			<point x="114.23" y="-57.982"/>
+			<point x="15.44" y="-80.706"/>
+			<point x="21" y="-104.875" type="curve"/>
+			<point x="-6.168" y="-118.515"/>
+			<point x="30.042" y="-190.64"/>
+			<point x="57.211" y="-177" type="curve"/>
+			<point x="57.211" y="-214"/>
+			<point x="95.632" y="-214"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ordmasculine" format="2">
+	<advance width="350"/>
+	<unicode hex="00BA"/>
+	<outline>
+		<contour>
+			<point x="151" y="423" type="line"/>
+			<point x="151" y="453" type="line"/>
+			<point x="169" y="453" type="line"/>
+			<point x="169" y="429" type="line"/>
+			<point x="181" y="429" type="line"/>
+			<point x="181" y="465" type="line"/>
+			<point x="139" y="465" type="line"/>
+			<point x="139" y="435" type="line"/>
+			<point x="121" y="435" type="line"/>
+			<point x="121" y="465" type="line"/>
+			<point x="61" y="465" type="line"/>
+			<point x="61" y="495" type="line"/>
+			<point x="31" y="495" type="line"/>
+			<point x="31" y="573" type="line"/>
+			<point x="61" y="573" type="line"/>
+			<point x="61" y="603" type="line"/>
+			<point x="79" y="603" type="line"/>
+			<point x="79" y="543" type="line"/>
+			<point x="109" y="543" type="line"/>
+			<point x="109" y="513" type="line"/>
+			<point x="139" y="513" type="line"/>
+			<point x="139" y="483" type="line"/>
+			<point x="301" y="483" type="line"/>
+			<point x="301" y="585" type="line"/>
+			<point x="271" y="585" type="line"/>
+			<point x="271" y="603" type="line"/>
+			<point x="301" y="603" type="line"/>
+			<point x="301" y="645" type="line"/>
+			<point x="241" y="645" type="line"/>
+			<point x="241" y="675" type="line"/>
+			<point x="109" y="675" type="line"/>
+			<point x="109" y="603" type="line"/>
+			<point x="151" y="603" type="line"/>
+			<point x="151" y="633" type="line"/>
+			<point x="169" y="633" type="line"/>
+			<point x="169" y="603" type="line"/>
+			<point x="229" y="603" type="line"/>
+			<point x="229" y="585" type="line"/>
+			<point x="199" y="585" type="line"/>
+			<point x="199" y="543" type="line"/>
+			<point x="259" y="543" type="line"/>
+			<point x="259" y="525" type="line"/>
+			<point x="175" y="525" type="line"/>
+			<point x="175" y="513" type="line"/>
+			<point x="271" y="513" type="line"/>
+			<point x="271" y="555" type="line"/>
+			<point x="211" y="555" type="line"/>
+			<point x="211" y="573" type="line"/>
+			<point x="241" y="573" type="line"/>
+			<point x="241" y="615" type="line"/>
+			<point x="181" y="615" type="line"/>
+			<point x="181" y="645" type="line"/>
+			<point x="139" y="645" type="line"/>
+			<point x="139" y="615" type="line"/>
+			<point x="121" y="615" type="line"/>
+			<point x="121" y="663" type="line"/>
+			<point x="229" y="663" type="line"/>
+			<point x="229" y="633" type="line"/>
+			<point x="289" y="633" type="line"/>
+			<point x="289" y="615" type="line"/>
+			<point x="259" y="615" type="line"/>
+			<point x="259" y="573" type="line"/>
+			<point x="289" y="573" type="line"/>
+			<point x="289" y="495" type="line"/>
+			<point x="151" y="495" type="line"/>
+			<point x="151" y="525" type="line"/>
+			<point x="121" y="525" type="line"/>
+			<point x="121" y="555" type="line"/>
+			<point x="91" y="555" type="line"/>
+			<point x="91" y="615" type="line"/>
+			<point x="49" y="615" type="line"/>
+			<point x="49" y="585" type="line"/>
+			<point x="19" y="585" type="line"/>
+			<point x="19" y="483" type="line"/>
+			<point x="49" y="483" type="line"/>
+			<point x="49" y="453" type="line"/>
+			<point x="109" y="453" type="line"/>
+			<point x="109" y="423" type="line"/>
+		</contour>
+		<contour>
+			<point x="31" y="609" type="line"/>
+			<point x="31" y="633" type="line"/>
+			<point x="91" y="633" type="line"/>
+			<point x="91" y="675" type="line"/>
+			<point x="55" y="675" type="line"/>
+			<point x="55" y="663" type="line"/>
+			<point x="79" y="663" type="line"/>
+			<point x="79" y="645" type="line"/>
+			<point x="19" y="645" type="line"/>
+			<point x="19" y="609" type="line"/>
+		</contour>
+		<contour>
+			<point x="115" y="483" type="line"/>
+			<point x="115" y="495" type="line"/>
+			<point x="91" y="495" type="line"/>
+			<point x="91" y="525" type="line"/>
+			<point x="61" y="525" type="line"/>
+			<point x="61" y="549" type="line"/>
+			<point x="49" y="549" type="line"/>
+			<point x="49" y="513" type="line"/>
+			<point x="79" y="513" type="line"/>
+			<point x="79" y="483" type="line"/>
+		</contour>
+		<contour>
+			<point x="211" y="429" type="line"/>
+			<point x="211" y="453" type="line"/>
+			<point x="229" y="453" type="line"/>
+			<point x="229" y="429" type="line"/>
+			<point x="241" y="429" type="line"/>
+			<point x="241" y="465" type="line"/>
+			<point x="199" y="465" type="line"/>
+			<point x="199" y="429" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>589</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>545</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>429</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>705</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>134</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

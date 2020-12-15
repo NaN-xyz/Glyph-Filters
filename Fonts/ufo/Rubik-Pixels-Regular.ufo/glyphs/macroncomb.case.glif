@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="macroncomb.case" format="2">
+	<advance width="523"/>
+	<anchor x="262" y="900" name="top"/>
+	<anchor x="262" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="110" y="850" type="line"/>
+			<point x="110" y="890" type="line"/>
+			<point x="70" y="890" type="line"/>
+			<point x="70" y="850" type="line"/>
+		</contour>
+		<contour>
+			<point x="150" y="770" type="line"/>
+			<point x="150" y="810" type="line"/>
+			<point x="110" y="810" type="line"/>
+			<point x="110" y="770" type="line"/>
+		</contour>
+		<contour>
+			<point x="150" y="850" type="line"/>
+			<point x="150" y="890" type="line"/>
+			<point x="110" y="890" type="line"/>
+			<point x="110" y="850" type="line"/>
+		</contour>
+		<contour>
+			<point x="190" y="850" type="line"/>
+			<point x="190" y="890" type="line"/>
+			<point x="150" y="890" type="line"/>
+			<point x="150" y="850" type="line"/>
+		</contour>
+		<contour>
+			<point x="230" y="850" type="line"/>
+			<point x="230" y="890" type="line"/>
+			<point x="190" y="890" type="line"/>
+			<point x="190" y="850" type="line"/>
+		</contour>
+		<contour>
+			<point x="270" y="810" type="line"/>
+			<point x="270" y="850" type="line"/>
+			<point x="230" y="850" type="line"/>
+			<point x="230" y="810" type="line"/>
+		</contour>
+		<contour>
+			<point x="310" y="770" type="line"/>
+			<point x="310" y="810" type="line"/>
+			<point x="270" y="810" type="line"/>
+			<point x="270" y="770" type="line"/>
+		</contour>
+		<contour>
+			<point x="470" y="810" type="line"/>
+			<point x="470" y="850" type="line"/>
+			<point x="430" y="850" type="line"/>
+			<point x="430" y="810" type="line"/>
+		</contour>
+		<contour>
+			<point x="470" y="850" type="line"/>
+			<point x="470" y="890" type="line"/>
+			<point x="430" y="890" type="line"/>
+			<point x="430" y="850" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="72" yOffset="772"/>
+		<component base="pixel0" xOffset="72" yOffset="812"/>
+		<component base="pixel0" xOffset="112" yOffset="812"/>
+		<component base="pixel1" xOffset="152" yOffset="772"/>
+		<component base="pixel0" xOffset="152" yOffset="812"/>
+		<component base="pixel1" xOffset="192" yOffset="772"/>
+		<component base="pixel2" xOffset="192" yOffset="812"/>
+		<component base="pixel0" xOffset="232" yOffset="772"/>
+		<component base="pixel2" xOffset="232" yOffset="852"/>
+		<component base="pixel0" xOffset="272" yOffset="812"/>
+		<component base="pixel0" xOffset="272" yOffset="852"/>
+		<component base="pixel1" xOffset="312" yOffset="772"/>
+		<component base="pixel3" xOffset="312" yOffset="812"/>
+		<component base="pixel1" xOffset="312" yOffset="852"/>
+		<component base="pixel0" xOffset="352" yOffset="772"/>
+		<component base="pixel0" xOffset="352" yOffset="812"/>
+		<component base="pixel1" xOffset="352" yOffset="852"/>
+		<component base="pixel2" xOffset="392" yOffset="772"/>
+		<component base="pixel1" xOffset="392" yOffset="812"/>
+		<component base="pixel1" xOffset="392" yOffset="852"/>
+		<component base="pixel0" xOffset="432" yOffset="772"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

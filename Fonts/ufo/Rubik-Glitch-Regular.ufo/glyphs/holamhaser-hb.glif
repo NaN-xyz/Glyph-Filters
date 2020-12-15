@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="holamhaser-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05BA"/>
+	<anchor x="2" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="20" y="534" type="line"/>
+			<point x="26" y="536"/>
+			<point x="30" y="539"/>
+			<point x="33" y="544" type="curve"/>
+			<point x="45" y="544" type="line"/>
+			<point x="46" y="547"/>
+			<point x="47" y="550"/>
+			<point x="47" y="554" type="curve"/>
+			<point x="-8" y="554" type="line"/>
+			<point x="-8" y="555" type="line"/>
+			<point x="-8" y="569" type="line"/>
+			<point x="1" y="569" type="line"/>
+			<point x="1" y="584" type="line"/>
+			<point x="-31" y="584" type="line"/>
+			<point x="-31" y="599" type="line"/>
+			<point x="-6" y="599" type="line"/>
+			<point x="-6" y="609" type="line"/>
+			<point x="-28" y="609" type="line"/>
+			<point x="-28" y="614" type="line"/>
+			<point x="-21" y="614" type="line"/>
+			<point x="-21" y="618" type="line"/>
+			<point x="-21" y="624" type="line"/>
+			<point x="-11" y="624" type="line"/>
+			<point x="-13" y="629" type="line"/>
+			<point x="-14" y="629" type="line"/>
+			<point x="-15" y="631"/>
+			<point x="-17" y="633"/>
+			<point x="-18" y="634" type="curve"/>
+			<point x="-14" y="634" type="line"/>
+			<point x="-18" y="638"/>
+			<point x="-24" y="640"/>
+			<point x="-30" y="640" type="curve" smooth="yes"/>
+			<point x="-103" y="640" type="line" smooth="yes"/>
+			<point x="-109" y="640"/>
+			<point x="-115" y="638"/>
+			<point x="-119" y="634" type="curve"/>
+			<point x="-123" y="634" type="line"/>
+			<point x="-124" y="633"/>
+			<point x="-125" y="631"/>
+			<point x="-126" y="629" type="curve"/>
+			<point x="-125" y="629" type="line"/>
+			<point x="-127" y="624" type="line"/>
+			<point x="-137" y="624" type="line"/>
+			<point x="-137" y="622"/>
+			<point x="-138" y="620"/>
+			<point x="-138" y="618" type="curve" smooth="yes"/>
+			<point x="-138" y="614" type="line"/>
+			<point x="-145" y="614" type="line"/>
+			<point x="-145" y="609" type="line"/>
+			<point x="-123" y="609" type="line"/>
+			<point x="-123" y="599" type="line"/>
+			<point x="-148" y="599" type="line"/>
+			<point x="-148" y="584" type="line"/>
+			<point x="-116" y="584" type="line"/>
+			<point x="-116" y="569" type="line"/>
+			<point x="-125" y="569" type="line"/>
+			<point x="-125" y="555" type="line"/>
+			<point x="-125" y="554" type="line"/>
+			<point x="-70" y="554" type="line"/>
+			<point x="-70" y="550"/>
+			<point x="-69" y="547"/>
+			<point x="-67" y="544" type="curve"/>
+			<point x="-79" y="544" type="line"/>
+			<point x="-77" y="539"/>
+			<point x="-72" y="536"/>
+			<point x="-67" y="534" type="curve"/>
+			<point x="-10" y="534" type="line"/>
+			<point x="-8" y="533"/>
+			<point x="-5" y="533"/>
+			<point x="-3" y="533" type="curve" smooth="yes"/>
+			<point x="70" y="533" type="line" smooth="yes"/>
+			<point x="73" y="533"/>
+			<point x="75" y="533"/>
+			<point x="78" y="534" type="curve"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

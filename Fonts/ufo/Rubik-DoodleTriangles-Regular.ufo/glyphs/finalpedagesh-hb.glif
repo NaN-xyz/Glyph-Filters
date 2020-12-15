@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="finalpedagesh-hb" format="2">
+	<advance width="590"/>
+	<anchor x="284" y="0" name="bottom"/>
+	<anchor x="284" y="520" name="top"/>
+	<anchor x="20" y="0" name="bottomleft"/>
+	<anchor x="273" y="229" name="_center"/>
+	<anchor x="20" y="520" name="topleft"/>
+	<anchor x="287" y="242" name="center"/>
+	<outline>
+		<contour>
+			<point x="335" y="247" type="curve" smooth="yes"/>
+			<point x="335" y="264"/>
+			<point x="335" y="270"/>
+			<point x="335" y="284" type="curve" smooth="yes"/>
+			<point x="336" y="294"/>
+			<point x="335" y="302"/>
+			<point x="332" y="308" type="curve" smooth="yes"/>
+			<point x="326" y="319"/>
+			<point x="316" y="328"/>
+			<point x="304" y="335" type="curve" smooth="yes"/>
+			<point x="284" y="347"/>
+			<point x="259" y="328"/>
+			<point x="247" y="305" type="curve" smooth="yes"/>
+			<point x="244" y="300"/>
+			<point x="244" y="292"/>
+			<point x="245" y="284" type="curve" smooth="yes"/>
+			<point x="246" y="268"/>
+			<point x="246" y="260"/>
+			<point x="246" y="248" type="curve" smooth="yes"/>
+			<point x="246" y="247"/>
+			<point x="246" y="246"/>
+			<point x="245" y="244" type="curve"/>
+			<point x="244" y="237"/>
+			<point x="244" y="229"/>
+			<point x="248" y="223" type="curve"/>
+			<point x="252" y="214"/>
+			<point x="260" y="208"/>
+			<point x="265" y="203" type="curve" smooth="yes"/>
+			<point x="270" y="198"/>
+			<point x="274" y="195"/>
+			<point x="277" y="190" type="curve"/>
+			<point x="306" y="197" type="line"/>
+			<point x="307" y="199"/>
+			<point x="308" y="200"/>
+			<point x="309" y="201" type="curve"/>
+			<point x="315" y="207" type="line" smooth="yes"/>
+			<point x="319" y="210"/>
+			<point x="325" y="216"/>
+			<point x="330" y="222" type="curve"/>
+			<point x="336" y="232"/>
+			<point x="336" y="240"/>
+		</contour>
+		<contour>
+			<point x="289" y="303" type="line"/>
+			<point x="300" y="275" type="line"/>
+			<point x="277" y="278" type="line"/>
+			<point x="277" y="279"/>
+			<point x="277" y="280"/>
+			<point x="277" y="281" type="curve" smooth="yes"/>
+		</contour>
+		<contour>
+			<point x="280" y="255" type="line"/>
+			<point x="278" y="261" type="line"/>
+			<point x="278" y="269" type="line"/>
+			<point x="300" y="267" type="line"/>
+			<point x="293" y="255" type="line"/>
+			<point x="285" y="243" type="line"/>
+		</contour>
+		<contour>
+			<point x="304" y="243" type="curve"/>
+			<point x="303" y="239"/>
+			<point x="302" y="237"/>
+			<point x="300" y="235" type="curve"/>
+			<point x="291" y="237" type="line"/>
+			<point x="299" y="249" type="line"/>
+			<point x="303" y="256" type="line"/>
+			<point x="303" y="251" type="line" smooth="yes"/>
+			<point x="303" y="249"/>
+			<point x="303" y="246"/>
+		</contour>
+		<component base="finalpe-hb"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+			<array>
+				<dict>
+					<key>index</key>
+					<integer>0</integer>
+					<key>locked</key>
+					<true/>
+					<key>name</key>
+					<string>finalpe-hb</string>
+				</dict>
+			</array>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>het-hb</string>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>571</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>1818</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

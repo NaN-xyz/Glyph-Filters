@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="gravecomb.case" format="2">
+	<advance width="557"/>
+	<anchor x="269" y="920" name="top"/>
+	<anchor x="350" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="381.405" y="755" type="curve"/>
+			<point x="470.019" y="765.905"/>
+			<point x="449.519" y="820.455"/>
+			<point x="420.5" y="809.55" type="curve"/>
+			<point x="446.022" y="830.47"/>
+			<point x="398.522" y="888.42"/>
+			<point x="373" y="867.5" type="curve"/>
+			<point x="383.824" y="888.92"/>
+			<point x="289.824" y="936.42"/>
+			<point x="279" y="915" type="curve"/>
+			<point x="279" y="945"/>
+			<point x="223" y="945"/>
+			<point x="223" y="915" type="curve"/>
+			<point x="223" y="951"/>
+			<point x="139" y="951"/>
+			<point x="139" y="915" type="curve"/>
+			<point x="126.987" y="935.777"/>
+			<point x="93.577" y="916.459"/>
+			<point x="105.591" y="895.682" type="curve"/>
+			<point x="83.412" y="869.912"/>
+			<point x="128.696" y="830.938"/>
+			<point x="150.875" y="856.708" type="curve"/>
+			<point x="129.267" y="830.458"/>
+			<point x="196.642" y="775"/>
+			<point x="218.25" y="801.25" type="curve"/>
+			<point x="196.102" y="770.372"/>
+			<point x="258.666" y="725.495"/>
+			<point x="280.815" y="756.373" type="curve"/>
+			<point x="280.405" y="726.376"/>
+			<point x="380.996" y="725.003"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

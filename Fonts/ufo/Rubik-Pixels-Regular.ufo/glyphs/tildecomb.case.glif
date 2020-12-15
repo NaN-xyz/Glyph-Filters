@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="tildecomb.case" format="2">
+	<advance width="527"/>
+	<anchor x="254" y="925" name="top"/>
+	<anchor x="254" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="270" y="805" type="line"/>
+			<point x="270" y="845" type="line"/>
+			<point x="230" y="845" type="line"/>
+			<point x="230" y="805" type="line"/>
+		</contour>
+		<contour>
+			<point x="390" y="765" type="line"/>
+			<point x="390" y="805" type="line"/>
+			<point x="350" y="805" type="line"/>
+			<point x="350" y="765" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="72" yOffset="767"/>
+		<component base="pixel1" xOffset="72" yOffset="807"/>
+		<component base="pixel2" xOffset="112" yOffset="767"/>
+		<component base="pixel2" xOffset="112" yOffset="807"/>
+		<component base="pixel1" xOffset="112" yOffset="847"/>
+		<component base="pixel2" xOffset="152" yOffset="807"/>
+		<component base="pixel0" xOffset="152" yOffset="847"/>
+		<component base="pixel3" xOffset="152" yOffset="887"/>
+		<component base="pixel2" xOffset="192" yOffset="807"/>
+		<component base="pixel1" xOffset="192" yOffset="847"/>
+		<component base="pixel2" xOffset="192" yOffset="887"/>
+		<component base="pixel2" xOffset="232" yOffset="767"/>
+		<component base="pixel1" xOffset="232" yOffset="847"/>
+		<component base="pixel0" xOffset="272" yOffset="767"/>
+		<component base="pixel0" xOffset="272" yOffset="807"/>
+		<component base="pixel3" xOffset="272" yOffset="847"/>
+		<component base="pixel1" xOffset="312" yOffset="767"/>
+		<component base="pixel3" xOffset="312" yOffset="807"/>
+		<component base="pixel2" xOffset="312" yOffset="847"/>
+		<component base="pixel3" xOffset="352" yOffset="807"/>
+		<component base="pixel3" xOffset="352" yOffset="847"/>
+		<component base="pixel2" xOffset="352" yOffset="887"/>
+		<component base="pixel2" xOffset="392" yOffset="807"/>
+		<component base="pixel1" xOffset="392" yOffset="847"/>
+		<component base="pixel3" xOffset="392" yOffset="887"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>750</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>833</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>880</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>246</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

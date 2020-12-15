@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ring" format="2">
+	<advance width="300"/>
+	<unicode hex="02DA"/>
+	<outline>
+		<contour>
+			<point x="150" y="550" type="line"/>
+			<point x="150" y="600" type="line"/>
+			<point x="200" y="600" type="line"/>
+			<point x="250" y="650" type="line"/>
+			<point x="200" y="700" type="line"/>
+			<point x="200" y="750" type="line"/>
+			<point x="100" y="750" type="line"/>
+			<point x="50" y="700" type="line"/>
+			<point x="50" y="600" type="line"/>
+		</contour>
+		<contour>
+			<point x="150" y="650" type="line"/>
+			<point x="100" y="650" type="line"/>
+			<point x="150" y="700" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>590</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

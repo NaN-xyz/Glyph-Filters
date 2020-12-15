@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dagesh-hb" format="2">
+	<advance width="117"/>
+	<unicode hex="05BC"/>
+	<anchor x="58" y="286" name="_center"/>
+	<outline>
+		<contour>
+			<point x="78.188" y="205" type="curve"/>
+			<point x="112.762" y="196.619"/>
+			<point x="151.875" y="214.996"/>
+			<point x="171.576" y="244.619" type="curve" smooth="yes"/>
+			<point x="191.276" y="274.242"/>
+			<point x="193.099" y="317.418"/>
+			<point x="172" y="346.062" type="curve"/>
+			<point x="182.029" y="311.93"/>
+			<point x="179.01" y="273.855"/>
+			<point x="163.249" y="250.156" type="curve" smooth="yes"/>
+			<point x="147.489" y="226.458"/>
+			<point x="113.543" y="208.95"/>
+		</contour>
+		<contour>
+			<point x="-11.339" y="195.889" type="curve" smooth="yes"/>
+			<point x="16.456" y="181.182"/>
+			<point x="54.861" y="183.911"/>
+			<point x="78.188" y="205" type="curve"/>
+			<point x="49.055" y="193.161"/>
+			<point x="15.574" y="192.962"/>
+			<point x="-6.663" y="204.728" type="curve" smooth="yes"/>
+			<point x="-28.899" y="216.493"/>
+			<point x="-47.57" y="244.286"/>
+			<point x="-54.171" y="275.031" type="curve"/>
+			<point x="-58.484" y="243.882"/>
+			<point x="-39.135" y="210.595"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

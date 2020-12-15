@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dagesh-hb" format="2">
+	<advance width="117"/>
+	<unicode hex="05BC"/>
+	<anchor x="58" y="286" name="_center"/>
+	<outline>
+		<contour>
+			<point x="105" y="285" type="line"/>
+			<point x="105" y="325" type="line"/>
+			<point x="65" y="325" type="line"/>
+			<point x="65" y="285" type="line"/>
+		</contour>
+		<component base="pixel0" xOffset="27" yOffset="287"/>
+		<component base="pixel0" xOffset="27" yOffset="327"/>
+		<component base="pixel1" xOffset="67" yOffset="327"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

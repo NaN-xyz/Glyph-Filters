@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="resh-hb" format="2">
+	<advance width="562"/>
+	<unicode hex="05E8"/>
+	<anchor x="181" y="260" name="center"/>
+	<anchor x="290" y="520" name="top"/>
+	<anchor x="38" y="0" name="bottomleft"/>
+	<anchor x="38" y="520" name="topleft"/>
+	<anchor x="403" y="0" name="bottom"/>
+	<outline>
+		<contour>
+			<point x="348.581" y="25" type="curve"/>
+			<point x="551.992" y="24.017"/>
+			<point x="553.992" y="142.017"/>
+			<point x="496" y="143" type="curve"/>
+			<point x="551" y="143"/>
+			<point x="551" y="239"/>
+			<point x="496" y="239" type="curve"/>
+			<point x="554.992" y="239.985"/>
+			<point x="552.789" y="371.953"/>
+			<point x="493.797" y="370.968" type="curve"/>
+			<point x="548.811" y="385.88"/>
+			<point x="527.973" y="462.757"/>
+			<point x="472.958" y="447.845" type="curve"/>
+			<point x="498.438" y="481.735"/>
+			<point x="386.862" y="565.622"/>
+			<point x="361.382" y="531.732" type="curve"/>
+			<point x="367.655" y="584.36"/>
+			<point x="248.693" y="598.54"/>
+			<point x="242.42" y="545.912" type="curve"/>
+			<point x="242.453" y="604.912"/>
+			<point x="88.488" y="605"/>
+			<point x="88.455" y="546" type="curve"/>
+			<point x="43.68" y="572.444"/>
+			<point x="10.226" y="515.798"/>
+			<point x="55" y="489.355" type="curve"/>
+			<point x="13.42" y="454.277"/>
+			<point x="71.087" y="385.922"/>
+			<point x="112.667" y="421" type="curve"/>
+			<point x="112.667" y="360"/>
+			<point x="184.238" y="360"/>
+			<point x="184.238" y="421" type="curve"/>
+			<point x="166.924" y="374.093"/>
+			<point x="294.815" y="326.887"/>
+			<point x="312.129" y="373.794" type="curve"/>
+			<point x="244.555" y="366.193"/>
+			<point x="255.426" y="269.548"/>
+			<point x="323" y="277.149" type="curve"/>
+			<point x="262" y="277.149"/>
+			<point x="262" y="153.568"/>
+			<point x="323" y="153.568" type="curve"/>
+			<point x="259" y="153.568"/>
+			<point x="259" y="85.797"/>
+			<point x="323" y="85.797" type="curve"/>
+			<point x="282.444" y="68.733"/>
+			<point x="308.025" y="7.935"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>het-hb</string>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>571</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>40</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>436</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

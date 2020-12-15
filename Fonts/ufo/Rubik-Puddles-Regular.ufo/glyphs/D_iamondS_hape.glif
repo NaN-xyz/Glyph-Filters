@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="DiamondShape" format="2">
+	<advance width="0"/>
+	<outline>
+		<contour>
+			<point x="64.688" y="-70.312" type="curve"/>
+			<point x="95.262" y="-54.156"/>
+			<point x="112.053" y="-15.573"/>
+			<point x="107.328" y="18.683" type="curve" smooth="yes"/>
+			<point x="102.603" y="52.939"/>
+			<point x="75.994" y="85.536"/>
+			<point x="42.188" y="92.812" type="curve"/>
+			<point x="71.466" y="74.413"/>
+			<point x="93.642" y="44.722"/>
+			<point x="97.422" y="17.317" type="curve" smooth="yes"/>
+			<point x="101.202" y="-10.088"/>
+			<point x="87.892" y="-44.673"/>
+		</contour>
+		<contour>
+			<point x="28.664" y="-120.59" type="curve" smooth="yes"/>
+			<point x="48.745" y="-113.502"/>
+			<point x="64.479" y="-91.607"/>
+			<point x="64.688" y="-70.312" type="curve"/>
+			<point x="57.209" y="-90.251"/>
+			<point x="41.401" y="-105.49"/>
+			<point x="25.336" y="-111.16" type="curve" smooth="yes"/>
+			<point x="9.271" y="-116.83"/>
+			<point x="-12.6" y="-114.89"/>
+			<point x="-30.938" y="-104.062" type="curve"/>
+			<point x="-17.409" y="-120.509"/>
+			<point x="8.583" y="-127.677"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

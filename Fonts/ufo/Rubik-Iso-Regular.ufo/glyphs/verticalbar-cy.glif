@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="268" name="_center"/>
+	<outline>
+		<contour>
+			<point x="135" y="315" type="line"/>
+			<point x="180" y="315" type="line"/>
+			<point x="135" y="360" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="90" type="line"/>
+			<point x="90" y="135" type="line"/>
+			<point x="135" y="135" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="90" type="line"/>
+			<point x="135" y="90" type="line"/>
+			<point x="135" y="135" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="90" type="line"/>
+			<point x="180" y="135" type="line"/>
+			<point x="135" y="135" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="135" type="line"/>
+			<point x="90" y="180" type="line"/>
+			<point x="135" y="135" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="135" type="line"/>
+			<point x="135" y="180" type="line"/>
+			<point x="90" y="180" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="135" type="line"/>
+			<point x="180" y="135" type="line"/>
+			<point x="135" y="180" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="180" type="line"/>
+			<point x="90" y="225" type="line"/>
+			<point x="135" y="225" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="180" type="line"/>
+			<point x="135" y="180" type="line"/>
+			<point x="135" y="225" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="225" type="line"/>
+			<point x="90" y="270" type="line"/>
+			<point x="135" y="225" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="225" type="line"/>
+			<point x="135" y="270" type="line"/>
+			<point x="90" y="270" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="180" type="line"/>
+			<point x="135" y="225" type="line"/>
+			<point x="180" y="225" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="180" type="line"/>
+			<point x="180" y="180" type="line"/>
+			<point x="180" y="225" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="270" type="line"/>
+			<point x="90" y="315" type="line"/>
+			<point x="135" y="315" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="270" type="line"/>
+			<point x="135" y="270" type="line"/>
+			<point x="135" y="315" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="225" type="line"/>
+			<point x="180" y="225" type="line"/>
+			<point x="135" y="270" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="315" type="line"/>
+			<point x="90" y="360" type="line"/>
+			<point x="135" y="315" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="315" type="line"/>
+			<point x="135" y="360" type="line"/>
+			<point x="90" y="360" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="270" type="line"/>
+			<point x="135" y="315" type="line"/>
+			<point x="180" y="315" type="line"/>
+		</contour>
+		<contour>
+			<point x="135" y="270" type="line"/>
+			<point x="180" y="270" type="line"/>
+			<point x="180" y="315" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ogonekcomb.case" format="2">
+	<advance width="303"/>
+	<anchor x="227" y="10" name="_ogonek"/>
+	<outline>
+		<contour>
+			<point x="173.548" y="-212.038" type="curve"/>
+			<point x="251.324" y="-218.748"/>
+			<point x="266.922" y="-113.346"/>
+			<point x="241.597" y="-109.598" type="curve"/>
+			<point x="254.002" y="-75.803"/>
+			<point x="184.728" y="-50.376"/>
+			<point x="172.323" y="-84.171" type="curve"/>
+			<point x="205.115" y="-80.47"/>
+			<point x="198.438" y="-21.306"/>
+			<point x="165.646" y="-25.007" type="curve"/>
+			<point x="180.082" y="-52.44"/>
+			<point x="237.103" y="-22.433"/>
+			<point x="222.667" y="5" type="curve"/>
+			<point x="245.373" y="-2.773"/>
+			<point x="270.706" y="71.227"/>
+			<point x="248" y="79" type="curve"/>
+			<point x="263.315" y="98.506"/>
+			<point x="215.262" y="136.235"/>
+			<point x="199.947" y="116.729" type="curve"/>
+			<point x="194.895" y="154.392"/>
+			<point x="155.117" y="149.056"/>
+			<point x="160.17" y="111.393" type="curve"/>
+			<point x="141.16" y="141.965"/>
+			<point x="57.593" y="90.003"/>
+			<point x="76.602" y="59.431" type="curve"/>
+			<point x="43.976" y="74.648"/>
+			<point x="18.664" y="20.377"/>
+			<point x="51.29" y="5.16" type="curve"/>
+			<point x="12.31" y="6.405"/>
+			<point x="9.303" y="-87.759"/>
+			<point x="48.283" y="-89.004" type="curve"/>
+			<point x="13.703" y="-99.016"/>
+			<point x="24.854" y="-137.531"/>
+			<point x="59.434" y="-127.52" type="curve"/>
+			<point x="29.745" y="-147.881"/>
+			<point x="61.341" y="-193.951"/>
+			<point x="91.03" y="-173.59" type="curve"/>
+			<point x="75.825" y="-206.221"/>
+			<point x="158.343" y="-244.67"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-220</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-82</string>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

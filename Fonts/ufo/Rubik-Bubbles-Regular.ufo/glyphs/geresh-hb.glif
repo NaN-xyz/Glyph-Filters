@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="geresh-hb" format="2">
+	<advance width="295"/>
+	<unicode hex="05F3"/>
+	<outline>
+		<contour>
+			<point x="104.385" y="323" type="curve"/>
+			<point x="196.724" y="300.411"/>
+			<point x="263.001" y="434.564"/>
+			<point x="217.277" y="457.154" type="curve"/>
+			<point x="269.394" y="436.665"/>
+			<point x="316.117" y="555.511"/>
+			<point x="264" y="576" type="curve"/>
+			<point x="264" y="640"/>
+			<point x="116" y="640"/>
+			<point x="116" y="576" type="curve"/>
+			<point x="74.129" y="599.47"/>
+			<point x="42.161" y="542.437"/>
+			<point x="84.032" y="518.968" type="curve"/>
+			<point x="19.779" y="528.792"/>
+			<point x="12.021" y="478.05"/>
+			<point x="76.274" y="468.226" type="curve"/>
+			<point x="23.883" y="476.236"/>
+			<point x="4.786" y="351.333"/>
+			<point x="57.177" y="343.323" type="curve"/>
+			<point x="-0.798" y="341.634"/>
+			<point x="-0.206" y="321.312"/>
+			<point x="57.769" y="323" type="curve"/>
+			<point x="57.769" y="272"/>
+			<point x="104.385" y="272"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

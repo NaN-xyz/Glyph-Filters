@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="L" format="2">
+	<advance width="626"/>
+	<unicode hex="004C"/>
+	<anchor x="313" y="350" name="center"/>
+	<anchor x="173" y="700" name="top"/>
+	<anchor x="606" y="700" name="topright"/>
+	<anchor x="313" y="0" name="bottom"/>
+	<outline>
+		<contour>
+			<point x="608.722" y="104.621" type="curve"/>
+			<point x="608.409" y="123.1"/>
+			<point x="607.825" y="138.819"/>
+			<point x="605.738" y="154.432" type="curve"/>
+			<point x="604.549" y="163.325"/>
+			<point x="603.735" y="170.509"/>
+			<point x="599.534" y="178.489" type="curve"/>
+			<point x="597.649" y="182.069"/>
+			<point x="595.744" y="188.377"/>
+			<point x="592.86" y="191.166" type="curve"/>
+			<point x="591.138" y="192.831"/>
+			<point x="587.136" y="193.991"/>
+			<point x="584.975" y="195.058" type="curve"/>
+			<point x="580.775" y="197.13"/>
+			<point x="576.296" y="200.149"/>
+			<point x="571.834" y="201.543" type="curve"/>
+			<point x="566.998" y="203.054"/>
+			<point x="560.996" y="202.98"/>
+			<point x="555.963" y="203.647" type="curve"/>
+			<point x="544.743" y="205.135"/>
+			<point x="532.811" y="205.395"/>
+			<point x="521.717" y="203.242" type="curve"/>
+			<point x="520.348" y="202.976"/>
+			<point x="512.169" y="202.327"/>
+			<point x="511.589" y="201.276" type="curve"/>
+			<point x="510.708" y="199.681"/>
+			<point x="512.683" y="197.8"/>
+			<point x="513.23" y="196.061" type="curve"/>
+			<point x="515.144" y="189.981"/>
+			<point x="517.374" y="183.912"/>
+			<point x="518.763" y="177.69" type="curve"/>
+			<point x="523.157" y="158.008"/>
+			<point x="527.615" y="136.418"/>
+			<point x="525.513" y="116.091" type="curve"/>
+			<point x="523.018" y="91.963"/>
+			<point x="507.063" y="71.012"/>
+			<point x="505.841" y="46.923" type="curve"/>
+			<point x="505.636" y="42.873"/>
+			<point x="504.281" y="37.168"/>
+			<point x="505.147" y="33.23" type="curve"/>
+			<point x="505.805" y="30.235"/>
+			<point x="508.697" y="26.628"/>
+			<point x="510.158" y="23.912" type="curve"/>
+			<point x="511.599" y="21.234"/>
+			<point x="513.033" y="16.73"/>
+			<point x="515.17" y="14.595" type="curve"/>
+			<point x="517.329" y="12.437"/>
+			<point x="521.849" y="10.985"/>
+			<point x="524.552" y="9.524" type="curve"/>
+			<point x="527.443" y="7.961"/>
+			<point x="530.79" y="5.378"/>
+			<point x="533.933" y="4.453" type="curve"/>
+			<point x="537.043" y="3.537"/>
+			<point x="541.228" y="3.902"/>
+			<point x="544.472" y="3.658" type="curve"/>
+			<point x="561.834" y="2.347"/>
+			<point x="581.055" y="8.455"/>
+			<point x="592.271" y="22.81" type="curve"/>
+			<point x="594.824" y="26.078"/>
+			<point x="596.331" y="31.21"/>
+			<point x="598.142" y="34.956" type="curve"/>
+			<point x="608.121" y="55.601"/>
+			<point x="607.567" y="82.052"/>
+		</contour>
+		<component base="LineVerticalComponent" yScale="2.08" xOffset="74" yOffset="472"/>
+		<component base="LineVerticalComponent" yScale="2.82" xOffset="94" yOffset="410"/>
+		<component base="LineVerticalComponent" yScale="3.22" xOffset="114" yOffset="374"/>
+		<component base="LineVerticalComponent" yScale="3.32" xOffset="134" yOffset="366"/>
+		<component base="LineVerticalComponent" yScale="0.54" xOffset="154" yOffset="166"/>
+		<component base="LineVerticalComponent" yScale="3.3" xOffset="154" yOffset="368"/>
+		<component base="LineVerticalComponent" yScale="1.1" xOffset="174" yOffset="138"/>
+		<component base="LineVerticalComponent" yScale="3.22" xOffset="174" yOffset="376"/>
+		<component base="LineVerticalComponent" yScale="1.8" xOffset="194" yOffset="122"/>
+		<component base="LineVerticalComponent" yScale="3.12" xOffset="194" yOffset="386"/>
+		<component base="LineVerticalComponent" yScale="2.14" xOffset="214" yOffset="110"/>
+		<component base="LineVerticalComponent" yScale="3.04" xOffset="214" yOffset="394"/>
+		<component base="LineVerticalComponent" yScale="2.68" xOffset="234" yOffset="98"/>
+		<component base="LineVerticalComponent" yScale="3.04" xOffset="234" yOffset="394"/>
+		<component base="LineVerticalComponent" yScale="6.02" xOffset="254" yOffset="94"/>
+		<component base="LineVerticalComponent" yScale="5.94" xOffset="274" yOffset="98"/>
+		<component base="LineVerticalComponent" yScale="5.72" xOffset="294" yOffset="104"/>
+		<component base="LineVerticalComponent" yScale="1.2" xOffset="314" yOffset="108"/>
+		<component base="LineVerticalComponent" yScale="1.04" xOffset="334" yOffset="104"/>
+		<component base="LineVerticalComponent" yScale="1.1" xOffset="354" yOffset="92"/>
+		<component base="LineVerticalComponent" yScale="1.3" xOffset="374" yOffset="72"/>
+		<component base="LineVerticalComponent" yScale="1.46" xOffset="394" yOffset="52"/>
+		<component base="LineVerticalComponent" yScale="1.5" xOffset="414" yOffset="44"/>
+		<component base="LineVerticalComponent" yScale="1.48" xOffset="434" yOffset="42"/>
+		<component base="LineVerticalComponent" yScale="1.48" xOffset="454" yOffset="42"/>
+		<component base="LineVerticalComponent" yScale="1.48" xOffset="474" yOffset="46"/>
+		<component base="LineVerticalComponent" yScale="1.36" xOffset="494" yOffset="56"/>
+		<component base="LineVerticalComponent" yScale="0.94" xOffset="514" yOffset="84"/>
+		<component base="LineVerticalComponent" yScale="3.22" xOffset="74" yOffset="26"/>
+		<component base="LineVerticalComponent" yScale="3.46" xOffset="94" yOffset="10"/>
+		<component base="LineVerticalComponent" yScale="3.54" xOffset="114" yOffset="4"/>
+		<component base="LineVerticalComponent" yScale="3.54" xOffset="134" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="1.66" xOffset="154"/>
+		<component base="LineVerticalComponent" yScale="1.24" xOffset="154" yOffset="222"/>
+		<component base="LineVerticalComponent" yScale="1.36" xOffset="174"/>
+		<component base="LineVerticalComponent" yScale="0.74" xOffset="174" yOffset="246"/>
+		<component base="LineVerticalComponent" yScale="1.2" xOffset="194"/>
+		<component base="LineVerticalComponent" yScale="1.06" xOffset="214"/>
+		<component base="LineVerticalComponent" yScale="0.96" xOffset="234"/>
+		<component base="LineVerticalComponent" yScale="0.9" xOffset="254"/>
+		<component base="LineVerticalComponent" yScale="0.94" xOffset="274"/>
+		<component base="LineVerticalComponent" yScale="1.04" xOffset="294"/>
+		<component base="LineVerticalComponent" yScale="1.06" xOffset="314" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="0.98" xOffset="334" yOffset="6"/>
+		<component base="LineVerticalComponent" yScale="0.74" xOffset="354" yOffset="16"/>
+		<component base="LineVerticalComponent" yScale="0.02" xOffset="374" yOffset="56"/>
+		<component base="LineVerticalComponent" yScale="0.32" xOffset="455" yOffset="6"/>
+		<component base="LineVerticalComponent" yScale="0.42" xOffset="475" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="0.08" xOffset="475" yOffset="196"/>
+		<component base="LineVerticalComponent" yScale="0.54" xOffset="495" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="0.1" xOffset="535" yOffset="194"/>
+		<component base="LineVerticalComponent" yScale="2" xOffset="555" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="1.9" xOffset="575" yOffset="8"/>
+		<component base="LineVerticalComponent" yScale="1.58" xOffset="595" yOffset="24"/>
+		<component base="LineHorizontalComponent" xScale="0.48" xOffset="231" yOffset="507"/>
+		<component base="LineHorizontalComponent" xScale="0.6" xOffset="227" yOffset="527"/>
+		<component base="LineHorizontalComponent" xScale="0.7" xOffset="221" yOffset="547"/>
+		<component base="LineHorizontalComponent" xScale="0.94" xOffset="203" yOffset="567"/>
+		<component base="LineHorizontalComponent" xScale="1.06" xOffset="199" yOffset="587"/>
+		<component base="LineHorizontalComponent" xScale="0.68" xOffset="239" yOffset="607"/>
+		<component base="LineHorizontalComponent" xScale="0.52" xOffset="255" yOffset="627"/>
+		<component base="LineHorizontalComponent" xScale="0.5" xOffset="255" yOffset="647"/>
+		<component base="LineHorizontalComponent" xScale="0.42" xOffset="257" yOffset="667"/>
+		<component base="LineHorizontalComponent" xScale="0.58" xOffset="62" yOffset="233"/>
+		<component base="LineHorizontalComponent" xScale="0.84" xOffset="56" yOffset="253"/>
+		<component base="LineHorizontalComponent" xScale="1.08" xOffset="56" yOffset="273"/>
+		<component base="LineHorizontalComponent" xScale="1.42" xOffset="56" yOffset="293"/>
+		<component base="LineHorizontalComponent" xScale="1.58" xOffset="56" yOffset="313"/>
+		<component base="LineHorizontalComponent" xScale="1.76" xOffset="56" yOffset="333"/>
+		<component base="LineHorizontalComponent" xScale="1.9" xOffset="56" yOffset="353"/>
+		<component base="LineHorizontalComponent" xScale="1.96" xOffset="56" yOffset="373"/>
+		<component base="LineHorizontalComponent" xScale="1.96" xOffset="56" yOffset="393"/>
+		<component base="LineHorizontalComponent" xScale="1.92" xOffset="56" yOffset="413"/>
+		<component base="LineHorizontalComponent" xScale="1.7" xOffset="58" yOffset="433"/>
+		<component base="LineHorizontalComponent" xScale="0.88" xOffset="62" yOffset="453"/>
+		<component base="LineHorizontalComponent" xScale="0.68" xOffset="68" yOffset="473"/>
+		<component base="LineHorizontalComponent" xScale="0.6" xOffset="70" yOffset="493"/>
+		<component base="LineHorizontalComponent" xScale="0.56" xOffset="70" yOffset="513"/>
+		<component base="LineHorizontalComponent" xScale="0.6" xOffset="64" yOffset="533"/>
+		<component base="LineHorizontalComponent" xScale="0.64" xOffset="60" yOffset="553"/>
+		<component base="LineHorizontalComponent" xScale="0.68" xOffset="56" yOffset="573"/>
+		<component base="LineHorizontalComponent" xScale="0.66" xOffset="58" yOffset="593"/>
+		<component base="LineHorizontalComponent" xScale="0.64" xOffset="60" yOffset="613"/>
+		<component base="LineHorizontalComponent" xScale="0.58" xOffset="64" yOffset="633"/>
+		<component base="LineHorizontalComponent" xScale="0.42" xOffset="74" yOffset="653"/>
+		<component base="LineHorizontalComponent" xScale="0.1" xOffset="151"/>
+		<component base="LineHorizontalComponent" xScale="1.68" xOffset="345"/>
+		<component base="LineHorizontalComponent" xScale="5.06" xOffset="79" yOffset="20"/>
+		<component base="LineHorizontalComponent" xScale="5.3" xOffset="67" yOffset="40"/>
+		<component base="LineHorizontalComponent" xScale="5.44" xOffset="59" yOffset="60"/>
+		<component base="LineHorizontalComponent" xScale="5.48" xOffset="57" yOffset="80"/>
+		<component base="LineHorizontalComponent" xScale="5.48" xOffset="57" yOffset="100"/>
+		<component base="LineHorizontalComponent" xScale="5.48" xOffset="57" yOffset="120"/>
+		<component base="LineHorizontalComponent" xScale="5.48" xOffset="57" yOffset="140"/>
+		<component base="LineHorizontalComponent" xScale="5.36" xOffset="67" yOffset="160"/>
+		<component base="LineHorizontalComponent" xScale="3.36" xOffset="261" yOffset="180"/>
+		<component base="LineHorizontalComponent" xScale="2.34" xOffset="335" yOffset="200"/>
+		<component base="LineHorizontalComponent" xScale="0.94" xOffset="156" yOffset="624"/>
+		<component base="LineHorizontalComponent" xScale="1.24" xOffset="126" yOffset="644"/>
+		<component base="LineHorizontalComponent" xScale="1.28" xOffset="116" yOffset="664"/>
+		<component base="LineHorizontalComponent" xScale="1.26" xOffset="104" yOffset="684"/>
+		<component base="LineHorizontalComponent" xScale="0.6" xOffset="145" yOffset="466"/>
+		<component base="LineHorizontalComponent" xScale="0.8" xOffset="135" yOffset="486"/>
+		<component base="LineHorizontalComponent" xScale="0.88" xOffset="129" yOffset="506"/>
+		<component base="LineHorizontalComponent" xScale="0.9" xOffset="127" yOffset="526"/>
+		<component base="LineHorizontalComponent" xScale="0.86" xOffset="127" yOffset="546"/>
+		<component base="LineHorizontalComponent" xScale="0.66" xOffset="131" yOffset="566"/>
+		<component base="LineHorizontalComponent" xScale="0.22" xOffset="147" yOffset="586"/>
+		<component base="LineHorizontalComponent" xScale="1.6" xOffset="80" yOffset="190"/>
+		<component base="LineHorizontalComponent" xScale="1.54" xOffset="94" yOffset="210"/>
+		<component base="LineHorizontalComponent" xScale="1.44" xOffset="118" yOffset="230"/>
+		<component base="LineHorizontalComponent" xScale="1.46" xOffset="140" yOffset="250"/>
+		<component base="LineHorizontalComponent" xScale="1.4" xOffset="160" yOffset="270"/>
+		<component base="LineHorizontalComponent" xScale="1.14" xOffset="192" yOffset="290"/>
+		<component base="LineHorizontalComponent" xScale="0.96" xOffset="212" yOffset="310"/>
+		<component base="LineHorizontalComponent" xScale="0.76" xOffset="232" yOffset="330"/>
+		<component base="LineHorizontalComponent" xScale="0.6" xOffset="248" yOffset="350"/>
+		<component base="LineHorizontalComponent" xScale="0.52" xOffset="256" yOffset="370"/>
+		<component base="LineHorizontalComponent" xScale="0.52" xOffset="256" yOffset="390"/>
+		<component base="LineHorizontalComponent" xScale="0.58" xOffset="250" yOffset="410"/>
+		<component base="LineHorizontalComponent" xScale="0.68" xOffset="240" yOffset="430"/>
+		<component base="LineHorizontalComponent" xScale="0.72" xOffset="236" yOffset="450"/>
+		<component base="LineHorizontalComponent" xScale="0.62" xOffset="244" yOffset="470"/>
+		<component base="LineHorizontalComponent" xScale="0.18" xOffset="276" yOffset="490"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

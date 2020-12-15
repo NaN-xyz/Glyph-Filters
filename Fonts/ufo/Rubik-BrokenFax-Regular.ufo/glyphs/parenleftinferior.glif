@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="parenleftinferior" format="2">
+	<advance width="261"/>
+	<unicode hex="208D"/>
+	<outline>
+		<contour>
+			<point x="224" y="-200" type="line"/>
+			<point x="224" y="-100" type="line"/>
+			<point x="124" y="0" type="line"/>
+			<point x="124" y="50" type="line"/>
+			<point x="174" y="100" type="line"/>
+			<point x="224" y="100" type="line"/>
+			<point x="224" y="200" type="line"/>
+			<point x="124" y="200" type="line"/>
+			<point x="24" y="100" type="line"/>
+			<point x="24" y="-100" type="line"/>
+			<point x="74" y="-150" type="line"/>
+			<point x="124" y="-150" type="line"/>
+			<point x="174" y="-200" type="line"/>
+		</contour>
+		<contour>
+			<point x="96" y="-80" type="line"/>
+			<point x="48" y="-80" type="line"/>
+			<point x="48" y="-32" type="line"/>
+			<point x="96" y="-32" type="line"/>
+		</contour>
+		<contour>
+			<point x="96" y="-32" type="line"/>
+			<point x="48" y="-32" type="line"/>
+			<point x="48" y="16" type="line"/>
+			<point x="96" y="16" type="line"/>
+		</contour>
+		<contour>
+			<point x="96" y="16" type="line"/>
+			<point x="48" y="16" type="line"/>
+			<point x="48" y="64" type="line"/>
+			<point x="96" y="64" type="line"/>
+		</contour>
+		<contour>
+			<point x="144" y="-128" type="line"/>
+			<point x="96" y="-128" type="line"/>
+			<point x="96" y="-80" type="line"/>
+			<point x="144" y="-80" type="line"/>
+		</contour>
+		<contour>
+			<point x="104" y="-88" type="line"/>
+			<point x="72" y="-88" type="line"/>
+			<point x="72" y="-56" type="line"/>
+			<point x="104" y="-56" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="-120" type="line"/>
+			<point x="104" y="-120" type="line"/>
+			<point x="104" y="-88" type="line"/>
+			<point x="136" y="-88" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="-88" type="line"/>
+			<point x="104" y="-88" type="line"/>
+			<point x="104" y="-56" type="line"/>
+			<point x="136" y="-56" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="104" type="line"/>
+			<point x="104" y="104" type="line"/>
+			<point x="104" y="136" type="line"/>
+			<point x="136" y="136" type="line"/>
+		</contour>
+		<contour>
+			<point x="168" y="-120" type="line"/>
+			<point x="136" y="-120" type="line"/>
+			<point x="136" y="-88" type="line"/>
+			<point x="168" y="-88" type="line"/>
+		</contour>
+		<contour>
+			<point x="200" y="-152" type="line"/>
+			<point x="168" y="-152" type="line"/>
+			<point x="168" y="-120" type="line"/>
+			<point x="200" y="-120" type="line"/>
+		</contour>
+		<contour>
+			<point x="200" y="136" type="line"/>
+			<point x="168" y="136" type="line"/>
+			<point x="168" y="168" type="line"/>
+			<point x="200" y="168" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>245</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>5</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>83</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>205</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

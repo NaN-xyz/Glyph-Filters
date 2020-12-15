@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="LineVerticalComponent" format="2">
+	<advance width="0"/>
+	<outline>
+		<contour>
+			<point x="26.68" y="-50.021" type="curve" smooth="yes"/>
+			<point x="53.14" y="-33.221"/>
+			<point x="69.737" y="1.39"/>
+			<point x="63" y="32" type="curve"/>
+			<point x="58.861" y="0.932"/>
+			<point x="42.488" y="-28.139"/>
+			<point x="21.32" y="-41.579" type="curve" smooth="yes"/>
+			<point x="0.152" y="-55.019"/>
+			<point x="-33.122" y="-57.471"/>
+			<point x="-63" y="-48" type="curve"/>
+			<point x="-38.163" y="-67.118"/>
+			<point x="0.22" y="-66.821"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

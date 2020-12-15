@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="eightinferior" format="2">
+	<advance width="368"/>
+	<unicode hex="2088"/>
+	<outline>
+		<contour>
+			<point x="274" y="150" type="line"/>
+			<point x="74" y="150" type="line"/>
+			<point x="24" y="100" type="line"/>
+			<point x="24" y="50" type="line"/>
+			<point x="74" y="0" type="line"/>
+			<point x="24" y="-50" type="line"/>
+			<point x="24" y="-100" type="line"/>
+			<point x="74" y="-150" type="line"/>
+			<point x="274" y="-150" type="line"/>
+			<point x="324" y="-100" type="line"/>
+			<point x="324" y="-50" type="line"/>
+			<point x="274" y="0" type="line"/>
+			<point x="324" y="50" type="line"/>
+			<point x="324" y="100" type="line"/>
+		</contour>
+		<contour>
+			<point x="174" y="-50" type="line"/>
+			<point x="174" y="50" type="line"/>
+			<point x="224" y="50" type="line"/>
+			<point x="174" y="0" type="line"/>
+			<point x="224" y="-50" type="line"/>
+		</contour>
+		<contour>
+			<point x="104" y="-102" type="line"/>
+			<point x="72" y="-102" type="line"/>
+			<point x="72" y="-70" type="line"/>
+			<point x="104" y="-70" type="line"/>
+		</contour>
+		<contour>
+			<point x="104" y="-70" type="line"/>
+			<point x="72" y="-70" type="line"/>
+			<point x="72" y="-38" type="line"/>
+			<point x="104" y="-38" type="line"/>
+		</contour>
+		<contour>
+			<point x="104" y="58" type="line"/>
+			<point x="72" y="58" type="line"/>
+			<point x="72" y="90" type="line"/>
+			<point x="104" y="90" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="-102" type="line"/>
+			<point x="104" y="-102" type="line"/>
+			<point x="104" y="-70" type="line"/>
+			<point x="136" y="-70" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="-6" type="line"/>
+			<point x="104" y="-6" type="line"/>
+			<point x="104" y="26" type="line"/>
+			<point x="136" y="26" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="26" type="line"/>
+			<point x="104" y="26" type="line"/>
+			<point x="104" y="58" type="line"/>
+			<point x="136" y="58" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="58" type="line"/>
+			<point x="104" y="58" type="line"/>
+			<point x="104" y="90" type="line"/>
+			<point x="136" y="90" type="line"/>
+		</contour>
+		<contour>
+			<point x="168" y="-102" type="line"/>
+			<point x="136" y="-102" type="line"/>
+			<point x="136" y="-70" type="line"/>
+			<point x="168" y="-70" type="line"/>
+		</contour>
+		<contour>
+			<point x="200" y="-102" type="line"/>
+			<point x="168" y="-102" type="line"/>
+			<point x="168" y="-70" type="line"/>
+			<point x="200" y="-70" type="line"/>
+		</contour>
+		<contour>
+			<point x="200" y="90" type="line"/>
+			<point x="168" y="90" type="line"/>
+			<point x="168" y="122" type="line"/>
+			<point x="200" y="122" type="line"/>
+		</contour>
+		<contour>
+			<point x="232" y="-102" type="line"/>
+			<point x="200" y="-102" type="line"/>
+			<point x="200" y="-70" type="line"/>
+			<point x="232" y="-70" type="line"/>
+		</contour>
+		<contour>
+			<point x="232" y="90" type="line"/>
+			<point x="200" y="90" type="line"/>
+			<point x="200" y="122" type="line"/>
+			<point x="232" y="122" type="line"/>
+		</contour>
+		<contour>
+			<point x="264" y="-102" type="line"/>
+			<point x="232" y="-102" type="line"/>
+			<point x="232" y="-70" type="line"/>
+			<point x="264" y="-70" type="line"/>
+		</contour>
+		<contour>
+			<point x="264" y="90" type="line"/>
+			<point x="232" y="90" type="line"/>
+			<point x="232" y="122" type="line"/>
+			<point x="264" y="122" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>710</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>88</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-170</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>30</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>308</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

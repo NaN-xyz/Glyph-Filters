@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="finalpedagesh-hb" format="2">
+	<advance width="590"/>
+	<anchor x="287" y="242" name="center"/>
+	<anchor x="284" y="520" name="top"/>
+	<anchor x="20" y="0" name="bottomleft"/>
+	<anchor x="273" y="229" name="_center"/>
+	<anchor x="20" y="520" name="topleft"/>
+	<anchor x="284" y="0" name="bottom"/>
+	<outline>
+		<contour>
+			<point x="333.795" y="191.376" type="curve"/>
+			<point x="336.243" y="192.718" type="line"/>
+			<point x="356.219" y="212.594"/>
+			<point x="349.236" y="245.861"/>
+			<point x="340.526" y="269.755" type="curve"/>
+			<point x="338.281" y="275.916"/>
+			<point x="336.221" y="281.991"/>
+			<point x="333.137" y="287.784" type="curve"/>
+			<point x="329.68" y="294.279"/>
+			<point x="326.737" y="300.876"/>
+			<point x="321.787" y="306.343" type="curve"/>
+			<point x="318.493" y="309.982"/>
+			<point x="315.07" y="315.342"/>
+			<point x="311.08" y="318.171" type="curve"/>
+			<point x="307.083" y="321.005"/>
+			<point x="300.886" y="322.467"/>
+			<point x="296.353" y="324.376" type="curve"/>
+			<point x="294.717" y="325.066"/>
+			<point x="293.211" y="326.264"/>
+			<point x="291.445" y="326.445" type="curve"/>
+			<point x="289.671" y="326.626"/>
+			<point x="287.946" y="325.76"/>
+			<point x="286.197" y="325.417" type="curve"/>
+			<point x="281.401" y="324.479"/>
+			<point x="274.887" y="324.344"/>
+			<point x="270.454" y="322.336" type="curve"/>
+			<point x="266.774" y="320.669"/>
+			<point x="263.107" y="316.66"/>
+			<point x="259.897" y="314.18" type="curve"/>
+			<point x="241.481" y="299.952"/>
+			<point x="225.07" y="274.898"/>
+			<point x="227.503" y="250.7" type="curve"/>
+			<point x="228.418" y="241.592"/>
+			<point x="233.055" y="230.968"/>
+			<point x="237.339" y="223.042" type="curve"/>
+			<point x="249.566" y="200.42"/>
+			<point x="268.354" y="181.135"/>
+			<point x="295.69" y="179.76" type="curve"/>
+			<point x="301.483" y="179.468"/>
+			<point x="311.143" y="180.218"/>
+			<point x="316.659" y="181.981" type="curve"/>
+			<point x="322.474" y="183.839"/>
+			<point x="328.427" y="188.433"/>
+		</contour>
+		<component base="finalpe-hb"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+			<array>
+				<dict>
+					<key>index</key>
+					<integer>0</integer>
+					<key>locked</key>
+					<true/>
+					<key>name</key>
+					<string>finalpe-hb</string>
+				</dict>
+			</array>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>571</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>1818</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="holamhaser-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05BA"/>
+	<anchor x="2" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="-45" y="585" type="line"/>
+			<point x="0" y="630" type="line"/>
+			<point x="0" y="585" type="line"/>
+		</contour>
+		<contour>
+			<point x="-135" y="495" type="line"/>
+			<point x="-135" y="540" type="line"/>
+			<point x="-90" y="540" type="line"/>
+		</contour>
+		<contour>
+			<point x="-135" y="495" type="line"/>
+			<point x="-90" y="495" type="line"/>
+			<point x="-90" y="540" type="line"/>
+		</contour>
+		<contour>
+			<point x="-135" y="540" type="line"/>
+			<point x="-135" y="585" type="line"/>
+			<point x="-90" y="540" type="line"/>
+		</contour>
+		<contour>
+			<point x="-90" y="495" type="line"/>
+			<point x="-90" y="540" type="line"/>
+			<point x="-45" y="540" type="line"/>
+		</contour>
+		<contour>
+			<point x="-90" y="540" type="line"/>
+			<point x="-90" y="585" type="line"/>
+			<point x="-135" y="585" type="line"/>
+		</contour>
+		<contour>
+			<point x="-90" y="495" type="line"/>
+			<point x="-45" y="495" type="line"/>
+			<point x="-45" y="540" type="line"/>
+		</contour>
+		<contour>
+			<point x="-45" y="495" type="line"/>
+			<point x="0" y="540" type="line"/>
+			<point x="-45" y="540" type="line"/>
+		</contour>
+		<contour>
+			<point x="-135" y="585" type="line"/>
+			<point x="-135" y="630" type="line"/>
+			<point x="-90" y="630" type="line"/>
+		</contour>
+		<contour>
+			<point x="-135" y="585" type="line"/>
+			<point x="-90" y="585" type="line"/>
+			<point x="-90" y="630" type="line"/>
+		</contour>
+		<contour>
+			<point x="-45" y="540" type="line"/>
+			<point x="0" y="540" type="line"/>
+			<point x="-45" y="585" type="line"/>
+		</contour>
+		<contour>
+			<point x="-45" y="585" type="line"/>
+			<point x="-45" y="630" type="line"/>
+			<point x="0" y="630" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

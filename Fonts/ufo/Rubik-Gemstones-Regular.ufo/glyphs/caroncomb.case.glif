@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="caroncomb.case" format="2">
+	<advance width="548"/>
+	<anchor x="275" y="920" name="top"/>
+	<anchor x="275" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="193.268" y="758.552" type="line"/>
+			<point x="247.424" y="745" type="line"/>
+			<point x="284.848" y="755" type="line"/>
+			<point x="312.424" y="740" type="line"/>
+			<point x="340" y="755" type="line"/>
+			<point x="377.343" y="771.612" type="line"/>
+			<point x="402.333" y="803.952" type="line"/>
+			<point x="434.996" y="811.437" type="line"/>
+			<point x="439.667" y="844.619" type="line"/>
+			<point x="470.437" y="861.871" type="line"/>
+			<point x="485" y="894" type="line"/>
+			<point x="479.424" y="914.407" type="line"/>
+			<point x="458.278" y="915" type="line"/>
+			<point x="421.729" y="924.364" type="line"/>
+			<point x="385.53" y="913.732" type="line"/>
+			<point x="361.18" y="919.002" type="line"/>
+			<point x="347.308" y="898.308" type="line"/>
+			<point x="311.858" y="899.993" type="line"/>
+			<point x="289.462" y="872.462" type="line"/>
+			<point x="263.373" y="891.61" type="line"/>
+			<point x="231.615" y="885.385" type="line"/>
+			<point x="216.626" y="905.225" type="line"/>
+			<point x="191.846" y="903.154" type="line"/>
+			<point x="162.599" y="925.798" type="line"/>
+			<point x="127.222" y="915" type="line"/>
+			<point x="103.556" y="928" type="line"/>
+			<point x="79.889" y="915" type="line"/>
+			<point x="70.624" y="893.314" type="line"/>
+			<point x="83.667" y="873.667" type="line"/>
+			<point x="88.897" y="851.704" type="line"/>
+			<point x="110.333" y="844.619" type="line"/>
+			<point x="116.757" y="818.399" type="line"/>
+			<point x="142.333" y="809.762" type="line"/>
+			<point x="160.711" y="777.105" type="line"/>
+		</contour>
+		<contour>
+			<point x="399.509" y="890.115" type="line"/>
+			<point x="403.893" y="870.55" type="line"/>
+			<point x="384.18" y="857.334" type="line"/>
+			<point x="367.204" y="876.077" type="line"/>
+			<point x="380.986" y="893.381" type="line"/>
+		</contour>
+		<contour>
+			<point x="188.967" y="837.08" type="line"/>
+			<point x="186.841" y="820.679" type="line"/>
+			<point x="168.759" y="818.285" type="line"/>
+			<point x="165.308" y="834.699" type="line"/>
+			<point x="175.518" y="848.935" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>750</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

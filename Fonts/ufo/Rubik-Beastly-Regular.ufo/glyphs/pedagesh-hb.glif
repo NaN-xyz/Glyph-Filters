@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="pedagesh-hb" format="2">
+	<advance width="597"/>
+	<unicode hex="FB44"/>
+	<anchor x="310" y="260" name="center"/>
+	<anchor x="280" y="520" name="top"/>
+	<anchor x="30" y="0" name="bottomleft"/>
+	<anchor x="30" y="520" name="topleft"/>
+	<anchor x="280" y="0" name="bottom"/>
+	<outline>
+		<contour>
+			<point x="294" y="271.625" type="curve"/>
+			<point x="316.123" y="225.053"/>
+			<point x="337.879" y="212.501"/>
+			<point x="352.778" y="211.919" type="curve"/>
+			<point x="341.281" y="221.412"/>
+			<point x="330.337" y="244.917"/>
+			<point x="331" y="259.812" type="curve"/>
+			<point x="341.935" y="272.169"/>
+			<point x="369.606" y="283.339"/>
+			<point x="386" y="281.469" type="curve"/>
+			<point x="373.833" y="292.614"/>
+			<point x="347.449" y="304.422"/>
+			<point x="331" y="303.125" type="curve"/>
+			<point x="337.76" y="316.884"/>
+			<point x="341.038" y="342.567"/>
+			<point x="336.855" y="357.315" type="curve"/>
+			<point x="331.64" y="342.899"/>
+			<point x="311.268" y="325.835"/>
+			<point x="297.065" y="320.065" type="curve"/>
+			<point x="273.232" y="322.884"/>
+			<point x="235.046" y="315.09"/>
+			<point x="215.692" y="300.897" type="curve"/>
+			<point x="239.582" y="303.199"/>
+			<point x="277.177" y="288.742"/>
+		</contour>
+		<component base="pe-hb"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>kaf-hb</string>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>70</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

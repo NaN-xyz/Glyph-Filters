@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="yoddagesh-hb" format="2">
+	<advance width="435"/>
+	<unicode hex="FB39"/>
+	<outline>
+		<component base="yod-hb" xOffset="112"/>
+		<component base="dagesh-hb" xOffset="15" yOffset="-26"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+			<array>
+				<dict>
+					<key>alignment</key>
+					<integer>-1</integer>
+					<key>index</key>
+					<integer>0</integer>
+					<key>name</key>
+					<string>yod-hb</string>
+				</dict>
+				<dict>
+					<key>alignment</key>
+					<integer>-1</integer>
+					<key>index</key>
+					<integer>1</integer>
+					<key>name</key>
+					<string>dagesh-hb</string>
+				</dict>
+			</array>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>240</integer>
+				</dict>
+			</array>
+		</dict>
+	</lib>
+</glyph>

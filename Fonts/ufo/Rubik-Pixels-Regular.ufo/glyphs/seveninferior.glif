@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="seveninferior" format="2">
+	<advance width="329"/>
+	<unicode hex="2087"/>
+	<outline>
+		<contour>
+			<point x="118" y="-150" type="line"/>
+			<point x="118" y="-110" type="line"/>
+			<point x="78" y="-110" type="line"/>
+			<point x="78" y="-150" type="line"/>
+		</contour>
+		<contour>
+			<point x="158" y="90" type="line"/>
+			<point x="158" y="130" type="line"/>
+			<point x="118" y="130" type="line"/>
+			<point x="118" y="90" type="line"/>
+		</contour>
+		<contour>
+			<point x="198" y="50" type="line"/>
+			<point x="198" y="90" type="line"/>
+			<point x="158" y="90" type="line"/>
+			<point x="158" y="50" type="line"/>
+		</contour>
+		<contour>
+			<point x="198" y="130" type="line"/>
+			<point x="198" y="170" type="line"/>
+			<point x="158" y="170" type="line"/>
+			<point x="158" y="130" type="line"/>
+		</contour>
+		<contour>
+			<point x="238" y="-30" type="line"/>
+			<point x="238" y="10" type="line"/>
+			<point x="198" y="10" type="line"/>
+			<point x="198" y="-30" type="line"/>
+		</contour>
+		<contour>
+			<point x="278" y="50" type="line"/>
+			<point x="278" y="90" type="line"/>
+			<point x="238" y="90" type="line"/>
+			<point x="238" y="50" type="line"/>
+		</contour>
+		<contour>
+			<point x="318" y="130" type="line"/>
+			<point x="318" y="170" type="line"/>
+			<point x="278" y="170" type="line"/>
+			<point x="278" y="130" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="40" yOffset="92"/>
+		<component base="pixel0" xOffset="40" yOffset="132"/>
+		<component base="pixel0" xOffset="80" yOffset="92"/>
+		<component base="pixel3" xOffset="80" yOffset="132"/>
+		<component base="pixel2" xOffset="120" yOffset="-148"/>
+		<component base="pixel2" xOffset="120" yOffset="-108"/>
+		<component base="pixel1" xOffset="120" yOffset="-68"/>
+		<component base="pixel2" xOffset="120" yOffset="132"/>
+		<component base="pixel1" xOffset="160" yOffset="-148"/>
+		<component base="pixel3" xOffset="160" yOffset="-108"/>
+		<component base="pixel1" xOffset="160" yOffset="-68"/>
+		<component base="pixel2" xOffset="160" yOffset="-28"/>
+		<component base="pixel2" xOffset="160" yOffset="12"/>
+		<component base="pixel3" xOffset="160" yOffset="92"/>
+		<component base="pixel1" xOffset="200" yOffset="-68"/>
+		<component base="pixel2" xOffset="200" yOffset="12"/>
+		<component base="pixel3" xOffset="200" yOffset="52"/>
+		<component base="pixel2" xOffset="200" yOffset="92"/>
+		<component base="pixel2" xOffset="200" yOffset="132"/>
+		<component base="pixel0" xOffset="240" yOffset="12"/>
+		<component base="pixel1" xOffset="240" yOffset="92"/>
+		<component base="pixel1" xOffset="240" yOffset="132"/>
+		<component base="pixel2" xOffset="280" yOffset="92"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-170</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>20</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>260</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

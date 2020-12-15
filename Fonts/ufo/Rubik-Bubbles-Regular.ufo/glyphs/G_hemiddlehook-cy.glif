@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Ghemiddlehook-cy" format="2">
+	<advance width="718"/>
+	<unicode hex="0494"/>
+	<outline>
+		<contour>
+			<point x="446.614" y="366.875" type="curve"/>
+			<point x="420.336" y="420.216"/>
+			<point x="285.064" y="382.941"/>
+			<point x="299.729" y="329.724" type="curve"/>
+			<point x="336.987" y="384.202"/>
+			<point x="312.258" y="401.114"/>
+			<point x="275" y="346.636" type="curve"/>
+			<point x="350" y="346.636"/>
+			<point x="350" y="457.618"/>
+			<point x="275" y="457.618" type="curve"/>
+			<point x="312.932" y="419.748"/>
+			<point x="380.203" y="487.13"/>
+			<point x="342.271" y="525" type="curve"/>
+			<point x="342.271" y="461.8"/>
+			<point x="413.5" y="461.8"/>
+			<point x="413.5" y="525" type="curve"/>
+			<point x="413.5" y="463.4"/>
+			<point x="457.029" y="463.4"/>
+			<point x="457.029" y="525" type="curve"/>
+			<point x="469.052" y="471.945"/>
+			<point x="561.023" y="492.787"/>
+			<point x="549" y="545.842" type="curve"/>
+			<point x="607.379" y="555.668"/>
+			<point x="586.48" y="679.826"/>
+			<point x="528.102" y="670" type="curve"/>
+			<point x="528.102" y="737"/>
+			<point x="468.356" y="737"/>
+			<point x="468.356" y="670" type="curve"/>
+			<point x="468.356" y="736"/>
+			<point x="360.814" y="736"/>
+			<point x="360.814" y="670" type="curve"/>
+			<point x="360.814" y="735"/>
+			<point x="301.068" y="735"/>
+			<point x="301.068" y="670" type="curve"/>
+			<point x="301.068" y="737"/>
+			<point x="161.661" y="737"/>
+			<point x="161.661" y="670" type="curve"/>
+			<point x="129.072" y="706.324"/>
+			<point x="52.411" y="637.546"/>
+			<point x="85" y="601.222" type="curve"/>
+			<point x="23" y="601.222"/>
+			<point x="23" y="529.444"/>
+			<point x="85" y="529.444" type="curve"/>
+			<point x="7" y="529.444"/>
+			<point x="7" y="409.815"/>
+			<point x="85" y="409.815" type="curve"/>
+			<point x="8" y="409.815"/>
+			<point x="8" y="310.123"/>
+			<point x="85" y="310.123" type="curve"/>
+			<point x="14" y="310.123"/>
+			<point x="14" y="182.519"/>
+			<point x="85" y="182.519" type="curve"/>
+			<point x="23" y="182.519"/>
+			<point x="23" y="94.79"/>
+			<point x="85" y="94.79" type="curve"/>
+			<point x="40.383" y="50.029"/>
+			<point x="105.383" y="-14.761"/>
+			<point x="150" y="30" type="curve"/>
+			<point x="150" y="-40"/>
+			<point x="250" y="-40"/>
+			<point x="250" y="30" type="curve"/>
+			<point x="301.849" y="16.411"/>
+			<point x="326.849" y="111.798"/>
+			<point x="275" y="125.387" type="curve"/>
+			<point x="333.937" y="110.45"/>
+			<point x="352.092" y="182.085"/>
+			<point x="293.155" y="197.022" type="curve"/>
+			<point x="304.946" y="144.735"/>
+			<point x="399.157" y="165.98"/>
+			<point x="387.366" y="218.267" type="curve"/>
+			<point x="358.867" y="149.975"/>
+			<point x="418.092" y="125.26"/>
+			<point x="446.591" y="193.552" type="curve"/>
+			<point x="397.948" y="189.64"/>
+			<point x="406.479" y="83.56"/>
+			<point x="455.122" y="87.471" type="curve"/>
+			<point x="418.142" y="125.159"/>
+			<point x="337.021" y="45.563"/>
+			<point x="374" y="7.875" type="curve"/>
+			<point x="304" y="7.531"/>
+			<point x="304.334" y="-60.344"/>
+			<point x="374.333" y="-60" type="curve"/>
+			<point x="375.954" y="-125.98"/>
+			<point x="426.841" y="-124.73"/>
+			<point x="425.22" y="-58.75" type="curve"/>
+			<point x="443.303" y="-132.568"/>
+			<point x="594.393" y="-95.555"/>
+			<point x="576.31" y="-21.738" type="curve"/>
+			<point x="616.309" y="-69.11"/>
+			<point x="665.146" y="-27.873"/>
+			<point x="625.147" y="19.498" type="curve"/>
+			<point x="696.336" y="-9.846"/>
+			<point x="726.655" y="63.708"/>
+			<point x="655.465" y="93.052" type="curve"/>
+			<point x="730.44" y="91.088"/>
+			<point x="732.537" y="171.155"/>
+			<point x="657.563" y="173.119" type="curve"/>
+			<point x="725.211" y="191.111"/>
+			<point x="694.518" y="306.514"/>
+			<point x="626.87" y="288.523" type="curve"/>
+			<point x="679.05" y="346.499"/>
+			<point x="619.966" y="399.676"/>
+			<point x="567.786" y="341.7" type="curve"/>
+			<point x="580.153" y="401.229"/>
+			<point x="458.981" y="426.403"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>En-cy</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>Dje-cy</string>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="patah-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B7"/>
+	<anchor x="2" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="106" y="-76.885" type="line"/>
+			<point x="85" y="-98.885" type="line"/>
+			<point x="68.182" y="-76.885" type="line"/>
+			<point x="49.273" y="-76.885" type="line"/>
+			<point x="55" y="-90.885" type="line"/>
+			<point x="16" y="-94.885" type="line"/>
+			<point x="-5" y="-90.885" type="line"/>
+			<point x="-30" y="-88.885" type="line"/>
+			<point x="-23" y="-124.885" type="line"/>
+			<point x="-43" y="-124.885" type="line"/>
+			<point x="-34" y="-159.885" type="line"/>
+			<point x="-64.182" y="-183.885" type="line"/>
+			<point x="106" y="-183.885" type="line"/>
+			<point x="128" y="-161.885" type="line"/>
+			<point x="128" y="-98.885" type="line"/>
+			<point x="118" y="-103.885" type="line"/>
+		</contour>
+		<contour>
+			<point x="59.71" y="-75" type="line"/>
+			<point x="-91.563" y="-75" type="line"/>
+			<point x="-113.563" y="-97" type="line"/>
+			<point x="-113.563" y="-160" type="line"/>
+			<point x="-91.563" y="-182" type="line"/>
+			<point x="-53.745" y="-182" type="line"/>
+			<point x="-23.563" y="-158" type="line"/>
+			<point x="-32.563" y="-123" type="line"/>
+			<point x="-12.563" y="-123" type="line"/>
+			<point x="-19.563" y="-87" type="line"/>
+			<point x="5.437" y="-89" type="line"/>
+			<point x="26.437" y="-93" type="line"/>
+			<point x="65.437" y="-89" type="line"/>
+		</contour>
+		<contour>
+			<point x="92.237" y="-75" type="line"/>
+			<point x="54.419" y="-75" type="line"/>
+			<point x="71.237" y="-97" type="line"/>
+		</contour>
+		<contour>
+			<point x="147.585" y="-102" type="line"/>
+			<point x="157.585" y="-97" type="line"/>
+			<point x="135.585" y="-75" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

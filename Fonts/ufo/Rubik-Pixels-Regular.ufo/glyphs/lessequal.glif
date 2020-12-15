@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="lessequal" format="2">
+	<advance width="556"/>
+	<unicode hex="2264"/>
+	<outline>
+		<component base="pixel1" xOffset="63" yOffset="22"/>
+		<component base="pixel1" xOffset="63" yOffset="62"/>
+		<component base="pixel1" xOffset="63" yOffset="102"/>
+		<component base="pixel0" xOffset="63" yOffset="382"/>
+		<component base="pixel0" xOffset="63" yOffset="422"/>
+		<component base="pixel1" xOffset="63" yOffset="462"/>
+		<component base="pixel1" xOffset="103" yOffset="22"/>
+		<component base="pixel0" xOffset="103" yOffset="62"/>
+		<component base="pixel1" xOffset="103" yOffset="102"/>
+		<component base="pixel1" xOffset="103" yOffset="382"/>
+		<component base="pixel0" xOffset="103" yOffset="422"/>
+		<component base="pixel0" xOffset="103" yOffset="462"/>
+		<component base="pixel0" xOffset="143" yOffset="22"/>
+		<component base="pixel0" xOffset="143" yOffset="62"/>
+		<component base="pixel0" xOffset="143" yOffset="102"/>
+		<component base="pixel1" xOffset="143" yOffset="342"/>
+		<component base="pixel0" xOffset="143" yOffset="382"/>
+		<component base="pixel1" xOffset="143" yOffset="422"/>
+		<component base="pixel0" xOffset="143" yOffset="462"/>
+		<component base="pixel0" xOffset="143" yOffset="502"/>
+		<component base="pixel0" xOffset="183" yOffset="22"/>
+		<component base="pixel0" xOffset="183" yOffset="62"/>
+		<component base="pixel0" xOffset="183" yOffset="102"/>
+		<component base="pixel1" xOffset="183" yOffset="342"/>
+		<component base="pixel0" xOffset="183" yOffset="382"/>
+		<component base="pixel0" xOffset="183" yOffset="422"/>
+		<component base="pixel1" xOffset="183" yOffset="462"/>
+		<component base="pixel0" xOffset="183" yOffset="502"/>
+		<component base="pixel0" xOffset="223" yOffset="22"/>
+		<component base="pixel1" xOffset="223" yOffset="62"/>
+		<component base="pixel1" xOffset="223" yOffset="102"/>
+		<component base="pixel0" xOffset="223" yOffset="302"/>
+		<component base="pixel0" xOffset="223" yOffset="342"/>
+		<component base="pixel1" xOffset="223" yOffset="382"/>
+		<component base="pixel0" xOffset="223" yOffset="422"/>
+		<component base="pixel0" xOffset="223" yOffset="462"/>
+		<component base="pixel0" xOffset="223" yOffset="502"/>
+		<component base="pixel1" xOffset="223" yOffset="542"/>
+		<component base="pixel1" xOffset="263" yOffset="22"/>
+		<component base="pixel1" xOffset="263" yOffset="62"/>
+		<component base="pixel1" xOffset="263" yOffset="102"/>
+		<component base="pixel0" xOffset="263" yOffset="302"/>
+		<component base="pixel0" xOffset="263" yOffset="342"/>
+		<component base="pixel0" xOffset="263" yOffset="382"/>
+		<component base="pixel1" xOffset="263" yOffset="422"/>
+		<component base="pixel1" xOffset="263" yOffset="462"/>
+		<component base="pixel0" xOffset="263" yOffset="502"/>
+		<component base="pixel1" xOffset="263" yOffset="542"/>
+		<component base="pixel1" xOffset="303" yOffset="22"/>
+		<component base="pixel1" xOffset="303" yOffset="62"/>
+		<component base="pixel1" xOffset="303" yOffset="102"/>
+		<component base="pixel1" xOffset="303" yOffset="302"/>
+		<component base="pixel0" xOffset="303" yOffset="342"/>
+		<component base="pixel0" xOffset="303" yOffset="382"/>
+		<component base="pixel1" xOffset="303" yOffset="462"/>
+		<component base="pixel0" xOffset="303" yOffset="502"/>
+		<component base="pixel1" xOffset="303" yOffset="542"/>
+		<component base="pixel0" xOffset="343" yOffset="22"/>
+		<component base="pixel1" xOffset="343" yOffset="62"/>
+		<component base="pixel1" xOffset="343" yOffset="102"/>
+		<component base="pixel1" xOffset="343" yOffset="262"/>
+		<component base="pixel1" xOffset="343" yOffset="302"/>
+		<component base="pixel1" xOffset="343" yOffset="342"/>
+		<component base="pixel0" xOffset="343" yOffset="382"/>
+		<component base="pixel0" xOffset="343" yOffset="462"/>
+		<component base="pixel1" xOffset="343" yOffset="502"/>
+		<component base="pixel1" xOffset="343" yOffset="542"/>
+		<component base="pixel1" xOffset="343" yOffset="582"/>
+		<component base="pixel1" xOffset="383" yOffset="22"/>
+		<component base="pixel1" xOffset="383" yOffset="62"/>
+		<component base="pixel1" xOffset="383" yOffset="102"/>
+		<component base="pixel0" xOffset="383" yOffset="262"/>
+		<component base="pixel1" xOffset="383" yOffset="302"/>
+		<component base="pixel1" xOffset="383" yOffset="342"/>
+		<component base="pixel0" xOffset="383" yOffset="502"/>
+		<component base="pixel1" xOffset="383" yOffset="542"/>
+		<component base="pixel1" xOffset="383" yOffset="582"/>
+		<component base="pixel0" xOffset="423" yOffset="22"/>
+		<component base="pixel0" xOffset="423" yOffset="62"/>
+		<component base="pixel1" xOffset="423" yOffset="102"/>
+		<component base="pixel1" xOffset="423" yOffset="222"/>
+		<component base="pixel1" xOffset="423" yOffset="262"/>
+		<component base="pixel1" xOffset="423" yOffset="302"/>
+		<component base="pixel0" xOffset="423" yOffset="342"/>
+		<component base="pixel0" xOffset="423" yOffset="502"/>
+		<component base="pixel0" xOffset="423" yOffset="542"/>
+		<component base="pixel1" xOffset="423" yOffset="582"/>
+		<component base="pixel0" xOffset="423" yOffset="622"/>
+		<component base="pixel0" xOffset="463" yOffset="22"/>
+		<component base="pixel0" xOffset="463" yOffset="62"/>
+		<component base="pixel0" xOffset="463" yOffset="102"/>
+		<component base="pixel1" xOffset="463" yOffset="222"/>
+		<component base="pixel1" xOffset="463" yOffset="262"/>
+		<component base="pixel1" xOffset="463" yOffset="302"/>
+		<component base="pixel1" xOffset="463" yOffset="542"/>
+		<component base="pixel0" xOffset="463" yOffset="582"/>
+		<component base="pixel1" xOffset="463" yOffset="622"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>686</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>194</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>400</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>50</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>421</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

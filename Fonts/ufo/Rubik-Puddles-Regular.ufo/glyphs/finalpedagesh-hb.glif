@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="finalpedagesh-hb" format="2">
+	<advance width="590"/>
+	<anchor x="284" y="0" name="bottom"/>
+	<anchor x="284" y="520" name="top"/>
+	<anchor x="20" y="0" name="bottomleft"/>
+	<anchor x="273" y="229" name="_center"/>
+	<anchor x="20" y="520" name="topleft"/>
+	<anchor x="287" y="242" name="center"/>
+	<outline>
+		<contour>
+			<point x="208" y="258.5" type="curve"/>
+			<point x="208.695" y="293.801"/>
+			<point x="222.941" y="328.909"/>
+			<point x="244.932" y="346.636" type="curve" smooth="yes"/>
+			<point x="266.923" y="364.363"/>
+			<point x="304.255" y="370.832"/>
+			<point x="338.899" y="364.017" type="curve"/>
+			<point x="308.675" y="382.27"/>
+			<point x="266.145" y="376.58"/>
+			<point x="238.656" y="354.421" type="curve" smooth="yes"/>
+			<point x="211.168" y="332.263"/>
+			<point x="196.579" y="291.91"/>
+		</contour>
+		<contour>
+			<point x="379.047" y="321.263" type="curve"/>
+			<point x="384.6" y="332.256"/>
+			<point x="383.875" y="349.128"/>
+			<point x="375.444" y="358.107" type="curve" smooth="yes"/>
+			<point x="367.013" y="367.085"/>
+			<point x="350.22" y="368.869"/>
+			<point x="338.899" y="364.017" type="curve"/>
+			<point x="351.196" y="364.705"/>
+			<point x="361.41" y="358.444"/>
+			<point x="368.154" y="351.262" type="curve" smooth="yes"/>
+			<point x="374.899" y="344.079"/>
+			<point x="380.505" y="333.492"/>
+		</contour>
+		<component base="finalpe-hb"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+			<array>
+				<dict>
+					<key>index</key>
+					<integer>0</integer>
+					<key>locked</key>
+					<true/>
+					<key>name</key>
+					<string>finalpe-hb</string>
+				</dict>
+			</array>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>het-hb</string>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>571</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>1818</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

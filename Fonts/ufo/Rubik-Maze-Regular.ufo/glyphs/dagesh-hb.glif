@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dagesh-hb" format="2">
+	<advance width="117"/>
+	<unicode hex="05BC"/>
+	<anchor x="58" y="286" name="_center"/>
+	<outline>
+		<contour>
+			<point x="11" y="295" type="line"/>
+			<point x="11" y="349" type="line"/>
+			<point x="65" y="349" type="line"/>
+			<point x="65" y="361" type="line"/>
+			<point x="-1" y="361" type="line"/>
+			<point x="-1" y="295" type="line"/>
+		</contour>
+		<contour>
+			<point x="95" y="289" type="line"/>
+			<point x="95" y="301" type="line"/>
+			<point x="71" y="301" type="line"/>
+			<point x="71" y="319" type="line"/>
+			<point x="95" y="319" type="line"/>
+			<point x="95" y="331" type="line"/>
+			<point x="59" y="331" type="line"/>
+			<point x="59" y="289" type="line"/>
+		</contour>
+		<contour>
+			<point x="41" y="259" type="line"/>
+			<point x="41" y="325" type="line"/>
+			<point x="29" y="325" type="line"/>
+			<point x="29" y="271" type="line"/>
+			<point x="5" y="271" type="line"/>
+			<point x="5" y="259" type="line"/>
+		</contour>
+		<contour>
+			<point x="95" y="259" type="line"/>
+			<point x="95" y="271" type="line"/>
+			<point x="65" y="271" type="line"/>
+			<point x="65" y="259" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="colon" format="2">
+	<advance width="322"/>
+	<unicode hex="003A"/>
+	<outline>
+		<contour>
+			<point x="232.182" y="375" type="curve"/>
+			<point x="311.986" y="373.639"/>
+			<point x="313.986" y="467.639"/>
+			<point x="250" y="469" type="curve"/>
+			<point x="308.821" y="464.412"/>
+			<point x="314.771" y="540.683"/>
+			<point x="255.949" y="545.271" type="curve"/>
+			<point x="253.959" y="604.237"/>
+			<point x="186.691" y="601.966"/>
+			<point x="188.682" y="543" type="curve"/>
+			<point x="184.156" y="595.806"/>
+			<point x="67.474" y="585.806"/>
+			<point x="72" y="533" type="curve"/>
+			<point x="7" y="533"/>
+			<point x="7" y="397"/>
+			<point x="72" y="397" type="curve"/>
+			<point x="52.158" y="359.529"/>
+			<point x="93.703" y="337.529"/>
+			<point x="113.545" y="375" type="curve"/>
+			<point x="113.545" y="331.8"/>
+			<point x="168.909" y="331.8"/>
+			<point x="168.909" y="375" type="curve"/>
+			<point x="168.909" y="327"/>
+			<point x="232.182" y="327"/>
+		</contour>
+		<contour>
+			<point x="196.591" y="25" type="curve"/>
+			<point x="305.991" y="23.983"/>
+			<point x="307.991" y="137.983"/>
+			<point x="250" y="139" type="curve"/>
+			<point x="290.063" y="163.955"/>
+			<point x="256.427" y="217.955"/>
+			<point x="216.364" y="193" type="curve"/>
+			<point x="216.364" y="243.4"/>
+			<point x="93.773" y="243.4"/>
+			<point x="93.773" y="193" type="curve"/>
+			<point x="71.235" y="242.072"/>
+			<point x="49.462" y="232.072"/>
+			<point x="72" y="183" type="curve"/>
+			<point x="21" y="183"/>
+			<point x="21" y="143"/>
+			<point x="72" y="143" type="curve"/>
+			<point x="18" y="143"/>
+			<point x="18" y="103"/>
+			<point x="72" y="103" type="curve"/>
+			<point x="4.032" y="105.102"/>
+			<point x="1.607" y="26.673"/>
+			<point x="69.574" y="24.571" type="curve"/>
+			<point x="69.797" y="-41.429"/>
+			<point x="196.814" y="-41"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

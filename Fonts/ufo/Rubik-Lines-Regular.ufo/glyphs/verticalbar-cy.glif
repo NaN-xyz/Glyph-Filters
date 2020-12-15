@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="268" name="_center"/>
+	<outline>
+		<contour>
+			<point x="24" y="-4" type="line"/>
+			<point x="24" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="16" y="-4" type="line"/>
+			<point x="16" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="24" y="-4" type="line"/>
+			<point x="24" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="16" y="-4" type="line"/>
+			<point x="16" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="24" y="-4" type="line"/>
+			<point x="24" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="16" y="-4" type="line"/>
+			<point x="16" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="16" y="-4" type="line"/>
+			<point x="16" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="16" y="-4" type="line"/>
+			<point x="16" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="16" y="-4" type="line"/>
+			<point x="16" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="16" y="-4" type="line"/>
+			<point x="16" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="8" y="-4" type="line"/>
+			<point x="8" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="10" y="-4" type="line"/>
+			<point x="10" y="4" type="line"/>
+			<point x="0" y="4" type="line"/>
+			<point x="0" y="-4" type="line"/>
+		</contour>
+		<contour>
+			<point x="4" y="0" type="line"/>
+			<point x="4" y="8" type="line"/>
+			<point x="-4" y="8" type="line"/>
+			<point x="-4" y="0" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="scedilla" format="2">
+	<advance width="590"/>
+	<unicode hex="015F"/>
+	<outline>
+		<contour>
+			<point x="81" y="80" type="line"/>
+			<point x="81" y="120" type="line"/>
+			<point x="41" y="120" type="line"/>
+			<point x="41" y="80" type="line"/>
+		</contour>
+		<contour>
+			<point x="121" y="80" type="line"/>
+			<point x="121" y="120" type="line"/>
+			<point x="81" y="120" type="line"/>
+			<point x="81" y="80" type="line"/>
+		</contour>
+		<contour>
+			<point x="161" y="40" type="line"/>
+			<point x="161" y="80" type="line"/>
+			<point x="121" y="80" type="line"/>
+			<point x="121" y="40" type="line"/>
+		</contour>
+		<contour>
+			<point x="241" y="120" type="line"/>
+			<point x="241" y="160" type="line"/>
+			<point x="201" y="160" type="line"/>
+			<point x="201" y="120" type="line"/>
+		</contour>
+		<contour>
+			<point x="361" y="-120" type="line"/>
+			<point x="361" y="-80" type="line"/>
+			<point x="321" y="-80" type="line"/>
+			<point x="321" y="-120" type="line"/>
+		</contour>
+		<contour>
+			<point x="361" y="200" type="line"/>
+			<point x="361" y="240" type="line"/>
+			<point x="321" y="240" type="line"/>
+			<point x="321" y="200" type="line"/>
+		</contour>
+		<contour>
+			<point x="401" y="80" type="line"/>
+			<point x="401" y="120" type="line"/>
+			<point x="361" y="120" type="line"/>
+			<point x="361" y="80" type="line"/>
+		</contour>
+		<contour>
+			<point x="401" y="480" type="line"/>
+			<point x="401" y="520" type="line"/>
+			<point x="361" y="520" type="line"/>
+			<point x="361" y="480" type="line"/>
+		</contour>
+		<contour>
+			<point x="521" y="400" type="line"/>
+			<point x="521" y="440" type="line"/>
+			<point x="481" y="440" type="line"/>
+			<point x="481" y="400" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="43" yOffset="122"/>
+		<component base="pixel0" xOffset="43" yOffset="322"/>
+		<component base="pixel2" xOffset="43" yOffset="362"/>
+		<component base="pixel2" xOffset="83" yOffset="42"/>
+		<component base="pixel3" xOffset="83" yOffset="122"/>
+		<component base="pixel1" xOffset="83" yOffset="242"/>
+		<component base="pixel3" xOffset="83" yOffset="282"/>
+		<component base="pixel1" xOffset="83" yOffset="322"/>
+		<component base="pixel3" xOffset="83" yOffset="362"/>
+		<component base="pixel2" xOffset="83" yOffset="402"/>
+		<component base="pixel2" xOffset="123" yOffset="82"/>
+		<component base="pixel2" xOffset="123" yOffset="122"/>
+		<component base="pixel2" xOffset="123" yOffset="242"/>
+		<component base="pixel1" xOffset="123" yOffset="282"/>
+		<component base="pixel2" xOffset="123" yOffset="322"/>
+		<component base="pixel2" xOffset="123" yOffset="362"/>
+		<component base="pixel2" xOffset="123" yOffset="402"/>
+		<component base="pixel2" xOffset="123" yOffset="442"/>
+		<component base="pixel2" xOffset="163" yOffset="2"/>
+		<component base="pixel1" xOffset="163" yOffset="42"/>
+		<component base="pixel2" xOffset="163" yOffset="82"/>
+		<component base="pixel1" xOffset="163" yOffset="122"/>
+		<component base="pixel0" xOffset="163" yOffset="202"/>
+		<component base="pixel3" xOffset="163" yOffset="242"/>
+		<component base="pixel0" xOffset="163" yOffset="282"/>
+		<component base="pixel1" xOffset="163" yOffset="322"/>
+		<component base="pixel2" xOffset="163" yOffset="362"/>
+		<component base="pixel3" xOffset="163" yOffset="402"/>
+		<component base="pixel3" xOffset="163" yOffset="442"/>
+		<component base="pixel2" xOffset="163" yOffset="482"/>
+		<component base="pixel2" xOffset="203" yOffset="2"/>
+		<component base="pixel2" xOffset="203" yOffset="42"/>
+		<component base="pixel2" xOffset="203" yOffset="82"/>
+		<component base="pixel2" xOffset="203" yOffset="202"/>
+		<component base="pixel2" xOffset="203" yOffset="242"/>
+		<component base="pixel2" xOffset="203" yOffset="282"/>
+		<component base="pixel1" xOffset="203" yOffset="322"/>
+		<component base="pixel2" xOffset="203" yOffset="362"/>
+		<component base="pixel2" xOffset="203" yOffset="402"/>
+		<component base="pixel2" xOffset="203" yOffset="442"/>
+		<component base="pixel1" xOffset="203" yOffset="482"/>
+		<component base="pixel2" xOffset="243" yOffset="-198"/>
+		<component base="pixel2" xOffset="243" yOffset="-78"/>
+		<component base="pixel1" xOffset="243" yOffset="-38"/>
+		<component base="pixel2" xOffset="243" yOffset="2"/>
+		<component base="pixel1" xOffset="243" yOffset="42"/>
+		<component base="pixel3" xOffset="243" yOffset="82"/>
+		<component base="pixel0" xOffset="243" yOffset="202"/>
+		<component base="pixel2" xOffset="243" yOffset="242"/>
+		<component base="pixel2" xOffset="243" yOffset="282"/>
+		<component base="pixel2" xOffset="243" yOffset="322"/>
+		<component base="pixel3" xOffset="243" yOffset="402"/>
+		<component base="pixel1" xOffset="243" yOffset="442"/>
+		<component base="pixel2" xOffset="243" yOffset="482"/>
+		<component base="pixel0" xOffset="283" yOffset="-198"/>
+		<component base="pixel2" xOffset="283" yOffset="-78"/>
+		<component base="pixel0" xOffset="283" yOffset="2"/>
+		<component base="pixel0" xOffset="283" yOffset="42"/>
+		<component base="pixel1" xOffset="283" yOffset="82"/>
+		<component base="pixel1" xOffset="283" yOffset="202"/>
+		<component base="pixel2" xOffset="283" yOffset="242"/>
+		<component base="pixel2" xOffset="283" yOffset="282"/>
+		<component base="pixel1" xOffset="283" yOffset="402"/>
+		<component base="pixel0" xOffset="283" yOffset="442"/>
+		<component base="pixel2" xOffset="283" yOffset="482"/>
+		<component base="pixel1" xOffset="323" yOffset="-198"/>
+		<component base="pixel0" xOffset="323" yOffset="-158"/>
+		<component base="pixel1" xOffset="323" yOffset="2"/>
+		<component base="pixel2" xOffset="323" yOffset="42"/>
+		<component base="pixel1" xOffset="323" yOffset="82"/>
+		<component base="pixel2" xOffset="323" yOffset="122"/>
+		<component base="pixel1" xOffset="323" yOffset="162"/>
+		<component base="pixel2" xOffset="323" yOffset="242"/>
+		<component base="pixel1" xOffset="323" yOffset="282"/>
+		<component base="pixel2" xOffset="323" yOffset="402"/>
+		<component base="pixel2" xOffset="323" yOffset="442"/>
+		<component base="pixel1" xOffset="323" yOffset="482"/>
+		<component base="pixel2" xOffset="363" yOffset="2"/>
+		<component base="pixel3" xOffset="363" yOffset="42"/>
+		<component base="pixel2" xOffset="363" yOffset="122"/>
+		<component base="pixel0" xOffset="363" yOffset="162"/>
+		<component base="pixel3" xOffset="363" yOffset="202"/>
+		<component base="pixel2" xOffset="363" yOffset="242"/>
+		<component base="pixel1" xOffset="363" yOffset="282"/>
+		<component base="pixel1" xOffset="363" yOffset="362"/>
+		<component base="pixel2" xOffset="363" yOffset="402"/>
+		<component base="pixel1" xOffset="363" yOffset="442"/>
+		<component base="pixel2" xOffset="403" yOffset="42"/>
+		<component base="pixel0" xOffset="403" yOffset="82"/>
+		<component base="pixel1" xOffset="403" yOffset="122"/>
+		<component base="pixel1" xOffset="403" yOffset="162"/>
+		<component base="pixel1" xOffset="403" yOffset="202"/>
+		<component base="pixel2" xOffset="403" yOffset="242"/>
+		<component base="pixel2" xOffset="403" yOffset="282"/>
+		<component base="pixel2" xOffset="403" yOffset="362"/>
+		<component base="pixel0" xOffset="403" yOffset="402"/>
+		<component base="pixel3" xOffset="403" yOffset="442"/>
+		<component base="pixel2" xOffset="443" yOffset="42"/>
+		<component base="pixel2" xOffset="443" yOffset="82"/>
+		<component base="pixel1" xOffset="443" yOffset="122"/>
+		<component base="pixel0" xOffset="443" yOffset="162"/>
+		<component base="pixel3" xOffset="443" yOffset="202"/>
+		<component base="pixel1" xOffset="443" yOffset="242"/>
+		<component base="pixel2" xOffset="443" yOffset="362"/>
+		<component base="pixel2" xOffset="443" yOffset="402"/>
+		<component base="pixel2" xOffset="443" yOffset="442"/>
+		<component base="pixel1" xOffset="483" yOffset="82"/>
+		<component base="pixel1" xOffset="483" yOffset="122"/>
+		<component base="pixel2" xOffset="483" yOffset="162"/>
+		<component base="pixel2" xOffset="483" yOffset="202"/>
+		<component base="pixel1" xOffset="483" yOffset="242"/>
+		<component base="pixel2" xOffset="483" yOffset="362"/>
+		<component base="pixel0" xOffset="523" yOffset="122"/>
+		<component base="pixel1" xOffset="523" yOffset="162"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="patah-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B7"/>
+	<anchor x="2" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="-130" y="-188" type="line"/>
+			<point x="32" y="-188" type="line"/>
+			<point x="32" y="-158" type="line"/>
+			<point x="50" y="-158" type="line"/>
+			<point x="50" y="-188" type="line"/>
+			<point x="92" y="-188" type="line"/>
+			<point x="92" y="-116" type="line"/>
+			<point x="62" y="-116" type="line"/>
+			<point x="62" y="-98" type="line"/>
+			<point x="86" y="-98" type="line"/>
+			<point x="86" y="-86" type="line"/>
+			<point x="50" y="-86" type="line"/>
+			<point x="50" y="-128" type="line"/>
+			<point x="80" y="-128" type="line"/>
+			<point x="80" y="-176" type="line"/>
+			<point x="62" y="-176" type="line"/>
+			<point x="62" y="-146" type="line"/>
+			<point x="20" y="-146" type="line"/>
+			<point x="20" y="-176" type="line"/>
+			<point x="-118" y="-176" type="line"/>
+			<point x="-118" y="-98" type="line"/>
+			<point x="-100" y="-98" type="line"/>
+			<point x="-100" y="-128" type="line"/>
+			<point x="-70" y="-128" type="line"/>
+			<point x="-70" y="-152" type="line"/>
+			<point x="-58" y="-152" type="line"/>
+			<point x="-58" y="-116" type="line"/>
+			<point x="-88" y="-116" type="line"/>
+			<point x="-88" y="-86" type="line"/>
+			<point x="-130" y="-86" type="line"/>
+		</contour>
+		<contour>
+			<point x="-28" y="-152" type="line"/>
+			<point x="-28" y="-98" type="line"/>
+			<point x="20" y="-98" type="line"/>
+			<point x="20" y="-116" type="line"/>
+			<point x="-10" y="-116" type="line"/>
+			<point x="-10" y="-152" type="line"/>
+			<point x="2" y="-152" type="line"/>
+			<point x="2" y="-128" type="line"/>
+			<point x="32" y="-128" type="line"/>
+			<point x="32" y="-86" type="line"/>
+			<point x="-40" y="-86" type="line"/>
+			<point x="-40" y="-152" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

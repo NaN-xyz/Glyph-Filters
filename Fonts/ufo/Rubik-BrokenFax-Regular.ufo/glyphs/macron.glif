@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="macron" format="2">
+	<advance width="473"/>
+	<unicode hex="00AF"/>
+	<outline>
+		<contour>
+			<point x="400" y="550" type="line"/>
+			<point x="400" y="700" type="line"/>
+			<point x="50" y="700" type="line"/>
+			<point x="50" y="550" type="line"/>
+		</contour>
+		<contour>
+			<point x="122" y="574" type="line"/>
+			<point x="74" y="574" type="line"/>
+			<point x="74" y="622" type="line"/>
+			<point x="122" y="622" type="line"/>
+		</contour>
+		<contour>
+			<point x="122" y="622" type="line"/>
+			<point x="74" y="622" type="line"/>
+			<point x="74" y="670" type="line"/>
+			<point x="122" y="670" type="line"/>
+		</contour>
+		<contour>
+			<point x="170" y="574" type="line"/>
+			<point x="122" y="574" type="line"/>
+			<point x="122" y="622" type="line"/>
+			<point x="170" y="622" type="line"/>
+		</contour>
+		<contour>
+			<point x="218" y="574" type="line"/>
+			<point x="170" y="574" type="line"/>
+			<point x="170" y="622" type="line"/>
+			<point x="218" y="622" type="line"/>
+		</contour>
+		<contour>
+			<point x="266" y="574" type="line"/>
+			<point x="218" y="574" type="line"/>
+			<point x="218" y="622" type="line"/>
+			<point x="266" y="622" type="line"/>
+		</contour>
+		<contour>
+			<point x="314" y="574" type="line"/>
+			<point x="266" y="574" type="line"/>
+			<point x="266" y="622" type="line"/>
+			<point x="314" y="622" type="line"/>
+		</contour>
+		<contour>
+			<point x="362" y="574" type="line"/>
+			<point x="314" y="574" type="line"/>
+			<point x="314" y="622" type="line"/>
+			<point x="362" y="622" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>595</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

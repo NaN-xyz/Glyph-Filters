@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="quotesinglbase" format="2">
+	<advance width="302"/>
+	<unicode hex="201A"/>
+	<outline>
+		<contour>
+			<point x="76" y="-55" type="line"/>
+			<point x="76" y="-15" type="line"/>
+			<point x="36" y="-15" type="line"/>
+			<point x="36" y="-55" type="line"/>
+		</contour>
+		<contour>
+			<point x="76" y="-15" type="line"/>
+			<point x="76" y="25" type="line"/>
+			<point x="36" y="25" type="line"/>
+			<point x="36" y="-15" type="line"/>
+		</contour>
+		<contour>
+			<point x="76" y="25" type="line"/>
+			<point x="76" y="65" type="line"/>
+			<point x="36" y="65" type="line"/>
+			<point x="36" y="25" type="line"/>
+		</contour>
+		<contour>
+			<point x="116" y="-15" type="line"/>
+			<point x="116" y="25" type="line"/>
+			<point x="76" y="25" type="line"/>
+			<point x="76" y="-15" type="line"/>
+		</contour>
+		<contour>
+			<point x="156" y="-55" type="line"/>
+			<point x="156" y="-15" type="line"/>
+			<point x="116" y="-15" type="line"/>
+			<point x="116" y="-55" type="line"/>
+		</contour>
+		<contour>
+			<point x="156" y="-15" type="line"/>
+			<point x="156" y="25" type="line"/>
+			<point x="116" y="25" type="line"/>
+			<point x="116" y="-15" type="line"/>
+		</contour>
+		<contour>
+			<point x="156" y="145" type="line"/>
+			<point x="156" y="185" type="line"/>
+			<point x="116" y="185" type="line"/>
+			<point x="116" y="145" type="line"/>
+		</contour>
+		<contour>
+			<point x="156" y="185" type="line"/>
+			<point x="156" y="225" type="line"/>
+			<point x="116" y="225" type="line"/>
+			<point x="116" y="185" type="line"/>
+		</contour>
+		<contour>
+			<point x="196" y="-15" type="line"/>
+			<point x="196" y="25" type="line"/>
+			<point x="156" y="25" type="line"/>
+			<point x="156" y="-15" type="line"/>
+		</contour>
+		<contour>
+			<point x="196" y="25" type="line"/>
+			<point x="196" y="65" type="line"/>
+			<point x="156" y="65" type="line"/>
+			<point x="156" y="25" type="line"/>
+		</contour>
+		<contour>
+			<point x="196" y="65" type="line"/>
+			<point x="196" y="105" type="line"/>
+			<point x="156" y="105" type="line"/>
+			<point x="156" y="65" type="line"/>
+		</contour>
+		<contour>
+			<point x="196" y="145" type="line"/>
+			<point x="196" y="185" type="line"/>
+			<point x="156" y="185" type="line"/>
+			<point x="156" y="145" type="line"/>
+		</contour>
+		<contour>
+			<point x="236" y="145" type="line"/>
+			<point x="236" y="185" type="line"/>
+			<point x="196" y="185" type="line"/>
+			<point x="196" y="145" type="line"/>
+		</contour>
+		<component base="pixel1" xOffset="38" yOffset="67"/>
+		<component base="pixel3" xOffset="78" yOffset="-53"/>
+		<component base="pixel3" xOffset="78" yOffset="27"/>
+		<component base="pixel2" xOffset="78" yOffset="67"/>
+		<component base="pixel2" xOffset="78" yOffset="107"/>
+		<component base="pixel0" xOffset="78" yOffset="147"/>
+		<component base="pixel3" xOffset="78" yOffset="187"/>
+		<component base="pixel0" xOffset="118" yOffset="27"/>
+		<component base="pixel2" xOffset="118" yOffset="67"/>
+		<component base="pixel3" xOffset="118" yOffset="107"/>
+		<component base="pixel0" xOffset="158" yOffset="107"/>
+		<component base="pixel1" xOffset="158" yOffset="187"/>
+		<component base="pixel3" xOffset="198" yOffset="107"/>
+		<component base="pixel3" xOffset="198" yOffset="187"/>
+		<component base="pixel2" xOffset="238" yOffset="187"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

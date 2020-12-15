@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="holam-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B9"/>
+	<anchor x="54" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="-50" y="562.875" type="line"/>
+			<point x="1.579" y="524" type="line"/>
+			<point x="36.158" y="538" type="line"/>
+			<point x="57.339" y="570.953" type="line"/>
+			<point x="57" y="610.125" type="line"/>
+			<point x="40.575" y="632.307" type="line"/>
+			<point x="13.105" y="635" type="line"/>
+			<point x="-20.888" y="642.557" type="line"/>
+			<point x="-49.457" y="622.645" type="line"/>
+			<point x="-66.728" y="592.915" type="line"/>
+		</contour>
+		<contour>
+			<point x="10.074" y="579.535" type="line"/>
+			<point x="12.054" y="550.041" type="line"/>
+			<point x="-19.766" y="554.34" type="line"/>
+			<point x="-26.082" y="580.14" type="line"/>
+			<point x="-6.401" y="596.996" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

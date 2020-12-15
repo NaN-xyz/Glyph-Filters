@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="acutecomb.case" format="2">
+	<advance width="557"/>
+	<anchor x="279" y="920" name="top"/>
+	<anchor x="190" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="86.108" y="771.408" type="line"/>
+			<point x="129.77" y="743" type="line"/>
+			<point x="163.541" y="755" type="line"/>
+			<point x="199.297" y="745" type="line"/>
+			<point x="235.054" y="755" type="line"/>
+			<point x="269.701" y="751.106" type="line"/>
+			<point x="291.188" y="778.563" type="line"/>
+			<point x="314.126" y="781.902" type="line"/>
+			<point x="321.812" y="803.771" type="line"/>
+			<point x="365.408" y="816.342" type="line"/>
+			<point x="386.125" y="856.708" type="line"/>
+			<point x="415.433" y="878.085" type="line"/>
+			<point x="426.997" y="912.468" type="line"/>
+			<point x="384.915" y="927.728" type="line"/>
+			<point x="342" y="915" type="line"/>
+			<point x="316" y="929" type="line"/>
+			<point x="290" y="915" type="line"/>
+			<point x="262" y="934" type="line"/>
+			<point x="234" y="915" type="line"/>
+			<point x="198.723" y="902.388" type="line"/>
+			<point x="171.5" y="876.65" type="line"/>
+			<point x="135.556" y="862.77" type="line"/>
+			<point x="129" y="824.8" type="line"/>
+			<point x="98.199" y="805.619" type="line"/>
+		</contour>
+		<contour>
+			<point x="249.924" y="902.552" type="line"/>
+			<point x="252.679" y="862.657" type="line"/>
+			<point x="227" y="834" type="line"/>
+			<point x="198.468" y="861.729" type="line"/>
+			<point x="210.542" y="893.652" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

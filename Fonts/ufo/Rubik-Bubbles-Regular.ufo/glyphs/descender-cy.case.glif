@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="descender-cy.case" format="2">
+	<advance width="372"/>
+	<anchor x="0" y="0" name="_bottomright"/>
+	<outline>
+		<contour>
+			<point x="271" y="-135" type="curve"/>
+			<point x="321.939" y="-142.634"/>
+			<point x="343.939" y="-64.997"/>
+			<point x="317" y="-57.364" type="curve"/>
+			<point x="354" y="-57.364"/>
+			<point x="354" y="10.195"/>
+			<point x="317" y="10.195" type="curve"/>
+			<point x="351" y="10.195"/>
+			<point x="351" y="97.623"/>
+			<point x="317" y="97.623" type="curve"/>
+			<point x="349.945" y="99.527"/>
+			<point x="343.543" y="210.306"/>
+			<point x="310.597" y="208.402" type="curve"/>
+			<point x="314.871" y="244.147"/>
+			<point x="259.685" y="250.745"/>
+			<point x="255.411" y="215" type="curve"/>
+			<point x="255.411" y="246"/>
+			<point x="144.562" y="246"/>
+			<point x="144.562" y="215" type="curve"/>
+			<point x="144.562" y="245"/>
+			<point x="57.466" y="245"/>
+			<point x="57.466" y="215" type="curve"/>
+			<point x="49.793" y="247.096"/>
+			<point x="0.993" y="235.429"/>
+			<point x="8.667" y="203.333" type="curve"/>
+			<point x="-29.353" y="194.643"/>
+			<point x="-7.131" y="97.421"/>
+			<point x="30.889" y="106.111" type="curve"/>
+			<point x="-1.281" y="98.758"/>
+			<point x="12.941" y="36.536"/>
+			<point x="45.111" y="43.889" type="curve"/>
+			<point x="17.949" y="26.971"/>
+			<point x="42.171" y="-11.918"/>
+			<point x="69.333" y="5" type="curve"/>
+			<point x="32.742" y="-0.486"/>
+			<point x="40.409" y="-51.62"/>
+			<point x="77" y="-46.133" type="curve"/>
+			<point x="38" y="-46.133"/>
+			<point x="38" y="-85.467"/>
+			<point x="77" y="-85.467" type="curve"/>
+			<point x="44.361" y="-90.334"/>
+			<point x="50.763" y="-133.269"/>
+			<point x="83.403" y="-128.402" type="curve"/>
+			<point x="80.57" y="-164.29"/>
+			<point x="164.167" y="-170.888"/>
+			<point x="167" y="-135" type="curve"/>
+			<point x="167" y="-166"/>
+			<point x="227" y="-166"/>
+			<point x="227" y="-135" type="curve"/>
+			<point x="227" y="-169"/>
+			<point x="271" y="-169"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

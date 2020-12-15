@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ringcomb.case" format="2">
+	<advance width="300"/>
+	<anchor x="150" y="930" name="top"/>
+	<anchor x="150" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="88.876" y="765.179" type="curve"/>
+			<point x="159.777" y="712.436"/>
+			<point x="216.68" y="729.521"/>
+			<point x="206.903" y="762.085" type="curve"/>
+			<point x="237.86" y="741.82"/>
+			<point x="274.357" y="797.572"/>
+			<point x="243.4" y="817.838" type="curve"/>
+			<point x="267.954" y="825.079"/>
+			<point x="244.669" y="904.038"/>
+			<point x="220.115" y="896.796" type="curve"/>
+			<point x="239.042" y="927.419"/>
+			<point x="201.783" y="950.448"/>
+			<point x="182.856" y="919.825" type="curve"/>
+			<point x="180.123" y="957.726"/>
+			<point x="100.715" y="952"/>
+			<point x="103.448" y="914.098" type="curve"/>
+			<point x="81.737" y="926.085"/>
+			<point x="33.633" y="838.957"/>
+			<point x="55.344" y="826.97" type="curve"/>
+			<point x="26.339" y="811.23"/>
+			<point x="59.871" y="749.439"/>
+		</contour>
+		<contour>
+			<point x="184.721" y="839.666" type="curve"/>
+			<point x="163.407" y="811.89"/>
+			<point x="128.633" y="851.099"/>
+			<point x="115.226" y="839.209" type="curve"/>
+			<point x="128.732" y="827.431"/>
+			<point x="154.691" y="857.2"/>
+			<point x="141.185" y="868.977" type="curve"/>
+			<point x="129.614" y="851.79"/>
+			<point x="173.149" y="822.479"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

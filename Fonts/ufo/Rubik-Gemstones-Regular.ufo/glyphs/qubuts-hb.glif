@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="qubuts-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05BB"/>
+	<anchor x="1" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="84.669" y="-297.168" type="line"/>
+			<point x="121.974" y="-320" type="line"/>
+			<point x="146.947" y="-302" type="line"/>
+			<point x="173.923" y="-297.254" type="line"/>
+			<point x="187" y="-273.188" type="line"/>
+			<point x="182.556" y="-236.234" type="line"/>
+			<point x="162.316" y="-205" type="line"/>
+			<point x="120.603" y="-193.189" type="line"/>
+			<point x="82.15" y="-213.211" type="line"/>
+			<point x="72.415" y="-255.519" type="line"/>
+		</contour>
+		<contour>
+			<point x="-173.331" y="-172.168" type="line"/>
+			<point x="-122.201" y="-190.755" type="line"/>
+			<point x="-83.579" y="-176.51" type="line"/>
+			<point x="-69.735" y="-146.12" type="line"/>
+			<point x="-71" y="-112.75" type="line"/>
+			<point x="-78.223" y="-87.518" type="line"/>
+			<point x="-103.368" y="-80" type="line"/>
+			<point x="-139.336" y="-66.37" type="line"/>
+			<point x="-173.168" y="-84.669" type="line"/>
+			<point x="-189.5" y="-105.05" type="line"/>
+			<point x="-178" y="-128.5" type="line"/>
+			<point x="-194.558" y="-152.354" type="line"/>
+		</contour>
+		<contour>
+			<point x="-52" y="-215.125" type="line"/>
+			<point x="-6.184" y="-257" type="line"/>
+			<point x="22.632" y="-240" type="line"/>
+			<point x="45.368" y="-217.826" type="line"/>
+			<point x="55" y="-187.562" type="line"/>
+			<point x="53.068" y="-159.515" type="line"/>
+			<point x="30.316" y="-143" type="line"/>
+			<point x="-4.651" y="-129.245" type="line"/>
+			<point x="-39.421" y="-143.49" type="line"/>
+			<point x="-57.431" y="-177.249" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

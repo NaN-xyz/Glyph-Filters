@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="pedagesh-hb" format="2">
+	<advance width="597"/>
+	<unicode hex="FB44"/>
+	<anchor x="310" y="260" name="center"/>
+	<anchor x="280" y="520" name="top"/>
+	<anchor x="30" y="0" name="bottomleft"/>
+	<anchor x="30" y="520" name="topleft"/>
+	<anchor x="280" y="0" name="bottom"/>
+	<outline>
+		<component base="pe-hb"/>
+		<component base="CircleShape" xScale="0.1299" yScale="0.1299" xOffset="305" yOffset="232"/>
+		<component base="CircleShape" xScale="0.13" yScale="0.13" xOffset="325" yOffset="232"/>
+		<component base="CircleShape" xScale="0.1324" yScale="0.1324" xOffset="285" yOffset="252"/>
+		<component base="CircleShape" xScale="0.1325" yScale="0.1325" xOffset="305" yOffset="252"/>
+		<component base="CircleShape" xScale="0.1326" yScale="0.1326" xOffset="325" yOffset="252"/>
+		<component base="CircleShape" xScale="0.135" yScale="0.135" xOffset="285" yOffset="272"/>
+		<component base="CircleShape" xScale="0.1351" yScale="0.1351" xOffset="305" yOffset="272"/>
+		<component base="CircleShape" xScale="0.1352" yScale="0.1352" xOffset="325" yOffset="272"/>
+		<component base="CircleShape" xScale="0.1376" yScale="0.1376" xOffset="285" yOffset="292"/>
+		<component base="CircleShape" xScale="0.1377" yScale="0.1377" xOffset="305" yOffset="292"/>
+		<component base="CircleShape" xScale="0.1378" yScale="0.1378" xOffset="325" yOffset="292"/>
+		<component base="CircleShape" xScale="0.1403" yScale="0.1403" xOffset="305" yOffset="312"/>
+		<component base="CircleShape" xScale="0.1404" yScale="0.1404" xOffset="325" yOffset="312"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>kaf-hb</string>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>70</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

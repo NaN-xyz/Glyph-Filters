@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="commaaccentcomb.case" format="2">
+	<advance width="337"/>
+	<outline>
+		<contour>
+			<point x="330.421" y="-130.263" type="curve"/>
+			<point x="349.691" y="-97.085"/>
+			<point x="342.386" y="-51.259"/>
+			<point x="317.799" y="-21.804" type="curve" smooth="yes"/>
+			<point x="293.212" y="7.651"/>
+			<point x="249.43" y="23.03"/>
+			<point x="213.342" y="10" type="curve"/>
+			<point x="251.71" y="9.901"/>
+			<point x="290.453" y="-4.648"/>
+			<point x="310.122" y="-28.212" type="curve" smooth="yes"/>
+			<point x="329.791" y="-51.776"/>
+			<point x="337.181" y="-92.495"/>
+		</contour>
+		<contour>
+			<point x="35.772" y="-301.511" type="curve"/>
+			<point x="1.897" y="-281.111"/>
+			<point x="-24.811" y="-247.759"/>
+			<point x="-29.728" y="-216.51" type="curve" smooth="yes"/>
+			<point x="-34.646" y="-185.26"/>
+			<point x="-19.472" y="-145.318"/>
+			<point x="6.5" y="-115.5" type="curve"/>
+			<point x="-28.104" y="-134.636"/>
+			<point x="-45.754" y="-179.002"/>
+			<point x="-39.607" y="-218.064" type="curve" smooth="yes"/>
+			<point x="-33.46" y="-257.126"/>
+			<point x="-3.037" y="-293.927"/>
+		</contour>
+		<contour>
+			<point x="112.316" y="-265.188" type="curve" smooth="yes"/>
+			<point x="135.71" y="-271.416"/>
+			<point x="166.146" y="-254.853"/>
+			<point x="180" y="-235" type="curve"/>
+			<point x="160.192" y="-248.918"/>
+			<point x="137.205" y="-246.978"/>
+			<point x="118.49" y="-241.995" type="curve" smooth="yes"/>
+			<point x="99.775" y="-237.013"/>
+			<point x="78.866" y="-227.267"/>
+			<point x="68.6" y="-205.343" type="curve"/>
+			<point x="70.749" y="-229.456"/>
+			<point x="88.922" y="-258.96"/>
+		</contour>
+		<contour>
+			<point x="71" y="-189.571" type="curve"/>
+			<point x="62.129" y="-159.446"/>
+			<point x="71.093" y="-130.032"/>
+			<point x="84.993" y="-109.104" type="curve" smooth="yes"/>
+			<point x="98.893" y="-88.176"/>
+			<point x="122.529" y="-68.506"/>
+			<point x="153.737" y="-65" type="curve"/>
+			<point x="123.212" y="-57.62"/>
+			<point x="82.376" y="-69.666"/>
+			<point x="65" y="-95.826" type="curve" smooth="yes"/>
+			<point x="47.626" y="-121.986"/>
+			<point x="52.36" y="-164.297"/>
+		</contour>
+		<contour>
+			<point x="196.475" y="-233.879" type="curve"/>
+			<point x="233.844" y="-237.156"/>
+			<point x="277.815" y="-214.665"/>
+			<point x="293.676" y="-180.671" type="curve" smooth="yes"/>
+			<point x="309.536" y="-146.676"/>
+			<point x="298.52" y="-98.531"/>
+			<point x="272" y="-72" type="curve"/>
+			<point x="287.847" y="-106.001"/>
+			<point x="284.615" y="-143.328"/>
+			<point x="271.926" y="-170.523" type="curve" smooth="yes"/>
+			<point x="259.238" y="-197.719"/>
+			<point x="232.711" y="-224.177"/>
+		</contour>
+		<contour>
+			<point x="153.737" y="-65" type="curve"/>
+			<point x="168.219" y="-47.74"/>
+			<point x="189.357" y="-44.813"/>
+			<point x="207.382" y="-44.813" type="curve" smooth="yes"/>
+			<point x="225.406" y="-44.813"/>
+			<point x="246.544" y="-47.74"/>
+			<point x="261.026" y="-65" type="curve"/>
+			<point x="253.32" y="-43.828"/>
+			<point x="229.912" y="-20.813"/>
+			<point x="207.382" y="-20.813" type="curve" smooth="yes"/>
+			<point x="184.851" y="-20.813"/>
+			<point x="161.443" y="-43.828"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-210</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-50</string>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="gravecomb.case" format="2">
+	<advance width="557"/>
+	<anchor x="269" y="920" name="top"/>
+	<anchor x="350" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="248.875" y="776.042" type="line"/>
+			<point x="325.784" y="742" type="line"/>
+			<point x="357.568" y="755" type="line"/>
+			<point x="389.351" y="737" type="line"/>
+			<point x="421.135" y="755" type="line"/>
+			<point x="438.46" y="771.211" type="line"/>
+			<point x="433" y="794.3" type="line"/>
+			<point x="424.124" y="830.368" type="line"/>
+			<point x="390.5" y="846.15" type="line"/>
+			<point x="382.757" y="872.948" type="line"/>
+			<point x="358" y="885.8" type="line"/>
+			<point x="352.558" y="913.938" type="line"/>
+			<point x="323.905" y="914.559" type="line"/>
+			<point x="281.546" y="932.779" type="line"/>
+			<point x="239" y="915" type="line"/>
+			<point x="209" y="932" type="line"/>
+			<point x="179" y="915" type="line"/>
+			<point x="146.593" y="927.739" type="line"/>
+			<point x="114.395" y="914.48" type="line"/>
+			<point x="114.837" y="887.143" type="line"/>
+			<point x="135.562" y="869.312" type="line"/>
+			<point x="140.707" y="844.355" type="line"/>
+			<point x="166.188" y="844.104" type="line"/>
+			<point x="172.603" y="820.691" type="line"/>
+			<point x="196.812" y="818.896" type="line"/>
+			<point x="214.582" y="787.432" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

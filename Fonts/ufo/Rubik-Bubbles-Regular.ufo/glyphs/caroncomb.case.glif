@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="caroncomb.case" format="2">
+	<advance width="548"/>
+	<anchor x="275" y="920" name="top"/>
+	<anchor x="275" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="269.091" y="755" type="curve"/>
+			<point x="359.688" y="726.063"/>
+			<point x="406.022" y="757.586"/>
+			<point x="386.333" y="786.524" type="curve"/>
+			<point x="409.17" y="765.559"/>
+			<point x="475.836" y="838.178"/>
+			<point x="453" y="859.143" type="curve"/>
+			<point x="480.518" y="864.316"/>
+			<point x="470.018" y="920.173"/>
+			<point x="442.5" y="915" type="curve"/>
+			<point x="441.788" y="946.992"/>
+			<point x="384.817" y="945.724"/>
+			<point x="385.53" y="913.732" type="curve"/>
+			<point x="373.931" y="941.399"/>
+			<point x="314.017" y="916.283"/>
+			<point x="325.615" y="888.615" type="curve"/>
+			<point x="326.155" y="923.611"/>
+			<point x="221.308" y="925.227"/>
+			<point x="220.769" y="890.231" type="curve"/>
+			<point x="229.936" y="921.932"/>
+			<point x="144.278" y="946.701"/>
+			<point x="135.111" y="915" type="curve"/>
+			<point x="118.576" y="935.58"/>
+			<point x="67.131" y="894.247"/>
+			<point x="83.667" y="873.667" type="curve"/>
+			<point x="55.674" y="847.968"/>
+			<point x="119.674" y="778.254"/>
+			<point x="147.667" y="803.952" type="curve"/>
+			<point x="131.945" y="778.873"/>
+			<point x="210.036" y="729.92"/>
+			<point x="225.758" y="755" type="curve"/>
+			<point x="225.758" y="721"/>
+			<point x="269.091" y="721"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>750</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

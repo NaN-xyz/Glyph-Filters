@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="tildecomb.case" format="2">
+	<advance width="527"/>
+	<anchor x="254" y="925" name="top"/>
+	<anchor x="254" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="288.159" y="754.044" type="curve"/>
+			<point x="334.734" y="721.985"/>
+			<point x="432.35" y="769.839"/>
+			<point x="418.616" y="797.854" type="curve"/>
+			<point x="453.073" y="781.831"/>
+			<point x="480.154" y="840.066"/>
+			<point x="445.697" y="856.089" type="curve"/>
+			<point x="464.939" y="872.975"/>
+			<point x="413.242" y="931.886"/>
+			<point x="394" y="915" type="curve"/>
+			<point x="384.621" y="942.23"/>
+			<point x="294.621" y="911.23"/>
+			<point x="304" y="884" type="curve"/>
+			<point x="316.872" y="917.62"/>
+			<point x="239.482" y="947.25"/>
+			<point x="226.61" y="913.629" type="curve"/>
+			<point x="225.178" y="948.6"/>
+			<point x="133.193" y="944.833"/>
+			<point x="134.625" y="909.862" type="curve"/>
+			<point x="116.614" y="936.312"/>
+			<point x="83.265" y="913.603"/>
+			<point x="101.276" y="887.153" type="curve"/>
+			<point x="68.159" y="903.654"/>
+			<point x="25.368" y="817.777"/>
+			<point x="58.484" y="801.275" type="curve"/>
+			<point x="37.95" y="778.859"/>
+			<point x="88.465" y="732.584"/>
+			<point x="109" y="755" type="curve"/>
+			<point x="109" y="716"/>
+			<point x="153" y="716"/>
+			<point x="153" y="755" type="curve"/>
+			<point x="157.539" y="725.345"/>
+			<point x="255.539" y="740.345"/>
+			<point x="251" y="770" type="curve"/>
+			<point x="239.163" y="742.434"/>
+			<point x="276.322" y="726.478"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>750</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>833</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>880</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>246</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

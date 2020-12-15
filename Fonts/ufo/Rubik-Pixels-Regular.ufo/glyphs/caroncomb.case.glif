@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="caroncomb.case" format="2">
+	<advance width="548"/>
+	<anchor x="275" y="920" name="top"/>
+	<anchor x="275" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="116" y="890" type="line"/>
+			<point x="116" y="930" type="line"/>
+			<point x="76" y="930" type="line"/>
+			<point x="76" y="890" type="line"/>
+		</contour>
+		<contour>
+			<point x="236" y="770" type="line"/>
+			<point x="236" y="810" type="line"/>
+			<point x="196" y="810" type="line"/>
+			<point x="196" y="770" type="line"/>
+		</contour>
+		<contour>
+			<point x="236" y="810" type="line"/>
+			<point x="236" y="850" type="line"/>
+			<point x="196" y="850" type="line"/>
+			<point x="196" y="810" type="line"/>
+		</contour>
+		<contour>
+			<point x="236" y="850" type="line"/>
+			<point x="236" y="890" type="line"/>
+			<point x="196" y="890" type="line"/>
+			<point x="196" y="850" type="line"/>
+		</contour>
+		<contour>
+			<point x="356" y="810" type="line"/>
+			<point x="356" y="850" type="line"/>
+			<point x="316" y="850" type="line"/>
+			<point x="316" y="810" type="line"/>
+		</contour>
+		<component base="pixel0" xOffset="118" yOffset="852"/>
+		<component base="pixel0" xOffset="158" yOffset="812"/>
+		<component base="pixel0" xOffset="158" yOffset="852"/>
+		<component base="pixel0" xOffset="238" yOffset="772"/>
+		<component base="pixel1" xOffset="238" yOffset="812"/>
+		<component base="pixel0" xOffset="278" yOffset="772"/>
+		<component base="pixel3" xOffset="278" yOffset="812"/>
+		<component base="pixel1" xOffset="318" yOffset="772"/>
+		<component base="pixel1" xOffset="318" yOffset="852"/>
+		<component base="pixel2" xOffset="358" yOffset="812"/>
+		<component base="pixel2" xOffset="358" yOffset="852"/>
+		<component base="pixel3" xOffset="398" yOffset="852"/>
+		<component base="pixel0" xOffset="438" yOffset="892"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>750</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

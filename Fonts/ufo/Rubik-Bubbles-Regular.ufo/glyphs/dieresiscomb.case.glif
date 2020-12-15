@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dieresiscomb.case" format="2">
+	<advance width="539"/>
+	<anchor x="270" y="920" name="top"/>
+	<anchor x="270" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="165" y="755" type="curve"/>
+			<point x="226.442" y="747.429"/>
+			<point x="244.442" y="817.429"/>
+			<point x="215" y="825" type="curve"/>
+			<point x="241.563" y="833.854"/>
+			<point x="211.563" y="923.854"/>
+			<point x="185" y="915" type="curve"/>
+			<point x="185" y="947"/>
+			<point x="81" y="947"/>
+			<point x="81" y="915" type="curve"/>
+			<point x="57.36" y="922.496"/>
+			<point x="31.36" y="840.496"/>
+			<point x="55" y="833" type="curve"/>
+			<point x="28.125" y="817.151"/>
+			<point x="74.125" y="739.151"/>
+			<point x="101" y="755" type="curve"/>
+			<point x="101" y="725"/>
+			<point x="165" y="725"/>
+		</contour>
+		<contour>
+			<point x="378" y="755" type="curve"/>
+			<point x="497.093" y="747.437"/>
+			<point x="515.093" y="821.437"/>
+			<point x="484" y="829" type="curve"/>
+			<point x="515.992" y="829.732"/>
+			<point x="514.258" y="905.496"/>
+			<point x="482.266" y="904.764" type="curve"/>
+			<point x="487.624" y="936.312"/>
+			<point x="427.358" y="946.548"/>
+			<point x="422" y="915" type="curve"/>
+			<point x="415.867" y="942.32"/>
+			<point x="317.867" y="920.32"/>
+			<point x="324" y="893" type="curve"/>
+			<point x="295.2" y="893"/>
+			<point x="295.2" y="853"/>
+			<point x="324" y="853" type="curve"/>
+			<point x="295.2" y="853"/>
+			<point x="295.2" y="801"/>
+			<point x="324" y="801" type="curve"/>
+			<point x="307.399" y="781.512"/>
+			<point x="361.399" y="735.512"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>750</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="brevecomb-cy" format="2">
+	<advance width="594"/>
+	<anchor x="297" y="520" name="_top"/>
+	<outline>
+		<contour>
+			<point x="160" y="686" type="line"/>
+			<point x="160" y="726" type="line"/>
+			<point x="120" y="726" type="line"/>
+			<point x="120" y="686" type="line"/>
+		</contour>
+		<contour>
+			<point x="160" y="726" type="line"/>
+			<point x="160" y="766" type="line"/>
+			<point x="120" y="766" type="line"/>
+			<point x="120" y="726" type="line"/>
+		</contour>
+		<contour>
+			<point x="320" y="606" type="line"/>
+			<point x="320" y="646" type="line"/>
+			<point x="280" y="646" type="line"/>
+			<point x="280" y="606" type="line"/>
+		</contour>
+		<contour>
+			<point x="360" y="646" type="line"/>
+			<point x="360" y="686" type="line"/>
+			<point x="320" y="686" type="line"/>
+			<point x="320" y="646" type="line"/>
+		</contour>
+		<contour>
+			<point x="400" y="646" type="line"/>
+			<point x="400" y="686" type="line"/>
+			<point x="360" y="686" type="line"/>
+			<point x="360" y="646" type="line"/>
+		</contour>
+		<contour>
+			<point x="480" y="686" type="line"/>
+			<point x="480" y="726" type="line"/>
+			<point x="440" y="726" type="line"/>
+			<point x="440" y="686" type="line"/>
+		</contour>
+		<component base="pixel3" xOffset="162" yOffset="648"/>
+		<component base="pixel1" xOffset="162" yOffset="688"/>
+		<component base="pixel1" xOffset="162" yOffset="728"/>
+		<component base="pixel1" xOffset="202" yOffset="608"/>
+		<component base="pixel1" xOffset="202" yOffset="648"/>
+		<component base="pixel3" xOffset="202" yOffset="688"/>
+		<component base="pixel1" xOffset="202" yOffset="728"/>
+		<component base="pixel1" xOffset="242" yOffset="608"/>
+		<component base="pixel0" xOffset="242" yOffset="648"/>
+		<component base="pixel3" xOffset="282" yOffset="648"/>
+		<component base="pixel3" xOffset="322" yOffset="608"/>
+		<component base="pixel2" xOffset="362" yOffset="608"/>
+		<component base="pixel1" xOffset="362" yOffset="688"/>
+		<component base="pixel1" xOffset="362" yOffset="728"/>
+		<component base="pixel3" xOffset="402" yOffset="648"/>
+		<component base="pixel0" xOffset="402" yOffset="688"/>
+		<component base="pixel3" xOffset="402" yOffset="728"/>
+		<component base="pixel1" xOffset="442" yOffset="728"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

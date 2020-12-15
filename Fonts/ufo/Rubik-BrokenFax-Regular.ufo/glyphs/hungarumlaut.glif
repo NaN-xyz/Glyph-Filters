@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hungarumlaut" format="2">
+	<advance width="622"/>
+	<unicode hex="02DD"/>
+	<outline>
+		<contour>
+			<point x="152" y="550" type="line"/>
+			<point x="152" y="600" type="line"/>
+			<point x="202" y="600" type="line"/>
+			<point x="252" y="650" type="line"/>
+			<point x="252" y="700" type="line"/>
+			<point x="302" y="700" type="line"/>
+			<point x="252" y="750" type="line"/>
+			<point x="102" y="750" type="line"/>
+			<point x="102" y="700" type="line"/>
+			<point x="52" y="700" type="line"/>
+			<point x="52" y="550" type="line"/>
+		</contour>
+		<contour>
+			<point x="402" y="550" type="line"/>
+			<point x="502" y="650" type="line"/>
+			<point x="502" y="700" type="line"/>
+			<point x="552" y="700" type="line"/>
+			<point x="552" y="750" type="line"/>
+			<point x="402" y="750" type="line"/>
+			<point x="352" y="700" type="line"/>
+			<point x="302" y="700" type="line"/>
+			<point x="302" y="550" type="line"/>
+		</contour>
+		<contour>
+			<point x="124" y="574" type="line"/>
+			<point x="76" y="574" type="line"/>
+			<point x="76" y="622" type="line"/>
+			<point x="124" y="622" type="line"/>
+		</contour>
+		<contour>
+			<point x="124" y="622" type="line"/>
+			<point x="76" y="622" type="line"/>
+			<point x="76" y="670" type="line"/>
+			<point x="124" y="670" type="line"/>
+		</contour>
+		<contour>
+			<point x="220" y="670" type="line"/>
+			<point x="172" y="670" type="line"/>
+			<point x="172" y="718" type="line"/>
+			<point x="220" y="718" type="line"/>
+		</contour>
+		<contour>
+			<point x="412" y="622" type="line"/>
+			<point x="364" y="622" type="line"/>
+			<point x="364" y="670" type="line"/>
+			<point x="412" y="670" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>595</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

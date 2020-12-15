@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ordmasculine" format="2">
+	<advance width="350"/>
+	<unicode hex="00BA"/>
+	<outline>
+		<component base="LineVerticalComponent" yScale="1.58" xOffset="47" yOffset="487"/>
+		<component base="LineVerticalComponent" yScale="2.02" xOffset="67" yOffset="465"/>
+		<component base="LineVerticalComponent" yScale="2.3" xOffset="87" yOffset="451"/>
+		<component base="LineVerticalComponent" yScale="2.48" xOffset="107" yOffset="443"/>
+		<component base="LineVerticalComponent" yScale="2.6" xOffset="127" yOffset="437"/>
+		<component base="LineVerticalComponent" yScale="2.66" xOffset="147" yOffset="433"/>
+		<component base="LineVerticalComponent" yScale="2.66" xOffset="167" yOffset="433"/>
+		<component base="LineVerticalComponent" yScale="2.66" xOffset="187" yOffset="433"/>
+		<component base="LineVerticalComponent" yScale="2.62" xOffset="207" yOffset="435"/>
+		<component base="LineVerticalComponent" yScale="2.54" xOffset="227" yOffset="439"/>
+		<component base="LineVerticalComponent" yScale="2.44" xOffset="247" yOffset="443"/>
+		<component base="LineVerticalComponent" yScale="2.26" xOffset="267" yOffset="453"/>
+		<component base="LineVerticalComponent" yScale="1.96" xOffset="287" yOffset="467"/>
+		<component base="LineVerticalComponent" yScale="1.38" xOffset="307" yOffset="493"/>
+		<component base="LineHorizontalComponent" xScale="1.78" xOffset="87" yOffset="451"/>
+		<component base="LineHorizontalComponent" xScale="2.32" xOffset="59" yOffset="471"/>
+		<component base="LineHorizontalComponent" xScale="2.6" xOffset="45" yOffset="491"/>
+		<component base="LineHorizontalComponent" xScale="2.76" xOffset="37" yOffset="511"/>
+		<component base="LineHorizontalComponent" xScale="2.86" xOffset="31" yOffset="531"/>
+		<component base="LineHorizontalComponent" xScale="2.88" xOffset="29" yOffset="551"/>
+		<component base="LineHorizontalComponent" xScale="2.88" xOffset="29" yOffset="571"/>
+		<component base="LineHorizontalComponent" xScale="2.88" xOffset="29" yOffset="591"/>
+		<component base="LineHorizontalComponent" xScale="2.8" xOffset="33" yOffset="611"/>
+		<component base="LineHorizontalComponent" xScale="2.68" xOffset="39" yOffset="631"/>
+		<component base="LineHorizontalComponent" xScale="2.46" xOffset="51" yOffset="651"/>
+		<component base="LineHorizontalComponent" xScale="2.08" xOffset="71" yOffset="671"/>
+		<component base="LineHorizontalComponent" xScale="1.32" xOffset="105" yOffset="691"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>589</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>545</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>429</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>705</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>134</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

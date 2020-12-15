@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hyphen" format="2">
+	<advance width="471"/>
+	<unicode hex="002D"/>
+	<outline>
+		<contour>
+			<point x="354.402" y="227" type="curve"/>
+			<point x="452.966" y="225.079"/>
+			<point x="454.966" y="282.301"/>
+			<point x="400" y="284.222" type="curve"/>
+			<point x="453" y="284.222"/>
+			<point x="453" y="343.389"/>
+			<point x="400" y="343.389" type="curve"/>
+			<point x="418.753" y="382.306"/>
+			<point x="357.302" y="411.917"/>
+			<point x="338.549" y="373" type="curve"/>
+			<point x="338.549" y="437"/>
+			<point x="187.939" y="437"/>
+			<point x="187.939" y="373" type="curve"/>
+			<point x="187.939" y="441"/>
+			<point x="124.524" y="441"/>
+			<point x="124.524" y="373" type="curve"/>
+			<point x="92.975" y="402.511"/>
+			<point x="39.451" y="345.288"/>
+			<point x="71" y="315.778" type="curve"/>
+			<point x="18" y="315.778"/>
+			<point x="18" y="229"/>
+			<point x="71" y="229" type="curve"/>
+			<point x="67.66" y="166.089"/>
+			<point x="105.331" y="164.089"/>
+			<point x="108.671" y="227" type="curve"/>
+			<point x="108.671" y="169"/>
+			<point x="227.573" y="169"/>
+			<point x="227.573" y="227" type="curve"/>
+			<point x="227.573" y="164"/>
+			<point x="354.402" y="164"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>300</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

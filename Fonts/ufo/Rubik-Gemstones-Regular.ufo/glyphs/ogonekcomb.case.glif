@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ogonekcomb.case" format="2">
+	<advance width="303"/>
+	<anchor x="227" y="10" name="_ogonek"/>
+	<outline>
+		<contour>
+			<point x="177.521" y="-212.646" type="line"/>
+			<point x="237.623" y="-203.221" type="line"/>
+			<point x="248" y="-177" type="line"/>
+			<point x="254.074" y="-138.519" type="line"/>
+			<point x="234.586" y="-104.787" type="line"/>
+			<point x="213.609" y="-87.744" type="line"/>
+			<point x="188.189" y="-96.926" type="line"/>
+			<point x="195.048" y="-55.284" type="line"/>
+			<point x="165.646" y="-25.007" type="line"/>
+			<point x="205.853" y="-21.877" type="line"/>
+			<point x="234.332" y="6.679" type="line"/>
+			<point x="254.544" y="24.714" type="line"/>
+			<point x="248" y="51" type="line"/>
+			<point x="259" y="71" type="line"/>
+			<point x="248" y="91" type="line"/>
+			<point x="242.378" y="113.903" type="line"/>
+			<point x="219" y="117" type="line"/>
+			<point x="194.194" y="134.345" type="line"/>
+			<point x="171.985" y="113.778" type="line"/>
+			<point x="145.728" y="124.759" type="line"/>
+			<point x="129.717" y="101.23" type="line"/>
+			<point x="100.02" y="94.728" type="line"/>
+			<point x="84.293" y="68.712" type="line"/>
+			<point x="64.865" y="57.6" type="line"/>
+			<point x="62.079" y="35.393" type="line"/>
+			<point x="43.808" y="-1.455" type="line"/>
+			<point x="45.078" y="-42.565" type="line"/>
+			<point x="40.886" y="-82.761" type="line"/>
+			<point x="56.482" y="-120.045" type="line"/>
+			<point x="54.036" y="-151.551" type="line"/>
+			<point x="82.677" y="-164.902" type="line"/>
+			<point x="90.964" y="-193.105" type="line"/>
+			<point x="120.32" y="-194.623" type="line"/>
+			<point x="145.915" y="-213.172" type="line"/>
+		</contour>
+		<contour>
+			<point x="212.251" y="34.596" type="line"/>
+			<point x="207.089" y="8.642" type="line"/>
+			<point x="180.154" y="6.285" type="line"/>
+			<point x="171.538" y="30.724" type="line"/>
+			<point x="190.606" y="41.939" type="line"/>
+		</contour>
+		<contour>
+			<point x="156.168" y="-69.747" type="line"/>
+			<point x="146.466" y="-83.899" type="line"/>
+			<point x="131.183" y="-87.135" type="line"/>
+			<point x="131.44" y="-72.219" type="line"/>
+			<point x="140" y="-57" type="line"/>
+		</contour>
+		<contour>
+			<point x="127.549" y="82.923" type="line"/>
+			<point x="125.709" y="71.643" type="line"/>
+			<point x="116.153" y="65.375" type="line"/>
+			<point x="106.018" y="75.32" type="line"/>
+			<point x="114.7" y="87.203" type="line"/>
+		</contour>
+		<contour>
+			<point x="136.284" y="0.435" type="line"/>
+			<point x="136.152" y="-36.031" type="line"/>
+			<point x="92.086" y="-34.532" type="line"/>
+			<point x="95.461" y="2.884" type="line"/>
+			<point x="117.151" y="16.97" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-220</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-82</string>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

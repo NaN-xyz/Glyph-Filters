@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="sheva-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B0"/>
+	<anchor x="1" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="42" y="-286" type="line"/>
+			<point x="42" y="-246" type="line"/>
+			<point x="2" y="-246" type="line"/>
+			<point x="2" y="-286" type="line"/>
+		</contour>
+		<component base="pixel3" xOffset="-36" yOffset="-284"/>
+		<component base="pixel0" xOffset="-36" yOffset="-244"/>
+		<component base="pixel0" xOffset="-36" yOffset="-204"/>
+		<component base="pixel2" xOffset="-36" yOffset="-164"/>
+		<component base="pixel2" xOffset="-36" yOffset="-124"/>
+		<component base="pixel0" xOffset="4" yOffset="-244"/>
+		<component base="pixel2" xOffset="4" yOffset="-204"/>
+		<component base="pixel1" xOffset="4" yOffset="-164"/>
+		<component base="pixel0" xOffset="4" yOffset="-124"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

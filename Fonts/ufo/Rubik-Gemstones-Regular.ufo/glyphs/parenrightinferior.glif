@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="parenrightinferior" format="2">
+	<advance width="261"/>
+	<unicode hex="208E"/>
+	<outline>
+		<contour>
+			<point x="35" y="-179" type="line"/>
+			<point x="91.565" y="-231.177" type="line"/>
+			<point x="123.317" y="-198.538" type="line"/>
+			<point x="158.28" y="-211.492" type="line"/>
+			<point x="160.352" y="-174.264" type="line"/>
+			<point x="207.677" y="-170.153" type="line"/>
+			<point x="199.524" y="-123.355" type="line"/>
+			<point x="228.838" y="-99.316" type="line"/>
+			<point x="220.287" y="-62.382" type="line"/>
+			<point x="245.983" y="-43.37" type="line"/>
+			<point x="226.071" y="-18.365" type="line"/>
+			<point x="249.938" y="29.015" type="line"/>
+			<point x="221.858" y="74.028" type="line"/>
+			<point x="249.306" y="103.865" type="line"/>
+			<point x="210.886" y="116.808" type="line"/>
+			<point x="213.332" y="162.162" type="line"/>
+			<point x="172.611" y="182.284" type="line"/>
+			<point x="166.281" y="216.421" type="line"/>
+			<point x="131.625" y="214.315" type="line"/>
+			<point x="116.814" y="257.455" type="line"/>
+			<point x="78.64" y="232.491" type="line"/>
+			<point x="44.279" y="224.936" type="line"/>
+			<point x="35" y="191" type="line"/>
+			<point x="17.109" y="160.435" type="line"/>
+			<point x="48.975" y="144.98" type="line"/>
+			<point x="65.262" y="110.502" type="line"/>
+			<point x="103.368" y="111.912" type="line"/>
+			<point x="91.653" y="68.781" type="line"/>
+			<point x="125.771" y="39.912" type="line"/>
+			<point x="87.302" y="0.221" type="line"/>
+			<point x="122.783" y="-42.162" type="line"/>
+			<point x="88.998" y="-52.311" type="line"/>
+			<point x="110.379" y="-80.37" type="line"/>
+			<point x="70.721" y="-84.535" type="line"/>
+			<point x="59.04" y="-122.662" type="line"/>
+			<point x="30.28" y="-143.688" type="line"/>
+		</contour>
+		<contour>
+			<point x="140.445" y="175" type="line"/>
+			<point x="131.065" y="139.933" type="line"/>
+			<point x="96.764" y="126.026" type="line"/>
+			<point x="87.131" y="160.509" type="line"/>
+			<point x="106.634" y="178.541" type="line"/>
+		</contour>
+		<contour>
+			<point x="159.491" y="77.642" type="line"/>
+			<point x="156.48" y="62.701" type="line"/>
+			<point x="144.855" y="55.386" type="line"/>
+			<point x="135.032" y="67.093" type="line"/>
+			<point x="145.003" y="75.417" type="line"/>
+		</contour>
+		<contour>
+			<point x="192.682" y="-6.359" type="line"/>
+			<point x="208.9" y="-44.239" type="line"/>
+			<point x="170.472" y="-57.89" type="line"/>
+			<point x="138.897" y="-36.873" type="line"/>
+			<point x="151.368" y="7.001" type="line"/>
+		</contour>
+		<contour>
+			<point x="113.24" y="-122.35" type="line"/>
+			<point x="115.128" y="-130.142" type="line"/>
+			<point x="105.629" y="-133.345" type="line"/>
+			<point x="101.019" y="-124.442" type="line"/>
+			<point x="107.548" y="-119.178" type="line"/>
+		</contour>
+		<contour>
+			<point x="140.976" y="-171.302" type="line"/>
+			<point x="133.997" y="-179.417" type="line"/>
+			<point x="121.807" y="-179.713" type="line"/>
+			<point x="120.823" y="-165.641" type="line"/>
+			<point x="133.661" y="-161.327" type="line"/>
+		</contour>
+		<contour>
+			<point x="53.767" y="-144.027" type="line"/>
+			<point x="61.733" y="-152.823" type="line"/>
+			<point x="59.359" y="-165.177" type="line"/>
+			<point x="47.215" y="-161.894" type="line"/>
+			<point x="43.728" y="-151.254" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>245</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

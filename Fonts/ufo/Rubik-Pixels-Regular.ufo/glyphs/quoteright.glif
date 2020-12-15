@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="quoteright" format="2">
+	<advance width="295"/>
+	<unicode hex="2019"/>
+	<outline>
+		<contour>
+			<point x="87" y="467" type="line"/>
+			<point x="87" y="507" type="line"/>
+			<point x="47" y="507" type="line"/>
+			<point x="47" y="467" type="line"/>
+		</contour>
+		<contour>
+			<point x="87" y="507" type="line"/>
+			<point x="87" y="547" type="line"/>
+			<point x="47" y="547" type="line"/>
+			<point x="47" y="507" type="line"/>
+		</contour>
+		<contour>
+			<point x="127" y="587" type="line"/>
+			<point x="127" y="627" type="line"/>
+			<point x="87" y="627" type="line"/>
+			<point x="87" y="587" type="line"/>
+		</contour>
+		<contour>
+			<point x="167" y="427" type="line"/>
+			<point x="167" y="467" type="line"/>
+			<point x="127" y="467" type="line"/>
+			<point x="127" y="427" type="line"/>
+		</contour>
+		<contour>
+			<point x="167" y="547" type="line"/>
+			<point x="167" y="587" type="line"/>
+			<point x="127" y="587" type="line"/>
+			<point x="127" y="547" type="line"/>
+		</contour>
+		<contour>
+			<point x="167" y="667" type="line"/>
+			<point x="167" y="707" type="line"/>
+			<point x="127" y="707" type="line"/>
+			<point x="127" y="667" type="line"/>
+		</contour>
+		<contour>
+			<point x="207" y="507" type="line"/>
+			<point x="207" y="547" type="line"/>
+			<point x="167" y="547" type="line"/>
+			<point x="167" y="507" type="line"/>
+		</contour>
+		<contour>
+			<point x="207" y="547" type="line"/>
+			<point x="207" y="587" type="line"/>
+			<point x="167" y="587" type="line"/>
+			<point x="167" y="547" type="line"/>
+		</contour>
+		<contour>
+			<point x="247" y="627" type="line"/>
+			<point x="247" y="667" type="line"/>
+			<point x="207" y="667" type="line"/>
+			<point x="207" y="627" type="line"/>
+		</contour>
+		<component base="pixel0" xOffset="49" yOffset="429"/>
+		<component base="pixel0" xOffset="49" yOffset="549"/>
+		<component base="pixel1" xOffset="89" yOffset="429"/>
+		<component base="pixel3" xOffset="89" yOffset="469"/>
+		<component base="pixel3" xOffset="89" yOffset="509"/>
+		<component base="pixel0" xOffset="89" yOffset="549"/>
+		<component base="pixel1" xOffset="89" yOffset="629"/>
+		<component base="pixel0" xOffset="89" yOffset="669"/>
+		<component base="pixel3" xOffset="129" yOffset="469"/>
+		<component base="pixel3" xOffset="129" yOffset="509"/>
+		<component base="pixel3" xOffset="129" yOffset="589"/>
+		<component base="pixel2" xOffset="129" yOffset="629"/>
+		<component base="pixel1" xOffset="169" yOffset="469"/>
+		<component base="pixel3" xOffset="169" yOffset="589"/>
+		<component base="pixel1" xOffset="169" yOffset="629"/>
+		<component base="pixel2" xOffset="169" yOffset="669"/>
+		<component base="pixel3" xOffset="209" yOffset="589"/>
+		<component base="pixel2" xOffset="209" yOffset="669"/>
+		<component base="pixel0" xOffset="249" yOffset="669"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

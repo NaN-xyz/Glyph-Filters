@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dagesh-hb" format="2">
+	<advance width="117"/>
+	<unicode hex="05BC"/>
+	<anchor x="58" y="286" name="_center"/>
+	<outline>
+		<contour>
+			<point x="10" y="326.375" type="line"/>
+			<point x="65.514" y="257.363" type="line"/>
+			<point x="102.168" y="274.669" type="line"/>
+			<point x="114.564" y="311.694" type="line"/>
+			<point x="107" y="350" type="line"/>
+			<point x="76.051" y="371.114" type="line"/>
+			<point x="38.812" y="367" type="line"/>
+			<point x="16.984" y="351.952" type="line"/>
+		</contour>
+		<contour>
+			<point x="41.863" y="288.563" type="line"/>
+			<point x="36.756" y="279.936" type="line"/>
+			<point x="29.527" y="283.403" type="line"/>
+			<point x="28.506" y="289.192" type="line"/>
+			<point x="34.253" y="295.912" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

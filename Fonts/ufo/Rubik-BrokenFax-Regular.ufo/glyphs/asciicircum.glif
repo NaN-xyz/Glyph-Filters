@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="asciicircum" format="2">
+	<advance width="492"/>
+	<unicode hex="005E"/>
+	<outline>
+		<contour>
+			<point x="132" y="550" type="line"/>
+			<point x="182" y="600" type="line"/>
+			<point x="332" y="600" type="line"/>
+			<point x="382" y="550" type="line"/>
+			<point x="432" y="550" type="line"/>
+			<point x="482" y="600" type="line"/>
+			<point x="432" y="650" type="line"/>
+			<point x="382" y="650" type="line"/>
+			<point x="382" y="700" type="line"/>
+			<point x="332" y="700" type="line"/>
+			<point x="332" y="750" type="line"/>
+			<point x="182" y="750" type="line"/>
+			<point x="32" y="600" type="line"/>
+			<point x="32" y="550" type="line"/>
+		</contour>
+		<contour>
+			<point x="200" y="622" type="line"/>
+			<point x="152" y="622" type="line"/>
+			<point x="152" y="670" type="line"/>
+			<point x="200" y="670" type="line"/>
+		</contour>
+		<contour>
+			<point x="248" y="622" type="line"/>
+			<point x="200" y="622" type="line"/>
+			<point x="200" y="670" type="line"/>
+			<point x="248" y="670" type="line"/>
+		</contour>
+		<contour>
+			<point x="296" y="622" type="line"/>
+			<point x="248" y="622" type="line"/>
+			<point x="248" y="670" type="line"/>
+			<point x="296" y="670" type="line"/>
+		</contour>
+		<contour>
+			<point x="344" y="622" type="line"/>
+			<point x="296" y="622" type="line"/>
+			<point x="296" y="670" type="line"/>
+			<point x="344" y="670" type="line"/>
+		</contour>
+		<contour>
+			<point x="144" y="598" type="line"/>
+			<point x="112" y="598" type="line"/>
+			<point x="112" y="630" type="line"/>
+			<point x="144" y="630" type="line"/>
+		</contour>
+		<contour>
+			<point x="208" y="630" type="line"/>
+			<point x="176" y="630" type="line"/>
+			<point x="176" y="662" type="line"/>
+			<point x="208" y="662" type="line"/>
+		</contour>
+		<contour>
+			<point x="240" y="630" type="line"/>
+			<point x="208" y="630" type="line"/>
+			<point x="208" y="662" type="line"/>
+			<point x="240" y="662" type="line"/>
+		</contour>
+		<contour>
+			<point x="240" y="694" type="line"/>
+			<point x="208" y="694" type="line"/>
+			<point x="208" y="726" type="line"/>
+			<point x="240" y="726" type="line"/>
+		</contour>
+		<contour>
+			<point x="272" y="630" type="line"/>
+			<point x="240" y="630" type="line"/>
+			<point x="240" y="662" type="line"/>
+			<point x="272" y="662" type="line"/>
+		</contour>
+		<contour>
+			<point x="272" y="694" type="line"/>
+			<point x="240" y="694" type="line"/>
+			<point x="240" y="726" type="line"/>
+			<point x="272" y="726" type="line"/>
+		</contour>
+		<contour>
+			<point x="304" y="630" type="line"/>
+			<point x="272" y="630" type="line"/>
+			<point x="272" y="662" type="line"/>
+			<point x="304" y="662" type="line"/>
+		</contour>
+		<contour>
+			<point x="304" y="694" type="line"/>
+			<point x="272" y="694" type="line"/>
+			<point x="272" y="726" type="line"/>
+			<point x="304" y="726" type="line"/>
+		</contour>
+		<contour>
+			<point x="336" y="630" type="line"/>
+			<point x="304" y="630" type="line"/>
+			<point x="304" y="662" type="line"/>
+			<point x="336" y="662" type="line"/>
+		</contour>
+		<contour>
+			<point x="400" y="598" type="line"/>
+			<point x="368" y="598" type="line"/>
+			<point x="368" y="630" type="line"/>
+			<point x="400" y="630" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>575</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>705</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

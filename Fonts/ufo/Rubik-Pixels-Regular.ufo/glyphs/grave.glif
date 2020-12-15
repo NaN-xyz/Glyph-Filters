@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="grave" format="2">
+	<advance width="450"/>
+	<unicode hex="0060"/>
+	<outline>
+		<contour>
+			<point x="193" y="655" type="line"/>
+			<point x="193" y="695" type="line"/>
+			<point x="153" y="695" type="line"/>
+			<point x="153" y="655" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="75" yOffset="737"/>
+		<component base="pixel2" xOffset="115" yOffset="697"/>
+		<component base="pixel2" xOffset="115" yOffset="737"/>
+		<component base="pixel2" xOffset="155" yOffset="697"/>
+		<component base="pixel2" xOffset="155" yOffset="737"/>
+		<component base="pixel3" xOffset="195" yOffset="617"/>
+		<component base="pixel3" xOffset="195" yOffset="657"/>
+		<component base="pixel1" xOffset="195" yOffset="697"/>
+		<component base="pixel1" xOffset="195" yOffset="737"/>
+		<component base="pixel0" xOffset="235" yOffset="617"/>
+		<component base="pixel1" xOffset="235" yOffset="657"/>
+		<component base="pixel0" xOffset="235" yOffset="697"/>
+		<component base="pixel2" xOffset="275" yOffset="617"/>
+		<component base="pixel2" xOffset="275" yOffset="657"/>
+		<component base="pixel2" xOffset="275" yOffset="697"/>
+		<component base="pixel2" xOffset="315" yOffset="617"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>595</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>725</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

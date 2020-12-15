@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="macron" format="2">
+	<advance width="473"/>
+	<unicode hex="00AF"/>
+	<outline>
+		<contour>
+			<point x="65.028" y="601.834" type="line"/>
+			<point x="94.933" y="587" type="line"/>
+			<point x="116.866" y="600" type="line"/>
+			<point x="136.805" y="583" type="line"/>
+			<point x="156.744" y="600" type="line"/>
+			<point x="194.628" y="584" type="line"/>
+			<point x="232.512" y="600" type="line"/>
+			<point x="262.421" y="587" type="line"/>
+			<point x="292.329" y="600" type="line"/>
+			<point x="322.238" y="585" type="line"/>
+			<point x="352.146" y="600" type="line"/>
+			<point x="372.085" y="581" type="line"/>
+			<point x="392.024" y="600" type="line"/>
+			<point x="411.945" y="606.074" type="line"/>
+			<point x="418" y="626" type="line"/>
+			<point x="435" y="650" type="line"/>
+			<point x="418" y="674" type="line"/>
+			<point x="431" y="694" type="line"/>
+			<point x="418" y="714" type="line"/>
+			<point x="396.53" y="738.348" type="line"/>
+			<point x="364.11" y="740" type="line"/>
+			<point x="324.232" y="759" type="line"/>
+			<point x="284.354" y="740" type="line"/>
+			<point x="260.427" y="758" type="line"/>
+			<point x="236.5" y="740" type="line"/>
+			<point x="212.573" y="753" type="line"/>
+			<point x="188.646" y="740" type="line"/>
+			<point x="162.726" y="754" type="line"/>
+			<point x="136.805" y="740" type="line"/>
+			<point x="100.778" y="749.13" type="line"/>
+			<point x="65.236" y="738.266" type="line"/>
+			<point x="47.328" y="712.46" type="line"/>
+			<point x="55" y="682" type="line"/>
+			<point x="41.161" y="639.559" type="line"/>
+		</contour>
+		<contour>
+			<point x="141.592" y="682.29" type="line"/>
+			<point x="147.535" y="670.692" type="line"/>
+			<point x="136.314" y="665.005" type="line"/>
+			<point x="129.422" y="671.606" type="line"/>
+			<point x="128.612" y="683.456" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>595</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

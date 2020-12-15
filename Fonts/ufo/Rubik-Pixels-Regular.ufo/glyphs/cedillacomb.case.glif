@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="cedillacomb.case" format="2">
+	<advance width="282"/>
+	<anchor x="112" y="0" name="_bottom"/>
+	<anchor x="141" y="-220" name="bottom"/>
+	<outline>
+		<contour>
+			<point x="110" y="-200" type="line"/>
+			<point x="110" y="-160" type="line"/>
+			<point x="70" y="-160" type="line"/>
+			<point x="70" y="-200" type="line"/>
+		</contour>
+		<contour>
+			<point x="150" y="-80" type="line"/>
+			<point x="150" y="-40" type="line"/>
+			<point x="110" y="-40" type="line"/>
+			<point x="110" y="-80" type="line"/>
+		</contour>
+		<component base="pixel0" xOffset="72" yOffset="-78"/>
+		<component base="pixel1" xOffset="72" yOffset="-38"/>
+		<component base="pixel2" xOffset="112" yOffset="-198"/>
+		<component base="pixel2" xOffset="152" yOffset="-198"/>
+		<component base="pixel1" xOffset="152" yOffset="-118"/>
+		<component base="pixel3" xOffset="152" yOffset="-78"/>
+		<component base="pixel3" xOffset="192" yOffset="-158"/>
+		<component base="pixel0" xOffset="192" yOffset="-118"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-220</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-50</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>222</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

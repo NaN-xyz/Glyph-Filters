@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="bullet" format="2">
+	<advance width="388"/>
+	<unicode hex="2022"/>
+	<outline>
+		<contour>
+			<point x="114" y="310" type="line"/>
+			<point x="114" y="350" type="line"/>
+			<point x="74" y="350" type="line"/>
+			<point x="74" y="310" type="line"/>
+		</contour>
+		<contour>
+			<point x="154" y="350" type="line"/>
+			<point x="154" y="390" type="line"/>
+			<point x="114" y="390" type="line"/>
+			<point x="114" y="350" type="line"/>
+		</contour>
+		<contour>
+			<point x="154" y="430" type="line"/>
+			<point x="154" y="470" type="line"/>
+			<point x="114" y="470" type="line"/>
+			<point x="114" y="430" type="line"/>
+		</contour>
+		<contour>
+			<point x="194" y="310" type="line"/>
+			<point x="194" y="350" type="line"/>
+			<point x="154" y="350" type="line"/>
+			<point x="154" y="310" type="line"/>
+		</contour>
+		<contour>
+			<point x="194" y="350" type="line"/>
+			<point x="194" y="390" type="line"/>
+			<point x="154" y="390" type="line"/>
+			<point x="154" y="350" type="line"/>
+		</contour>
+		<contour>
+			<point x="194" y="430" type="line"/>
+			<point x="194" y="470" type="line"/>
+			<point x="154" y="470" type="line"/>
+			<point x="154" y="430" type="line"/>
+		</contour>
+		<contour>
+			<point x="234" y="230" type="line"/>
+			<point x="234" y="270" type="line"/>
+			<point x="194" y="270" type="line"/>
+			<point x="194" y="230" type="line"/>
+		</contour>
+		<component base="pixel0" xOffset="76" yOffset="272"/>
+		<component base="pixel0" xOffset="76" yOffset="352"/>
+		<component base="pixel0" xOffset="76" yOffset="392"/>
+		<component base="pixel3" xOffset="116" yOffset="232"/>
+		<component base="pixel1" xOffset="116" yOffset="272"/>
+		<component base="pixel3" xOffset="116" yOffset="312"/>
+		<component base="pixel2" xOffset="116" yOffset="392"/>
+		<component base="pixel3" xOffset="156" yOffset="232"/>
+		<component base="pixel3" xOffset="156" yOffset="272"/>
+		<component base="pixel1" xOffset="156" yOffset="392"/>
+		<component base="pixel2" xOffset="196" yOffset="272"/>
+		<component base="pixel0" xOffset="196" yOffset="312"/>
+		<component base="pixel3" xOffset="196" yOffset="352"/>
+		<component base="pixel0" xOffset="196" yOffset="392"/>
+		<component base="pixel1" xOffset="196" yOffset="432"/>
+		<component base="pixel0" xOffset="236" yOffset="232"/>
+		<component base="pixel2" xOffset="236" yOffset="272"/>
+		<component base="pixel2" xOffset="236" yOffset="312"/>
+		<component base="pixel2" xOffset="236" yOffset="352"/>
+		<component base="pixel0" xOffset="236" yOffset="392"/>
+		<component base="pixel3" xOffset="236" yOffset="432"/>
+		<component base="pixel3" xOffset="276" yOffset="272"/>
+		<component base="pixel3" xOffset="276" yOffset="312"/>
+		<component base="pixel2" xOffset="276" yOffset="352"/>
+		<component base="pixel1" xOffset="276" yOffset="392"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>300</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>150</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>50</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

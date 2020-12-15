@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="commaaccentcomb" format="2">
+	<advance width="326"/>
+	<unicode hex="0326"/>
+	<outline>
+		<contour>
+			<point x="61.6" y="-184.629" type="line"/>
+			<point x="103.111" y="-261" type="line"/>
+			<point x="134.222" y="-245" type="line"/>
+			<point x="155.611" y="-264" type="line"/>
+			<point x="177" y="-245" type="line"/>
+			<point x="210.063" y="-241.049" type="line"/>
+			<point x="217.895" y="-208.684" type="line"/>
+			<point x="238.461" y="-189.323" type="line"/>
+			<point x="236.711" y="-161.132" type="line"/>
+			<point x="260.895" y="-132.626" type="line"/>
+			<point x="262.763" y="-95.289" type="line"/>
+			<point x="250.255" y="-67.179" type="line"/>
+			<point x="222" y="-55" type="line"/>
+			<point x="180" y="-38" type="line"/>
+			<point x="138" y="-55" type="line"/>
+			<point x="108.978" y="-49.711" type="line"/>
+			<point x="85.629" y="-67.742" type="line"/>
+			<point x="61.029" y="-89.98" type="line"/>
+			<point x="71.2" y="-121.543" type="line"/>
+			<point x="48.605" y="-150.378" type="line"/>
+		</contour>
+		<contour>
+			<point x="215.284" y="-162.565" type="line"/>
+			<point x="206.982" y="-186.451" type="line"/>
+			<point x="179.267" y="-187.429" type="line"/>
+			<point x="177.262" y="-161.191" type="line"/>
+			<point x="195.89" y="-151.023" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-210</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-50</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-217</string>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

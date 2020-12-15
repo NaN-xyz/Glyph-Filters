@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="holamhaser-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05BA"/>
+	<anchor x="2" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="-120.96" y="546.413" type="line"/>
+			<point x="-75.263" y="526" type="line"/>
+			<point x="-44.526" y="538" type="line"/>
+			<point x="-18.58" y="557.863" type="line"/>
+			<point x="-16" y="590.438" type="line"/>
+			<point x="-23.122" y="619.301" type="line"/>
+			<point x="-48.368" y="635" type="line"/>
+			<point x="-82.032" y="651.971" type="line"/>
+			<point x="-114.587" y="632.96" type="line"/>
+			<point x="-137.357" y="617.715" type="line"/>
+			<point x="-123" y="594.375" type="line"/>
+			<point x="-136.966" y="569.756" type="line"/>
+		</contour>
+		<contour>
+			<point x="-71.328" y="615.119" type="line"/>
+			<point x="-80.5" y="602.474" type="line"/>
+			<point x="-96.706" y="600.11" type="line"/>
+			<point x="-102.444" y="619.321" type="line"/>
+			<point x="-84.432" y="626.918" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ogonekcomb.case" format="2">
+	<advance width="303"/>
+	<anchor x="227" y="10" name="_ogonek"/>
+	<outline>
+		<contour>
+			<point x="136" y="-130" type="line"/>
+			<point x="136" y="-34" type="line"/>
+			<point x="76" y="-34" type="line"/>
+			<point x="76" y="-16" type="line"/>
+			<point x="226" y="-16" type="line"/>
+			<point x="226" y="26" type="line"/>
+			<point x="166" y="26" type="line"/>
+			<point x="166" y="86" type="line"/>
+			<point x="94" y="86" type="line"/>
+			<point x="94" y="14" type="line"/>
+			<point x="136" y="14" type="line"/>
+			<point x="136" y="50" type="line"/>
+			<point x="124" y="50" type="line"/>
+			<point x="124" y="26" type="line"/>
+			<point x="106" y="26" type="line"/>
+			<point x="106" y="74" type="line"/>
+			<point x="154" y="74" type="line"/>
+			<point x="154" y="14" type="line"/>
+			<point x="214" y="14" type="line"/>
+			<point x="214" y="-4" type="line"/>
+			<point x="64" y="-4" type="line"/>
+			<point x="64" y="-46" type="line"/>
+			<point x="124" y="-46" type="line"/>
+			<point x="124" y="-130" type="line"/>
+		</contour>
+		<contour>
+			<point x="220" y="44" type="line"/>
+			<point x="220" y="56" type="line"/>
+			<point x="196" y="56" type="line"/>
+			<point x="196" y="74" type="line"/>
+			<point x="220" y="74" type="line"/>
+			<point x="220" y="86" type="line"/>
+			<point x="184" y="86" type="line"/>
+			<point x="184" y="44" type="line"/>
+		</contour>
+		<contour>
+			<point x="46" y="-130" type="line"/>
+			<point x="46" y="14" type="line"/>
+			<point x="76" y="14" type="line"/>
+			<point x="76" y="50" type="line"/>
+			<point x="64" y="50" type="line"/>
+			<point x="64" y="26" type="line"/>
+			<point x="34" y="26" type="line"/>
+			<point x="34" y="-130" type="line"/>
+		</contour>
+		<contour>
+			<point x="106" y="-106" type="line"/>
+			<point x="106" y="-70" type="line"/>
+			<point x="94" y="-70" type="line"/>
+			<point x="94" y="-94" type="line"/>
+			<point x="76" y="-94" type="line"/>
+			<point x="76" y="-70" type="line"/>
+			<point x="64" y="-70" type="line"/>
+			<point x="64" y="-106" type="line"/>
+		</contour>
+		<contour>
+			<point x="64" y="-166" type="line"/>
+			<point x="130" y="-166" type="line"/>
+			<point x="130" y="-154" type="line"/>
+			<point x="76" y="-154" type="line"/>
+			<point x="76" y="-136" type="line"/>
+			<point x="100" y="-136" type="line"/>
+			<point x="100" y="-124" type="line"/>
+			<point x="64" y="-124" type="line"/>
+		</contour>
+		<contour>
+			<point x="196" y="-226" type="line"/>
+			<point x="196" y="-160" type="line"/>
+			<point x="184" y="-160" type="line"/>
+			<point x="184" y="-214" type="line"/>
+			<point x="166" y="-214" type="line"/>
+			<point x="166" y="-136" type="line"/>
+			<point x="214" y="-136" type="line"/>
+			<point x="214" y="-220" type="line"/>
+			<point x="226" y="-220" type="line"/>
+			<point x="226" y="-124" type="line"/>
+			<point x="154" y="-124" type="line"/>
+			<point x="154" y="-226" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="-220" type="line"/>
+			<point x="136" y="-184" type="line"/>
+			<point x="70" y="-184" type="line"/>
+			<point x="70" y="-196" type="line"/>
+			<point x="124" y="-196" type="line"/>
+			<point x="124" y="-220" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-220</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-82</string>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

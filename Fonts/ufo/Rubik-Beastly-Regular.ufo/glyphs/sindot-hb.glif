@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="sindot-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05C2"/>
+	<anchor x="-70" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="83.04" y="506.413" type="curve"/>
+			<point x="107.011" y="484.9"/>
+			<point x="111.819" y="460.395"/>
+			<point x="107.844" y="445" type="curve"/>
+			<point x="117.962" y="457.265"/>
+			<point x="121.931" y="482.677"/>
+			<point x="117.688" y="498" type="curve"/>
+			<point x="129.351" y="486.329"/>
+			<point x="137.155" y="459.076"/>
+			<point x="133.438" y="443" type="curve"/>
+			<point x="143.363" y="456.181"/>
+			<point x="151.204" y="481.624"/>
+			<point x="149.188" y="498" type="curve"/>
+			<point x="162.558" y="495.251"/>
+			<point x="182.245" y="482.651"/>
+			<point x="190.341" y="471.661" type="curve"/>
+			<point x="193.265" y="484.994"/>
+			<point x="185.952" y="507.843"/>
+			<point x="178" y="518.938" type="curve"/>
+			<point x="183.055" y="528.141"/>
+			<point x="202.868" y="543.743"/>
+			<point x="213" y="546.5" type="curve"/>
+			<point x="207.785" y="555.613"/>
+			<point x="188.132" y="571.306"/>
+			<point x="178" y="574.062" type="curve"/>
+			<point x="181.673" y="582.77"/>
+			<point x="180.155" y="603.8"/>
+			<point x="175.27" y="611.89" type="curve"/>
+			<point x="169.38" y="604.5"/>
+			<point x="150.745" y="595.568"/>
+			<point x="141.312" y="595" type="curve"/>
+			<point x="121.37" y="605.419"/>
+			<point x="96.029" y="636.801"/>
+			<point x="90.809" y="658.687" type="curve"/>
+			<point x="79.925" y="638.995"/>
+			<point x="73.279" y="599.134"/>
+			<point x="81" y="578" type="curve"/>
+			<point x="66.018" y="573.652"/>
+			<point x="38.265" y="553.981"/>
+			<point x="30.041" y="540.725" type="curve"/>
+			<point x="45.584" y="539.387"/>
+			<point x="73.853" y="519.021"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

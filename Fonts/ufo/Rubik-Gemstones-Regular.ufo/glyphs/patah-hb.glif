@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="patah-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B7"/>
+	<anchor x="2" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="-119" y="-136.375" type="line"/>
+			<point x="-74" y="-196" type="line"/>
+			<point x="-46" y="-177" type="line"/>
+			<point x="-16" y="-196" type="line"/>
+			<point x="14" y="-177" type="line"/>
+			<point x="50" y="-188" type="line"/>
+			<point x="86" y="-177" type="line"/>
+			<point x="113.079" y="-156.835" type="line"/>
+			<point x="123" y="-124.562" type="line"/>
+			<point x="111.257" y="-94.224" type="line"/>
+			<point x="82" y="-80" type="line"/>
+			<point x="40" y="-61" type="line"/>
+			<point x="-2" y="-80" type="line"/>
+			<point x="-44" y="-61" type="line"/>
+			<point x="-86" y="-80" type="line"/>
+			<point x="-112.166" y="-102.529" type="line"/>
+		</contour>
+		<contour>
+			<point x="106.852" y="-147.123" type="line"/>
+			<point x="102.264" y="-163.256" type="line"/>
+			<point x="85.808" y="-158.192" type="line"/>
+			<point x="80.744" y="-141.736" type="line"/>
+			<point x="97.19" y="-135.172" type="line"/>
+		</contour>
+		<contour>
+			<point x="-90.752" y="-100.962" type="line"/>
+			<point x="-89.556" y="-109.735" type="line"/>
+			<point x="-96.697" y="-114.97" type="line"/>
+			<point x="-102.821" y="-108.575" type="line"/>
+			<point x="-101.15" y="-98.428" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

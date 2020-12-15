@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="holamhaser-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05BA"/>
+	<anchor x="2" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="-106" y="533" type="curve" smooth="yes"/>
+			<point x="-33" y="533" type="line" smooth="yes"/>
+			<point x="-20" y="533"/>
+			<point x="-11" y="542"/>
+			<point x="-11" y="555" type="curve" smooth="yes"/>
+			<point x="-11" y="618" type="line" smooth="yes"/>
+			<point x="-11" y="631"/>
+			<point x="-20" y="640"/>
+			<point x="-33" y="640" type="curve" smooth="yes"/>
+			<point x="-106" y="640" type="line" smooth="yes"/>
+			<point x="-119" y="640"/>
+			<point x="-128" y="631"/>
+			<point x="-128" y="618" type="curve" smooth="yes"/>
+			<point x="-128" y="555" type="line" smooth="yes"/>
+			<point x="-128" y="542"/>
+			<point x="-119" y="533"/>
+		</contour>
+		<contour>
+			<point x="-55.348" y="603.104" type="curve"/>
+			<point x="-47.954" y="593.973"/>
+			<point x="-56.698" y="590.773"/>
+			<point x="-63.097" y="580.92" type="curve"/>
+			<point x="-67.979" y="573.402"/>
+			<point x="-69.741" y="569.259"/>
+			<point x="-78.4" y="571.579" type="curve"/>
+			<point x="-90.356" y="574.783"/>
+			<point x="-97.319" y="574.383"/>
+			<point x="-97.967" y="586.744" type="curve"/>
+			<point x="-98.589" y="598.606"/>
+			<point x="-90.106" y="596.813"/>
+			<point x="-79.017" y="601.07" type="curve"/>
+			<point x="-67.928" y="605.327"/>
+			<point x="-62.824" y="612.335"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

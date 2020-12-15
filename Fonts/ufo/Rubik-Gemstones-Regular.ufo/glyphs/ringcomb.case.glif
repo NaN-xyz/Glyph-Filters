@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ringcomb.case" format="2">
+	<advance width="300"/>
+	<anchor x="150" y="930" name="top"/>
+	<anchor x="150" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="98.854" y="758.422" type="line"/>
+			<point x="182.477" y="740.134" type="line"/>
+			<point x="206.903" y="762.085" type="line"/>
+			<point x="232.969" y="782.326" type="line"/>
+			<point x="242.559" y="813.905" type="line"/>
+			<point x="253.954" y="840.979" type="line"/>
+			<point x="239.396" y="866.493" type="line"/>
+			<point x="234.759" y="901.328" type="line"/>
+			<point x="201.146" y="911.578" type="line"/>
+			<point x="161.386" y="931.805" type="line"/>
+			<point x="118.312" y="920.203" type="line"/>
+			<point x="88.706" y="914.25" type="line"/>
+			<point x="72.791" y="888.585" type="line"/>
+			<point x="57.061" y="849.436" type="line"/>
+			<point x="59.284" y="807.303" type="line"/>
+			<point x="67.41" y="773.425" type="line"/>
+		</contour>
+		<contour>
+			<point x="158.815" y="801.023" type="line"/>
+			<point x="138.015" y="817.57" type="line"/>
+			<point x="117.245" y="822.152" type="line"/>
+			<point x="130.872" y="839.608" type="line"/>
+			<point x="126.365" y="861.29" type="line"/>
+			<point x="147.238" y="856.483" type="line"/>
+			<point x="166.293" y="866.264" type="line"/>
+			<point x="170.319" y="845.811" type="line"/>
+			<point x="184.774" y="830.791" type="line"/>
+			<point x="165.885" y="821.06" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

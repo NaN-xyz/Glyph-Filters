@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="tildecomb.case" format="2">
+	<advance width="527"/>
+	<anchor x="254" y="925" name="top"/>
+	<anchor x="254" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="265.377" y="762.492" type="line"/>
+			<point x="356.563" y="748.208" type="line"/>
+			<point x="386.391" y="767.656" type="line"/>
+			<point x="412.725" y="775.051" type="line"/>
+			<point x="420.977" y="801.13" type="line"/>
+			<point x="448.841" y="821.636" type="line"/>
+			<point x="445.697" y="856.089" type="line"/>
+			<point x="456.05" y="884.1" type="line"/>
+			<point x="446.404" y="912.362" type="line"/>
+			<point x="421.107" y="931.658" type="line"/>
+			<point x="394" y="915" type="line"/>
+			<point x="361.409" y="917.904" type="line"/>
+			<point x="334.346" y="899.513" type="line"/>
+			<point x="309.704" y="901.854" type="line"/>
+			<point x="291.376" y="885.218" type="line"/>
+			<point x="257.526" y="917.242" type="line"/>
+			<point x="210.931" y="917.745" type="line"/>
+			<point x="186.402" y="928.861" type="line"/>
+			<point x="161.768" y="917.977" type="line"/>
+			<point x="129.192" y="922.142" type="line"/>
+			<point x="110.383" y="895.219" type="line"/>
+			<point x="75.619" y="872.931" type="line"/>
+			<point x="67.214" y="832.5" type="line"/>
+			<point x="47.574" y="807.772" type="line"/>
+			<point x="55.309" y="777.156" type="line"/>
+			<point x="75.879" y="756.488" type="line"/>
+			<point x="105" y="755" type="line"/>
+			<point x="131.22" y="739.229" type="line"/>
+			<point x="157.161" y="755.456" type="line"/>
+			<point x="185.625" y="762.406" type="line"/>
+			<point x="203" y="786" type="line"/>
+			<point x="230.309" y="763.953" type="line"/>
+		</contour>
+		<contour>
+			<point x="225.924" y="848.162" type="line"/>
+			<point x="202.118" y="828.384" type="line"/>
+			<point x="179.679" y="833.144" type="line"/>
+			<point x="172.103" y="860.308" type="line"/>
+			<point x="200.806" y="869.287" type="line"/>
+		</contour>
+		<contour>
+			<point x="336.625" y="866.752" type="line"/>
+			<point x="345.225" y="845.487" type="line"/>
+			<point x="326.558" y="835.01" type="line"/>
+			<point x="308.146" y="844.502" type="line"/>
+			<point x="317.381" y="862.032" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>750</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>833</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>880</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>246</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

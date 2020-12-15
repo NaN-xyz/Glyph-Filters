@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="braceleft" format="2">
+	<advance width="474"/>
+	<unicode hex="007B"/>
+	<outline>
+		<contour>
+			<point x="383.566" y="-130.767" type="curve"/>
+			<point x="478.937" y="-130.488"/>
+			<point x="475.937" y="-70.859"/>
+			<point x="426" y="-73.371" type="curve"/>
+			<point x="465.597" y="-50.756"/>
+			<point x="418.874" y="31.049"/>
+			<point x="379.277" y="8.434" type="curve"/>
+			<point x="412.84" y="60.564"/>
+			<point x="338.733" y="108.276"/>
+			<point x="305.17" y="56.146" type="curve"/>
+			<point x="352.672" y="74.708"/>
+			<point x="327.795" y="138.372"/>
+			<point x="280.292" y="119.81" type="curve"/>
+			<point x="336.382" y="129.958"/>
+			<point x="314.442" y="251.231"/>
+			<point x="258.353" y="241.083" type="curve"/>
+			<point x="313.993" y="268.435"/>
+			<point x="278.641" y="340.352"/>
+			<point x="223" y="313" type="curve"/>
+			<point x="266.089" y="295.787"/>
+			<point x="320.833" y="432.828"/>
+			<point x="277.744" y="450.041" type="curve"/>
+			<point x="336.682" y="447.343"/>
+			<point x="338.614" y="489.547"/>
+			<point x="279.676" y="492.245" type="curve"/>
+			<point x="340.648" y="466.98"/>
+			<point x="372.719" y="544.374"/>
+			<point x="311.746" y="569.64" type="curve"/>
+			<point x="334.24" y="517.266"/>
+			<point x="451.494" y="567.626"/>
+			<point x="429" y="620" type="curve"/>
+			<point x="495.976" y="621.789"/>
+			<point x="492.476" y="752.789"/>
+			<point x="425.5" y="751" type="curve"/>
+			<point x="414.648" y="802.877"/>
+			<point x="258.929" y="770.304"/>
+			<point x="269.781" y="718.427" type="curve"/>
+			<point x="241.936" y="768.162"/>
+			<point x="199.902" y="744.629"/>
+			<point x="227.748" y="694.894" type="curve"/>
+			<point x="195.591" y="721.285"/>
+			<point x="105.157" y="611.095"/>
+			<point x="137.314" y="584.704" type="curve"/>
+			<point x="85.71" y="596.788"/>
+			<point x="68.366" y="522.722"/>
+			<point x="119.97" y="510.638" type="curve"/>
+			<point x="63.974" y="525.751"/>
+			<point x="30.86" y="403.058"/>
+			<point x="86.857" y="387.945" type="curve"/>
+			<point x="56.256" y="414.931"/>
+			<point x="-11.6" y="337.986"/>
+			<point x="19" y="311" type="curve"/>
+			<point x="-20.206" y="279.97"/>
+			<point x="64.708" y="172.68"/>
+			<point x="103.915" y="203.71" type="curve"/>
+			<point x="39.741" y="193.376"/>
+			<point x="56.637" y="88.451"/>
+			<point x="120.81" y="98.785" type="curve"/>
+			<point x="68.049" y="87.284"/>
+			<point x="79.202" y="36.118"/>
+			<point x="131.963" y="47.619" type="curve"/>
+			<point x="70.781" y="20.311"/>
+			<point x="90.483" y="-23.832"/>
+			<point x="151.666" y="3.475" type="curve"/>
+			<point x="99.69" y="-38.804"/>
+			<point x="147.867" y="-98.03"/>
+			<point x="199.843" y="-55.751" type="curve"/>
+			<point x="172.773" y="-104.773"/>
+			<point x="281.439" y="-164.778"/>
+			<point x="308.509" y="-115.756" type="curve"/>
+			<point x="296.742" y="-174.591"/>
+			<point x="371.8" y="-189.602"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>776</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-159</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>323</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

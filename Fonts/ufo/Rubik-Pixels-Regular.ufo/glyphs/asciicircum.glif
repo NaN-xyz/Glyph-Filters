@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="asciicircum" format="2">
+	<advance width="492"/>
+	<unicode hex="005E"/>
+	<outline>
+		<contour>
+			<point x="172" y="655" type="line"/>
+			<point x="172" y="695" type="line"/>
+			<point x="132" y="695" type="line"/>
+			<point x="132" y="655" type="line"/>
+		</contour>
+		<contour>
+			<point x="252" y="655" type="line"/>
+			<point x="252" y="695" type="line"/>
+			<point x="212" y="695" type="line"/>
+			<point x="212" y="655" type="line"/>
+		</contour>
+		<contour>
+			<point x="292" y="695" type="line"/>
+			<point x="292" y="735" type="line"/>
+			<point x="252" y="735" type="line"/>
+			<point x="252" y="695" type="line"/>
+		</contour>
+		<contour>
+			<point x="292" y="735" type="line"/>
+			<point x="292" y="775" type="line"/>
+			<point x="252" y="775" type="line"/>
+			<point x="252" y="735" type="line"/>
+		</contour>
+		<contour>
+			<point x="332" y="615" type="line"/>
+			<point x="332" y="655" type="line"/>
+			<point x="292" y="655" type="line"/>
+			<point x="292" y="615" type="line"/>
+		</contour>
+		<contour>
+			<point x="332" y="695" type="line"/>
+			<point x="332" y="735" type="line"/>
+			<point x="292" y="735" type="line"/>
+			<point x="292" y="695" type="line"/>
+		</contour>
+		<contour>
+			<point x="412" y="615" type="line"/>
+			<point x="412" y="655" type="line"/>
+			<point x="372" y="655" type="line"/>
+			<point x="372" y="615" type="line"/>
+		</contour>
+		<component base="pixel1" xOffset="94" yOffset="617"/>
+		<component base="pixel1" xOffset="94" yOffset="657"/>
+		<component base="pixel0" xOffset="134" yOffset="617"/>
+		<component base="pixel1" xOffset="134" yOffset="697"/>
+		<component base="pixel2" xOffset="174" yOffset="657"/>
+		<component base="pixel3" xOffset="174" yOffset="697"/>
+		<component base="pixel0" xOffset="214" yOffset="697"/>
+		<component base="pixel1" xOffset="214" yOffset="737"/>
+		<component base="pixel1" xOffset="254" yOffset="657"/>
+		<component base="pixel2" xOffset="294" yOffset="657"/>
+		<component base="pixel0" xOffset="334" yOffset="617"/>
+		<component base="pixel3" xOffset="334" yOffset="657"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>575</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>705</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

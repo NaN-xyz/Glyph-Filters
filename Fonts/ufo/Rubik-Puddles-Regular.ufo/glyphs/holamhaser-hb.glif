@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="holamhaser-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05BA"/>
+	<anchor x="2" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="-44.526" y="473" type="curve"/>
+			<point x="-85.319" y="467.898"/>
+			<point x="-128.714" y="477.841"/>
+			<point x="-152.818" y="500.216" type="curve" smooth="yes"/>
+			<point x="-176.921" y="522.592"/>
+			<point x="-190.059" y="565.129"/>
+			<point x="-188" y="606.188" type="curve"/>
+			<point x="-203.978" y="568.309"/>
+			<point x="-189.751" y="520.857"/>
+			<point x="-159.621" y="492.887" type="curve" smooth="yes"/>
+			<point x="-129.492" y="464.918"/>
+			<point x="-81.114" y="454.254"/>
+		</contour>
+		<contour>
+			<point x="-188" y="606.188" type="curve"/>
+			<point x="-190.985" y="633.278"/>
+			<point x="-182.754" y="660.783"/>
+			<point x="-167.687" y="676.544" type="curve" smooth="yes"/>
+			<point x="-152.621" y="692.304"/>
+			<point x="-125.513" y="701.764"/>
+			<point x="-98.316" y="700" type="curve"/>
+			<point x="-123.27" y="710.96"/>
+			<point x="-156.082" y="703.155"/>
+			<point x="-174.916" y="683.454" type="curve" smooth="yes"/>
+			<point x="-193.749" y="663.754"/>
+			<point x="-200.071" y="630.623"/>
+		</contour>
+		<contour>
+			<point x="-26" y="578.625" type="curve"/>
+			<point x="-29.141" y="596.924"/>
+			<point x="-44.367" y="621.101"/>
+			<point x="-62.637" y="624.408" type="curve" smooth="yes"/>
+			<point x="-80.907" y="627.716"/>
+			<point x="-103.643" y="610.412"/>
+			<point x="-113" y="594.375" type="curve"/>
+			<point x="-98.723" y="606.245"/>
+			<point x="-81.529" y="603.438"/>
+			<point x="-66.913" y="600.792" type="curve" smooth="yes"/>
+			<point x="-52.297" y="598.146"/>
+			<point x="-35.21" y="594.747"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

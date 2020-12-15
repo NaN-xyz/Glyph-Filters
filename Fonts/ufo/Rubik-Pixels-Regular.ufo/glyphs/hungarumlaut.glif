@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hungarumlaut" format="2">
+	<advance width="622"/>
+	<unicode hex="02DD"/>
+	<outline>
+		<component base="pixel1" xOffset="74" yOffset="617"/>
+		<component base="pixel1" xOffset="114" yOffset="617"/>
+		<component base="pixel2" xOffset="114" yOffset="657"/>
+		<component base="pixel2" xOffset="114" yOffset="697"/>
+		<component base="pixel0" xOffset="154" yOffset="617"/>
+		<component base="pixel0" xOffset="154" yOffset="657"/>
+		<component base="pixel0" xOffset="154" yOffset="697"/>
+		<component base="pixel1" xOffset="154" yOffset="737"/>
+		<component base="pixel2" xOffset="194" yOffset="657"/>
+		<component base="pixel1" xOffset="194" yOffset="697"/>
+		<component base="pixel0" xOffset="194" yOffset="737"/>
+		<component base="pixel1" xOffset="234" yOffset="697"/>
+		<component base="pixel2" xOffset="234" yOffset="737"/>
+		<component base="pixel0" xOffset="354" yOffset="617"/>
+		<component base="pixel2" xOffset="354" yOffset="657"/>
+		<component base="pixel2" xOffset="354" yOffset="697"/>
+		<component base="pixel0" xOffset="394" yOffset="617"/>
+		<component base="pixel0" xOffset="394" yOffset="657"/>
+		<component base="pixel1" xOffset="394" yOffset="697"/>
+		<component base="pixel0" xOffset="434" yOffset="657"/>
+		<component base="pixel2" xOffset="434" yOffset="697"/>
+		<component base="pixel0" xOffset="434" yOffset="737"/>
+		<component base="pixel0" xOffset="474" yOffset="697"/>
+		<component base="pixel1" xOffset="474" yOffset="737"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>595</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

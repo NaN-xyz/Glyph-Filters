@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="macroncomb.case" format="2">
+	<advance width="523"/>
+	<anchor x="262" y="900" name="top"/>
+	<anchor x="262" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="44" y="744" type="line"/>
+			<point x="146" y="744" type="line"/>
+			<point x="146" y="804" type="line"/>
+			<point x="164" y="804" type="line"/>
+			<point x="164" y="744" type="line"/>
+			<point x="236" y="744" type="line"/>
+			<point x="236" y="804" type="line"/>
+			<point x="266" y="804" type="line"/>
+			<point x="266" y="846" type="line"/>
+			<point x="236" y="846" type="line"/>
+			<point x="236" y="864" type="line"/>
+			<point x="284" y="864" type="line"/>
+			<point x="284" y="774" type="line"/>
+			<point x="326" y="774" type="line"/>
+			<point x="326" y="834" type="line"/>
+			<point x="434" y="834" type="line"/>
+			<point x="434" y="786" type="line"/>
+			<point x="404" y="786" type="line"/>
+			<point x="404" y="756" type="line"/>
+			<point x="356" y="756" type="line"/>
+			<point x="356" y="774" type="line"/>
+			<point x="386" y="774" type="line"/>
+			<point x="386" y="816" type="line"/>
+			<point x="350" y="816" type="line"/>
+			<point x="350" y="804" type="line"/>
+			<point x="374" y="804" type="line"/>
+			<point x="374" y="786" type="line"/>
+			<point x="344" y="786" type="line"/>
+			<point x="344" y="744" type="line"/>
+			<point x="416" y="744" type="line"/>
+			<point x="416" y="774" type="line"/>
+			<point x="446" y="774" type="line"/>
+			<point x="446" y="846" type="line"/>
+			<point x="314" y="846" type="line"/>
+			<point x="314" y="786" type="line"/>
+			<point x="296" y="786" type="line"/>
+			<point x="296" y="876" type="line"/>
+			<point x="224" y="876" type="line"/>
+			<point x="224" y="834" type="line"/>
+			<point x="254" y="834" type="line"/>
+			<point x="254" y="816" type="line"/>
+			<point x="224" y="816" type="line"/>
+			<point x="224" y="756" type="line"/>
+			<point x="176" y="756" type="line"/>
+			<point x="176" y="816" type="line"/>
+			<point x="134" y="816" type="line"/>
+			<point x="134" y="756" type="line"/>
+			<point x="56" y="756" type="line"/>
+			<point x="56" y="780" type="line"/>
+			<point x="44" y="780" type="line"/>
+		</contour>
+		<contour>
+			<point x="80" y="804" type="line"/>
+			<point x="80" y="816" type="line"/>
+			<point x="56" y="816" type="line"/>
+			<point x="56" y="864" type="line"/>
+			<point x="74" y="864" type="line"/>
+			<point x="74" y="834" type="line"/>
+			<point x="116" y="834" type="line"/>
+			<point x="116" y="864" type="line"/>
+			<point x="194" y="864" type="line"/>
+			<point x="194" y="846" type="line"/>
+			<point x="140" y="846" type="line"/>
+			<point x="140" y="834" type="line"/>
+			<point x="206" y="834" type="line"/>
+			<point x="206" y="876" type="line"/>
+			<point x="104" y="876" type="line"/>
+			<point x="104" y="846" type="line"/>
+			<point x="86" y="846" type="line"/>
+			<point x="86" y="876" type="line"/>
+			<point x="44" y="876" type="line"/>
+			<point x="44" y="804" type="line"/>
+		</contour>
+		<contour>
+			<point x="320" y="864" type="line"/>
+			<point x="440" y="864" type="line"/>
+			<point x="440" y="876" type="line"/>
+			<point x="320" y="876" type="line"/>
+		</contour>
+		<contour>
+			<point x="116" y="780" type="line"/>
+			<point x="116" y="810" type="line"/>
+			<point x="104" y="810" type="line"/>
+			<point x="104" y="780" type="line"/>
+		</contour>
+		<contour>
+			<point x="206" y="780" type="line"/>
+			<point x="206" y="810" type="line"/>
+			<point x="194" y="810" type="line"/>
+			<point x="194" y="780" type="line"/>
+		</contour>
+		<contour>
+			<point x="254" y="744" type="line"/>
+			<point x="320" y="744" type="line"/>
+			<point x="320" y="756" type="line"/>
+			<point x="266" y="756" type="line"/>
+			<point x="266" y="780" type="line"/>
+			<point x="254" y="780" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

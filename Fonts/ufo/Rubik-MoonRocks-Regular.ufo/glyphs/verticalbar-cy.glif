@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="268" name="_center"/>
+	<outline>
+		<contour>
+			<point x="127" y="133" type="curve" smooth="yes"/>
+			<point x="139" y="133" type="line" smooth="yes"/>
+			<point x="154" y="133"/>
+			<point x="166" y="145"/>
+			<point x="166" y="160" type="curve" smooth="yes"/>
+			<point x="166" y="375" type="line" smooth="yes"/>
+			<point x="166" y="390"/>
+			<point x="154" y="402"/>
+			<point x="139" y="402" type="curve" smooth="yes"/>
+			<point x="127" y="402" type="line" smooth="yes"/>
+			<point x="112" y="402"/>
+			<point x="100" y="390"/>
+			<point x="100" y="375" type="curve" smooth="yes"/>
+			<point x="100" y="160" type="line" smooth="yes"/>
+			<point x="100" y="145"/>
+			<point x="112" y="133"/>
+		</contour>
+		<contour>
+			<point x="140.694" y="229.047" type="line"/>
+			<point x="138.015" y="221.266" type="line"/>
+			<point x="127.38" y="218.215" type="line"/>
+			<point x="124.545" y="230.256" type="line"/>
+			<point x="134.244" y="240.998" type="line"/>
+		</contour>
+		<contour>
+			<point x="140.929" y="353.729" type="line"/>
+			<point x="147.995" y="347.314" type="line"/>
+			<point x="142.762" y="336.663" type="line"/>
+			<point x="130.332" y="340.228" type="line"/>
+			<point x="133.197" y="350.914" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hiriq-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B4"/>
+	<anchor x="1" y="0" name="_bottom"/>
+	<outline>
+		<component base="RectangleShape" xScale="0.0807" yScale="0.0807" xOffset="-38" yOffset="-162"/>
+		<component base="RectangleShape" xScale="0.0813" yScale="0.0813" xOffset="-38" yOffset="-142"/>
+		<component base="RectangleShape" xScale="0.0819" yScale="0.0819" xOffset="-38" yOffset="-122"/>
+		<component base="CircleShape" xScale="0.1308" yScale="0.1308" xOffset="-18" yOffset="-162"/>
+		<component base="CircleShape" xScale="0.1314" yScale="0.1314" xOffset="-18" yOffset="-142"/>
+		<component base="TriangleShape" xScale="0.102" yScale="0.102" xOffset="-18" yOffset="-122"/>
+		<component base="RectangleShape" xScale="0.1309" yScale="0.1309" xOffset="2" yOffset="-162"/>
+		<component base="RectangleShape" xScale="0.1315" yScale="0.1315" xOffset="2" yOffset="-142"/>
+		<component base="TriangleShape" xScale="0.1321" yScale="0.1321" xOffset="2" yOffset="-122"/>
+		<component base="CircleShape" xScale="0.061" yScale="0.061" xOffset="22" yOffset="-162"/>
+		<component base="CircleShape" xScale="0.0616" yScale="0.0616" xOffset="22" yOffset="-142"/>
+		<component base="TriangleShape" xScale="0.1211" yScale="0.1211" xOffset="42" yOffset="-162"/>
+		<component base="TriangleShape" xScale="0.1217" yScale="0.1217" xOffset="42" yOffset="-142"/>
+		<component base="CircleShape" xScale="0.1222" yScale="0.1222" xOffset="22" yOffset="-122"/>
+		<component base="CircleShape" xScale="0.1223" yScale="0.1223" xOffset="42" yOffset="-122"/>
+		<component base="DiamondShape" xScale="0.1225" yScale="0.1225" xOffset="-38" yOffset="-102"/>
+		<component base="DiamondShape" xScale="0.1226" yScale="0.1226" xOffset="-18" yOffset="-102"/>
+		<component base="TriangleShape" xScale="0.0627" yScale="0.0627" xOffset="2" yOffset="-102"/>
+		<component base="DiamondShape" xScale="0.1028" yScale="0.1028" xOffset="22" yOffset="-102"/>
+		<component base="TriangleShape" xScale="0.1229" yScale="0.1229" xOffset="42" yOffset="-102"/>
+		<component base="TriangleShape" xScale="0.1331" yScale="0.1331" xOffset="-38" yOffset="-82"/>
+		<component base="TriangleShape" xScale="0.1332" yScale="0.1332" xOffset="-18" yOffset="-82"/>
+		<component base="DiamondShape" xScale="0.1033" yScale="0.1033" xOffset="2" yOffset="-82"/>
+		<component base="TriangleShape" xScale="0.0834" yScale="0.0834" xOffset="22" yOffset="-82"/>
+		<component base="TriangleShape" xScale="0.0835" yScale="0.0835" xOffset="42" yOffset="-82"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

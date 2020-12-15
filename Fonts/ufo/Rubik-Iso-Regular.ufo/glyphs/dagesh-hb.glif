@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dagesh-hb" format="2">
+	<advance width="117"/>
+	<unicode hex="05BC"/>
+	<anchor x="58" y="286" name="_center"/>
+	<outline>
+		<contour>
+			<point x="90" y="315" type="line"/>
+			<point x="135" y="360" type="line"/>
+			<point x="135" y="315" type="line"/>
+		</contour>
+		<contour>
+			<point x="0" y="225" type="line"/>
+			<point x="0" y="270" type="line"/>
+			<point x="45" y="270" type="line"/>
+		</contour>
+		<contour>
+			<point x="0" y="225" type="line"/>
+			<point x="45" y="225" type="line"/>
+			<point x="45" y="270" type="line"/>
+		</contour>
+		<contour>
+			<point x="0" y="270" type="line"/>
+			<point x="0" y="315" type="line"/>
+			<point x="45" y="270" type="line"/>
+		</contour>
+		<contour>
+			<point x="45" y="270" type="line"/>
+			<point x="45" y="315" type="line"/>
+			<point x="0" y="315" type="line"/>
+		</contour>
+		<contour>
+			<point x="45" y="225" type="line"/>
+			<point x="45" y="270" type="line"/>
+			<point x="90" y="270" type="line"/>
+		</contour>
+		<contour>
+			<point x="45" y="225" type="line"/>
+			<point x="90" y="225" type="line"/>
+			<point x="90" y="270" type="line"/>
+		</contour>
+		<contour>
+			<point x="0" y="315" type="line"/>
+			<point x="45" y="360" type="line"/>
+			<point x="45" y="315" type="line"/>
+		</contour>
+		<contour>
+			<point x="0" y="315" type="line"/>
+			<point x="45" y="360" type="line"/>
+			<point x="0" y="360" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="225" type="line"/>
+			<point x="135" y="270" type="line"/>
+			<point x="90" y="270" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="270" type="line"/>
+			<point x="135" y="270" type="line"/>
+			<point x="90" y="315" type="line"/>
+		</contour>
+		<contour>
+			<point x="90" y="315" type="line"/>
+			<point x="90" y="360" type="line"/>
+			<point x="135" y="360" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

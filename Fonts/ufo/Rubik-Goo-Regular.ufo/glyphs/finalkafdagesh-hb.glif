@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="finalkafdagesh-hb" format="2">
+	<advance width="544"/>
+	<unicode hex="FB3A"/>
+	<outline>
+		<component base="finalkaf-hb"/>
+		<component base="dagesh-hb" xOffset="154" yOffset="-29"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+			<array>
+				<dict>
+					<key>alignment</key>
+					<integer>-1</integer>
+					<key>index</key>
+					<integer>1</integer>
+					<key>name</key>
+					<string>dagesh-hb</string>
+				</dict>
+			</array>
+		</dict>
+	</lib>
+</glyph>

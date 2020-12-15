@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="holamhaser-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05BA"/>
+	<anchor x="2" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="-11" y="571.301" type="line"/>
+			<point x="-17" y="602.801" type="line"/>
+			<point x="-33" y="624.801" type="line"/>
+			<point x="-106" y="624.801" type="line"/>
+			<point x="-128" y="602.801" type="line"/>
+			<point x="-128" y="539.801" type="line"/>
+			<point x="-106" y="517.801" type="line"/>
+			<point x="-33" y="517.801" type="line"/>
+			<point x="-25" y="526.801" type="line"/>
+			<point x="-11" y="539.801" type="line"/>
+			<point x="-17" y="551.801" type="line"/>
+			<point x="-19" y="585.801" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

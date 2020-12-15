@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hyphen.case" format="2">
+	<advance width="483"/>
+	<outline>
+		<contour>
+			<point x="546" y="364" type="line"/>
+			<point x="496" y="364" type="line"/>
+			<point x="496" y="379" type="line"/>
+			<point x="450" y="379" type="line"/>
+			<point x="450" y="389" type="line"/>
+			<point x="523" y="389" type="line"/>
+			<point x="523" y="409" type="line"/>
+			<point x="518" y="409" type="line"/>
+			<point x="518" y="421" type="line" smooth="yes"/>
+			<point x="518" y="424"/>
+			<point x="518" y="426"/>
+			<point x="517" y="429" type="curve"/>
+			<point x="455" y="429" type="line"/>
+			<point x="453" y="433"/>
+			<point x="451" y="436"/>
+			<point x="449" y="439" type="curve"/>
+			<point x="470" y="439" type="line"/>
+			<point x="465" y="445"/>
+			<point x="458" y="448"/>
+			<point x="449" y="448" type="curve" smooth="yes"/>
+			<point x="124" y="448" type="line" smooth="yes"/>
+			<point x="116" y="448"/>
+			<point x="109" y="445"/>
+			<point x="104" y="439" type="curve"/>
+			<point x="84" y="439" type="line"/>
+			<point x="81" y="436"/>
+			<point x="79" y="433"/>
+			<point x="78" y="429" type="curve"/>
+			<point x="141" y="429" type="line"/>
+			<point x="140" y="426"/>
+			<point x="139" y="424"/>
+			<point x="139" y="421" type="curve" smooth="yes"/>
+			<point x="139" y="409" type="line"/>
+			<point x="144" y="409" type="line"/>
+			<point x="144" y="389" type="line"/>
+			<point x="71" y="389" type="line"/>
+			<point x="71" y="379" type="line"/>
+			<point x="117" y="379" type="line"/>
+			<point x="117" y="364" type="line"/>
+			<point x="167" y="364" type="line"/>
+			<point x="167" y="354" type="line"/>
+			<point x="85" y="354" type="line"/>
+			<point x="85" y="344" type="line"/>
+			<point x="114" y="344" type="line"/>
+			<point x="114" y="334" type="line"/>
+			<point x="83" y="334" type="line"/>
+			<point x="83" y="329" type="line"/>
+			<point x="52" y="329" type="line"/>
+			<point x="52" y="314" type="line"/>
+			<point x="63" y="314" type="line"/>
+			<point x="63" y="299" type="line"/>
+			<point x="29" y="299" type="line"/>
+			<point x="29" y="294" type="line"/>
+			<point x="70" y="294" type="line"/>
+			<point x="70" y="289" type="line"/>
+			<point x="96" y="289" type="line"/>
+			<point x="96" y="284" type="line"/>
+			<point x="-45" y="284" type="line"/>
+			<point x="-45" y="279" type="line" smooth="yes"/>
+			<point x="-45" y="275"/>
+			<point x="-45" y="272"/>
+			<point x="-44" y="269" type="curve"/>
+			<point x="81" y="269" type="line"/>
+			<point x="83" y="262"/>
+			<point x="89" y="257"/>
+			<point x="95" y="254" type="curve"/>
+			<point x="54" y="254" type="line"/>
+			<point x="57" y="253"/>
+			<point x="61" y="252"/>
+			<point x="65" y="252" type="curve" smooth="yes"/>
+			<point x="390" y="252" type="line" smooth="yes"/>
+			<point x="393" y="252"/>
+			<point x="397" y="253"/>
+			<point x="400" y="254" type="curve"/>
+			<point x="441" y="254" type="line"/>
+			<point x="448" y="257"/>
+			<point x="453" y="262"/>
+			<point x="456" y="269" type="curve"/>
+			<point x="332" y="269" type="line"/>
+			<point x="333" y="272"/>
+			<point x="334" y="275"/>
+			<point x="334" y="279" type="curve" smooth="yes"/>
+			<point x="334" y="284" type="line"/>
+			<point x="475" y="284" type="line"/>
+			<point x="475" y="289" type="line"/>
+			<point x="449" y="289" type="line"/>
+			<point x="449" y="294" type="line"/>
+			<point x="408" y="294" type="line"/>
+			<point x="408" y="299" type="line"/>
+			<point x="442" y="299" type="line"/>
+			<point x="442" y="314" type="line"/>
+			<point x="431" y="314" type="line"/>
+			<point x="431" y="329" type="line"/>
+			<point x="462" y="329" type="line"/>
+			<point x="462" y="334" type="line"/>
+			<point x="493" y="334" type="line"/>
+			<point x="493" y="344" type="line"/>
+			<point x="464" y="344" type="line"/>
+			<point x="464" y="354" type="line"/>
+			<point x="546" y="354" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

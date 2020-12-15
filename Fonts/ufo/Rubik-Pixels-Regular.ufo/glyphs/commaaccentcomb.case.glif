@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="commaaccentcomb.case" format="2">
+	<advance width="337"/>
+	<outline>
+		<component base="pixel1"/>
+		<component base="pixel2"/>
+		<component base="pixel1"/>
+		<component base="pixel3"/>
+		<component base="pixel1"/>
+		<component base="pixel1"/>
+		<component base="pixel2"/>
+		<component base="pixel2"/>
+		<component base="pixel0"/>
+		<component base="pixel3"/>
+		<component base="pixel1"/>
+		<component base="pixel1"/>
+		<component base="pixel2"/>
+		<component base="pixel1"/>
+		<component base="pixel1"/>
+		<component base="pixel1"/>
+		<component base="pixel1"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-210</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-50</string>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ringcomb.case" format="2">
+	<advance width="300"/>
+	<anchor x="150" y="930" name="top"/>
+	<anchor x="150" y="700" name="_top"/>
+	<outline>
+		<component base="pixel0"/>
+		<component base="pixel2"/>
+		<component base="pixel1"/>
+		<component base="pixel3"/>
+		<component base="pixel2"/>
+		<component base="pixel2"/>
+		<component base="pixel1"/>
+		<component base="pixel0"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

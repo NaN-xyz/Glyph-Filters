@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="brevecomb.case" format="2">
+	<advance width="454"/>
+	<anchor x="227" y="920" name="top"/>
+	<anchor x="227" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="86" y="859" type="line"/>
+			<point x="86" y="901" type="line"/>
+			<point x="50" y="901" type="line"/>
+			<point x="50" y="889" type="line"/>
+			<point x="74" y="889" type="line"/>
+			<point x="74" y="871" type="line"/>
+			<point x="50" y="871" type="line"/>
+			<point x="50" y="859" type="line"/>
+		</contour>
+		<contour>
+			<point x="176" y="859" type="line"/>
+			<point x="176" y="895" type="line"/>
+			<point x="164" y="895" type="line"/>
+			<point x="164" y="871" type="line"/>
+			<point x="146" y="871" type="line"/>
+			<point x="146" y="901" type="line"/>
+			<point x="104" y="901" type="line"/>
+			<point x="104" y="865" type="line"/>
+			<point x="116" y="865" type="line"/>
+			<point x="116" y="889" type="line"/>
+			<point x="134" y="889" type="line"/>
+			<point x="134" y="859" type="line"/>
+		</contour>
+		<contour>
+			<point x="266" y="805" type="line"/>
+			<point x="266" y="829" type="line"/>
+			<point x="326" y="829" type="line"/>
+			<point x="326" y="871" type="line"/>
+			<point x="266" y="871" type="line"/>
+			<point x="266" y="889" type="line"/>
+			<point x="344" y="889" type="line"/>
+			<point x="344" y="859" type="line"/>
+			<point x="386" y="859" type="line"/>
+			<point x="386" y="895" type="line"/>
+			<point x="374" y="895" type="line"/>
+			<point x="374" y="871" type="line"/>
+			<point x="356" y="871" type="line"/>
+			<point x="356" y="901" type="line"/>
+			<point x="254" y="901" type="line"/>
+			<point x="254" y="859" type="line"/>
+			<point x="314" y="859" type="line"/>
+			<point x="314" y="841" type="line"/>
+			<point x="254" y="841" type="line"/>
+			<point x="254" y="805" type="line"/>
+		</contour>
+		<contour>
+			<point x="206" y="739" type="line"/>
+			<point x="206" y="799" type="line"/>
+			<point x="236" y="799" type="line"/>
+			<point x="236" y="835" type="line"/>
+			<point x="224" y="835" type="line"/>
+			<point x="224" y="811" type="line"/>
+			<point x="194" y="811" type="line"/>
+			<point x="194" y="751" type="line"/>
+			<point x="176" y="751" type="line"/>
+			<point x="176" y="841" type="line"/>
+			<point x="134" y="841" type="line"/>
+			<point x="134" y="811" type="line"/>
+			<point x="86" y="811" type="line"/>
+			<point x="86" y="835" type="line"/>
+			<point x="74" y="835" type="line"/>
+			<point x="74" y="799" type="line"/>
+			<point x="146" y="799" type="line"/>
+			<point x="146" y="829" type="line"/>
+			<point x="164" y="829" type="line"/>
+			<point x="164" y="739" type="line"/>
+		</contour>
+		<contour>
+			<point x="326" y="775" type="line"/>
+			<point x="326" y="799" type="line"/>
+			<point x="356" y="799" type="line"/>
+			<point x="356" y="829" type="line"/>
+			<point x="380" y="829" type="line"/>
+			<point x="380" y="841" type="line"/>
+			<point x="344" y="841" type="line"/>
+			<point x="344" y="811" type="line"/>
+			<point x="314" y="811" type="line"/>
+			<point x="314" y="775" type="line"/>
+		</contour>
+		<contour>
+			<point x="146" y="745" type="line"/>
+			<point x="146" y="781" type="line"/>
+			<point x="80" y="781" type="line"/>
+			<point x="80" y="769" type="line"/>
+			<point x="134" y="769" type="line"/>
+			<point x="134" y="745" type="line"/>
+		</contour>
+		<contour>
+			<point x="266" y="739" type="line"/>
+			<point x="266" y="781" type="line"/>
+			<point x="230" y="781" type="line"/>
+			<point x="230" y="769" type="line"/>
+			<point x="254" y="769" type="line"/>
+			<point x="254" y="751" type="line"/>
+			<point x="230" y="751" type="line"/>
+			<point x="230" y="739" type="line"/>
+		</contour>
+		<contour>
+			<point x="296" y="745" type="line"/>
+			<point x="296" y="775" type="line"/>
+			<point x="284" y="775" type="line"/>
+			<point x="284" y="745" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

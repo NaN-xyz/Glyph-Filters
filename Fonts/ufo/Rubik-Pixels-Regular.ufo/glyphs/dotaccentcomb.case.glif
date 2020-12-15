@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dotaccentcomb.case" format="2">
+	<advance width="282"/>
+	<anchor x="141" y="932" name="top"/>
+	<anchor x="141" y="700" name="_top"/>
+	<outline>
+		<contour>
+			<point x="110" y="810" type="line"/>
+			<point x="110" y="850" type="line"/>
+			<point x="70" y="850" type="line"/>
+			<point x="70" y="810" type="line"/>
+		</contour>
+		<contour>
+			<point x="150" y="770" type="line"/>
+			<point x="150" y="810" type="line"/>
+			<point x="110" y="810" type="line"/>
+			<point x="110" y="770" type="line"/>
+		</contour>
+		<contour>
+			<point x="150" y="890" type="line"/>
+			<point x="150" y="930" type="line"/>
+			<point x="110" y="930" type="line"/>
+			<point x="110" y="890" type="line"/>
+		</contour>
+		<contour>
+			<point x="190" y="850" type="line"/>
+			<point x="190" y="890" type="line"/>
+			<point x="150" y="890" type="line"/>
+			<point x="150" y="850" type="line"/>
+		</contour>
+		<contour>
+			<point x="230" y="770" type="line"/>
+			<point x="230" y="810" type="line"/>
+			<point x="190" y="810" type="line"/>
+			<point x="190" y="770" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="72" yOffset="772"/>
+		<component base="pixel1" xOffset="72" yOffset="852"/>
+		<component base="pixel2" xOffset="72" yOffset="892"/>
+		<component base="pixel2" xOffset="112" yOffset="812"/>
+		<component base="pixel0" xOffset="112" yOffset="852"/>
+		<component base="pixel0" xOffset="152" yOffset="772"/>
+		<component base="pixel1" xOffset="152" yOffset="812"/>
+		<component base="pixel0" xOffset="152" yOffset="892"/>
+		<component base="pixel1" xOffset="192" yOffset="812"/>
+		<component base="pixel0" xOffset="192" yOffset="852"/>
+		<component base="pixel2" xOffset="192" yOffset="892"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

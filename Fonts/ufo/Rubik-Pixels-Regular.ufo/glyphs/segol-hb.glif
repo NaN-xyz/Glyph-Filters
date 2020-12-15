@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="segol-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B6"/>
+	<anchor x="2" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="-68" y="-167" type="line"/>
+			<point x="-68" y="-127" type="line"/>
+			<point x="-108" y="-127" type="line"/>
+			<point x="-108" y="-167" type="line"/>
+		</contour>
+		<contour>
+			<point x="92" y="-167" type="line"/>
+			<point x="92" y="-127" type="line"/>
+			<point x="52" y="-127" type="line"/>
+			<point x="52" y="-167" type="line"/>
+		</contour>
+		<contour>
+			<point x="92" y="-127" type="line"/>
+			<point x="92" y="-87" type="line"/>
+			<point x="52" y="-87" type="line"/>
+			<point x="52" y="-127" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="-106" yOffset="-125"/>
+		<component base="pixel1" xOffset="-66" yOffset="-165"/>
+		<component base="pixel0" xOffset="-66" yOffset="-125"/>
+		<component base="pixel3" xOffset="-26" yOffset="-285"/>
+		<component base="pixel1" xOffset="-26" yOffset="-245"/>
+		<component base="pixel1" xOffset="14" yOffset="-285"/>
+		<component base="pixel1" xOffset="14" yOffset="-245"/>
+		<component base="pixel0" xOffset="14" yOffset="-165"/>
+		<component base="pixel1" xOffset="14" yOffset="-125"/>
+		<component base="pixel1" xOffset="94" yOffset="-165"/>
+		<component base="pixel2" xOffset="94" yOffset="-125"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

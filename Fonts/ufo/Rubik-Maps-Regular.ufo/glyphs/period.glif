@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="period" format="2">
+	<advance width="312"/>
+	<unicode hex="002E"/>
+	<outline>
+		<contour>
+			<point x="48.71919" y="112.81674" type="curve"/>
+			<point x="52.13552" y="107.11509"/>
+			<point x="56.07858" y="99.89652"/>
+			<point x="59.70925" y="98.03406" type="curve"/>
+			<point x="62.33233" y="96.68847"/>
+			<point x="68.01735" y="97.2178"/>
+			<point x="70.98715" y="96.92602" type="curve"/>
+			<point x="74.01049" y="96.62898"/>
+			<point x="79.36274" y="95.03942"/>
+			<point x="82.26506" y="95.81798" type="curve"/>
+			<point x="85.15976" y="96.59449"/>
+			<point x="88.99177" y="100.6486"/>
+			<point x="91.45298" y="102.41605" type="curve"/>
+			<point x="94.29571" y="104.45748"/>
+			<point x="98.2771" y="106.44736"/>
+			<point x="100.6409" y="109.01412" type="curve"/>
+			<point x="110.05743" y="119.23919"/>
+			<point x="113.43647" y="135.04889"/>
+			<point x="121.75408" y="146.11695" type="curve"/>
+			<point x="125.56839" y="151.19256"/>
+			<point x="131.68841" y="157.13065"/>
+			<point x="136.67149" y="161.06973" type="curve"/>
+			<point x="145.20398" y="167.8146"/>
+			<point x="155.61175" y="172.84738"/>
+			<point x="164.60913" y="179.03706" type="curve"/>
+			<point x="167.15827" y="180.79072"/>
+			<point x="172.14016" y="182.97014"/>
+			<point x="173.93585" y="185.4533" type="curve"/>
+			<point x="175.27756" y="187.30869"/>
+			<point x="175.76262" y="191.5462"/>
+			<point x="176.42544" y="193.75694" type="curve"/>
+			<point x="177.17306" y="196.2505"/>
+			<point x="180.27842" y="202.34879"/>
+			<point x="179.7449" y="204.82846" type="curve"/>
+			<point x="179.35849" y="206.62444"/>
+			<point x="175.25347" y="210.07779"/>
+			<point x="174.03222" y="211.50511" type="curve"/>
+			<point x="171.82883" y="214.08032"/>
+			<point x="169.23671" y="218.56813"/>
+			<point x="166.41532" y="220.40731" type="curve"/>
+			<point x="163.82101" y="222.09846"/>
+			<point x="158.83843" y="222.52727"/>
+			<point x="155.83417" y="223.36784" type="curve"/>
+			<point x="136.55438" y="228.76219"/>
+			<point x="114.2196" y="229.15749"/>
+			<point x="94.6678" y="224.5811" type="curve"/>
+			<point x="90.4913" y="223.60353"/>
+			<point x="85.56333" y="223.13361"/>
+			<point x="81.59656" y="221.52159" type="curve"/>
+			<point x="68.80503" y="216.32337"/>
+			<point x="56.55974" y="205.61866"/>
+			<point x="50.42799" y="193.15465" type="curve"/>
+			<point x="48.58592" y="189.41029"/>
+			<point x="47.87819" y="184.51359"/>
+			<point x="46.69468" y="180.50276" type="curve"/>
+			<point x="42.24247" y="165.41456"/>
+			<point x="40.76545" y="146.11026"/>
+			<point x="43.37632" y="130.46081" type="curve"/>
+			<point x="44.35815" y="124.5757"/>
+			<point x="46.98791" y="118.53404"/>
+		</contour>
+		<component base="LineVerticalComponent" yScale="1.86" xOffset="61" yOffset="20"/>
+		<component base="LineVerticalComponent" yScale="2.12" xOffset="81" yOffset="8"/>
+		<component base="LineVerticalComponent" yScale="2.2" xOffset="101" yOffset="4"/>
+		<component base="LineVerticalComponent" yScale="2.24" xOffset="121" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="2.2489" xOffset="141" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="2.24" xOffset="181" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="2.24" xOffset="201" yOffset="2"/>
+		<component base="LineVerticalComponent" yScale="2.2" xOffset="221" yOffset="4"/>
+		<component base="LineVerticalComponent" yScale="2.04" xOffset="241" yOffset="12"/>
+		<component base="LineVerticalComponent" yScale="1.62" xOffset="261" yOffset="34"/>
+		<component base="LineHorizontalComponent" xScale="1.16" xOffset="107"/>
+		<component base="LineHorizontalComponent" xScale="2.16" xOffset="49" yOffset="20"/>
+		<component base="LineHorizontalComponent" xScale="2.24" xOffset="43" yOffset="40"/>
+		<component base="LineHorizontalComponent" xScale="2.24" xOffset="43" yOffset="60"/>
+		<component base="LineHorizontalComponent" xScale="2.24" xOffset="43" yOffset="80"/>
+		<component base="LineHorizontalComponent" xScale="2.24" xOffset="43" yOffset="100"/>
+		<component base="LineHorizontalComponent" xScale="2.24" xOffset="43" yOffset="120"/>
+		<component base="LineHorizontalComponent" xScale="2.24" xOffset="43" yOffset="140"/>
+		<component base="LineHorizontalComponent" xScale="2.24" xOffset="43" yOffset="160"/>
+		<component base="LineHorizontalComponent" xScale="2.24" xOffset="43" yOffset="180"/>
+		<component base="LineHorizontalComponent" xScale="2.16" xOffset="49" yOffset="200"/>
+		<component base="LineHorizontalComponent" xScale="1.84" xOffset="67" yOffset="220"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

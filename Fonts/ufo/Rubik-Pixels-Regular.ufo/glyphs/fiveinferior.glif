@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="fiveinferior" format="2">
+	<advance width="365"/>
+	<unicode hex="2085"/>
+	<outline>
+		<component base="pixel1" xOffset="42" yOffset="-113"/>
+		<component base="pixel3" xOffset="42" yOffset="7"/>
+		<component base="pixel2" xOffset="42" yOffset="47"/>
+		<component base="pixel3" xOffset="82" yOffset="-153"/>
+		<component base="pixel2" xOffset="82" yOffset="-113"/>
+		<component base="pixel2" xOffset="82" yOffset="-73"/>
+		<component base="pixel2" xOffset="82" yOffset="-33"/>
+		<component base="pixel1" xOffset="82" yOffset="7"/>
+		<component base="pixel2" xOffset="82" yOffset="47"/>
+		<component base="pixel1" xOffset="82" yOffset="87"/>
+		<component base="pixel2" xOffset="82" yOffset="127"/>
+		<component base="pixel0" xOffset="122" yOffset="-153"/>
+		<component base="pixel2" xOffset="122" yOffset="-113"/>
+		<component base="pixel1" xOffset="122" yOffset="-33"/>
+		<component base="pixel0" xOffset="122" yOffset="7"/>
+		<component base="pixel1" xOffset="122" yOffset="47"/>
+		<component base="pixel0" xOffset="122" yOffset="87"/>
+		<component base="pixel1" xOffset="122" yOffset="127"/>
+		<component base="pixel1" xOffset="162" yOffset="-153"/>
+		<component base="pixel0" xOffset="162" yOffset="-113"/>
+		<component base="pixel2" xOffset="162" yOffset="7"/>
+		<component base="pixel2" xOffset="162" yOffset="87"/>
+		<component base="pixel1" xOffset="162" yOffset="127"/>
+		<component base="pixel2" xOffset="202" yOffset="-153"/>
+		<component base="pixel3" xOffset="202" yOffset="-113"/>
+		<component base="pixel2" xOffset="202" yOffset="-73"/>
+		<component base="pixel2" xOffset="202" yOffset="-33"/>
+		<component base="pixel2" xOffset="202" yOffset="7"/>
+		<component base="pixel1" xOffset="202" yOffset="87"/>
+		<component base="pixel2" xOffset="202" yOffset="127"/>
+		<component base="pixel0" xOffset="242" yOffset="-153"/>
+		<component base="pixel2" xOffset="242" yOffset="-113"/>
+		<component base="pixel1" xOffset="242" yOffset="-73"/>
+		<component base="pixel0" xOffset="242" yOffset="-33"/>
+		<component base="pixel0" xOffset="242" yOffset="7"/>
+		<component base="pixel1" xOffset="242" yOffset="87"/>
+		<component base="pixel2" xOffset="242" yOffset="127"/>
+		<component base="pixel1" xOffset="282" yOffset="-113"/>
+		<component base="pixel2" xOffset="282" yOffset="-73"/>
+		<component base="pixel2" xOffset="282" yOffset="-33"/>
+		<component base="pixel0" xOffset="282" yOffset="87"/>
+		<component base="pixel2" xOffset="282" yOffset="127"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-170</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>306</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>26</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>164</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dagesh-hb" format="2">
+	<advance width="117"/>
+	<unicode hex="05BC"/>
+	<anchor x="58" y="286" name="_center"/>
+	<outline>
+		<contour>
+			<point x="10" y="306.688" type="curve"/>
+			<point x="28.766" y="259.345"/>
+			<point x="43.297" y="239.496"/>
+			<point x="52.594" y="234" type="curve"/>
+			<point x="55.282" y="244.46"/>
+			<point x="68.447" y="265.335"/>
+			<point x="78.188" y="270" type="curve"/>
+			<point x="91.913" y="278.144"/>
+			<point x="125.097" y="279.778"/>
+			<point x="139.965" y="273.977" type="curve"/>
+			<point x="136.599" y="289.578"/>
+			<point x="120.983" y="318.68"/>
+			<point x="107" y="326.375" type="curve"/>
+			<point x="109.484" y="333.293"/>
+			<point x="109.383" y="356.212"/>
+			<point x="106.839" y="363.108" type="curve"/>
+			<point x="99.771" y="361.092"/>
+			<point x="76.857" y="363.654"/>
+			<point x="70.312" y="367" type="curve"/>
+			<point x="61.604" y="382.41"/>
+			<point x="57.235" y="408.598"/>
+			<point x="60.469" y="426" type="curve"/>
+			<point x="49.947" y="411.767"/>
+			<point x="44.709" y="383.682"/>
+			<point x="50.625" y="367" type="curve"/>
+			<point x="39.872" y="365.099"/>
+			<point x="14.753" y="369.256"/>
+			<point x="5.916" y="375.671" type="curve"/>
+			<point x="1.5" y="365.684"/>
+			<point x="4.029" y="339.456"/>
+			<point x="10" y="330.312" type="curve"/>
+			<point x="-4.293" y="318.41"/>
+			<point x="-33.755" y="314.883"/>
+			<point x="-52" y="318.5" type="curve"/>
+			<point x="-36.021" y="308.98"/>
+			<point x="-7.767" y="301.183"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

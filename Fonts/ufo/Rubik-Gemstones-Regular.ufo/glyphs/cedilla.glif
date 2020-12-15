@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="cedilla" format="2">
+	<advance width="282"/>
+	<unicode hex="00B8"/>
+	<outline>
+		<contour>
+			<point x="76.6" y="-202.289" type="line"/>
+			<point x="166.871" y="-217.636" type="line"/>
+			<point x="194.033" y="-197.229" type="line"/>
+			<point x="227.242" y="-175.109" type="line"/>
+			<point x="226.865" y="-135.21" type="line"/>
+			<point x="221.245" y="-92.154" type="line"/>
+			<point x="194.912" y="-57.63" type="line"/>
+			<point x="154.883" y="-43.858" type="line"/>
+			<point x="113" y="-50" type="line"/>
+			<point x="131.559" y="-29.199" type="line"/>
+			<point x="137.667" y="-2" type="line"/>
+			<point x="140.384" y="16.887" type="line"/>
+			<point x="122" y="22" type="line"/>
+			<point x="100.602" y="19.827" type="line"/>
+			<point x="86.143" y="3.905" type="line"/>
+			<point x="61.797" y="-31.63" type="line"/>
+			<point x="56.124" y="-74.329" type="line"/>
+			<point x="78.734" y="-100.336" type="line"/>
+			<point x="113" y="-104" type="line"/>
+			<point x="130.43" y="-132.664" type="line"/>
+			<point x="161.486" y="-145.35" type="line"/>
+			<point x="138.686" y="-144.388" type="line"/>
+			<point x="120.466" y="-158.129" type="line"/>
+			<point x="98.895" y="-145.251" type="line"/>
+			<point x="77" y="-157.571" type="line"/>
+			<point x="65.6" y="-179.83" type="line"/>
+		</contour>
+		<contour>
+			<point x="148.135" y="-187.183" type="line"/>
+			<point x="145.708" y="-203.053" type="line"/>
+			<point x="131.674" y="-209.315" type="line"/>
+			<point x="126" y="-196" type="line"/>
+			<point x="133.219" y="-187.44" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

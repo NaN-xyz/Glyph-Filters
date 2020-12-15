@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="cheverticalstroke-cy" format="2">
+	<advance width="712"/>
+	<unicode hex="04B9"/>
+	<outline>
+		<contour>
+			<point x="541.469" y="495" type="curve"/>
+			<point x="384.006" y="495.806"/>
+			<point x="382.006" y="361.806"/>
+			<point x="436" y="361" type="curve"/>
+			<point x="391.699" y="405.793"/>
+			<point x="310.699" y="325.682"/>
+			<point x="355" y="280.889" type="curve"/>
+			<point x="394.846" y="284.399"/>
+			<point x="388.846" y="352.51"/>
+			<point x="349" y="349" type="curve"/>
+			<point x="295.349" y="357.997"/>
+			<point x="285.349" y="298.365"/>
+			<point x="339" y="289.368" type="curve"/>
+			<point x="324.904" y="356.913"/>
+			<point x="277.265" y="346.971"/>
+			<point x="291.361" y="279.426" type="curve"/>
+			<point x="332.406" y="302.731"/>
+			<point x="281.045" y="393.19"/>
+			<point x="240" y="369.886" type="curve"/>
+			<point x="305" y="369.886"/>
+			<point x="305" y="441.371"/>
+			<point x="240" y="441.371" type="curve"/>
+			<point x="283.199" y="441.105"/>
+			<point x="283.543" y="496.76"/>
+			<point x="240.344" y="497.026" type="curve"/>
+			<point x="236.477" y="561.911"/>
+			<point x="202.474" y="559.885"/>
+			<point x="206.34" y="495" type="curve"/>
+			<point x="206.34" y="549"/>
+			<point x="55.957" y="549"/>
+			<point x="55.957" y="495" type="curve"/>
+			<point x="6.223" y="500.144"/>
+			<point x="0.265" y="442.544"/>
+			<point x="50" y="437.4" type="curve"/>
+			<point x="-5.998" y="436.882"/>
+			<point x="-5.003" y="329.376"/>
+			<point x="50.994" y="329.894" type="curve"/>
+			<point x="-12.811" y="313.015"/>
+			<point x="6.616" y="239.573"/>
+			<point x="70.422" y="256.451" type="curve"/>
+			<point x="23.472" y="219.092"/>
+			<point x="63.237" y="169.118"/>
+			<point x="110.187" y="206.478" type="curve"/>
+			<point x="82.295" y="159.075"/>
+			<point x="123.746" y="134.684"/>
+			<point x="151.638" y="182.087" type="curve"/>
+			<point x="137.57" y="115.558"/>
+			<point x="215.906" y="98.993"/>
+			<point x="229.975" y="165.522" type="curve"/>
+			<point x="234.672" y="98.687"/>
+			<point x="335.288" y="105.759"/>
+			<point x="330.59" y="172.595" type="curve"/>
+			<point x="270.251" y="163.638"/>
+			<point x="278.661" y="106.981"/>
+			<point x="339" y="115.938" type="curve"/>
+			<point x="372.586" y="94.213"/>
+			<point x="416.395" y="161.94"/>
+			<point x="382.809" y="183.665" type="curve"/>
+			<point x="402.229" y="140.645"/>
+			<point x="443.926" y="159.468"/>
+			<point x="424.506" y="202.488" type="curve"/>
+			<point x="370.433" y="196.527"/>
+			<point x="381.928" y="92.257"/>
+			<point x="436" y="98.217" type="curve"/>
+			<point x="374" y="98.501"/>
+			<point x="373.657" y="23.257"/>
+			<point x="435.656" y="22.974" type="curve"/>
+			<point x="438.25" y="-30.964"/>
+			<point x="480.39" y="-28.938"/>
+			<point x="477.796" y="25" type="curve"/>
+			<point x="477.796" y="-44"/>
+			<point x="541.469" y="-44"/>
+			<point x="541.469" y="25" type="curve"/>
+			<point x="541.469" y="-38"/>
+			<point x="593.204" y="-38"/>
+			<point x="593.204" y="25" type="curve"/>
+			<point x="625.118" y="-4.116"/>
+			<point x="666.914" y="41.696"/>
+			<point x="635" y="70.812" type="curve"/>
+			<point x="704" y="70.812"/>
+			<point x="704" y="190.299"/>
+			<point x="635" y="190.299" type="curve"/>
+			<point x="696" y="190.299"/>
+			<point x="696" y="273.94"/>
+			<point x="635" y="273.94" type="curve"/>
+			<point x="704" y="273.94"/>
+			<point x="704" y="321.735"/>
+			<point x="635" y="321.735" type="curve"/>
+			<point x="702" y="321.735"/>
+			<point x="702" y="393.427"/>
+			<point x="635" y="393.427" type="curve"/>
+			<point x="695" y="393.427"/>
+			<point x="695" y="493"/>
+			<point x="635" y="493" type="curve"/>
+			<point x="636.09" y="543.988"/>
+			<point x="542.56" y="545.988"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>che-cy</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>en-cy</string>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

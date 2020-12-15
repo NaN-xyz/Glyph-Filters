@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="sindot-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05C2"/>
+	<anchor x="-70" y="415" name="_topleft"/>
+	<outline>
+		<contour>
+			<point x="81" y="546.5" type="line"/>
+			<point x="136.328" y="488.358" type="line"/>
+			<point x="173.168" y="502.669" type="line"/>
+			<point x="187.545" y="531.49" type="line"/>
+			<point x="178" y="562.25" type="line"/>
+			<point x="172.252" y="583.706" type="line"/>
+			<point x="153.125" y="595" type="line"/>
+			<point x="120.821" y="607.973" type="line"/>
+			<point x="89.413" y="592.96" type="line"/>
+			<point x="73.399" y="571.868" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

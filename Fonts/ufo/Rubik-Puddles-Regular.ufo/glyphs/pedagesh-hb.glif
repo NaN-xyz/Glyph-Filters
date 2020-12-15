@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="pedagesh-hb" format="2">
+	<advance width="597"/>
+	<unicode hex="FB44"/>
+	<anchor x="310" y="260" name="center"/>
+	<anchor x="280" y="520" name="top"/>
+	<anchor x="30" y="0" name="bottomleft"/>
+	<anchor x="30" y="520" name="topleft"/>
+	<anchor x="280" y="0" name="bottom"/>
+	<outline>
+		<contour>
+			<point x="224.367" y="240.006" type="curve"/>
+			<point x="221.022" y="281.454"/>
+			<point x="232.954" y="324.904"/>
+			<point x="256.634" y="348.268" type="curve" smooth="yes"/>
+			<point x="280.315" y="371.632"/>
+			<point x="323.922" y="382.979"/>
+			<point x="365.32" y="379.076" type="curve"/>
+			<point x="327.753" y="396.903"/>
+			<point x="279.211" y="384.591"/>
+			<point x="249.611" y="355.386" type="curve" smooth="yes"/>
+			<point x="220.011" y="326.182"/>
+			<point x="207.047" y="277.81"/>
+		</contour>
+		<component base="pe-hb"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>kaf-hb</string>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>70</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

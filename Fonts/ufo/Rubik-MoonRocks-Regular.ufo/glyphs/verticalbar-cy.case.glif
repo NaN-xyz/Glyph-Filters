@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy.case" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="358" name="_center"/>
+	<outline>
+		<contour>
+			<point x="127" y="183" type="curve" smooth="yes"/>
+			<point x="139" y="183" type="line" smooth="yes"/>
+			<point x="154" y="183"/>
+			<point x="166" y="195"/>
+			<point x="166" y="210" type="curve" smooth="yes"/>
+			<point x="166" y="505" type="line" smooth="yes"/>
+			<point x="166" y="520"/>
+			<point x="154" y="532"/>
+			<point x="139" y="532" type="curve" smooth="yes"/>
+			<point x="127" y="532" type="line" smooth="yes"/>
+			<point x="112" y="532"/>
+			<point x="100" y="520"/>
+			<point x="100" y="505" type="curve" smooth="yes"/>
+			<point x="100" y="210" type="line" smooth="yes"/>
+			<point x="100" y="195"/>
+			<point x="112" y="183"/>
+		</contour>
+		<contour>
+			<point x="131.568" y="316.034" type="line"/>
+			<point x="131.684" y="308.798" type="line"/>
+			<point x="123" y="307.072" type="line"/>
+			<point x="122.109" y="315.04" type="line"/>
+			<point x="126.164" y="321.956" type="line"/>
+		</contour>
+		<contour>
+			<point x="139.762" y="271.501" type="curve"/>
+			<point x="146.898" y="268.173"/>
+			<point x="142.893" y="263.719"/>
+			<point x="141.933" y="255.903" type="curve"/>
+			<point x="141.251" y="250.346"/>
+			<point x="140.404" y="248.252"/>
+			<point x="134.908" y="247.184" type="curve"/>
+			<point x="127.804" y="245.803"/>
+			<point x="124.264" y="243.883"/>
+			<point x="120.755" y="250.213" type="curve"/>
+			<point x="116.619" y="257.675"/>
+			<point x="116.211" y="260.99"/>
+			<point x="122.03" y="267.23" type="curve"/>
+			<point x="128.249" y="273.9"/>
+			<point x="131.497" y="275.355"/>
+		</contour>
+		<contour>
+			<point x="148.918" y="355.341" type="line"/>
+			<point x="143.071" y="343.124" type="line"/>
+			<point x="133.612" y="349.908" type="line"/>
+			<point x="132.752" y="356.909" type="line"/>
+			<point x="139.336" y="360.871" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

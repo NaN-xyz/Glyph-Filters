@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="quoteright" format="2">
+	<advance width="295"/>
+	<unicode hex="2019"/>
+	<outline>
+		<contour>
+			<point x="179.693" y="545.529" type="line"/>
+			<point x="151.431" y="476.916" type="line"/>
+			<point x="143.983" y="454.393" type="line"/>
+			<point x="141.371" y="444.187" type="line"/>
+			<point x="145.4" y="430.435" type="line"/>
+			<point x="147.012" y="424.935" type="line"/>
+			<point x="152.693" y="423.868" type="line"/>
+			<point x="166.895" y="421.2" type="line"/>
+			<point x="176.792" y="427.824" type="line"/>
+			<point x="206.168" y="469.119" type="line"/>
+			<point x="236.824" y="545.901" type="line"/>
+			<point x="270.668" y="632.877" type="line"/>
+			<point x="280.019" y="668.596" type="line"/>
+			<point x="277.351" y="679.651" type="line"/>
+			<point x="274.683" y="690.705" type="line"/>
+			<point x="265.817" y="691.901" type="line"/>
+			<point x="253.994" y="693.496" type="line"/>
+			<point x="248.083" y="688.155" type="line"/>
+			<point x="234.347" y="672.248" type="line"/>
+		</contour>
+		<contour>
+			<point x="164.704" y="539.345" type="line"/>
+			<point x="148.454" y="500.169" type="line"/>
+			<point x="135.438" y="468.07" type="line"/>
+			<point x="131.58" y="455.974" type="line"/>
+			<point x="136.117" y="461.62" type="line"/>
+			<point x="147.767" y="488.534" type="line"/>
+			<point x="195.512" y="603.618" type="line"/>
+			<point x="209.692" y="637.917" type="line"/>
+			<point x="212.713" y="645.277" type="line"/>
+			<point x="204.358" y="634.812" type="line"/>
+			<point x="182.985" y="583.418" type="line"/>
+		</contour>
+		<contour>
+			<point x="125.35" y="504.517" type="line"/>
+			<point x="109.508" y="465.137" type="line"/>
+			<point x="105.104" y="449.796" type="line"/>
+			<point x="105.397" y="435.812" type="line"/>
+			<point x="118.602" y="436.671" type="line"/>
+			<point x="130.282" y="446.662" type="line"/>
+			<point x="146.973" y="476.996" type="line"/>
+			<point x="203.981" y="614.088" type="line"/>
+			<point x="220.878" y="658.625" type="line"/>
+			<point x="224.09" y="671.451" type="line"/>
+			<point x="217.646" y="683.864" type="line"/>
+			<point x="199.976" y="677.026" type="line"/>
+			<point x="188.636" y="656.169" type="line"/>
+		</contour>
+		<contour>
+			<point x="73.151" y="500.624" type="line"/>
+			<point x="52.804" y="448.367" type="line"/>
+			<point x="48.876" y="432.396" type="line"/>
+			<point x="54.188" y="418.85" type="line"/>
+			<point x="56.313" y="413.432" type="line"/>
+			<point x="73.639" y="417.393" type="line"/>
+			<point x="81.507" y="428.337" type="line"/>
+			<point x="103.438" y="473.657" type="line"/>
+			<point x="153.211" y="593.634" type="line"/>
+			<point x="170.024" y="635.655" type="line"/>
+			<point x="175.023" y="651.188" type="line"/>
+			<point x="172.01" y="666.73" type="line"/>
+			<point x="171.005" y="671.91" type="line"/>
+			<point x="163.057" y="671.378" type="line"/>
+			<point x="152.459" y="670.669" type="line"/>
+			<point x="139.044" y="654.628" type="line"/>
+			<point x="113.902" y="598.854" type="line"/>
+		</contour>
+		<contour>
+			<point x="130.717" y="712.715" type="line"/>
+			<point x="114.29" y="709.637" type="line"/>
+			<point x="105.861" y="701.798" type="line"/>
+			<point x="81.739" y="663.448" type="line"/>
+			<point x="52.524" y="527.993" type="line"/>
+			<point x="46.691" y="480.846" type="line"/>
+			<point x="46.589" y="467.708" type="line"/>
+			<point x="58.382" y="460.236" type="line"/>
+			<point x="71.245" y="469.346" type="line"/>
+			<point x="95.042" y="517.485" type="line"/>
+			<point x="130.694" y="603.437" type="line"/>
+			<point x="151.495" y="655.294" type="line"/>
+			<point x="157.322" y="683.74" type="line"/>
+			<point x="157.832" y="691.681" type="line"/>
+			<point x="152.119" y="701.484" type="line"/>
+			<point x="147.835" y="708.837" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

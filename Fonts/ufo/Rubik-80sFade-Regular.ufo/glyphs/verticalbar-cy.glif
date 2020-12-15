@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="268" name="_center"/>
+	<outline>
+		<component base="TriangleShape" xScale="0.1005" yScale="0.1005" xOffset="120" yOffset="153"/>
+		<component base="TriangleShape" xScale="0.1009" yScale="0.1009" xOffset="120" yOffset="173"/>
+		<component base="TriangleShape" xScale="0.1013" yScale="0.1013" xOffset="120" yOffset="193"/>
+		<component base="TriangleShape" xScale="0.1017" yScale="0.1017" xOffset="120" yOffset="213"/>
+		<component base="TriangleShape" xScale="0.1021" yScale="0.1021" xOffset="120" yOffset="233"/>
+		<component base="TriangleShape" xScale="0.1025" yScale="0.1025" xOffset="120" yOffset="253"/>
+		<component base="TriangleShape" xScale="0.1029" yScale="0.1029" xOffset="120" yOffset="273"/>
+		<component base="TriangleShape" xScale="0.1033" yScale="0.1033" xOffset="120" yOffset="293"/>
+		<component base="CircleShape" xScale="0.0806" yScale="0.0806" xOffset="140" yOffset="153"/>
+		<component base="CircleShape" xScale="0.081" yScale="0.081" xOffset="140" yOffset="173"/>
+		<component base="CircleShape" xScale="0.0814" yScale="0.0814" xOffset="140" yOffset="193"/>
+		<component base="CircleShape" xScale="0.0818" yScale="0.0818" xOffset="140" yOffset="213"/>
+		<component base="CircleShape" xScale="0.0822" yScale="0.0822" xOffset="140" yOffset="233"/>
+		<component base="RectangleShape" xScale="0.0826" yScale="0.0826" xOffset="140" yOffset="253"/>
+		<component base="RectangleShape" xScale="0.083" yScale="0.083" xOffset="140" yOffset="273"/>
+		<component base="RectangleShape" xScale="0.0834" yScale="0.0834" xOffset="140" yOffset="293"/>
+		<component base="CircleShape" xScale="0.1007" yScale="0.1007" xOffset="160" yOffset="153"/>
+		<component base="CircleShape" xScale="0.1011" yScale="0.1011" xOffset="160" yOffset="173"/>
+		<component base="CircleShape" xScale="0.1015" yScale="0.1015" xOffset="160" yOffset="193"/>
+		<component base="CircleShape" xScale="0.1019" yScale="0.1019" xOffset="160" yOffset="213"/>
+		<component base="CircleShape" xScale="0.1023" yScale="0.1023" xOffset="160" yOffset="233"/>
+		<component base="CircleShape" xScale="0.1027" yScale="0.1027" xOffset="160" yOffset="253"/>
+		<component base="RectangleShape" xScale="0.1031" yScale="0.1031" xOffset="160" yOffset="273"/>
+		<component base="RectangleShape" xScale="0.1035" yScale="0.1035" xOffset="160" yOffset="293"/>
+		<component base="TriangleShape" xScale="0.1237" yScale="0.1237" xOffset="120" yOffset="313"/>
+		<component base="TriangleShape" xScale="0.1241" yScale="0.1241" xOffset="120" yOffset="333"/>
+		<component base="TriangleShape" xScale="0.1245" yScale="0.1245" xOffset="120" yOffset="353"/>
+		<component base="TriangleShape" xScale="0.1249" yScale="0.1249" xOffset="120" yOffset="373"/>
+		<component base="RectangleShape" xScale="0.0438" yScale="0.0438" xOffset="140" yOffset="313"/>
+		<component base="RectangleShape" xScale="0.0439" yScale="0.0439" xOffset="160" yOffset="313"/>
+		<component base="RectangleShape" xScale="0.0442" yScale="0.0442" xOffset="140" yOffset="333"/>
+		<component base="RectangleShape" xScale="0.0443" yScale="0.0443" xOffset="160" yOffset="333"/>
+		<component base="RectangleShape" xScale="0.0446" yScale="0.0446" xOffset="140" yOffset="353"/>
+		<component base="RectangleShape" xScale="0.0447" yScale="0.0447" xOffset="160" yOffset="353"/>
+		<component base="RectangleShape" xScale="0.045" yScale="0.045" xOffset="140" yOffset="373"/>
+		<component base="RectangleShape" xScale="0.0451" yScale="0.0451" xOffset="160" yOffset="373"/>
+		<component base="CircleShape" xScale="0.1253" yScale="0.1253" xOffset="120" yOffset="393"/>
+		<component base="CircleShape" xScale="0.0554" yScale="0.0554" xOffset="140" yOffset="393"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

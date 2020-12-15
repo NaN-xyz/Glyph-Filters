@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="cedilla" format="2">
+	<advance width="282"/>
+	<unicode hex="00B8"/>
+	<outline>
+		<contour>
+			<point x="190" y="-80" type="line"/>
+			<point x="190" y="-40" type="line"/>
+			<point x="150" y="-40" type="line"/>
+			<point x="150" y="-80" type="line"/>
+		</contour>
+		<component base="pixel2" xOffset="72" yOffset="-198"/>
+		<component base="pixel3" xOffset="72" yOffset="-78"/>
+		<component base="pixel0" xOffset="72" yOffset="-38"/>
+		<component base="pixel3" xOffset="112" yOffset="-198"/>
+		<component base="pixel2" xOffset="112" yOffset="-78"/>
+		<component base="pixel2" xOffset="152" yOffset="-198"/>
+		<component base="pixel0" xOffset="152" yOffset="-118"/>
+		<component base="pixel1" xOffset="192" yOffset="-158"/>
+		<component base="pixel1" xOffset="192" yOffset="-118"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

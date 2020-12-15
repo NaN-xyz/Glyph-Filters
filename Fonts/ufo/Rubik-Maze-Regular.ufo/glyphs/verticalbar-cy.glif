@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="268" name="_center"/>
+	<outline>
+		<contour>
+			<point x="130" y="277" type="line"/>
+			<point x="130" y="289" type="line"/>
+			<point x="106" y="289" type="line"/>
+			<point x="106" y="307" type="line"/>
+			<point x="136" y="307" type="line"/>
+			<point x="136" y="379" type="line"/>
+			<point x="94" y="379" type="line"/>
+			<point x="94" y="343" type="line"/>
+			<point x="106" y="343" type="line"/>
+			<point x="106" y="367" type="line"/>
+			<point x="124" y="367" type="line"/>
+			<point x="124" y="319" type="line"/>
+			<point x="94" y="319" type="line"/>
+			<point x="94" y="277" type="line"/>
+		</contour>
+		<contour>
+			<point x="136" y="133" type="line"/>
+			<point x="136" y="169" type="line"/>
+			<point x="106" y="169" type="line"/>
+			<point x="106" y="187" type="line"/>
+			<point x="136" y="187" type="line"/>
+			<point x="136" y="229" type="line"/>
+			<point x="106" y="229" type="line"/>
+			<point x="106" y="247" type="line"/>
+			<point x="130" y="247" type="line"/>
+			<point x="130" y="259" type="line"/>
+			<point x="94" y="259" type="line"/>
+			<point x="94" y="217" type="line"/>
+			<point x="124" y="217" type="line"/>
+			<point x="124" y="199" type="line"/>
+			<point x="94" y="199" type="line"/>
+			<point x="94" y="157" type="line"/>
+			<point x="124" y="157" type="line"/>
+			<point x="124" y="133" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

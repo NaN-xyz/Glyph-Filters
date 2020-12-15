@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="sixinferior" format="2">
+	<advance width="362"/>
+	<unicode hex="2086"/>
+	<outline>
+		<contour>
+			<point x="82" y="-115" type="line"/>
+			<point x="82" y="-75" type="line"/>
+			<point x="42" y="-75" type="line"/>
+			<point x="42" y="-115" type="line"/>
+		</contour>
+		<contour>
+			<point x="82" y="-75" type="line"/>
+			<point x="82" y="-35" type="line"/>
+			<point x="42" y="-35" type="line"/>
+			<point x="42" y="-75" type="line"/>
+		</contour>
+		<contour>
+			<point x="122" y="-35" type="line"/>
+			<point x="122" y="5" type="line"/>
+			<point x="82" y="5" type="line"/>
+			<point x="82" y="-35" type="line"/>
+		</contour>
+		<contour>
+			<point x="122" y="45" type="line"/>
+			<point x="122" y="85" type="line"/>
+			<point x="82" y="85" type="line"/>
+			<point x="82" y="45" type="line"/>
+		</contour>
+		<contour>
+			<point x="162" y="-75" type="line"/>
+			<point x="162" y="-35" type="line"/>
+			<point x="122" y="-35" type="line"/>
+			<point x="122" y="-75" type="line"/>
+		</contour>
+		<contour>
+			<point x="162" y="5" type="line"/>
+			<point x="162" y="45" type="line"/>
+			<point x="122" y="45" type="line"/>
+			<point x="122" y="5" type="line"/>
+		</contour>
+		<contour>
+			<point x="202" y="-115" type="line"/>
+			<point x="202" y="-75" type="line"/>
+			<point x="162" y="-75" type="line"/>
+			<point x="162" y="-115" type="line"/>
+		</contour>
+		<contour>
+			<point x="202" y="5" type="line"/>
+			<point x="202" y="45" type="line"/>
+			<point x="162" y="45" type="line"/>
+			<point x="162" y="5" type="line"/>
+		</contour>
+		<contour>
+			<point x="202" y="45" type="line"/>
+			<point x="202" y="85" type="line"/>
+			<point x="162" y="85" type="line"/>
+			<point x="162" y="45" type="line"/>
+		</contour>
+		<contour>
+			<point x="242" y="-155" type="line"/>
+			<point x="242" y="-115" type="line"/>
+			<point x="202" y="-115" type="line"/>
+			<point x="202" y="-155" type="line"/>
+		</contour>
+		<contour>
+			<point x="242" y="-115" type="line"/>
+			<point x="242" y="-75" type="line"/>
+			<point x="202" y="-75" type="line"/>
+			<point x="202" y="-115" type="line"/>
+		</contour>
+		<contour>
+			<point x="242" y="85" type="line"/>
+			<point x="242" y="125" type="line"/>
+			<point x="202" y="125" type="line"/>
+			<point x="202" y="85" type="line"/>
+		</contour>
+		<contour>
+			<point x="242" y="125" type="line"/>
+			<point x="242" y="165" type="line"/>
+			<point x="202" y="165" type="line"/>
+			<point x="202" y="125" type="line"/>
+		</contour>
+		<contour>
+			<point x="282" y="-115" type="line"/>
+			<point x="282" y="-75" type="line"/>
+			<point x="242" y="-75" type="line"/>
+			<point x="242" y="-115" type="line"/>
+		</contour>
+		<contour>
+			<point x="282" y="-75" type="line"/>
+			<point x="282" y="-35" type="line"/>
+			<point x="242" y="-35" type="line"/>
+			<point x="242" y="-75" type="line"/>
+		</contour>
+		<contour>
+			<point x="282" y="-35" type="line"/>
+			<point x="282" y="5" type="line"/>
+			<point x="242" y="5" type="line"/>
+			<point x="242" y="-35" type="line"/>
+		</contour>
+		<contour>
+			<point x="322" y="-35" type="line"/>
+			<point x="322" y="5" type="line"/>
+			<point x="282" y="5" type="line"/>
+			<point x="282" y="-35" type="line"/>
+		</contour>
+		<component base="pixel1" xOffset="44" yOffset="-33"/>
+		<component base="pixel0" xOffset="84" yOffset="-153"/>
+		<component base="pixel2" xOffset="84" yOffset="-113"/>
+		<component base="pixel0" xOffset="84" yOffset="-73"/>
+		<component base="pixel0" xOffset="84" yOffset="7"/>
+		<component base="pixel1" xOffset="124" yOffset="-153"/>
+		<component base="pixel3" xOffset="124" yOffset="-113"/>
+		<component base="pixel0" xOffset="124" yOffset="-33"/>
+		<component base="pixel3" xOffset="124" yOffset="47"/>
+		<component base="pixel1" xOffset="124" yOffset="87"/>
+		<component base="pixel3" xOffset="164" yOffset="-153"/>
+		<component base="pixel1" xOffset="164" yOffset="87"/>
+		<component base="pixel3" xOffset="164" yOffset="127"/>
+		<component base="pixel1" xOffset="204" yOffset="7"/>
+		<component base="pixel3" xOffset="204" yOffset="47"/>
+		<component base="pixel3" xOffset="244" yOffset="-153"/>
+		<component base="pixel1" xOffset="244" yOffset="7"/>
+		<component base="pixel1" xOffset="284" yOffset="-113"/>
+		<component base="pixel2" xOffset="284" yOffset="-73"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>180</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-170</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<string>-55</string>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>25</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+				<dict>
+					<key>angle</key>
+					<integer>90</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>309</integer>
+					<key>y</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

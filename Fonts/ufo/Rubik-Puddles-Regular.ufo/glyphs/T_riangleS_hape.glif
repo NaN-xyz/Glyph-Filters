@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="TriangleShape" format="2">
+	<advance width="0"/>
+	<outline>
+		<contour>
+			<point x="-69.072" y="45.855" type="curve"/>
+			<point x="-60.94" y="70.591"/>
+			<point x="-42.81" y="91.037"/>
+			<point x="-23.47" y="98.773" type="curve" smooth="yes"/>
+			<point x="-4.129" y="106.509"/>
+			<point x="23.101" y="104.207"/>
+			<point x="46.048" y="91.904" type="curve"/>
+			<point x="28.693" y="111.314"/>
+			<point x="-3.008" y="117.728"/>
+			<point x="-27.183" y="108.058" type="curve" smooth="yes"/>
+			<point x="-51.359" y="98.388"/>
+			<point x="-69.891" y="71.88"/>
+		</contour>
+		<contour>
+			<point x="75.486" y="-110" type="curve"/>
+			<point x="99.492" y="-104.183"/>
+			<point x="119.313" y="-80.577"/>
+			<point x="122.057" y="-56.03" type="curve" smooth="yes"/>
+			<point x="124.801" y="-31.483"/>
+			<point x="110.682" y="-4.083"/>
+			<point x="88.554" y="6.892" type="curve"/>
+			<point x="105.595" y="-10.989"/>
+			<point x="114.314" y="-35.281"/>
+			<point x="112.119" y="-54.919" type="curve" smooth="yes"/>
+			<point x="109.923" y="-74.557"/>
+			<point x="96.055" y="-96.324"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

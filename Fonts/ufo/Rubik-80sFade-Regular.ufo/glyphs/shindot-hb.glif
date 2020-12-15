@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="shindot-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05C1"/>
+	<anchor x="21" y="415" name="_topright"/>
+	<outline>
+		<component base="TriangleShape" xScale="0.1407" yScale="0.1407" xOffset="-133" yOffset="513"/>
+		<component base="TriangleShape" xScale="0.1413" yScale="0.1413" xOffset="-133" yOffset="533"/>
+		<component base="TriangleShape" xScale="0.1419" yScale="0.1419" xOffset="-133" yOffset="553"/>
+		<component base="TriangleShape" xScale="0.0508" yScale="0.0508" xOffset="-113" yOffset="513"/>
+		<component base="RectangleShape" xScale="0.0914" yScale="0.0914" xOffset="-113" yOffset="533"/>
+		<component base="RectangleShape" xScale="0.092" yScale="0.092" xOffset="-113" yOffset="553"/>
+		<component base="RectangleShape" xScale="0.1209" yScale="0.1209" xOffset="-93" yOffset="513"/>
+		<component base="RectangleShape" xScale="0.1215" yScale="0.1215" xOffset="-93" yOffset="533"/>
+		<component base="DiamondShape" xScale="0.121" yScale="0.121" xOffset="-73" yOffset="513"/>
+		<component base="DiamondShape" xScale="0.1216" yScale="0.1216" xOffset="-73" yOffset="533"/>
+		<component base="DiamondShape" xScale="0.1011" yScale="0.1011" xOffset="-53" yOffset="513"/>
+		<component base="CircleShape" xScale="0.0717" yScale="0.0717" xOffset="-53" yOffset="533"/>
+		<component base="CircleShape" xScale="0.0921" yScale="0.0921" xOffset="-93" yOffset="553"/>
+		<component base="CircleShape" xScale="0.0922" yScale="0.0922" xOffset="-73" yOffset="553"/>
+		<component base="CircleShape" xScale="0.0923" yScale="0.0923" xOffset="-53" yOffset="553"/>
+		<component base="RectangleShape" xScale="0.1425" yScale="0.1425" xOffset="-133" yOffset="573"/>
+		<component base="RectangleShape" xScale="0.1426" yScale="0.1426" xOffset="-113" yOffset="573"/>
+		<component base="RectangleShape" xScale="0.1427" yScale="0.1427" xOffset="-93" yOffset="573"/>
+		<component base="RectangleShape" xScale="0.1431" yScale="0.1431" xOffset="-133" yOffset="593"/>
+		<component base="RectangleShape" xScale="0.1432" yScale="0.1432" xOffset="-113" yOffset="593"/>
+		<component base="RectangleShape" xScale="0.1433" yScale="0.1433" xOffset="-93" yOffset="593"/>
+		<component base="DiamondShape" xScale="0.1328" yScale="0.1328" xOffset="-73" yOffset="573"/>
+		<component base="TriangleShape" xScale="0.1429" yScale="0.1429" xOffset="-53" yOffset="573"/>
+		<component base="TriangleShape" xScale="0.0934" yScale="0.0934" xOffset="-73" yOffset="593"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dotaccent" format="2">
+	<advance width="277"/>
+	<unicode hex="02D9"/>
+	<outline>
+		<contour>
+			<point x="156.364" y="600" type="curve"/>
+			<point x="239.94" y="591.207"/>
+			<point x="257.94" y="664.783"/>
+			<point x="222" y="673.576" type="curve"/>
+			<point x="255.967" y="675.083"/>
+			<point x="252.124" y="761.673"/>
+			<point x="218.157" y="760.166" type="curve"/>
+			<point x="225.065" y="798.549"/>
+			<point x="187.09" y="805.383"/>
+			<point x="180.182" y="767" type="curve"/>
+			<point x="180.182" y="798"/>
+			<point x="136.515" y="798"/>
+			<point x="136.515" y="767" type="curve"/>
+			<point x="125.56" y="788.354"/>
+			<point x="44.045" y="746.536"/>
+			<point x="55" y="725.182" type="curve"/>
+			<point x="19" y="725.182"/>
+			<point x="19" y="681.515"/>
+			<point x="55" y="681.515" type="curve"/>
+			<point x="22.044" y="679.819"/>
+			<point x="25.886" y="605.139"/>
+			<point x="58.843" y="606.834" type="curve"/>
+			<point x="56.745" y="576.908"/>
+			<point x="154.266" y="570.073"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

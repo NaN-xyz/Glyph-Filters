@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="segol-hb" format="2">
+	<advance width="0"/>
+	<unicode hex="05B6"/>
+	<anchor x="2" y="0" name="_bottom"/>
+	<outline>
+		<contour>
+			<point x="72" y="-50" type="line"/>
+			<point x="-128" y="-50" type="line"/>
+			<point x="-128" y="-150" type="line"/>
+			<point x="72" y="-150" type="line"/>
+		</contour>
+		<contour>
+			<point x="-78" y="-250" type="line"/>
+			<point x="-28" y="-300" type="line"/>
+			<point x="22" y="-250" type="line"/>
+			<point x="22" y="-200" type="line"/>
+			<point x="-78" y="-200" type="line"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

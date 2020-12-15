@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="verticalbar-cy.case" format="2">
+	<advance width="266"/>
+	<anchor x="133" y="358" name="_center"/>
+	<outline>
+		<component base="LineVerticalComponent" yScale="2.92" xOffset="114" yOffset="211"/>
+		<component base="LineVerticalComponent" yScale="3.06" xOffset="129" yOffset="205"/>
+		<component base="LineVerticalComponent" yScale="3.04" xOffset="144" yOffset="207"/>
+		<component base="LineVerticalComponent" yScale="2.72" xOffset="159" yOffset="223"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.Export</key>
+			<false/>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

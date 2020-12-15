@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="RectangleShape" format="2">
+	<advance width="0"/>
+	<outline>
+		<contour>
+			<point x="10" y="10" type="line"/>
+			<point x="10" y="50" type="line"/>
+			<point x="-30" y="50" type="line"/>
+			<point x="-30" y="10" type="line"/>
+		</contour>
+		<component base="pixel1" xOffset="-28" yOffset="-28"/>
+		<component base="pixel3" xOffset="12" yOffset="-28"/>
+		<component base="pixel1" xOffset="12" yOffset="12"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>

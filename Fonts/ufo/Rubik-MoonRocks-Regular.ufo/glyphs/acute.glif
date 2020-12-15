@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="acute" format="2">
+	<advance width="450"/>
+	<unicode hex="00B4"/>
+	<outline>
+		<contour>
+			<point x="66" y="595" type="curve" smooth="yes"/>
+			<point x="203" y="595" type="line" smooth="yes"/>
+			<point x="224" y="595"/>
+			<point x="234" y="603"/>
+			<point x="245" y="612" type="curve" smooth="yes"/>
+			<point x="392" y="733" type="line" smooth="yes"/>
+			<point x="395" y="736"/>
+			<point x="397" y="740"/>
+			<point x="397" y="745" type="curve" smooth="yes"/>
+			<point x="397" y="757"/>
+			<point x="390" y="765"/>
+			<point x="378" y="765" type="curve" smooth="yes"/>
+			<point x="192" y="765" type="line" smooth="yes"/>
+			<point x="177" y="765"/>
+			<point x="170" y="763"/>
+			<point x="155" y="746" type="curve"/>
+			<point x="55" y="624" type="line" smooth="yes"/>
+			<point x="52" y="621"/>
+			<point x="50" y="616"/>
+			<point x="50" y="611" type="curve" smooth="yes"/>
+			<point x="50" y="601"/>
+			<point x="56" y="595"/>
+		</contour>
+		<contour>
+			<point x="258.084" y="666.818" type="curve"/>
+			<point x="266.343" y="665.361"/>
+			<point x="270.677" y="665.532"/>
+			<point x="271.844" y="657.227" type="curve"/>
+			<point x="273.042" y="648.702"/>
+			<point x="269.436" y="647.09"/>
+			<point x="261.699" y="643.316" type="curve"/>
+			<point x="253.311" y="639.225"/>
+			<point x="249.535" y="635.783"/>
+			<point x="243.052" y="642.496" type="curve"/>
+			<point x="236.909" y="648.857"/>
+			<point x="243.019" y="651.887"/>
+			<point x="247.171" y="659.695" type="curve"/>
+			<point x="250.23" y="665.448"/>
+			<point x="251.667" y="667.949"/>
+		</contour>
+		<contour>
+			<point x="305.672" y="723.264" type="curve"/>
+			<point x="315.414" y="713.856"/>
+			<point x="314.71" y="708.528"/>
+			<point x="308.773" y="696.356" type="curve"/>
+			<point x="302.837" y="684.183"/>
+			<point x="299.071" y="680.349"/>
+			<point x="285.66" y="682.234" type="curve"/>
+			<point x="273.898" y="683.887"/>
+			<point x="277.275" y="691.871"/>
+			<point x="275.213" y="703.569" type="curve"/>
+			<point x="273.427" y="713.696"/>
+			<point x="270.531" y="718.831"/>
+			<point x="279.611" y="723.659" type="curve"/>
+			<point x="291.117" y="729.777"/>
+			<point x="296.297" y="732.317"/>
+		</contour>
+		<contour>
+			<point x="144.121" y="665.199" type="curve"/>
+			<point x="150.399" y="662.662"/>
+			<point x="152.443" y="660.918"/>
+			<point x="151.971" y="654.163" type="curve"/>
+			<point x="151.479" y="647.127"/>
+			<point x="149.747" y="645.063"/>
+			<point x="142.903" y="643.356" type="curve"/>
+			<point x="135.447" y="641.498"/>
+			<point x="132.199" y="641.065"/>
+			<point x="128.127" y="647.581" type="curve"/>
+			<point x="123.257" y="655.376"/>
+			<point x="121.069" y="658.887"/>
+			<point x="126.977" y="665.927" type="curve"/>
+			<point x="132.492" y="672.5"/>
+			<point x="136.166" y="668.413"/>
+		</contour>
+		<contour>
+			<point x="220.7" y="659.392" type="curve"/>
+			<point x="228.937" y="648.849"/>
+			<point x="225.062" y="643.908"/>
+			<point x="217.581" y="632.816" type="curve"/>
+			<point x="211.319" y="623.533"/>
+			<point x="206.802" y="623.611"/>
+			<point x="196.039" y="626.697" type="curve"/>
+			<point x="185.275" y="629.784"/>
+			<point x="181.403" y="632.112"/>
+			<point x="181.012" y="643.302" type="curve"/>
+			<point x="180.653" y="653.579"/>
+			<point x="186.549" y="653.639"/>
+			<point x="196.212" y="657.156" type="curve"/>
+			<point x="207.765" y="661.361"/>
+			<point x="213.131" y="669.08"/>
+		</contour>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.typemytype.robofont.guides</key>
+			<array>
+				<dict>
+					<key>angle</key>
+					<integer>0</integer>
+					<key>isGlobal</key>
+					<integer>0</integer>
+					<key>magnetic</key>
+					<integer>5</integer>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>595</integer>
+				</dict>
+			</array>
+			<key>public.markColor</key>
+			<string>0.99,0.62,0.11,1</string>
+		</dict>
+	</lib>
+</glyph>
