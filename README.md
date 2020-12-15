@@ -3,7 +3,8 @@
 
 ## License
 
-Fonts are licensed under the SIL Open Font License v1.1, see [OFL.txt](OFL.txt) for details.
+Fonts are provided under the SIL Open Font License v1.1, see [OFL.txt](OFL.txt) for details.
+Scripts are provided under the Apache 2.0 Licence, see [Apache.txt](Apache.txt) for details.
 
 ## About Author
 
