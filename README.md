@@ -25,5 +25,3 @@ Hopefully, Bob's your mother's brother. Please file any bug reports via GitHub.
 Code review by [Simon Cozens](http://www.corvelsoftware.co.uk)\
 Website developed by [Underscore Type](https://underscoretype.com)\
 Rubik source fonts by [Hubert and Fischer](https://hubertfischer.com/)
-
-Questions, comments, requests, suggestions: info@nan.xyz
