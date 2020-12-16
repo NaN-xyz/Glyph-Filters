@@ -1,5 +1,7 @@
 # NaN Glyph Filters
-[NaN Glyph Filters](http://www.generativefonts.xyz) is a collection of procedural font designs and the codebase to generate them within [GlyphsApp](http://www.glyphsapp.com). All fonts are based on the GoogleFont [Rubik](https://fonts.google.com/specimen/Rubik) by Hubert & Fischer, Meir Sadan and Cyreal.
+[NaN Glyph Filters](http://www.generativefonts.xyz) is a collection of procedural font designs and the codebase to generate them within [GlyphsApp](http://www.glyphsapp.com). All fonts are based on the Google Font [Rubik](https://fonts.google.com/specimen/Rubik) by Hubert & Fischer, Meir Sadan and Cyreal.
+
+[www.generativefonts.xyz](http://www.generativefonts.xyz)
 
 ## License
 
@@ -10,11 +12,11 @@ Scripts are provided under the Apache 2.0 Licence, see [Apache.txt](Apache.txt) 
 
 The scripts and codebase work within [GlyphsApp](https://glyphsapp.com/) version 2.6.6 and below. An update to support the recently launched Glyphs3 is coming soon.
 
-Many scripts make use of Perlin noise and therefore require the `noise` library. This should be as simple as `pip install noise` in your terminal.
+Many scripts make use of Simplex noise and therefore require the `noise` library. This should be as simple as `pip install noise` in your terminal.
 
 Move everything in this project's `NaNGlyphFilters` folder to a new folder within Application Support ▹ Glyphs ▹ Scripts
 
-Bob's your mother's brother.
+Hopefully, Bob's your mother's brother. Please file any bug reports via GitHub.
 
 ## About Author
 
