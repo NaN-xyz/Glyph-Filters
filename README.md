@@ -12,7 +12,7 @@ The scripts and codebase work within [GlyphsApp](https://glyphsapp.com/) version
 
 Many scripts make use of Perlin noise and therefore require the `noise` library. This should be as simple as `pip install noise` in your terminal.
 
-Move everything in this project's `Scripts` folder to a new folder within Application Support ▹ Glyphs ▹ Scripts
+Move everything in this project's `NaNGlyphFilters` folder to a new folder within Application Support ▹ Glyphs ▹ Scripts
 
 Bob's your mother's brother.
 
