@@ -1,5 +1,7 @@
 # Abstract out the differences between Glyphs 2, Glyphs 3 and glyphsLib
 class Glyphs2:
+    is_interactive = True
+
     @classmethod
     def clear_paths(cls, thislayer):
         thislayer.paths = []
@@ -54,7 +56,7 @@ class Glyphs2:
 
     @classmethod
     def remove_path_from_layer(cls, layer, path):
-        self.layer.paths.remove(path)
+        layer.paths.remove(path)
 
     @classmethod
     def offset_layer(cls, layer, hoffset, voffset, make_stroke=False, position=0.5):
@@ -63,10 +65,42 @@ class Glyphs2:
 
             offsetCurveFilter = objc.lookUpClass("GlyphsFilterOffsetCurve")
             offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_(
-                Layer, hoffset, voffset, make_stroke, False, 0.5, None, None
+                layer, hoffset, voffset, make_stroke, False, 0.5, None, None
             )
         except Exception as e:
             print("offset failed", e)
+
+    @classmethod
+    def selected_glyphs(cls, font):
+        return [l.parent for l in font.selectedLayers]
+
+    @classmethod
+    def disable_updates(cls, font):
+        font.disableUpdateInterface()
+
+    @classmethod
+    def enable_updates(cls, font):
+        font.enableUpdateInterface()
+
+    @classmethod
+    def begin_undo(cls, glyph):
+        glyph.beginUndo()
+
+    @classmethod
+    def end_undo(cls, glyph):
+        glyph.endUndo()
+
+    @classmethod
+    def begin_layer_changes(cls, layer):
+        layer.beginChanges()
+
+    @classmethod
+    def end_layer_changes(cls, layer):
+        layer.endChanges()
+
+    @classmethod
+    def copy_layer(cls, layer):
+        return layer.copy()
 
 
 class Glyphs3(Glyphs2):
@@ -84,7 +118,7 @@ class Glyphs3(Glyphs2):
 
     @classmethod
     def remove_path_from_layer(cls, layer, path):
-        self.layer.shapes.remove(path)
+        layer.shapes.remove(path)
 
     @classmethod
     def offset_layer(cls, layer, hoffset, voffset, make_stroke=False, position=0.5):
@@ -109,10 +143,15 @@ class Glyphs3(Glyphs2):
 
 
 class GlyphsLib(Glyphs2):
-    def remove_overlap(cls, layer):
-        raise NotImplementedError
+    is_interactive = False
 
-    def calculate_intersections(cls, layer):
+    @classmethod
+    def remove_overlap(cls, layer):
+        pass
+        #raise NotImplementedError
+
+    @classmethod
+    def calculate_intersections(cls, layer, p1, p2, b):
         raise NotImplementedError
 
     @classmethod
@@ -120,9 +159,74 @@ class GlyphsLib(Glyphs2):
         raise NotImplementedError
 
     @classmethod
-    def offset_layer(cls, layer, hoffset, voffset, position=0.5):
-        raise NotImplementedError
+    def offset_layer(cls, layer, hoffset, voffset, position=0.5, make_stroke=False):
+        import ufostroker
+        import ufoLib2
+        from glyphsLib.builder import UFOBuilder, GlyphsBuilder
+        ufo_glyph = ufoLib2.objects.Glyph()
+        UFOBuilder(Glyphs.font).to_ufo_paths(ufo_glyph, layer)
+        ufostroker.constant_width_stroke(ufo_glyph, width=hoffset*2, remove_internal=(not make_stroke))
+        # print(ufo_glyph.contours)
+        layer.paths = []
+        GlyphsBuilder(ufos=[ufoLib2.objects.Font()]).to_glyphs_paths(ufo_glyph, layer)
+        for p in layer.paths:
+            p.nodes = list(reversed(p.nodes))
 
+    @classmethod
+    def remove_node(cls, path, node, keepshape=True):
+        if keepshape:
+            raise NotImplementedError
+        else:
+            path.nodes.remove(node)
+
+    @classmethod
+    def selected_glyphs(cls, font):
+        return font.glyphs
+
+    @classmethod
+    def disable_updates(cls, font):
+        pass
+
+    @classmethod
+    def enable_updates(cls, font):
+        pass
+
+    @classmethod
+    def begin_undo(cls, glyph):
+        pass
+
+    @classmethod
+    def end_undo(cls, glyph):
+        pass
+
+    @classmethod
+    def begin_layer_changes(cls, layer):
+        pass
+
+    @classmethod
+    def end_layer_changes(cls, layer):
+        pass
+
+    @classmethod
+    def copy_layer(cls, layer):
+        import copy
+
+        return copy.deepcopy(layer)
+
+    @classmethod
+    def check_path_connections(cls, path):
+        for ix, n in enumerate(path.nodes):
+            if n.type != "curve":
+                continue
+            if not (path.nodes[ix-1].type == "offcurve" and path.nodes[ix+1].type == "offcurve"):
+                continue
+            import IPython;IPython.embed()
+
+    @classmethod
+    def correct_path_direction(cls, layer):
+        for p in layer.paths:
+            # XXX
+            pass
 
 # Now, let's find out where we are.
 try:

@@ -881,7 +881,7 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 	else: 
 		shape = drawDiamond(0, 0, sizex, sizey)
 
-	layer.paths.append(shape)
+	G.add_paths(layer, [shape])
 	return ng
 
 
@@ -906,7 +906,7 @@ def CreateLineComponent(font, direction, size, shapename):
 	if direction=="vertical": line = drawRectangle(0,50,size,100)
 	if direction=="horizontal": line = drawRectangle(50,0,100,size)
 
-	layer.paths.append(line)
+	G.add_paths(layer, [line])
 
 	return ng
 

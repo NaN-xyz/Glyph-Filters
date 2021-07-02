@@ -20,21 +20,22 @@ class NaNFilter:
         pass
 
     def processGlyph(self, glyph):
-        glyph.beginUndo()
+        G.begin_undo(glyph)
         beginGlyphNaN(glyph)
 
         thislayer = self.font.glyphs[glyph.name].layers[0]
-        thislayer.beginChanges()
+        G.begin_layer_changes(thislayer)
         #thislayer.correctPathDirection()
         if hasattr(self, "params"):
             params = self.params[glyphSize(glyph)]
         else:
             params = None
         self.processLayer(thislayer, params)
+        self.font.glyphs[glyph.name].layers = [thislayer]
 
-        thislayer.endChanges()
+        G.end_layer_changes(thislayer)
         endGlyphNaN(glyph)
-        glyph.endUndo()
+        G.end_undo(glyph)
 
     def processLayer(self, layer, params):
         raise NotImplementedError
@@ -43,27 +44,27 @@ class NaNFilter:
         G.offset_layer(Layer, hoffset, voffset)
 
     def saveOffsetPaths(self, Layer, hoffset, voffset, removeOverlap):
-        templayer = Layer.copy()
+        glyph = Layer.parent
+        templayer = G.copy_layer(Layer)
         templayer.name = "tempoutline"
         currentglyph = Layer.parent
         currentglyph.layers.append(templayer)
         tmplayer_id = templayer.layerId
         self.doOffset(templayer, hoffset, voffset)
         if removeOverlap:
-            templayer.removeOverlap()
+            G.remove_overlap(templayer)
         #templayer.correctPathDirection() # doesn't seem to work when placed here
         offsetpaths = templayer.paths
-        del currentglyph.layers[tmplayer_id]
         return offsetpaths
 
     def expandMonoline(self, Layer, noodleRadius):
-        G.offset_layer(Layer, hoffset, voffset, make_stroke=True)
+        G.offset_layer(Layer, noodleRadius, noodleRadius, make_stroke=True)
         G.correct_path_direction(Layer)
 
     def expandMonolineFromPathlist(self, Paths, noodleRadius):
         Layer = GSLayer()
         for p in Paths: Layer.paths.append(p)
-        G.offset_layer(Layer, hoffset, voffset, make_stroke=True)
+        G.offset_layer(Layer, noodleRadius, noodleRadius, make_stroke=True)
         G.correct_path_direction(Layer)
         return Layer.paths
 
