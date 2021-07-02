@@ -121,7 +121,7 @@ class NaNFilter:
 
     def removeStrayPoints(self, thislayer):
         for p in reversed(thislayer.paths):
-            if len(p.nodes)<3: G.remove_path_from_layer(layer, p)
+            if len(p.nodes)<3: G.remove_path_from_layer(thislayer, p)
 
     def removeOpenPaths(self, thislayer):
         pass

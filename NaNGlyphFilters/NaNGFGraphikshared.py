@@ -165,7 +165,7 @@ def withinLayerBlack(layer, x, y):
 		return
 	definitelyOutside = NSMakePoint(layer.bounds.origin.x-1,y)
 	pt = NSMakePoint(x,y)
-	intersections = G.calculate_intersections(layer, definitelyOutside, point, True)
+	intersections = G.calculate_intersections(layer, definitelyOutside, pt, True)
 	return (len(intersections) % 2) == 1
 
 def operateOnBlackAtInterval(layer, func, step_x, step_y=None):
