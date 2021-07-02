@@ -2,6 +2,12 @@ from GlyphsApp import *
 import math
 
 
+__all__ = [
+"setGlyphCoords", "ConvertPathsToSkeleton", "StripDetail", "RemoveDuplicatePts",
+"GetPoint", "CreatePointList", "CreateDistList", "FindPosInDistList", "ListToPath",
+"PointToPointSteps", "ReturnNodesAlongPath", "Direction"
+]
+
 class Direction():
 	ANTICLOCKWISE = -1
 	CLOCKWISE = 1

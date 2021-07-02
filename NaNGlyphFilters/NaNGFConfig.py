@@ -5,6 +5,7 @@ from math import *
 import time
 import cProfile
 
+__all__ = ["beginFilterNaN", "beginGlyphNaN", "endGlyphNaN", "endFilterNaN", "glyphSize", "NANGFSET"]
 # Misc settings
 
 NANGFSET = {

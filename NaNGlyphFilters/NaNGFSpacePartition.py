@@ -1,5 +1,6 @@
 from NaNGFGraphikshared import *
 import math
+import random
 
 # strip out colour list item [2]
 def SimplifyTriangleList(triangle):
