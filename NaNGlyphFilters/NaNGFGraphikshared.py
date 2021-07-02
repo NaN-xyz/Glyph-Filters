@@ -978,7 +978,7 @@ def removeOverlapPathlist(paths):
 # MekkaBlue
 def retractHandles(thisLayer):
 	for thisPath in thisLayer.paths:
-		for x in reversed( range( len( thisPath.nodes ))):
+		for x in reversed( list(range( len( thisPath.nodes )))):
 			thisNode = thisPath.nodes[x]
 			if thisNode.type == GSOFFCURVE:
 				del thisPath.nodes[x]

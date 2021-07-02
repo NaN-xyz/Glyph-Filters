@@ -9,7 +9,11 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
 
-from itertools import izip
+try:
+    from itertools import izip
+except ImportError:
+    izip = zip
+
 
 # Note that this is *not* the same as the pairwise recipe in the itertools page
 def pairs(iterable):

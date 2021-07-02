@@ -148,13 +148,13 @@ class GlitchPop(NaNFilter):
         if direction == "horizontal":
             for y2 in range(y, y + h + gap, gap):
                 for x2 in range(x, x + w, checkgap):
-                    print direction, x2, y2
+                    print(direction, x2, y2)
                     add_line(x2, y2)
 
         if direction == "vertical":
             for x2 in range(x, x + w + gap, gap):
                 for y2 in range(y, y + h, checkgap):
-                    print direction, x2, y2
+                    print(direction, x2, y2)
                     add_line(x2, y2)
 
         for l in lines:
