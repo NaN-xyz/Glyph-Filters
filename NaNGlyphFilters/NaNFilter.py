@@ -114,8 +114,8 @@ class NaNFilter:
                 thisNode = thisPath.nodes[i]
                 prevNode = thisNode.prevNode
                 if prevNode.type != OFFCURVE and thisNode.type != OFFCURVE:
-                    xDistance = thisNode.x-prevNode.x
-                    yDistance = thisNode.y-prevNode.y
+                    xDistance = thisNode.position.x-prevNode.position.x
+                    yDistance = thisNode.position.y-prevNode.position.y
                     if abs(xDistance) < maxseg and abs(yDistance) < maxseg:
                         G.remove_node(thisPath, thisNode, keepshape=keepshape)
 

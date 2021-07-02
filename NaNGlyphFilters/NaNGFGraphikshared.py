@@ -866,7 +866,8 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 	ng.category = "Mark"
 	ng.export = True
 	font.glyphs.append(ng)
-	layer = font.glyphs[ng.name].layers[0]
+	layer = GSLayer()
+	font.glyphs[ng.name].layers.append(layer)
 	layer.width = 0
 
 	# add speck, blob, perhaps even a line?
@@ -899,7 +900,8 @@ def CreateLineComponent(font, direction, size, shapename):
 	ng.category = "Mark"
 	ng.export = True
 	font.glyphs.append(ng)
-	layer = font.glyphs[ng.name].layers[0]
+	layer = GSLayer()
+	font.glyphs[ng.name].layers.append(layer)
 	layer.width = 0
 
 	#line = GSPath()

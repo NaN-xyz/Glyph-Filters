@@ -21,7 +21,7 @@ def setGlyphCoords(pathlist):
 	newshape = []
 
 	for path in pathlist:
-		thispath = [ [node.x,node.y] for node in path.nodes ]
+		thispath = [ [node.position.x,node.position.y] for node in path.nodes ]
 		newshape.append([path.direction,thispath])
 
 	return newshape
