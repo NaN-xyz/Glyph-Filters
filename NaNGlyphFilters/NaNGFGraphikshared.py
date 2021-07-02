@@ -12,12 +12,13 @@ from NaNGFAngularizzle import *
 from NaNGFFitpath import *
 from NaNGFNoise import roughenLines
 #from NaNGFNoise import * # needs to calls roughenlines()
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 # --------------------------------------------
 
 def ClearPaths(thislayer):
 	"""Removes all paths in a layer, leaving anchors and components in place"""
-	thislayer.paths = []
+	G.clear_paths(thislayer)
 
 def ShiftAllPaths(paths, variance, type):
 	for path in paths:
@@ -100,7 +101,7 @@ def withinLayerBlack(layer, x, y):
 		return
 	definitelyOutside = NSMakePoint(layer.bounds.origin.x-1,y)
 	pt = NSMakePoint(x,y)
-	intersections = layer.calculateIntersectionsStartPoint_endPoint_decompose_(definitelyOutside, pt, True)
+	intersections = G.calculate_intersections(layer, definitelyOutside, point, True)
 	return (len(intersections) % 2) == 1
 
 def operateOnBlackAtInterval(layer, func, step_x, step_y=None):
@@ -188,11 +189,7 @@ def AllPathBoundsFromPathList(paths):
 
 
 def AllPathBounds(thislayer):
-
-	x = int( thislayer.bounds.origin.x )
-	y = int( thislayer.bounds.origin.y )
-	w = int( thislayer.bounds.size.width )
-	h = int( thislayer.bounds.size.height )
+	x, y, w, h = G.layer_bounds(thislayer)
 
 	if x==0 and y==0 and w==0 and h==0:
 		return None
@@ -761,14 +758,14 @@ def isSizeBelowThreshold(thing, maxw, maxh):
 
 def AddAllComponentsToLayer(components, thislayer):
 	try:
-		thislayer.components.extend(components)
+		G.add_components(thislayer, components)
 	except:
 		print("Couldn't add components to layer", thislayer)
 
 
 def AddAllPathsToLayer(paths, thislayer):
 	try:
-		thislayer.paths.extend(paths)
+		G.add_paths(thislayer, paths)
 	except:
 		print("Couldn't add all paths to layer", thislayer)
 
@@ -793,11 +790,7 @@ def ContainsPaths(thislayer):
 
 
 def pathCenterPoint(path):
-	bounds = path.bounds
-	x = bounds.origin.x
-	y = bounds.origin.y
-	w = bounds.size.width
-	h = bounds.size.height
+	x,y,w,h = G.path_bounds(path)
 	return [x+(w/2),y+(h/2)]
 
 
@@ -970,7 +963,7 @@ def CreateShadowPaths(thislayer, lines):
 def removeOverlapPathlist(paths):
 	Layer = GSLayer()
 	for p in paths: Layer.paths.append(p)
-	Layer.removeOverlap()
+	Layer = G.remove_overlap(Layer)
 	newpaths = Layer.paths
 	del Layer
 	return newpaths
@@ -985,7 +978,7 @@ def retractHandles(thisLayer):
 			else:
 				thisNode.type = GSLINE
 		
-		thisPath.checkConnections()
+		G.check_path_connections(thisPath)
 
 def SnapToGrid(lines, gridsize):
 	for line in lines:

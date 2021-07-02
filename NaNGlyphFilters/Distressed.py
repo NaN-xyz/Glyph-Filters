@@ -8,6 +8,7 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 # COMMON
 font = Glyphs.font
@@ -16,20 +17,13 @@ selectedGlyphs = beginFilterNaN(font)
 
 # ====== OFFSET LAYER CONTROLS ================== 
 
-def doOffset( Layer, hoffset, voffset ):
-	try:
-		offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-		offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, hoffset, voffset, False, False, 0.5, None,None)
-	except Exception as e:
-		print("offset failed")
-
 def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
 	templayer = Layer.copy()
 	templayer.name = "tempoutline"
 	currentglyph = Layer.parent
 	currentglyph.layers.append(templayer)
 	tmplayer_id = templayer.layerId
-	doOffset(templayer, hoffset, voffset)
+	G.offset_layer(templayer, hoffset, voffset)
 	if removeOverlap==True: templayer.removeOverlap()
 	offsetpaths = templayer.paths
 	del currentglyph.layers[tmplayer_id]
