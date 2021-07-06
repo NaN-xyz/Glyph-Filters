@@ -4,8 +4,9 @@ __doc__="""
 Pixel
 """
 
-import GlyphsApp
+from GlyphsApp import GSGlyph, GSLayer, GSComponent
 from NaNGFGraphikshared import *
+from NaNGFAngularizzle import *
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
 
@@ -38,9 +39,11 @@ class Pixel(NaNFilter):
 			ng.category = "Mark"
 			ng.export = True
 			font.glyphs.append(ng)
-			thislayer = font.glyphs[ng.name].layers[0]
+			firstmaster = font.masters[0].id
+			thislayer = GSLayer()
+			thislayer.layerId = thislayer.associatedMasterId =firstmaster
+			ng.layers[firstmaster] = thislayer
 			thislayer.width = 0
-
 			ox, oy = 0, 0
 			w, h = 40, 40
 			grid = 10
@@ -102,7 +105,7 @@ class Pixel(NaNFilter):
 					glyph = components[size-1]
 					pixelcomponent = GSComponent(glyph)
 					adjust = unitw/2 -2
-					pixelcomponent.transform = ((1, 0.0, 0.0, 1, x-adjust, y-adjust))
+					pixelcomponent.position = (x-adjust, y-adjust)
 
 				shapepath = []
 				shape = drawRectangle(x, y, unitw, unith)
