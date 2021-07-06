@@ -106,6 +106,10 @@ class Glyphs2:
     def cut_layer(cls, layer, pt1, pt2):
         layer.cut_between_points(pt1, pt2)
 
+    @classmethod
+    def clean_up_paths(cls, thislayer):
+        thislayer.cleanUpPaths()
+
 
 class Glyphs3(Glyphs2):
     @classmethod
@@ -255,6 +259,10 @@ class GlyphsLib(Glyphs2):
     @classmethod
     def cut_layer(cls, layer, pt1, pt2):
         raise NotImplementedError
+
+    @classmethod
+    def clean_up_paths(cls, thislayer):
+        pass
 
 # Now, let's find out where we are.
 try:
