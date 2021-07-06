@@ -4,11 +4,14 @@ __doc__ = """
 Puddles
 """
 
-import GlyphsApp
+from GlyphsApp import GSLINE, GSOFFCURVE, GSCURVE, GSPath, GSNode
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
-
+from math import sin, cos, atan2, radians
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+import copy
+import random
 
 
 class Puddles(NaNFilter):
@@ -40,7 +43,7 @@ class Puddles(NaNFilter):
         Toenail(thislayer, outlinedata, 30, 50, gap=4, thickness=25)
         #Toenail(thislayer, outlinedata3, 40, 60, gap=100, thickness=20)
         Toenail(thislayer, outlinedata4, 50, 70, gap=100, thickness=10)
-        thislayer.cleanUpPaths()
+        G.clean_up_paths(thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 def drawToenail(p1, p2, thickness):

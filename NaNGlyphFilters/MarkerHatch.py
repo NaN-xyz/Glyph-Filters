@@ -4,12 +4,15 @@ __doc__ = """
 Marker Hatch
 """
 
-import GlyphsApp
+from GlyphsApp import GSLayer
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
+from NaNGFConfig import glyphSize
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
+from math import cos, radians, sin
 
 
 class Shatter(NaNFilter):
@@ -42,10 +45,10 @@ class Shatter(NaNFilter):
     def processLayerLarge(self, thislayer, params):
 
         sliceheight = params["sliceheight"]
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
 
         bounds = AllPathBounds(thislayer)
-        thislayercopy = thislayer.copy()
+        thislayercopy = G.copy_layer(thislayer)
         ClearPaths(thislayer)
        
         spaths = self.returnSlicedPaths(thislayer, thislayercopy, sliceheight, bounds)
@@ -95,7 +98,7 @@ class Shatter(NaNFilter):
         while y < oy+h+dist:
 
             rowpaths = []
-            tmplayer = thislayercopy.copy()
+            tmplayer = G.copy_layer(thislayercopy)
 
             shiftx = dist * cos(radians(self.angle))
             shifty = dist * sin(radians(self.angle))
@@ -113,8 +116,8 @@ class Shatter(NaNFilter):
             slicedata = setGlyphCoords(ConvertPathsToSkeleton([slicepath], 20))[0][1]
             #thislayer.paths.append(slicepath)
 
-            tmplayer.cutBetweenPoints(NSPoint(cutax1, cutay1), NSPoint(cutax2, cutay2))
-            tmplayer.cutBetweenPoints(NSPoint(cutbx1, cutby1), NSPoint(cutbx2, cutby2))
+            G.cut_layer(tmplayer, (cutax1, cutay1), (cutax2, cutay2))
+            G.cut_layer(tmplayer, (cutbx1, cutby1), (cutbx2, cutby2))
 
             for path in tmplayer.paths:
                 try:

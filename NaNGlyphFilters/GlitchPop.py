@@ -4,10 +4,12 @@ __doc__ = """
 Glitch Pop
 """
 
-import GlyphsApp
+from GlyphsApp import GSLayer
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+from NaNGFConfig import glyphSize
 
 from NaNFilter import NaNFilter
 
@@ -59,11 +61,11 @@ class GlitchPop(NaNFilter):
         groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
         self.ApplyGlitchCollage(thislayer, groups, self.linecomponents)
 
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
     def processLayerSmall(self, thislayer):
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         roundedpathlist = returnRoundedPaths(thislayer.paths)
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)
@@ -76,7 +78,7 @@ class GlitchPop(NaNFilter):
 
             templayer = GSLayer()
             templayer.paths = g
-            templayer.removeOverlap()
+            G.remove_overlap(templayer)
 
             linetype = False
 
@@ -148,13 +150,13 @@ class GlitchPop(NaNFilter):
         if direction == "horizontal":
             for y2 in range(y, y + h + gap, gap):
                 for x2 in range(x, x + w, checkgap):
-                    print direction, x2, y2
+                    print(direction, x2, y2)
                     add_line(x2, y2)
 
         if direction == "vertical":
             for x2 in range(x, x + w + gap, gap):
                 for y2 in range(y, y + h, checkgap):
-                    print direction, x2, y2
+                    print(direction, x2, y2)
                     add_line(x2, y2)
 
         for l in lines:
@@ -222,7 +224,7 @@ class GlitchPop(NaNFilter):
                     else:
                         adjust = 0
                     c = drawCircle(nx+adjust, ny, size, size)
-                    thislayer.paths.append(c)
+                    G.add_paths(thislayer, [c])
             size+=0.1
 
 

@@ -9,8 +9,10 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 from NaNGFNoise import *
+import random
 
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 
 class DoodleShadow(NaNFilter):
@@ -31,7 +33,7 @@ class DoodleShadow(NaNFilter):
 
         offset, depth = params["offset"], params["depth"]
 
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
         outlinedata = setGlyphCoords(pathlist)
         bounds = AllPathBounds(thislayer)
@@ -52,7 +54,7 @@ class DoodleShadow(NaNFilter):
         AddAllPathsToLayer(noiseoutline, thislayer)
         AddAllPathsToLayer(shadowoutline, thislayer)
        
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 

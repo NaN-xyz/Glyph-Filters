@@ -24,7 +24,8 @@ class Storm(NaNFilter):
 			return
 		stormcomp = GSComponent(self.stormcomponent)
 		scale = (float(1)/self.maxsize)*size
-		stormcomp.transform = ((scale, 0.0, 0.0, scale, x, y))
+		stormcomp.scale = (scale, scale)
+		stormcomp.position = (x,y)
 		layer.components.append(stormcomp)
 		
 

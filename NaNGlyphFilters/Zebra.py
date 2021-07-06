@@ -8,8 +8,15 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
+import random
+from noise import snoise2
+from NaNGFNoise import noiseMap
 
-from itertools import izip
+try:
+    from itertools import izip
+except ImportError:
+    izip = zip
+
 
 # Note that this is *not* the same as the pairwise recipe in the itertools page
 def pairs(iterable):

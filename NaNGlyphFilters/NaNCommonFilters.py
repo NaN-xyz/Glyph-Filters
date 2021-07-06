@@ -1,5 +1,8 @@
 from NaNGFGraphikshared import *
+from GlyphsApp import GSPath
+from NaNGFAngularizzle import Direction, setGlyphCoords, ConvertPathsToSkeleton
 import random
+import math
 
 
 def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8, maxsize=250):
@@ -78,7 +81,7 @@ def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunct
             else:
                 x2, y2 = structure[0]
 
-            a = atan2(y1-y2, x1-x2) + radians(90)
+            a = math.atan2(y1-y2, x1-x2) + math.radians(90)
 
             midx, midy = x1 + ((x2-x1)/2), y1 + ((y2-y1)/2)
 

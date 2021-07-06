@@ -9,6 +9,7 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 
 class Iso(NaNFilter):
@@ -20,7 +21,7 @@ class Iso(NaNFilter):
 	}
 
 	def processLayer(self, thislayer, params):
-		thislayer.removeOverlap()
+		G.remove_overlap(thislayer)
 		pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
 		outlinedata = setGlyphCoords(pathlist)
 		bounds = AllPathBounds(thislayer)
@@ -39,7 +40,7 @@ class Iso(NaNFilter):
 				for path in g:
 					thislayer.paths.append(path)
 
-		thislayer.correctPathDirection()
+		G.correct_path_direction(thislayer)
 		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 Iso()

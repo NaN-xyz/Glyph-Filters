@@ -1,8 +1,11 @@
 from NaNGFGraphikshared import *
 import traceback
-import GlyphsApp
+from GlyphsApp import Glyphs, OFFCURVE, GSLayer
 from Foundation import NSClassFromString
 from NaNGFSpacePartition import *
+from NaNGFConfig import *
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+
 
 class NaNFilter:
     def __init__(self):
@@ -17,68 +20,53 @@ class NaNFilter:
         pass
 
     def processGlyph(self, glyph):
-        glyph.beginUndo()
+        G.begin_undo(glyph)
         beginGlyphNaN(glyph)
 
         thislayer = self.font.glyphs[glyph.name].layers[0]
-        thislayer.beginChanges()
+        G.begin_layer_changes(thislayer)
         #thislayer.correctPathDirection()
         if hasattr(self, "params"):
             params = self.params[glyphSize(glyph)]
         else:
             params = None
         self.processLayer(thislayer, params)
+        self.font.glyphs[glyph.name].layers = [thislayer]
 
-        thislayer.endChanges()
+        G.end_layer_changes(thislayer)
         endGlyphNaN(glyph)
-        glyph.endUndo()
+        G.end_undo(glyph)
 
     def processLayer(self, layer, params):
         raise NotImplementedError
 
     def doOffset(self, Layer, hoffset, voffset):
-        try:
-            offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-            offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_(
-                Layer, hoffset, voffset, False, False, 0.5, None, None
-            )
-        except Exception as e:
-            print("offset failed")
+        G.offset_layer(Layer, hoffset, voffset)
 
     def saveOffsetPaths(self, Layer, hoffset, voffset, removeOverlap):
-        templayer = Layer.copy()
+        glyph = Layer.parent
+        templayer = G.copy_layer(Layer)
         templayer.name = "tempoutline"
         currentglyph = Layer.parent
         currentglyph.layers.append(templayer)
         tmplayer_id = templayer.layerId
         self.doOffset(templayer, hoffset, voffset)
         if removeOverlap:
-            templayer.removeOverlap()
+            G.remove_overlap(templayer)
         #templayer.correctPathDirection() # doesn't seem to work when placed here
         offsetpaths = templayer.paths
-        del currentglyph.layers[tmplayer_id]
         return offsetpaths
 
     def expandMonoline(self, Layer, noodleRadius):
-        try:
-            offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-            offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, noodleRadius, noodleRadius, True, False, 0.5, None,None)
-            Layer.correctPathDirection()
-        except Exception as e:
-            print(( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) ))
+        G.offset_layer(Layer, noodleRadius, noodleRadius, make_stroke=True)
+        G.correct_path_direction(Layer)
 
     def expandMonolineFromPathlist(self, Paths, noodleRadius):
         Layer = GSLayer()
         for p in Paths: Layer.paths.append(p)
-        try:
-            offsetCurveFilter = NSClassFromString("GlyphsFilterOffsetCurve")
-            offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_( Layer, noodleRadius, noodleRadius, True, False, 0.5, None,None)
-            Layer.correctPathDirection()
-            monopaths = Layer.paths
-            del Layer
-            return monopaths
-        except Exception as e:
-            print(( "expandMonoline: %s\n%s" % (str(e), traceback.format_exc()) ))
+        G.offset_layer(Layer, noodleRadius, noodleRadius, make_stroke=True)
+        G.correct_path_direction(Layer)
+        return Layer.paths
 
     def SortCollageSpace(self, thislayer, outlinedata, outlinedata2, gridsize, bounds, action, randomize = False, snap=False):
         isogrid = makeIsometricGrid(bounds, gridsize)
@@ -116,7 +104,7 @@ class NaNFilter:
         for p in reversed(layer.paths):
             w, h = p.bounds.size.width, p.bounds.size.height
             if w<maxdim and h<maxdim:
-                layer.paths.remove(p)
+                G.remove_path_from_layer(layer, p)
 
     # based on
     # https://github.com/mekkablue/Glyphs-Scripts/blob/master/Paths/Remove%20Short%20Segments.py         
@@ -126,17 +114,14 @@ class NaNFilter:
                 thisNode = thisPath.nodes[i]
                 prevNode = thisNode.prevNode
                 if prevNode.type != OFFCURVE and thisNode.type != OFFCURVE:
-                    xDistance = thisNode.x-prevNode.x
-                    yDistance = thisNode.y-prevNode.y
+                    xDistance = thisNode.position.x-prevNode.position.x
+                    yDistance = thisNode.position.y-prevNode.position.y
                     if abs(xDistance) < maxseg and abs(yDistance) < maxseg:
-                        if keepshape:
-                            thisPath.removeNodeCheckKeepShape_( thisNode )
-                        else:
-                            thisPath.removeNodeCheck_( thisNode )
+                        G.remove_node(thisPath, thisNode, keepshape=keepshape)
 
     def removeStrayPoints(self, thislayer):
         for p in reversed(thislayer.paths):
-            if len(p.nodes)<3: thislayer.paths.remove(p)
+            if len(p.nodes)<3: G.remove_path_from_layer(thislayer, p)
 
     def removeOpenPaths(self, thislayer):
         pass

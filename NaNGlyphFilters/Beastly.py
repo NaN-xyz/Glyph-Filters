@@ -4,11 +4,13 @@ __doc__="""
 Beastly
 """
 
-import GlyphsApp
+from GlyphsApp import GSNode, GSOFFCURVE, GSCURVE
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
 from NaNCommonFilters import spikes
+import random
+from math import atan2, radians, cos, sin
 
 
 def drawHair(bubble, x1, y1, midx, midy, x2, y2, pushdist):

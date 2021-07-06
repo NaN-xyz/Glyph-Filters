@@ -8,6 +8,7 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNCommonFilters import moonrocks
 
 class Microbe(NaNFilter):
@@ -18,14 +19,15 @@ class Microbe(NaNFilter):
     }
 
     def processLayer(self, thislayer, params):
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         offsetpaths = self.saveOffsetPaths(
             thislayer, params["offset"], params["offset"], removeOverlap=False
         )
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 30))
-        ClearPaths(thislayer)
         microbepaths = moonrocks(thislayer, outlinedata, params["iterations"], shapetype="blob", maxgap = 1, maxsize=params["maxsize"])
-        AddAllPathsToLayer(microbepaths, thislayer)
+        ClearPaths(thislayer)
+        if microbepaths:
+            AddAllPathsToLayer(microbepaths, thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 Microbe()

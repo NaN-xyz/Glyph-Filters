@@ -9,8 +9,11 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 from NaNGFNoise import *
-
 from NaNFilter import NaNFilter
+import copy
+import random
+from math import sin, cos, degrees, radians
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 
 class SeaCamouflage(NaNFilter):
@@ -39,7 +42,7 @@ class SeaCamouflage(NaNFilter):
 
 
     def processLayerSmall(self, thislayer):
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         roundedpathlist = returnRoundedPaths(thislayer.paths)
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)
@@ -66,7 +69,7 @@ class SeaCamouflage(NaNFilter):
             cy2 = cy + random.randrange(h*-1, h)
             cutx1, cuty1 = cx2+(rad1*cos(angle)), cy2+(rad1*sin(angle))
             cutx2, cuty2 = cx2+(rad2*cos(angle2)), cy2+(rad2*sin(angle2))
-            thislayer.cutBetweenPoints(NSPoint(cutx1, cuty1), NSPoint(cutx2, cuty2))
+            G.cut_layer(thislayer, (cutx1, cuty1),(cutx2, cuty2))
 
 
 def returnAllStripePaths(paths):

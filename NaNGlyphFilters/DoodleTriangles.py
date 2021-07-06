@@ -11,6 +11,7 @@ from NaNGFSpacePartition import *
 from NaNGFNoise import *
 
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 
 class DoodleTriangles(NaNFilter):
@@ -28,7 +29,7 @@ class DoodleTriangles(NaNFilter):
 
     def processLayer(self, thislayer, params):
 
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
 
         offset, gridsize = params["offset"], params["gridsize"]
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
@@ -54,7 +55,7 @@ class DoodleTriangles(NaNFilter):
         AddAllPathsToLayer(noiseoutline, thislayer)
         AddAllPathsToLayer(blacktris, thislayer)
 
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 

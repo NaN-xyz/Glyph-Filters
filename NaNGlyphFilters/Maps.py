@@ -4,11 +4,12 @@ __doc__ = """
 Maps
 """
 
-import GlyphsApp
+from GlyphsApp import GSLayer
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
-
+from NaNGFConfig import *
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNFilter import NaNFilter
 
 
@@ -67,7 +68,7 @@ class Maps(NaNFilter):
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
     def processLayerSmall(self, thislayer):
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         roundedpathlist = returnRoundedPaths(thislayer.paths)
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)
@@ -80,7 +81,7 @@ class Maps(NaNFilter):
 
             templayer = GSLayer()
             templayer.paths = g
-            templayer.removeOverlap()
+            G.remove_overlap(templayer)
 
             for p in templayer.paths:
                 nodelen = len(p.nodes)

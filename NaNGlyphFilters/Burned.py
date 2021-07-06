@@ -10,6 +10,7 @@ from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 
 def returnRoundedPaths(paths):
@@ -56,9 +57,9 @@ class Burn(NaNFilter):
         )
         for g in groups:
             if len(g) > 2:
-                thislayer.paths.extend(g)
+                G.add_paths(thislayer, g)
 
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         roundedpathlist = returnRoundedPaths(thislayer.paths)
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)

@@ -17,6 +17,7 @@ import math
 TOLERANCE = 10e-6
 EPSILON = 10e-12
 
+__all__ = ["fitpath", "convertToFitpath"]
 
 class Point:
 	__slots__ = ['x', 'y']
