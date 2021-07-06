@@ -177,10 +177,13 @@ class GlyphsLib(Glyphs2):
         import ufostroker
         import ufoLib2
         from glyphsLib.builder import UFOBuilder, GlyphsBuilder
+        class MyUFOBuilder(UFOBuilder):
+            def _is_vertical(self):
+                return False
         if hoffset == 0 and voffset == 0:
             return
         ufo_glyph = ufoLib2.objects.Glyph()
-        UFOBuilder(Glyphs.font).to_ufo_paths(ufo_glyph, layer)
+        MyUFOBuilder(Glyphs.font).to_ufo_paths(ufo_glyph, layer)
         ufostroker.constant_width_stroke(ufo_glyph, width=hoffset*2, remove_internal=(not make_stroke), jointype="round")
         layer.paths = []
         # Sometimes a degenerate path is produced
