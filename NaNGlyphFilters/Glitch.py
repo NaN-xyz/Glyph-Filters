@@ -4,10 +4,13 @@ __doc__ = """
 Glitch
 """
 
-import GlyphsApp
+from GlyphsApp import GSLayer
 from NaNGFGraphikshared import *
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
+import random
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+import copy
 
 
 class Glitch(NaNFilter):
@@ -25,14 +28,14 @@ class Glitch(NaNFilter):
     def processLayer(self, thislayer, params):
 
         maxshift = params["maxshift"]
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         paths = copy.copy(thislayer.paths)
         ClearPaths(thislayer)
        
         slicedpaths = self.returnSlicedPaths(paths, self.sliceheight)
         self.ShiftPathsNoise(slicedpaths, maxshift)
         AddAllPathsToLayer(slicedpaths, thislayer)
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
 
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=False, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
@@ -49,7 +52,7 @@ class Glitch(NaNFilter):
         sh = sliceheight
 
         while y < starty+h:
-            tmplayer.cutBetweenPoints(NSPoint(ox-1, y), NSPoint(ox+w+1, y))
+            G.cut_layer(tmplayer, (ox-1, y), (ox+w+1, y))
             y+=sh
             sh = sliceheight * random.randrange(1, 5)
 

@@ -102,6 +102,10 @@ class Glyphs2:
     def copy_layer(cls, layer):
         return layer.copy()
 
+    @classmethod
+    def cut_layer(cls, layer, pt1, pt2):
+        layer.cut_between_points(pt1, pt2)
+
 
 class Glyphs3(Glyphs2):
     @classmethod
@@ -159,7 +163,6 @@ class GlyphsLib(Glyphs2):
         layer.paths = []
         GlyphsBuilder(ufos=[ufoLib2.objects.Font()]).to_glyphs_paths(ufo_glyph, layer)
         return layer
-        
 
     @classmethod
     def calculate_intersections(cls, layer, p1, p2, b):
@@ -242,6 +245,10 @@ class GlyphsLib(Glyphs2):
         for p in layer.paths:
             # XXX
             pass
+
+    @classmethod
+    def cut_layer(cls, layer, pt1, pt2):
+        raise NotImplementedError
 
 # Now, let's find out where we are.
 try:

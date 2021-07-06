@@ -18,7 +18,7 @@ selectedGlyphs = beginFilterNaN(font)
 # ====== OFFSET LAYER CONTROLS ================== 
 
 def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
-	templayer = Layer.copy()
+	templayer = G.copy_layer(Layer)
 	templayer.name = "tempoutline"
 	currentglyph = Layer.parent
 	currentglyph.layers.append(templayer)
@@ -74,14 +74,12 @@ def ApplyBurn(thislayer, groups):
 			shiftype = random.choice(["x","y","xy"])
 
 			templayer = GSLayer()
-			for path in g:
-				tp = path
-				templayer.paths.append(tp)
+			G.add_paths(templayer, g)
 			templayer.removeOverlap()
 
 			for p in templayer.paths: 
 				ShiftPath(p,shiftmax,shiftype)
-				thislayer.paths.append(p)
+				G.add_paths(thislayer, [p])
 				#nodelen = len(p.nodes)
 
 
