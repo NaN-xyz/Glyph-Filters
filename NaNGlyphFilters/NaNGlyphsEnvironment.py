@@ -211,7 +211,11 @@ class GlyphsLib(Glyphs2):
     def copy_layer(cls, layer):
         import copy
 
-        return copy.deepcopy(layer)
+        oldparent = layer.parent
+        layer.parent = None
+        newlayer = copy.deepcopy(layer)
+        newlayer.parent = layer.parent = oldparent
+        return newlayer
 
     @classmethod
     def check_path_connections(cls, path):
