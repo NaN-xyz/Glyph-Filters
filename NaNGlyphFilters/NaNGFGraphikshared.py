@@ -902,11 +902,10 @@ def CreateLineComponent(font, direction, size, shapename):
 	ng.category = "Mark"
 	ng.export = True
 	font.glyphs.append(ng)
-	if ng.layers:
-		layer = ng.layers[0]
-	else:
-		layer = GSLayer()
-		ng.layers.append(layer)
+	firstmaster = font.masters[0].id
+	layer = GSLayer()
+	layer.layerId = layer.associatedMasterId = firstmaster
+	ng.layers[firstmaster] = layer
 	layer.width = 0
 
 	#line = GSPath()
