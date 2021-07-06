@@ -71,7 +71,8 @@ __all__ = [
 "CreateShadowPaths",
 "removeOverlapPathlist",
 "retractHandles",
-"SnapToGrid"
+"SnapToGrid",
+"distance"
 ]
 
 if "distance" not in globals():
