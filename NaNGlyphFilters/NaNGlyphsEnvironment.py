@@ -163,9 +163,12 @@ class GlyphsLib(Glyphs2):
         contours = list(ufo_glyph)
         ufo_glyph.clearContours()
         pen = ufo_glyph.getPen()
-        union(contours, pen)
-        layer.paths = []
-        GlyphsBuilder(ufos=[ufoLib2.objects.Font()]).to_glyphs_paths(ufo_glyph, layer)
+        try:
+            union(contours, pen)
+            layer.paths = []
+            GlyphsBuilder(ufos=[ufoLib2.objects.Font()]).to_glyphs_paths(ufo_glyph, layer)
+        except Exception as e:
+            print("Overlap removal failed. Carrying on anyway.")
         return layer
 
     @classmethod
@@ -199,7 +202,8 @@ class GlyphsLib(Glyphs2):
     @classmethod
     def remove_node(cls, path, node, keepshape=True):
         if keepshape:
-            raise NotImplementedError
+            path.nodes.remove(node)
+            # raise NotImplementedError
         else:
             path.nodes.remove(node)
 
