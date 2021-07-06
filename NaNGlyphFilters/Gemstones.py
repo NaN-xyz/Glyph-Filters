@@ -4,7 +4,7 @@ __doc__="""
 Gemstones
 """
 
-import GlyphsApp
+from GlyphsApp import GSNode, GSLINE
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
