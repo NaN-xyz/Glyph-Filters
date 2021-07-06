@@ -4,10 +4,12 @@ __doc__ = """
 Maze
 """
 
-import GlyphsApp
+from GlyphsApp import GSNode, GSLINE, GSPath
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+import random
 
 
 class Maze(NaNFilter):
@@ -39,7 +41,7 @@ class Maze(NaNFilter):
             AddAllPathsToLayer(walkpaths, thislayer)
 
             self.expandMonoline(thislayer, 6)
-            thislayer.removeOverlap()
+            G.remove_overlap(thislayer)
             self.CleanOutlines(thislayer, remSmallPaths=False, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
     def setupChecker(self, bounds):
@@ -99,6 +101,7 @@ class Maze(NaNFilter):
     def walker(self, thislayer, start):
         movements = {"N": (0, 1), "S": (0, -1), "E": (1, 0), "W": (-1, 0)}
         walkpath = GSPath()
+        walkpath.closed = False
         sx, sy = start
 
         startnode = GSNode(
