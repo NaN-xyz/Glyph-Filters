@@ -147,8 +147,19 @@ class GlyphsLib(Glyphs2):
 
     @classmethod
     def remove_overlap(cls, layer):
-        pass
-        #raise NotImplementedError
+        from pathops import union
+        import ufoLib2
+        from glyphsLib.builder import UFOBuilder, GlyphsBuilder
+        ufo_glyph = ufoLib2.objects.Glyph()
+        UFOBuilder(Glyphs.font).to_ufo_paths(ufo_glyph, layer)
+        contours = list(ufo_glyph)
+        ufo_glyph.clearContours()
+        pen = ufo_glyph.getPen()
+        union(contours, pen)
+        layer.paths = []
+        GlyphsBuilder(ufos=[ufoLib2.objects.Font()]).to_glyphs_paths(ufo_glyph, layer)
+        return layer
+        
 
     @classmethod
     def calculate_intersections(cls, layer, p1, p2, b):
