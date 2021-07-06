@@ -4,10 +4,13 @@ __doc__ = """
 Bubble
 """
 
-import GlyphsApp
+from GlyphsApp import GSPath, GSNode, GSOFFCURVE, GSCURVE
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+import random
+from math import atan2, radians, sin, cos
 
 
 class Bubble(NaNFilter):
@@ -19,7 +22,7 @@ class Bubble(NaNFilter):
 
     def processLayer(self, thislayer, params):
         offset = params["offset"]
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         offsetpaths = self.saveOffsetPaths(
             thislayer, offset, offset, removeOverlap=False
         )
