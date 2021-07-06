@@ -936,7 +936,8 @@ def returnLineComponent(p1, p2, direction, component_glyphs_vh, source_component
 		scaley = 1
 		scalex = (float(1)/source_component_len)*dist
 
-	comp.transform = ((scalex, 0.0, 0.0, scaley, sx, sy))
+	comp.scale = (scalex, scaley)
+	comp.position = (sx, sy)
 	return comp
 
 
