@@ -9,6 +9,10 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+from math import atan2, degrees
+import math
+import random
 
 class Drip(NaNFilter):
 	params = {
@@ -104,7 +108,7 @@ class Drip(NaNFilter):
 			for path in outlinedata:
 				p = convertToFitpath(path[1], True)
 				thislayer.paths.append(p)
-		thislayer.removeOverlap()
+		G.remove_overlap(thislayer)
 		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=True)
 Drip()
 

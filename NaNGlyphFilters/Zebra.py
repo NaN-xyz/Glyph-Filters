@@ -8,6 +8,9 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
+import random
+from noise import snoise2
+from NaNGFNoise import noiseMap
 
 try:
     from itertools import izip
