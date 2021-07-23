@@ -1,5 +1,6 @@
 from NaNGFGraphikshared import *
 import math
+import random
 
 # strip out colour list item [2]
 def SimplifyTriangleList(triangle):
@@ -11,7 +12,7 @@ def SimplifyTriangleList(triangle):
 
 def PathToNodeList(path):
 	np = []
-	for node in path.nodes: np.append( [node.x, node.y] )
+	for node in path.nodes: np.append( [node.position.x, node.position.y] )
 	return np
 
 

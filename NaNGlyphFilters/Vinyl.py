@@ -8,6 +8,7 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 from NaNFilter import NaNFilter
 
@@ -30,7 +31,7 @@ class Vinyl(NaNFilter):
 
         offset, it, depthmin, depthmax = params["offset"], params["it"], params["depthmin"], params["depthmax"]
 
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 10)
         outlinedata = setGlyphCoords(pathlist)
         bounds = AllPathBounds(thislayer)
@@ -50,7 +51,7 @@ class Vinyl(NaNFilter):
             shadowpaths.extend( DoShadow(thislayer, outlinedata, angle, depth, "paths") )
             AddAllPathsToLayer(shadowpaths, thislayer)
         
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
 
         roundpaths = RoundPaths(thislayer.paths, "nodes")
         blobs = []
@@ -60,7 +61,7 @@ class Vinyl(NaNFilter):
 
         AddAllPathsToLayer(blobs, thislayer)
        
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
 
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 

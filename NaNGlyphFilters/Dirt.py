@@ -10,7 +10,8 @@ from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
-
+import random
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 
 class Dirt(NaNFilter):
@@ -28,7 +29,7 @@ class Dirt(NaNFilter):
         noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.2, 0, 15])
         AddAllPathsToLayer(noisepaths, thislayer)
         retractHandles(thislayer)
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
 
         offsetpaths = self.saveOffsetPaths(
             thislayer, params["offset"], params["offset"], removeOverlap=True
@@ -40,7 +41,7 @@ class Dirt(NaNFilter):
         if dirt is not None:
             dirt = ConvertPathlistDirection( removeOverlapPathlist(dirt), 1 )
             AddAllPathsToLayer(dirt, thislayer)
-            thislayer.removeOverlap()
+            G.remove_overlap(thislayer)
 
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 

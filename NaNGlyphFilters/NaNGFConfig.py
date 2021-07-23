@@ -1,17 +1,19 @@
 from GlyphsApp import *
 import random
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNGFGraphikshared import *
 from math import *
 import time
 import cProfile
 
+__all__ = ["beginFilterNaN", "beginGlyphNaN", "endGlyphNaN", "endFilterNaN", "glyphSize", "NANGFSET"]
 # Misc settings
 
 NANGFSET = {
   "highlight_glyph": True,		# colour label the processed glyph
   "highlight_col": 1,			# colour label # for orange
-  "show_time": True,			# show the time to process each glyph as well as total
-  "show_console": True,			# show macro and console window
+  "show_time": G.is_interactive,			# show the time to process each glyph as well as total
+  "show_console": G.is_interactive,			# show macro and console window
   "debug": True,				# LNP debug tool
   "smallest_path": 7,			# Smallest permissable path width and height on clean-up
   "smallest_seg": 5				# Smallest permissable segment length on clean-up
@@ -24,11 +26,11 @@ global start_time
 def beginFilterNaN(font):
 
 	global start_time
-	selectedGlyphs = [ l.parent for l in font.selectedLayers ] 
+	selectedGlyphs = G.selected_glyphs(font)
 	selectedGlyphs = filterGSGlyphList(selectedGlyphs)
 	#print selectedGlyphs
 
-	font.disableUpdateInterface()
+	G.disable_updates(font)
 	if NANGFSET["show_time"]==True: start_time = time.time()
 	if NANGFSET["show_console"]==True: 
 		Glyphs.showMacroWindow()
@@ -36,7 +38,7 @@ def beginFilterNaN(font):
 	return selectedGlyphs
 
 def endFilterNaN(font):
-	font.enableUpdateInterface()
+	G.enable_updates(font)
 	if NANGFSET["show_time"]==True: show_total_time(start_time)
 
 def beginGlyphNaN(glyph):

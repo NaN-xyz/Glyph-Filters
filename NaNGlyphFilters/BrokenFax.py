@@ -8,6 +8,7 @@ import GlyphsApp
 from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import *
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 class BrokenFax(NaNFilter):
 	params = {
@@ -17,15 +18,15 @@ class BrokenFax(NaNFilter):
 	}
 
 	def processLayer(self, thislayer, params):
-		thislayer.removeOverlap()
+		G.remove_overlap(thislayer)
 		pathlist = ConvertPathsToSkeleton(thislayer.paths, params["stepsize"])
 		outlinedata = setGlyphCoords(pathlist)
+		originx = G.layer_bounds(thislayer)[0]
 		ClearPaths(thislayer)
 
 		allpaths = []
 		size = params["stepsize"]
 		offset = params["offset"]
-		originx = thislayer.bounds.origin.x
 
 		for _,structure in outlinedata:
 			newpath = []
@@ -53,9 +54,9 @@ class BrokenFax(NaNFilter):
 
 		angularpaths = [ drawSimplePath(path) for path in allpaths]
 		AddAllPathsToLayer(angularpaths, thislayer)
-		thislayer.removeOverlap()
+		G.remove_overlap(thislayer)
 
-		offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
+		offsetpaths = self.saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
 		pathlist = ConvertPathsToSkeleton(offsetpaths, 4)
 		outlinedata = setGlyphCoords(pathlist)
 
@@ -79,7 +80,7 @@ class BrokenFax(NaNFilter):
 						shapepath = []
 						shape = drawRectangle(x, y, shapesize, shapesize)
 						shapepath.append(shape)
-						nshape = doAngularizzle(shapepath, 10)
+						nshape = ConvertPathsToSkeleton(shapepath, 10)
 						nshape = setGlyphCoords(nshape)
 						finalshape = nshape[0][1]
 						rect = self.returnSquareShape(x, y, shapesize, shapesize)

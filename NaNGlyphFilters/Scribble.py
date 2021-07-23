@@ -10,7 +10,8 @@ from NaNGFAngularizzle import *
 from NaNGFSpacePartition import *
 from NaNGFNoise import *
 from NaNFilter import NaNFilter
-
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+import random
 
 
 class Scribble(NaNFilter):
@@ -23,7 +24,7 @@ class Scribble(NaNFilter):
 
     def processLayer(self, thislayer, params):
 
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(thislayer.paths, 20))
 
         ClearPaths(thislayer)
@@ -42,7 +43,7 @@ class Scribble(NaNFilter):
 
         retractHandles(thislayer)
         AddAllPathsToLayer(noiseoutline, thislayer)
-        thislayer.removeOverlap()
+        G.remove_overlap(thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
     def ScribblePath(self, thislayer, outlinedata, walklen):

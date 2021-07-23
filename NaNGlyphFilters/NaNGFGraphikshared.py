@@ -12,12 +12,78 @@ from NaNGFAngularizzle import *
 from NaNGFFitpath import *
 from NaNGFNoise import roughenLines
 #from NaNGFNoise import * # needs to calls roughenlines()
+from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 # --------------------------------------------
+__all__ = [
+"ClearPaths",
+"ShiftAllPaths",
+"ShiftPath",
+"ChangeNodeStart",
+"withinGlyphBlack",
+"withinLayerBlack",
+"operateOnBlackAtInterval",
+"point_inside_polygon_faster",
+"point_inside_polygon",
+"MakeVector",
+"SumVectors",
+"NegateVector",
+"LerpPoints",
+"Midpoint",
+"AllPathBoundsFromPathList",
+"AllPathBounds",
+"RoundPaths",
+"RoundPath",
+"returnRoundedPaths",
+"clip",
+"convertToFitpath",
+"drawBlob",
+"drawSidedPolygon",
+"drawSpeck",
+"drawCircle",
+"drawDiamond",
+"drawRectangle",
+"drawTriangle",
+"drawSimplePath",
+# "Fill_Halftone",
+"Fill_Drawlines",
+"FillHalftoneShape",
+"Split",
+"MakeRectangles",
+# "drawAllRectangles",
+"returnRandomNodeinPaths",
+"defineStartXY",
+"ShapeWithinOutlines",
+"DistanceToNextBlack",
+"isSizeBelowThreshold",
+"AddAllComponentsToLayer",
+"AddAllPathsToLayer",
+"ConvertPathDirection",
+"ConvertPathlistDirection",
+"ContainsPaths",
+"pathCenterPoint",
+"CreateShapeComponent",
+"CreateAllShapeComponents",
+"CreateLineComponent",
+"returnLineComponent",
+"DoShadow",
+"CreateShadowLines",
+"CreateShadowPaths",
+"removeOverlapPathlist",
+"retractHandles",
+"SnapToGrid",
+"distance"
+]
+
+if "distance" not in globals():
+	def distance(p1,p2):
+		sqd = (p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2
+		return sqrt(sqd)
+
 
 def ClearPaths(thislayer):
 	"""Removes all paths in a layer, leaving anchors and components in place"""
-	thislayer.paths = []
+	G.clear_paths(thislayer)
 
 def ShiftAllPaths(paths, variance, type):
 	for path in paths:
@@ -100,7 +166,7 @@ def withinLayerBlack(layer, x, y):
 		return
 	definitelyOutside = NSMakePoint(layer.bounds.origin.x-1,y)
 	pt = NSMakePoint(x,y)
-	intersections = layer.calculateIntersectionsStartPoint_endPoint_decompose_(definitelyOutside, pt, True)
+	intersections = G.calculate_intersections(layer, definitelyOutside, pt, True)
 	return (len(intersections) % 2) == 1
 
 def operateOnBlackAtInterval(layer, func, step_x, step_y=None):
@@ -188,11 +254,7 @@ def AllPathBoundsFromPathList(paths):
 
 
 def AllPathBounds(thislayer):
-
-	x = int( thislayer.bounds.origin.x )
-	y = int( thislayer.bounds.origin.y )
-	w = int( thislayer.bounds.size.width )
-	h = int( thislayer.bounds.size.height )
+	x, y, w, h = G.layer_bounds(thislayer)
 
 	if x==0 and y==0 and w==0 and h==0:
 		return None
@@ -327,7 +389,7 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 	for n in range(0, maxpoints):
 
 		a = sides * n + rotation
-		rad = math.radians(a)
+		rad = radians(a)
 		pushpointlen = random.randrange( int(maxrad*0.5), maxrad) / 2
 		cx, cy = MakeVector(pushpointlen, rad)
 		points.append([nx+cx, ny+cy])
@@ -341,8 +403,8 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 
 		pushdist = distance(thisPt, nextPt) / 2
 
-		a1 = math.atan2(ny-cy2, nx-cx2) + math.radians(90)
-		a2 = math.atan2(ny-cy1, nx-cx1) + math.radians(90)
+		a1 = atan2(ny-cy2, nx-cx2) + radians(90)
+		a2 = atan2(ny-cy1, nx-cx1) + radians(90)
 		linex1, liney1 = MakeVector(pushdist, a1)
 		linex2, liney2 = MakeVector(pushdist, a2)
 
@@ -368,7 +430,7 @@ def drawSidedPolygon(nx, ny, maxlen, maxpoints):
 	for n in range(0, maxpoints):
 
 		a = sides * n + 90
-		cx, cy = MakeVector(maxlen/2, math.radians(a))
+		cx, cy = MakeVector(maxlen/2, radians(a))
 
 		newnode = GSNode()
 		newnode.type = GSLINE
@@ -395,7 +457,7 @@ def drawSpeck(nx, ny, maxrad, maxpoints):
 	for n in range(0, points):
 
 		a = sides * n + rotation
-		rad = math.radians(a)
+		rad = radians(a)
 		cx = nx + (maxrad/2) * cos(rad)
 		cy = ny + (maxrad/2) * sin(rad)
 
@@ -500,8 +562,8 @@ def drawSimplePath(nodes, correctDirection=False, closed=True):
 
 # 			if point_inside_polygon(col, row, shapelist):
 
-# 				nx = math.floor(col/grid) * grid
-# 				ny = math.floor(row/grid) * grid
+# 				nx = floor(col/grid) * grid
+# 				ny = floor(row/grid) * grid
 
 # 				if row%2==0:
 # 					adjust = grid/2
@@ -612,8 +674,8 @@ def FillHalftoneShape(thislayer, maskshape, shapetype):
 
 			if point_inside_polygon(col, row, shapelist):
 
-				nx = math.floor(col/grid) * grid
-				ny = math.floor(row/grid) * grid
+				nx = floor(col/grid) * grid
+				ny = floor(row/grid) * grid
 
 				if shapetype=="triangle":
 					c = drawTriangle(nx, ny, size, size)
@@ -761,14 +823,14 @@ def isSizeBelowThreshold(thing, maxw, maxh):
 
 def AddAllComponentsToLayer(components, thislayer):
 	try:
-		thislayer.components.extend(components)
+		G.add_components(thislayer, components)
 	except:
 		print("Couldn't add components to layer", thislayer)
 
 
 def AddAllPathsToLayer(paths, thislayer):
 	try:
-		thislayer.paths.extend(paths)
+		G.add_paths(thislayer, paths)
 	except:
 		print("Couldn't add all paths to layer", thislayer)
 
@@ -793,11 +855,7 @@ def ContainsPaths(thislayer):
 
 
 def pathCenterPoint(path):
-	bounds = path.bounds
-	x = bounds.origin.x
-	y = bounds.origin.y
-	w = bounds.size.width
-	h = bounds.size.height
+	x,y,w,h = G.path_bounds(path)
 	return [x+(w/2),y+(h/2)]
 
 
@@ -809,7 +867,10 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 	ng.category = "Mark"
 	ng.export = True
 	font.glyphs.append(ng)
-	layer = font.glyphs[ng.name].layers[0]
+	mid = font.masters[0].id
+	layer = GSLayer()
+	layer.layerId = mid
+	ng.layers[mid] = layer
 	layer.width = 0
 
 	# add speck, blob, perhaps even a line?
@@ -824,7 +885,7 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 	else: 
 		shape = drawDiamond(0, 0, sizex, sizey)
 
-	layer.paths.append(shape)
+	G.add_paths(layer, [shape])
 	return ng
 
 
@@ -842,14 +903,17 @@ def CreateLineComponent(font, direction, size, shapename):
 	ng.category = "Mark"
 	ng.export = True
 	font.glyphs.append(ng)
-	layer = font.glyphs[ng.name].layers[0]
+	firstmaster = font.masters[0].id
+	layer = GSLayer()
+	layer.layerId = layer.associatedMasterId = firstmaster
+	ng.layers[firstmaster] = layer
 	layer.width = 0
 
 	#line = GSPath()
 	if direction=="vertical": line = drawRectangle(0,50,size,100)
 	if direction=="horizontal": line = drawRectangle(50,0,100,size)
 
-	layer.paths.append(line)
+	G.add_paths(layer, [line])
 
 	return ng
 
@@ -872,7 +936,8 @@ def returnLineComponent(p1, p2, direction, component_glyphs_vh, source_component
 		scaley = 1
 		scalex = (float(1)/source_component_len)*dist
 
-	comp.transform = ((scalex, 0.0, 0.0, scaley, sx, sy))
+	comp.scale = (scalex, scaley)
+	comp.position = (sx, sy)
 	return comp
 
 
@@ -897,12 +962,12 @@ def DoShadow(thislayer, outlinedata, shadangle, depth, shadowtype):
             x1 = structure[thisnode][0]
             y1 = structure[thisnode][1]
 
-            rad = math.radians(shadangle)
-            x2 = x1 + depth * math.cos(rad)
-            y2 = y1 + depth * math.sin(rad)
+            rad = radians(shadangle)
+            x2 = x1 + depth * cos(rad)
+            y2 = y1 + depth * sin(rad)
 
-            xtest = x1 + 1 * math.cos(rad)
-            ytest = y1 + 1 * math.sin(rad)
+            xtest = x1 + 1 * cos(rad)
+            ytest = y1 + 1 * sin(rad)
 
             if not withinGlyphBlack(xtest, ytest, outlinedata):
                 # search for length of line within max
@@ -969,8 +1034,8 @@ def CreateShadowPaths(thislayer, lines):
 
 def removeOverlapPathlist(paths):
 	Layer = GSLayer()
-	for p in paths: Layer.paths.append(p)
-	Layer.removeOverlap()
+	G.add_paths(layer, paths)
+	Layer = G.remove_overlap(Layer)
 	newpaths = Layer.paths
 	del Layer
 	return newpaths
@@ -978,14 +1043,14 @@ def removeOverlapPathlist(paths):
 # MekkaBlue
 def retractHandles(thisLayer):
 	for thisPath in thisLayer.paths:
-		for x in reversed( range( len( thisPath.nodes ))):
+		for x in reversed( list(range( len( thisPath.nodes )))):
 			thisNode = thisPath.nodes[x]
 			if thisNode.type == GSOFFCURVE:
 				del thisPath.nodes[x]
 			else:
 				thisNode.type = GSLINE
 		
-		thisPath.checkConnections()
+		G.check_path_connections(thisPath)
 
 def SnapToGrid(lines, gridsize):
 	for line in lines:

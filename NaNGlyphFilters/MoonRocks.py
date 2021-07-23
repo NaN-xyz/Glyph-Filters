@@ -27,5 +27,4 @@ class MoonRocks(NaNFilter):
         AddAllPathsToLayer(moonrockpaths, thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
-if __name__ == "__main__":
-    MoonRocks()
+MoonRocks()

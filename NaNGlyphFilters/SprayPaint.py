@@ -10,6 +10,8 @@ from NaNGFAngularizzle import *
 from NaNGFNoise import *
 from noise import *
 from NaNFilter import NaNFilter
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+from math import atan2, radians
 
 
 class Spray(NaNFilter):
@@ -37,7 +39,7 @@ class Spray(NaNFilter):
 			if not outlinedata:
 				continue
 
-			thislayer.paths.append(self.makePathSpiky(outlinedata[0][1]))
+			G.add_paths(thislayer, [self.makePathSpiky(outlinedata[0][1])])
 
 
 
