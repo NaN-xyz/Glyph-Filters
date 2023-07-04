@@ -772,20 +772,20 @@ def returnRandomNodeinPaths(outlinedata):
 
 def defineStartXY(thislayer, outlinedata):
 
-	try: 
-		b = AllPathBounds(thislayer)
-		ox, oy, w, h = b[0], b[1], b[2], b[3]
-	 
-		inside = False
-		breakcounter = 0
-		while breakcounter<200: 
-			rx = random.randrange(ox, ox+w)
-			ry = random.randrange(oy, oy+h)
-			if withinGlyphBlack(rx, ry, outlinedata):
-				return [rx, ry]
-			breakcounter+=1
-	except: 
+	b = AllPathBounds(thislayer)
+	if not b:
 		return None
+	ox, oy, w, h = b[0], b[1], b[2], b[3]
+	
+	inside = False
+	breakcounter = 0
+	while breakcounter<200: 
+		rx = random.randrange(ox, ox+w)
+		ry = random.randrange(oy, oy+h)
+		if withinGlyphBlack(rx, ry, outlinedata):
+			return [rx, ry]
+		breakcounter+=1
+	return None
 
  
 
