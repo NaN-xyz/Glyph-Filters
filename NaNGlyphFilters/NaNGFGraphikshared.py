@@ -867,25 +867,26 @@ def CreateShapeComponent(font, sizex, sizey, shapetype, shapename):
 	ng.category = "Mark"
 	ng.export = True
 	font.glyphs.append(ng)
-	mid = font.masters[0].id
-	layer = GSLayer()
-	layer.layerId = mid
-	ng.layers[mid] = layer
-	layer.width = 0
+	for master in font.masters:
+		mid = master.id
+		layer = GSLayer()
+		layer.layerId = mid
+		ng.layers[mid] = layer
+		layer.width = 0
 
-	# add speck, blob, perhaps even a line?
-	if shapetype=="circle":
-		shape = drawCircle(0, 0, sizex, sizey)
-	elif shapetype=="diamond":
-		shape = drawDiamond(0, 0, sizex, sizey)
-	elif shapetype=="rectangle":
-		shape = drawRectangle(0, 0, sizex, sizey)
-	elif shapetype=="triangle":
-		shape = drawTriangle(0, 0, sizex, sizey)
-	else: 
-		shape = drawDiamond(0, 0, sizex, sizey)
+		# add speck, blob, perhaps even a line?
+		if shapetype=="circle":
+			shape = drawCircle(0, 0, sizex, sizey)
+		elif shapetype=="diamond":
+			shape = drawDiamond(0, 0, sizex, sizey)
+		elif shapetype=="rectangle":
+			shape = drawRectangle(0, 0, sizex, sizey)
+		elif shapetype=="triangle":
+			shape = drawTriangle(0, 0, sizex, sizey)
+		else: 
+			shape = drawDiamond(0, 0, sizex, sizey)
 
-	G.add_paths(layer, [shape])
+		G.add_paths(layer, [shape])
 	return ng
 
 
@@ -903,17 +904,17 @@ def CreateLineComponent(font, direction, size, shapename):
 	ng.category = "Mark"
 	ng.export = True
 	font.glyphs.append(ng)
-	firstmaster = font.masters[0].id
-	layer = GSLayer()
-	layer.layerId = layer.associatedMasterId = firstmaster
-	ng.layers[firstmaster] = layer
-	layer.width = 0
+	for master in font.masters:
+		layer = GSLayer()
+		layer.layerId = layer.associatedMasterId = master.id
+		ng.layers[master.id] = layer
+		layer.width = 0
 
-	#line = GSPath()
-	if direction=="vertical": line = drawRectangle(0,50,size,100)
-	if direction=="horizontal": line = drawRectangle(50,0,100,size)
+		#line = GSPath()
+		if direction=="vertical": line = drawRectangle(0,50,size,100)
+		if direction=="horizontal": line = drawRectangle(50,0,100,size)
 
-	G.add_paths(layer, [line])
+		G.add_paths(layer, [line])
 
 	return ng
 

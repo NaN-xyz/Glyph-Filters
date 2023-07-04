@@ -22,18 +22,21 @@ class NaNFilter:
     def processGlyph(self, glyph):
         G.begin_undo(glyph)
         beginGlyphNaN(glyph)
-
-        thislayer = self.font.glyphs[glyph.name].layers[0]
-        G.begin_layer_changes(thislayer)
-        #thislayer.correctPathDirection()
-        if hasattr(self, "params"):
-            params = self.params[glyphSize(glyph)]
-        else:
-            params = None
-        self.processLayer(thislayer, params)
-        self.font.glyphs[glyph.name].layers = [thislayer]
-
-        G.end_layer_changes(thislayer)
+        newlayers = []
+        seed = time.time()
+        for thislayer in glyph.layers:
+            # Use the same random seed for each layer, else we're in trouble
+            random.seed(seed)
+            G.begin_layer_changes(thislayer)
+            #thislayer.correctPathDirection()
+            if hasattr(self, "params"):
+                params = self.params[glyphSize(glyph)]
+            else:
+                params = None
+            self.processLayer(thislayer, params)
+            newlayers.append(thislayer)
+            G.end_layer_changes(thislayer)
+        glyph.layers = newlayers
         endGlyphNaN(glyph)
         G.end_undo(glyph)
 
