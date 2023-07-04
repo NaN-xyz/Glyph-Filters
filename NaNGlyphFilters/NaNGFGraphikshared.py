@@ -72,7 +72,8 @@ __all__ = [
 "removeOverlapPathlist",
 "retractHandles",
 "SnapToGrid",
-"distance"
+"distance",
+"roughenLines"
 ]
 
 if "distance" not in globals():
@@ -1062,3 +1063,41 @@ def SnapToGrid(lines, gridsize):
 			pt[1] = int(pt[1]/gridsize)*gridsize
 
 	return lines
+
+def roughenLines(lines, depth):
+    newlines = []
+    stepsize = 15
+    noisescale = 0.01
+    seedx = random.randrange(0, 100000)
+    seedy = random.randrange(0, 100000)
+    minshift = 0
+    maxshift = 3
+    nstep = 0
+
+    # Build lines now, noise it up a bit later
+    for l1, l2 in lines:
+        for n in range(0, len(l1)):
+            x1, y1 = l1[n][0], l1[n][1]
+            x2, y2 = l2[n][0], l2[n][1]
+
+            newline = []
+            stepnum = math.floor(depth / stepsize)
+            stepsize_x = (x2 - x1) / stepnum
+            stepsize_y = (y2 - y1) / stepnum
+            newx, newy = x1, y1
+            step = 0
+
+            while step < stepnum + 1:
+                rx2 = random.randrange(-2, 2)
+                ry2 = random.randrange(-2, 2)
+
+                newline.append([newx, newy])
+                newx += stepsize_x + rx2
+                newy += stepsize_y + ry2
+
+                step += 1
+                nstep += 1
+
+            newlines.append(newline)
+
+    return newlines
