@@ -47,7 +47,7 @@ __all__ = [
 "drawSimplePath",
 # "Fill_Halftone",
 "Fill_Drawlines",
-"FillHalftoneShape",
+#"FillHalftoneShape",
 "Split",
 "MakeRectangles",
 # "drawAllRectangles",
@@ -654,40 +654,40 @@ def Fill_Drawlines(thislayer, path, direction, gap, linecomponents):
 	return linecomponents
 
 
-def FillHalftoneShape(thislayer, maskshape, shapetype):
+# def FillHalftoneShape(thislayer, maskshape, shapetype):
 
-	allshapes = []
+# 	allshapes = []
 
-	t = maskshape
-	shapelist = PathToNodeList(t)
-	x = int (t.bounds.origin.x)
-	y = int (t.bounds.origin.y)
-	w = int (t.bounds.size.width)
-	h = int (t.bounds.size.height)
+# 	t = maskshape
+# 	shapelist = PathToNodeList(t)
+# 	x = int (t.bounds.origin.x)
+# 	y = int (t.bounds.origin.y)
+# 	w = int (t.bounds.size.width)
+# 	h = int (t.bounds.size.height)
 
-	grid = 13
-	size = random.randrange(12, 24)
+# 	grid = 13
+# 	size = random.randrange(12, 24)
 
-	for col in range(x, x+w, grid):
+# 	for col in range(x, x+w, grid):
 
-		for row in range(y, y+h, grid):
+# 		for row in range(y, y+h, grid):
 
-			if point_inside_polygon(col, row, shapelist):
+# 			if point_inside_polygon(col, row, shapelist):
 
-				nx = floor(col/grid) * grid
-				ny = floor(row/grid) * grid
+# 				nx = math.floor(col/grid) * grid
+# 				ny = math.floor(row/grid) * grid
 
-				if shapetype=="triangle":
-					c = drawTriangle(nx, ny, size, size)
-				if shapetype=="circle":
-					c = drawCircle(nx, ny, size, size)
+# 				if shapetype=="triangle":
+# 					c = drawTriangle(nx, ny, size, size)
+# 				if shapetype=="circle":
+# 					c = drawCircle(nx, ny, size, size)
 
-				#thislayer.paths.append(c)
-				allshapes.append(c)
+# 				#thislayer.paths.append(c)
+# 				allshapes.append(c)
 
-		size+=0.3
+# 		size+=0.3
 
-	return allshapes
+# 	return allshapes
 
 
 
