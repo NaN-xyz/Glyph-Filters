@@ -8,7 +8,8 @@ class Glyphs2:
 
     @classmethod
     def calculate_intersections(cls, layer, p1, p2, b):
-        layer.calculateIntersectionsStartPoint_endPoint_decompose_(p1, p2, True)
+        from Foundation import NSMakePoint
+        layer.calculateIntersectionsStartPoint_endPoint_decompose_(NSMakePoint(*p1), NSMakePoint(*p2), True)
 
     @classmethod
     def layer_bounds(cls, thislayer):

@@ -164,8 +164,8 @@ def withinGlyphBlack(x, y, glyph):
 def withinLayerBlack(layer, x, y):
 	if not layer.bounds:
 		return
-	definitelyOutside = NSMakePoint(layer.bounds.origin.x-1,y)
-	pt = NSMakePoint(x,y)
+	definitelyOutside = (layer.bounds.origin.x-1,y)
+	pt = (x,y)
 	intersections = G.calculate_intersections(layer, definitelyOutside, pt, True)
 	return (len(intersections) % 2) == 1
 
