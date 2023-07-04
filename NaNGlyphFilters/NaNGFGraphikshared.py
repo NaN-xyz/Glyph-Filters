@@ -1037,11 +1037,11 @@ def CreateShadowPaths(thislayer, lines):
 
 
 def removeOverlapPathlist(paths):
-	Layer = GSLayer()
+	layer = GSLayer()
 	G.add_paths(layer, paths)
-	Layer = G.remove_overlap(Layer)
-	newpaths = Layer.paths
-	del Layer
+	layer = G.remove_overlap(layer)
+	newpaths = layer.paths
+	del layer
 	return newpaths
 
 # MekkaBlue
