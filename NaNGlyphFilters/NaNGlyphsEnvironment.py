@@ -177,10 +177,6 @@ class GlyphsLib(Glyphs2):
         raise NotImplementedError
 
     @classmethod
-    def check_path_connections(cls, path):
-        raise NotImplementedError
-
-    @classmethod
     def offset_layer(cls, layer, hoffset, voffset, position=0.5, make_stroke=False):
         import ufostroker
         import ufoLib2
