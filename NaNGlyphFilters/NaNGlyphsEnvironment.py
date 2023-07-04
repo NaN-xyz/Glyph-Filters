@@ -277,5 +277,8 @@ try:
         glyphsEnvironment = Glyphs3
     else:
         glyphsEnvironment = Glyphs2
+    from GlyphsApp import *
 except Exception as e:
+    import glyphsLib
     glyphsEnvironment = GlyphsLib
+    from glyphsLib import *
