@@ -79,7 +79,7 @@ __all__ = [
 if "distance" not in globals():
 	def distance(p1,p2):
 		sqd = (p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2
-		return sqrt(sqd)
+		return math.sqrt(sqd)
 
 
 def ClearPaths(thislayer):
@@ -228,7 +228,7 @@ def point_inside_polygon(x,y,poly):
 
 
 def MakeVector(length, angle):
-	return length * cos(angle), length * sin(angle)
+	return length * math.cos(angle), length * math.sin(angle)
 
 def SumVectors(*args):
 	return [
@@ -392,7 +392,7 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 	for n in range(0, maxpoints):
 
 		a = sides * n + rotation
-		rad = radians(a)
+		rad = math.radians(a)
 		pushpointlen = random.randrange( int(maxrad*0.5), maxrad) / 2
 		cx, cy = MakeVector(pushpointlen, rad)
 		points.append([nx+cx, ny+cy])
@@ -406,8 +406,8 @@ def drawBlob(nx, ny, maxrad, maxpoints, rounded):
 
 		pushdist = distance(thisPt, nextPt) / 2
 
-		a1 = atan2(ny-cy2, nx-cx2) + radians(90)
-		a2 = atan2(ny-cy1, nx-cx1) + radians(90)
+		a1 = math.atan2(ny-cy2, nx-cx2) + math.radians(90)
+		a2 = math.atan2(ny-cy1, nx-cx1) + math.radians(90)
 		linex1, liney1 = MakeVector(pushdist, a1)
 		linex2, liney2 = MakeVector(pushdist, a2)
 
@@ -433,7 +433,7 @@ def drawSidedPolygon(nx, ny, maxlen, maxpoints):
 	for n in range(0, maxpoints):
 
 		a = sides * n + 90
-		cx, cy = MakeVector(maxlen/2, radians(a))
+		cx, cy = MakeVector(maxlen/2, math.radians(a))
 
 		newnode = GSNode()
 		newnode.type = GSLINE
@@ -460,9 +460,9 @@ def drawSpeck(nx, ny, maxrad, maxpoints):
 	for n in range(0, points):
 
 		a = sides * n + rotation
-		rad = radians(a)
-		cx = nx + (maxrad/2) * cos(rad)
-		cy = ny + (maxrad/2) * sin(rad)
+		rad = math.radians(a)
+		cx = nx + (maxrad/2) * math.cos(rad)
+		cy = ny + (maxrad/2) * math.sin(rad)
 
 		newnode = GSNode()
 		newnode.type = GSLINE
@@ -801,7 +801,7 @@ def DistanceToNextBlack(thislayer, p1, p2, outlinedata, searchlimit):
 	x2, y2 = p2
 	mid = Midpoint(p1, p2)
 
-	a = atan2(y1-y2, x1-x2) + radians(90)
+	a = math.atan2(y1-y2, x1-x2) + math.radians(90)
 
 	pushdist = 10
 	stepx, stepy = MakeVector(pushdist, a)
@@ -966,12 +966,12 @@ def DoShadow(thislayer, outlinedata, shadangle, depth, shadowtype):
             x1 = structure[thisnode][0]
             y1 = structure[thisnode][1]
 
-            rad = radians(shadangle)
-            x2 = x1 + depth * cos(rad)
-            y2 = y1 + depth * sin(rad)
+            rad = math.radians(shadangle)
+            x2 = x1 + depth * math.cos(rad)
+            y2 = y1 + depth * math.sin(rad)
 
-            xtest = x1 + 1 * cos(rad)
-            ytest = y1 + 1 * sin(rad)
+            xtest = x1 + 1 * math.cos(rad)
+            ytest = y1 + 1 * math.sin(rad)
 
             if not withinGlyphBlack(xtest, ytest, outlinedata):
                 # search for length of line within max
