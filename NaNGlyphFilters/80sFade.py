@@ -4,12 +4,20 @@ __doc__ = """
 80s Fade
 """
 
-from GlyphsApp import GSComponent
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+from NaNGlyphsEnvironment import GSComponent
+from NaNGFGraphikshared import (
+    setGlyphCoords,
+    AllPathBounds,
+    MakeRectangles,
+    ClearPaths,
+    AddAllComponentsToLayer,
+    CreateAllShapeComponents,
+    withinGlyphBlack,
+    point_inside_polygon,
+)
+from NaNGFAngularizzle import ConvertPathsToSkeleton
 from NaNFilter import NaNFilter
 import random
-
 
 
 class EightiesFade(NaNFilter):
@@ -58,7 +66,7 @@ class EightiesFade(NaNFilter):
                     fadecomp = GSComponent(r)
                     scale = size / 100.0
                     fadecomp.scale = (scale, scale)
-                    fadecomp.position = (x,y) # ? 
+                    fadecomp.position = (x, y)  # ?
                     fadecomps.append(fadecomp)
                 size += 0.01
 

@@ -4,10 +4,10 @@ __doc__="""
 Storm
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFNoise import *
 from NaNFilter import NaNFilter
+from NaNGFGraphikshared import ClearPaths, CreateShapeComponent, operateOnBlackAtInterval
+from NaNGFNoise import noiseMap
+from NaNGlyphsEnvironment import GSComponent
 
 class Storm(NaNFilter):
 	gridsize = 30

@@ -4,11 +4,10 @@ __doc__ = """
 Doodle Shadow
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
-from NaNGFNoise import *
+
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, DoShadow
+from NaNGFNoise import NoiseOutline
 import random
 
 from NaNFilter import NaNFilter

@@ -4,13 +4,12 @@ __doc__ = """
 Marker Hatch
 """
 
-from GlyphsApp import GSLayer
+import copy
+import random
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, drawSimplePath, point_inside_polygon, retractHandles, returnRoundedPaths
 from NaNGlyphsEnvironment import glyphsEnvironment as G
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
 from NaNGFConfig import glyphSize
-from NaNGFNoise import *
 from NaNFilter import NaNFilter
 from math import cos, radians, sin
 

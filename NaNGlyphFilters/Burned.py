@@ -3,13 +3,12 @@
 __doc__ = """
 Burned
 """
+import random
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
-from NaNGFNoise import *
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import convertToFitpath, ClearPaths, AddAllPathsToLayer, AllPathBounds, RoundPath
 from NaNFilter import NaNFilter
+from NaNGFSpacePartition import BreakUpSpace
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 
@@ -32,6 +31,7 @@ class Burn(NaNFilter):
     }
 
     def processLayer(self, thislayer, params):
+        maxchain = random.randrange(200, 400)
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(thislayer.paths, 20))
         bounds = AllPathBounds(thislayer)
 
@@ -51,7 +51,6 @@ class Burn(NaNFilter):
             action="overlap",
             randomize=True,
         )
-        maxchain = random.randrange(200, 400)
         groups = BreakUpSpace(
             thislayer, outlinedata, newtris, params["gridsize"], maxchain
         )
@@ -63,6 +62,14 @@ class Burn(NaNFilter):
         roundedpathlist = returnRoundedPaths(thislayer.paths)
         ClearPaths(thislayer)
         AddAllPathsToLayer(roundedpathlist, thislayer)
-        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+        self.CleanOutlines(
+            thislayer,
+            remSmallPaths=True,
+            remSmallSegments=True,
+            remStrayPoints=True,
+            remOpenPaths=True,
+            keepshape=False,
+        )
+
 
 Burn()

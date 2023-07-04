@@ -4,9 +4,9 @@ __doc__="""
 Gemstones
 """
 
-from GlyphsApp import GSNode, GSLINE
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AddAllPathsToLayer, ClearPaths, ConvertPathlistDirection, retractHandles
+from NaNGlyphsEnvironment import GSNode, GSLINE
 from NaNFilter import NaNFilter
 from NaNCommonFilters import moonrocks, spikes
 

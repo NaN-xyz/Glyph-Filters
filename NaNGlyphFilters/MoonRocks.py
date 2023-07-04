@@ -4,9 +4,8 @@ __doc__ = """
 Moon Rocks
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AddAllPathsToLayer, ConvertPathlistDirection
 from NaNFilter import NaNFilter
 from NaNCommonFilters import moonrocks
 

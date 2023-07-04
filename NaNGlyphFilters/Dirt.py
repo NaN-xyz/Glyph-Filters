@@ -4,11 +4,9 @@ __doc__ = """
 Dirt
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
-from NaNGFNoise import *
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import ClearPaths, AddAllPathsToLayer, retractHandles, ConvertPathlistDirection, removeOverlapPathlist, defineStartXY, withinGlyphBlack, drawSpeck
+from NaNGFNoise import NoiseOutline, noiseMap
 from NaNFilter import NaNFilter
 import random
 from NaNGlyphsEnvironment import glyphsEnvironment as G

@@ -4,10 +4,10 @@ __doc__ = """
 Vinyl
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
+import random
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFFitpath import convertToFitpath
+from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, DoShadow, RoundPaths
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 from NaNFilter import NaNFilter

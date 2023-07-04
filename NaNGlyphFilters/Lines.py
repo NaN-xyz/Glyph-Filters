@@ -4,10 +4,9 @@ __doc__ = """
 Lines
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AddAllComponentsToLayer, AllPathBounds, ClearPaths, CreateLineComponent, MakeRectangles, SnapToGrid, point_inside_polygon_faster, returnLineComponent, withinGlyphBlack
 
 
 class Lines(NaNFilter):

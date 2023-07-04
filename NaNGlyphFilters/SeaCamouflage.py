@@ -4,16 +4,16 @@ __doc__ = """
 SeaCamouflage
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
-from NaNGFNoise import *
+import math
 from NaNFilter import NaNFilter
 import copy
 import random
 from math import sin, cos, degrees, radians
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, ShiftAllPaths, point_inside_polygon, returnRoundedPaths
+from NaNGFNoise import noiseMap
 from NaNGlyphsEnvironment import glyphsEnvironment as G
+from NaNGlyphsEnvironment import GSPath, GSNode, GSLINE
 
 
 class SeaCamouflage(NaNFilter):

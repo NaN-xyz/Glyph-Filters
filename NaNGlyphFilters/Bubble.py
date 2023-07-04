@@ -4,9 +4,9 @@ __doc__ = """
 Bubble
 """
 
-from GlyphsApp import GSPath, GSNode, GSOFFCURVE, GSCURVE
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+from NaNGlyphsEnvironment import GSPath, GSNode, GSOFFCURVE, GSCURVE
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import ClearPaths, DistanceToNextBlack, Direction
 from NaNFilter import NaNFilter
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 import random

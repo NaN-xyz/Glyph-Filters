@@ -4,13 +4,11 @@ __doc__ = """
 Doodle Triangles
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
-from NaNGFNoise import *
-
+import random
 from NaNFilter import NaNFilter
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, ConvertPathlistDirection
+from NaNGFNoise import NoiseOutline
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 

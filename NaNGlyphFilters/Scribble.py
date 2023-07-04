@@ -4,12 +4,10 @@ __doc__ = """
 Scribble
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
-from NaNGFNoise import *
+from NaNGFGraphikshared import AddAllPathsToLayer, ClearPaths, defineStartXY, drawSimplePath, retractHandles, withinGlyphBlack
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
 from NaNFilter import NaNFilter
+from NaNGFNoise import NoiseOutline, noiseMap
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 import random
 
@@ -32,7 +30,7 @@ class Scribble(NaNFilter):
         noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.05, 0, 35])
         noiseoutline = self.expandMonolineFromPathlist(noisepaths, self.pen)
         outlinedata2 = setGlyphCoords(ConvertPathsToSkeleton(noisepaths, 4))
-
+        
         allscribbles = []
         for n in range(0, params["iterations"]):
             scribble = self.ScribblePath(thislayer, outlinedata2, params["walklen"])
@@ -49,7 +47,6 @@ class Scribble(NaNFilter):
     def ScribblePath(self, thislayer, outlinedata, walklen):
 
         start = defineStartXY(thislayer, outlinedata)
-
         if start is None:
             return None
         else:

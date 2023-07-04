@@ -1,5 +1,5 @@
 from NaNGFGraphikshared import *
-from GlyphsApp import GSPath
+from NaNGlyphsEnvironment import GSPath
 from NaNGFAngularizzle import Direction, setGlyphCoords, ConvertPathsToSkeleton
 import random
 import math

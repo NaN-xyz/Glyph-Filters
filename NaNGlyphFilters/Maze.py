@@ -4,9 +4,10 @@ __doc__ = """
 Maze
 """
 
-from GlyphsApp import GSNode, GSLINE, GSPath
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFConfig import ContainsPaths
+from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, ShapeWithinOutlines, drawTriangle
+from NaNGlyphsEnvironment import GSNode, GSLINE, GSPath
 from NaNFilter import NaNFilter
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 import random

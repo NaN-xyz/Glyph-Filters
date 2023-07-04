@@ -4,9 +4,9 @@ __doc__ = """
 Glitch
 """
 
-from GlyphsApp import GSLayer
-from NaNGFGraphikshared import *
-from NaNGFNoise import *
+from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, ShiftPath
+from NaNGFNoise import noiseMap
+from NaNGlyphsEnvironment import GSLayer
 from NaNFilter import NaNFilter
 import random
 from NaNGlyphsEnvironment import glyphsEnvironment as G

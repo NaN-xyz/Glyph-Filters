@@ -4,10 +4,9 @@ __doc__="""
 Microbe
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AddAllPathsToLayer, ClearPaths
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNCommonFilters import moonrocks
 

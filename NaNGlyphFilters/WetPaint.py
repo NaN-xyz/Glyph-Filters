@@ -4,11 +4,11 @@ __doc__="""
 Wet Paint
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFNoise import *
 from NaNFilter import NaNFilter
+from NaNGFAngularizzle import ConvertPathsToSkeleton, Direction, setGlyphCoords
+from NaNGFFitpath import convertToFitpath
+from NaNGFGraphikshared import DistanceToNextBlack
+from NaNGFNoise import noiseMap
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 from math import atan2, degrees
 import math

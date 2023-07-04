@@ -1,4 +1,4 @@
-from GlyphsApp import *
+from NaNGlyphsEnvironment import GSNode, GSPath, GSLINE
 import math
 
 

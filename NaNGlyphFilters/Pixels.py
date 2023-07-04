@@ -4,10 +4,12 @@ __doc__="""
 Pixel
 """
 
-from GlyphsApp import GSGlyph, GSLayer, GSComponent
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFNoise import *
+import random
+from re import S
+from NaNGFNoise import noiseMap
+from NaNGlyphsEnvironment import GSGlyph, GSLayer, GSComponent
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AllPathBounds, ClearPaths, ShapeWithinOutlines, drawRectangle
 from NaNFilter import NaNFilter
 
 class Pixel(NaNFilter):

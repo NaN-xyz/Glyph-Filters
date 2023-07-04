@@ -4,12 +4,12 @@ __doc__="""
 Spray Paint
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFNoise import *
-from noise import *
+import random
 from NaNFilter import NaNFilter
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFFitpath import convertToFitpath
+from NaNGFGraphikshared import ClearPaths, MakeVector, RoundPath, drawSimplePath, isSizeBelowThreshold
+from NaNGFNoise import noiseMap
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 from math import atan2, radians
 

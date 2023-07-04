@@ -4,11 +4,21 @@ __doc__="""
 Broken Fax
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNFilter import *
+from NaNGFGraphikshared import (
+	AddAllPathsToLayer,
+	ShapeWithinOutlines,
+	drawSimplePath,
+	ConvertPathlistDirection,
+    setGlyphCoords,
+    AllPathBounds,
+    ClearPaths,
+    point_inside_polygon,
+    drawRectangle
+)
+from NaNGFAngularizzle import ConvertPathsToSkeleton
+from NaNFilter import NaNFilter
 from NaNGlyphsEnvironment import glyphsEnvironment as G
+import random
 
 class BrokenFax(NaNFilter):
 	params = {

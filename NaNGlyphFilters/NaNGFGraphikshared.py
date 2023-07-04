@@ -1,18 +1,13 @@
-from GlyphsApp import *
 
-from math import *
 import random
 import copy
-import numpy as np
-import matplotlib.path as mpltPath
-from Foundation import NSMakePoint
+import math
+#from Foundation import NSMakePoint
 
-from NaNGFConfig import *
-from NaNGFAngularizzle import *
-from NaNGFFitpath import *
-from NaNGFNoise import roughenLines
-#from NaNGFNoise import * # needs to calls roughenlines()
+from NaNGFAngularizzle import (setGlyphCoords, Direction, ConvertPathsToSkeleton)
 from NaNGlyphsEnvironment import glyphsEnvironment as G
+from NaNGlyphsEnvironment import GSPath, GSGlyph, GSLayer, GSNode, GSLINE, GSOFFCURVE, GSCURVE, GSComponent
+from NaNGFFitpath import fitpath
 
 # --------------------------------------------
 __all__ = [

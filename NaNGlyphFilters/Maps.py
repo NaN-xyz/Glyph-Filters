@@ -4,12 +4,14 @@ __doc__ = """
 Maps
 """
 
-from GlyphsApp import GSLayer
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
-from NaNGFConfig import *
+import random
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFConfig import glyphSize
+from NaNGFFitpath import convertToFitpath
+from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, AllPathBoundsFromPathList, ClearPaths, ConvertPathDirection, CreateLineComponent, Fill_Drawlines, RoundPath, returnRoundedPaths
+from NaNGFSpacePartition import BreakUpSpace
 from NaNGlyphsEnvironment import glyphsEnvironment as G
+from NaNGlyphsEnvironment import GSLayer
 from NaNFilter import NaNFilter
 
 

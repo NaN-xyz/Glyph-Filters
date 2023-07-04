@@ -11,7 +11,8 @@ from "Graphics Gems", Academic Press, 1990
 Modifications and optimisations of original algorithm by Juerg Lehni.
 Ported by Gumble, 2015.
 """
-from GlyphsApp import *
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+from NaNGlyphsEnvironment import GSPath, GSNode, GSCURVE, GSOFFCURVE, GSLINE
 import math
 
 TOLERANCE = 10e-6

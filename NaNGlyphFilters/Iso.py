@@ -4,11 +4,11 @@ __doc__="""
 Iso
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
+import random
 from NaNFilter import NaNFilter
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFGraphikshared import AllPathBounds, ClearPaths
+from NaNGFSpacePartition import BreakUpSpace
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 

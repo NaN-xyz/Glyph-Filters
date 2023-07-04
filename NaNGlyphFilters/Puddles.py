@@ -4,11 +4,11 @@ __doc__ = """
 Puddles
 """
 
-from GlyphsApp import GSLINE, GSOFFCURVE, GSCURVE, GSPath, GSNode
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+from NaNGFGraphikshared import ChangeNodeStart, ClearPaths, MakeVector, Midpoint, NegateVector, SumVectors, distance
+from NaNGlyphsEnvironment import GSLINE, GSOFFCURVE, GSCURVE, GSPath, GSNode
 from NaNFilter import NaNFilter
-from math import sin, cos, atan2, radians
+from math import atan2, radians
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 import copy
 import random

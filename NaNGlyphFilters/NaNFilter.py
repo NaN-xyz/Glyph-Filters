@@ -1,9 +1,11 @@
-from NaNGFGraphikshared import *
+import random
+import time
 import traceback
-from GlyphsApp import Glyphs, OFFCURVE, GSLayer
+from NaNGFConfig import NANGFSET, beginFilterNaN, beginGlyphNaN, endFilterNaN, endGlyphNaN, glyphSize
+from NaNGFGraphikshared import SnapToGrid
+from NaNGFSpacePartition import IsoGridToTriangles, RandomiseIsoPoints, ReturnOutlineOverlappingTriangles, StickTrianglesToOutline, TrianglesListToPaths, makeIsometricGrid, returnTriangleTypes
+from NaNGlyphsEnvironment import OFFCURVE, GSLayer, Glyphs
 from Foundation import NSClassFromString
-from NaNGFSpacePartition import *
-from NaNGFConfig import *
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 

@@ -4,10 +4,14 @@ __doc__ = """
 Glitch Pop
 """
 
-from GlyphsApp import GSLayer
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
+import math
+import random
+from Burned import returnRoundedPaths
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFFitpath import convertToFitpath
+from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, AllPathBoundsFromPathList, ClearPaths, CreateLineComponent, Fill_Drawlines, RoundPath, drawCircle, drawTriangle, point_inside_polygon, returnLineComponent
+from NaNGFSpacePartition import BreakUpSpace, PathToNodeList
+from NaNGlyphsEnvironment import GSLayer
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNGFConfig import glyphSize
 
