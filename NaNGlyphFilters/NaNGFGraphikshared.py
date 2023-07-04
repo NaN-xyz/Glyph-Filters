@@ -186,6 +186,8 @@ def operateOnBlackAtInterval(layer, func, step_x, step_y=None):
 	return results
 
 def point_inside_polygon_faster(x,y,poly):
+	import matplotlib.path as mpltPath
+	import numpy as np
 
 	inside = False
 
