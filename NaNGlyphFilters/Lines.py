@@ -85,6 +85,8 @@ class Lines(NaNFilter):
         lines = SnapToGrid(lines, self.strokesize )
 
         for l in lines:
+            if l[0] == l[-1]:
+                continue
             comp = returnLineComponent(
                 l[0],
                 l[-1],
