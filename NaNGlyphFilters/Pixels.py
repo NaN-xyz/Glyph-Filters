@@ -41,44 +41,45 @@ class Pixel(NaNFilter):
 			ng.category = "Mark"
 			ng.export = True
 			font.glyphs.append(ng)
-			firstmaster = font.masters[0].id
-			thislayer = GSLayer()
-			thislayer.layerId = thislayer.associatedMasterId =firstmaster
-			ng.layers[firstmaster] = thislayer
-			thislayer.width = 0
-			ox, oy = 0, 0
-			w, h = 40, 40
-			grid = 10
-			unit = 5
+			for master in font.masters:
+				mid = master.id
+				thislayer = GSLayer()
+				thislayer.layerId = thislayer.associatedMasterId = mid
+				ng.layers[mid] = thislayer
+				thislayer.width = 0
+				ox, oy = 0, 0
+				w, h = 40, 40
+				grid = 10
+				unit = 5
 
-			if size!=0:
-				gridx = 10 * size
-				gridy = gridx
-			else:
-				gridx = 10
-				gridy = 5
+				if size!=0:
+					gridx = 10 * size
+					gridy = gridx
+				else:
+					gridx = 10
+					gridy = 5
 
-			x, y = ox, oy
-			switchx = False
+				x, y = ox, oy
+				switchx = False
 
-			for x in range(ox, ox+w, gridx):
-				for y in range(oy, oy+h, gridy):
-					if switchx==True:
-						if size==0:
-							adjust = 5
-							switchx = not switchx
+				for x in range(ox, ox+w, gridx):
+					for y in range(oy, oy+h, gridy):
+						if switchx==True:
+							if size==0:
+								adjust = 5
+								switchx = not switchx
+							else:
+								adjust = gridx/2
+								switchx = not switchx
 						else:
-							adjust = gridx/2
+							adjust=0
 							switchx = not switchx
-					else:
-						adjust=0
-						switchx = not switchx
 
-					ns = drawRectangle( x + adjust, y , unit, unit)
-					thislayer.paths.append(ns)
+						ns = drawRectangle( x + adjust, y , unit, unit)
+						thislayer.paths.append(ns)
 
-				switchx = False 
-			components.append(ng)
+					switchx = False 
+				components.append(ng)
 		return components
 
 	def HalftoneGrid(self, thislayer, outlinedata, bounds, components):
