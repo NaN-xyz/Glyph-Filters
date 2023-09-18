@@ -36,6 +36,8 @@ def beginFilterNaN(font):
     if NANGFSET["show_time"]:
         start_time = time.time()
     if NANGFSET["show_console"]:
+        from GlyphsApp import Glyphs
+
         Glyphs.showMacroWindow()
         Glyphs.clearLog()
     return selectedGlyphs
