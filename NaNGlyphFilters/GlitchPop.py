@@ -81,7 +81,7 @@ class GlitchPop(NaNFilter):
                 continue
 
             templayer = GSLayer()
-            templayer.paths = g
+            G.add_paths(templayer, g)
             G.remove_overlap(templayer)
 
             linetype = False

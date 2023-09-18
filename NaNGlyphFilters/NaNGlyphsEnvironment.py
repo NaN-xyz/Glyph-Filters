@@ -119,11 +119,11 @@ class Glyphs3(Glyphs2):
 
     @classmethod
     def add_components(cls, layer, components):
-        layer.shapes.extend(components)
+        layer.shapes.extend(list(components))
 
     @classmethod
     def add_paths(cls, layer, paths):
-        layer.shapes.extend(paths)
+        layer.shapes.extend(list(paths))
 
     @classmethod
     def remove_path_from_layer(cls, layer, path):
@@ -136,17 +136,20 @@ class Glyphs3(Glyphs2):
             from AppKit import NSButtLineCapStyle
 
             offsetCurveFilter = objc.lookUpClass("GlyphsFilterOffsetCurve")
-            offsetCurveFilter.offsetLayer_offsetX_offsetY_makeStroke_autoStroke_position_error_shadow_capStyle_(
-                Layer,
-                hoffset,
-                voffset,
-                make_stroke,
-                False,
-                0.5,
-                None,
-                None,
-                NSButtLineCapStyle,
-            )
+            newpaths = []
+            for path in layer.paths:
+                newpaths.extend(offsetCurveFilter.offsetPath_offsetX_offsetY_makeStroke_position_objects_capStyleStart_capStyleEnd_(
+                    path,
+                    hoffset,
+                    voffset,
+                    make_stroke,
+                    0.5,
+                    [],
+                    NSButtLineCapStyle,
+                    NSButtLineCapStyle
+                    )
+                )
+            layer.shapes = list(layer.components) + newpaths
         except Exception as e:
             print("offset failed", e)
 

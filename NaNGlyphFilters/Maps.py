@@ -82,7 +82,7 @@ class Maps(NaNFilter):
                 continue
 
             templayer = GSLayer()
-            templayer.paths = g
+            G.add_paths(templayer, g)
             G.remove_overlap(templayer)
 
             for p in templayer.paths:

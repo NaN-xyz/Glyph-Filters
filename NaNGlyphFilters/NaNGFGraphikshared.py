@@ -7,6 +7,7 @@ import math
 from NaNGFAngularizzle import (setGlyphCoords, Direction, ConvertPathsToSkeleton)
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNGlyphsEnvironment import GSPath, GSGlyph, GSLayer, GSNode, GSLINE, GSOFFCURVE, GSCURVE, GSComponent
+from NaNGlyphsEnvironment import Glyphs3
 from NaNGFFitpath import fitpath
 
 # --------------------------------------------
@@ -243,8 +244,12 @@ def LerpPoints(v1, v2, t):
 def Midpoint(v1, v2):
 	return LerpPoints(v1,v2,0.5)
 
-def AllPathBoundsFromPathList(paths):
+def AllPathBoundsFromPathList(paths, layer=None):
 	templayer = GSLayer()
+	if G == Glyphs3:
+		if layer is None:
+			raise ValueError("Need to pass a layer to AllPathBoundsFromPathList in Glyphs 3")
+		templayer.parent = layer.parent
 	AddAllPathsToLayer(paths, templayer)
 	bounds = AllPathBounds(templayer)
 	del templayer
@@ -820,17 +825,17 @@ def isSizeBelowThreshold(thing, maxw, maxh):
 
 
 def AddAllComponentsToLayer(components, thislayer):
-	try:
+	# try:
 		G.add_components(thislayer, components)
-	except:
-		print("Couldn't add components to layer", thislayer)
+	# except Exception as e:
+		# print("Couldn't add components to layer", thislayer, e)
 
 
 def AddAllPathsToLayer(paths, thislayer):
-	try:
+	# try:
 		G.add_paths(thislayer, paths)
-	except:
-		print("Couldn't add all paths to layer", thislayer)
+	# except Exception as e:
+		# print("Couldn't add all paths to layer", thislayer, e)
 
 
 def ConvertPathDirection(path, direction):
@@ -839,13 +844,13 @@ def ConvertPathDirection(path, direction):
 
 
 def ConvertPathlistDirection(paths, direction):
-	try:
+	# try:
 		for p in paths:
 			if p.direction != direction:
 				p.reverse()
 		return paths
-	except:
-		print("Couldn't change direction of all paths")
+	# except Exception as e:
+		# print("Couldn't change direction of all paths", e)
 
 
 def ContainsPaths(thislayer):

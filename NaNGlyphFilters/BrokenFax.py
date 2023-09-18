@@ -55,7 +55,7 @@ class BrokenFax(NaNFilter):
 		# shift and find lowest x in all paths
 		lowestx = min([
 			min([ node[0] for node in path]) # Min x in path
-		for path in allpaths])
+		for path in allpaths if len(path)] + [0])
 
 		# adjust x in paths by lowestx
 		for path in allpaths:
@@ -63,7 +63,8 @@ class BrokenFax(NaNFilter):
 				node[0] = node[0] + (originx - lowestx)
 
 		angularpaths = [ drawSimplePath(path) for path in allpaths]
-		AddAllPathsToLayer(angularpaths, thislayer)
+		if angularpaths:
+			AddAllPathsToLayer(angularpaths, thislayer)
 		G.remove_overlap(thislayer)
 
 		offsetpaths = self.saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
@@ -71,8 +72,9 @@ class BrokenFax(NaNFilter):
 		outlinedata = setGlyphCoords(pathlist)
 
 		glitchpaths = self.Shapefit(thislayer, outlinedata)
-		glitchopaths = ConvertPathlistDirection(glitchpaths,1)
-		AddAllPathsToLayer(glitchpaths, thislayer)
+		if glitchpaths:
+			glitchopaths = ConvertPathlistDirection(glitchpaths,1)
+			AddAllPathsToLayer(glitchpaths, thislayer)
 
 		self.CleanOutlines(thislayer, remSmallPaths=False, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 

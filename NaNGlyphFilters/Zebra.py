@@ -9,7 +9,6 @@ from NaNGFGraphikshared import *
 from NaNGFAngularizzle import *
 from NaNFilter import NaNFilter
 import random
-from noise import snoise2
 from NaNGFNoise import noiseMap
 
 try:
@@ -34,6 +33,7 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
     yshift = maxsize / 4
 
     if b is None:
+        print("No bounds")
         return []
 
     tx, ty, tw, th = b
@@ -41,7 +41,7 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
     seedy = random.randrange(0, 100000)
 
     waves = []
-    searchstep = 2
+    searchstep = 20
     step = 11
 
     for y in range(ty, ty + th, step):
@@ -50,10 +50,8 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 
         for x in range(tx, tx + tw + 40, searchstep):
             if withinGlyphBlack(x, y, outlinedata):
-                noiz = abs(
-                    snoise2((y + seedy) * noisescale, (x + seedx) * noisescale, 4)
-                )
-                size = noiseMap(noiz, minsize, maxsize)
+                # size = noiseMap(random.random(), minsize, maxsize)
+                size = random.random() * (maxsize-minsize) + minsize
                 wave.append([x, y + size - yshift])
             elif len(wave) > 4:
                 lines.append(wave)
@@ -61,8 +59,6 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 
         if lines:
             waves.append(lines)
-
-        step = random.randrange(5,20)
 
     wavepaths = []
     # draw the wave data in to paths
@@ -79,12 +75,12 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 
 
 class Zebra(NaNFilter):
-    minsize, maxsize = 40, 200
+    minsize, maxsize = 1, 10
 
     def processLayer(self, thislayer, params):
         offsetpaths = self.saveOffsetPaths(thislayer, 0, 0, removeOverlap=True)
         pathlist = ConvertPathsToSkeleton(offsetpaths, 40)
-        bounds = AllPathBoundsFromPathList(offsetpaths)
+        bounds = AllPathBoundsFromPathList(offsetpaths, layer=thislayer)
         outlinedata = setGlyphCoords(pathlist)
 
         wavepaths = NoiseWaves(

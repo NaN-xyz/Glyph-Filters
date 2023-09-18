@@ -58,8 +58,7 @@ class Spray(NaNFilter):
 				angle = atan2(y_prev-y_next, x_prev-x_next)
 
 				if n < nodelen-self.segwaylen:
-					pushdist = pnoise1( (n+seed)*self.noisescale, 3)
-					pushdist = noiseMap( pushdist, self.minshift, self.maxshift )
+					pushdist = noiseMap( random.random(), self.minshift, self.maxshift )
 					last_pushdist = pushdist
 					if n==0:
 						start_pushdist = pushdist

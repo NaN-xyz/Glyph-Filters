@@ -26,7 +26,7 @@ class NaNFilter:
         beginGlyphNaN(glyph)
         newlayers = []
         seed = time.time()
-        for thislayer in glyph.layers:
+        for thislayer in list(glyph.layers):  # Don't use a proxy!
             # Use the same random seed for each layer, else we're in trouble
             random.seed(seed)
             G.begin_layer_changes(thislayer)

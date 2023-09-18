@@ -62,7 +62,7 @@ class Drip(NaNFilter):
 				index_start, index_end = seg
 
 				seedx = random.randrange(0,100000)
-				noisescale = 0.01
+				noisescale = 0.1
 
 				steps = float(index_end - index_start)
 				steppos = 0
@@ -85,8 +85,7 @@ class Drip(NaNFilter):
 
 					# insert distance to next black checker here
 
-					noiz = pnoise1( (n+seedx)*noisescale, 4) 
-					size = noiseMap( noiz, 0, maxdrip )
+					size = noiseMap( random.random(), 0, maxdrip )
 					if direction==Direction.CLOCKWISE: size*=0.2
 					size = t * abs(size) * adjust
 
