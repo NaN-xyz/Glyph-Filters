@@ -57,10 +57,8 @@ class Scribble(NaNFilter):
             walkpath = []
 
             for n in range(0, walklen):
-                x_noiz = pnoise1( (n+seedx)*noisescale, 3) 
-                rx = noiseMap( x_noiz, minsize, maxsize )
-                y_noiz = pnoise1( ((1000+n)+seedy)*noisescale, 3) 
-                ry = noiseMap( y_noiz, minsize, maxsize )
+                rx = noiseMap( random.random(), minsize, maxsize ) - 10
+                ry = noiseMap( random.random(), minsize, maxsize ) - 10
                 nx = sx + rx
                 ny = sy + ry
                 if withinGlyphBlack(nx, ny, outlinedata):

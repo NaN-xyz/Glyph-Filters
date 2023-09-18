@@ -53,15 +53,12 @@ class Dirt(NaNFilter):
             sx, sy = start[0], start[1]
             noisescale = 0.05
             seedx, seedy = random.randrange(0,100000), random.randrange(0,100000)
-            minsize, maxsize = 0, 200
+            minsize, maxsize = -100, 100
             dirt = []
 
             for n in range(0, walklen):
-
-                x_noiz = pnoise1( (n+seedx)*noisescale, 3) 
-                rx = noiseMap( x_noiz, minsize, maxsize )
-                y_noiz = pnoise1( ((1000+n)+seedy)*noisescale, 3) 
-                ry = noiseMap( y_noiz, minsize, maxsize )
+                rx = noiseMap( random.random(), minsize, maxsize )
+                ry = noiseMap( random.random(), minsize, maxsize )
                 nx = sx + rx
                 ny = sy + ry
 
