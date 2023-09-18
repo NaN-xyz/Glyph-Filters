@@ -93,7 +93,7 @@ class Maps(NaNFilter):
                 roundedpath = RoundPath(p, "nodes")
                 roundedpath = convertToFitpath(roundedpath, True)
                 if not roundedpath:
-                	continue
+                    continue
 
                 if drawtype == "vertical" or drawtype == "horizontal":
 
