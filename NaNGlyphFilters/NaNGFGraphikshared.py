@@ -182,21 +182,6 @@ def operateOnBlackAtInterval(layer, func, step_x, step_y=None):
 
 	return results
 
-def point_inside_polygon_faster(x,y,poly):
-	import matplotlib.path as mpltPath
-	import numpy as np
-
-	inside = False
-
-	path = mpltPath.Path(poly)
-	numparray = np.array([[x,y]])
-	#print numparray
-	inside2 = path.contains_points(numparray)
-
-	if inside2.all()==True: inside=True
-	return inside
-
-
 def point_inside_polygon(x,y,poly):
 
 	n = len(poly)
@@ -221,6 +206,26 @@ def point_inside_polygon(x,y,poly):
 	except:
 
 		return inside
+
+try:
+	import matplotlib.path as mpltPath
+	import numpy as np
+
+	def point_inside_polygon_faster(x,y,poly):
+			inside = False
+
+			path = mpltPath.Path(poly)
+			numparray = np.array([[x,y]])
+			#print numparray
+			inside2 = path.contains_points(numparray)
+
+			if inside2.all()==True: inside=True
+			return inside
+	point_inside_polygonx = point_inside_polygon_faster
+
+except Exception:
+	point_inside_polygon_faster = point_inside_polygon
+
 
 
 def MakeVector(length, angle):
