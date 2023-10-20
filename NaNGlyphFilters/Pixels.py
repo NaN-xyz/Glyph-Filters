@@ -99,7 +99,8 @@ class Pixel(NaNFilter):
 
 		for x in range(ox, ox+w, unitw):
 			for y in range(oy, oy+h, unith):
-				size = noiseMap( random.random(), 0, 15 )
+				size = pnoise2( (y+seedy),(x+seedx)) 
+				size = noiseMap( size, 0, 15 )
 				size = int(abs(size)) + 1
 
 				if size>4: size=5
