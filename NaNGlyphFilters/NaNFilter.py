@@ -8,13 +8,20 @@ from NaNGlyphsEnvironment import OFFCURVE, GSLayer, Glyphs
 from Foundation import NSClassFromString
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
+try:
+    import tqdm
+
+    progress = tqdm.tqdm
+except:
+    progress = list
+
 
 class NaNFilter:
     def __init__(self):
         self.font = Glyphs.font
         selectedGlyphs = beginFilterNaN(self.font)
         self.setup()
-        for glyph in selectedGlyphs:
+        for glyph in progress(selectedGlyphs):
             self.processGlyph(glyph)
         endFilterNaN(self.font)
 
