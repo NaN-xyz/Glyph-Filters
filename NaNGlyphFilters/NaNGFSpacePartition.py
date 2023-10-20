@@ -16,7 +16,7 @@ def PathToNodeList(path):
 	return np
 
 
-def ReturnNearestPath(px, py, searchlist, variance):
+def ReturnNearestPath(px, py, searchlist, variance, centers=None):
 
 	newx = 0
 	newy = 0
@@ -27,7 +27,10 @@ def ReturnNearestPath(px, py, searchlist, variance):
 
 	for item in range(0, len(searchlist)):
 		cl = searchlist[item]
-		center = pathCenterPoint(cl)
+		if centers:
+			center = centers[item]
+		else:
+			center = pathCenterPoint(cl)
 		nx = center[0]
 		ny = center[1]
 		testdist = math.hypot(px - nx, py - ny) 
@@ -184,15 +187,17 @@ def BreakUpSpace(thislayer, outlinedata, looptriangles, gridsize, maxchain):
 	current_tri_id = random.randrange(0,len(looptriangles))
 	counter, chaincounter = 0, 0
 	variance = gridsize + 2
+	centers = [pathCenterPoint(p) for p in looptriangles]
 
 	while len(looptriangles)>0:
 
 		current_tri = looptriangles[current_tri_id]
-		center = pathCenterPoint(current_tri)
+		center = centers[current_tri_id]
 		x = center[0]
 		y = center[1]
 		looptriangles.pop(current_tri_id)
-		next_tri = ReturnNearestPath(x, y, looptriangles, variance)
+		centers.pop(current_tri_id)
+		next_tri = ReturnNearestPath(x, y, looptriangles, variance, centers=centers)
 
 		nx = next_tri[0]
 		ny = next_tri[1]
