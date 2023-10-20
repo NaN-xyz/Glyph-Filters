@@ -51,6 +51,8 @@ class Burn(NaNFilter):
             action="overlap",
             randomize=True,
         )
+        if not newtris:
+            raise ValueError("Layer '%s' had no 'inside'. Are the path directions correct?" % thislayer)
         groups = BreakUpSpace(
             thislayer, outlinedata, newtris, params["gridsize"], maxchain
         )
