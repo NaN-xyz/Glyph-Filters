@@ -25,6 +25,7 @@ except ModuleNotFoundError as e:
 	print("Couldn't find filter '%s'.\nTry one of: %s" % (filter_script, ", ".join(modules)))
 	sys.exit(1)
 
+print("Saving...")
 save_file = args.input.replace(".glyphs", "-"+filter_script+".glyphs")
 glyphsLib.Glyphs.font.save(save_file)
 print("Saved on %s" % save_file)
