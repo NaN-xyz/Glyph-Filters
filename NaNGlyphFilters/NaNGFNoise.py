@@ -1,4 +1,3 @@
-import GlyphsApp
 from noise import *
 import math, random
 from NaNGFFitpath import *
