@@ -272,7 +272,7 @@ def IsoGridToTriangles(lines):
 
 def RandomiseIsoPoints(lines, gridsize):
 
-	maxmove = gridsize/3
+	maxmove = int(gridsize/3)
 	noisescale = 4
 	seedx = random.randrange(0,100000)
 	seedy = random.randrange(0,100000)
