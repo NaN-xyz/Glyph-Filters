@@ -32,10 +32,10 @@ class NaNFilter:
         G.begin_undo(glyph)
         beginGlyphNaN(glyph)
         newlayers = []
-        seed = time.time()
+        old_state = random.getstate()
         for thislayer in list(glyph.layers):  # Don't use a proxy!
             # Use the same random seed for each layer, else we're in trouble
-            random.seed(seed)
+            random.setstate(old_state)
             G.begin_layer_changes(thislayer)
             #thislayer.correctPathDirection()
             if hasattr(self, "params"):
