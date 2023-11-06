@@ -1,15 +1,21 @@
 import glyphsLib
 import importlib
 import argparse
+import random
 import sys
 from glob import glob
 
 parser = argparse.ArgumentParser(description='Filter a font file')
+parser.add_argument('--random-seed', metavar='INT', type=int,
+                    help='Random seed (for reproducibility)',
+                    default=1000)
 parser.add_argument('input', metavar='GLYPHS',
                     help='the Glyphs file')
 parser.add_argument('filter',metavar='FILTER',
                     help='the filter to use')
 args = parser.parse_args()
+
+random.seed(args.random_seed)
 
 base_path = "NaNGlyphFilters"
 sys.path.append(base_path)
