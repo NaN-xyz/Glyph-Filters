@@ -8,7 +8,7 @@ from glob import glob
 parser = argparse.ArgumentParser(description='Filter a font file')
 parser.add_argument('--random-seed', metavar='INT', type=int,
                     help='Random seed (for reproducibility)',
-                    default=1000)
+                    )
 parser.add_argument('input', metavar='GLYPHS',
                     help='the Glyphs file')
 parser.add_argument('filter',metavar='FILTER',
