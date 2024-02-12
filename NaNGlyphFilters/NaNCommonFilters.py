@@ -1,11 +1,11 @@
-from NaNGFGraphikshared import *
+from NaNGFGraphikshared import AllPathBounds, withinGlyphBlack, drawCircle, ShapeWithinOutlines, drawBlob, MakeVector, DistanceToNextBlack
 from NaNGlyphsEnvironment import GSPath
 from NaNGFAngularizzle import Direction, setGlyphCoords, ConvertPathsToSkeleton
 import random
 import math
 
 
-def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8, maxsize=250):
+def moonrocks(thislayer, outlinedata, iterations, shapetype="blob", maxgap=8, maxsize=250):
     list_dots = []
     b = AllPathBounds(thislayer)
 
@@ -26,7 +26,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
         inside = True
         for n in range(0, len(list_dots)):
             nx, ny, nr = list_dots[n]
-            dist = math.hypot(nx - x, ny - y) 
+            dist = math.hypot(nx - x, ny - y)
 
             if dist < (nr + rad + maxgap):
                 inside = False
@@ -41,7 +41,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
         if ShapeWithinOutlines(circlecoords, outlinedata):
             list_dots.append([x, y, rad])
 
-    #print("Number of circles found:", len(list_dots))
+    # print("Number of circles found:", len(list_dots))
 
     rocks = []
     for c in range(0, len(list_dots)):
@@ -53,6 +53,7 @@ def moonrocks(thislayer, outlinedata, iterations, shapetype = "blob", maxgap = 8
         rocks.append(circle)
 
     return rocks
+
 
 def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunction):
 
@@ -66,24 +67,24 @@ def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunct
         while n < nodelen:
             x1, y1 = structure[n]
 
-            if direction==Direction.ANTICLOCKWISE:
+            if direction == Direction.ANTICLOCKWISE:
                 step = random.randrange(minstep, maxstep)
             else:
-                step = random.randrange(minstep, maxstep/2)
+                step = random.randrange(minstep, maxstep / 2)
 
-            if n+step>=nodelen-1:
+            if n + step >= nodelen - 1:
                 break
 
             # --- set node pos for main or end
-            if n<nodelen-1:
-                x2, y2 = structure[n+step]
-                n+=step
+            if n < nodelen - 1:
+                x2, y2 = structure[n + step]
+                n += step
             else:
                 x2, y2 = structure[0]
 
-            a = math.atan2(y1-y2, x1-x2) + math.radians(90)
+            a = math.atan2(y1 - y2, x1 - x2) + math.radians(90)
 
-            midx, midy = x1 + ((x2-x1)/2), y1 + ((y2-y1)/2)
+            midx, midy = x1 + ((x2 - x1) / 2), y1 + ((y2 - y1) / 2)
 
             pushdist = random.randrange(minpush, maxpush)
 
@@ -91,15 +92,15 @@ def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunct
 
             searchblack = DistanceToNextBlack(thislayer, [x1, y1], [x2, y2], outlinedata, 200)
 
-            if direction==Direction.CLOCKWISE:
-                linex*=0.7
-                liney*=0.7
-                pushdist*=0.7
+            if direction == Direction.CLOCKWISE:
+                linex *= 0.7
+                liney *= 0.7
+                pushdist *= 0.7
 
             if searchblack is not None and searchblack < 200:
-                    linex*=0.7
-                    liney*=0.7
-                    pushdist*=0.7
+                linex *= 0.7
+                liney *= 0.7
+                pushdist *= 0.7
 
             midx += linex
             midy += liney
@@ -109,5 +110,3 @@ def spikes(thislayer, outlinedata, minpush, maxpush, minstep, maxstep, drawFunct
         spike.closed = True
         spikepaths.append(spike)
     return spikepaths
-
-

@@ -1,6 +1,6 @@
-#MenuTitle: Iso
+# MenuTitle: Iso
 # -*- coding: utf-8 -*-
-__doc__="""
+__doc__ = """
 Iso
 """
 
@@ -33,14 +33,15 @@ class Iso(NaNFilter):
 		ClearPaths(thislayer)
 
 		newtris = self.SortCollageSpace(thislayer, outlinedata, outlinedata2, params["gridsize"], bounds, action="overlap", snap=True)
-		maxchain = random.randrange(200,400)
+		maxchain = random.randrange(200, 400)
 		groups = BreakUpSpace(thislayer, outlinedata, newtris, params["gridsize"], maxchain)
 		for g in groups:
-			if len(g)>2:
+			if len(g) > 2:
 				for path in g:
 					thislayer.paths.append(path)
 
 		G.correct_path_direction(thislayer)
 		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
 
 Iso()

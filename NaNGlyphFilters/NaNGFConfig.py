@@ -75,9 +75,9 @@ def endGlyphNaN(glyph):
 
 def show_glyph_time(start_time, glyph):
     print(
-        "Processing time for glyph( "
+        "Processing time for glyph("
         + glyph
-        + " ): "
+        + "): "
         + str(round(time.time() - start_time, 4))
         + " seconds"
     )

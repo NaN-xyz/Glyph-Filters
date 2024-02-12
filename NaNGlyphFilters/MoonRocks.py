@@ -9,6 +9,7 @@ from NaNGFGraphikshared import AddAllPathsToLayer, ConvertPathlistDirection
 from NaNFilter import NaNFilter
 from NaNCommonFilters import moonrocks
 
+
 class MoonRocks(NaNFilter):
     params = {
         "S": {"offset": -5, "iterations": 150},
@@ -21,9 +22,10 @@ class MoonRocks(NaNFilter):
             thislayer, params["offset"], params["offset"], removeOverlap=False
         )
         outlinedata = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 20))
-        moonrockpaths = moonrocks(thislayer, outlinedata, params["iterations"], shapetype = "blob", maxgap = 8)
+        moonrockpaths = moonrocks(thislayer, outlinedata, params["iterations"], shapetype="blob", maxgap=8)
         ConvertPathlistDirection(moonrockpaths, 1)
         AddAllPathsToLayer(moonrockpaths, thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+
 
 MoonRocks()

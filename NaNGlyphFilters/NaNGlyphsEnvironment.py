@@ -1,4 +1,5 @@
 # Abstract out the differences between Glyphs 2, Glyphs 3 and glyphsLib
+
 class Glyphs2:
     is_interactive = True
 
@@ -115,6 +116,7 @@ class Glyphs2:
 class Glyphs3(Glyphs2):
     @classmethod
     def clear_paths(cls, thislayer):
+        from GlyphsApp import GSComponent
         thislayer.shapes = [x for x in thislayer.shapes if isinstance(x, GSComponent)]
 
     @classmethod
@@ -147,8 +149,7 @@ class Glyphs3(Glyphs2):
                     [],
                     NSButtLineCapStyle,
                     NSButtLineCapStyle
-                    )
-                )
+                ))
             layer.shapes = list(layer.components) + newpaths
         except Exception as e:
             print("offset failed", e)
@@ -172,7 +173,7 @@ class GlyphsLib(Glyphs2):
             layer.paths = []
             GlyphsBuilder(ufos=[ufoLib2.objects.Font()]).to_glyphs_paths(ufo_glyph, layer)
         except Exception as e:
-            print("Overlap removal failed. Carrying on anyway.")
+            print("Overlap removal failed. Carrying on anyway.", e)
         return layer
 
     @classmethod
@@ -184,6 +185,7 @@ class GlyphsLib(Glyphs2):
         import ufostroker
         import ufoLib2
         from glyphsLib.builder import UFOBuilder, GlyphsBuilder
+
         class MyUFOBuilder(UFOBuilder):
             def _is_vertical(self):
                 return False
@@ -191,10 +193,10 @@ class GlyphsLib(Glyphs2):
             return
         ufo_glyph = ufoLib2.objects.Glyph()
         MyUFOBuilder(Glyphs.font).to_ufo_paths(ufo_glyph, layer)
-        ufostroker.constant_width_stroke(ufo_glyph, width=hoffset*2, remove_internal=(not make_stroke), jointype="round")
+        ufostroker.constant_width_stroke(ufo_glyph, width=hoffset * 2, remove_internal=(not make_stroke), jointype="round")
         layer.paths = []
         # Sometimes a degenerate path is produced
-        ufo_glyph.contours = [ x for x in ufo_glyph.contours if len(x) > 2]
+        ufo_glyph.contours = [x for x in ufo_glyph.contours if len(x) > 2]
         GlyphsBuilder(ufos=[ufoLib2.objects.Font()]).to_glyphs_paths(ufo_glyph, layer)
         for p in layer.paths:
             p.nodes = list(reversed(p.nodes))
@@ -250,7 +252,7 @@ class GlyphsLib(Glyphs2):
         for ix, n in enumerate(path.nodes):
             if n.type != "curve":
                 continue
-            if not (path.nodes[ix-1].type == "offcurve" and path.nodes[ix+1].type == "offcurve"):
+            if not (path.nodes[ix - 1].type == "offcurve" and path.nodes[ix + 1].type == "offcurve"):
                 continue
 
     @classmethod

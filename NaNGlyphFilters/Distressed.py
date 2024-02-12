@@ -1,30 +1,33 @@
-#MenuTitle: Distressed
+# MenuTitle: Distressed
 # -*- coding: utf-8 -*-
-__doc__="""
+__doc__ = """
 Distressed
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
-from NaNGFSpacePartition import *
+from GlyphsApp import Glyphs, GSLayer
+from NaNGFGraphikshared import ShiftPath, AllPathBounds, ClearPaths
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
+from NaNGFSpacePartition import makeIsometricGrid, RandomiseIsoPoints, IsoGridToTriangles, returnTriangleTypes, StickTrianglesToOutline, TrianglesListToPaths, BreakUpSpace
 from NaNGlyphsEnvironment import glyphsEnvironment as G
+from NaNGFConfig import beginFilterNaN, beginGlyphNaN, endGlyphNaN, endFilterNaN, glyphSize
+import random
 
 # COMMON
 font = Glyphs.font
 selectedGlyphs = beginFilterNaN(font)
 
 
-# ====== OFFSET LAYER CONTROLS ================== 
+# ====== OFFSET LAYER CONTROLS ==================
 
-def saveOffsetPaths( Layer , hoffset, voffset, removeOverlap):
+def saveOffsetPaths(Layer, hoffset, voffset, removeOverlap):
 	templayer = G.copy_layer(Layer)
 	templayer.name = "tempoutline"
 	currentglyph = Layer.parent
 	currentglyph.layers.append(templayer)
 	tmplayer_id = templayer.layerId
 	G.offset_layer(templayer, hoffset, voffset)
-	if removeOverlap==True: templayer.removeOverlap()
+	if removeOverlap:
+		templayer.removeOverlap()
 	offsetpaths = templayer.paths
 	del currentglyph.layers[tmplayer_id]
 	return offsetpaths
@@ -48,7 +51,7 @@ def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
 	out_triangles = in_out_triangles[1]
 
 	edge_triangles = StickTrianglesToOutline(out_triangles, outlinedata)
-	#edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)	
+	# edge_triangles = ReturnOutlineOverlappingTriangles(out_triangles, outlinedata)
 
 	final_in_triangles.extend(in_triangles)
 	final_in_triangles.extend(edge_triangles)
@@ -59,7 +62,6 @@ def SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds):
 
 	return TrianglesListToPaths(final_in_triangles)
 
-	
 
 # ---------
 
@@ -68,19 +70,19 @@ def ApplyBurn(thislayer, groups):
 
 	for g in groups:
 
-		if len(g)>2:
+		if len(g) > 2:
 
-			shiftmax = random.randrange(1,50)
-			shiftype = random.choice(["x","y","xy"])
+			shiftmax = random.randrange(1, 50)
+			shiftype = random.choice(["x", "y", "xy"])
 
 			templayer = GSLayer()
 			G.add_paths(templayer, g)
 			templayer.removeOverlap()
 
-			for p in templayer.paths: 
-				ShiftPath(p,shiftmax,shiftype)
+			for p in templayer.paths:
+				ShiftPath(p, shiftmax, shiftype)
 				G.add_paths(thislayer, [p])
-				#nodelen = len(p.nodes)
+				# nodelen = len(p.nodes)
 
 
 def OutputTopography():
@@ -96,16 +98,16 @@ def OutputTopography():
 		thislayer.beginChanges()
 
 		# ---
-		
+
 		glyphsize = glyphSize(glyph)
 
-		if glyphsize=="S": 
+		if glyphsize == "S":
 			offset = 0
 			gridsize = 30
-		if glyphsize=="M": 
+		if glyphsize == "M":
 			offset = 4
 			gridsize = 30
-		if glyphsize=="L": 
+		if glyphsize == "L":
 			offset = 4
 			gridsize = 30
 
@@ -114,20 +116,20 @@ def OutputTopography():
 		pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
 		outlinedata = setGlyphCoords(pathlist)
 		bounds = AllPathBounds(thislayer)
-		
+
 		offsetpaths = saveOffsetPaths(thislayer, offset, offset, removeOverlap=True)
 		pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
 		outlinedata2 = setGlyphCoords(pathlist2)
-		bounds2 = AllPathBoundsFromPathList(pathlist2)
+		# bounds2 = AllPathBoundsFromPathList(pathlist2)
 
 		ClearPaths(thislayer)
 
 		newtris = SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds)
-		maxchain = random.randrange(30,60)
+		maxchain = random.randrange(30, 60)
 		groups = BreakUpSpace(thislayer, outlinedata, newtris, gridsize, maxchain)
 		ApplyBurn(thislayer, groups)
-		#AddAllPathsToLayer(edgetris, thislayer)
-		#thislayer.removeOverlap()
+		# AddAllPathsToLayer(edgetris, thislayer)
+		# thislayer.removeOverlap()
 
 		# ---
 
@@ -145,9 +147,7 @@ OutputTopography()
 
 # =======
 
-#OutputFur()
-#OutputSpikes()
+# OutputFur()
+# OutputSpikes()
 
 endFilterNaN(font)
-
-

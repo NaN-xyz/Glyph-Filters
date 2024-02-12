@@ -9,7 +9,7 @@ import random
 from Burned import returnRoundedPaths
 from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
 from NaNGFFitpath import convertToFitpath
-from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, AllPathBoundsFromPathList, ClearPaths, CreateLineComponent, Fill_Drawlines, RoundPath, drawCircle, drawTriangle, point_inside_polygon, returnLineComponent
+from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, ClearPaths, CreateLineComponent, Fill_Drawlines, RoundPath, drawCircle, drawTriangle, point_inside_polygon, returnLineComponent
 from NaNGFSpacePartition import BreakUpSpace, PathToNodeList
 from NaNGlyphsEnvironment import GSLayer
 from NaNGlyphsEnvironment import glyphsEnvironment as G
@@ -53,7 +53,7 @@ class GlitchPop(NaNFilter):
         )
         pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
         outlinedata2 = setGlyphCoords(pathlist2)
-        bounds2 = AllPathBoundsFromPathList(pathlist2)
+        # bounds2 = AllPathBoundsFromPathList(pathlist2)
 
         ClearPaths(thislayer)
 
@@ -86,8 +86,8 @@ class GlitchPop(NaNFilter):
 
             linetype = False
 
-            for p in templayer.paths: 
-                
+            for p in templayer.paths:
+
                 nodelen = len(p.nodes)
                 if nodelen < 4:
                     continue
@@ -97,28 +97,28 @@ class GlitchPop(NaNFilter):
                 if not roundedpath:
                     continue
 
-                if random.choice([0,1,2,3])==1:
-                    tr = random.choice([0,2])
-                    if tr==1:
+                if random.choice([0, 1, 2, 3]) == 1:
+                    tr = random.choice([0, 2])
+                    if tr == 1:
                         self.HalftoneShape(layer, p, "triangle")
-                    elif tr==0:
+                    elif tr == 0:
                         self.HalftoneShape(layer, p, "square")
                     else:
                         layer.paths.append(roundedpath)
                 else:
-                    if nodelen>9:
-                        
-                        if nodelen>20:
+                    if nodelen > 9:
+
+                        if nodelen > 20:
                             noodlepaths = self.expandMonolineFromPathlist([roundedpath], 6)
                             AddAllPathsToLayer(noodlepaths, layer)
                         else:
 
-                            if random.choice([0,1])==0:
+                            if random.choice([0, 1]) == 0:
 
-                                if linetype==False:
-                                    direction="vertical"
+                                if not linetype:
+                                    direction = "vertical"
                                 else:
-                                    direction="horizontal"
+                                    direction = "horizontal"
 
                                 linetype = not linetype
                                 linecomps = Fill_Drawlines(layer, roundedpath, direction, 15, linecomponents)
@@ -131,11 +131,10 @@ class GlitchPop(NaNFilter):
 
             del templayer
 
-
     def DrawlinesTile(self, outlinedata, tile, direction):
 
         x, y, w, h = [int(el) for el in tile]
-        tilecoords = [[x, y], [x, y + h], [x + w, y + h], [x + w, y]]
+        # tilecoords = [[x, y], [x, y + h], [x + w, y + h], [x + w, y]]
         lines = []
         linecomponents = []
         gap = 20
@@ -175,61 +174,59 @@ class GlitchPop(NaNFilter):
 
         return linecomponents
 
-
     def HalftoneShape(self, thislayer, shape, shapetype):
 
         t = shape
         shapelist = PathToNodeList(t)
 
-        x = int (t.bounds.origin.x)
-        y = int (t.bounds.origin.y)
-        w = int (t.bounds.size.width)
-        h = int (t.bounds.size.height)
+        x = int(t.bounds.origin.x)
+        y = int(t.bounds.origin.y)
+        w = int(t.bounds.size.width)
+        h = int(t.bounds.size.height)
 
         grid = 13
         size = random.randrange(12, 24)
 
-        for col in range(x, x+w, grid):
-            for row in range(y, y+h, grid):
+        for col in range(x, x + w, grid):
+            for row in range(y, y + h, grid):
                 if point_inside_polygon(col, row, shapelist):
-                    nx = math.floor(col/grid) * grid
-                    ny = math.floor(row/grid) * grid
-                    if shapetype=="triangle":
+                    nx = math.floor(col / grid) * grid
+                    ny = math.floor(row / grid) * grid
+                    if shapetype == "triangle":
                         c = drawTriangle(nx, ny, size, size)
-                    elif shapetype=="circle":
+                    elif shapetype == "circle":
                         c = drawCircle(nx, ny, size, size)
                     else:
                         c = drawTriangle(nx, ny, size, size)
                     thislayer.paths.append(c)
-            size+=0.3
-
+            size += 0.3
 
     def Fill_Halftone(self, thislayer, shape, shapetype):
 
         t = shape
         shapelist = PathToNodeList(t)
 
-        x = int (t.bounds.origin.x)
-        y = int (t.bounds.origin.y)
-        w = int (t.bounds.size.width)
-        h = int (t.bounds.size.height)
+        x = int(t.bounds.origin.x)
+        y = int(t.bounds.origin.y)
+        w = int(t.bounds.size.width)
+        h = int(t.bounds.size.height)
 
         grid = 13
         size = random.randrange(12, 24)
         size = 8
 
-        for row in range(y, y+h, grid):
-            for col in range(x, x+w, grid):
+        for row in range(y, y + h, grid):
+            for col in range(x, x + w, grid):
                 if point_inside_polygon(col, row, shapelist):
-                    nx = math.floor(col/grid) * grid
-                    ny = math.floor(row/grid) * grid
-                    if row%2==0:
-                        adjust = grid/2
+                    nx = math.floor(col / grid) * grid
+                    ny = math.floor(row / grid) * grid
+                    if row % 2 == 0:
+                        adjust = grid / 2
                     else:
                         adjust = 0
-                    c = drawCircle(nx+adjust, ny, size, size)
+                    c = drawCircle(nx + adjust, ny, size, size)
                     G.add_paths(thislayer, [c])
-            size+=0.1
+            size += 0.1
 
 
 GlitchPop()

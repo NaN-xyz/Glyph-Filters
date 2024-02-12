@@ -8,7 +8,7 @@ import random
 from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
 from NaNGFConfig import glyphSize
 from NaNGFFitpath import convertToFitpath
-from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, AllPathBoundsFromPathList, ClearPaths, ConvertPathDirection, CreateLineComponent, Fill_Drawlines, RoundPath, returnRoundedPaths
+from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, ClearPaths, ConvertPathDirection, CreateLineComponent, Fill_Drawlines, RoundPath, returnRoundedPaths
 from NaNGFSpacePartition import BreakUpSpace
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNGlyphsEnvironment import GSLayer
@@ -50,7 +50,7 @@ class Maps(NaNFilter):
         )
         pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
         outlinedata2 = setGlyphCoords(pathlist2)
-        bounds2 = AllPathBoundsFromPathList(pathlist2)
+        # bounds2 = AllPathBoundsFromPathList(pathlist2)
 
         ClearPaths(thislayer)
 
@@ -104,7 +104,6 @@ class Maps(NaNFilter):
                             layer, roundedpath, drawtype, 20, linecomponents
                         )
                         AddAllComponentsToLayer(all_lines, layer)
-
 
                 if drawtype == "blob":
                     # disallow small blobs

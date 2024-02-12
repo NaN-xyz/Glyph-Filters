@@ -4,12 +4,12 @@ __doc__ = """
 Zebra
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+# from GlyphsApp import Glyphs
+from NaNGFGraphikshared import withinGlyphBlack, convertToFitpath, AllPathBoundsFromPathList, ClearPaths, ConvertPathlistDirection, AddAllPathsToLayer
+from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
 from NaNFilter import NaNFilter
 import random
-from NaNGFNoise import noiseMap
+# from NaNGFNoise import noiseMap
 
 try:
     from itertools import izip
@@ -29,7 +29,7 @@ def pairs(iterable):
 
 def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
 
-    noisescale = 0.002
+    # noisescale = 0.002
     yshift = maxsize / 4
 
     if b is None:
@@ -37,8 +37,8 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
         return []
 
     tx, ty, tw, th = b
-    seedx = random.randrange(0, 100000)
-    seedy = random.randrange(0, 100000)
+    # seedx = random.randrange(0, 100000)
+    # seedy = random.randrange(0, 100000)
 
     waves = []
     searchstep = 20
@@ -51,7 +51,7 @@ def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
         for x in range(tx, tx + tw + 40, searchstep):
             if withinGlyphBlack(x, y, outlinedata):
                 # size = noiseMap(random.random(), minsize, maxsize)
-                size = random.random() * (maxsize-minsize) + minsize
+                size = random.random() * (maxsize - minsize) + minsize
                 wave.append([x, y + size - yshift])
             elif len(wave) > 4:
                 lines.append(wave)
@@ -89,12 +89,12 @@ class Zebra(NaNFilter):
 
         ClearPaths(thislayer)
         wavepaths = ConvertPathlistDirection(wavepaths, -1)
-        
+
         shifty = -20
-        for path in wavepaths: path.applyTransform((1, 0.0, 0.0, 1, 0, shifty))
+        for path in wavepaths:
+            path.applyTransform((1, 0.0, 0.0, 1, 0, shifty))
 
         AddAllPathsToLayer(wavepaths, thislayer)
-
 
 
 Zebra()
