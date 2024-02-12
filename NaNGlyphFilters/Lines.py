@@ -20,10 +20,10 @@ class Lines(NaNFilter):
 
     def setup(self):
         self.line_vertical_comp = CreateLineComponent(
-            self.font, "vertical", self.strokesize , "LineVerticalComponent"
+            self.font, "vertical", self.strokesize, "LineVerticalComponent"
         )
         self.line_horizontal_comp = CreateLineComponent(
-            self.font, "horizontal", self.strokesize , "LineHorizontalComponent"
+            self.font, "horizontal", self.strokesize, "LineHorizontalComponent"
         )
 
     def processLayer(self, thislayer, params):
@@ -82,7 +82,7 @@ class Lines(NaNFilter):
                 for y2 in range(y, y + h, checkgap):
                     add_line(x2, y2)
 
-        lines = SnapToGrid(lines, self.strokesize )
+        lines = SnapToGrid(lines, self.strokesize)
 
         for l in lines:
             if l[0] == l[-1]:

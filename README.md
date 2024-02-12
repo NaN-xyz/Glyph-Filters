@@ -10,7 +10,7 @@ Scripts are provided under the Apache 2.0 Licence, see [Apache.txt](Apache.txt) 
 
 ## Script Installation
 
-The scripts and codebase work within [GlyphsApp](https://glyphsapp.com/) version 2.6.6 and below. An update to support the recently launched Glyphs3 is coming soon.
+The scripts and codebase works within [GlyphsApp](https://glyphsapp.com/) version 2. Most filters should work in Glyphs 3, too.
 
 Many scripts make use of Simplex noise and therefore require the `noise` library. This should be as simple as `pip install noise` in your terminal.
 

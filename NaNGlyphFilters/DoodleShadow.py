@@ -6,7 +6,7 @@ Doodle Shadow
 
 
 from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
-from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, DoShadow
+from NaNGFGraphikshared import AddAllPathsToLayer, ClearPaths, DoShadow
 from NaNGFNoise import NoiseOutline
 import random
 
@@ -23,7 +23,7 @@ class DoodleShadow(NaNFilter):
     }
     glyph_stroke_width = 16
     shadow_stroke_width = 6
-    angle = -160 #random.randrange(0, 360)
+    angle = -160  # random.randrange(0, 360)
 
     def setup(self):
         pass
@@ -35,13 +35,13 @@ class DoodleShadow(NaNFilter):
         G.remove_overlap(thislayer)
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 20)
         outlinedata = setGlyphCoords(pathlist)
-        bounds = AllPathBounds(thislayer)
+        # bounds = AllPathBounds(thislayer)
 
-        offsetpaths = self.saveOffsetPaths(
-            thislayer, offset, offset, removeOverlap=True
-        )
-        pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata2 = setGlyphCoords(pathlist2)
+        # offsetpaths = self.saveOffsetPaths(
+        #     thislayer, offset, offset, removeOverlap=True
+        # )
+        # pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
+        # outlinedata2 = setGlyphCoords(pathlist2)
 
         ClearPaths(thislayer)
 
@@ -52,7 +52,7 @@ class DoodleShadow(NaNFilter):
 
         AddAllPathsToLayer(noiseoutline, thislayer)
         AddAllPathsToLayer(shadowoutline, thislayer)
-       
+
         G.remove_overlap(thislayer)
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 

@@ -11,14 +11,15 @@ from "Graphics Gems", Academic Press, 1990
 Modifications and optimisations of original algorithm by Juerg Lehni.
 Ported by Gumble, 2015.
 """
-from NaNGlyphsEnvironment import glyphsEnvironment as G
+# from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNGlyphsEnvironment import GSPath, GSNode, GSCURVE, GSOFFCURVE, GSLINE
 import math
 
 TOLERANCE = 10e-6
 EPSILON = 10e-12
 
-__all__ = ["fitpath", "convertToFitpath"]
+__all__ = ["fitpath"]
+
 
 class Point:
 	__slots__ = ['x', 'y']
@@ -183,11 +184,13 @@ class PathFitter:
 		length = len(points)
 		self.segments = [Segment(points[0])] if length > 0 else []
 		if length > 1:
-			self.fitCubic(0, length - 1,
-						  # Left Tangent
-						  points[1].subtract(points[0]).normalize(),
-						  # Right Tangent
-						  points[length - 2].subtract(points[length - 1]).normalize())
+			self.fitCubic(
+				0, length - 1,
+				# Left Tangent
+				points[1].subtract(points[0]).normalize(),
+				# Right Tangent
+				points[length - 2].subtract(points[length - 1]).normalize()
+			)
 		return self.segments
 
 	# Fit a Bezier curve to a (sub)set of digitized points
@@ -197,8 +200,10 @@ class PathFitter:
 			pt1 = self.points[first]
 			pt2 = self.points[last]
 			dist = pt1.getDistance(pt2) / 3
-			self.addCurve([pt1, pt1 + tan1.normalize(dist),
-						   pt2 + tan2.normalize(dist), pt2])
+			self.addCurve([
+				pt1, pt1 + tan1.normalize(dist),
+				pt2 + tan2.normalize(dist), pt2
+			])
 			return
 		# Parameterize points, and attempt to fit curve
 		uPrime = self.chordLengthParameterize(first, last)
@@ -251,9 +256,11 @@ class PathFitter:
 			b3 = u * u * u
 			a1 = tan1.normalize(b1)
 			a2 = tan2.normalize(b2)
-			tmp = (self.points[first + i]
-				   - pt1.multiply(b0 + b1)
-				   - pt2.multiply(b2 + b3))
+			tmp = (
+				self.points[first + i]
+				- pt1.multiply(b0 + b1)
+				- pt2.multiply(b2 + b3)
+			)
 			C[0][0] += a1.dot(a1)
 			C[0][1] += a1.dot(a2)
 			# C[1][0] += a1.dot(a2)
@@ -297,8 +304,10 @@ class PathFitter:
 		# positioned exactly at the first and last data points
 		# Control points 1 and 2 are positioned an alpha distance out
 		# on the tangent vectors, left and right, respectively
-		return [pt1, pt1.add(tan1.normalize(alpha1)),
-				pt2.add(tan2.normalize(alpha2)), pt2]
+		return [
+			pt1, pt1.add(tan1.normalize(alpha1)),
+			pt2.add(tan2.normalize(alpha2)), pt2
+		]
 
 	# Given set of points and their parameterization, try to find
 	# a better parameterization.
@@ -381,69 +390,3 @@ def pathtosvg(path):
 		segs.append(str(seg.point))
 		last = seg
 	return ' '.join(segs)
-
-
-def convertToFitpath(nodelist, closed):
-
-	addon = GSPath()
-
-	# seems to be instances where empty nodelists are sent. 
-	# workaround below with try/except sending empty path
-
-	try:
-
-		nodelist.append(nodelist[-1])
-		pathlist = fitpath(nodelist, True)
-
-		for s in range(0, len(pathlist)):
-
-			segment = pathlist[s]
-			pt = segment.getPoint()
-			hin = segment.getHandleIn()
-			hout = segment.getHandleOut()
-			ptx, pty = pt.x, pt.y
-			hinx, hiny = hin.x, hin.y
-			houtx, houty = hout.x, hout.y
-
-			# try and limit handle within max range (re fitpath bug)
-			maxh = 30
-			maxhn = maxh*-1
-
-			if hinx>maxh: 
-				hinx = maxh
-			elif hinx<maxhn: 
-				hinx = maxhn
-
-			if hiny>maxh: 
-				hiny = maxh
-			elif hiny<maxhn: 
-				hiny = maxhn
-
-			if houtx>maxh: 
-				houtx = maxh
-			elif houtx<maxhn: 
-				houtx = maxhn
-
-			if houty>maxh: 
-				houty = maxh
-			elif houty<maxhn: 
-				houty = maxhn
-
-
-			if s==0:
-				addon.nodes.append(GSNode([ptx, pty], type = GSLINE))
-				addon.nodes.append(GSNode([ptx+houtx, pty+houty], type = GSOFFCURVE))
-			elif s>0 and s<len(pathlist)-1:
-				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
-				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
-				addon.nodes.append(GSNode([ptx+houtx, pty+houty], type = GSOFFCURVE))
-			else:
-				addon.nodes.append(GSNode([ptx+hinx, pty+hiny], type = GSOFFCURVE))
-				addon.nodes.append(GSNode([ptx, pty], type = GSCURVE))
-		
-	except:
-		pass
-
-	addon.closed = closed
-	return addon
-	

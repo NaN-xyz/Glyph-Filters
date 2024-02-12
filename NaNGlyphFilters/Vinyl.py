@@ -6,8 +6,7 @@ Vinyl
 
 import random
 from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
-from NaNGFFitpath import convertToFitpath
-from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, DoShadow, RoundPaths
+from NaNGFGraphikshared import AddAllPathsToLayer, ClearPaths, DoShadow, RoundPaths, convertToFitpath
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 from NaNFilter import NaNFilter
@@ -22,7 +21,7 @@ class Vinyl(NaNFilter):
     }
     glyph_stroke_width = 16
     shadow_stroke_width = 6
-    angle = -160 #random.randrange(0, 360)
+    angle = -160  # random.randrange(0, 360)
 
     def setup(self):
         pass
@@ -34,13 +33,13 @@ class Vinyl(NaNFilter):
         G.remove_overlap(thislayer)
         pathlist = ConvertPathsToSkeleton(thislayer.paths, 10)
         outlinedata = setGlyphCoords(pathlist)
-        bounds = AllPathBounds(thislayer)
+        # bounds = AllPathBounds(thislayer)
 
-        offsetpaths = self.saveOffsetPaths(
-            thislayer, offset, offset, removeOverlap=True
-        )
-        pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata2 = setGlyphCoords(pathlist2)
+        # offsetpaths = self.saveOffsetPaths(
+        #     thislayer, offset, offset, removeOverlap=True
+        # )
+        # pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
+        # outlinedata2 = setGlyphCoords(pathlist2)
 
         ClearPaths(thislayer)
 
@@ -48,19 +47,20 @@ class Vinyl(NaNFilter):
         for n in range(0, it):
             depth = random.randrange(depthmin, depthmax)
             angle = random.randrange(0, 360)
-            shadowpaths.extend( DoShadow(thislayer, outlinedata, angle, depth, "paths") )
+            shadowpaths.extend(DoShadow(thislayer, outlinedata, angle, depth, "paths"))
             AddAllPathsToLayer(shadowpaths, thislayer)
-        
+
         G.remove_overlap(thislayer)
 
         roundpaths = RoundPaths(thislayer.paths, "nodes")
         blobs = []
-        for p in roundpaths: blobs.append ( convertToFitpath(p, True) )
+        for p in roundpaths:
+            blobs.append(convertToFitpath(p, True))
 
         ClearPaths(thislayer)
 
         AddAllPathsToLayer(blobs, thislayer)
-       
+
         G.remove_overlap(thislayer)
 
         self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)

@@ -46,7 +46,7 @@ class DoodleTriangles(NaNFilter):
         noiseoutline = self.expandMonolineFromPathlist(noisepaths, self.glyph_stroke_width)
 
         newtris = self.SortCollageSpace(thislayer, outlinedata, outlinedata2, gridsize, bounds, "stick", True)
-        blacktris = ConvertPathlistDirection ( random.sample(newtris, int(len(newtris)/10)), -1 )
+        blacktris = ConvertPathlistDirection(random.sample(newtris, int(len(newtris) / 10)), -1)
 
         strokedtris = self.expandMonolineFromPathlist(newtris, self.tri_stroke_width)
         AddAllPathsToLayer(strokedtris, thislayer)

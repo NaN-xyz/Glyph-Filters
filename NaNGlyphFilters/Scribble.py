@@ -10,6 +10,7 @@ from NaNFilter import NaNFilter
 from NaNGFNoise import NoiseOutline, noiseMap
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 import random
+from NaNGFNoise import pnoise1
 
 
 class Scribble(NaNFilter):
@@ -30,8 +31,8 @@ class Scribble(NaNFilter):
         noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.05, 0, 35])
         noiseoutline = self.expandMonolineFromPathlist(noisepaths, self.pen)
         outlinedata2 = setGlyphCoords(ConvertPathsToSkeleton(noisepaths, 4))
-        
-        allscribbles = []
+
+        # allscribbles = []
         for n in range(0, params["iterations"]):
             scribble = self.ScribblePath(thislayer, outlinedata2, params["walklen"])
             if scribble is not None:
@@ -52,15 +53,15 @@ class Scribble(NaNFilter):
         else:
             sx, sy = start[0], start[1]
             noisescale = 0.05
-            seedx, seedy = random.randrange(0,100000), random.randrange(0,100000)
+            seedx, seedy = random.randrange(0, 100000), random.randrange(0, 100000)
             minsize, maxsize = 0, 80
             walkpath = []
 
             for n in range(0, walklen):
-                x_noiz = pnoise1( (n+seedx)*noisescale, 3) 
-                rx = noiseMap( x_noiz, minsize, maxsize )
-                y_noiz = pnoise1( ((1000+n)+seedy)*noisescale, 3) 
-                ry = noiseMap( y_noiz, minsize, maxsize )
+                x_noiz = pnoise1((n + seedx) * noisescale, 3)
+                rx = noiseMap(x_noiz, minsize, maxsize)
+                y_noiz = pnoise1(((1000 + n) + seedy) * noisescale, 3)
+                ry = noiseMap(y_noiz, minsize, maxsize)
                 nx = sx + rx
                 ny = sy + ry
                 if withinGlyphBlack(nx, ny, outlinedata):
@@ -68,5 +69,6 @@ class Scribble(NaNFilter):
                     sy = ny
                     walkpath.append([sx, sy])
             return walkpath
+
 
 Scribble()

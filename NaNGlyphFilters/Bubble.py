@@ -15,10 +15,10 @@ from math import atan2, radians, sin, cos
 
 class Bubble(NaNFilter):
     params = {
-        "S": {"offset": -5, "minpush":30, "maxpush":40, "minstep":10, "maxstep":30 }, 
-        "M": {"offset": -25, "minpush":50, "maxpush":70, "minstep":10, "maxstep":40 }, 
-        "L": {"offset": -30, "minpush":60, "maxpush":80, "minstep":10, "maxstep":40 }
-        }
+        "S": {"offset": -5, "minpush": 30, "maxpush": 40, "minstep": 10, "maxstep": 30},
+        "M": {"offset": -25, "minpush": 50, "maxpush": 70, "minstep": 10, "maxstep": 40},
+        "L": {"offset": -30, "minpush": 60, "maxpush": 80, "minstep": 10, "maxstep": 40}
+    }
 
     def processLayer(self, thislayer, params):
         offset = params["offset"]
@@ -62,7 +62,7 @@ class Bubble(NaNFilter):
                 beamdist = 200
                 searchblack = DistanceToNextBlack(thislayer, [x1, y1], [x2, y2], outlinedata, beamdist)
                 if searchblack is not None and searchblack < beamdist:
-                    pushdist*=0.8
+                    pushdist *= 0.8
 
                 linex, liney = pushdist * cos(a), pushdist * sin(a)
 

@@ -6,7 +6,7 @@ Dirt
 
 from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
 from NaNGFGraphikshared import ClearPaths, AddAllPathsToLayer, retractHandles, ConvertPathlistDirection, removeOverlapPathlist, defineStartXY, withinGlyphBlack, drawSpeck
-from NaNGFNoise import NoiseOutline, noiseMap
+from NaNGFNoise import NoiseOutline, noiseMap, pnoise1
 from NaNFilter import NaNFilter
 import random
 from NaNGlyphsEnvironment import glyphsEnvironment as G
@@ -37,7 +37,7 @@ class Dirt(NaNFilter):
         dirt = self.AddDirt(thislayer, outlinedata2, params["walklen"])
 
         if dirt is not None:
-            dirt = ConvertPathlistDirection( removeOverlapPathlist(dirt), 1 )
+            dirt = ConvertPathlistDirection(removeOverlapPathlist(dirt), 1)
             AddAllPathsToLayer(dirt, thislayer)
             G.remove_overlap(thislayer)
 
@@ -52,23 +52,23 @@ class Dirt(NaNFilter):
         else:
             sx, sy = start[0], start[1]
             noisescale = 0.05
-            seedx, seedy = random.randrange(0,100000), random.randrange(0,100000)
+            seedx, seedy = random.randrange(0, 100000), random.randrange(0, 100000)
             minsize, maxsize = 0, 200
             dirt = []
 
             for n in range(0, walklen):
 
-                x_noiz = pnoise1( (n+seedx)*noisescale, 3) 
-                rx = noiseMap( x_noiz, minsize, maxsize )
-                y_noiz = pnoise1( ((1000+n)+seedy)*noisescale, 3) 
-                ry = noiseMap( y_noiz, minsize, maxsize )
+                x_noiz = pnoise1((n + seedx) * noisescale, 3)
+                rx = noiseMap(x_noiz, minsize, maxsize)
+                y_noiz = pnoise1(((1000 + n) + seedy) * noisescale, 3)
+                ry = noiseMap(y_noiz, minsize, maxsize)
                 nx = sx + rx
                 ny = sy + ry
 
                 if withinGlyphBlack(nx, ny, outlinedata):
-                    r = random.randrange(0,10)
-                    if r==2:
-                        size = random.randrange(7,22)
+                    r = random.randrange(0, 10)
+                    if r == 2:
+                        size = random.randrange(7, 22)
                         speck = drawSpeck(nx, ny, size, 6)
                         dirt.append(speck)
                         sx = nx
