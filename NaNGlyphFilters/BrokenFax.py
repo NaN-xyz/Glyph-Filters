@@ -77,7 +77,7 @@ class BrokenFax(NaNFilter):
 
 		glitchpaths = self.Shapefit(thislayer, outlinedata)
 		if glitchpaths:
-			glitchopaths = ConvertPathlistDirection(glitchpaths,1)
+			glitchpaths = ConvertPathlistDirection(glitchpaths, 1)
 			AddAllPathsToLayer(glitchpaths, thislayer)
 
 		self.CleanOutlines(
