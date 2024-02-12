@@ -6,8 +6,7 @@ Vinyl
 
 import random
 from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
-from NaNGFFitpath import convertToFitpath
-from NaNGFGraphikshared import AddAllPathsToLayer, ClearPaths, DoShadow, RoundPaths
+from NaNGFGraphikshared import AddAllPathsToLayer, ClearPaths, DoShadow, RoundPaths, convertToFitpath
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 from NaNFilter import NaNFilter

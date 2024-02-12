@@ -6,8 +6,7 @@ Wet Paint
 
 from NaNFilter import NaNFilter
 from NaNGFAngularizzle import ConvertPathsToSkeleton, Direction, setGlyphCoords
-from NaNGFFitpath import convertToFitpath
-from NaNGFGraphikshared import DistanceToNextBlack
+from NaNGFGraphikshared import DistanceToNextBlack, convertToFitpath
 from NaNGFNoise import noiseMap
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 from math import atan2, degrees

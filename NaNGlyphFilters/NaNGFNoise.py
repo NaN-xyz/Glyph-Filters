@@ -1,3 +1,7 @@
+
+import random
+from NaNGFGraphikshared import convertToFitpath
+
 try:
 	from noise import pnoise1
 
@@ -40,10 +44,6 @@ except:
 			amp *= persistence
 			octaves -= 1
 		return total / pmax
-
-import random
-from NaNGFFitpath import convertToFitpath
-# import NaNGFGraphikshared
 
 
 def noiseMap(noise, min, max):

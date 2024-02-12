@@ -7,8 +7,7 @@ Maps
 import random
 from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
 from NaNGFConfig import glyphSize
-from NaNGFFitpath import convertToFitpath
-from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, ClearPaths, ConvertPathDirection, CreateLineComponent, Fill_Drawlines, RoundPath, returnRoundedPaths
+from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, ClearPaths, ConvertPathDirection, CreateLineComponent, Fill_Drawlines, RoundPath, returnRoundedPaths, convertToFitpath
 from NaNGFSpacePartition import BreakUpSpace
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 from NaNGlyphsEnvironment import GSLayer

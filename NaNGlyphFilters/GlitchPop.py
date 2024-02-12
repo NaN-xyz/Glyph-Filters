@@ -8,8 +8,7 @@ import math
 import random
 from Burned import returnRoundedPaths
 from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
-from NaNGFFitpath import convertToFitpath
-from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, ClearPaths, CreateLineComponent, Fill_Drawlines, RoundPath, drawCircle, drawTriangle, point_inside_polygon, returnLineComponent
+from NaNGFGraphikshared import AddAllComponentsToLayer, AddAllPathsToLayer, AllPathBounds, ClearPaths, CreateLineComponent, Fill_Drawlines, RoundPath, drawCircle, drawTriangle, point_inside_polygon, returnLineComponent, convertToFitpath
 from NaNGFSpacePartition import BreakUpSpace, PathToNodeList
 from NaNGlyphsEnvironment import GSLayer
 from NaNGlyphsEnvironment import glyphsEnvironment as G
