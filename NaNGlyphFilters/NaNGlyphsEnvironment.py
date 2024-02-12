@@ -14,18 +14,20 @@ class Glyphs2:
 
     @classmethod
     def layer_bounds(cls, thislayer):
-        x = int(thislayer.bounds.origin.x)
-        y = int(thislayer.bounds.origin.y)
-        w = int(thislayer.bounds.size.width)
-        h = int(thislayer.bounds.size.height)
+        bounds = thislayer.bounds
+        x = int(bounds.origin.x)
+        y = int(bounds.origin.y)
+        w = int(bounds.size.width)
+        h = int(bounds.size.height)
         return x, y, w, h
 
     @classmethod
     def path_bounds(cls, thispath):
-        x = int(thispath.bounds.origin.x)
-        y = int(thispath.bounds.origin.y)
-        w = int(thispath.bounds.size.width)
-        h = int(thispath.bounds.size.height)
+        bounds = thispath.bounds
+        x = int(bounds.origin.x)
+        y = int(bounds.origin.y)
+        w = int(bounds.size.width)
+        h = int(bounds.size.height)
         return x, y, w, h
 
     @classmethod
@@ -273,18 +275,11 @@ class GlyphsLib(Glyphs2):
     def layer_bounds(cls, thislayer):
         if not thislayer.paths:
             return 0, 0, 0, 0
-        x = int(thislayer.bounds.origin.x)
-        y = int(thislayer.bounds.origin.y)
-        w = int(thislayer.bounds.size.width)
-        h = int(thislayer.bounds.size.height)
-        return x, y, w, h
-
-    @classmethod
-    def path_bounds(cls, thispath):
-        x = int(thispath.bounds.origin.x)
-        y = int(thispath.bounds.origin.y)
-        w = int(thispath.bounds.size.width)
-        h = int(thispath.bounds.size.height)
+        bounds = thislayer.bounds
+        x = int(bounds.origin.x)
+        y = int(bounds.origin.y)
+        w = int(bounds.size.width)
+        h = int(bounds.size.height)
         return x, y, w, h
 
 
