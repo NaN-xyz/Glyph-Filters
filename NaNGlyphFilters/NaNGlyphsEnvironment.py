@@ -106,7 +106,7 @@ class Glyphs2:
 
     @classmethod
     def cut_layer(cls, layer, pt1, pt2):
-        layer.cut_between_points(pt1, pt2)
+        layer.cutBetweenPoints(pt1, pt2)
 
     @classmethod
     def clean_up_paths(cls, thislayer):
