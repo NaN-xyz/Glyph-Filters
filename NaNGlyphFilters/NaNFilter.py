@@ -29,25 +29,32 @@ class NaNFilter:
         pass
 
     def processGlyph(self, glyph):
+
         G.begin_undo(glyph)
-        beginGlyphNaN(glyph)
-        newlayers = []
-        old_state = random.getstate()
-        for thislayer in list(glyph.layers):  # Don't use a proxy!
-            # Use the same random seed for each layer, else we're in trouble
-            random.setstate(old_state)
-            G.begin_layer_changes(thislayer)
-            # thislayer.correctPathDirection()
-            if hasattr(self, "params"):
-                params = self.params[glyphSize(glyph)]
-            else:
-                params = None
-            self.processLayer(thislayer, params)
-            newlayers.append(thislayer)
-            G.end_layer_changes(thislayer)
-        glyph.layers = newlayers
-        endGlyphNaN(glyph)
-        G.end_undo(glyph)
+        try:
+            beginGlyphNaN(glyph)
+            newlayers = []
+            old_state = random.getstate()
+            for thislayer in list(glyph.layers):  # Don't use a proxy!
+                # Use the same random seed for each layer, else we're in trouble
+                random.setstate(old_state)
+                G.begin_layer_changes(thislayer)
+                # thislayer.correctPathDirection()
+                if hasattr(self, "params"):
+                    params = self.params[glyphSize(glyph)]
+                else:
+                    params = None
+                self.processLayer(thislayer, params)
+                newlayers.append(thislayer)
+                G.end_layer_changes(thislayer)
+            # glyph.layers = newlayers
+            endGlyphNaN(glyph)
+        except:
+            import traceback
+            print(traceback.format_exc())
+        finally:
+            print("__end_undo")
+            G.end_undo(glyph)
 
     def processLayer(self, layer, params):
         raise NotImplementedError
