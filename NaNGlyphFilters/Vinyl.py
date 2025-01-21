@@ -5,9 +5,8 @@ Vinyl
 """
 
 import random
-from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
-from NaNGFFitpath import convertToFitpath
-from NaNGFGraphikshared import AddAllPathsToLayer, AllPathBounds, ClearPaths, DoShadow, RoundPaths
+from NaNGFAngularizzle import ConvertPathsToLineSegments, getListOfPoints
+from NaNGFGraphikshared import AddPaths, ClearPaths, DoShadow, RoundPaths, convertToFitpath
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 from NaNFilter import NaNFilter
@@ -15,55 +14,46 @@ from NaNFilter import NaNFilter
 
 class Vinyl(NaNFilter):
 
-    params = {
-        "S": {"offset": 10, "it": 5, "depthmin": 20, "depthmax": 65},
-        "M": {"offset": 10, "it": 5, "depthmin": 25, "depthmax": 75},
-        "L": {"offset": 10, "it": 5, "depthmin": 30, "depthmax": 85}
-    }
-    glyph_stroke_width = 16
-    shadow_stroke_width = 6
-    angle = -160 #random.randrange(0, 360)
+	params = {
+		"S": {"it": 5, "depthmin": 20, "depthmax": 65},
+		"M": {"it": 5, "depthmin": 25, "depthmax": 75},
+		"L": {"it": 5, "depthmin": 30, "depthmax": 85}
+	}
+	glyph_stroke_width = 16
+	shadow_stroke_width = 6
+	angle = -160  # random.randrange(0, 360)
 
-    def setup(self):
-        pass
+	def processLayer(self, thislayer, params):
 
-    def processLayer(self, thislayer, params):
+		it, depthmin, depthmax = params["it"], params["depthmin"], params["depthmax"]
 
-        offset, it, depthmin, depthmax = params["offset"], params["it"], params["depthmin"], params["depthmax"]
+		G.remove_overlap(thislayer)
+		pathlist = ConvertPathsToLineSegments(thislayer.paths, 10)
+		outlinedata = getListOfPoints(pathlist)
 
-        G.remove_overlap(thislayer)
-        pathlist = ConvertPathsToSkeleton(thislayer.paths, 10)
-        outlinedata = setGlyphCoords(pathlist)
-        bounds = AllPathBounds(thislayer)
+		ClearPaths(thislayer)
 
-        offsetpaths = self.saveOffsetPaths(
-            thislayer, offset, offset, removeOverlap=True
-        )
-        pathlist2 = ConvertPathsToSkeleton(offsetpaths, 4)
-        outlinedata2 = setGlyphCoords(pathlist2)
+		shadowpaths = []
+		for n in range(0, it):
+			depth = random.randrange(depthmin, depthmax)
+			angle = random.randrange(0, 360)
+			shadowpaths.extend(DoShadow(thislayer, outlinedata, angle, depth, "paths"))
+			AddPaths(shadowpaths, thislayer)
 
-        ClearPaths(thislayer)
+		G.remove_overlap(thislayer)
 
-        shadowpaths = []
-        for n in range(0, it):
-            depth = random.randrange(depthmin, depthmax)
-            angle = random.randrange(0, 360)
-            shadowpaths.extend( DoShadow(thislayer, outlinedata, angle, depth, "paths") )
-            AddAllPathsToLayer(shadowpaths, thislayer)
-        
-        G.remove_overlap(thislayer)
+		roundpaths = RoundPaths(thislayer.paths, "nodes")
+		blobs = []
+		for p in roundpaths:
+			blobs.append(convertToFitpath(p, True))
 
-        roundpaths = RoundPaths(thislayer.paths, "nodes")
-        blobs = []
-        for p in roundpaths: blobs.append ( convertToFitpath(p, True) )
+		ClearPaths(thislayer)
 
-        ClearPaths(thislayer)
+		AddPaths(blobs, thislayer)
 
-        AddAllPathsToLayer(blobs, thislayer)
-       
-        G.remove_overlap(thislayer)
+		G.remove_overlap(thislayer)
 
-        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
 
 Vinyl()

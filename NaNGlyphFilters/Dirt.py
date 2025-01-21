@@ -4,76 +4,78 @@ __doc__ = """
 Dirt
 """
 
-from NaNGFAngularizzle import ConvertPathsToSkeleton, setGlyphCoords
-from NaNGFGraphikshared import ClearPaths, AddAllPathsToLayer, retractHandles, ConvertPathlistDirection, removeOverlapPathlist, defineStartXY, withinGlyphBlack, drawSpeck
-from NaNGFNoise import NoiseOutline, noiseMap
+from NaNGFAngularizzle import ConvertPathsToLineSegments, getListOfPoints
+from NaNGFGraphikshared import ClearPaths, AddPaths, retractHandles, ConvertPathlistDirection, removeOverlapPathlist, defineStartXY, withinGlyphBlack, drawSpeck
+from NaNGFNoise import NoiseOutline, noiseMap, pnoise1
 from NaNFilter import NaNFilter
 import random
 from NaNGlyphsEnvironment import glyphsEnvironment as G
 
 
 class Dirt(NaNFilter):
-    params = {
-        "S": {"offset": -13, "walklen": 400},
-        "M": {"offset": -15, "walklen": 2000},
-        "L": {"offset": -18, "walklen": 3000},
-    }
+	params = {
+		"S": {"offset": -13, "walklen": 400},
+		"M": {"offset": -15, "walklen": 2000},
+		"L": {"offset": -18, "walklen": 3000},
+	}
 
-    def processLayer(self, thislayer, params):
+	def processLayer(self, thislayer, params):
 
-        outlinedata = setGlyphCoords(ConvertPathsToSkeleton(thislayer.paths, 20))
+		outlinedata = getListOfPoints(ConvertPathsToLineSegments(thislayer.paths, 20))
 
-        ClearPaths(thislayer)
-        noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.2, 0, 15])
-        AddAllPathsToLayer(noisepaths, thislayer)
-        retractHandles(thislayer)
-        G.remove_overlap(thislayer)
+		ClearPaths(thislayer)
+		noisepaths = NoiseOutline(thislayer, outlinedata, noisevars=[0.2, 0, 15])
+		AddPaths(noisepaths, thislayer)
+		retractHandles(thislayer)
+		G.remove_overlap(thislayer)
 
-        offsetpaths = self.saveOffsetPaths(
-            thislayer, params["offset"], params["offset"], removeOverlap=True
-        )
-        outlinedata2 = setGlyphCoords(ConvertPathsToSkeleton(offsetpaths, 4))
+		offsetpaths = self.saveOffsetPaths(
+			thislayer, params["offset"], params["offset"], removeOverlap=True
+		)
 
-        dirt = self.AddDirt(thislayer, outlinedata2, params["walklen"])
+		outlinedata2 = G.outline_data_for_hit_testing(offsetpaths)
 
-        if dirt is not None:
-            dirt = ConvertPathlistDirection( removeOverlapPathlist(dirt), 1 )
-            AddAllPathsToLayer(dirt, thislayer)
-            G.remove_overlap(thislayer)
+		dirt = self.AddDirt(thislayer, outlinedata2, params["walklen"])
 
-        self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
+		if dirt is not None:
+			dirt = removeOverlapPathlist(dirt)
+			dirt = ConvertPathlistDirection(dirt, 1)
+			AddPaths(dirt, thislayer)
+			# G.remove_overlap(thislayer)
 
-    def AddDirt(self, thislayer, outlinedata, walklen):
+		self.CleanOutlines(thislayer, remSmallPaths=True, remSmallSegments=True, remStrayPoints=True, remOpenPaths=True, keepshape=False)
 
-        start = defineStartXY(thislayer, outlinedata)
+	def AddDirt(self, thislayer, outlinedata, walklen):
 
-        if start is None:
-            return None
-        else:
-            sx, sy = start[0], start[1]
-            noisescale = 0.05
-            seedx, seedy = random.randrange(0,100000), random.randrange(0,100000)
-            minsize, maxsize = 0, 200
-            dirt = []
+		start = defineStartXY(thislayer, outlinedata)
 
-            for n in range(0, walklen):
+		if start is None:
+			return None
+		else:
+			sx, sy = start[0], start[1]
+			noisescale = 0.05
+			seedx, seedy = random.randrange(0, 100000), random.randrange(0, 100000)
+			minsize, maxsize = 0, 200
+			dirt = []
 
-                x_noiz = pnoise1( (n+seedx)*noisescale, 3) 
-                rx = noiseMap( x_noiz, minsize, maxsize )
-                y_noiz = pnoise1( ((1000+n)+seedy)*noisescale, 3) 
-                ry = noiseMap( y_noiz, minsize, maxsize )
-                nx = sx + rx
-                ny = sy + ry
+			for n in range(0, walklen):
 
-                if withinGlyphBlack(nx, ny, outlinedata):
-                    r = random.randrange(0,10)
-                    if r==2:
-                        size = random.randrange(7,22)
-                        speck = drawSpeck(nx, ny, size, 6)
-                        dirt.append(speck)
-                        sx = nx
-                        sy = ny
-            return dirt
+				x_noiz = pnoise1((n + seedx) * noisescale, 3)
+				rx = noiseMap(x_noiz, minsize, maxsize)
+				y_noiz = pnoise1(((1000 + n) + seedy) * noisescale, 3)
+				ry = noiseMap(y_noiz, minsize, maxsize)
+				nx = sx + rx
+				ny = sy + ry
+
+				if withinGlyphBlack(nx, ny, outlinedata):
+					r = random.randrange(0, 10)
+					if r == 2:
+						size = random.randrange(7, 22)
+						speck = drawSpeck(nx, ny, size, 6)
+						dirt.append(speck)
+						sx = nx
+						sy = ny
+			return dirt
 
 
 Dirt()

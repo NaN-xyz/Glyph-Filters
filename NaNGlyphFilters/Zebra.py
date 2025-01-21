@@ -4,97 +4,94 @@ __doc__ = """
 Zebra
 """
 
-import GlyphsApp
-from NaNGFGraphikshared import *
-from NaNGFAngularizzle import *
+# from GlyphsApp import Glyphs
+from NaNGFGraphikshared import withinGlyphBlack, convertToFitpath, AllPathBounds, ClearPaths, ConvertPathlistDirection, AddPaths
 from NaNFilter import NaNFilter
 import random
-from NaNGFNoise import noiseMap
+from NaNGlyphsEnvironment import glyphsEnvironment as G
+# from NaNGFNoise import noiseMap
 
 try:
-    from itertools import izip
+	from itertools import izip
 except ImportError:
-    izip = zip
+	izip = zip
 
 
 # Note that this is *not* the same as the pairwise recipe in the itertools page
 def pairs(iterable):
-    "s -> (s0, s1), (s2, s3), (s4, s5), ..."
-    a = iter(iterable)
-    return izip(a, a)
+	"s -> (s0, s1), (s2, s3), (s4, s5), ..."
+	a = iter(iterable)
+	return izip(a, a)
 
 
 # THE MAIN NOISE WAVE FUNCTION ACTION
 
 
-def NoiseWaves(thislayer, outlinedata, b, minsize, maxsize):
+def NoiseWaves(outlinedata, b, minsize, maxsize):
 
-    noisescale = 0.002
-    yshift = maxsize / 4
+	# noisescale = 0.002
+	yshift = maxsize / 4
 
-    if b is None:
-        print("No bounds")
-        return []
+	if b is None:
+		print("No bounds")
+		return []
 
-    tx, ty, tw, th = b
-    seedx = random.randrange(0, 100000)
-    seedy = random.randrange(0, 100000)
+	tx, ty, tw, th = b
+	# seedx = random.randrange(0, 100000)
+	# seedy = random.randrange(0, 100000)
 
-    waves = []
-    searchstep = 20
-    step = 11
+	waves = []
+	searchstep = 20
+	step = 11
 
-    for y in range(ty, ty + th, step):
-        lines = []
-        wave = []
+	for y in range(ty, ty + th, step):
+		lines = []
+		wave = []
 
-        for x in range(tx, tx + tw + 40, searchstep):
-            if withinGlyphBlack(x, y, outlinedata):
-                # size = noiseMap(random.random(), minsize, maxsize)
-                size = random.random() * (maxsize-minsize) + minsize
-                wave.append([x, y + size - yshift])
-            elif len(wave) > 4:
-                lines.append(wave)
-                wave = []
+		for x in range(tx, tx + tw + 40, searchstep):
+			if withinGlyphBlack(x, y, outlinedata):
+				# size = noiseMap(random.random(), minsize, maxsize)
+				size = random.random() * (maxsize - minsize) + minsize
+				wave.append([x, y + size - yshift])
+			elif len(wave) > 4:
+				lines.append(wave)
+				wave = []
 
-        if lines:
-            waves.append(lines)
+		if lines:
+			waves.append(lines)
 
-    wavepaths = []
-    # draw the wave data in to paths
+	wavepaths = []
+	# draw the wave data in to paths
 
-    for lines1, lines2 in pairs(waves):
-        if len(lines1) != len(lines2):
-            continue
+	for lines1, lines2 in pairs(waves):
+		if len(lines1) != len(lines2):
+			continue
 
-        for wav, wav2 in zip(lines1, lines2):
-            np = convertToFitpath(wav + list(reversed(wav2)), True)
-            wavepaths.append(np)
+		for wav, wav2 in zip(lines1, lines2):
+			np = convertToFitpath(wav + list(reversed(wav2)), True)
+			wavepaths.append(np)
 
-    return wavepaths
+	return wavepaths
 
 
 class Zebra(NaNFilter):
-    minsize, maxsize = 1, 10
+	minsize, maxsize = 1, 10
 
-    def processLayer(self, thislayer, params):
-        offsetpaths = self.saveOffsetPaths(thislayer, 0, 0, removeOverlap=True)
-        pathlist = ConvertPathsToSkeleton(offsetpaths, 40)
-        bounds = AllPathBoundsFromPathList(offsetpaths, layer=thislayer)
-        outlinedata = setGlyphCoords(pathlist)
+	def processLayer(self, thislayer, params):
+		bounds = AllPathBounds(thislayer)
 
-        wavepaths = NoiseWaves(
-            thislayer, outlinedata, bounds, self.minsize, self.maxsize
-        )
+		outlinedata = G.outline_data_for_hit_testing(thislayer)
 
-        ClearPaths(thislayer)
-        wavepaths = ConvertPathlistDirection(wavepaths, -1)
-        
-        shifty = -20
-        for path in wavepaths: path.applyTransform((1, 0.0, 0.0, 1, 0, shifty))
+		wavepaths = NoiseWaves(outlinedata, bounds, self.minsize, self.maxsize)
 
-        AddAllPathsToLayer(wavepaths, thislayer)
+		ClearPaths(thislayer)
+		wavepaths = ConvertPathlistDirection(wavepaths, -1)
 
+		shifty = -20
+		for path in wavepaths:
+			path.applyTransform((1, 0.0, 0.0, 1, 0, shifty))
+
+		AddPaths(wavepaths, thislayer)
 
 
 Zebra()
